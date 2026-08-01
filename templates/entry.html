@@ -42,22 +42,26 @@
   .home{font-family:var(--serif);font-weight:700;font-size:15.5px;color:var(--ink);text-decoration:none}
   .home:hover{color:var(--accent)}
   .crumb{font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--secc)}
-  h1{font-family:var(--serif);font-size:clamp(27px,4vw,37px);line-height:1.18;letter-spacing:-.015em;margin-bottom:20px}
+  h1{font-family:var(--serif);font-size:clamp(27px,4vw,37px);line-height:1.18;letter-spacing:-.015em;margin-bottom:12px}
   h1 .cruxmark{color:var(--secc);font-size:.6em;vertical-align:.25em;margin-left:8px;font-family:var(--sans)}
+  .dateline{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--ink2);line-height:1.5;margin-bottom:22px}
 
-  .metabox{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--secc);
-    border-radius:11px;padding:14px 18px;margin-bottom:14px;font-size:13px;color:var(--ink2);box-shadow:var(--shadow)}
-  .metabox .mrow{display:flex;gap:10px;padding:2.5px 0}
-  .metabox .mk{color:var(--ink3);min-width:132px;flex-shrink:0}
-  .bears{display:flex;flex-wrap:wrap;gap:7px;align-items:baseline;margin-bottom:30px;font-size:12.5px}
+  details.toc{border:1px solid var(--line);border-radius:9px;background:var(--bg2);margin-bottom:34px;font-size:13px}
+  details.toc summary{cursor:pointer;padding:9px 14px;font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink3);user-select:none;list-style-position:inside}
+  details.toc summary:hover{color:var(--ink)}
+  details.toc .tlinks{padding:2px 16px 12px}
+  details.toc a{display:inline-block;text-decoration:none;color:var(--ink2);padding:2px 0;margin-right:16px}
+  details.toc a:hover{color:var(--accent)}
+
+  .about{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--secc);
+    border-radius:11px;padding:16px 18px;margin-top:52px;font-size:13px;color:var(--ink2);box-shadow:var(--shadow);font-family:var(--sans)}
+  .about .albl{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink3);margin-bottom:9px}
+  .about .mrow{display:flex;gap:10px;padding:2.5px 0}
+  .about .mk{color:var(--ink3);min-width:132px;flex-shrink:0}
+  .bears{display:flex;flex-wrap:wrap;gap:7px;align-items:baseline;margin-top:9px;font-size:12.5px}
   .bears .blbl{color:var(--ink3)}
-  .bears a{text-decoration:none;border:1px solid var(--line2);border-radius:999px;padding:4px 12px;color:var(--ink2);background:var(--panel)}
+  .bears a{text-decoration:none;border:1px solid var(--line2);border-radius:999px;padding:4px 12px;color:var(--ink2);background:var(--bg2)}
   .bears a:hover{color:var(--ink);border-color:var(--secc)}
-
-  .toc{border:1px solid var(--line);border-radius:11px;background:var(--bg2);padding:14px 18px;margin-bottom:36px;font-size:13px}
-  .toc .tlbl{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink3);margin-bottom:7px}
-  .toc a{display:inline-block;text-decoration:none;color:var(--ink2);padding:2px 0;margin-right:16px}
-  .toc a:hover{color:var(--accent)}
 
   article{font-family:var(--serif);font-size:17px;line-height:1.68;color:var(--ink)}
   article p{margin-bottom:18px;}
@@ -85,23 +89,25 @@
     <span class="crumb">__CRUMB__</span>
   </div>
   <h1>__TITLE__<span class="cruxmark" title="Load-bearing crux">✱</span></h1>
+  <p class="dateline">__DATELINE__</p>
 
-  <div class="metabox">
-    <div class="mrow"><span class="mk">Status</span><span>__STATUS__</span></div>
-    <div class="mrow"><span class="mk">Core article reviewed</span><span>__CORE_REVIEWED__</span></div>
-    <div class="mrow"><span class="mk">Evidence updated</span><span>__EVIDENCE_UPDATED__</span></div>
-    <div class="mrow"><span class="mk">Scope</span><span>__SCOPE__</span></div>
-  </div>
-  <div class="bears"><span class="blbl">Bears on:</span>__BEARS__</div>
-
-  <nav class="toc" aria-label="On this page">
-    <div class="tlbl">On this page</div>
-    __TOC__
-  </nav>
+  <details class="toc">
+    <summary>On this page</summary>
+    <div class="tlinks">__TOC__</div>
+  </details>
 
   <article>
 __BODY__
   </article>
+
+  <div class="about">
+    <div class="albl">About this entry</div>
+    <div class="mrow"><span class="mk">Status</span><span>__STATUS__</span></div>
+    <div class="mrow"><span class="mk">Core article reviewed</span><span>__CORE_REVIEWED__</span></div>
+    <div class="mrow"><span class="mk">Evidence updated</span><span>__EVIDENCE_UPDATED__</span></div>
+    <div class="mrow"><span class="mk">Scope</span><span>__SCOPE__</span></div>
+    <div class="bears"><span class="blbl">Bears on:</span>__BEARS__</div>
+  </div>
 
   <div class="footer">
     Part of <a href="__ROOT__">The Biggest Questions About AI</a> — a living map of the landscape of thought.

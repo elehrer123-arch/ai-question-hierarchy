@@ -117,9 +117,11 @@ def render_entry(entry, qindex):
         for b in entry["bears"]
     )
     crumb = f'{"Crux overview" if entry["kind"] == "crux" else "Question entry"} · {SECTION_ORDER[int(meta["section"]) - 1].capitalize()}'
+    dateline = f'{meta["status"]}. Evidence and developments updated {meta.get("evidence_updated", "—")}.'
     with open(os.path.join(ROOT, "templates", "entry.html"), encoding="utf-8") as f:
         tpl = f.read()
-    out = (tpl.replace("__TITLE__", E(meta["title"]))
+    out = (tpl.replace("__DATELINE__", E(dateline))
+              .replace("__TITLE__", E(meta["title"]))
               .replace("__DESC__", E(meta.get("description", meta["title"])))
               .replace("__PATH__", f'{entry["folder"]}/{meta["slug"]}/')
               .replace("__SECTION__", E(meta["section"]))
