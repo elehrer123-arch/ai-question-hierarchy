@@ -18,6 +18,8 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      - name: Install build dependencies
+        run: pip install markdown
       - name: Build site from source data
         run: python3 scripts/build.py
       - uses: actions/configure-pages@v5

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>__TITLE__ — The Biggest Questions About AI</title>
+<meta name="description" content="__DESC__">
+<link rel="canonical" href="https://elehrer123-arch.github.io/ai-question-hierarchy/__PATH__">
+<meta property="og:title" content="__TITLE__">
+<meta property="og:description" content="__DESC__">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://elehrer123-arch.github.io/ai-question-hierarchy/__PATH__">
+<meta property="og:image" content="https://elehrer123-arch.github.io/ai-question-hierarchy/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#faf9f6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#191817" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Ctext%20y='0.87em'%20font-size='92'%20fill='%233d6b9e'%3E%E2%9C%B1%3C/text%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#faf9f6; --bg2:#f1efe9; --panel:#ffffff; --ink:#1d1c1a; --ink2:#514d45; --ink3:#6f6b5f;
+    --line:#e4e1d8; --line2:#d6d2c6; --accent:#3d5a80; --mark:#fdf0c2;
+    --c1:#3d6b9e; --c2:#b0524b; --c3:#3d8a6b; --c4:#7a5ba6; --c5:#a97729;
+    --shadow:0 1px 3px rgba(30,25,15,.06),0 4px 14px rgba(30,25,15,.05);
+    --serif:'Charter','Iowan Old Style','Palatino Linotype',Georgia,serif;
+    --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#191817; --bg2:#131211; --panel:#211f1e; --ink:#e8e5df; --ink2:#b4b0a6; --ink3:#98937f;
+      --line:#33302c; --line2:#413d37; --accent:#7ea2c9; --mark:#4d431c;
+      --c1:#6f9dc9; --c2:#cd7d76; --c3:#6bab8d; --c4:#a289c7; --c5:#cfa05e;
+      --shadow:0 1px 3px rgba(0,0,0,.4),0 4px 14px rgba(0,0,0,.3);
+    }
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6}
+  a{color:var(--accent)}
+  .page{max-width:780px;margin:0 auto;padding:28px 22px 90px}
+  .topbar{display:flex;justify-content:space-between;align-items:baseline;gap:14px;margin-bottom:38px;flex-wrap:wrap}
+  .home{font-family:var(--serif);font-weight:700;font-size:15.5px;color:var(--ink);text-decoration:none}
+  .home:hover{color:var(--accent)}
+  .crumb{font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--secc)}
+  h1{font-family:var(--serif);font-size:clamp(27px,4vw,37px);line-height:1.18;letter-spacing:-.015em;margin-bottom:20px}
+  h1 .cruxmark{color:var(--secc);font-size:.6em;vertical-align:.25em;margin-left:8px;font-family:var(--sans)}
+
+  .metabox{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--secc);
+    border-radius:11px;padding:14px 18px;margin-bottom:14px;font-size:13px;color:var(--ink2);box-shadow:var(--shadow)}
+  .metabox .mrow{display:flex;gap:10px;padding:2.5px 0}
+  .metabox .mk{color:var(--ink3);min-width:132px;flex-shrink:0}
+  .bears{display:flex;flex-wrap:wrap;gap:7px;align-items:baseline;margin-bottom:30px;font-size:12.5px}
+  .bears .blbl{color:var(--ink3)}
+  .bears a{text-decoration:none;border:1px solid var(--line2);border-radius:999px;padding:4px 12px;color:var(--ink2);background:var(--panel)}
+  .bears a:hover{color:var(--ink);border-color:var(--secc)}
+
+  .toc{border:1px solid var(--line);border-radius:11px;background:var(--bg2);padding:14px 18px;margin-bottom:36px;font-size:13px}
+  .toc .tlbl{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink3);margin-bottom:7px}
+  .toc a{display:inline-block;text-decoration:none;color:var(--ink2);padding:2px 0;margin-right:16px}
+  .toc a:hover{color:var(--accent)}
+
+  article{font-family:var(--serif);font-size:17px;line-height:1.68;color:var(--ink)}
+  article p{margin-bottom:18px;}
+  article h2{font-size:23px;letter-spacing:-.01em;margin:44px 0 16px;padding-bottom:8px;border-bottom:2px solid var(--secc)}
+  article h2:first-child{margin-top:0}
+  article strong{font-weight:650}
+  article blockquote{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--secc);
+    border-radius:11px;padding:16px 20px;margin:22px 0;font-size:15.5px;box-shadow:var(--shadow)}
+  article blockquote p{margin-bottom:10px}
+  article blockquote p:last-child{margin-bottom:0}
+  article ul,article ol{margin:0 0 18px 24px}
+  article li{margin-bottom:9px}
+  article hr{border:0;border-top:1px solid var(--line);margin:36px 0}
+  article em{font-style:italic}
+  article a{text-decoration-thickness:1px;text-underline-offset:2.5px}
+  .footer{margin-top:60px;padding-top:16px;border-top:1px solid var(--line);font-family:var(--sans);
+    font-size:12.5px;color:var(--ink3);line-height:1.6}
+  ::selection{background:var(--mark)}
+</style>
+</head>
+<body>
+<div class="page" style="--secc:var(--c__SECTION__)">
+  <div class="topbar">
+    <a class="home" href="__ROOT__">← The Biggest Questions About&nbsp;AI</a>
+    <span class="crumb">__CRUMB__</span>
+  </div>
+  <h1>__TITLE__<span class="cruxmark" title="Load-bearing crux">✱</span></h1>
+
+  <div class="metabox">
+    <div class="mrow"><span class="mk">Status</span><span>__STATUS__</span></div>
+    <div class="mrow"><span class="mk">Core article reviewed</span><span>__CORE_REVIEWED__</span></div>
+    <div class="mrow"><span class="mk">Evidence updated</span><span>__EVIDENCE_UPDATED__</span></div>
+    <div class="mrow"><span class="mk">Scope</span><span>__SCOPE__</span></div>
+  </div>
+  <div class="bears"><span class="blbl">Bears on:</span>__BEARS__</div>
+
+  <nav class="toc" aria-label="On this page">
+    <div class="tlbl">On this page</div>
+    __TOC__
+  </nav>
+
+  <article>
+__BODY__
+  </article>
+
+  <div class="footer">
+    Part of <a href="__ROOT__">The Biggest Questions About AI</a> — a living map of the landscape of thought.
+    Suggest a source or correction via <a href="https://github.com/elehrer123-arch/ai-question-hierarchy/issues">GitHub issues</a>.
+  </div>
+</div>
+</body>
+</html>
