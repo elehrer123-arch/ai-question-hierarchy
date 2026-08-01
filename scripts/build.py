@@ -212,13 +212,11 @@ def render_index(sections, overview_links):
     lcount = sum(len(q["links"]) for s in sections for su in s["subs"] for q in su["qs"])
 
     chain = []
-    for i, s in enumerate(sections):
-        if i:
-            chain.append('<span class="arrow" aria-hidden="true">→</span>')
+    for s in sections:
         chain.append(
-            f'<a href="#s{s["id"]}" style="border-top:3px solid var(--c{s["id"]})">'
-            f'<span class="cnum">{s["id"]}</span><span class="cname">{E(s["name"])}</span>'
-            f'<span class="cq">{E(s["tag"])}</span></a>'
+            f'<a href="#s{s["id"]}" style="--cc:var(--c{s["id"]})">'
+            f'<span class="chnum">{s["id"]}</span><span class="chname">{E(s["name"])}</span>'
+            f'<span class="chq">{E(s["tag"])}</span></a>'
         )
 
     nav = []

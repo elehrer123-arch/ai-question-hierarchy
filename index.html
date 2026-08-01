@@ -104,18 +104,17 @@
   h1{font-family:var(--serif);font-size:clamp(30px,4.4vw,44px);line-height:1.12;letter-spacing:-.015em;margin-bottom:14px}
   .lede{font-size:16.5px;color:var(--ink2);max-width:640px;line-height:1.6;margin-bottom:22px}
   .lede2{font-size:14.5px;color:var(--ink3);max-width:640px;margin-bottom:26px}
-  .chain{display:flex;flex-wrap:wrap;align-items:stretch;gap:8px;margin:6px 0 10px}
-  .chain a{display:flex;flex-direction:column;gap:2px;padding:10px 14px;border-radius:11px;text-decoration:none;
-    border:1px solid var(--line2);background:var(--panel);min-width:118px;flex:1;box-shadow:var(--shadow)}
-  .chain a:hover{border-color:var(--ink3)}
-  .chain .cnum{font-size:11px;color:var(--ink3)}
-  .chain .cname{font-family:var(--serif);font-weight:700;font-size:15.5px;color:var(--ink)}
-  .chain .cq{font-size:11.5px;color:var(--ink2);line-height:1.3}
-  .chain .arrow{align-self:center;color:var(--ink3);font-size:15px;padding:0 1px}
+  .chain{display:flex;flex-direction:column;margin:16px 0 4px}
+  .chain a{display:flex;align-items:baseline;gap:18px;padding:13px 4px;text-decoration:none;border-bottom:1px solid var(--line)}
+  .chain a:last-child{border-bottom:0}
+  .chnum{font-family:var(--serif);font-size:20px;font-weight:700;color:var(--cc);min-width:24px}
+  .chname{font-family:var(--serif);font-size:31px;font-weight:700;letter-spacing:-.015em;color:var(--ink);min-width:205px;line-height:1.15}
+  .chain a:hover .chname{color:var(--cc)}
+  .chq{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--ink2)}
   @media (max-width:700px){
-    .chain{flex-direction:column;gap:6px}
-    .chain a{min-width:100%}
-    .chain .arrow{transform:rotate(90deg);padding:0}
+    .chain a{flex-wrap:wrap;gap:2px 14px;padding:12px 2px}
+    .chname{font-size:24px;min-width:0}
+    .chq{flex-basis:100%;padding-left:38px;font-size:15.5px}
   }
   .heronote{font-size:12.5px;color:var(--ink3);margin-top:10px;max-width:640px}
   .toolbar{display:flex;gap:10px;margin:30px 0 0;align-items:center}
@@ -204,7 +203,7 @@
     <p class="kicker">A living map · Updated August 2026</p>
     <h1>The Biggest Questions About AI Today</h1>
     <p class="lede">A structured map of 125 major open questions about AI, with concise framings, selected sources, and deeper entries in development.</p>
-    <div class="chain"><a href="#s1" style="border-top:3px solid var(--c1)"><span class="cnum">1</span><span class="cname">Trajectory</span><span class="cq">What can AI become?</span></a><span class="arrow" aria-hidden="true">→</span><a href="#s2" style="border-top:3px solid var(--c2)"><span class="cnum">2</span><span class="cname">Safety</span><span class="cq">Can AI be trusted and controlled?</span></a><span class="arrow" aria-hidden="true">→</span><a href="#s3" style="border-top:3px solid var(--c3)"><span class="cnum">3</span><span class="cname">Economy</span><span class="cq">What will AI do to growth, work, and production?</span></a><span class="arrow" aria-hidden="true">→</span><a href="#s4" style="border-top:3px solid var(--c4)"><span class="cnum">4</span><span class="cname">Power</span><span class="cq">Who controls AI, and under what rules?</span></a><span class="arrow" aria-hidden="true">→</span><a href="#s5" style="border-top:3px solid var(--c5)"><span class="cnum">5</span><span class="cname">Humanity</span><span class="cq">What kind of future should AI create?</span></a></div>
+    <div class="chain"><a href="#s1" style="--cc:var(--c1)"><span class="chnum">1</span><span class="chname">Trajectory</span><span class="chq">What can AI become?</span></a><a href="#s2" style="--cc:var(--c2)"><span class="chnum">2</span><span class="chname">Safety</span><span class="chq">Can AI be trusted and controlled?</span></a><a href="#s3" style="--cc:var(--c3)"><span class="chnum">3</span><span class="chname">Economy</span><span class="chq">What will AI do to growth, work, and production?</span></a><a href="#s4" style="--cc:var(--c4)"><span class="chnum">4</span><span class="chname">Power</span><span class="chq">Who controls AI, and under what rules?</span></a><a href="#s5" style="--cc:var(--c5)"><span class="chnum">5</span><span class="chname">Humanity</span><span class="chq">What kind of future should AI create?</span></a></div>
     <p class="heronote">Click a subsection to open its questions, and a question to see the debate and sources.</p>
     <div class="toolbar">
       <button id="expandAll">Show all questions</button>
