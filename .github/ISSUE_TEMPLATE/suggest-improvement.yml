@@ -1,0 +1,49 @@
+name: Suggest a source or correction
+description: Propose an improvement to a question, framing, or source on The Biggest Questions About AI
+title: "[question] "
+labels: ["proposal"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve the map. Please keep the question number in the title
+        (it is prefilled when you arrive from an entry page). The editor reviews all
+        proposals; accepted changes are credited in the commit history.
+  - type: dropdown
+    id: proposal-type
+    attributes:
+      label: Proposal type
+      options:
+        - Add a source
+        - Replace or remove a source
+        - Correct a factual statement
+        - Flag outdated evidence
+        - Identify a missing major position
+        - Report a broken link
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: current-passage
+    attributes:
+      label: Current passage or source
+      description: Quote the text or name the source you are proposing to change. Leave blank if adding something new.
+  - type: textarea
+    id: suggested-change
+    attributes:
+      label: Suggested change
+      description: The exact proposed change — new wording, the source to add or remove, or the correction.
+    validations:
+      required: true
+  - type: textarea
+    id: supporting-links
+    attributes:
+      label: Supporting links
+      description: Primary sources preferred.
+  - type: textarea
+    id: what-it-adds
+    attributes:
+      label: What does this add that the existing material does not?
+      description: One or two sentences. This is the main criterion for source additions.
+    validations:
+      required: true

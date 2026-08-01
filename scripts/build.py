@@ -14,7 +14,9 @@ Requires: pip install markdown
 Runs automatically on every push via .github/workflows/deploy.yml.
 """
 import json, html, sys, os, glob, re
-from urllib.parse import urlparse
+from urllib.parse import urlparse, quote_plus
+
+REPO_ISSUES = "https://github.com/elehrer123-arch/ai-question-hierarchy/issues"
 
 try:
     import markdown
@@ -108,8 +110,31 @@ def load_entries(qindex):
     return entries, errors
 
 
-def render_entry(entry, qindex):
+def crosslink(body, self_qnum, entry_slugs):
+    """Turn bare question numbers in prose into links — to the question's entry
+    page if one exists, otherwise to its anchor on the map."""
+    def repl(m):
+        num = m.group(1)
+        if num == self_qnum:
+            return num
+        if num in entry_slugs:
+            return f"[{num}](../{entry_slugs[num]}/)"
+        return f"[{num}](../../#q{num.replace('.', '-')})"
+    return re.sub(r"(?<![\w.#/\-\[])([1-5]\.\d{1,2}\.\d{1,2})(?![\w.\-\]])", repl, body)
+
+
+def find_subsection(sections, qnum):
+    for s in sections:
+        for su in s["subs"]:
+            for q in su["qs"]:
+                if q["id"] == qnum:
+                    return su
+    return None
+
+
+def render_entry(entry, qindex, sections, entry_slugs):
     meta, body = entry["meta"], entry["body"]
+    body = crosslink(body, entry["qnum"], entry_slugs)
     md = markdown.Markdown(extensions=["toc", "tables"])
     body_html = md.convert(body)
     toc = "".join(
@@ -118,21 +143,45 @@ def render_entry(entry, qindex):
     )
     qnum = entry["qnum"]
     qlink = (f'<a href="../../#q{qnum.replace(".", "-")}">{qnum} · {E(qindex[qnum]["t"])} — view in the map</a>')
-    crumb = f'Question {qnum} · {SECTION_ORDER[int(meta["section"]) - 1].capitalize()}'
-    dateline = f'{meta["status"]}. Evidence and developments updated {meta.get("evidence_updated", "—")}.'
+    subsection = find_subsection(sections, qnum)
+    crumb = f'Question {qnum} · {E(subsection["t"])}'
+    subhref = f'../../#sub{subsection["id"].replace(".", "-")}'
+    core_revised = meta.get("core_revised", meta.get("core_reviewed", "—"))
+    review = meta.get("review", "Pending")
+    dateline = (f'{meta["status"]} · editorial review {review.lower()}. '
+                f'Core article last revised {core_revised}; evidence updated {meta.get("evidence_updated", "—")}.')
+    mark = '<span class="cruxmark" title="Load-bearing crux">✱</span>' if meta.get("crux") else ""
+    cruxnote = (f'<p class="cruxnote"><span class="cx">✱</span> Bears on the load-bearing crux: <em>{E(meta["crux"])}</em></p>'
+                if meta.get("crux") else "")
+    scopenote = f'Scope: {E(meta.get("scope_short", ""))}' if meta.get("scope_short") else ""
+    short_title = meta.get("short_title", meta["title"])
+    cite = (f'“{E(meta["title"])}” <em>The Biggest Questions About AI</em>, '
+            f'Elliott Lehrer (ed.), {meta.get("evidence_updated", "2026")}. {E(meta["status"])}.')
+    issue_title = f'[{qnum} {meta["slug"]}] '
+    issue_url = f'{REPO_ISSUES}/new?template=suggest-improvement.yml&title={quote_plus(issue_title)}'
     with open(os.path.join(ROOT, "templates", "entry.html"), encoding="utf-8") as f:
         tpl = f.read()
     out = (tpl.replace("__DATELINE__", E(dateline))
+              .replace("__SHORT_TITLE__", E(short_title))
               .replace("__TITLE__", E(meta["title"]))
+              .replace("__MARK__", mark)
+              .replace("__CRUXNOTE__", cruxnote)
+              .replace("__SCOPENOTE__", scopenote)
               .replace("__DESC__", E(meta.get("description", meta["title"])))
               .replace("__PATH__", f'{entry["folder"]}/{meta["slug"]}/')
               .replace("__SECTION__", E(meta["section"]))
-              .replace("__CRUMB__", E(crumb))
+              .replace("__CRUMB__", crumb)
+              .replace("__SUBHREF__", subhref)
               .replace("__ROOT__", "../../")
               .replace("__STATUS__", E(meta["status"]))
-              .replace("__CORE_REVIEWED__", E(meta.get("core_reviewed", "—")))
+              .replace("__AUTHOR__", E(meta.get("author", "—")))
+              .replace("__EDITOR__", E(meta.get("editor", "—")))
+              .replace("__REVIEW__", E(review))
+              .replace("__CORE_REVISED__", E(core_revised))
               .replace("__EVIDENCE_UPDATED__", E(meta.get("evidence_updated", "—")))
               .replace("__SCOPE__", E(meta.get("scope", "—")))
+              .replace("__CITE__", cite)
+              .replace("__ISSUE_URL__", E(issue_url))
               .replace("__QLINK__", qlink)
               .replace("__TOC__", toc)
               .replace("__BODY__", body_html))
@@ -264,9 +313,10 @@ if __name__ == "__main__":
             print("  -", e, file=sys.stderr)
         sys.exit(1)
 
+    entry_slugs = {e["qnum"]: e["meta"]["slug"] for e in entries}
     overview_links = {}
     for entry in entries:
-        path = render_entry(entry, qindex)
+        path = render_entry(entry, qindex, sections, entry_slugs)
         overview_links.setdefault(entry["qnum"], []).append((entry["meta"]["title"], path))
         print(f"built {path}")
 
