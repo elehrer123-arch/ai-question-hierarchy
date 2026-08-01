@@ -2,7 +2,7 @@
  "id": "1",
  "name": "Trajectory",
  "tag": "What can AI become?",
- "intro": "Everything downstream — safety, economics, power, meaning — is conditional on what AI actually becomes and how fast. Trajectory questions are empirical, but the evidence is noisy and the forecasting track record is short.",
+ "intro": "Trajectory asks what AI systems will actually be able to do: which capabilities, through which mechanisms, and on what timeline — keeping claims about what is impossible in principle distinct from claims about what is merely far off. It spans the ceiling of the current paradigm, the ingredients still missing, and how far autonomy, embodiment, and self-improvement can go.",
  "subs": [
   {
    "id": "1.1",
@@ -107,28 +107,6 @@
        "s": "Sam Altman (@sama) on X",
        "y": "2025",
        "u": "https://x.com/sama/status/1895203654103351462"
-      }
-     ]
-    },
-    {
-     "id": "1.1.5",
-     "qid": "q_capability_predictability",
-     "slug": "capability-predictability",
-     "t": "Predictability",
-     "q": "Will capabilities improve smoothly enough to forecast, or emerge through strategically surprising jumps?",
-     "n": "Loss curves are smooth, but downstream capabilities can look step-like. Whether emergence is real or an artifact of discontinuous metrics matters enormously for whether labs and governments get advance warning.",
-     "links": [
-      {
-       "t": "Emergent Abilities of Large Language Models",
-       "s": "Wei et al.",
-       "y": "2022",
-       "u": "https://arxiv.org/abs/2206.07682"
-      },
-      {
-       "t": "Are Emergent Abilities a Mirage?",
-       "s": "Schaeffer et al., NeurIPS",
-       "y": "2023",
-       "u": "https://arxiv.org/abs/2304.15004"
       }
      ]
     }
@@ -264,6 +242,34 @@
        "s": "François Chollet (@fchollet) on X",
        "y": "2024",
        "u": "https://x.com/fchollet/status/1870169764762710376"
+      }
+     ]
+    },
+    {
+     "id": "1.2.6",
+     "qid": "q_agi_timelines",
+     "slug": "agi-timelines",
+     "t": "Timelines",
+     "q": "When, if ever, might broadly human-level systems arrive — and how should claims about what is impossible in principle be kept distinct from claims about what is merely far off?",
+     "n": "Expert forecasts span decades and have shortened with each survey wave. Most trajectory disagreements are actually about timing, not possibility — yet 'that cannot work' and 'that will not work soon' are routinely argued as if they were the same claim.",
+     "links": [
+      {
+       "t": "Thousands of AI Authors on the Future of AI",
+       "s": "Grace et al.",
+       "y": "2024",
+       "u": "https://arxiv.org/abs/2401.02843"
+      },
+      {
+       "t": "Literature Review of Transformative AI Timelines",
+       "s": "Epoch AI",
+       "y": "2023",
+       "u": "https://epoch.ai/blog/literature-review-of-transformative-artificial-intelligence-timelines/"
+      },
+      {
+       "t": "AI Timelines: Where the Arguments, and the “Experts,” Stand",
+       "s": "Holden Karnofsky, Cold Takes",
+       "y": "2021",
+       "u": "https://www.cold-takes.com/where-ai-forecasting-stands-today/"
       }
      ]
     }

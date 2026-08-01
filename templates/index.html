@@ -135,7 +135,7 @@
   .subh{margin:0}
   .subbtn{display:flex;width:100%;align-items:baseline;gap:10px;padding:15px 18px 4px;background:none;border:0;cursor:pointer;text-align:left}
   .subid{font-size:12.5px;font-weight:700;color:var(--secc);font-variant-numeric:tabular-nums;font-family:var(--sans)}
-  .subtitle{font-family:var(--serif);font-size:19px;font-weight:700;letter-spacing:-.005em;flex:1;line-height:1.25}
+  .subtitle{font-family:var(--serif);font-size:19px;font-weight:600;letter-spacing:-.005em;flex:1;line-height:1.25}
   .chev{color:var(--ink3);font-size:11px}
   .chev span{display:inline-block;transition:transform .2s}
   .sub.open .subbtn .chev span, .q.open .qbtn .chev span{transform:rotate(90deg)}
@@ -152,7 +152,7 @@
   .qbtn:hover{background:var(--secs,var(--bg2))}
   .qtxt{flex:1}
   .qover{display:block;font-family:var(--sans);font-size:10.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--ink3);margin-bottom:5px}
-  .qq{display:block;font-family:var(--serif);font-size:17.5px;font-weight:600;line-height:1.35;letter-spacing:-.005em;color:var(--ink);max-width:700px}
+  .qq{display:block;font-family:var(--serif);font-size:17px;font-weight:400;line-height:1.4;letter-spacing:-.003em;color:var(--ink);max-width:700px}
   .qbtn .chev{margin-top:4px}
   .qbody{padding:0 18px 16px}
   .js .qbody{display:none}
@@ -202,11 +202,9 @@
 
   <main id="main">
     <p class="kicker">A living map · Updated August 2026</p>
-    <h1>The Biggest Questions About AI&nbsp;Today</h1>
-    <p class="lede">The field can be organized as a causal progression: what AI can become determines what must be made safe; capability and safety together shape the economy; economic stakes decide who fights for control; and all of it forces the question of what future we actually want.</p>
-    <p class="lede2">The categories overlap at their boundaries, but each answers a distinct kind of question. Every question below comes with a brief framing of the live debate and curated links to quality external thought.</p>
+    <h1>The Biggest Questions About AI Today</h1>
     <div class="chain">__CHAIN__</div>
-    <p class="heronote">Click a subsection to open its questions, and a question to see the debate and sources. <span class="cruxmark" style="margin-left:0;cursor:default">✱</span> marks a question that bears directly on one of ten load-bearing cruxes — the uncertainties whose answers disproportionately shape the rest of the map.</p>
+    <p class="heronote">Click a subsection to open its questions, and a question to see the debate and sources.</p>
     <div class="toolbar">
       <button id="expandAll">Show all questions</button>
       <button id="collapseAll">Collapse all</button>
@@ -216,6 +214,7 @@
     <p class="noresults" id="noresults">Nothing matches that search.</p>
 
     <footer>
+      <p style="margin-bottom:10px"><span class="cruxmark" style="margin-left:0;cursor:default">✱</span> marks a question that bears directly on one of ten load-bearing cruxes — the uncertainties whose answers disproportionately shape the rest of the map.</p>
       Built as a living map — sections and questions form the stable skeleton; sources will age faster than the questions do. Framings summarize live debates as of mid-2026 and inevitably compress; follow the links for the real arguments. Curated with help from Claude.
     </footer>
   </main>

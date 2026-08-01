@@ -259,8 +259,6 @@ def render_index(sections, overview_links):
                 qbid = "qbody" + q["id"].replace(".", "-")
                 mark = (f'<span class="cruxmark" title="Load-bearing crux: {E(q["crux"])}">✱</span>'
                         if q.get("crux") else "")
-                cruxline = (f'<div class="cruxline"><b>✱ Load-bearing crux:</b> {E(q["crux"])}</div>'
-                            if q.get("crux") else "")
                 overviews = "".join(
                     f'<a class="entrylink" href="{E(href)}">Read the full entry →</a>'
                     for (title, href) in overview_links.get(q["id"], [])
@@ -279,7 +277,7 @@ def render_index(sections, overview_links):
                     f'<span class="chev" aria-hidden="true"><span>▶</span></span>'
                     f'</button></h4>'
                     f'<div class="qbody" id="{qbid}">'
-                    f'{cruxline}{overviews}'
+                    f'{overviews}'
                     f'<p class="qn">{E(q["n"])}</p>'
                     f'<div class="links">{links}</div>'
                     f'</div></div>'

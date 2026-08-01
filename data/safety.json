@@ -2,7 +2,7 @@
  "id": "2",
  "name": "Safety",
  "tag": "Can AI be trusted and controlled?",
- "intro": "As capability grows, assurance has to grow with it. Safety questions span technical alignment, evaluation science, security engineering, and the misuse and loss-of-control scenarios that motivate the field.",
+ "intro": "Safety asks whether AI systems will reliably do what their operators intend — and whether anyone could tell if they didn't. It spans aligning goals, evaluating and understanding systems, keeping them secure and controllable in operation, and the misuse and loss-of-control scenarios where the answer is no.",
  "subs": [
   {
    "id": "2.1",
@@ -264,6 +264,28 @@
        "s": "Jan Leike (@janleike) on X",
        "y": "2024",
        "u": "https://x.com/janleike/status/1791498184671605209"
+      }
+     ]
+    },
+    {
+     "id": "2.2.6",
+     "qid": "q_capability_predictability",
+     "slug": "capability-predictability",
+     "t": "Predictability",
+     "q": "Will capabilities improve smoothly enough for forecasts and evaluations to give advance warning, or emerge through strategically surprising jumps?",
+     "n": "Loss curves are smooth, but downstream capabilities can look step-like. Whether emergence is real or an artifact of discontinuous metrics matters enormously for whether labs and governments get advance warning.",
+     "links": [
+      {
+       "t": "Emergent Abilities of Large Language Models",
+       "s": "Wei et al.",
+       "y": "2022",
+       "u": "https://arxiv.org/abs/2206.07682"
+      },
+      {
+       "t": "Are Emergent Abilities a Mirage?",
+       "s": "Schaeffer et al., NeurIPS",
+       "y": "2023",
+       "u": "https://arxiv.org/abs/2304.15004"
       }
      ]
     }

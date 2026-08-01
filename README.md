@@ -3,7 +3,7 @@
 **Live site:** https://elehrer123-arch.github.io/ai-question-hierarchy/
 
 A navigable map of the landscape of thought around AI: 5 sections, 26 subsections,
-124 open questions — each with a short framing of the live debate and curated
+125 open questions — each with a short framing of the live debate and curated
 source links (285 in total, from papers to notable posts). The ten load-bearing
 cruxes are marked ✱ on the questions that carry them.
 
