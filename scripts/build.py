@@ -86,21 +86,25 @@ def parse_front_matter(path):
 
 
 def load_entries(qindex):
+    """One entry per question: content/questions/<slug>.md, where <slug> must equal
+    the question's slug in data/. Old URLs are preserved via redirect_from."""
     entries, errors = [], []
-    for kind, folder in (("crux", "cruxes"), ("question", "questions")):
-        for path in sorted(glob.glob(os.path.join(ROOT, "content", folder, "*.md"))):
-            meta, body = parse_front_matter(path)
-            fname = os.path.splitext(os.path.basename(path))[0]
-            for req in ("slug", "title", "status", "section"):
-                if not meta.get(req):
-                    errors.append(f"{path}: front matter missing '{req}'")
-            if meta.get("slug") != fname:
-                errors.append(f"{path}: slug {meta.get('slug')!r} != filename {fname!r}")
-            bears = [b.strip() for b in meta.get("bears_on", "").split(",") if b.strip()]
-            for b in bears:
-                if b not in qindex:
-                    errors.append(f"{path}: bears_on {b} is not a question number")
-            entries.append({"kind": kind, "folder": folder, "meta": meta, "body": body, "bears": bears})
+    for path in sorted(glob.glob(os.path.join(ROOT, "content", "questions", "*.md"))):
+        meta, body = parse_front_matter(path)
+        fname = os.path.splitext(os.path.basename(path))[0]
+        for req in ("slug", "title", "status", "section", "question"):
+            if not meta.get(req):
+                errors.append(f"{path}: front matter missing '{req}'")
+        if meta.get("slug") != fname:
+            errors.append(f"{path}: slug {meta.get('slug')!r} != filename {fname!r}")
+        qnum = meta.get("question")
+        if qnum not in qindex:
+            errors.append(f"{path}: question {qnum!r} is not a question number")
+        elif qindex[qnum]["slug"] != meta.get("slug"):
+            errors.append(f"{path}: slug {meta.get('slug')!r} != question {qnum}'s slug {qindex[qnum]['slug']!r}")
+        redirects = [r.strip().strip("/") for r in meta.get("redirect_from", "").split(",") if r.strip()]
+        entries.append({"folder": "questions", "meta": meta, "body": body,
+                        "qnum": qnum, "redirects": redirects})
     return entries, errors
 
 
@@ -112,11 +116,9 @@ def render_entry(entry, qindex):
         f'<a href="#{t["id"]}">{E(t["name"])}</a>'
         for t in md.toc_tokens if t["level"] == 2
     )
-    bears = "".join(
-        f'<a href="../../#q{b.replace(".", "-")}">{b} {E(qindex[b]["t"])}</a>'
-        for b in entry["bears"]
-    )
-    crumb = f'{"Crux overview" if entry["kind"] == "crux" else "Question entry"} · {SECTION_ORDER[int(meta["section"]) - 1].capitalize()}'
+    qnum = entry["qnum"]
+    qlink = (f'<a href="../../#q{qnum.replace(".", "-")}">{qnum} · {E(qindex[qnum]["t"])} — view in the map</a>')
+    crumb = f'Question {qnum} · {SECTION_ORDER[int(meta["section"]) - 1].capitalize()}'
     dateline = f'{meta["status"]}. Evidence and developments updated {meta.get("evidence_updated", "—")}.'
     with open(os.path.join(ROOT, "templates", "entry.html"), encoding="utf-8") as f:
         tpl = f.read()
@@ -131,14 +133,28 @@ def render_entry(entry, qindex):
               .replace("__CORE_REVIEWED__", E(meta.get("core_reviewed", "—")))
               .replace("__EVIDENCE_UPDATED__", E(meta.get("evidence_updated", "—")))
               .replace("__SCOPE__", E(meta.get("scope", "—")))
-              .replace("__BEARS__", bears)
+              .replace("__QLINK__", qlink)
               .replace("__TOC__", toc)
               .replace("__BODY__", body_html))
     outdir = os.path.join(ROOT, entry["folder"], meta["slug"])
     os.makedirs(outdir, exist_ok=True)
     with open(os.path.join(outdir, "index.html"), "w", encoding="utf-8") as f:
         f.write(out)
-    return f'{entry["folder"]}/{meta["slug"]}/'
+    path = f'{entry["folder"]}/{meta["slug"]}/'
+    for r in entry["redirects"]:
+        depth = r.count("/") + 1
+        target = "../" * depth + path
+        rdir = os.path.join(ROOT, *r.split("/"))
+        os.makedirs(rdir, exist_ok=True)
+        with open(os.path.join(rdir, "index.html"), "w", encoding="utf-8") as f:
+            f.write(
+                f'<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">'
+                f'<title>Moved: {E(meta["title"])}</title>'
+                f'<link rel="canonical" href="https://elehrer123-arch.github.io/ai-question-hierarchy/{path}">'
+                f'<meta http-equiv="refresh" content="0; url={target}"></head>'
+                f'<body><p>This entry has moved to <a href="{target}">{E(meta["title"])}</a>.</p></body></html>'
+            )
+    return path
 
 
 # ---------------------------------------------------------------- index
@@ -197,7 +213,7 @@ def render_index(sections, overview_links):
                 cruxline = (f'<div class="cruxline"><b>✱ Load-bearing crux:</b> {E(q["crux"])}</div>'
                             if q.get("crux") else "")
                 overviews = "".join(
-                    f'<a class="entrylink" href="{E(href)}">Read the crux overview: “{E(title)}” →</a>'
+                    f'<a class="entrylink" href="{E(href)}">Read the full entry →</a>'
                     for (title, href) in overview_links.get(q["id"], [])
                 )
                 links = "".join(
@@ -251,8 +267,7 @@ if __name__ == "__main__":
     overview_links = {}
     for entry in entries:
         path = render_entry(entry, qindex)
-        for b in entry["bears"]:
-            overview_links.setdefault(b, []).append((entry["meta"]["title"], path))
+        overview_links.setdefault(entry["qnum"], []).append((entry["meta"]["title"], path))
         print(f"built {path}")
 
     qcount, lcount = render_index(sections, overview_links)

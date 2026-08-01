@@ -1,17 +1,20 @@
 ---
-type: crux
-slug: labor-complement-or-substitute
-title: Will AI primarily complement human labor or substitute for it?
+type: question
+question: 3.2.1
+slug: labor-displacement
+title: Which tasks and occupations will be automated, augmented, transformed, or newly created — and how quickly?
 section: 3
-status: Pilot brief — draft v2, pending editor review
+status: Pilot brief — draft v3, pending editor review
 core_reviewed: August 2026
 evidence_updated: August 2026
-bears_on: 3.2.1, 3.2.2, 3.2.3, 3.5.1
+redirect_from: cruxes/labor-complement-or-substitute
 scope: Primarily cognitive work in advanced economies, mid-2020s through the 2030s. Embodied automation, developing-country labor markets, and the long-run post-AGI case are treated where they bear on that question, not surveyed comprehensively.
-description: A state-of-the-question overview of whether AI will primarily complement human labor or substitute for it — the answer landscape, why informed people disagree, the evidence as of August 2026, and what would change the picture.
+description: Which tasks and occupations AI will automate, augment, or transform, and how quickly — organized around the load-bearing crux of whether AI primarily complements human labor or substitutes for it.
 ---
 
 ## The question
+
+Which kinds of work will AI automate outright, which will it augment, which will it transform into something new, and which will it leave largely untouched — and on what timetable? That is the ground-level question of the AI economy, and it cannot be answered without confronting the deeper question it carries as its load-bearing crux: whether AI primarily *complements* the humans doing the work or *substitutes* for them. This entry treats the two together — the crux as the organizing lens, the task-and-occupation evidence as the best available answer to it.
 
 When an AI system enters a workplace, it can do two things to the humans there. It can *complement* them — raise the value of their time by handling sub-tasks, extending their expertise, or letting them serve more people — or it can *substitute* for them, performing their work well enough that the human's contribution commands less pay, or none. The question is which force dominates, for most workers, over the horizon in which this generation of institutions must respond.
 
@@ -35,7 +38,7 @@ This is the crux on which most of AI's economic and political future turns. If A
 
 ## Current assessment — August 2026
 
-The evidence supports a layered answer. AI measurably raises worker productivity on many bounded cognitive tasks, with the largest gains to the least experienced. It is already substituting for labor in a small set of fully-exposed occupations — freelance writing, translation — where the output is text and the task is the job. Economy-wide employment and wage effects remain small or unidentifiable. The most-watched early-warning signal — deteriorating outcomes for young workers in AI-exposed occupations — is real in some datasets and contested in its cause. Meanwhile, capability evaluations are improving much faster than any labor-market aggregate is moving, which makes extrapolation beyond a year or two unusually unreliable in both directions. A reader who needs one sentence: *productivity assistance now, narrow substitution already, aggregate quiet so far, and a capability trend that could change any of it.*
+On the surface question — which work changes first — the pattern so far is consistent: bounded, text-heavy cognitive tasks move earliest; occupations where the task *is* the job (translation, routine writing) are seeing real substitution; entry-level white-collar work is the contested margin; and embodied, high-context, and accountability-bearing work remains largely untouched. On the deeper question, the evidence supports a layered answer. AI measurably raises worker productivity on many bounded cognitive tasks, with the largest gains to the least experienced. It is already substituting for labor in a small set of fully-exposed occupations — freelance writing, translation — where the output is text and the task is the job. Economy-wide employment and wage effects remain small or unidentifiable. The most-watched early-warning signal — deteriorating outcomes for young workers in AI-exposed occupations — is real in some datasets and contested in its cause. Meanwhile, capability evaluations are improving much faster than any labor-market aggregate is moving, which makes extrapolation beyond a year or two unusually unreliable in both directions. A reader who needs one sentence: *productivity assistance now, narrow substitution already, aggregate quiet so far, and a capability trend that could change any of it.*
 
 ## The answer landscape
 
