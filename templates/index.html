@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.classList.add('js')</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Biggest Questions About AI Today</title>
+<meta name="description" content="An organized map of the biggest open questions about AI — trajectory, safety, economy, power, and humanity — with brief framings of each live debate and __LCOUNT__ curated source links, from papers to notable posts.">
+<link rel="canonical" href="https://elehrer123-arch.github.io/ai-question-hierarchy/">
+<meta property="og:title" content="The Biggest Questions About AI Today">
+<meta property="og:description" content="A map of the landscape of thought around AI: __QCOUNT__ open questions across trajectory, safety, economy, power, and humanity, each with a framing of the debate and curated sources.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://elehrer123-arch.github.io/ai-question-hierarchy/">
+<meta property="og:image" content="https://elehrer123-arch.github.io/ai-question-hierarchy/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Biggest Questions About AI Today">
+<meta name="twitter:description" content="A map of the landscape of thought around AI: __QCOUNT__ open questions, each with a framing of the debate and curated sources.">
+<meta name="twitter:image" content="https://elehrer123-arch.github.io/ai-question-hierarchy/og.png">
+<meta name="theme-color" content="#faf9f6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#191817" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Ctext%20y='0.87em'%20font-size='92'%20fill='%233d6b9e'%3E%E2%9C%B1%3C/text%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#faf9f6; --bg2:#f1efe9; --panel:#ffffff; --ink:#1d1c1a; --ink2:#514d45; --ink3:#6f6b5f;
+    --line:#e4e1d8; --line2:#d6d2c6; --accent:#3d5a80; --mark:#fdf0c2;
+    --c1:#3d6b9e; --c2:#b0524b; --c3:#3d8a6b; --c4:#7a5ba6; --c5:#a97729;
+    --c1s:rgba(61,107,158,.08); --c2s:rgba(176,82,75,.08); --c3s:rgba(61,138,107,.08); --c4s:rgba(122,91,166,.08); --c5s:rgba(169,119,41,.10);
+    --shadow:0 1px 3px rgba(30,25,15,.06),0 4px 14px rgba(30,25,15,.05);
+    --serif:'Charter','Iowan Old Style','Palatino Linotype',Georgia,serif;
+    --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#191817; --bg2:#131211; --panel:#211f1e; --ink:#e8e5df; --ink2:#b4b0a6; --ink3:#98937f;
+      --line:#33302c; --line2:#413d37; --accent:#7ea2c9; --mark:#4d431c;
+      --c1:#6f9dc9; --c2:#cd7d76; --c3:#6bab8d; --c4:#a289c7; --c5:#cfa05e;
+      --c1s:rgba(111,157,201,.10); --c2s:rgba(205,125,118,.10); --c3s:rgba(107,171,141,.10); --c4s:rgba(162,137,199,.10); --c5s:rgba(207,160,94,.12);
+      --shadow:0 1px 3px rgba(0,0,0,.4),0 4px 14px rgba(0,0,0,.3);
+    }
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{transition:none !important;animation:none !important}
+  }
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55}
+  a{color:var(--accent)}
+  button{font:inherit;color:inherit}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+  .skip{position:absolute;left:8px;top:-48px;z-index:100;background:var(--panel);color:var(--ink);
+    padding:8px 14px;border-radius:8px;border:1px solid var(--line2);box-shadow:var(--shadow);text-decoration:none}
+  .skip:focus{top:8px}
+  .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+  /* ---------- layout ---------- */
+  .wrap{display:flex;min-height:100vh}
+  aside{width:288px;flex-shrink:0;background:var(--bg2);border-right:1px solid var(--line);
+    position:sticky;top:0;height:100vh;overflow-y:auto;padding:26px 20px 40px;scrollbar-width:thin}
+  main{flex:1;min-width:0;padding:48px 56px 90px;max-width:960px;margin:0 auto}
+  #menuBtn{display:none;position:fixed;top:10px;left:12px;z-index:70;width:42px;height:42px;border-radius:10px;
+    border:1px solid var(--line2);background:var(--panel);cursor:pointer;align-items:center;justify-content:center;font-size:19px;box-shadow:var(--shadow)}
+  #mobilebar{display:none;position:fixed;top:0;left:0;right:0;z-index:60;background:var(--bg);
+    border-bottom:1px solid var(--line);padding:10px 14px 10px 64px}
+  #mobilebar input{width:100%;padding:8px 12px;border-radius:9px;border:1px solid var(--line2);
+    background:var(--panel);color:var(--ink);font-size:16px;outline:none}
+  #scrim{display:none;position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:65}
+  @media (max-width: 900px){
+    aside{position:fixed;left:0;top:0;z-index:80;transform:translateX(-100%);transition:transform .25s ease;box-shadow:0 0 40px rgba(0,0,0,.25)}
+    aside.open{transform:translateX(0)}
+    main{padding:86px 18px 70px}
+    #menuBtn{display:flex !important}
+    #mobilebar{display:block}
+    #scrim.show{display:block}
+  }
+
+  /* ---------- sidebar ---------- */
+  .brand{font-family:var(--serif);font-size:19px;font-weight:700;letter-spacing:-.01em;line-height:1.25;margin-bottom:2px}
+  .brand a{color:var(--ink);text-decoration:none}
+  .tagline{font-size:12.5px;color:var(--ink3);margin-bottom:18px}
+  #search{width:100%;padding:8px 12px;border-radius:9px;border:1px solid var(--line2);background:var(--panel);
+    color:var(--ink);font-size:13.5px;outline:none;margin-bottom:6px}
+  #search:focus{border-color:var(--accent)}
+  #searchInfo{font-size:11.5px;color:var(--ink3);min-height:16px;margin-bottom:10px}
+  nav .navsec{margin-bottom:4px}
+  nav .navhead{display:flex;align-items:center;border-radius:8px}
+  nav .navhead:hover{background:var(--panel)}
+  nav .navlink{display:flex;align-items:center;gap:9px;flex:1;padding:7px 4px 7px 9px;
+    font-size:13.5px;font-weight:600;color:var(--ink);text-decoration:none}
+  nav .dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+  nav .navchev{background:none;border:0;cursor:pointer;padding:7px 10px;color:var(--ink3);font-size:10px}
+  nav .navchev span{display:inline-block;transition:transform .2s}
+  nav .navsec.open .navchev span{transform:rotate(90deg)}
+  nav .navsub{margin:0 0 4px 24px;border-left:1px solid var(--line2);padding-left:10px}
+  .js nav .navsub{display:none}
+  .js nav .navsec.open .navsub{display:block}
+  nav .navsub a.active{background:var(--panel);color:var(--ink);font-weight:600}
+  nav .navsub a{display:block;padding:4px 6px;font-size:12.5px;color:var(--ink2);text-decoration:none;border-radius:6px;line-height:1.35}
+  nav .navsub a:hover{background:var(--panel);color:var(--ink)}
+  .sidefoot{margin-top:22px;padding-top:14px;border-top:1px solid var(--line);font-size:11.5px;color:var(--ink3);line-height:1.5}
+
+  /* ---------- hero ---------- */
+  .kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);margin-bottom:10px}
+  h1{font-family:var(--serif);font-size:clamp(30px,4.4vw,44px);line-height:1.12;letter-spacing:-.015em;margin-bottom:14px}
+  .lede{font-size:17.5px;color:var(--ink2);max-width:640px;line-height:1.6;margin-bottom:8px}
+  .lede2{font-size:14.5px;color:var(--ink3);max-width:640px;margin-bottom:26px}
+  .chain{display:flex;flex-wrap:wrap;align-items:stretch;gap:8px;margin:6px 0 10px}
+  .chain a{display:flex;flex-direction:column;gap:2px;padding:10px 14px;border-radius:11px;text-decoration:none;
+    border:1px solid var(--line2);background:var(--panel);min-width:118px;flex:1;box-shadow:var(--shadow)}
+  .chain a:hover{border-color:var(--ink3)}
+  .chain .cnum{font-size:11px;color:var(--ink3)}
+  .chain .cname{font-family:var(--serif);font-weight:700;font-size:15.5px;color:var(--ink)}
+  .chain .cq{font-size:11.5px;color:var(--ink2);line-height:1.3}
+  .chain .arrow{align-self:center;color:var(--ink3);font-size:15px;padding:0 1px}
+  @media (max-width:700px){
+    .chain{flex-direction:column;gap:6px}
+    .chain a{min-width:100%}
+    .chain .arrow{transform:rotate(90deg);padding:0}
+  }
+  .heronote{font-size:12.5px;color:var(--ink3);margin-top:10px;max-width:640px}
+  .toolbar{display:flex;gap:10px;margin:30px 0 0;align-items:center}
+  .toolbar button{border:1px solid var(--line2);background:var(--panel);color:var(--ink2);border-radius:8px;
+    padding:6px 12px;font-size:12.5px;cursor:pointer}
+  .toolbar button:hover{color:var(--ink);border-color:var(--ink3)}
+
+  /* ---------- sections ---------- */
+  section.big{margin-top:64px}
+  .sechead{display:flex;align-items:baseline;gap:14px;border-bottom:2px solid var(--secc,var(--line2));padding-bottom:10px;margin-bottom:12px}
+  .secnum{font-family:var(--serif);font-size:44px;font-weight:700;color:var(--secc);line-height:1}
+  .sectitles h2{font-family:var(--serif);font-size:29px;letter-spacing:-.01em;line-height:1.15}
+  .sectitles .secq{font-size:14.5px;color:var(--ink2);font-style:italic}
+  .secintro{color:var(--ink2);font-size:15px;max-width:700px;margin-bottom:22px}
+
+  .sub{background:var(--panel);border:1px solid var(--line);border-radius:14px;margin-bottom:14px;box-shadow:var(--shadow);overflow:hidden}
+  .subh{margin:0}
+  .subbtn{display:flex;width:100%;align-items:baseline;gap:10px;padding:15px 18px 4px;background:none;border:0;cursor:pointer;text-align:left}
+  .subid{font-size:12.5px;font-weight:700;color:var(--secc);font-variant-numeric:tabular-nums;font-family:var(--sans)}
+  .subtitle{font-family:var(--serif);font-size:19px;font-weight:700;letter-spacing:-.005em;flex:1;line-height:1.25}
+  .chev{color:var(--ink3);font-size:11px}
+  .chev span{display:inline-block;transition:transform .2s}
+  .sub.open .subbtn .chev span, .q.open .qbtn .chev span{transform:rotate(90deg)}
+  .subintro{padding:2px 18px 14px;color:var(--ink2);font-size:13.5px;max-width:680px}
+  .qcount{font-size:11.5px;color:var(--ink3);white-space:nowrap;font-family:var(--sans);font-weight:400}
+  .qlist{border-top:1px solid var(--line);padding:4px 0 8px}
+  .js .qlist{display:none}
+  .js .sub.open .qlist{display:block}
+
+  .q{border-bottom:1px solid var(--line)}
+  .q:last-child{border-bottom:none}
+  .qh{margin:0}
+  .qbtn{display:flex;width:100%;gap:12px;align-items:flex-start;padding:14px 18px;background:none;border:0;text-align:left;cursor:pointer}
+  .qbtn:hover{background:var(--secs,var(--bg2))}
+  .qtxt{flex:1}
+  .qover{display:block;font-family:var(--sans);font-size:10.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--ink3);margin-bottom:5px}
+  .qq{display:block;font-family:var(--serif);font-size:17.5px;font-weight:600;line-height:1.35;letter-spacing:-.005em;color:var(--ink);max-width:700px}
+  .qbtn .chev{margin-top:4px}
+  .qbody{padding:0 18px 16px}
+  .js .qbody{display:none}
+  .js .q.open .qbody{display:block}
+  .q .qn{color:var(--ink2);font-size:14px;line-height:1.55;max-width:690px;padding-left:11px;border-left:2px solid var(--secc,var(--line2));margin-bottom:10px}
+  .cruxmark{color:var(--secc,var(--accent));font-size:15px;margin-left:6px;cursor:help;font-family:var(--sans);font-weight:400}
+  .cruxline{font-size:12px;color:var(--ink3);max-width:690px;margin-bottom:8px}
+  .cruxline b{color:var(--secc,var(--accent));font-weight:650}
+  .links{display:flex;flex-wrap:wrap;gap:7px}
+  .links a{display:inline-flex;align-items:baseline;gap:6px;font-size:12.5px;text-decoration:none;color:var(--ink);
+    background:var(--secs,var(--bg2));border:1px solid var(--line);border-radius:999px;padding:4px 12px;line-height:1.35}
+  .links a:hover{border-color:var(--secc)}
+  .links .lsrc{color:var(--ink3);font-size:11.5px;white-space:nowrap}
+  .links a .ext{color:var(--secc);font-size:11px}
+  @media (max-width:700px){
+    .qq{font-size:16px} .subtitle{font-size:17.5px}
+    .links{display:block}
+    .links a{display:flex;flex-direction:column;align-items:flex-start;gap:2px;max-width:100%;border-radius:9px;margin-bottom:6px}
+    .links .lsrc{white-space:normal}
+  }
+
+  footer{margin-top:70px;padding-top:18px;border-top:1px solid var(--line);color:var(--ink3);font-size:12.5px;max-width:680px;line-height:1.6}
+  mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
+  .hidden{display:none !important}
+  .noresults{display:none;margin-top:40px;color:var(--ink3);font-size:14.5px}
+  ::selection{background:var(--mark)}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<button id="menuBtn" aria-label="Navigation menu" aria-expanded="false">☰</button>
+<div id="mobilebar"><input id="search2" type="search" placeholder="Search questions…" aria-label="Search questions" autocomplete="off"><div id="searchInfo2" aria-live="polite" style="font-size:11.5px;color:var(--ink3);min-height:15px;padding-top:3px"></div></div>
+<div id="scrim"></div>
+<div class="wrap">
+  <aside id="sidebar">
+    <div class="brand"><a href="#main">The Big Questions About&nbsp;AI</a></div>
+    <div class="tagline">A map of the landscape of thought</div>
+    <label class="vh" for="search">Search questions</label>
+    <input id="search" type="search" placeholder="Search questions… ( / )" autocomplete="off">
+    <div id="searchInfo" aria-live="polite"></div>
+    <nav aria-label="Sections">__NAV__</nav>
+    <div class="sidefoot">__QCOUNT__ questions · __LCOUNT__ source links.<br>Updated August 2026.</div>
+  </aside>
+
+  <main id="main">
+    <p class="kicker">A living map · Updated August 2026</p>
+    <h1>The Biggest Questions About AI&nbsp;Today</h1>
+    <p class="lede">The field can be organized as a causal progression: what AI can become determines what must be made safe; capability and safety together shape the economy; economic stakes decide who fights for control; and all of it forces the question of what future we actually want.</p>
+    <p class="lede2">The categories overlap at their boundaries, but each answers a distinct kind of question. Every question below comes with a brief framing of the live debate and curated links to quality external thought.</p>
+    <div class="chain">__CHAIN__</div>
+    <p class="heronote">Click a subsection to open its questions, and a question to see the debate and sources. <span class="cruxmark" style="margin-left:0;cursor:default">✱</span> marks a question that bears directly on one of ten load-bearing cruxes — the uncertainties whose answers disproportionately shape the rest of the map.</p>
+    <div class="toolbar">
+      <button id="expandAll">Show all questions</button>
+      <button id="collapseAll">Collapse all</button>
+    </div>
+
+    <div id="content">__CONTENT__</div>
+    <p class="noresults" id="noresults">Nothing matches that search.</p>
+
+    <footer>
+      Built as a living map — sections and questions form the stable skeleton; sources will age faster than the questions do. Framings summarize live debates as of mid-2026 and inevitably compress; follow the links for the real arguments. Curated with help from Claude.
+    </footer>
+  </main>
+</div>
+
+<script>
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+
+/* ---------- disclosure toggles ---------- */
+function setOpen(box, open){
+  box.classList.toggle('open', open);
+  const btn = box.querySelector(box.classList.contains('sub') ? '.subbtn' : '.qbtn');
+  if(btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+$$('.subbtn').forEach(b => b.addEventListener('click', () => { const s=b.closest('.sub'); setOpen(s, !s.classList.contains('open')); }));
+$$('.qbtn').forEach(b => b.addEventListener('click', () => { const q=b.closest('.q'); setOpen(q, !q.classList.contains('open')); }));
+
+$('#expandAll').addEventListener('click', () => { $$('.sub').forEach(el => setOpen(el, true)); });
+$('#collapseAll').addEventListener('click', () => { $$('.sub,.q').forEach(el => setOpen(el, false)); });
+
+/* ---------- sidebar nav ---------- */
+$$('nav .navchev').forEach(b => b.addEventListener('click', () => {
+  const sec = b.closest('.navsec');
+  sec.classList.toggle('open');
+  b.setAttribute('aria-expanded', sec.classList.contains('open') ? 'true' : 'false');
+}));
+$$('nav .navlink').forEach(a => a.addEventListener('click', () => {
+  const sec = a.closest('.navsec');
+  sec.classList.add('open');
+  sec.querySelector('.navchev').setAttribute('aria-expanded', 'true');
+  closeDrawer();
+}));
+$$('nav .navsub a').forEach(a => a.addEventListener('click', () => {
+  const el = document.getElementById(a.getAttribute('href').slice(1));
+  if(el && el.classList.contains('sub')) setOpen(el, true);
+  closeDrawer();
+}));
+
+/* ---------- hash ---------- */
+function openFromHash(){
+  const h = location.hash;
+  if(!h || h === '#main') return;
+  let el; try { el = document.querySelector(h.replace(/\./g,'\\.')); } catch(e){ return; }
+  if(!el) return;
+  const sub = el.classList.contains('sub') ? el : el.closest('.sub');
+  if(sub) setOpen(sub, true);
+  const q = el.classList.contains('q') ? el : el.closest('.q');
+  if(q) setOpen(q, true);
+}
+window.addEventListener('hashchange', openFromHash);
+openFromHash();
+
+/* ---------- search ---------- */
+const searchBox = $('#search'), searchBox2 = $('#search2'), searchInfo = $('#searchInfo');
+const QS = $$('.q').map(el => ({ el, sub: el.closest('.sub'), text: el.textContent.toLowerCase() }));
+const SUBS = $$('.sub').map(el => ({
+  el, sec: el.closest('section.big'),
+  head: (el.querySelector('.subbtn').textContent + ' ' + (el.querySelector('.subintro')||{textContent:''}).textContent).toLowerCase()
+}));
+const SECS = $$('section.big').map(el => ({
+  el, head: (el.querySelector('.sechead').textContent + ' ' + (el.querySelector('.secintro')||{textContent:''}).textContent).toLowerCase()
+}));
+let snapshot = null, searchTimer = null;
+
+function unmarkAll(){
+  $$('mark').forEach(m => m.replaceWith(m.textContent));
+  document.body.normalize();
+}
+function markTokens(el, tokens){
+  tokens.forEach(t => {
+    const re = new RegExp('(' + t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')','ig');
+    const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null);
+    const nodes = []; let n;
+    while(n = walker.nextNode()) nodes.push(n);
+    nodes.forEach(node => {
+      if(!re.test(node.textContent)) return;
+      const span = document.createElement('span');
+      span.innerHTML = node.textContent.replace(re, '<mark>$1</mark>');
+      node.replaceWith(...span.childNodes);
+    });
+  });
+}
+function runSearch(raw){
+  const term = raw.trim().toLowerCase();
+  const tokens = term.split(/\s+/).filter(Boolean);
+  unmarkAll();
+  $$('.q,.sub,section.big').forEach(el => el.classList.remove('hidden'));
+  $('#noresults').style.display = 'none';
+
+  if(!tokens.length){
+    searchInfo.textContent = '';
+    const si2c = $('#searchInfo2'); if(si2c) si2c.textContent = '';
+    if(snapshot){
+      $$('.sub,.q').forEach(el => setOpen(el, snapshot.has(el.id)));
+      snapshot = null;
+    }
+    return;
+  }
+  if(!snapshot) snapshot = new Set($$('.sub.open,.q.open').map(el => el.id));
+
+  const match = txt => tokens.every(t => txt.includes(t));
+  let qHits = 0, headHits = 0;
+  const shownSubs = new Set(), shownSecs = new Set();
+  const totalQMatches = QS.filter(q => match(q.text)).length;
+  const autoOpen = totalQMatches <= 8;
+
+  SUBS.forEach(({el, sec, head}) => {
+    const qs = QS.filter(q => q.sub === el);
+    const qMatches = qs.filter(q => match(q.text));
+    const headMatch = match(head);
+    qs.forEach(q => setOpen(q.el, false));
+    if(qMatches.length){
+      qHits += qMatches.length;
+      setOpen(el, true);
+      qs.forEach(q => {
+        if(qMatches.includes(q)){ if(autoOpen){ setOpen(q.el, true); markTokens(q.el, tokens); } }
+        else q.el.classList.add('hidden');
+      });
+      shownSubs.add(el); shownSecs.add(sec);
+    } else if(headMatch){
+      headHits++;
+      setOpen(el, true);
+      markTokens(el.querySelector('.subbtn'), tokens);
+      const si = el.querySelector('.subintro'); if(si) markTokens(si, tokens);
+      shownSubs.add(el); shownSecs.add(sec);
+    } else {
+      setOpen(el, false);
+      el.classList.add('hidden');
+    }
+  });
+  SECS.forEach(({el, head}) => {
+    if(shownSecs.has(el)) return;
+    if(match(head)){
+      headHits++;
+      SUBS.filter(s => s.sec === el).forEach(s => { s.el.classList.remove('hidden'); setOpen(s.el, false); });
+      shownSecs.add(el);
+    } else {
+      el.classList.add('hidden');
+    }
+  });
+
+  let info;
+  if(qHits) info = qHits + ' matching question' + (qHits === 1 ? '' : 's');
+  else if(headHits) info = 'Matches in ' + headHits + ' heading' + (headHits === 1 ? '' : 's');
+  else { info = 'No matches'; $('#noresults').style.display = 'block'; }
+  searchInfo.textContent = info;
+  const si2 = $('#searchInfo2'); if(si2) si2.textContent = info;
+}
+function onSearchInput(src){
+  const v = src.value;
+  if(searchBox.value !== v) searchBox.value = v;
+  if(searchBox2 && searchBox2.value !== v) searchBox2.value = v;
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(() => runSearch(v), 140);
+}
+searchBox.addEventListener('input', () => onSearchInput(searchBox));
+if(searchBox2) searchBox2.addEventListener('input', () => onSearchInput(searchBox2));
+document.addEventListener('keydown', e => {
+  const inSearch = e.target === searchBox || e.target === searchBox2;
+  if(e.key === '/' && !inSearch && !/^(input|textarea)$/i.test(e.target.tagName)){
+    e.preventDefault();
+    (window.getComputedStyle($('#mobilebar')).display !== 'none' ? searchBox2 : searchBox).focus();
+  }
+  if(e.key === 'Escape' && inSearch){ e.target.value = ''; onSearchInput(e.target); e.target.blur(); }
+});
+
+/* ---------- mobile drawer ---------- */
+const sidebar = $('#sidebar'), scrim = $('#scrim'), menuBtn = $('#menuBtn');
+function openDrawer(){ sidebar.classList.add('open'); scrim.classList.add('show'); menuBtn.setAttribute('aria-expanded','true'); }
+function closeDrawer(){
+  if(!sidebar.classList.contains('open')) return;
+  sidebar.classList.remove('open'); scrim.classList.remove('show'); menuBtn.setAttribute('aria-expanded','false');
+}
+menuBtn.addEventListener('click', () => sidebar.classList.contains('open') ? (closeDrawer(), menuBtn.focus()) : openDrawer());
+scrim.addEventListener('click', closeDrawer);
+document.addEventListener('keydown', e => {
+  if(e.key === 'Escape' && sidebar.classList.contains('open')){ closeDrawer(); menuBtn.focus(); }
+  if(e.key === 'Tab' && sidebar.classList.contains('open') && window.matchMedia('(max-width: 900px)').matches){
+    const focusables = [...sidebar.querySelectorAll('a,button,input')].filter(el => el.offsetParent !== null);
+    if(!focusables.length) return;
+    const first = focusables[0], last = focusables[focusables.length - 1];
+    if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+    else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+    else if(!sidebar.contains(document.activeElement)){ e.preventDefault(); first.focus(); }
+  }
+});
+
+/* ---------- scroll-spy ---------- */
+(() => {
+  const navBySub = {};
+  $$('nav .navsub a').forEach(a => { navBySub[a.getAttribute('href').slice(1)] = a; });
+  const allSubs = $$('.sub');
+  let activeLink = null, ticking = false;
+  function computeActive(){
+    ticking = false;
+    const lineY = Math.min(window.innerHeight * 0.22, 150);
+    let containing = null, lastPassed = null;
+    for(const s of allSubs){
+      const r = s.getBoundingClientRect();
+      if(r.top <= lineY){
+        lastPassed = s;
+        if(r.bottom > lineY) containing = s;
+      } else break;
+    }
+    let cur = containing || lastPassed;
+    if(cur && cur.getBoundingClientRect().bottom < 40) cur = null;  // scrolled past
+    if(window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 60){
+      cur = allSubs[allSubs.length - 1];  // at page bottom, highlight the final subsection
+    }
+    const link = cur ? navBySub[cur.id] : null;
+    if(link === activeLink) return;
+    if(activeLink) activeLink.classList.remove('active');
+    activeLink = link || null;
+    if(!link) return;
+    link.classList.add('active');
+    const navsec = link.closest('.navsec');
+    $$('nav .navsec').forEach(ns => {
+      const isCurrent = ns === navsec;
+      ns.classList.toggle('open', isCurrent);
+      ns.querySelector('.navchev').setAttribute('aria-expanded', isCurrent ? 'true' : 'false');
+    });
+  }
+  window.addEventListener('scroll', () => {
+    if(!ticking){ ticking = true; requestAnimationFrame(computeActive); }
+  }, { passive: true });
+  computeActive();
+})();
+</script>
+</body>
+</html>

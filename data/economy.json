@@ -1,0 +1,565 @@
+{
+ "id": "3",
+ "name": "Economy",
+ "tag": "What will AI do to growth, work, and production?",
+ "intro": "The economic questions determine whether AI is another important technology or a break in economic history — and who bears the costs and captures the gains along the way.",
+ "subs": [
+  {
+   "id": "3.1",
+   "t": "Productivity and economic growth",
+   "intro": "The magnitude debate spans two orders of magnitude, and diffusion — not invention — has historically been the rate-limiting step.",
+   "qs": [
+    {
+     "id": "3.1.1",
+     "qid": "q_growth_magnitude",
+     "slug": "growth-magnitude",
+     "t": "Magnitude",
+     "q": "Will AI modestly increase productivity, restore rapid twentieth-century-style growth, or produce historically unprecedented economic expansion?",
+     "n": "Acemoglu's task-based estimate is ~0.7% total TFP over a decade; Epoch-style growth models argue full automation implies growth rates without historical precedent. The disagreement is about substitution depth, not arithmetic.",
+     "links": [
+      {
+       "t": "Explosive Growth from AI: A Review of the Arguments",
+       "s": "Erdil & Besiroglu, Epoch AI",
+       "y": "2023",
+       "u": "https://epoch.ai/blog/explosive-growth-from-ai-a-review-of-the-arguments"
+      },
+      {
+       "t": "The Simple Macroeconomics of AI",
+       "s": "Daron Acemoglu, NBER",
+       "y": "2024",
+       "u": "https://www.nber.org/papers/w32487"
+      }
+     ]
+    },
+    {
+     "id": "3.1.2",
+     "qid": "q_organizational_diffusion",
+     "slug": "organizational-diffusion",
+     "t": "Diffusion",
+     "q": "How long will organizations take to redesign processes, software, incentives, and management around AI?",
+     "n": "General-purpose technologies historically take decades to show up in productivity statistics, because value requires organizational reinvention. The J-curve predicts measured productivity dips before it surges.",
+     "links": [
+      {
+       "t": "The Productivity J-Curve",
+       "s": "Brynjolfsson, Rock & Syverson, NBER",
+       "y": "2018",
+       "u": "https://www.nber.org/papers/w25148"
+      },
+      {
+       "t": "AI and the Modern Productivity Paradox",
+       "s": "Brynjolfsson, Rock & Syverson, NBER",
+       "y": "2017",
+       "u": "https://www.nber.org/papers/w24001"
+      }
+     ]
+    },
+    {
+     "id": "3.1.3",
+     "qid": "q_complementary_investment",
+     "slug": "complementary-investment",
+     "t": "Complementary investment",
+     "q": "How much value requires new infrastructure, data systems, robotics, training, and organizational change?",
+     "n": "Intangible investment — process redesign, data pipelines, retraining, management change — historically dwarfs spending on the technology itself. System-wide change, not point solutions, is where GPT-scale value lives.",
+     "links": [
+      {
+       "t": "AI Adoption and System-Wide Change",
+       "s": "Agrawal, Gans & Goldfarb, NBER",
+       "y": "2021",
+       "u": "https://www.nber.org/papers/w28811"
+      },
+      {
+       "t": "The Productivity J-Curve (research brief)",
+       "s": "MIT IDE",
+       "y": "2019",
+       "u": "https://ide.mit.edu/sites/default/files/publications/2019-04JCurvebrief.final2_.pdf"
+      }
+     ]
+    },
+    {
+     "id": "3.1.4",
+     "qid": "q_new_demand",
+     "slug": "new-demand",
+     "t": "New demand",
+     "q": "Will AI mainly make existing goods cheaper, or create entirely new products, services, scientific projects, and consumer desires?",
+     "n": "Bessen's finding: automation raises employment where demand is elastic. Whether AI creates new wants — as electricity and computing did — or merely cheapens old ones largely decides the labor-market outcome.",
+     "links": [
+      {
+       "t": "AI and Jobs: The Role of Demand",
+       "s": "James Bessen, NBER",
+       "y": "2018",
+       "u": "https://www.nber.org/papers/w24235"
+      },
+      {
+       "t": "Artificial Intelligence and Economic Growth",
+       "s": "Aghion, Jones & Jones, NBER",
+       "y": "2019",
+       "u": "https://www.nber.org/books-and-chapters/economics-artificial-intelligence-agenda/artificial-intelligence-and-economic-growth"
+      }
+     ]
+    },
+    {
+     "id": "3.1.5",
+     "qid": "q_binding_constraints",
+     "slug": "binding-constraints",
+     "t": "Binding constraints",
+     "q": "Even if cognitive work becomes cheap, will housing, energy, regulation, physical production, and institutional capacity limit growth?",
+     "n": "Baumol's cost disease, inverted: growth is set by the sectors AI can't accelerate, not the ones it can. The strongest skeptical case catalogues the physical, regulatory, and institutional drags that cheap cognition doesn't remove.",
+     "links": [
+      {
+       "t": "Why Transformative AI Is Really, Really Hard to Achieve",
+       "s": "Ramani & Wang",
+       "y": "2023",
+       "u": "https://zhengdongwang.com/2023/06/27/why-transformative-ai-is-really-really-hard-to-achieve.html"
+      },
+      {
+       "t": "Artificial Intelligence and Economic Growth",
+       "s": "Aghion, Jones & Jones, NBER",
+       "y": "2019",
+       "u": "https://www.nber.org/books-and-chapters/economics-artificial-intelligence-agenda/artificial-intelligence-and-economic-growth"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "3.2",
+   "t": "Labor, skills, and career ladders",
+   "intro": "Exposure is broad, early displacement evidence is arriving, and the apprenticeship model that produces experts is quietly at risk.",
+   "qs": [
+    {
+     "id": "3.2.1",
+     "qid": "q_labor_displacement",
+     "slug": "labor-displacement",
+     "t": "Displacement",
+     "q": "Which tasks and occupations will be automated, augmented, transformed, or newly created — and how quickly?",
+     "n": "Exposure studies flag most occupations as partially exposed; real usage data shows adoption concentrated in software, writing, and analysis. The augmentation-vs-automation split within tasks is the number to watch.",
+     "crux": "Will AI primarily complement human labor or substitute for it?",
+     "links": [
+      {
+       "t": "GPTs are GPTs: Labor Market Impact Potential of LLMs",
+       "s": "Eloundou et al., Science",
+       "y": "2024",
+       "u": "https://www.science.org/doi/10.1126/science.adj0998"
+      },
+      {
+       "t": "The Anthropic Economic Index",
+       "s": "Anthropic",
+       "y": "2025",
+       "u": "https://www.anthropic.com/news/the-anthropic-economic-index"
+      }
+     ]
+    },
+    {
+     "id": "3.2.2",
+     "qid": "q_wage_effects",
+     "slug": "wage-effects",
+     "t": "Wages",
+     "q": "Could AI reduce worker bargaining power and wages even without producing large increases in unemployment?",
+     "n": "Acemoglu-Restrepo show 'so-so automation' can depress wages without mass unemployment. Autor's counter-case: AI could rebuild middle-skill work by extending expertise to more people. Both are live.",
+     "links": [
+      {
+       "t": "Tasks, Automation, and the Rise in US Wage Inequality",
+       "s": "Acemoglu & Restrepo, Econometrica",
+       "y": "2022",
+       "u": "https://www.nber.org/papers/w28920"
+      },
+      {
+       "t": "The Turing Trap",
+       "s": "Erik Brynjolfsson, Daedalus",
+       "y": "2022",
+       "u": "https://digitaleconomy.stanford.edu/news/the-turing-trap-the-promise-peril-of-human-like-artificial-intelligence/"
+      },
+      {
+       "t": "AI Could Actually Help Rebuild the Middle Class",
+       "s": "David Autor, Noema",
+       "y": "2024",
+       "u": "https://www.noemamag.com/how-ai-could-help-rebuild-the-middle-class/"
+      }
+     ]
+    },
+    {
+     "id": "3.2.3",
+     "qid": "q_entry_level_work",
+     "slug": "entry-level-work",
+     "t": "Entry-level work",
+     "q": "What happens if junior coding, analysis, research, design, legal, and administrative work disappears before senior roles?",
+     "n": "The first credible signal is in: relative employment declines for young workers in the most AI-exposed occupations since late 2022, concentrated where AI automates rather than augments.",
+     "links": [
+      {
+       "t": "Canaries in the Coal Mine? Employment Effects of AI",
+       "s": "Brynjolfsson, Chandar & Chen, Stanford",
+       "y": "2025",
+       "u": "https://digitaleconomy.stanford.edu/publication/canaries-in-the-coal-mine-six-facts-about-the-recent-employment-effects-of-artificial-intelligence/"
+      },
+      {
+       "t": "A Primer on 'Canaries in the Coal Mine'",
+       "s": "Bharat Chandar",
+       "y": "2025",
+       "u": "https://bharatchandar.substack.com/p/a-primer-on-canaries-in-the-coal"
+      }
+     ]
+    },
+    {
+     "id": "3.2.4",
+     "qid": "q_expertise_formation",
+     "slug": "expertise-formation",
+     "t": "Expertise formation",
+     "q": "How will people become experts if AI performs the apprenticeship tasks through which expertise was previously developed?",
+     "n": "Beane's 'shadow learning' research showed automation strips juniors of deliberate practice; generative AI compresses novice-expert performance gaps at work while quietly removing the ladder's lower rungs.",
+     "links": [
+      {
+       "t": "Learning to Work with Intelligent Machines",
+       "s": "Matt Beane, HBR",
+       "y": "2019",
+       "u": "https://hbr.org/2019/09/learning-to-work-with-intelligent-machines"
+      },
+      {
+       "t": "Generative AI at Work",
+       "s": "Brynjolfsson, Li & Raymond, QJE",
+       "y": "2025",
+       "u": "https://academic.oup.com/qje/article/140/2/889/7990658"
+      }
+     ]
+    },
+    {
+     "id": "3.2.5",
+     "qid": "q_labor_adjustment",
+     "slug": "labor-adjustment",
+     "t": "Adjustment",
+     "q": "Can education, retraining, labor mobility, credentialing, and social insurance adapt quickly enough?",
+     "n": "Labor-market institutions adapt on decade timescales; AI capability moves faster. The policy inventory — retraining, wage insurance, credential reform — exists on paper and is largely untested at speed.",
+     "links": [
+      {
+       "t": "OECD Employment Outlook 2023: AI and the Labour Market",
+       "s": "OECD",
+       "y": "2023",
+       "u": "https://www.oecd.org/en/publications/oecd-employment-outlook-2023_08785bba-en.html"
+      },
+      {
+       "t": "The Work of the Future",
+       "s": "MIT Task Force",
+       "y": "2020",
+       "u": "https://workofthefuture-taskforce.mit.edu/wp-content/uploads/2021/01/2020-Final-Report4.pdf"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "3.3",
+   "t": "Firms, markets, and industry structure",
+   "intro": "Where the profits pool, whether intelligence commoditizes, and what happens to the theory of the firm when coordination is nearly free.",
+   "qs": [
+    {
+     "id": "3.3.1",
+     "qid": "q_value_capture",
+     "slug": "value-capture",
+     "t": "Value capture",
+     "q": "Will profits accrue mainly to chipmakers, energy providers, cloud platforms, frontier labs, application companies, data owners, or AI-enabled incumbents?",
+     "n": "So far value has pooled in chips and cloud. Whether the model layer or the application layer captures more going forward — and whether revenue justifies the capex — is Sequoia's '$600B question.'",
+     "links": [
+      {
+       "t": "Who Owns the Generative AI Platform?",
+       "s": "Bornstein, Appenzeller & Casado, a16z",
+       "y": "2023",
+       "u": "https://a16z.com/who-owns-the-generative-ai-platform/"
+      },
+      {
+       "t": "AI's $600B Question",
+       "s": "David Cahn, Sequoia",
+       "y": "2024",
+       "u": "https://sequoiacap.com/article/ais-600b-question/"
+      }
+     ]
+    },
+    {
+     "id": "3.3.2",
+     "qid": "q_market_concentration",
+     "slug": "market-concentration",
+     "t": "Concentration",
+     "q": "Will scale economies produce a few dominant firms, or will open models and falling inference costs commoditize intelligence?",
+     "n": "Scale economies, data feedback loops, and capital walls point to oligopoly; open weights and collapsing inference prices point to commodity. Competition authorities are watching the vertical stack, not just the model market.",
+     "crux": "Will capability remain concentrated in a few controllable institutions or proliferate widely?",
+     "links": [
+      {
+       "t": "Market Concentration Implications of Foundation Models",
+       "s": "Vipra & Korinek, Brookings",
+       "y": "2023",
+       "u": "https://www.brookings.edu/articles/market-concentration-implications-of-foundation-models-the-invisible-hand-of-chatgpt"
+      },
+      {
+       "t": "AI Foundation Models: Initial Report",
+       "s": "UK CMA",
+       "y": "2023",
+       "u": "https://www.gov.uk/government/publications/ai-foundation-models-initial-report"
+      }
+     ]
+    },
+    {
+     "id": "3.3.3",
+     "qid": "q_firm_boundaries",
+     "slug": "firm-boundaries",
+     "t": "Firm boundaries",
+     "q": "Will companies become smaller because coordination is cheap, or larger because AI rewards data, capital, distribution, and centralized control?",
+     "n": "Coase's transaction-cost logic cuts both ways: cheap coordination shrinks the reason firms exist, while data and capital advantages push toward giantism. The empirical race is on.",
+     "links": [
+      {
+       "t": "From Coase to AI Agents",
+       "s": "California Management Review",
+       "y": "2025",
+       "u": "https://cmr.berkeley.edu/2025/04/from-coase-to-ai-agents-why-the-economics-of-the-firm-still-matters-in-the-age-of-automation/"
+      },
+      {
+       "t": "The Coasean Singularity? Market Design with AI Agents",
+       "s": "Shahidi et al., NBER",
+       "y": "2025",
+       "u": "https://www.nber.org/system/files/chapters/c15309/c15309.pdf"
+      }
+     ]
+    },
+    {
+     "id": "3.3.4",
+     "qid": "q_agent_native_markets",
+     "slug": "agent-native-markets",
+     "t": "Agent-native markets",
+     "q": "What markets emerge when agents can search, negotiate, purchase, advertise, trade, and contract with one another?",
+     "n": "Agent-to-agent commerce raises market-design questions — identity, recourse, collusion, price formation — that economists are just beginning to formalize, and that infrastructure choices will lock in early.",
+     "links": [
+      {
+       "t": "Virtual Agent Economies",
+       "s": "Tomasev et al., DeepMind",
+       "y": "2025",
+       "u": "https://arxiv.org/abs/2509.10147"
+      },
+      {
+       "t": "The Coasean Singularity? Market Design with AI Agents",
+       "s": "Shahidi et al., NBER",
+       "y": "2025",
+       "u": "https://www.nber.org/system/files/chapters/c15309/c15309.pdf"
+      }
+     ]
+    },
+    {
+     "id": "3.3.5",
+     "qid": "q_corporate_governance_of_ai",
+     "slug": "corporate-governance-of-ai",
+     "t": "Corporate governance",
+     "q": "How should boards oversee systems participating in hiring, pricing, capital allocation, compliance, and strategy?",
+     "n": "Fiduciary duty when strategy is machine-advised is unsettled law and unsettled practice. Board oversight frameworks for AI are being drafted in real time, mostly by analogy to cyber risk.",
+     "links": [
+      {
+       "t": "The Artificially Intelligent Boardroom",
+       "s": "Harvard Law School Forum on Corporate Governance",
+       "y": "2025",
+       "u": "https://corpgov.law.harvard.edu/2025/04/08/the-artificially-intelligent-boardroom/"
+      },
+      {
+       "t": "Board Oversight of AI",
+       "s": "Harvard Law School Forum on Corporate Governance",
+       "y": "2024",
+       "u": "https://corpgov.law.harvard.edu/2024/09/17/board-oversight-of-ai/"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "3.4",
+   "t": "Science, medicine, and discovery",
+   "intro": "Where AI's intellectual payoff could be largest — and where verification, institutions, and the offense-defense balance bite hardest.",
+   "qs": [
+    {
+     "id": "3.4.1",
+     "qid": "q_scientific_payoff",
+     "slug": "scientific-payoff",
+     "t": "Scientific payoff",
+     "q": "In which fields will AI produce genuine conceptual breakthroughs rather than faster search, coding, and incremental optimization?",
+     "n": "Amodei's 'compressed 21st century' makes biology the test case for AI-driven conceptual breakthroughs; the skeptical view is that AI mostly accelerates the searchable parts of science. AlphaFold remains the clearest widely recognized example so far.",
+     "links": [
+      {
+       "t": "Machines of Loving Grace",
+       "s": "Dario Amodei",
+       "y": "2024",
+       "u": "https://www.darioamodei.com/essay/machines-of-loving-grace"
+      },
+      {
+       "t": "A New Golden Age of Discovery: AI for Science",
+       "s": "Google DeepMind",
+       "y": "2024",
+       "u": "https://deepmind.google/public-policy/ai-for-science/"
+      },
+      {
+       "t": "On the Nobel Prize for AlphaFold — AI solving a 50-year grand challenge in science",
+       "s": "Demis Hassabis (@demishassabis) on X",
+       "y": "2024",
+       "u": "https://x.com/demishassabis/status/1845864764469334239"
+      }
+     ]
+    },
+    {
+     "id": "3.4.2",
+     "qid": "q_verification_bottleneck",
+     "slug": "verification-bottleneck",
+     "t": "Verification bottleneck",
+     "q": "How will science cope with a flood of plausible hypotheses, generated papers, synthetic data, and results that few humans can independently verify?",
+     "n": "Messeri & Crockett's warning: AI can produce more science while producing less understanding — epistemic monocultures where everyone's hypotheses come from the same models and nobody can check the volume.",
+     "links": [
+      {
+       "t": "AI and Illusions of Understanding in Scientific Research",
+       "s": "Messeri & Crockett, Nature",
+       "y": "2024",
+       "u": "https://www.nature.com/articles/s41586-024-07146-0"
+      }
+     ]
+    },
+    {
+     "id": "3.4.3",
+     "qid": "q_ai_in_medicine",
+     "slug": "ai-in-medicine",
+     "t": "Medicine",
+     "q": "Can AI improve diagnosis, drug discovery, and treatment while avoiding opaque errors, regulatory failures, and unequal access?",
+     "n": "Diagnostic parity keeps arriving in trials ahead of deployment, liability frameworks, and reimbursement. The gap between demonstrated capability and delivered care is now mostly institutional, not technical.",
+     "links": [
+      {
+       "t": "AI in Health and Medicine",
+       "s": "Rajpurkar, Chen, Banerjee & Topol, Nature Medicine",
+       "y": "2022",
+       "u": "https://www.nature.com/articles/s41591-021-01614-0"
+      },
+      {
+       "t": "Ethics and Governance of AI for Health",
+       "s": "WHO",
+       "y": "2021",
+       "u": "https://www.who.int/publications/i/item/9789240029200"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "3.5",
+   "t": "Distribution, ownership, and development",
+   "intro": "If the scarce inputs become compute, capital, and intellectual property rather than labor, who owns them becomes the central economic-policy question of the era.",
+   "qs": [
+    {
+     "id": "3.5.1",
+     "qid": "q_capital_versus_labor",
+     "slug": "capital-versus-labor",
+     "t": "Capital versus labor",
+     "q": "Who benefits if the scarce inputs are compute, intellectual property, electricity, data, and capital rather than human work?",
+     "n": "Korinek-Stiglitz: if AI substitutes broadly for labor, wages can fall even as output soars, and distribution then depends entirely on who owns the machines. Transition-scenario modeling makes the wage-collapse case precise.",
+     "crux": "Who will own the productive capital and infrastructure through which AI's gains flow?",
+     "links": [
+      {
+       "t": "AI and Its Implications for Income Distribution and Unemployment",
+       "s": "Korinek & Stiglitz, NBER",
+       "y": "2017",
+       "u": "https://www.nber.org/papers/w24174"
+      },
+      {
+       "t": "Scenarios for the Transition to AGI",
+       "s": "Korinek & Suh, NBER",
+       "y": "2024",
+       "u": "https://www.nber.org/papers/w32255"
+      }
+     ]
+    },
+    {
+     "id": "3.5.2",
+     "qid": "q_global_inequality",
+     "slug": "global-inequality",
+     "t": "Global inequality",
+     "q": "Will developing countries gain access to cheap expertise, or lose the low-cost-labor development path that supported earlier industrialization?",
+     "n": "The IMF finds advanced economies more exposed but better positioned to benefit. The deeper worry: AI may pull up the export-led development ladder just as the largest-ever cohort of young workers reaches it.",
+     "links": [
+      {
+       "t": "Gen-AI: Artificial Intelligence and the Future of Work",
+       "s": "IMF",
+       "y": "2024",
+       "u": "https://www.imf.org/en/publications/staff-discussion-notes/issues/2024/01/14/gen-ai-artificial-intelligence-and-the-future-of-work-542379"
+      },
+      {
+       "t": "A New Growth Strategy for Developing Nations",
+       "s": "Rodrik & Stiglitz",
+       "y": "2024",
+       "u": "https://drodrik.scholars.harvard.edu/sites/g/files/omnuum7106/files/2025-10/A%20New%20Growth%20Strategy%20for%20Developing%20Nations%20(Rodrik%20and%20Stiglitz).pdf"
+      }
+     ]
+    },
+    {
+     "id": "3.5.3",
+     "qid": "q_ownership_mechanisms",
+     "slug": "ownership-mechanisms",
+     "t": "Ownership mechanisms",
+     "q": "Could broader capital ownership, sovereign funds, social dividends, UBI, negative income taxes, or shorter workweeks distribute gains effectively?",
+     "n": "Proposals range from Altman's taxed-equity 'Moore's Law for Everything' to windfall clauses committing labs to share extreme profits. The design question — mechanisms, not just transfers — is underdeveloped relative to its stakes.",
+     "links": [
+      {
+       "t": "Moore's Law for Everything",
+       "s": "Sam Altman",
+       "y": "2021",
+       "u": "https://moores.samaltman.com/"
+      },
+      {
+       "t": "The Windfall Clause",
+       "s": "O'Keefe et al., GovAI",
+       "y": "2020",
+       "u": "https://www.governance.ai/research-paper/the-windfall-clause-distributing-the-benefits-of-ai-for-the-common-good"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "3.6",
+   "t": "Material constraints and systemic risk",
+   "intro": "The physical and financial substrate: whether grids, water, land, and capital markets can absorb the buildout — and what happens if it unwinds.",
+   "qs": [
+    {
+     "id": "3.6.1",
+     "qid": "q_energy_and_environment",
+     "slug": "energy-and-environment",
+     "t": "Energy and environment",
+     "q": "Can electrical grids, water systems, land, and local communities accommodate rapidly growing compute demand?",
+     "n": "The IEA projects data-center electricity demand roughly doubling by 2030, with AI the main driver. Siting, water, and grid interconnection queues are where the abstraction meets local politics.",
+     "links": [
+      {
+       "t": "Energy and AI",
+       "s": "IEA",
+       "y": "2025",
+       "u": "https://www.iea.org/reports/energy-and-ai"
+      },
+      {
+       "t": "Can AI Scaling Continue Through 2030?",
+       "s": "Epoch AI",
+       "y": "2024",
+       "u": "https://epoch.ai/blog/can-ai-scaling-continue-through-2030"
+      }
+     ]
+    },
+    {
+     "id": "3.6.2",
+     "qid": "q_financial_stability",
+     "slug": "financial-stability",
+     "t": "Financial stability",
+     "q": "Could synchronized agents, correlated models, concentrated investment, automated trading, or an AI-capex reversal create systemic risks?",
+     "n": "Regulators flag herding from correlated models, dependence on a few providers, and the sheer scale of AI capital expenditure as systemic scenarios — a financial-stability watchlist that barely existed two years ago.",
+     "links": [
+      {
+       "t": "The Financial Stability Implications of AI",
+       "s": "Financial Stability Board",
+       "y": "2024",
+       "u": "https://www.fsb.org/2024/11/the-financial-stability-implications-of-artificial-intelligence/"
+      },
+      {
+       "t": "Global Financial Stability Report, Ch. 3: AI and Capital Markets",
+       "s": "IMF",
+       "y": "2024",
+       "u": "https://www.imf.org/en/Publications/GFSR/Issues/2024/10/22/global-financial-stability-report-october-2024"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

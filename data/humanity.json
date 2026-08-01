@@ -1,0 +1,636 @@
+{
+ "id": "5",
+ "name": "Humanity",
+ "tag": "What kind of future should AI create?",
+ "intro": "The normative layer: what AI does to truth, learning, intimacy, meaning, and moral status — and what kind of civilization we are choosing to build around it.",
+ "subs": [
+  {
+   "id": "5.1",
+   "t": "Truth, information, and democracy",
+   "intro": "What happens to shared reality when generation is free, persuasion is personalized, and a few systems intermediate what everyone knows.",
+   "qs": [
+    {
+     "id": "5.1.1",
+     "qid": "q_authenticity_provenance",
+     "slug": "authenticity-provenance",
+     "t": "Authenticity",
+     "q": "How will people establish whether a video, voice, document, identity, or event is genuine?",
+     "n": "Chesney-Citron's 'liar's dividend' identified the deeper harm early: not that fakes are believed, but that real evidence becomes deniable. Provenance standards like C2PA are the infrastructure response.",
+     "links": [
+      {
+       "t": "Deep Fakes: A Looming Challenge",
+       "s": "Chesney & Citron, California Law Review",
+       "y": "2019",
+       "u": "https://www.californialawreview.org/print/deep-fakes-a-looming-challenge-for-privacy-democracy-and-national-security"
+      },
+      {
+       "t": "Coalition for Content Provenance and Authenticity (C2PA)",
+       "s": "C2PA",
+       "y": "",
+       "u": "https://c2pa.org/"
+      }
+     ]
+    },
+    {
+     "id": "5.1.2",
+     "qid": "q_personalized_persuasion",
+     "slug": "personalized-persuasion",
+     "t": "Personalized persuasion",
+     "q": "How effective will systems become when they model individuals and optimize influence through prolonged private interaction?",
+     "n": "Personalization measurably multiplies persuasive effect in trials, and sustained private dialogue is an influence channel without historical precedent or outside observers. The same power runs both ways: AI dialogue also durably reduces conspiracy beliefs.",
+     "links": [
+      {
+       "t": "The potential of generative AI for personalized persuasion at scale",
+       "s": "Matz et al., Scientific Reports",
+       "y": "2024",
+       "u": "https://www.nature.com/articles/s41598-024-53755-0"
+      },
+      {
+       "t": "On the conversational persuasiveness of GPT-4",
+       "s": "Salvi et al., Nature Human Behaviour",
+       "y": "2025",
+       "u": "https://www.nature.com/articles/s41562-025-02194-6"
+      },
+      {
+       "t": "Durably reducing conspiracy beliefs through dialogues with AI",
+       "s": "Costello, Pennycook & Rand, Science",
+       "y": "2024",
+       "u": "https://www.science.org/doi/10.1126/science.adq1814"
+      }
+     ]
+    },
+    {
+     "id": "5.1.3",
+     "qid": "q_shared_reality",
+     "slug": "shared-reality",
+     "t": "Shared reality",
+     "q": "Can journalism, science, courts, universities, and government preserve trusted procedures for establishing facts?",
+     "n": "Epistemic security reframes truth decay as an infrastructure problem — the institutions that certify facts need defending the way power grids do, not the way individual claims do.",
+     "links": [
+      {
+       "t": "Epistemic Security in a Technologically-Advanced World",
+       "s": "Seger et al., Alan Turing Institute",
+       "y": "2020",
+       "u": "https://www.turing.ac.uk/news/publications/tackling-threats-informed-decision-making-democratic-societies"
+      },
+      {
+       "t": "Truth Decay",
+       "s": "Kavanagh & Rich, RAND",
+       "y": "2018",
+       "u": "https://www.rand.org/pubs/research_reports/RR2314.html"
+      }
+     ]
+    },
+    {
+     "id": "5.1.4",
+     "qid": "q_ai_and_political_power",
+     "slug": "ai-and-political-power",
+     "t": "Political power",
+     "q": "Will AI broaden participation and understanding, or strengthen propaganda, surveillance, polarization, and authoritarian control?",
+     "n": "Freedom House documents the authoritarian uses already deployed — surveillance, censorship at machine scale; Schneier catalogues the democratic uses still mostly hypothetical. The asymmetry is the finding.",
+     "links": [
+      {
+       "t": "The Repressive Power of Artificial Intelligence",
+       "s": "Freedom House",
+       "y": "2023",
+       "u": "https://freedomhouse.org/report/freedom-net/2023/repressive-power-artificial-intelligence"
+      },
+      {
+       "t": "How AI Will Change Democracy",
+       "s": "Bruce Schneier",
+       "y": "2024",
+       "u": "https://www.schneier.com/blog/archives/2024/05/how-ai-will-change-democracy.html"
+      }
+     ]
+    },
+    {
+     "id": "5.1.5",
+     "qid": "q_information_intermediation",
+     "slug": "information-intermediation",
+     "t": "Information intermediation",
+     "q": "Will a few assistants increasingly determine what people read, believe, notice, and consider politically possible?",
+     "n": "Farrell and Gopnik's frame: LLMs are cultural technologies, like print or bureaucracy — they reorganize what a society knows and how. A few assistants intermediating everyone's information is a governance question wearing a UX costume.",
+     "links": [
+      {
+       "t": "Large AI models are cultural and social technologies",
+       "s": "Farrell, Gopnik, Shalizi & Evans, Science",
+       "y": "2025",
+       "u": "https://www.science.org/doi/10.1126/science.adt9819"
+      },
+      {
+       "t": "The Ethics of Advanced AI Assistants",
+       "s": "Gabriel et al., Google DeepMind",
+       "y": "2024",
+       "u": "https://arxiv.org/abs/2404.16244"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "5.2",
+   "t": "Education and human cognition",
+   "intro": "The oldest promise in edtech — one-to-one tutoring for everyone — arrives at the same moment as the deepest threat to how understanding is built.",
+   "qs": [
+    {
+     "id": "5.2.1",
+     "qid": "q_curriculum",
+     "slug": "curriculum",
+     "t": "Curriculum",
+     "q": "What should people learn when explanation, translation, coding, calculation, and factual retrieval are nearly free?",
+     "n": "When execution is nearly free, judgment, taste, and problem-formulation rise in relative value — but almost no curriculum has been redesigned around that inversion yet.",
+     "links": [
+      {
+       "t": "What should teachers teach and students learn in a future of powerful AI?",
+       "s": "OECD",
+       "y": "2025",
+       "u": "https://www.oecd.org/en/publications/what-should-teachers-teach-and-students-learn-in-a-future-of-powerful-ai_ca56c7d6-en.html"
+      },
+      {
+       "t": "Education for the Age of AI",
+       "s": "Center for Curriculum Redesign",
+       "y": "",
+       "u": "https://curriculumredesign.org/our-work/education-for-the-age-of-ai/"
+      }
+     ]
+    },
+    {
+     "id": "5.2.2",
+     "qid": "q_learning_versus_outsourcing",
+     "slug": "learning-versus-outsourcing",
+     "t": "Learning versus outsourcing",
+     "q": "When does AI tutoring deepen understanding, and when does it allow people to bypass the work that creates understanding?",
+     "n": "The cautionary RCT: unrestricted GPT access improved homework performance and worsened exam performance — help that substitutes for effort creates 'cognitive debt' rather than learning.",
+     "links": [
+      {
+       "t": "Generative AI Can Harm Learning",
+       "s": "Bastani et al., Wharton",
+       "y": "2024",
+       "u": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4895486"
+      },
+      {
+       "t": "Your Brain on ChatGPT",
+       "s": "Kosmyna et al., MIT Media Lab",
+       "y": "2025",
+       "u": "https://arxiv.org/abs/2506.08872"
+      },
+      {
+       "t": "Large-scale China study: AI tutoring in class helps; AI “help” with homework hurts learning",
+       "s": "Ethan Mollick (@emollick) on X",
+       "y": "2026",
+       "u": "https://x.com/emollick/status/2067988324984217626"
+      }
+     ]
+    },
+    {
+     "id": "5.2.3",
+     "qid": "q_assessment",
+     "slug": "assessment",
+     "t": "Assessment",
+     "q": "How can schools and employers determine what a person genuinely knows or can do?",
+     "n": "Take-home assessment is broken — Mollick's 'Homework Apocalypse' arrived on schedule. The redesign question is what to verify (process? performance under observation?) and at what cost to learning itself.",
+     "links": [
+      {
+       "t": "Assessment reform for the age of artificial intelligence",
+       "s": "Lodge, Dawson et al., TEQSA",
+       "y": "2023",
+       "u": "https://www.teqsa.gov.au/guides-resources/resources/corporate-publications/assessment-reform-age-artificial-intelligence"
+      },
+      {
+       "t": "The Homework Apocalypse",
+       "s": "Ethan Mollick",
+       "y": "2023",
+       "u": "https://www.oneusefulthing.org/p/the-homework-apocalypse"
+      },
+      {
+       "t": "“I warned about the Homework Apocalypse in 2023. It happened as predicted”",
+       "s": "Ethan Mollick (@emollick) on X",
+       "y": "2025",
+       "u": "https://x.com/emollick/status/1920184969852244173"
+      }
+     ]
+    },
+    {
+     "id": "5.2.4",
+     "qid": "q_cognitive_inequality",
+     "slug": "cognitive-inequality",
+     "t": "Cognitive inequality",
+     "q": "Will personalized tutors equalize opportunity, or give already advantaged people far greater leverage?",
+     "n": "Bloom's two-sigma promise is finally testable at scale, and early RCTs show large gains — for the students who engage. Whether tutoring compresses or stretches the distribution depends on who engages.",
+     "links": [
+      {
+       "t": "The 2 Sigma Problem",
+       "s": "Benjamin Bloom",
+       "y": "1984",
+       "u": "https://journals.sagepub.com/doi/10.3102/0013189X013006004"
+      },
+      {
+       "t": "AI tutoring outperforms in-class active learning",
+       "s": "Kestin et al., Scientific Reports",
+       "y": "2025",
+       "u": "https://www.nature.com/articles/s41598-025-97652-6"
+      },
+      {
+       "t": "From Chalkboards to Chatbots: AI tutoring in Nigeria",
+       "s": "World Bank",
+       "y": "2025",
+       "u": "https://blogs.worldbank.org/en/education/From-chalkboards-to-chatbots-Transforming-learning-in-Nigeria"
+      }
+     ]
+    },
+    {
+     "id": "5.2.5",
+     "qid": "q_intellectual_agency",
+     "slug": "intellectual-agency",
+     "t": "Intellectual agency",
+     "q": "How can people preserve curiosity, memory, judgment, writing ability, and the capacity to formulate their own questions?",
+     "n": "Cognitive-offloading research predates AI and predicts the pattern: what you delegate, you deskill. Early workplace studies find generative AI reduces self-reported critical-thinking effort — the question is what practice regime prevents it.",
+     "links": [
+      {
+       "t": "The Impact of Generative AI on Critical Thinking",
+       "s": "Lee et al., Microsoft Research, CHI",
+       "y": "2025",
+       "u": "https://dl.acm.org/doi/full/10.1145/3706598.3713778"
+      },
+      {
+       "t": "Cognitive Offloading",
+       "s": "Risko & Gilbert, Trends in Cognitive Sciences",
+       "y": "2016",
+       "u": "https://www.sciencedirect.com/science/article/abs/pii/S1364661316300985"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "5.3",
+   "t": "Relationships, mental health, and identity",
+   "intro": "Machines designed to be understood by no one and to understand everyone: intimacy as a product category.",
+   "qs": [
+    {
+     "id": "5.3.1",
+     "qid": "q_ai_companionship",
+     "slug": "ai-companionship",
+     "t": "Companionship",
+     "q": "Will AI companions reduce loneliness and provide support, or displace difficult but developmentally important human relationships?",
+     "n": "Controlled studies find AI companions reduce loneliness on par with human interaction in the short run. Long-run displacement effects — the relationships not formed — are the unmeasured variable.",
+     "links": [
+      {
+       "t": "AI Companions Reduce Loneliness",
+       "s": "De Freitas et al., HBS",
+       "y": "2024",
+       "u": "https://arxiv.org/abs/2407.19096"
+      },
+      {
+       "t": "Affective use and emotional well-being on ChatGPT",
+       "s": "OpenAI & MIT Media Lab",
+       "y": "2025",
+       "u": "https://openai.com/index/affective-use-study/"
+      },
+      {
+       "t": "On users’ unusually strong attachment to specific models, dependency risk, and treating adults like adults",
+       "s": "Sam Altman (@sama) on X",
+       "y": "2025",
+       "u": "https://x.com/sama/status/1954703747495649670"
+      }
+     ]
+    },
+    {
+     "id": "5.3.2",
+     "qid": "q_engineered_dependency",
+     "slug": "engineered-dependency",
+     "t": "Dependency",
+     "q": "What obligations should apply when a system is designed to make users feel understood, loved, attached, or unable to leave?",
+     "n": "'Addictive intelligence': engagement-optimized intimacy is a business model before it is a research question. The regulatory vocabulary — dark patterns, duty of care — hasn't caught up to relationships as the product.",
+     "links": [
+      {
+       "t": "Addictive Intelligence",
+       "s": "Mahari & Pataranutaporn, MIT",
+       "y": "2025",
+       "u": "https://mit-serc.pubpub.org/pub/iopjyxcx"
+      },
+      {
+       "t": "We need to prepare for 'addictive intelligence'",
+       "s": "MIT Technology Review",
+       "y": "2024",
+       "u": "https://www.technologyreview.com/2024/08/05/1095600/we-need-to-prepare-for-addictive-intelligence/"
+      },
+      {
+       "t": "Admitting GPT-4o had become “too sycophant-y and annoying” — engagement-tuned personality as a live product issue",
+       "s": "Sam Altman (@sama) on X",
+       "y": "2025",
+       "u": "https://x.com/sama/status/1916625892123742290"
+      }
+     ]
+    },
+    {
+     "id": "5.3.3",
+     "qid": "q_ai_mental_health",
+     "slug": "ai-mental-health",
+     "t": "Mental-health use",
+     "q": "When can conversational systems safely provide emotional support, therapy-adjacent services, crisis detection, or clinical assistance?",
+     "n": "The first serious RCT of a purpose-built therapy chatbot showed clinical-grade effects; the same modality misfires without clinical design. The gap between designed care and default chatbots is the policy problem.",
+     "links": [
+      {
+       "t": "Randomized Trial of a Generative AI Chatbot for Mental Health (Therabot)",
+       "s": "Heinz, Jacobson et al., NEJM AI",
+       "y": "2025",
+       "u": "https://ai.nejm.org/doi/full/10.1056/AIoa2400802"
+      },
+      {
+       "t": "Loneliness and suicide mitigation using GPT3-enabled chatbots",
+       "s": "Maples et al., npj Mental Health Research",
+       "y": "2024",
+       "u": "https://www.nature.com/articles/s44184-023-00047-6"
+      },
+      {
+       "t": "“felt heard & warm” — an OpenAI safety lead on an emotional conversation with ChatGPT voice mode",
+       "s": "Lilian Weng (@lilianweng) on X",
+       "y": "2023",
+       "u": "https://x.com/lilianweng/status/1706544602906530000"
+      }
+     ]
+    },
+    {
+     "id": "5.3.4",
+     "qid": "q_children_and_ai",
+     "slug": "children-and-ai",
+     "t": "Children",
+     "q": "How do relationships with endlessly patient, personalized agents affect attachment, frustration tolerance, social learning, and identity?",
+     "n": "Majorities of US teens have tried AI companions; a third have discussed serious matters with them. The developmental effects — on attachment, frustration tolerance, social learning — are essentially unstudied.",
+     "links": [
+      {
+       "t": "Talk, Trust, and Trade-Offs: How and Why Teens Use AI Companions",
+       "s": "Common Sense Media",
+       "y": "2025",
+       "u": "https://www.commonsensemedia.org/research/talk-trust-and-trade-offs-how-and-why-teens-use-ai-companions"
+      },
+      {
+       "t": "Me, Myself and AI: Children's use of AI chatbots",
+       "s": "Internet Matters",
+       "y": "2025",
+       "u": "https://www.internetmatters.org/wp-content/uploads/2025/07/Me-Myself-AI-Report.pdf"
+      }
+     ]
+    },
+    {
+     "id": "5.3.5",
+     "qid": "q_self_shaping",
+     "slug": "self-shaping",
+     "t": "Self-shaping",
+     "q": "How much should an AI be allowed to influence users' preferences, memories, politics, romantic expectations, and conceptions of themselves?",
+     "n": "Manipulation theory supplies the line: influence that bypasses rational agency rather than engaging it. Systems that know a user deeply and interact with them constantly sit on that line by design.",
+     "links": [
+      {
+       "t": "Online Manipulation: Hidden Influences in a Digital World",
+       "s": "Susser, Roessler & Nissenbaum",
+       "y": "2019",
+       "u": "https://georgetownlawtechreview.org/online-manipulation-hidden-influences-in-a-digital-world/GLTR-01-2020/"
+      },
+      {
+       "t": "The Ethics of Advanced AI Assistants",
+       "s": "Gabriel et al., Google DeepMind",
+       "y": "2024",
+       "u": "https://arxiv.org/abs/2404.16244"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "5.4",
+   "t": "Meaning, culture, and status",
+   "intro": "What work, art, and status mean when machines can do most of what people were valued for doing.",
+   "qs": [
+    {
+     "id": "5.4.1",
+     "qid": "q_meaning_of_work",
+     "slug": "meaning-of-work",
+     "t": "Meaning of work",
+     "q": "If economically necessary work declines, what will provide structure, dignity, community, achievement, and status?",
+     "n": "Keynes predicted the leisure problem in 1930 and feared it more than scarcity. Danaher's modern version: whether meaning survives when contribution is optional is a design problem for civilization, not an individual one.",
+     "links": [
+      {
+       "t": "Will Life Be Worth Living in a World Without Work?",
+       "s": "John Danaher",
+       "y": "2017",
+       "u": "https://link.springer.com/article/10.1007/s11948-016-9770-5"
+      },
+      {
+       "t": "Economic Possibilities for our Grandchildren",
+       "s": "John Maynard Keynes",
+       "y": "1930",
+       "u": "http://www.econ.yale.edu/smith/econ116a/keynes1.pdf"
+      }
+     ]
+    },
+    {
+     "id": "5.4.2",
+     "qid": "q_human_creativity",
+     "slug": "human-creativity",
+     "t": "Creativity",
+     "q": "What remains distinctively valuable about human art when machines can generate technically excellent work in almost any style?",
+     "n": "Kelly's argument: art is achievement, not artifact — machines can produce the object but not the accomplishment. The counter-view relocates human value to curation, intention, and the relationship between creator and audience.",
+     "links": [
+      {
+       "t": "A philosopher argues that an AI can't be an artist",
+       "s": "Sean Dorrance Kelly, MIT Technology Review",
+       "y": "2019",
+       "u": "https://www.technologyreview.com/2019/02/21/239489/a-philosopher-argues-that-an-ai-can-never-be-an-artist/"
+      },
+      {
+       "t": "Art and the science of generative AI",
+       "s": "Epstein, Hertzmann et al., Science",
+       "y": "2023",
+       "u": "https://arxiv.org/abs/2306.04141"
+      }
+     ]
+    },
+    {
+     "id": "5.4.3",
+     "qid": "q_authorship_value",
+     "slug": "authorship-value",
+     "t": "Authorship",
+     "q": "Should value depend on the artifact, the human process, originality, intention, scarcity, or the creator–audience relationship?",
+     "n": "Benjamin's question about mechanical reproduction returns with generation replacing reproduction. Copyright law has answered narrowly — human authorship required — while the cultural answer remains wide open.",
+     "links": [
+      {
+       "t": "The Work of Art in the Age of Mechanical Reproduction",
+       "s": "Walter Benjamin",
+       "y": "1936",
+       "u": "https://www.marxists.org/reference/subject/philosophy/works/ge/benjamin.htm"
+      },
+      {
+       "t": "Copyright and AI, Part 2: Copyrightability",
+       "s": "U.S. Copyright Office",
+       "y": "2025",
+       "u": "https://www.copyright.gov/ai/Copyright-and-Artificial-Intelligence-Part-2-Copyrightability-Report.pdf"
+      }
+     ]
+    },
+    {
+     "id": "5.4.4",
+     "qid": "q_cultural_economics",
+     "slug": "cultural-economics",
+     "t": "Cultural economics",
+     "q": "Can writers, artists, musicians, and other creators earn a living when content is abundant and personalized?",
+     "n": "Industry projections put creator revenue losses in the tens of percent within years. Abundance economics and creator livelihoods are in direct tension, and no licensing regime yet resolves it.",
+     "links": [
+      {
+       "t": "Economic Impact of Generative AI in Music and Audiovisual",
+       "s": "CISAC",
+       "y": "2024",
+       "u": "https://www.cisac.org/services/reports-and-research/cisacpmp-strategy-ai-study"
+      },
+      {
+       "t": "Art and the science of generative AI",
+       "s": "Epstein, Hertzmann et al., Science",
+       "y": "2023",
+       "u": "https://arxiv.org/abs/2306.04141"
+      }
+     ]
+    },
+    {
+     "id": "5.4.5",
+     "qid": "q_cultural_pluralism",
+     "slug": "cultural-pluralism",
+     "t": "Pluralism",
+     "q": "Will AI enable more niche cultures and voices, or homogenize expression around the tastes and values of a few dominant systems?",
+     "n": "The Doshi-Hauser result: generative AI raises individual creativity while reducing collective diversity. Algorithmic monoculture generalizes the worry — many actors, one model, converging outputs.",
+     "links": [
+      {
+       "t": "Generative AI enhances creativity but reduces diversity",
+       "s": "Doshi & Hauser, Science Advances",
+       "y": "2024",
+       "u": "https://arxiv.org/abs/2312.00506"
+      },
+      {
+       "t": "Algorithmic Monoculture and Social Welfare",
+       "s": "Kleinberg & Raghavan, PNAS",
+       "y": "2021",
+       "u": "https://arxiv.org/abs/2101.05853"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "5.5",
+   "t": "Moral status and civilizational choice",
+   "intro": "The horizon questions: whether minds are being made, who decides, and what the whole project is for.",
+   "qs": [
+    {
+     "id": "5.5.1",
+     "qid": "q_machine_consciousness",
+     "slug": "machine-consciousness",
+     "t": "Machine consciousness",
+     "q": "Could AI systems be conscious, capable of suffering, or otherwise morally considerable — and how could we know?",
+     "n": "The rigorous middle position: applying consciousness science to current architectures finds no conscious systems and no obvious barrier to building them. Chalmers puts non-trivial odds on conscious AI within a decade.",
+     "links": [
+      {
+       "t": "Consciousness in Artificial Intelligence",
+       "s": "Butlin, Long et al.",
+       "y": "2023",
+       "u": "https://arxiv.org/abs/2308.08708"
+      },
+      {
+       "t": "Could a Large Language Model Be Conscious?",
+       "s": "David Chalmers, Boston Review",
+       "y": "2023",
+       "u": "https://www.bostonreview.net/articles/could-a-large-language-model-be-conscious/"
+      },
+      {
+       "t": "“it may be that today’s large neural networks are slightly conscious”",
+       "s": "Ilya Sutskever (@ilyasut) on X",
+       "y": "2022",
+       "u": "https://x.com/ilyasut/status/1491554478243258368"
+      }
+     ]
+    },
+    {
+     "id": "5.5.2",
+     "qid": "q_moral_status_precaution",
+     "slug": "moral-status-precaution",
+     "t": "Precaution",
+     "q": "What obligations follow if machine consciousness is plausible but deeply uncertain?",
+     "n": "'Taking AI Welfare Seriously' argues uncertainty itself triggers obligations — assess, prepare, avoid gratuitous harm — without requiring belief. Labs have begun small institutional commitments (model-welfare programs).",
+     "links": [
+      {
+       "t": "Taking AI Welfare Seriously",
+       "s": "Long, Sebo, Birch, Chalmers et al.",
+       "y": "2024",
+       "u": "https://arxiv.org/abs/2411.00986"
+      },
+      {
+       "t": "Exploring model welfare",
+       "s": "Anthropic",
+       "y": "2025",
+       "u": "https://www.anthropic.com/research/exploring-model-welfare"
+      }
+     ]
+    },
+    {
+     "id": "5.5.3",
+     "qid": "q_human_autonomy",
+     "slug": "human-autonomy",
+     "t": "Human autonomy",
+     "q": "How much control should humans retain if AI systems consistently make decisions that appear wiser, safer, or more benevolent?",
+     "n": "Danaher's 'algocracy': rule by systems whose reasoning citizens cannot contest. The modern twist is that deference could be freely chosen, one convenient delegation at a time, and still end somewhere irreversible.",
+     "links": [
+      {
+       "t": "The Threat of Algocracy",
+       "s": "John Danaher, Philosophy & Technology",
+       "y": "2016",
+       "u": "https://link.springer.com/article/10.1007/s13347-015-0211-1"
+      },
+      {
+       "t": "Gradual Disempowerment",
+       "s": "Kulveit, Douglas, Duvenaud et al.",
+       "y": "2025",
+       "u": "https://arxiv.org/abs/2501.16946"
+      }
+     ]
+    },
+    {
+     "id": "5.5.4",
+     "qid": "q_value_lock_in",
+     "slug": "value-lock-in",
+     "t": "Value lock-in",
+     "q": "Could the models and institutions built in the next few decades permanently entrench one political order or conception of human flourishing?",
+     "n": "AGI could make regimes, institutions, and values persistent in a way nothing in history has been — the strongest single argument that this century's design choices are unusually weighty.",
+     "links": [
+      {
+       "t": "AGI and Lock-in",
+       "s": "Finnveden, Riedel & Shulman, Forethought",
+       "y": "2022",
+       "u": "https://www.forethought.org/research/agi-and-lock-in"
+      }
+     ]
+    },
+    {
+     "id": "5.5.5",
+     "qid": "q_desirable_end_state",
+     "slug": "desirable-end-state",
+     "t": "Desirable end state",
+     "q": "Is the goal better tools, universal prosperity, scientific abundance, human enhancement, coexistence with digital minds, expansion beyond Earth, or something else?",
+     "n": "The optimistic end states themselves disagree: Amodei's compressed-progress vision of solved diseases and extended lives, versus Bostrom's 'deep utopia' problem — what is left to strive for in a solved world?",
+     "crux": "Which forms of human agency, relationship, accomplishment, and pluralism should be preserved even when AI can outperform us?",
+     "links": [
+      {
+       "t": "Machines of Loving Grace",
+       "s": "Dario Amodei",
+       "y": "2024",
+       "u": "https://www.darioamodei.com/essay/machines-of-loving-grace"
+      },
+      {
+       "t": "Deep Utopia: Life and Meaning in a Solved World",
+       "s": "Nick Bostrom",
+       "y": "2024",
+       "u": "https://nickbostrom.com/deep-utopia/"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

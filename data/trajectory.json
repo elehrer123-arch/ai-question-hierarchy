@@ -1,0 +1,656 @@
+{
+ "id": "1",
+ "name": "Trajectory",
+ "tag": "What can AI become?",
+ "intro": "Everything downstream — safety, economics, power, meaning — is conditional on what AI actually becomes and how fast. Trajectory questions are empirical, but the evidence is noisy and the forecasting track record is short.",
+ "subs": [
+  {
+   "id": "1.1",
+   "t": "Scaling, resources, and technical limits",
+   "intro": "The near-term trajectory turns on whether the current recipe — pretraining, RL on verifiable tasks, tool use, inference-time compute — keeps paying off, and which inputs bind first.",
+   "qs": [
+    {
+     "id": "1.1.1",
+     "qid": "q_current_paradigm_ceiling",
+     "slug": "current-paradigm-ceiling",
+     "t": "Current-paradigm ceiling",
+     "q": "How far can transformers, reinforcement learning, tool use, and inference-time reasoning progress without a fundamentally new architecture?",
+     "n": "The scaling hypothesis bet that capability comes from scale, not cleverness. The live question is whether diminishing pretraining returns are being fully offset by RL on verifiable tasks and test-time compute — or whether the paradigm tops out short of general competence.",
+     "crux": "Are current architectures sufficient for broadly superhuman intelligence?",
+     "links": [
+      {
+       "t": "Will scaling work?",
+       "s": "Dwarkesh Patel",
+       "y": "2023",
+       "u": "https://www.dwarkesh.com/p/will-scaling-work"
+      },
+      {
+       "t": "The Era of Experience",
+       "s": "Silver & Sutton, DeepMind",
+       "y": "2025",
+       "u": "https://storage.googleapis.com/deepmind-media/Era-of-Experience%20/The%20Era%20of%20Experience%20Paper.pdf"
+      },
+      {
+       "t": "“there is no wall” — responding to reports of diminishing scaling returns",
+       "s": "Sam Altman (@sama) on X",
+       "y": "2024",
+       "u": "https://x.com/sama/status/1856941766915641580"
+      }
+     ]
+    },
+    {
+     "id": "1.1.2",
+     "qid": "q_sources_of_progress",
+     "slug": "sources-of-progress",
+     "t": "Sources of improvement",
+     "q": "How much future progress will come from compute, algorithms, data, inference-time search, better environments, or system-level scaffolding?",
+     "n": "Decompositions of historical progress attribute gains roughly evenly to compute scaling and algorithmic efficiency. Which input dominates going forward determines who can compete, what governance levers exist, and how abruptly progress could slow.",
+     "links": [
+      {
+       "t": "The Bitter Lesson",
+       "s": "Richard Sutton",
+       "y": "2019",
+       "u": "http://www.incompleteideas.net/IncIdeas/BitterLesson.html"
+      },
+      {
+       "t": "Algorithmic Progress in Language Models",
+       "s": "Epoch AI",
+       "y": "2024",
+       "u": "https://epoch.ai/blog/algorithmic-progress-in-language-models"
+      }
+     ]
+    },
+    {
+     "id": "1.1.3",
+     "qid": "q_data_constraints",
+     "slug": "data-constraints",
+     "t": "Data constraints",
+     "q": "Can synthetic data, self-play, simulation, and interaction substitute for the finite supply of high-quality human-generated data?",
+     "n": "Frontier pretraining has plausibly consumed most high-quality public text. Synthetic data clearly works where verification is cheap (math, code); whether it generalizes to open-ended domains without model collapse is contested.",
+     "links": [
+      {
+       "t": "Will We Run Out of Data?",
+       "s": "Villalobos et al., Epoch AI",
+       "y": "2024",
+       "u": "https://arxiv.org/abs/2211.04325"
+      },
+      {
+       "t": "AI models collapse when trained on recursively generated data",
+       "s": "Shumailov et al., Nature",
+       "y": "2024",
+       "u": "https://www.nature.com/articles/s41586-024-07566-y"
+      }
+     ]
+    },
+    {
+     "id": "1.1.4",
+     "qid": "q_physical_bottlenecks",
+     "slug": "physical-bottlenecks",
+     "t": "Physical bottlenecks",
+     "q": "Will chips, fabrication, memory, networking, electricity, cooling, land, or capital materially slow progress?",
+     "n": "Training compute has grown ~4–5× per year. Power availability, HBM supply, advanced packaging, and the sheer capital intensity of frontier clusters are the leading candidates for what binds first.",
+     "links": [
+      {
+       "t": "Can AI Scaling Continue Through 2030?",
+       "s": "Epoch AI",
+       "y": "2024",
+       "u": "https://epoch.ai/blog/can-ai-scaling-continue-through-2030"
+      },
+      {
+       "t": "AI's Power Requirements Under Exponential Growth",
+       "s": "RAND",
+       "y": "2025",
+       "u": "https://www.rand.org/pubs/research_reports/RRA3572-1.html"
+      },
+      {
+       "t": "Announcing GPT-4.5: “out of GPUs” — compute as the binding constraint, live",
+       "s": "Sam Altman (@sama) on X",
+       "y": "2025",
+       "u": "https://x.com/sama/status/1895203654103351462"
+      }
+     ]
+    },
+    {
+     "id": "1.1.5",
+     "qid": "q_capability_predictability",
+     "slug": "capability-predictability",
+     "t": "Predictability",
+     "q": "Will capabilities improve smoothly enough to forecast, or emerge through strategically surprising jumps?",
+     "n": "Loss curves are smooth, but downstream capabilities can look step-like. Whether emergence is real or an artifact of discontinuous metrics matters enormously for whether labs and governments get advance warning.",
+     "links": [
+      {
+       "t": "Emergent Abilities of Large Language Models",
+       "s": "Wei et al.",
+       "y": "2022",
+       "u": "https://arxiv.org/abs/2206.07682"
+      },
+      {
+       "t": "Are Emergent Abilities a Mirage?",
+       "s": "Schaeffer et al., NeurIPS",
+       "y": "2023",
+       "u": "https://arxiv.org/abs/2304.15004"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "1.2",
+   "t": "General intelligence and missing capabilities",
+   "intro": "Beyond benchmarks: whether current systems are on a path to broad competence, or are missing ingredients that scale alone won't supply.",
+   "qs": [
+    {
+     "id": "1.2.1",
+     "qid": "q_generality_jaggedness",
+     "slug": "generality-jaggedness",
+     "t": "Generality",
+     "q": "Will systems become broadly competent across unfamiliar domains, or remain highly capable but fundamentally jagged?",
+     "n": "Today's models are superhuman on some tasks and fail at things a child can do — the 'jagged frontier.' Whether jaggedness is a transient artifact of training distributions or intrinsic to the paradigm is the crux.",
+     "links": [
+      {
+       "t": "Sparks of Artificial General Intelligence",
+       "s": "Bubeck et al., Microsoft Research",
+       "y": "2023",
+       "u": "https://arxiv.org/abs/2303.12712"
+      },
+      {
+       "t": "Navigating the Jagged Technological Frontier",
+       "s": "Dell'Acqua et al., HBS",
+       "y": "2023",
+       "u": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4573321"
+      },
+      {
+       "t": "Coining “Jagged Intelligence” — SOTA models solve impressive problems while failing at dumb ones",
+       "s": "Andrej Karpathy (@karpathy) on X",
+       "y": "2024",
+       "u": "https://x.com/karpathy/status/1816531576228053133"
+      }
+     ]
+    },
+    {
+     "id": "1.2.2",
+     "qid": "q_missing_ingredients",
+     "slug": "missing-ingredients",
+     "t": "Missing ingredients",
+     "q": "Are continual learning, causal reasoning, world models, embodied experience, persistent memory, or social understanding still major unsolved problems?",
+     "n": "LeCun and others argue autoregressive LLMs structurally lack world models and continual learning; scaling proponents reply that these emerge with scale or can be scaffolded around. Continual learning is increasingly cited as the binding gap.",
+     "links": [
+      {
+       "t": "Why I don't think AGI is right around the corner",
+       "s": "Dwarkesh Patel",
+       "y": "2025",
+       "u": "https://www.dwarkesh.com/p/timelines-june-2025"
+      },
+      {
+       "t": "A Path Towards Autonomous Machine Intelligence",
+       "s": "Yann LeCun",
+       "y": "2022",
+       "u": "https://openreview.net/pdf?id=BZ5a1r-kVsf"
+      },
+      {
+       "t": "Why AGI is still a decade away: agents lack continual learning — “the decade of agents”",
+       "s": "Andrej Karpathy (@karpathy) on X",
+       "y": "2025",
+       "u": "https://x.com/karpathy/status/1979644538185752935"
+      }
+     ]
+    },
+    {
+     "id": "1.2.3",
+     "qid": "q_reasoning_reliability",
+     "slug": "reasoning-reliability",
+     "t": "Reasoning reliability",
+     "q": "Can systems reason accurately outside familiar patterns rather than merely producing convincing-looking chains of thought?",
+     "n": "Reasoning models raise accuracy, but performance degrades under superficial variations of familiar problems, and stated chains of thought are not faithful accounts of the underlying computation.",
+     "links": [
+      {
+       "t": "GSM-Symbolic: Limitations of Mathematical Reasoning in LLMs",
+       "s": "Mirzadeh et al., Apple",
+       "y": "2024",
+       "u": "https://machinelearning.apple.com/research/gsm-symbolic"
+      },
+      {
+       "t": "Reasoning models don't always say what they think",
+       "s": "Anthropic",
+       "y": "2025",
+       "u": "https://www.anthropic.com/research/reasoning-models-dont-say-think"
+      }
+     ]
+    },
+    {
+     "id": "1.2.4",
+     "qid": "q_learning_efficiency",
+     "slug": "learning-efficiency",
+     "t": "Learning efficiency",
+     "q": "Can AI learn new domains from small amounts of experience as effectively as capable humans?",
+     "n": "Humans learn new skills from orders of magnitude less data. Chollet argues sample-efficient skill acquisition is what intelligence is — making learning efficiency a definition, not just a milestone.",
+     "links": [
+      {
+       "t": "On the Measure of Intelligence",
+       "s": "François Chollet",
+       "y": "2019",
+       "u": "https://arxiv.org/abs/1911.01547"
+      },
+      {
+       "t": "Building Machines That Learn and Think Like People",
+       "s": "Lake et al.",
+       "y": "2016",
+       "u": "https://arxiv.org/abs/1604.00289"
+      }
+     ]
+    },
+    {
+     "id": "1.2.5",
+     "qid": "q_agi_recognition",
+     "slug": "agi-recognition",
+     "t": "AGI recognition",
+     "q": "What should count as human-level or general intelligence, and would we recognize it before its consequences became obvious?",
+     "n": "Definitions have drifted from Turing tests to economic thresholds to capability profiles. Without agreed criteria, arrival may be declared only in retrospect — after the consequences have already begun compounding.",
+     "links": [
+      {
+       "t": "Levels of AGI",
+       "s": "Morris et al., DeepMind",
+       "y": "2023",
+       "u": "https://arxiv.org/abs/2311.02462"
+      },
+      {
+       "t": "A Definition of AGI",
+       "s": "Hendrycks et al.",
+       "y": "2025",
+       "u": "https://arxiv.org/abs/2510.18212"
+      },
+      {
+       "t": "o3 scores 87.5% on ARC-AGI — a step-change in novel-task adaptation, and still not AGI",
+       "s": "François Chollet (@fchollet) on X",
+       "y": "2024",
+       "u": "https://x.com/fchollet/status/1870169764762710376"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "1.3",
+   "t": "Agents and long-horizon autonomy",
+   "intro": "The shift from chatbots to systems that act over hours, days, and months — and the most-watched trend lines in AI forecasting.",
+   "qs": [
+    {
+     "id": "1.3.1",
+     "qid": "q_agent_task_horizons",
+     "slug": "agent-task-horizons",
+     "t": "Task horizon",
+     "q": "How quickly will the length of tasks agents can complete reliably grow — from minutes to days, months, or entire organizational projects?",
+     "n": "METR finds the length of software tasks agents complete at 50% reliability has doubled roughly every seven months. Extrapolating that curve is now the single most load-bearing input to short-timeline forecasts.",
+     "crux": "How rapidly will reliable autonomous task horizons grow?",
+     "links": [
+      {
+       "t": "Measuring AI Ability to Complete Long Tasks",
+       "s": "METR",
+       "y": "2025",
+       "u": "https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/"
+      },
+      {
+       "t": "Measuring AI Ability to Complete Long Software Tasks (paper)",
+       "s": "Kwa et al., METR",
+       "y": "2025",
+       "u": "https://arxiv.org/abs/2503.14499"
+      }
+     ]
+    },
+    {
+     "id": "1.3.2",
+     "qid": "q_agent_persistence",
+     "slug": "agent-persistence",
+     "t": "Persistence",
+     "q": "Can agents maintain coherent memories, plans, goals, and identities across long periods and changing circumstances?",
+     "n": "Long-running agents drift: extended-operation benchmarks and real deployments show degrading coherence, hallucinated context, and occasional identity breakdown well before task-horizon limits are reached.",
+     "links": [
+      {
+       "t": "Vending-Bench: Long-Term Coherence of Autonomous Agents",
+       "s": "Andon Labs",
+       "y": "2025",
+       "u": "https://arxiv.org/abs/2502.15840"
+      },
+      {
+       "t": "Project Vend: Can Claude run a small shop?",
+       "s": "Anthropic",
+       "y": "2025",
+       "u": "https://www.anthropic.com/research/project-vend-1"
+      }
+     ]
+    },
+    {
+     "id": "1.3.3",
+     "qid": "q_open_world_competence",
+     "slug": "open-world-competence",
+     "t": "Open-world competence",
+     "q": "Can agents recover from unforeseen events rather than succeeding only in structured environments?",
+     "n": "Benchmark success overstates real autonomy: agents perform well on well-scoped tasks and fail on messy, underspecified ones. Recovery from novelty is what separates demos from deployable systems.",
+     "links": [
+      {
+       "t": "TheAgentCompany: Benchmarking LLM Agents on Real World Tasks",
+       "s": "Xu et al., CMU",
+       "y": "2024",
+       "u": "https://arxiv.org/abs/2412.14161"
+      },
+      {
+       "t": "AI Agents That Matter",
+       "s": "Kapoor et al., Princeton",
+       "y": "2024",
+       "u": "https://arxiv.org/abs/2407.01502"
+      }
+     ]
+    },
+    {
+     "id": "1.3.4",
+     "qid": "q_multi_agent_systems",
+     "slug": "multi-agent-systems",
+     "t": "Multi-agent systems",
+     "q": "Will teams of agents produce greater intelligence, or create coordination failures, collusion, duplication, and unstable emergent behavior?",
+     "n": "Whether many agents compose into something greater is first a capability question: division of labor, communication protocols, emergent specialization. Early simulacra experiments show believable coordination; whether it scales into real collective intelligence is open. (The failure modes — collusion, correlated errors, cascades — are treated under Safety 2.4.)",
+     "links": [
+      {
+       "t": "Open Problems in Cooperative AI",
+       "s": "Dafoe et al., DeepMind",
+       "y": "2020",
+       "u": "https://arxiv.org/abs/2012.08630"
+      },
+      {
+       "t": "Generative Agents: Interactive Simulacra of Human Behavior",
+       "s": "Park et al., Stanford/Google",
+       "y": "2023",
+       "u": "https://arxiv.org/abs/2304.03442"
+      }
+     ]
+    },
+    {
+     "id": "1.3.5",
+     "qid": "q_agent_economic_autonomy",
+     "slug": "agent-economic-autonomy",
+     "t": "Economic autonomy",
+     "q": "When will agents be able to earn and spend money, hire people, negotiate, operate businesses, and initiate further activity with little supervision?",
+     "n": "Agents already transact in sandboxes and small real deployments. The open questions are legal status, payment and identity infrastructure, and the point at which unsupervised economic initiative becomes routine.",
+     "links": [
+      {
+       "t": "Virtual Agent Economies",
+       "s": "Tomasev et al., DeepMind",
+       "y": "2025",
+       "u": "https://arxiv.org/abs/2509.10147"
+      },
+      {
+       "t": "Project Vend: Can Claude run a small shop?",
+       "s": "Anthropic",
+       "y": "2025",
+       "u": "https://www.anthropic.com/research/project-vend-1"
+      },
+      {
+       "t": "Andreessen grants the agent Truth Terminal $50k after negotiating with it directly — an early case of an agent acquiring money",
+       "s": "Marc Andreessen (@pmarca) on X",
+       "y": "2024",
+       "u": "https://x.com/pmarca/status/1810813293805851044"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "1.4",
+   "t": "Embodied and physical intelligence",
+   "intro": "Whether the LLM playbook transfers to the physical world — and what stays human if it doesn't.",
+   "qs": [
+    {
+     "id": "1.4.1",
+     "qid": "q_general_purpose_robotics",
+     "slug": "general-purpose-robotics",
+     "t": "General-purpose robotics",
+     "q": "When will robots learn unfamiliar household, laboratory, industrial, or construction tasks from ordinary instructions?",
+     "n": "Vision-language-action models are the current bet that robotics follows the LLM playbook: broad foundation models plus fine-tuning, rather than task-specific engineering. Early results are promising and narrow.",
+     "links": [
+      {
+       "t": "π0: A Vision-Language-Action Flow Model",
+       "s": "Physical Intelligence",
+       "y": "2024",
+       "u": "https://arxiv.org/abs/2410.24164"
+      },
+      {
+       "t": "Gemini Robotics: Bringing AI into the Physical World",
+       "s": "Google DeepMind",
+       "y": "2025",
+       "u": "https://arxiv.org/abs/2503.20020"
+      },
+      {
+       "t": "Announcing Project GR00T, a “moonshot to solve embodied AGI” via a humanoid foundation model",
+       "s": "Jim Fan (@DrJimFan) on X",
+       "y": "2024",
+       "u": "https://x.com/DrJimFan/status/1769860044324319658"
+      }
+     ]
+    },
+    {
+     "id": "1.4.2",
+     "qid": "q_sim_to_real_transfer",
+     "slug": "sim-to-real-transfer",
+     "t": "Sim-to-real transfer",
+     "q": "Can learning from video and simulation overcome the scarcity and expense of physical-world training data?",
+     "n": "Physical interaction data is scarce and costly to collect at internet scale. Whether video pretraining and simulation can substitute is the robotics analogue of the synthetic-data question — and similarly unresolved.",
+     "links": [
+      {
+       "t": "Sporks of AGI",
+       "s": "Sergey Levine",
+       "y": "2025",
+       "u": "https://sergeylevine.substack.com/p/sporks-of-agi"
+      },
+      {
+       "t": "Sim-to-Real Transfer in Deep RL for Robotics: a Survey",
+       "s": "Zhao et al.",
+       "y": "2020",
+       "u": "https://arxiv.org/abs/2009.13303"
+      }
+     ]
+    },
+    {
+     "id": "1.4.3",
+     "qid": "q_robot_dexterity",
+     "slug": "robot-dexterity",
+     "t": "Dexterity and robustness",
+     "q": "Can robots become simultaneously capable, safe, inexpensive, and reliable in messy human environments?",
+     "n": "Skeptics argue touch-rich manipulation lacks both the data and the forgiving physics that made language tractable. Capable, safe, cheap, and reliable is a four-way tradeoff no one has yet closed in an open environment.",
+     "links": [
+      {
+       "t": "Why Today's Humanoids Won't Learn Dexterity",
+       "s": "Rodney Brooks",
+       "y": "2025",
+       "u": "https://rodneybrooks.com/why-todays-humanoids-wont-learn-dexterity/"
+      },
+      {
+       "t": "Robot Dexterity Still Seems Hard",
+       "s": "Brian Potter, Construction Physics",
+       "y": "2025",
+       "u": "https://www.construction-physics.com/p/robot-dexterity-still-seems-hard"
+      }
+     ]
+    },
+    {
+     "id": "1.4.4",
+     "qid": "q_autonomous_mobility",
+     "slug": "autonomous-mobility",
+     "t": "Autonomous mobility",
+     "q": "How capable will self-driving vehicles, drones, ships, and industrial machines become outside controlled settings?",
+     "n": "Driving is the furthest-deployed case of open-world embodied autonomy, with quantified safety records now public — a preview of the deployment, liability, and trust questions every other mobile system will face. (Military autonomy is treated under Safety 2.5 and Power 4.3.)",
+     "links": [
+      {
+       "t": "Waymo rider-only crash data vs. human benchmarks",
+       "s": "Kusano et al., Waymo",
+       "y": "2024",
+       "u": "https://waymo.com/research/comparison-of-waymo-rider-only-crash-data-to-human/"
+      }
+     ]
+    },
+    {
+     "id": "1.4.5",
+     "qid": "q_embodied_ai_economics",
+     "slug": "embodied-ai-economics",
+     "t": "Economic significance",
+     "q": "Will physical bottlenecks keep most work human, or will embodied AI eventually automate a large share of manual labor?",
+     "n": "If manipulation stays hard, most physical labor stays human even under transformative cognitive AI — which reshapes every downstream economic and social scenario. Market forecasts and engineering skepticism currently point in different directions.",
+     "links": [
+      {
+       "t": "The global market for humanoid robots",
+       "s": "Goldman Sachs Research",
+       "y": "2024",
+       "u": "https://www.goldmansachs.com/insights/articles/the-global-market-for-robots-could-reach-38-billion-by-2035"
+      },
+      {
+       "t": "Why Today's Humanoids Won't Learn Dexterity",
+       "s": "Rodney Brooks",
+       "y": "2025",
+       "u": "https://rodneybrooks.com/why-todays-humanoids-wont-learn-dexterity/"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "1.5",
+   "t": "Recursive acceleration and automated discovery",
+   "intro": "The possibility that AI accelerates the development of AI — the mechanism behind most fast-takeoff scenarios, and the frontier of AI-for-science.",
+   "qs": [
+    {
+     "id": "1.5.1",
+     "qid": "q_automated_ai_research",
+     "slug": "automated-ai-research",
+     "t": "Automated AI research",
+     "q": "How much of model design, coding, experimentation, evaluation, and engineering can AI perform itself?",
+     "n": "AI R&D automation is simultaneously a capability frontier and a risk threshold in every major lab's safety framework. Current agents beat human experts on short research tasks and degrade on long ones.",
+     "crux": "Can AI substantially automate AI research and scientific discovery?",
+     "links": [
+      {
+       "t": "RE-Bench: Evaluating frontier AI R&D capabilities",
+       "s": "METR",
+       "y": "2024",
+       "u": "https://arxiv.org/abs/2411.15114"
+      },
+      {
+       "t": "AlphaEvolve: A coding agent for designing advanced algorithms",
+       "s": "Google DeepMind",
+       "y": "2025",
+       "u": "https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/"
+      },
+      {
+       "t": "AI self-improvement will be a game-changer — and “extremely gradual across many years, probably a decade”",
+       "s": "Jason Wei (@_jasonwei) on X",
+       "y": "2025",
+       "u": "https://x.com/_jasonwei/status/1939762496757539297"
+      }
+     ]
+    },
+    {
+     "id": "1.5.2",
+     "qid": "q_recursive_feedback_speed",
+     "slug": "recursive-feedback-speed",
+     "t": "Feedback speed",
+     "q": "Would AI-assisted AI research produce gradual acceleration or a discontinuous intelligence explosion?",
+     "n": "Takeoff debates increasingly hinge on a narrower question: whether software-only improvement can sustain acceleration while compute is fixed, or whether hardware cycles keep the feedback loop gradual.",
+     "links": [
+      {
+       "t": "A compute-centric framework for AI takeoff speeds",
+       "s": "Tom Davidson, Open Philanthropy",
+       "y": "2023",
+       "u": "https://www.alignmentforum.org/posts/Gc9FGtdXhK9sCSEYu/what-a-compute-centric-framework-says-about-ai-takeoff"
+      },
+      {
+       "t": "Will AI R&D Automation Cause a Software Intelligence Explosion?",
+       "s": "Eth & Davidson, Forethought",
+       "y": "2025",
+       "u": "https://www.forethought.org/research/will-ai-r-and-d-automation-cause-a-software-intelligence-explosion"
+      },
+      {
+       "t": "Launching Situational Awareness: “virtually nobody is pricing in what’s coming in AI”",
+       "s": "Leopold Aschenbrenner (@leopoldasch) on X",
+       "y": "2024",
+       "u": "https://x.com/leopoldasch/status/1798016486700884233"
+      }
+     ]
+    },
+    {
+     "id": "1.5.3",
+     "qid": "q_scientific_originality",
+     "slug": "scientific-originality",
+     "t": "Scientific originality",
+     "q": "Can AI originate important hypotheses and conceptual frameworks rather than merely recombine existing knowledge?",
+     "n": "Blind-review studies find LLM-generated research ideas rated more novel than experts' — while skeptics argue paradigm-founding insight is different in kind from recombination. 'The Einstein question' remains open.",
+     "links": [
+      {
+       "t": "Can LLMs Generate Novel Research Ideas?",
+       "s": "Si, Yang & Hashimoto, Stanford",
+       "y": "2024",
+       "u": "https://arxiv.org/abs/2409.04109"
+      },
+      {
+       "t": "The Einstein AI model",
+       "s": "Thomas Wolf, Hugging Face",
+       "y": "2025",
+       "u": "https://thomwolf.io/blog/scientific-ai.html"
+      },
+      {
+       "t": "Current AI is “a country of yes-men on servers” — A+ students who can’t ask Einstein’s questions",
+       "s": "Thomas Wolf (@Thom_Wolf) on X",
+       "y": "2025",
+       "u": "https://x.com/Thom_Wolf/status/1897630495527104932"
+      }
+     ]
+    },
+    {
+     "id": "1.5.4",
+     "qid": "q_closed_loop_science",
+     "slug": "closed-loop-science",
+     "t": "Closed-loop science",
+     "q": "Can agents autonomously generate hypotheses, run robotic experiments, analyze results, replicate findings, and choose subsequent experiments?",
+     "n": "Prototype systems have closed the loop in narrow chemistry and ML domains. Scaling to consequential science runs into verification, lab automation, and the cost of being wrong in the physical world.",
+     "links": [
+      {
+       "t": "Autonomous chemical research with LLMs (Coscientist)",
+       "s": "Boiko et al., Nature",
+       "y": "2023",
+       "u": "https://www.nature.com/articles/s41586-023-06792-0"
+      },
+      {
+       "t": "The AI Scientist: Fully Automated Scientific Discovery",
+       "s": "Sakana AI",
+       "y": "2024",
+       "u": "https://arxiv.org/abs/2408.06292"
+      }
+     ]
+    },
+    {
+     "id": "1.5.5",
+     "qid": "q_detecting_acceleration",
+     "slug": "detecting-acceleration",
+     "t": "Detection",
+     "q": "What evidence would reveal that recursive acceleration or transformative scientific automation had begun?",
+     "n": "If recursion begins inside frontier labs, external indicators may lag badly. Scenario exercises try to specify what observable early signals — hiring, publication patterns, capability jumps — would look like.",
+     "links": [
+      {
+       "t": "AI 2027",
+       "s": "Kokotajlo, Alexander et al.",
+       "y": "2025",
+       "u": "https://ai-2027.com"
+      },
+      {
+       "t": "Three Types of Intelligence Explosion",
+       "s": "Forethought",
+       "y": "2025",
+       "u": "https://www.forethought.org/research/three-types-of-intelligence-explosion"
+      },
+      {
+       "t": "Six-word story: “near the singularity; unclear which side”",
+       "s": "Sam Altman (@sama) on X",
+       "y": "2025",
+       "u": "https://x.com/sama/status/1875603249472139576"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

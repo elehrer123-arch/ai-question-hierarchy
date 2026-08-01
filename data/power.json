@@ -1,0 +1,668 @@
+{
+ "id": "4",
+ "name": "Power",
+ "tag": "Who controls AI, and under what rules?",
+ "intro": "Governance questions are about who decides: how rules attach to a fast-moving technology, whether states can keep up, how great-power competition shapes deployment, and who owns what.",
+ "subs": [
+  {
+   "id": "4.1",
+   "t": "Regulatory design",
+   "intro": "What to regulate, when to intervene, and how to write rules that survive contact with the technology's pace.",
+   "qs": [
+    {
+     "id": "4.1.1",
+     "qid": "q_regulatory_object",
+     "slug": "regulatory-object",
+     "t": "Regulatory object",
+     "q": "Should rules attach to compute, training runs, model capabilities, weights, developers, deployers, applications, or resulting harms?",
+     "n": "Compute is the most governable input — quantifiable, excludable, produced by a concentrated supply chain — but capability maps poorly onto FLOP counts, and application-layer rules miss the frontier entirely.",
+     "links": [
+      {
+       "t": "Frontier AI Regulation: Managing Emerging Risks",
+       "s": "Anderljung et al., GovAI",
+       "y": "2023",
+       "u": "https://arxiv.org/abs/2307.03718"
+      },
+      {
+       "t": "Computing Power and the Governance of AI",
+       "s": "Sastry, Heim et al.",
+       "y": "2024",
+       "u": "https://arxiv.org/abs/2402.08797"
+      }
+     ]
+    },
+    {
+     "id": "4.1.2",
+     "qid": "q_capability_thresholds",
+     "slug": "capability-thresholds",
+     "t": "Thresholds",
+     "q": "Which measurable capabilities or resource levels should trigger licensing, evaluation, reporting, or access restrictions?",
+     "n": "FLOP thresholds (10^25 in the EU AI Act, 10^26 in vetoed SB-1047) are proxies that decay as algorithms improve. Hooker's critique: they're already leaky, and capability-based triggers are hard to measure pre-deployment.",
+     "links": [
+      {
+       "t": "On the Limitations of Compute Thresholds",
+       "s": "Sara Hooker",
+       "y": "2024",
+       "u": "https://arxiv.org/abs/2407.05694"
+      },
+      {
+       "t": "The Role of Compute Thresholds for AI Governance",
+       "s": "Institute for Law & AI",
+       "y": "2024",
+       "u": "https://law-ai.org/wp-content/uploads/2024/11/The-Role-of-Compute-Thresholds-for-AI-Governance.pdf"
+      }
+     ]
+    },
+    {
+     "id": "4.1.3",
+     "qid": "q_ex_ante_ex_post_liability",
+     "slug": "ex-ante-ex-post-liability",
+     "t": "Ex ante versus ex post",
+     "q": "When is predeployment approval justified, when is liability after harm sufficient — and which actors along the value chain should bear it?",
+     "n": "Liability regimes can price risk without an approval bureaucracy — Weil's case for tort law as AI governance — but catastrophic harms break the ex post logic, and agent autonomy diffuses responsibility across developers, deployers, and users at every link in the chain.",
+     "links": [
+      {
+       "t": "Tort Law as a Tool for Mitigating Catastrophic Risk from AI",
+       "s": "Gabriel Weil",
+       "y": "2024",
+       "u": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4694006"
+      },
+      {
+       "t": "The Limits of Liability",
+       "s": "Gabriel Weil, Institute for Law & AI",
+       "y": "2024",
+       "u": "https://law-ai.org/the-limits-of-liability/"
+      },
+      {
+       "t": "Governing AI Agents",
+       "s": "Noam Kolt, Notre Dame Law Review",
+       "y": "2025",
+       "u": "https://arxiv.org/abs/2501.07913"
+      },
+      {
+       "t": "AI Liability Along the Value Chain",
+       "s": "Botero Arcila, Mozilla",
+       "y": "2025",
+       "u": "https://blog.mozilla.org/netpolicy/files/2025/03/AI-Liability-Along-the-Value-Chain_Beatriz-Arcila.pdf"
+      }
+     ]
+    },
+    {
+     "id": "4.1.4",
+     "qid": "q_transparency_requirements",
+     "slug": "transparency-requirements",
+     "t": "Transparency",
+     "q": "What should companies disclose about training, evaluations, incidents, energy use, safeguards, and deployment?",
+     "n": "Measured transparency has declined as competition intensified. Mandatory incident reporting — the aviation-safety model — is the most commonly proposed floor beneath voluntary disclosure.",
+     "links": [
+      {
+       "t": "The Foundation Model Transparency Index",
+       "s": "Bommasani et al., Stanford CRFM",
+       "y": "2023",
+       "u": "https://arxiv.org/abs/2310.12941"
+      },
+      {
+       "t": "AI Incidents: Key Components of a Mandatory Reporting Regime",
+       "s": "CSET",
+       "y": "2024",
+       "u": "https://cset.georgetown.edu/publication/ai-incidents-key-components-for-a-mandatory-reporting-regime/"
+      }
+     ]
+    },
+    {
+     "id": "4.1.5",
+     "qid": "q_regulatory_adaptability",
+     "slug": "regulatory-adaptability",
+     "t": "Adaptability",
+     "q": "How can rules evolve with the technology without creating arbitrary authority, regulatory capture, or permanent incumbent advantage?",
+     "n": "The pacing problem meets capture risk: rules slow enough to be legitimate are too slow to be relevant. Regulatory markets — licensed private regulators competing on outcomes — are one attempt to square it.",
+     "links": [
+      {
+       "t": "Regulatory Markets for AI Safety",
+       "s": "Clark & Hadfield",
+       "y": "2020",
+       "u": "https://arxiv.org/abs/2001.00078"
+      },
+      {
+       "t": "The Pacing Problem and the Future of Technology Regulation",
+       "s": "Adam Thierer, Mercatus",
+       "y": "2018",
+       "u": "https://www.mercatus.org/bridge/commentary/pacing-problem-and-future-technology-regulation"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "4.2",
+   "t": "State capacity and public institutions",
+   "intro": "Whether governments can understand, use, and if necessary constrain a technology developed almost entirely outside them.",
+   "qs": [
+    {
+     "id": "4.2.1",
+     "qid": "q_government_technical_capacity",
+     "slug": "government-technical-capacity",
+     "t": "Technical competence",
+     "q": "Can governments recruit enough talent to evaluate systems, investigate incidents, procure AI, and challenge industry claims?",
+     "n": "Government pay scales and clearance timelines lose to lab compensation by an order of magnitude. AI safety institutes are the current workaround: small, technical, and deliberately outside normal civil-service structures.",
+     "links": [
+      {
+       "t": "Building AI Surge Capacity",
+       "s": "IAPS",
+       "y": "2024",
+       "u": "https://www.iaps.ai/research/building-ai-surge-capacity"
+      },
+      {
+       "t": "Building Talent and Institutional Readiness",
+       "s": "Atlantic Council",
+       "y": "2026",
+       "u": "https://www.atlanticcouncil.org/in-depth-research-reports/issue-brief/building-talent-and-institutional-readiness/"
+      }
+     ]
+    },
+    {
+     "id": "4.2.2",
+     "qid": "q_government_use_of_ai",
+     "slug": "government-use-of-ai",
+     "t": "Government use",
+     "q": "How should AI be deployed in welfare, taxation, policing, courts, immigration, intelligence, and public administration?",
+     "n": "Agency adoption reached far further by 2020 than most realized — mostly unglamorous, mostly ungoverned. The stakes: state AI decisions are coercive in a way commercial ones aren't.",
+     "links": [
+      {
+       "t": "Government by Algorithm",
+       "s": "Engstrom, Ho, Sharkey & Cuéllar",
+       "y": "2020",
+       "u": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3551505"
+      },
+      {
+       "t": "Government AI Landscape Assessment",
+       "s": "Code for America",
+       "y": "2026",
+       "u": "https://codeforamerica.org/explore/government-ai-landscape-assessment/"
+      },
+      {
+       "t": "Governing in the Age of AI",
+       "s": "Tony Blair Institute",
+       "y": "2024",
+       "u": "https://institute.global/insights/politics-and-governance/governing-in-the-age-of-ai-a-new-model-to-transform-the-state"
+      }
+     ]
+    },
+    {
+     "id": "4.2.3",
+     "qid": "q_public_ai_infrastructure",
+     "slug": "public-ai-infrastructure",
+     "t": "Public infrastructure",
+     "q": "Should states provide sovereign compute, national models, public datasets, shared safety infrastructure, or publicly funded alternatives?",
+     "n": "Sovereign-AI programs answer a dependency worry: nearly all frontier capability sits with a handful of US firms. The objection is cost realism — states buying relevance in a game priced in tens of billions.",
+     "links": [
+      {
+       "t": "Public AI: Infrastructure for the Common Good",
+       "s": "Public AI Network",
+       "y": "2024",
+       "u": "https://publicai.network/whitepaper/"
+      },
+      {
+       "t": "Sovereign AI Index",
+       "s": "CNAS",
+       "y": "2025",
+       "u": "https://interactives.cnas.org/reports/sovereign-ai-index/"
+      }
+     ]
+    },
+    {
+     "id": "4.2.4",
+     "qid": "q_emergency_powers",
+     "slug": "emergency-powers",
+     "t": "Emergency powers",
+     "q": "What authority should governments possess during a severe AI incident, and how can abuse of those powers be prevented?",
+     "n": "What a government can lawfully do mid-incident — pause a deployment, compel disclosure, seize weights — is largely undefined in advance. Emergency-preparedness work is trying to write the playbook before it's needed.",
+     "links": [
+      {
+       "t": "AI Emergency Preparedness",
+       "s": "Wasil et al.",
+       "y": "2024",
+       "u": "https://arxiv.org/abs/2407.17347"
+      },
+      {
+       "t": "Preparing for an AI Crisis",
+       "s": "Chatham House",
+       "y": "2026",
+       "u": "https://www.chathamhouse.org/2026/03/breaking-deadlock-ai-governance/04-preparing-ai-crisis-recommendations"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "4.3",
+   "t": "Geopolitics and military power",
+   "intro": "AI as the object of great-power competition — and the pressures that competition puts on every safety margin upstream.",
+   "qs": [
+    {
+     "id": "4.3.1",
+     "qid": "q_race_dynamics",
+     "slug": "race-dynamics",
+     "t": "Race dynamics",
+     "q": "Does strategic competition encourage beneficial investment or cause firms and states to cut safety margins and deploy prematurely?",
+     "n": "Race models formalize the intuition: the closer the competition, the less anyone spends on safety. Danzig's 'technology roulette' argument extends it — even the winner inherits systems it doesn't fully control.",
+     "crux": "Can governments coordinate on major risks without believing they are surrendering a strategic race?",
+     "links": [
+      {
+       "t": "Racing to the Precipice",
+       "s": "Armstrong, Bostrom & Shulman",
+       "y": "2016",
+       "u": "https://link.springer.com/article/10.1007/s00146-015-0590-y"
+      },
+      {
+       "t": "Technology Roulette",
+       "s": "Richard Danzig, CNAS",
+       "y": "2018",
+       "u": "https://www.cnas.org/publications/reports/technology-roulette"
+      },
+      {
+       "t": "Departing as OpenAI’s AGI Readiness lead: neither labs nor the world are ready",
+       "s": "Miles Brundage (@Miles_Brundage) on X",
+       "y": "2024",
+       "u": "https://x.com/Miles_Brundage/status/1849138802864087234"
+      }
+     ]
+    },
+    {
+     "id": "4.3.2",
+     "qid": "q_us_china_competition",
+     "slug": "us-china-competition",
+     "t": "US–China competition",
+     "q": "Will leadership depend primarily on chips, electricity, algorithms, manufacturing, talent, capital, data, or commercial diffusion?",
+     "n": "Buchanan's triad (data, compute, algorithms) frames the inputs; Ding's diffusion thesis counters that adoption capacity, not invention, decides hegemonic transitions — a lens under which the race looks very different.",
+     "links": [
+      {
+       "t": "The AI Triad and What It Means for National Security Strategy",
+       "s": "Ben Buchanan, CSET",
+       "y": "2020",
+       "u": "https://cset.georgetown.edu/publication/the-ai-triad-and-what-it-means-for-national-security-strategy/"
+      },
+      {
+       "t": "Technology and the Rise of Great Powers",
+       "s": "Jeffrey Ding, International Affairs",
+       "y": "2025",
+       "u": "https://academic.oup.com/ia/article-abstract/101/3/1133/8125200"
+      },
+      {
+       "t": "“DeepSeek R1 is AI’s Sputnik moment”",
+       "s": "Marc Andreessen (@pmarca) on X",
+       "y": "2025",
+       "u": "https://x.com/pmarca/status/1883640142591853011"
+      }
+     ]
+    },
+    {
+     "id": "4.3.3",
+     "qid": "q_export_controls",
+     "slug": "export-controls",
+     "t": "Export controls",
+     "q": "Can controls meaningfully delay competitors, or will they accelerate substitution and damage domestic firms and allies?",
+     "n": "The October 2022 controls were the most aggressive tech denial since the Cold War. DeepSeek and Huawei's advances sharpened the substitution critique; the delay-vs-backfire ledger is still being written.",
+     "links": [
+      {
+       "t": "Choking Off China's Access to the Future of AI",
+       "s": "Gregory Allen, CSIS",
+       "y": "2022",
+       "u": "https://www.csis.org/analysis/choking-chinas-access-future-ai"
+      },
+      {
+       "t": "The Limits of Chip Export Controls",
+       "s": "CSIS",
+       "y": "2025",
+       "u": "https://www.csis.org/analysis/limits-chip-export-controls-meeting-china-challenge"
+      },
+      {
+       "t": "Announcing “On DeepSeek and Export Controls” — chip controls as the fork between two futures",
+       "s": "Dario Amodei (@DarioAmodei) on X",
+       "y": "2025",
+       "u": "https://x.com/DarioAmodei/status/1884636410839535967"
+      }
+     ]
+    },
+    {
+     "id": "4.3.4",
+     "qid": "q_military_integration",
+     "slug": "military-integration",
+     "t": "Military integration",
+     "q": "How should AI be used in intelligence, cyber operations, autonomous weapons, targeting, command systems, and nuclear decision-making?",
+     "n": "Wargaming studies find LLMs tend to escalate, occasionally to nuclear use, and the ICRC argues for legal limits on weapon autonomy before integration becomes routine. Command-and-intelligence integration is proceeding faster than doctrine either way; the nuclear question is the sharpest.",
+     "links": [
+      {
+       "t": "How Might AI Affect the Risk of Nuclear War?",
+       "s": "RAND",
+       "y": "2018",
+       "u": "https://www.rand.org/pubs/perspectives/PE296.html"
+      },
+      {
+       "t": "AI and International Stability: Risks and Confidence-Building Measures",
+       "s": "CNAS",
+       "y": "2021",
+       "u": "https://www.cnas.org/publications/reports/ai-and-international-stability-risks-and-confidence-building-measures"
+      },
+      {
+       "t": "Escalation Risks from LLMs in Military and Diplomatic Decision-Making",
+       "s": "Rivera et al., Stanford",
+       "y": "2024",
+       "u": "https://arxiv.org/abs/2401.03408"
+      },
+      {
+       "t": "ICRC Position on Autonomous Weapon Systems",
+       "s": "ICRC",
+       "y": "2021",
+       "u": "https://www.icrc.org/en/document/icrc-position-autonomous-weapon-systems"
+      }
+     ]
+    },
+    {
+     "id": "4.3.5",
+     "qid": "q_weights_security",
+     "slug": "weights-security",
+     "t": "Espionage and proliferation",
+     "q": "Can model weights, algorithms, chip designs, and research knowledge be secured once they become central strategic assets?",
+     "n": "RAND's weights-security analysis defines five attacker tiers and concludes that defending against top-tier state operations may be beyond any private company — which makes security a public problem, not a corporate one.",
+     "links": [
+      {
+       "t": "Securing AI Model Weights",
+       "s": "Nevo et al., RAND",
+       "y": "2024",
+       "u": "https://www.rand.org/pubs/research_reports/RRA2849-1.html"
+      },
+      {
+       "t": "A Playbook for Securing AI Model Weights",
+       "s": "RAND",
+       "y": "2024",
+       "u": "https://www.rand.org/pubs/research_briefs/RBA2849-1.html"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "4.4",
+   "t": "International coordination and verification",
+   "intro": "Whether rivals can cooperate on shared risks — and whether any agreement could be verified if they did.",
+   "qs": [
+    {
+     "id": "4.4.1",
+     "qid": "q_shared_risks_cooperation",
+     "slug": "shared-risks-cooperation",
+     "t": "Common interests",
+     "q": "Which risks are sufficiently shared that rival states could cooperate despite broader geopolitical conflict?",
+     "n": "The candidate zones: evaluation science, verification technology, and loss-of-control red lines — areas where rivals share downside the way they shared it on nuclear accidents. Bengio and others have mapped the technical overlap.",
+     "crux": "Can governments coordinate on major risks without believing they are surrendering a strategic race?",
+     "links": [
+      {
+       "t": "In Which Areas of Technical AI Safety Could Geopolitical Rivals Cooperate?",
+       "s": "Bucknall, Trager, Bengio et al.",
+       "y": "2025",
+       "u": "https://arxiv.org/abs/2504.12914"
+      },
+      {
+       "t": "Can the US and China Cooperate on AI?",
+       "s": "Brookings",
+       "y": "2025",
+       "u": "https://www.brookings.edu/articles/can-the-us-and-china-cooperate-on-ai/"
+      }
+     ]
+    },
+    {
+     "id": "4.4.2",
+     "qid": "q_international_verification",
+     "slug": "international-verification",
+     "t": "Verification",
+     "q": "Can states reliably observe major training runs, compute clusters, model transfers, dangerous capabilities, or prohibited deployments?",
+     "n": "Compute's physical footprint — power draw, cooling, supply chains — makes AI more verifiable than most software. Layered verification schemes, including on-chip mechanisms, are the frontier proposals.",
+     "links": [
+      {
+       "t": "Verification Methods for International AI Agreements",
+       "s": "Wasil et al.",
+       "y": "2024",
+       "u": "https://arxiv.org/abs/2408.16074"
+      },
+      {
+       "t": "Verifying International Agreements on AI",
+       "s": "Baker, Brundage, Heim et al.",
+       "y": "2025",
+       "u": "https://arxiv.org/abs/2507.15916"
+      }
+     ]
+    },
+    {
+     "id": "4.4.3",
+     "qid": "q_international_institutions",
+     "slug": "international-institutions",
+     "t": "Institutions",
+     "q": "Should cooperation rely on existing organizations or require a new body analogous to the IAEA?",
+     "n": "IAEA, CERN, and IPCC analogies each fit a different function — inspection, joint research, consensus assessment. Regime-complex thinking predicts many overlapping bodies rather than one AI agency.",
+     "links": [
+      {
+       "t": "International Institutions for Advanced AI",
+       "s": "Ho et al., GovAI/DeepMind",
+       "y": "2023",
+       "u": "https://arxiv.org/abs/2307.04699"
+      },
+      {
+       "t": "Envisioning a Global Regime Complex to Govern AI",
+       "s": "Klein & Patrick, Carnegie",
+       "y": "2024",
+       "u": "https://carnegieendowment.org/research/2024/03/envisioning-a-global-regime-complex-to-govern-artificial-intelligence"
+      }
+     ]
+    },
+    {
+     "id": "4.4.4",
+     "qid": "q_regulatory_interoperability",
+     "slug": "regulatory-interoperability",
+     "t": "Interoperability",
+     "q": "Can different national regulatory systems recognize common evaluations, audits, and safety standards?",
+     "n": "Mutual recognition of evals and audits is the trade-friction question: without it, compliance fragments by jurisdiction; with it, the strictest regime quietly sets the global floor (or the loosest one erodes it).",
+     "links": [
+      {
+       "t": "Strengthening International Cooperation on AI",
+       "s": "Brookings/CEPS Forum",
+       "y": "2021",
+       "u": "https://www.brookings.edu/articles/strengthening-international-cooperation-on-ai/"
+      },
+      {
+       "t": "Interoperability in AI Safety Governance",
+       "s": "Chin et al., UNU",
+       "y": "2026",
+       "u": "https://arxiv.org/abs/2601.06153"
+      }
+     ]
+    },
+    {
+     "id": "4.4.5",
+     "qid": "q_global_representation",
+     "slug": "global-representation",
+     "t": "Representation",
+     "q": "How can countries without frontier labs or large compute resources influence decisions that may profoundly affect them?",
+     "n": "Most compute, capital, and rule-writing sits in a handful of countries; most of the affected population sits elsewhere. The UN's advisory-body process is the main current attempt to widen the table.",
+     "links": [
+      {
+       "t": "The Case for Including the Global South in AI Governance",
+       "s": "GovAI",
+       "y": "2023",
+       "u": "https://www.governance.ai/analysis/the-case-for-including-the-global-south-in-ai-governance-conversations"
+      },
+      {
+       "t": "Governing AI for Humanity",
+       "s": "UN High-Level Advisory Body",
+       "y": "2024",
+       "u": "https://www.un.org/en/ai-advisory-body"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "4.5",
+   "t": "Ownership, openness, access, and rights",
+   "intro": "Who controls the institutions, models, data, and digital identities through which AI's power is exercised.",
+   "qs": [
+    {
+     "id": "4.5.1",
+     "qid": "q_open_versus_closed",
+     "slug": "open-versus-closed",
+     "t": "Open versus closed models",
+     "q": "When does openness improve competition, research, and accountability, and when does it irreversibly proliferate dangerous capability?",
+     "n": "The marginal-risk framing asks what open weights add beyond existing tools; the irreversibility framing answers that releases can't be recalled when capabilities cross dangerous thresholds. Both are right about different regimes.",
+     "crux": "Will capability remain concentrated in a few controllable institutions or proliferate widely?",
+     "links": [
+      {
+       "t": "Open-Sourcing Highly Capable Foundation Models",
+       "s": "Seger et al., GovAI",
+       "y": "2023",
+       "u": "https://arxiv.org/abs/2311.09227"
+      },
+      {
+       "t": "On the Societal Impact of Open Foundation Models",
+       "s": "Kapoor, Bommasani et al.",
+       "y": "2024",
+       "u": "https://arxiv.org/abs/2403.07918"
+      },
+      {
+       "t": "Backing “Open Source AI Is the Path Forward”: platforms must be open to be safe and diverse",
+       "s": "Yann LeCun (@ylecun) on X",
+       "y": "2024",
+       "u": "https://x.com/ylecun/status/1815777652621316261"
+      }
+     ]
+    },
+    {
+     "id": "4.5.2",
+     "qid": "q_concentration_of_power",
+     "slug": "concentration-of-power",
+     "t": "Concentration of power",
+     "q": "Is it acceptable for a small number of private companies to steward systems with potentially society-wide influence?",
+     "n": "The concern now runs beyond market power: analyses of AI-enabled coups argue that whoever controls advanced AI could convert it into political power directly — making internal lab governance a constitutional question.",
+     "links": [
+      {
+       "t": "AI-Enabled Coups: How a Small Group Could Use AI to Seize Power",
+       "s": "Davidson et al., Forethought",
+       "y": "2025",
+       "u": "https://www.forethought.org/research/ai-enabled-coups-how-a-small-group-could-use-ai-to-seize-power"
+      },
+      {
+       "t": "Artificial Power: 2025 Landscape Report",
+       "s": "AI Now Institute",
+       "y": "2025",
+       "u": "https://ainowinstitute.org/publications/research/executive-summary-artificial-power"
+      }
+     ]
+    },
+    {
+     "id": "4.5.3",
+     "qid": "q_frontier_lab_governance",
+     "slug": "frontier-lab-governance",
+     "t": "Frontier-lab governance",
+     "q": "Which governance structures can keep frontier AI labs accountable to their stated missions under commercial and geopolitical pressure?",
+     "n": "Frontier labs combine novel corporate forms — nonprofit boards, capped profits, long-term benefit trusts — with concentrated founder control and deep dependence on outside capital and compute. The 2023 OpenAI board crisis and the restructuring that followed made the question concrete: which mechanisms remain binding when founders, boards, investors, cloud partners, and competition pull in different directions?",
+     "links": [
+      {
+       "t": "Our structure",
+       "s": "OpenAI",
+       "y": "",
+       "u": "https://openai.com/our-structure/"
+      },
+      {
+       "t": "The Long-Term Benefit Trust",
+       "s": "Anthropic",
+       "y": "2023",
+       "u": "https://www.anthropic.com/news/the-long-term-benefit-trust"
+      },
+      {
+       "t": "Board Control of a Charity's Subsidiaries: The Saga of OpenAI",
+       "s": "Aprill, Chan Loui & Horwitz, UCLA Law / SSRN",
+       "y": "2024",
+       "u": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4720202"
+      },
+      {
+       "t": "The OpenAI Files",
+       "s": "The Midas Project & Tech Oversight Project",
+       "y": "2025",
+       "u": "https://www.openaifiles.org/"
+      }
+     ]
+    },
+    {
+     "id": "4.5.4",
+     "qid": "q_training_data_rights",
+     "slug": "training-data-rights",
+     "t": "Training data",
+     "q": "When are consent, licensing, attribution, or compensation required for copyrighted and personal material?",
+     "n": "Fair use doctrine is being stress-tested in dozens of suits. The supply-chain framing maps who owes whom at each stage from scraping to output — and why 'the model learned like a human reads' satisfies no one.",
+     "links": [
+      {
+       "t": "Talkin' 'Bout AI Generation: Copyright and the Generative-AI Supply Chain",
+       "s": "Lee, Cooper & Grimmelmann",
+       "y": "2023",
+       "u": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4523551"
+      },
+      {
+       "t": "Foundation Models and Fair Use",
+       "s": "Henderson, Lemley et al.",
+       "y": "2023",
+       "u": "https://arxiv.org/abs/2303.15715"
+      },
+      {
+       "t": "Resigning from Stability AI over the claim that training on copyrighted work is “fair use”",
+       "s": "Ed Newton-Rex (@ednewtonrex) on X",
+       "y": "2023",
+       "u": "https://x.com/ednewtonrex/status/1724902327151452486"
+      }
+     ]
+    },
+    {
+     "id": "4.5.5",
+     "qid": "q_privacy_and_identity",
+     "slug": "privacy-and-identity",
+     "t": "Privacy and identity",
+     "q": "Who controls an individual's data, voice, likeness, writing style, preferences, memories, and behavioral model?",
+     "n": "Digital replicas have outpaced likeness law, and behavioral models of individuals raise questions consent frameworks weren't built for: you can decline to share data and still be modeled.",
+     "links": [
+      {
+       "t": "Rethinking Privacy in the AI Era",
+       "s": "King & Meinhardt, Stanford HAI",
+       "y": "2024",
+       "u": "https://hai.stanford.edu/sites/default/files/2024-02/White-Paper-Rethinking-Privacy-AI-Era.pdf"
+      },
+      {
+       "t": "Copyright and AI, Part 1: Digital Replicas",
+       "s": "U.S. Copyright Office",
+       "y": "2024",
+       "u": "https://www.copyright.gov/ai/Copyright-and-Artificial-Intelligence-Part-1-Digital-Replicas-Report.pdf"
+      }
+     ]
+    },
+    {
+     "id": "4.5.6",
+     "qid": "q_access_and_portability",
+     "slug": "access-and-portability",
+     "t": "Access and portability",
+     "q": "Who should receive access to the most capable systems, and should users be able to move their data, memories, and agents between providers?",
+     "n": "Compute-based governance assumes a Compute North; most of the world is Compute South. And whether memories and agents are portable across providers will shape lock-in the way data portability shaped platforms.",
+     "links": [
+      {
+       "t": "Compute North vs. Compute South",
+       "s": "Lehdonvirta et al., AIES",
+       "y": "2024",
+       "u": "https://ojs.aaai.org/index.php/AIES/article/view/31683"
+      },
+      {
+       "t": "Infrastructure for AI Agents",
+       "s": "Chan, Hadfield, Anderljung et al.",
+       "y": "2025",
+       "u": "https://arxiv.org/abs/2501.10114"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

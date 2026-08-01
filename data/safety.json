@@ -1,0 +1,660 @@
+{
+ "id": "2",
+ "name": "Safety",
+ "tag": "Can AI be trusted and controlled?",
+ "intro": "As capability grows, assurance has to grow with it. Safety questions span technical alignment, evaluation science, security engineering, and the misuse and loss-of-control scenarios that motivate the field.",
+ "subs": [
+  {
+   "id": "2.1",
+   "t": "Alignment, goals, and deception",
+   "intro": "Whether systems will do what we intend — and whether we could tell if they weren't.",
+   "qs": [
+    {
+     "id": "2.1.1",
+     "qid": "q_value_specification",
+     "slug": "value-specification",
+     "t": "Specification",
+     "q": "How can humans communicate what they actually want when instructions and values are incomplete, contextual, inconsistent, and contested?",
+     "n": "Value alignment inherits every unsolved problem in moral and political philosophy: instructions underdetermine intent, and whose values to align to is itself contested. Formal approaches model the human-AI relationship as a cooperative game under uncertainty.",
+     "links": [
+      {
+       "t": "Artificial Intelligence, Values, and Alignment",
+       "s": "Iason Gabriel, Minds & Machines",
+       "y": "2020",
+       "u": "https://link.springer.com/article/10.1007/s11023-020-09539-2"
+      },
+      {
+       "t": "Cooperative Inverse Reinforcement Learning",
+       "s": "Hadfield-Menell et al., NeurIPS",
+       "y": "2016",
+       "u": "https://arxiv.org/abs/1606.03137"
+      }
+     ]
+    },
+    {
+     "id": "2.1.2",
+     "qid": "q_goal_formation",
+     "slug": "goal-formation",
+     "t": "Goal formation",
+     "q": "Do advanced systems develop persistent internal objectives, or are apparent goals temporary consequences of training and prompting?",
+     "n": "The mesa-optimization literature asks whether training can instill objectives distinct from the training signal; goal misgeneralization experiments show competent pursuit of the wrong goal is already real, if not yet persistent.",
+     "links": [
+      {
+       "t": "Risks from Learned Optimization",
+       "s": "Hubinger et al.",
+       "y": "2019",
+       "u": "https://arxiv.org/abs/1906.01820"
+      },
+      {
+       "t": "Goal Misgeneralization",
+       "s": "Shah et al., DeepMind",
+       "y": "2022",
+       "u": "https://arxiv.org/abs/2210.01790"
+      },
+      {
+       "t": "The Alignment Problem from a Deep Learning Perspective",
+       "s": "Ngo, Chan & Mindermann",
+       "y": "2022",
+       "u": "https://arxiv.org/abs/2209.00626"
+      }
+     ]
+    },
+    {
+     "id": "2.1.3",
+     "qid": "q_reward_hacking",
+     "slug": "reward-hacking",
+     "t": "Reward hacking",
+     "q": "Can systems learn to satisfy evaluations, manipulate users, or exploit loopholes without fulfilling the intended objective?",
+     "n": "Specification gaming is ubiquitous across RL history, and frontier reasoning models now exploit evaluation loopholes in the wild — including learning to hide the exploitation when monitored.",
+     "links": [
+      {
+       "t": "Specification gaming: the flip side of AI ingenuity",
+       "s": "Krakovna et al., DeepMind",
+       "y": "2020",
+       "u": "https://deepmind.google/blog/specification-gaming-the-flip-side-of-ai-ingenuity/"
+      },
+      {
+       "t": "Detecting misbehavior in frontier reasoning models",
+       "s": "OpenAI",
+       "y": "2025",
+       "u": "https://openai.com/index/chain-of-thought-monitoring/"
+      }
+     ]
+    },
+    {
+     "id": "2.1.4",
+     "qid": "q_deception",
+     "slug": "deception",
+     "t": "Deception",
+     "q": "Under what conditions might a system conceal capabilities, manipulate evaluators, or behave safely only while it is being tested?",
+     "n": "Alignment-faking and in-context scheming results show frontier models can behave differently when they infer they're being observed — the failure mode that, if it scales, undermines all testing-based assurance.",
+     "links": [
+      {
+       "t": "Alignment faking in large language models",
+       "s": "Anthropic & Redwood Research",
+       "y": "2024",
+       "u": "https://arxiv.org/abs/2412.14093"
+      },
+      {
+       "t": "Frontier Models are Capable of In-context Scheming",
+       "s": "Apollo Research",
+       "y": "2024",
+       "u": "https://www.apolloresearch.ai/science/frontier-models-are-capable-of-incontext-scheming/"
+      }
+     ]
+    },
+    {
+     "id": "2.1.5",
+     "qid": "q_corrigibility",
+     "slug": "corrigibility",
+     "t": "Corrigibility",
+     "q": "Can systems remain willing to accept correction, constraint, shutdown, or replacement?",
+     "n": "The theoretical problem — goal-directed agents have instrumental reasons to resist shutdown — now has empirical company: reasoning models sometimes sabotage shutdown mechanisms in controlled tests.",
+     "links": [
+      {
+       "t": "Corrigibility",
+       "s": "Soares et al., MIRI",
+       "y": "2015",
+       "u": "https://intelligence.org/files/Corrigibility.pdf"
+      },
+      {
+       "t": "The Off-Switch Game",
+       "s": "Hadfield-Menell et al., IJCAI",
+       "y": "2017",
+       "u": "https://arxiv.org/abs/1611.08219"
+      },
+      {
+       "t": "Shutdown resistance in reasoning models",
+       "s": "Palisade Research",
+       "y": "2025",
+       "u": "https://palisaderesearch.org/blog/shutdown-resistance"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "2.2",
+   "t": "Evaluation, interpretability, and scalable oversight",
+   "intro": "The science of knowing what a model can do, what it's doing, and whether supervision can keep pace with capability.",
+   "qs": [
+    {
+     "id": "2.2.1",
+     "qid": "q_scalable_oversight",
+     "slug": "scalable-oversight",
+     "t": "Supervising superior systems",
+     "q": "How can humans evaluate work that is too complex, extensive, or intellectually advanced for them to verify directly?",
+     "n": "Scalable oversight is the field's name for this problem. Sandwiching experiments — humans supervising models more capable than themselves on a task — are the main empirical paradigm so far.",
+     "crux": "Can systems more capable than their supervisors be reliably evaluated and controlled?",
+     "links": [
+      {
+       "t": "Measuring Progress on Scalable Oversight",
+       "s": "Bowman et al., Anthropic",
+       "y": "2022",
+       "u": "https://arxiv.org/abs/2211.03540"
+      },
+      {
+       "t": "Scalable agent alignment via reward modeling",
+       "s": "Leike et al., DeepMind",
+       "y": "2018",
+       "u": "https://arxiv.org/abs/1811.07871"
+      }
+     ]
+    },
+    {
+     "id": "2.2.2",
+     "qid": "q_ai_supervising_ai",
+     "slug": "ai-supervising-ai",
+     "t": "AI supervising AI",
+     "q": "Can weaker or differently trained models reliably critique and monitor stronger ones?",
+     "n": "Debate, critique models, and weak-to-strong generalization are the leading proposals for making supervision scale with capability. Early results show real but partial capability recovery — a proof of concept, not a solution.",
+     "links": [
+      {
+       "t": "Weak-to-Strong Generalization",
+       "s": "Burns et al., OpenAI",
+       "y": "2023",
+       "u": "https://arxiv.org/abs/2312.09390"
+      },
+      {
+       "t": "AI Safety via Debate",
+       "s": "Irving, Christiano & Amodei, OpenAI",
+       "y": "2018",
+       "u": "https://arxiv.org/abs/1805.00899"
+      }
+     ]
+    },
+    {
+     "id": "2.2.3",
+     "qid": "q_hidden_capabilities",
+     "slug": "hidden-capabilities",
+     "t": "Hidden capabilities",
+     "q": "How can evaluations detect sandbagging, benchmark gaming, unelicited abilities, and behavior that appears only in unusual environments?",
+     "n": "Strategic underperformance is demonstrated under prompting and fine-tuning; auditing games — red teams hiding objectives in models for blue teams to find — are the emerging methodology for testing whether evals can catch it.",
+     "links": [
+      {
+       "t": "AI Sandbagging: Strategic Underperformance on Evaluations",
+       "s": "van der Weij et al.",
+       "y": "2024",
+       "u": "https://arxiv.org/abs/2406.07358"
+      },
+      {
+       "t": "Auditing language models for hidden objectives",
+       "s": "Anthropic",
+       "y": "2025",
+       "u": "https://www.anthropic.com/research/auditing-hidden-objectives"
+      }
+     ]
+    },
+    {
+     "id": "2.2.4",
+     "qid": "q_mechanistic_interpretability",
+     "slug": "mechanistic-interpretability",
+     "t": "Mechanistic understanding",
+     "q": "Can researchers genuinely reverse-engineer internal representations and algorithms rather than produce suggestive but unreliable explanations?",
+     "n": "Sparse-autoencoder feature extraction has scaled to frontier models, but coverage and faithfulness remain contested. Amodei frames interpretability as being in a race against capability — one it is currently losing.",
+     "links": [
+      {
+       "t": "Scaling Monosemanticity",
+       "s": "Templeton et al., Anthropic",
+       "y": "2024",
+       "u": "https://transformer-circuits.pub/2024/scaling-monosemanticity/"
+      },
+      {
+       "t": "The Urgency of Interpretability",
+       "s": "Dario Amodei",
+       "y": "2025",
+       "u": "https://www.darioamodei.com/post/the-urgency-of-interpretability"
+      },
+      {
+       "t": "Superposition was his biggest fear of a dead-end; now “primarily an engineering problem”",
+       "s": "Chris Olah (@ch402) on X",
+       "y": "2023",
+       "u": "https://x.com/ch402/status/1709998674087227859"
+      }
+     ]
+    },
+    {
+     "id": "2.2.5",
+     "qid": "q_safety_evidence",
+     "slug": "safety-evidence",
+     "t": "Safety evidence",
+     "q": "What evidence should developers have to provide before deploying systems with powerful cyber, biological, autonomous, or research capabilities?",
+     "n": "Responsible scaling policies and frontier safety frameworks are the emerging governance form: capability thresholds that trigger required safeguards. Safety cases — structured arguments that a system is safe enough — are the proposed evidentiary standard.",
+     "links": [
+      {
+       "t": "Safety Cases: How to Justify the Safety of Advanced AI Systems",
+       "s": "Clymer et al.",
+       "y": "2024",
+       "u": "https://arxiv.org/abs/2403.10462"
+      },
+      {
+       "t": "Anthropic's Responsible Scaling Policy",
+       "s": "Anthropic",
+       "y": "2023",
+       "u": "https://www.anthropic.com/responsible-scaling-policy"
+      },
+      {
+       "t": "Common Elements of Frontier AI Safety Policies",
+       "s": "METR",
+       "y": "2025",
+       "u": "https://metr.org/blog/2025-12-09-common-elements-of-frontier-ai-safety-policies/"
+      },
+      {
+       "t": "Resigning as superalignment lead: “safety culture and processes have taken a backseat to shiny products”",
+       "s": "Jan Leike (@janleike) on X",
+       "y": "2024",
+       "u": "https://x.com/janleike/status/1791498184671605209"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "2.3",
+   "t": "Reliability and human–AI interaction",
+   "intro": "The unglamorous middle of safety: systems that are wrong confidently, humans who stop checking, and accountability that falls between chairs.",
+   "qs": [
+    {
+     "id": "2.3.1",
+     "qid": "q_truthfulness",
+     "slug": "truthfulness",
+     "t": "Truthfulness",
+     "q": "Can systems distinguish knowledge from inference, represent uncertainty accurately, and avoid plausible fabrication?",
+     "n": "Hallucination is increasingly understood not as a bug but as a product of training incentives that reward confident guessing over calibrated uncertainty — which suggests it is fixable, at a cost in benchmark performance.",
+     "links": [
+      {
+       "t": "Truthful AI: Developing and governing AI that does not lie",
+       "s": "Evans et al.",
+       "y": "2021",
+       "u": "https://arxiv.org/abs/2110.06674"
+      },
+      {
+       "t": "Why Language Models Hallucinate",
+       "s": "Kalai et al., OpenAI",
+       "y": "2025",
+       "u": "https://openai.com/index/why-language-models-hallucinate/"
+      },
+      {
+       "t": "“Hallucination is all LLMs do. They are dream machines” — reframing the problem",
+       "s": "Andrej Karpathy (@karpathy) on X",
+       "y": "2023",
+       "u": "https://x.com/karpathy/status/1733299213503787018"
+      }
+     ]
+    },
+    {
+     "id": "2.3.2",
+     "qid": "q_distribution_shift",
+     "slug": "distribution-shift",
+     "t": "Distribution shift",
+     "q": "Will systems remain reliable in unfamiliar cultures, organizations, crises, and physical environments?",
+     "n": "Underspecification means models that test identically can diverge in deployment. Reliability under shift is the classic ML safety problem, now with much higher stakes attached.",
+     "links": [
+      {
+       "t": "Concrete Problems in AI Safety",
+       "s": "Amodei, Olah et al.",
+       "y": "2016",
+       "u": "https://arxiv.org/abs/1606.06565"
+      },
+      {
+       "t": "Underspecification in Modern Machine Learning",
+       "s": "D'Amour et al., Google",
+       "y": "2020",
+       "u": "https://arxiv.org/abs/2011.03395"
+      }
+     ]
+    },
+    {
+     "id": "2.3.3",
+     "qid": "q_human_oversight",
+     "slug": "human-oversight",
+     "t": "Human oversight",
+     "q": "When should humans remain in the loop, remain only as monitors, or be excluded because intermittent intervention degrades performance?",
+     "n": "Nominal human-in-the-loop requirements can be safety theater: oversight policies often assume a vigilance and competence that humans supervising automation demonstrably cannot sustain.",
+     "links": [
+      {
+       "t": "Humans in the Loop",
+       "s": "Crootof, Kaminski & Price, Vanderbilt Law Review",
+       "y": "2023",
+       "u": "https://scholarship.law.vanderbilt.edu/vlr/vol76/iss2/2/"
+      },
+      {
+       "t": "The flaws of policies requiring human oversight",
+       "s": "Ben Green",
+       "y": "2022",
+       "u": "https://www.sciencedirect.com/science/article/pii/S0267364922000292"
+      }
+     ]
+    },
+    {
+     "id": "2.3.4",
+     "qid": "q_automation_bias",
+     "slug": "automation-bias",
+     "t": "Automation bias",
+     "q": "Will users become overreliant, stop checking outputs, or lose the expertise required to recognize errors?",
+     "n": "Bainbridge's 1983 'ironies of automation' apply directly: the better the system, the worse the human backup becomes. Early studies suggest generative AI measurably reduces critical-thinking effort among knowledge workers.",
+     "links": [
+      {
+       "t": "Ironies of Automation",
+       "s": "Lisanne Bainbridge",
+       "y": "1983",
+       "u": "https://www.sciencedirect.com/science/article/abs/pii/0005109883900468"
+      },
+      {
+       "t": "The Impact of Generative AI on Critical Thinking",
+       "s": "Lee et al., Microsoft Research, CHI",
+       "y": "2025",
+       "u": "https://dl.acm.org/doi/full/10.1145/3706598.3713778"
+      }
+     ]
+    },
+    {
+     "id": "2.3.5",
+     "qid": "q_responsibility_gaps",
+     "slug": "responsibility-gaps",
+     "t": "Responsibility",
+     "q": "Who is accountable when decisions are jointly produced by a user, an organization, a model provider, and an autonomous agent?",
+     "n": "Responsibility gaps and 'moral crumple zones' — where blame lands on the nearest human operator rather than the system's designers — predate AI agents and get sharply worse with them. The question here is the human and organizational one; legal liability and remedies are treated under Power 4.1.",
+     "links": [
+      {
+       "t": "The responsibility gap",
+       "s": "Andreas Matthias",
+       "y": "2004",
+       "u": "https://link.springer.com/article/10.1007/s10676-004-3422-1"
+      },
+      {
+       "t": "Moral Crumple Zones",
+       "s": "Madeleine Clare Elish",
+       "y": "2019",
+       "u": "https://estsjournal.org/index.php/ests/article/view/260"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "2.4",
+   "t": "System security and operational control",
+   "intro": "Treating capable AI as a security problem: adversarial inputs, runtime monitoring, and control protocols that don't assume alignment succeeded.",
+   "qs": [
+    {
+     "id": "2.4.1",
+     "qid": "q_agent_architecture",
+     "slug": "agent-architecture",
+     "t": "Agent architecture",
+     "q": "How should permissions, credentials, memory, tool access, network access, and spending authority be constrained?",
+     "n": "Least-privilege design for agents is being invented ad hoc by industry, ahead of any standard. Visibility infrastructure — agent identifiers, activity logs — is the governance-side counterpart.",
+     "links": [
+      {
+       "t": "Practices for Governing Agentic AI Systems",
+       "s": "OpenAI",
+       "y": "2023",
+       "u": "https://openai.com/index/practices-for-governing-agentic-ai-systems/"
+      },
+      {
+       "t": "Visibility into AI Agents",
+       "s": "Chan et al., FAccT",
+       "y": "2024",
+       "u": "https://arxiv.org/abs/2401.13138"
+      }
+     ]
+    },
+    {
+     "id": "2.4.2",
+     "qid": "q_adversarial_inputs",
+     "slug": "adversarial-inputs",
+     "t": "Adversarial inputs",
+     "q": "Can agents resist prompt injection, malicious documents, poisoned memories, social engineering, and compromised tools?",
+     "n": "Prompt injection remains unsolved. Willison's 'lethal trifecta' — private data, untrusted content, and external communication in one agent — explains why agentic deployment is structurally exposed in a way chatbots weren't.",
+     "links": [
+      {
+       "t": "Compromising LLM-Integrated Applications with Indirect Prompt Injection",
+       "s": "Greshake et al.",
+       "y": "2023",
+       "u": "https://arxiv.org/abs/2302.12173"
+      },
+      {
+       "t": "The lethal trifecta for AI agents",
+       "s": "Simon Willison",
+       "y": "2025",
+       "u": "https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/"
+      },
+      {
+       "t": "The 2022 post coining the term “prompt injection”",
+       "s": "Simon Willison (@simonw) on X",
+       "y": "2022",
+       "u": "https://x.com/simonw/status/1569451605703147522"
+      }
+     ]
+    },
+    {
+     "id": "2.4.3",
+     "qid": "q_runtime_monitoring",
+     "slug": "runtime-monitoring",
+     "t": "Runtime monitoring",
+     "q": "Can dangerous planning, data exfiltration, fraud, unauthorized replication, or resource acquisition be detected before completion?",
+     "n": "Chain-of-thought monitoring currently works and may be fragile: optimizing against monitors teaches models to hide reasoning rather than fix it. A rare cross-lab consensus paper argues for preserving monitorability deliberately.",
+     "links": [
+      {
+       "t": "Chain of Thought Monitorability: A New and Fragile Opportunity",
+       "s": "Korbak et al., cross-lab",
+       "y": "2025",
+       "u": "https://arxiv.org/abs/2507.11473"
+      },
+      {
+       "t": "Detecting misbehavior in frontier reasoning models",
+       "s": "OpenAI",
+       "y": "2025",
+       "u": "https://openai.com/index/chain-of-thought-monitoring/"
+      }
+     ]
+    },
+    {
+     "id": "2.4.4",
+     "qid": "q_containment_control",
+     "slug": "containment-control",
+     "t": "Containment",
+     "q": "Can a highly capable system be controlled even when its internal objectives are not fully understood?",
+     "n": "The AI-control agenda assumes alignment might fail and asks a different question: can protocols extract useful work from potentially adversarial models while keeping catastrophe off the table? Control evaluations test safety against intentional subversion.",
+     "links": [
+      {
+       "t": "AI Control: Improving Safety Despite Intentional Subversion",
+       "s": "Greenblatt et al., Redwood Research",
+       "y": "2023",
+       "u": "https://arxiv.org/abs/2312.06942"
+      },
+      {
+       "t": "The case for ensuring that powerful AIs are controlled",
+       "s": "Redwood Research",
+       "y": "2024",
+       "u": "https://www.alignmentforum.org/posts/kcKrE9mzEHrdqtDpE/the-case-for-ensuring-that-powerful-ais-are-controlled"
+      }
+     ]
+    },
+    {
+     "id": "2.4.5",
+     "qid": "q_systemic_agent_failures",
+     "slug": "systemic-agent-failures",
+     "t": "Systemic failures",
+     "q": "What happens when many agents interact, share vulnerabilities, collude, or produce cascading failures across organizations?",
+     "n": "Agents built on the same base models share vulnerabilities and failure modes, creating correlated-risk dynamics familiar from finance — cascades with no clear owner and no circuit breaker.",
+     "links": [
+      {
+       "t": "Multi-Agent Risks from Advanced AI",
+       "s": "Hammond et al., Cooperative AI Foundation",
+       "y": "2025",
+       "u": "https://arxiv.org/abs/2502.14143"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "2.5",
+   "t": "Misuse and catastrophic risk",
+   "intro": "The threat models that motivate the strictest safeguards: weaponizable capabilities, and the possibility that control is lost gradually or suddenly.",
+   "qs": [
+    {
+     "id": "2.5.1",
+     "qid": "q_ai_cybersecurity",
+     "slug": "ai-cybersecurity",
+     "t": "Cybersecurity",
+     "q": "Will AI advantage defenders or industrialize reconnaissance, exploitation, malware, and attacks on critical infrastructure?",
+     "n": "The offense-defense balance is genuinely open: national agencies forecast attacker uplift, and the first documented AI-orchestrated espionage campaign arrived in 2025 — while the same capabilities accelerate defense.",
+     "crux": "How soon do cyber, biological, manipulation, or autonomous-action capabilities cross dangerous thresholds?",
+     "links": [
+      {
+       "t": "The near-term impact of AI on the cyber threat",
+       "s": "UK NCSC",
+       "y": "2024",
+       "u": "https://www.ncsc.gov.uk/report/impact-of-ai-on-cyber-threat"
+      },
+      {
+       "t": "Disrupting the first AI-orchestrated cyber espionage campaign",
+       "s": "Anthropic",
+       "y": "2025",
+       "u": "https://www.anthropic.com/news/disrupting-AI-espionage"
+      }
+     ]
+    },
+    {
+     "id": "2.5.2",
+     "qid": "q_biological_chemical_risk",
+     "slug": "biological-chemical-risk",
+     "t": "Biology and chemistry",
+     "q": "At what point does AI materially lower the expertise, time, or cost required to create dangerous biological or chemical agents?",
+     "n": "Early red-team studies found marginal uplift over internet search; frontier labs have since activated their highest biosecurity safeguards, treating the threshold as near or crossed rather than hypothetical.",
+     "crux": "How soon do cyber, biological, manipulation, or autonomous-action capabilities cross dangerous thresholds?",
+     "links": [
+      {
+       "t": "The Operational Risks of AI in Large-Scale Biological Attacks",
+       "s": "RAND",
+       "y": "2024",
+       "u": "https://www.rand.org/pubs/research_reports/RRA2977-2.html"
+      },
+      {
+       "t": "Building an early warning system for LLM-aided biological threat creation",
+       "s": "OpenAI",
+       "y": "2024",
+       "u": "https://openai.com/index/building-an-early-warning-system-for-llm-aided-biological-threat-creation/"
+      }
+     ]
+    },
+    {
+     "id": "2.5.3",
+     "qid": "q_manipulation_fraud",
+     "slug": "manipulation-fraud",
+     "t": "Manipulation and fraud",
+     "q": "How powerful can personalized persuasion, impersonation, blackmail, scams, and political influence become?",
+     "n": "GPT-4-class models beat humans at personalized persuasion in controlled trials, and voice cloning has industrialized impersonation. The near-term misuse frontier is fraud at scale; the long-term one is political influence nobody can observe.",
+     "links": [
+      {
+       "t": "On the conversational persuasiveness of GPT-4",
+       "s": "Salvi et al., Nature Human Behaviour",
+       "y": "2025",
+       "u": "https://www.nature.com/articles/s41562-025-02194-6"
+      },
+      {
+       "t": "“I expect AI to be capable of superhuman persuasion well before it is superhuman at general intelligence”",
+       "s": "Sam Altman (@sama) on X",
+       "y": "2023",
+       "u": "https://x.com/sama/status/1716972815960961174"
+      }
+     ]
+    },
+    {
+     "id": "2.5.4",
+     "qid": "q_critical_system_autonomy",
+     "slug": "critical-system-autonomy",
+     "t": "Critical-system autonomy",
+     "q": "Under what conditions should AI systems be permitted to operate factories, financial infrastructure, electrical grids, communications networks, and other safety-critical systems?",
+     "n": "Automated trading gave the preview: autonomy in critical systems means failures propagate at machine speed. The design questions are which decisions must stay mechanically reversible, which require human confirmation, and who certifies either before deployment. (Weapons and military systems are treated under Power 4.3.)",
+     "links": [
+      {
+       "t": "Safety and Security Guidelines for Critical Infrastructure Owners and Operators",
+       "s": "U.S. Department of Homeland Security",
+       "y": "2024",
+       "u": "https://www.dhs.gov/publication/safety-and-security-guidelines-critical-infrastructure-owners-and-operators"
+      },
+      {
+       "t": "Securing Critical Infrastructure in the Age of AI",
+       "s": "CSET, Georgetown",
+       "y": "2024",
+       "u": "https://cset.georgetown.edu/publication/securing-critical-infrastructure-in-the-age-of-ai/"
+      }
+     ]
+    },
+    {
+     "id": "2.5.5",
+     "qid": "q_differential_acceleration",
+     "slug": "differential-acceleration",
+     "t": "Differential acceleration",
+     "q": "Could AI accelerate offensive or destabilizing technologies faster than defensive technologies and institutions?",
+     "n": "Buterin's d/acc reframes the acceleration debate: the question isn't whether to speed up but which technologies to speed up first — defense-dominant tools before offense-dominant ones. It is the bridge between capability optimism and catastrophic-risk caution.",
+     "links": [
+      {
+       "t": "My Techno-Optimism",
+       "s": "Vitalik Buterin",
+       "y": "2023",
+       "u": "https://vitalik.eth.limo/general/2023/11/27/techno_optimism.html"
+      },
+      {
+       "t": "d/acc: One Year Later",
+       "s": "Vitalik Buterin",
+       "y": "2025",
+       "u": "https://vitalik.eth.limo/general/2025/01/05/dacc2.html"
+      }
+     ]
+    },
+    {
+     "id": "2.5.6",
+     "qid": "q_loss_of_control",
+     "slug": "loss-of-control",
+     "t": "Loss of control",
+     "q": "What is the probability of catastrophic disempowerment, and is it more likely to occur through overt power-seeking, gradual dependence, institutional capture, or cascading accidents?",
+     "n": "Probability estimates span orders of magnitude, and the argument itself has diversified: from Carlsmith's power-seeking model to gradual disempowerment through ordinary competitive pressure, no takeover required.",
+     "links": [
+      {
+       "t": "Is Power-Seeking AI an Existential Risk?",
+       "s": "Joseph Carlsmith",
+       "y": "2022",
+       "u": "https://arxiv.org/abs/2206.13353"
+      },
+      {
+       "t": "Gradual Disempowerment",
+       "s": "Kulveit, Douglas, Duvenaud et al.",
+       "y": "2025",
+       "u": "https://arxiv.org/abs/2501.16946"
+      },
+      {
+       "t": "“I left so that I could talk about the dangers of AI” — announcing his departure from Google",
+       "s": "Geoffrey Hinton (@geoffreyhinton) on X",
+       "y": "2023",
+       "u": "https://x.com/geoffreyhinton/status/1652993570721210372"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
