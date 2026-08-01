@@ -88,22 +88,26 @@ def parse_front_matter(path):
 
 
 def load_entries(qindex):
-    """One entry per question: content/questions/<slug>.md, where <slug> must equal
-    the question's slug in data/. Old URLs are preserved via redirect_from."""
+    """One entry per question: content/questions/<slug>.md, joined to data/ by slug
+    (the stable identifier). The display number is derived from data/, never stored
+    in the entry file, so renumbering the map cannot orphan or mislabel an entry.
+    Old URLs are preserved via redirect_from."""
+    slug_to_qnum = {q["slug"]: qnum for qnum, q in qindex.items()}
     entries, errors = [], []
     for path in sorted(glob.glob(os.path.join(ROOT, "content", "questions", "*.md"))):
         meta, body = parse_front_matter(path)
         fname = os.path.splitext(os.path.basename(path))[0]
-        for req in ("slug", "title", "status", "section", "question"):
+        for req in ("slug", "title", "status", "section"):
             if not meta.get(req):
                 errors.append(f"{path}: front matter missing '{req}'")
         if meta.get("slug") != fname:
             errors.append(f"{path}: slug {meta.get('slug')!r} != filename {fname!r}")
-        qnum = meta.get("question")
-        if qnum not in qindex:
-            errors.append(f"{path}: question {qnum!r} is not a question number")
-        elif qindex[qnum]["slug"] != meta.get("slug"):
-            errors.append(f"{path}: slug {meta.get('slug')!r} != question {qnum}'s slug {qindex[qnum]['slug']!r}")
+        qnum = slug_to_qnum.get(meta.get("slug"))
+        if qnum is None:
+            errors.append(f"{path}: slug {meta.get('slug')!r} does not match any question slug in data/")
+        if meta.get("question") and meta["question"] != qnum:
+            errors.append(f"{path}: stale 'question: {meta['question']}' (slug resolves to {qnum}); "
+                          f"remove the field — the number is derived from data/")
         redirects = [r.strip().strip("/") for r in meta.get("redirect_from", "").split(",") if r.strip()]
         entries.append({"folder": "questions", "meta": meta, "body": body,
                         "qnum": qnum, "redirects": redirects})
@@ -249,7 +253,6 @@ def render_index(sections, overview_links):
                 f'<span class="subid">{su["id"]}</span><span class="subtitle">{E(su["t"])}</span>'
                 f'<span class="qcount">{len(su["qs"])} questions</span><span class="chev" aria-hidden="true"><span>▶</span></span>'
                 f'</button></h3>'
-                f'<p class="subintro">{E(su["intro"])}</p>'
                 f'<div class="qlist" id="{qlid}">'
             )
             for q in su["qs"]:

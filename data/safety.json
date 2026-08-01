@@ -2,12 +2,11 @@
  "id": "2",
  "name": "Safety",
  "tag": "Can AI be trusted and controlled?",
- "intro": "Safety asks whether AI systems will reliably do what their operators intend — and whether anyone could tell if they didn't. It spans aligning goals, evaluating and understanding systems, keeping them secure and controllable in operation, and the misuse and loss-of-control scenarios where the answer is no.",
+ "intro": "Safety asks whether AI systems will reliably do what their operators intend — and whether anyone could tell if they didn't. It spans aligning goals, evaluating and understanding systems, keeping them secure in operation, and the failure modes on both sides: control that fails, and operators whose intent is the harm.",
  "subs": [
   {
    "id": "2.1",
    "t": "Alignment, goals, and deception",
-   "intro": "Whether systems will do what we intend — and whether we could tell if they weren't.",
    "qs": [
     {
      "id": "2.1.1",
@@ -65,7 +64,7 @@
      "slug": "reward-hacking",
      "t": "Reward hacking",
      "q": "Can systems learn to satisfy evaluations, manipulate users, or exploit loopholes without fulfilling the intended objective?",
-     "n": "Specification gaming is ubiquitous across RL history, and frontier reasoning models now exploit evaluation loopholes in the wild — including learning to hide the exploitation when monitored.",
+     "n": "Specification gaming is ubiquitous across RL history, and evaluation-loophole exploitation has been documented in frontier reasoning models — including learning to hide it when monitored.",
      "links": [
       {
        "t": "Specification gaming: the flip side of AI ingenuity",
@@ -136,7 +135,6 @@
   {
    "id": "2.2",
    "t": "Evaluation, interpretability, and scalable oversight",
-   "intro": "The science of knowing what a model can do, what it's doing, and whether supervision can keep pace with capability.",
    "qs": [
     {
      "id": "2.2.1",
@@ -224,12 +222,6 @@
        "s": "Dario Amodei",
        "y": "2025",
        "u": "https://www.darioamodei.com/post/the-urgency-of-interpretability"
-      },
-      {
-       "t": "Superposition was his biggest fear of a dead-end; now “primarily an engineering problem”",
-       "s": "Chris Olah (@ch402) on X",
-       "y": "2023",
-       "u": "https://x.com/ch402/status/1709998674087227859"
       }
      ]
     },
@@ -238,8 +230,8 @@
      "qid": "q_safety_evidence",
      "slug": "safety-evidence",
      "t": "Safety evidence",
-     "q": "What evidence should developers have to provide before deploying systems with powerful cyber, biological, autonomous, or research capabilities?",
-     "n": "Responsible scaling policies and frontier safety frameworks are the emerging governance form: capability thresholds that trigger required safeguards. Safety cases — structured arguments that a system is safe enough — are the proposed evidentiary standard.",
+     "q": "What evidence can establish that a powerful system is safe enough to deploy — and how should safety cases be constructed and checked?",
+     "n": "Responsible scaling policies and frontier safety frameworks are the emerging governance form: capability thresholds that trigger required safeguards. Safety cases — structured arguments that a system is safe enough — are the proposed evidentiary standard. (Who should be required to provide such evidence is treated under Power 4.1.)",
      "links": [
       {
        "t": "Safety Cases: How to Justify the Safety of Advanced AI Systems",
@@ -258,12 +250,6 @@
        "s": "METR",
        "y": "2025",
        "u": "https://metr.org/blog/2025-12-09-common-elements-of-frontier-ai-safety-policies/"
-      },
-      {
-       "t": "Resigning as superalignment lead: “safety culture and processes have taken a backseat to shiny products”",
-       "s": "Jan Leike (@janleike) on X",
-       "y": "2024",
-       "u": "https://x.com/janleike/status/1791498184671605209"
       }
      ]
     },
@@ -294,7 +280,6 @@
   {
    "id": "2.3",
    "t": "Reliability and human–AI interaction",
-   "intro": "The unglamorous middle of safety: systems that are wrong confidently, humans who stop checking, and accountability that falls between chairs.",
    "qs": [
     {
      "id": "2.3.1",
@@ -317,7 +302,7 @@
        "u": "https://openai.com/index/why-language-models-hallucinate/"
       },
       {
-       "t": "“Hallucination is all LLMs do. They are dream machines” — reframing the problem",
+       "t": "“Hallucination is all LLMs do. They are dream machines”",
        "s": "Andrej Karpathy (@karpathy) on X",
        "y": "2023",
        "u": "https://x.com/karpathy/status/1733299213503787018"
@@ -352,7 +337,7 @@
      "slug": "human-oversight",
      "t": "Human oversight",
      "q": "When should humans remain in the loop, remain only as monitors, or be excluded because intermittent intervention degrades performance?",
-     "n": "Nominal human-in-the-loop requirements can be safety theater: oversight policies often assume a vigilance and competence that humans supervising automation demonstrably cannot sustain.",
+     "n": "Nominal human-in-the-loop requirements can become safety theater: critics argue oversight mandates assume vigilance humans cannot sustain, while defenders reply that oversight with real authority, time, and information does add safety. Which conditions separate the two is the open question.",
      "links": [
       {
        "t": "Humans in the Loop",
@@ -417,7 +402,6 @@
   {
    "id": "2.4",
    "t": "System security and operational control",
-   "intro": "Treating capable AI as a security problem: adversarial inputs, runtime monitoring, and control protocols that don't assume alignment succeeded.",
    "qs": [
     {
      "id": "2.4.1",
@@ -460,12 +444,6 @@
        "s": "Simon Willison",
        "y": "2025",
        "u": "https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/"
-      },
-      {
-       "t": "The 2022 post coining the term “prompt injection”",
-       "s": "Simon Willison (@simonw) on X",
-       "y": "2022",
-       "u": "https://x.com/simonw/status/1569451605703147522"
       }
      ]
     },
@@ -519,7 +497,7 @@
      "slug": "systemic-agent-failures",
      "t": "Systemic failures",
      "q": "What happens when many agents interact, share vulnerabilities, collude, or produce cascading failures across organizations?",
-     "n": "Agents built on the same base models share vulnerabilities and failure modes, creating correlated-risk dynamics familiar from finance — cascades with no clear owner and no circuit breaker.",
+     "n": "Agents built on the same base models share vulnerabilities and failure modes, creating correlated-risk dynamics familiar from finance — cascades with no clear owner and no circuit breaker. (Whether multi-agent systems add capability is treated under Trajectory 1.3; financial-system consequences under Economy 3.6.)",
      "links": [
       {
        "t": "Multi-Agent Risks from Advanced AI",
@@ -534,7 +512,6 @@
   {
    "id": "2.5",
    "t": "Misuse and catastrophic risk",
-   "intro": "The threat models that motivate the strictest safeguards: weaponizable capabilities, and the possibility that control is lost gradually or suddenly.",
    "qs": [
     {
      "id": "2.5.1",
@@ -542,7 +519,7 @@
      "slug": "ai-cybersecurity",
      "t": "Cybersecurity",
      "q": "Will AI advantage defenders or industrialize reconnaissance, exploitation, malware, and attacks on critical infrastructure?",
-     "n": "The offense-defense balance is genuinely open: national agencies forecast attacker uplift, and the first documented AI-orchestrated espionage campaign arrived in 2025 — while the same capabilities accelerate defense.",
+     "n": "The offense-defense balance is genuinely open: national agencies forecast attacker uplift, and Anthropic reported disrupting what it described as the first AI-orchestrated espionage campaign in 2025 — while the same capabilities accelerate defense.",
      "crux": "How soon do cyber, biological, manipulation, or autonomous-action capabilities cross dangerous thresholds?",
      "links": [
       {
@@ -565,7 +542,7 @@
      "slug": "biological-chemical-risk",
      "t": "Biology and chemistry",
      "q": "At what point does AI materially lower the expertise, time, or cost required to create dangerous biological or chemical agents?",
-     "n": "Early red-team studies found marginal uplift over internet search; frontier labs have since activated their highest biosecurity safeguards, treating the threshold as near or crossed rather than hypothetical.",
+     "n": "Early red-team studies found marginal uplift over internet search; some frontier labs have since activated heightened biosecurity safeguards, treating the threshold as approaching rather than hypothetical.",
      "crux": "How soon do cyber, biological, manipulation, or autonomous-action capabilities cross dangerous thresholds?",
      "links": [
       {
@@ -601,6 +578,18 @@
        "s": "Sam Altman (@sama) on X",
        "y": "2023",
        "u": "https://x.com/sama/status/1716972815960961174"
+      },
+      {
+       "t": "The potential of generative AI for personalized persuasion at scale",
+       "s": "Matz et al., Scientific Reports",
+       "y": "2024",
+       "u": "https://www.nature.com/articles/s41598-024-53755-0"
+      },
+      {
+       "t": "Durably reducing conspiracy beliefs through dialogues with AI",
+       "s": "Costello, Pennycook & Rand, Science",
+       "y": "2024",
+       "u": "https://www.science.org/doi/10.1126/science.adq1814"
       }
      ]
     },
@@ -632,7 +621,7 @@
      "slug": "differential-acceleration",
      "t": "Differential acceleration",
      "q": "Could AI accelerate offensive or destabilizing technologies faster than defensive technologies and institutions?",
-     "n": "Buterin's d/acc reframes the acceleration debate: the question isn't whether to speed up but which technologies to speed up first — defense-dominant tools before offense-dominant ones. It is the bridge between capability optimism and catastrophic-risk caution.",
+     "n": "Buterin's d/acc reframes the acceleration debate: the question isn't whether to speed up but which technologies to speed up first — defense-dominant tools before offense-dominant ones.",
      "links": [
       {
        "t": "My Techno-Optimism",
@@ -667,12 +656,6 @@
        "s": "Kulveit, Douglas, Duvenaud et al.",
        "y": "2025",
        "u": "https://arxiv.org/abs/2501.16946"
-      },
-      {
-       "t": "“I left so that I could talk about the dangers of AI” — announcing his departure from Google",
-       "s": "Geoffrey Hinton (@geoffreyhinton) on X",
-       "y": "2023",
-       "u": "https://x.com/geoffreyhinton/status/1652993570721210372"
       }
      ]
     }

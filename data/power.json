@@ -7,7 +7,6 @@
   {
    "id": "4.1",
    "t": "Regulatory design",
-   "intro": "What to regulate, when to intervene, and how to write rules that survive contact with the technology's pace.",
    "qs": [
     {
      "id": "4.1.1",
@@ -58,8 +57,8 @@
      "qid": "q_ex_ante_ex_post_liability",
      "slug": "ex-ante-ex-post-liability",
      "t": "Ex ante versus ex post",
-     "q": "When is predeployment approval justified, when is liability after harm sufficient — and which actors along the value chain should bear it?",
-     "n": "Liability regimes can price risk without an approval bureaucracy — Weil's case for tort law as AI governance — but catastrophic harms break the ex post logic, and agent autonomy diffuses responsibility across developers, deployers, and users at every link in the chain.",
+     "q": "When is predeployment approval justified, and when is liability after harm sufficient?",
+     "n": "Liability regimes can price risk without an approval bureaucracy — Weil's case for tort law as AI governance — but catastrophic and irreversible harms break the ex post logic: no one can be made whole afterward.",
      "links": [
       {
        "t": "Tort Law as a Tool for Mitigating Catastrophic Risk from AI",
@@ -93,7 +92,7 @@
      "slug": "transparency-requirements",
      "t": "Transparency",
      "q": "What should companies disclose about training, evaluations, incidents, energy use, safeguards, and deployment?",
-     "n": "Measured transparency has declined as competition intensified. Mandatory incident reporting — the aviation-safety model — is the most commonly proposed floor beneath voluntary disclosure.",
+     "n": "After the first Foundation Model Transparency Index publicly named laggards, measured disclosure rose — though training-data and compute details remain thin. Mandatory incident reporting — the aviation-safety model — is the most commonly proposed floor beneath voluntary disclosure.",
      "links": [
       {
        "t": "The Foundation Model Transparency Index",
@@ -124,10 +123,10 @@
        "u": "https://arxiv.org/abs/2001.00078"
       },
       {
-       "t": "The Pacing Problem and the Future of Technology Regulation",
-       "s": "Adam Thierer, Mercatus",
-       "y": "2018",
-       "u": "https://www.mercatus.org/bridge/commentary/pacing-problem-and-future-technology-regulation"
+       "t": "The General-Purpose AI Code of Practice",
+       "s": "European Commission",
+       "y": "2025",
+       "u": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai"
       }
      ]
     }
@@ -136,7 +135,6 @@
   {
    "id": "4.2",
    "t": "State capacity and public institutions",
-   "intro": "Whether governments can understand, use, and if necessary constrain a technology developed almost entirely outside them.",
    "qs": [
     {
      "id": "4.2.1",
@@ -166,7 +164,7 @@
      "slug": "government-use-of-ai",
      "t": "Government use",
      "q": "How should AI be deployed in welfare, taxation, policing, courts, immigration, intelligence, and public administration?",
-     "n": "Agency adoption reached far further by 2020 than most realized — mostly unglamorous, mostly ungoverned. The stakes: state AI decisions are coercive in a way commercial ones aren't.",
+     "n": "Agency adoption reached far further by 2020 than most realized — mostly unglamorous, mostly ungoverned. The live split is between procedural-safeguard approaches (due process, contestability) and use-case prohibitions, while adoption outpaces both.",
      "links": [
       {
        "t": "Government by Algorithm",
@@ -194,7 +192,7 @@
      "slug": "public-ai-infrastructure",
      "t": "Public infrastructure",
      "q": "Should states provide sovereign compute, national models, public datasets, shared safety infrastructure, or publicly funded alternatives?",
-     "n": "Sovereign-AI programs answer a dependency worry: nearly all frontier capability sits with a handful of US firms. The objection is cost realism — states buying relevance in a game priced in tens of billions.",
+     "n": "Sovereign-AI programs answer a dependency worry: nearly all frontier capability sits with a handful of US and Chinese firms. The objection is cost realism — states buying relevance in a game priced in tens of billions.",
      "links": [
       {
        "t": "Public AI: Infrastructure for the Common Good",
@@ -237,7 +235,6 @@
   {
    "id": "4.3",
    "t": "Geopolitics and military power",
-   "intro": "AI as the object of great-power competition — and the pressures that competition puts on every safety margin upstream.",
    "qs": [
     {
      "id": "4.3.1",
@@ -287,12 +284,6 @@
        "s": "Jeffrey Ding, International Affairs",
        "y": "2025",
        "u": "https://academic.oup.com/ia/article-abstract/101/3/1133/8125200"
-      },
-      {
-       "t": "“DeepSeek R1 is AI’s Sputnik moment”",
-       "s": "Marc Andreessen (@pmarca) on X",
-       "y": "2025",
-       "u": "https://x.com/pmarca/status/1883640142591853011"
       }
      ]
     },
@@ -317,10 +308,10 @@
        "u": "https://www.csis.org/analysis/limits-chip-export-controls-meeting-china-challenge"
       },
       {
-       "t": "Announcing “On DeepSeek and Export Controls” — chip controls as the fork between two futures",
-       "s": "Dario Amodei (@DarioAmodei) on X",
+       "t": "On DeepSeek and Export Controls",
+       "s": "Dario Amodei",
        "y": "2025",
-       "u": "https://x.com/DarioAmodei/status/1884636410839535967"
+       "u": "https://darioamodei.com/post/on-deepseek-and-export-controls"
       }
      ]
     },
@@ -339,12 +330,6 @@
        "u": "https://www.rand.org/pubs/perspectives/PE296.html"
       },
       {
-       "t": "AI and International Stability: Risks and Confidence-Building Measures",
-       "s": "CNAS",
-       "y": "2021",
-       "u": "https://www.cnas.org/publications/reports/ai-and-international-stability-risks-and-confidence-building-measures"
-      },
-      {
        "t": "Escalation Risks from LLMs in Military and Diplomatic Decision-Making",
        "s": "Rivera et al., Stanford",
        "y": "2024",
@@ -355,6 +340,12 @@
        "s": "ICRC",
        "y": "2021",
        "u": "https://www.icrc.org/en/document/icrc-position-autonomous-weapon-systems"
+      },
+      {
+       "t": "AI for Military Decision-Making",
+       "s": "Probasco, Toner, Burtell & Rudner, CSET",
+       "y": "2025",
+       "u": "https://cset.georgetown.edu/publication/ai-for-military-decision-making/"
       }
      ]
     },
@@ -385,7 +376,6 @@
   {
    "id": "4.4",
    "t": "International coordination and verification",
-   "intro": "Whether rivals can cooperate on shared risks — and whether any agreement could be verified if they did.",
    "qs": [
     {
      "id": "4.4.1",
@@ -482,7 +472,7 @@
      "slug": "global-representation",
      "t": "Representation",
      "q": "How can countries without frontier labs or large compute resources influence decisions that may profoundly affect them?",
-     "n": "Most compute, capital, and rule-writing sits in a handful of countries; most of the affected population sits elsewhere. The UN's advisory-body process is the main current attempt to widen the table.",
+     "n": "Most compute, capital, and rule-writing sits in a handful of countries. The UN process has moved from its 2024 advisory report to a Global Dialogue on AI Governance and an independent scientific panel — the current attempt to widen the table.",
      "links": [
       {
        "t": "The Case for Including the Global South in AI Governance",
@@ -503,7 +493,6 @@
   {
    "id": "4.5",
    "t": "Ownership, openness, access, and rights",
-   "intro": "Who controls the institutions, models, data, and digital identities through which AI's power is exercised.",
    "qs": [
     {
      "id": "4.5.1",
@@ -527,10 +516,10 @@
        "u": "https://arxiv.org/abs/2403.07918"
       },
       {
-       "t": "Backing “Open Source AI Is the Path Forward”: platforms must be open to be safe and diverse",
-       "s": "Yann LeCun (@ylecun) on X",
+       "t": "Open Source AI Is the Path Forward",
+       "s": "Mark Zuckerberg, Meta",
        "y": "2024",
-       "u": "https://x.com/ylecun/status/1815777652621316261"
+       "u": "https://about.fb.com/news/2024/07/open-source-ai-is-the-path-forward/"
       }
      ]
     },
@@ -587,6 +576,12 @@
        "s": "The Midas Project & Tech Oversight Project",
        "y": "2025",
        "u": "https://www.openaifiles.org/"
+      },
+      {
+       "t": "“Safety culture and processes have taken a backseat to shiny products” — resigning as superalignment lead",
+       "s": "Jan Leike (@janleike) on X",
+       "y": "2024",
+       "u": "https://x.com/janleike/status/1791498184671605209"
       }
      ]
     },
@@ -596,7 +591,7 @@
      "slug": "training-data-rights",
      "t": "Training data",
      "q": "When are consent, licensing, attribution, or compensation required for copyrighted and personal material?",
-     "n": "Fair use doctrine is being stress-tested in dozens of suits. The supply-chain framing maps who owes whom at each stage from scraping to output — and why 'the model learned like a human reads' satisfies no one.",
+     "n": "Courts began answering in 2025, partially crediting training as transformative learning while rejecting it for pirated corpora. The supply-chain framing maps who owes whom at each stage from scraping to output.",
      "links": [
       {
        "t": "Talkin' 'Bout AI Generation: Copyright and the Generative-AI Supply Chain",
@@ -605,16 +600,16 @@
        "u": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4523551"
       },
       {
-       "t": "Foundation Models and Fair Use",
-       "s": "Henderson, Lemley et al.",
-       "y": "2023",
-       "u": "https://arxiv.org/abs/2303.15715"
-      },
-      {
        "t": "Resigning from Stability AI over the claim that training on copyrighted work is “fair use”",
        "s": "Ed Newton-Rex (@ednewtonrex) on X",
        "y": "2023",
        "u": "https://x.com/ednewtonrex/status/1724902327151452486"
+      },
+      {
+       "t": "Generative AI and Copyright Law (covering the 2025 fair-use rulings)",
+       "s": "Congressional Research Service",
+       "y": "2025",
+       "u": "https://www.congress.gov/crs_external_products/LSB/PDF/LSB10922/LSB10922.10.pdf"
       }
      ]
     },
@@ -643,17 +638,27 @@
     {
      "id": "4.5.6",
      "qid": "q_access_and_portability",
-     "slug": "access-and-portability",
-     "t": "Access and portability",
-     "q": "Who should receive access to the most capable systems, and should users be able to move their data, memories, and agents between providers?",
-     "n": "Compute-based governance assumes a Compute North; most of the world is Compute South. And whether memories and agents are portable across providers will shape lock-in the way data portability shaped platforms.",
+     "slug": "access-to-capable-ai",
+     "t": "Access",
+     "q": "Who should receive access to the most capable systems — and on what terms?",
+     "n": "Compute-based governance assumes a Compute North; most of the world is Compute South. Access tiers, pricing, and eligibility decisions at a handful of firms currently function as de facto global policy.",
      "links": [
       {
        "t": "Compute North vs. Compute South",
        "s": "Lehdonvirta et al., AIES",
        "y": "2024",
        "u": "https://ojs.aaai.org/index.php/AIES/article/view/31683"
-      },
+      }
+     ]
+    },
+    {
+     "id": "4.5.7",
+     "qid": "q_agent_portability",
+     "slug": "agent-portability",
+     "t": "Portability",
+     "q": "Should users be able to move their data, memories, and agents between providers?",
+     "n": "Whether memories and agents are portable across providers will shape lock-in the way data portability shaped platforms — and agent-infrastructure choices being made now are quietly deciding it.",
+     "links": [
       {
        "t": "Infrastructure for AI Agents",
        "s": "Chan, Hadfield, Anderljung et al.",

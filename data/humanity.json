@@ -1,13 +1,12 @@
 {
  "id": "5",
  "name": "Humanity",
- "tag": "What kind of future should AI create?",
- "intro": "Humanity asks what AI does to human life beyond economics and governance: to truth and shared reality, to learning and thinking, to relationships and identity, to meaning and culture, and to the moral status of the systems themselves.",
+ "tag": "What kind of future should we build with AI?",
+ "intro": "Humanity asks what kind of future we should build with AI: what it does to truth and shared reality, to learning and thinking, to relationships and identity, to meaning and culture — and what obligations follow if the systems themselves have moral standing.",
  "subs": [
   {
    "id": "5.1",
    "t": "Truth, information, and democracy",
-   "intro": "What happens to shared reality when generation is free, persuasion is personalized, and a few systems intermediate what everyone knows.",
    "qs": [
     {
      "id": "5.1.1",
@@ -33,34 +32,6 @@
     },
     {
      "id": "5.1.2",
-     "qid": "q_personalized_persuasion",
-     "slug": "personalized-persuasion",
-     "t": "Personalized persuasion",
-     "q": "How effective will systems become when they model individuals and optimize influence through prolonged private interaction?",
-     "n": "Personalization measurably multiplies persuasive effect in trials, and sustained private dialogue is an influence channel without historical precedent or outside observers. The same power runs both ways: AI dialogue also durably reduces conspiracy beliefs.",
-     "links": [
-      {
-       "t": "The potential of generative AI for personalized persuasion at scale",
-       "s": "Matz et al., Scientific Reports",
-       "y": "2024",
-       "u": "https://www.nature.com/articles/s41598-024-53755-0"
-      },
-      {
-       "t": "On the conversational persuasiveness of GPT-4",
-       "s": "Salvi et al., Nature Human Behaviour",
-       "y": "2025",
-       "u": "https://www.nature.com/articles/s41562-025-02194-6"
-      },
-      {
-       "t": "Durably reducing conspiracy beliefs through dialogues with AI",
-       "s": "Costello, Pennycook & Rand, Science",
-       "y": "2024",
-       "u": "https://www.science.org/doi/10.1126/science.adq1814"
-      }
-     ]
-    },
-    {
-     "id": "5.1.3",
      "qid": "q_shared_reality",
      "slug": "shared-reality",
      "t": "Shared reality",
@@ -74,20 +45,20 @@
        "u": "https://www.turing.ac.uk/news/publications/tackling-threats-informed-decision-making-democratic-societies"
       },
       {
-       "t": "Truth Decay",
-       "s": "Kavanagh & Rich, RAND",
-       "y": "2018",
-       "u": "https://www.rand.org/pubs/research_reports/RR2314.html"
+       "t": "We Looked at 78 Election Deepfakes. Political Misinformation Is Not an AI Problem.",
+       "s": "Kapoor & Narayanan, Knight First Amendment Institute",
+       "y": "2024",
+       "u": "https://knightcolumbia.org/blog/we-looked-at-78-election-deepfakes-political-misinformation-is-not-an-ai-problem"
       }
      ]
     },
     {
-     "id": "5.1.4",
+     "id": "5.1.3",
      "qid": "q_ai_and_political_power",
      "slug": "ai-and-political-power",
      "t": "Political power",
      "q": "Will AI broaden participation and understanding, or strengthen propaganda, surveillance, polarization, and authoritarian control?",
-     "n": "Freedom House documents the authoritarian uses already deployed — surveillance, censorship at machine scale; Schneier catalogues the democratic uses still mostly hypothetical. The asymmetry is the finding.",
+     "n": "Freedom House documents deployed authoritarian uses — surveillance, censorship at machine scale; Schneier's catalogue of democratic uses remains largely proposals. Whether that gap is deployment lag or structural advantage is the open question.",
      "links": [
       {
        "t": "The Repressive Power of Artificial Intelligence",
@@ -100,11 +71,17 @@
        "s": "Bruce Schneier",
        "y": "2024",
        "u": "https://www.schneier.com/blog/archives/2024/05/how-ai-will-change-democracy.html"
+      },
+      {
+       "t": "How Will Advanced AI Systems Impact Democracy?",
+       "s": "Summerfield, Argyle, Bakker, Gabriel, Hadfield, Landemore, Schneier et al.",
+       "y": "2024",
+       "u": "https://arxiv.org/abs/2409.06729"
       }
      ]
     },
     {
-     "id": "5.1.5",
+     "id": "5.1.4",
      "qid": "q_information_intermediation",
      "slug": "information-intermediation",
      "t": "Information intermediation",
@@ -130,7 +107,6 @@
   {
    "id": "5.2",
    "t": "Education and human cognition",
-   "intro": "The oldest promise in edtech — one-to-one tutoring for everyone — arrives at the same moment as the deepest threat to how understanding is built.",
    "qs": [
     {
      "id": "5.2.1",
@@ -173,12 +149,6 @@
        "s": "Kosmyna et al., MIT Media Lab",
        "y": "2025",
        "u": "https://arxiv.org/abs/2506.08872"
-      },
-      {
-       "t": "Large-scale China study: AI tutoring in class helps; AI “help” with homework hurts learning",
-       "s": "Ethan Mollick (@emollick) on X",
-       "y": "2026",
-       "u": "https://x.com/emollick/status/2067988324984217626"
       }
      ]
     },
@@ -201,12 +171,6 @@
        "s": "Ethan Mollick",
        "y": "2023",
        "u": "https://www.oneusefulthing.org/p/the-homework-apocalypse"
-      },
-      {
-       "t": "“I warned about the Homework Apocalypse in 2023. It happened as predicted”",
-       "s": "Ethan Mollick (@emollick) on X",
-       "y": "2025",
-       "u": "https://x.com/emollick/status/1920184969852244173"
       }
      ]
     },
@@ -265,7 +229,6 @@
   {
    "id": "5.3",
    "t": "Relationships, mental health, and identity",
-   "intro": "Machines designed to be understood by no one and to understand everyone: intimacy as a product category.",
    "qs": [
     {
      "id": "5.3.1",
@@ -342,12 +305,6 @@
        "s": "Maples et al., npj Mental Health Research",
        "y": "2024",
        "u": "https://www.nature.com/articles/s44184-023-00047-6"
-      },
-      {
-       "t": "“felt heard & warm” — an OpenAI safety lead on an emotional conversation with ChatGPT voice mode",
-       "s": "Lilian Weng (@lilianweng) on X",
-       "y": "2023",
-       "u": "https://x.com/lilianweng/status/1706544602906530000"
       }
      ]
     },
@@ -357,7 +314,7 @@
      "slug": "children-and-ai",
      "t": "Children",
      "q": "How do relationships with endlessly patient, personalized agents affect attachment, frustration tolerance, social learning, and identity?",
-     "n": "Majorities of US teens have tried AI companions; a third have discussed serious matters with them. The developmental effects — on attachment, frustration tolerance, social learning — are essentially unstudied.",
+     "n": "Common Sense Media finds 72% of US teens have tried AI companions. Usage is now well documented; developmental-outcome research remains early and thin.",
      "links": [
       {
        "t": "Talk, Trust, and Trade-Offs: How and Why Teens Use AI Companions",
@@ -400,7 +357,6 @@
   {
    "id": "5.4",
    "t": "Meaning, culture, and status",
-   "intro": "What work, art, and status mean when machines can do most of what people were valued for doing.",
    "qs": [
     {
      "id": "5.4.1",
@@ -517,7 +473,6 @@
   {
    "id": "5.5",
    "t": "Moral status and civilizational choice",
-   "intro": "The horizon questions: whether minds are being made, who decides, and what the whole project is for.",
    "qs": [
     {
      "id": "5.5.1",
@@ -525,7 +480,7 @@
      "slug": "machine-consciousness",
      "t": "Machine consciousness",
      "q": "Could AI systems be conscious, capable of suffering, or otherwise morally considerable — and how could we know?",
-     "n": "The rigorous middle position: applying consciousness science to current architectures finds no conscious systems and no obvious barrier to building them. Chalmers puts non-trivial odds on conscious AI within a decade.",
+     "n": "Butlin, Long and coauthors apply consciousness science to current architectures, finding no conscious systems and no obvious barrier to building them; Chalmers puts non-trivial odds on conscious AI within a decade.",
      "links": [
       {
        "t": "Consciousness in Artificial Intelligence",
@@ -538,12 +493,6 @@
        "s": "David Chalmers, Boston Review",
        "y": "2023",
        "u": "https://www.bostonreview.net/articles/could-a-large-language-model-be-conscious/"
-      },
-      {
-       "t": "“it may be that today’s large neural networks are slightly conscious”",
-       "s": "Ilya Sutskever (@ilyasut) on X",
-       "y": "2022",
-       "u": "https://x.com/ilyasut/status/1491554478243258368"
       }
      ]
     },
@@ -597,7 +546,7 @@
      "slug": "value-lock-in",
      "t": "Value lock-in",
      "q": "Could the models and institutions built in the next few decades permanently entrench one political order or conception of human flourishing?",
-     "n": "AGI could make regimes, institutions, and values persistent in a way nothing in history has been — the strongest single argument that this century's design choices are unusually weighty.",
+     "n": "Finnveden, Riedel and Shulman argue AGI could make regimes, institutions, and values persistent in a way nothing in history has been; skeptics reply that every past claim of permanence has drifted, and that persistence itself is the contested premise.",
      "links": [
       {
        "t": "AGI and Lock-in",

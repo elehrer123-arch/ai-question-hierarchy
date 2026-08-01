@@ -4,16 +4,16 @@
 <meta charset="UTF-8">
 <script>document.documentElement.classList.add('js')</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Biggest Questions About AI Today</title>
+<title>The Biggest Questions About AI</title>
 <meta name="description" content="An organized map of the biggest open questions about AI — trajectory, safety, economy, power, and humanity — with brief framings of each live debate and __LCOUNT__ curated source links, from papers to notable posts.">
 <link rel="canonical" href="https://elehrer123-arch.github.io/ai-question-hierarchy/">
-<meta property="og:title" content="The Biggest Questions About AI Today">
+<meta property="og:title" content="The Biggest Questions About AI">
 <meta property="og:description" content="A map of the landscape of thought around AI: __QCOUNT__ open questions across trajectory, safety, economy, power, and humanity, each with a framing of the debate and curated sources.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://elehrer123-arch.github.io/ai-question-hierarchy/">
 <meta property="og:image" content="https://elehrer123-arch.github.io/ai-question-hierarchy/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="The Biggest Questions About AI Today">
+<meta name="twitter:title" content="The Biggest Questions About AI">
 <meta name="twitter:description" content="A map of the landscape of thought around AI: __QCOUNT__ open questions, each with a framing of the debate and curated sources.">
 <meta name="twitter:image" content="https://elehrer123-arch.github.io/ai-question-hierarchy/og.png">
 <meta name="theme-color" content="#faf9f6" media="(prefers-color-scheme: light)">
@@ -132,13 +132,12 @@
 
   .sub{background:var(--panel);border:1px solid var(--line);border-radius:14px;margin-bottom:14px;box-shadow:var(--shadow);overflow:hidden}
   .subh{margin:0}
-  .subbtn{display:flex;width:100%;align-items:baseline;gap:10px;padding:15px 18px 4px;background:none;border:0;cursor:pointer;text-align:left}
+  .subbtn{display:flex;width:100%;align-items:baseline;gap:10px;padding:15px 18px;background:none;border:0;cursor:pointer;text-align:left}
   .subid{font-size:12.5px;font-weight:700;color:var(--secc);font-variant-numeric:tabular-nums;font-family:var(--sans)}
   .subtitle{font-family:var(--serif);font-size:19px;font-weight:600;letter-spacing:-.005em;flex:1;line-height:1.25}
   .chev{color:var(--ink3);font-size:11px}
   .chev span{display:inline-block;transition:transform .2s}
   .sub.open .subbtn .chev span, .q.open .qbtn .chev span{transform:rotate(90deg)}
-  .subintro{padding:2px 18px 14px;color:var(--ink2);font-size:13.5px;max-width:680px}
   .qcount{font-size:11.5px;color:var(--ink3);white-space:nowrap;font-family:var(--sans);font-weight:400}
   .qlist{border-top:1px solid var(--line);padding:4px 0 8px}
   .js .qlist{display:none}
@@ -190,7 +189,7 @@
 <div id="scrim"></div>
 <div class="wrap">
   <aside id="sidebar">
-    <div class="brand"><a href="#main">The Big Questions About&nbsp;AI</a></div>
+    <div class="brand"><a href="#main">The Biggest Questions About&nbsp;AI</a></div>
     <div class="tagline">A map of the landscape of thought</div>
     <label class="vh" for="search">Search questions</label>
     <input id="search" type="search" placeholder="Search questions… ( / )" autocomplete="off">
@@ -201,13 +200,13 @@
 
   <main id="main">
     <p class="kicker">A living map · Updated August 2026</p>
-    <h1>The Biggest Questions About AI Today</h1>
+    <h1>The Biggest Questions About AI</h1>
     <p class="lede">A structured map of __QCOUNT__ major open questions about AI, with concise framings, selected sources, and deeper entries in development.</p>
     <div class="chain">__CHAIN__</div>
     <p class="heronote">Click a subsection to open its questions, and a question to see the debate and sources.</p>
     <div class="toolbar">
       <button id="expandAll">Show all questions</button>
-      <button id="collapseAll">Collapse all</button>
+      <button id="collapseAll">Hide all questions</button>
     </div>
 
     <div id="content">__CONTENT__</div>
@@ -215,7 +214,7 @@
 
     <footer>
       <p style="margin-bottom:10px"><span class="cruxmark" style="margin-left:0;cursor:default">✱</span> marks a question that bears directly on one of ten load-bearing cruxes — the uncertainties whose answers disproportionately shape the rest of the map.</p>
-      Built as a living map — sections and questions form the stable skeleton; sources will age faster than the questions do. Framings summarize live debates as of mid-2026 and inevitably compress; follow the links for the real arguments. Curated with help from Claude.
+      Framings summarize live debates as of August 2026 and compress; follow the links for the full arguments. Curated with help from Claude. <a href="https://github.com/elehrer123-arch/ai-question-hierarchy/issues/new?template=suggest-improvement.yml">Suggest a source or correction</a>.
     </footer>
   </main>
 </div>
@@ -273,7 +272,7 @@ const searchBox = $('#search'), searchBox2 = $('#search2'), searchInfo = $('#sea
 const QS = $$('.q').map(el => ({ el, sub: el.closest('.sub'), text: el.textContent.toLowerCase() }));
 const SUBS = $$('.sub').map(el => ({
   el, sec: el.closest('section.big'),
-  head: (el.querySelector('.subbtn').textContent + ' ' + (el.querySelector('.subintro')||{textContent:''}).textContent).toLowerCase()
+  head: el.querySelector('.subbtn').textContent.toLowerCase()
 }));
 const SECS = $$('section.big').map(el => ({
   el, head: (el.querySelector('.sechead').textContent + ' ' + (el.querySelector('.secintro')||{textContent:''}).textContent).toLowerCase()
@@ -339,7 +338,6 @@ function runSearch(raw){
       headHits++;
       setOpen(el, true);
       markTokens(el.querySelector('.subbtn'), tokens);
-      const si = el.querySelector('.subintro'); if(si) markTokens(si, tokens);
       shownSubs.add(el); shownSecs.add(sec);
     } else {
       setOpen(el, false);

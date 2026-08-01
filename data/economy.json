@@ -7,7 +7,6 @@
   {
    "id": "3.1",
    "t": "Productivity and economic growth",
-   "intro": "The magnitude debate spans two orders of magnitude, and diffusion — not invention — has historically been the rate-limiting step.",
    "qs": [
     {
      "id": "3.1.1",
@@ -46,10 +45,10 @@
        "u": "https://www.nber.org/papers/w25148"
       },
       {
-       "t": "AI and the Modern Productivity Paradox",
-       "s": "Brynjolfsson, Rock & Syverson, NBER",
-       "y": "2017",
-       "u": "https://www.nber.org/papers/w24001"
+       "t": "The Rapid Adoption of Generative AI",
+       "s": "Bick, Blandin & Deming, NBER",
+       "y": "2024",
+       "u": "https://www.nber.org/papers/w32966"
       }
      ]
     },
@@ -59,19 +58,13 @@
      "slug": "complementary-investment",
      "t": "Complementary investment",
      "q": "How much value requires new infrastructure, data systems, robotics, training, and organizational change?",
-     "n": "Intangible investment — process redesign, data pipelines, retraining, management change — historically dwarfs spending on the technology itself. System-wide change, not point solutions, is where GPT-scale value lives.",
+     "n": "The general-purpose-technology literature argues intangible investment — process redesign, data, retraining — historically dwarfs spending on the technology itself; whether AI follows that pattern or diffuses more cheaply is the open question.",
      "links": [
       {
        "t": "AI Adoption and System-Wide Change",
        "s": "Agrawal, Gans & Goldfarb, NBER",
        "y": "2021",
        "u": "https://www.nber.org/papers/w28811"
-      },
-      {
-       "t": "The Productivity J-Curve (research brief)",
-       "s": "MIT IDE",
-       "y": "2019",
-       "u": "https://ide.mit.edu/sites/default/files/publications/2019-04JCurvebrief.final2_.pdf"
       }
      ]
     },
@@ -88,12 +81,6 @@
        "s": "James Bessen, NBER",
        "y": "2018",
        "u": "https://www.nber.org/papers/w24235"
-      },
-      {
-       "t": "Artificial Intelligence and Economic Growth",
-       "s": "Aghion, Jones & Jones, NBER",
-       "y": "2019",
-       "u": "https://www.nber.org/books-and-chapters/economics-artificial-intelligence-agenda/artificial-intelligence-and-economic-growth"
       }
      ]
     },
@@ -124,13 +111,12 @@
   {
    "id": "3.2",
    "t": "Labor, skills, and career ladders",
-   "intro": "Exposure is broad, early displacement evidence is arriving, and the apprenticeship model that produces experts is quietly at risk.",
    "qs": [
     {
      "id": "3.2.1",
      "qid": "q_labor_displacement",
      "slug": "labor-displacement",
-     "t": "Displacement",
+     "t": "Task and occupation change",
      "q": "Which tasks and occupations will be automated, augmented, transformed, or newly created — and how quickly?",
      "n": "Exposure studies flag most occupations as partially exposed; real usage data shows adoption concentrated in software, writing, and analysis. The augmentation-vs-automation split within tasks is the number to watch.",
      "crux": "Will AI primarily complement human labor or substitute for it?",
@@ -183,7 +169,7 @@
      "slug": "entry-level-work",
      "t": "Entry-level work",
      "q": "What happens if junior coding, analysis, research, design, legal, and administrative work disappears before senior roles?",
-     "n": "The first credible signal is in: relative employment declines for young workers in the most AI-exposed occupations since late 2022, concentrated where AI automates rather than augments.",
+     "n": "One prominent study finds relative employment declines for young workers in the most AI-exposed occupations since late 2022, concentrated where AI automates rather than augments; critics attribute the pattern to interest-rate and remote-work confounds.",
      "links": [
       {
        "t": "Canaries in the Coal Mine? Employment Effects of AI",
@@ -192,10 +178,10 @@
        "u": "https://digitaleconomy.stanford.edu/publication/canaries-in-the-coal-mine-six-facts-about-the-recent-employment-effects-of-artificial-intelligence/"
       },
       {
-       "t": "A Primer on 'Canaries in the Coal Mine'",
-       "s": "Bharat Chandar",
-       "y": "2025",
-       "u": "https://bharatchandar.substack.com/p/a-primer-on-canaries-in-the-coal"
+       "t": "Looking for the Ladder",
+       "s": "Iscenko & Curto Millet, EIG",
+       "y": "2026",
+       "u": "https://eig.org/wp-content/uploads/2026/01/TAWP-Iscenko-Millet.pdf"
       }
      ]
     },
@@ -205,7 +191,7 @@
      "slug": "expertise-formation",
      "t": "Expertise formation",
      "q": "How will people become experts if AI performs the apprenticeship tasks through which expertise was previously developed?",
-     "n": "Beane's 'shadow learning' research showed automation strips juniors of deliberate practice; generative AI compresses novice-expert performance gaps at work while quietly removing the ladder's lower rungs.",
+     "n": "Beane's 'shadow learning' research showed automation strips juniors of deliberate practice; generative AI compresses novice-expert performance gaps at work — while its effect on the practice through which expertise forms is the open question.",
      "links": [
       {
        "t": "Learning to Work with Intelligent Machines",
@@ -248,7 +234,6 @@
   {
    "id": "3.3",
    "t": "Firms, markets, and industry structure",
-   "intro": "Where the profits pool, whether intelligence commoditizes, and what happens to the theory of the firm when coordination is nearly free.",
    "qs": [
     {
      "id": "3.3.1",
@@ -332,10 +317,10 @@
        "u": "https://arxiv.org/abs/2509.10147"
       },
       {
-       "t": "The Coasean Singularity? Market Design with AI Agents",
-       "s": "Shahidi et al., NBER",
+       "t": "Virtual Agent Economies",
+       "s": "Tomasev et al., DeepMind",
        "y": "2025",
-       "u": "https://www.nber.org/system/files/chapters/c15309/c15309.pdf"
+       "u": "https://arxiv.org/abs/2509.10147"
       }
      ]
     },
@@ -366,15 +351,14 @@
   {
    "id": "3.4",
    "t": "Science, medicine, and discovery",
-   "intro": "Where AI's intellectual payoff could be largest — and where verification, institutions, and the offense-defense balance bite hardest.",
    "qs": [
     {
      "id": "3.4.1",
      "qid": "q_scientific_payoff",
      "slug": "scientific-payoff",
      "t": "Scientific payoff",
-     "q": "In which fields will AI produce genuine conceptual breakthroughs rather than faster search, coding, and incremental optimization?",
-     "n": "Amodei's 'compressed 21st century' makes biology the test case for AI-driven conceptual breakthroughs; the skeptical view is that AI mostly accelerates the searchable parts of science. AlphaFold remains the clearest widely recognized example so far.",
+     "q": "In which fields will AI-driven discovery translate into real scientific and economic payoff — and how soon?",
+     "n": "Amodei's 'compressed 21st century' makes biology the test case for AI-driven conceptual breakthroughs; the skeptical view is that AI mostly accelerates the searchable parts of science. AlphaFold remains the clearest widely recognized example so far. (Whether AI can originate important ideas at all is treated under Trajectory 1.5.)",
      "links": [
       {
        "t": "Machines of Loving Grace",
@@ -387,12 +371,6 @@
        "s": "Google DeepMind",
        "y": "2024",
        "u": "https://deepmind.google/public-policy/ai-for-science/"
-      },
-      {
-       "t": "On the Nobel Prize for AlphaFold — AI solving a 50-year grand challenge in science",
-       "s": "Demis Hassabis (@demishassabis) on X",
-       "y": "2024",
-       "u": "https://x.com/demishassabis/status/1845864764469334239"
       }
      ]
     },
@@ -417,20 +395,20 @@
      "qid": "q_ai_in_medicine",
      "slug": "ai-in-medicine",
      "t": "Medicine",
-     "q": "Can AI improve diagnosis, drug discovery, and treatment while avoiding opaque errors, regulatory failures, and unequal access?",
-     "n": "Diagnostic parity keeps arriving in trials ahead of deployment, liability frameworks, and reimbursement. The gap between demonstrated capability and delivered care is now mostly institutional, not technical.",
+     "q": "Why does demonstrated diagnostic capability keep outrunning delivered care — and can deployment close the gap without opaque errors and unequal access?",
+     "n": "Diagnostic parity keeps arriving in trials ahead of deployment, liability frameworks, and reimbursement; how much of the remaining gap is institutional rather than technical is the live dispute.",
      "links": [
       {
-       "t": "AI in Health and Medicine",
-       "s": "Rajpurkar, Chen, Banerjee & Topol, Nature Medicine",
-       "y": "2022",
-       "u": "https://www.nature.com/articles/s41591-021-01614-0"
+       "t": "Towards Conversational Diagnostic Artificial Intelligence",
+       "s": "Tu et al. (AMIE), Nature",
+       "y": "2025",
+       "u": "https://www.nature.com/articles/s41586-025-08866-7"
       },
       {
-       "t": "Ethics and Governance of AI for Health",
+       "t": "Ethics and Governance of AI for Health: Guidance on Large Multi-Modal Models",
        "s": "WHO",
-       "y": "2021",
-       "u": "https://www.who.int/publications/i/item/9789240029200"
+       "y": "2024",
+       "u": "https://www.who.int/publications/b/70584"
       }
      ]
     }
@@ -439,7 +417,6 @@
   {
    "id": "3.5",
    "t": "Distribution, ownership, and development",
-   "intro": "If the scarce inputs become compute, capital, and intellectual property rather than labor, who owns them becomes the central economic-policy question of the era.",
    "qs": [
     {
      "id": "3.5.1",
@@ -505,6 +482,12 @@
        "s": "O'Keefe et al., GovAI",
        "y": "2020",
        "u": "https://www.governance.ai/research-paper/the-windfall-clause-distributing-the-benefits-of-ai-for-the-common-good"
+      },
+      {
+       "t": "The Employment Effects of a Guaranteed Income: Experimental Evidence from Two U.S. States",
+       "s": "Vivalt et al., NBER",
+       "y": "2024",
+       "u": "https://www.nber.org/papers/w32719"
       }
      ]
     }
@@ -513,7 +496,6 @@
   {
    "id": "3.6",
    "t": "Material constraints and systemic risk",
-   "intro": "The physical and financial substrate: whether grids, water, land, and capital markets can absorb the buildout — and what happens if it unwinds.",
    "qs": [
     {
      "id": "3.6.1",
@@ -530,10 +512,10 @@
        "u": "https://www.iea.org/reports/energy-and-ai"
       },
       {
-       "t": "Can AI Scaling Continue Through 2030?",
-       "s": "Epoch AI",
-       "y": "2024",
-       "u": "https://epoch.ai/blog/can-ai-scaling-continue-through-2030"
+       "t": "AI's Power Requirements Under Exponential Growth",
+       "s": "RAND",
+       "y": "2025",
+       "u": "https://www.rand.org/pubs/research_reports/RRA3572-1.html"
       }
      ]
     },
