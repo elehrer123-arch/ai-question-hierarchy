@@ -372,7 +372,32 @@ def render_map(sections, entry_map):
         f.write(out)
 
 
-def render_browse(sections, entry_map):
+def load_recent(qindex):
+    path = os.path.join(ROOT, "data", "recent.json")
+    if not os.path.exists(path):
+        return {"swept": "", "items": {}}, []
+    with open(path, encoding="utf-8") as f:
+        data = json.load(f)
+    errors = []
+    qid_to_id = {q["qid"]: q["id"] for q in qindex.values()}
+    by_id = {}
+    for qid, items in data.get("items", {}).items():
+        if qid not in qid_to_id:
+            errors.append(f"recent.json: unknown qid {qid!r}")
+            continue
+        for it in items:
+            for field in ("title", "author", "venue", "date", "url", "quote"):
+                if not it.get(field):
+                    errors.append(f"recent.json {qid}: item missing '{field}'")
+            if urlparse(it.get("url", "")).scheme not in ("http", "https"):
+                errors.append(f"recent.json {qid}: bad URL {it.get('url')!r}")
+            if not re.match(r"^\d{4}-\d{2}$", it.get("date", "")):
+                errors.append(f"recent.json {qid}: bad date {it.get('date')!r} (want YYYY-MM)")
+        by_id[qid_to_id[qid]] = items
+    return {"swept": data.get("swept", ""), "items": by_id}, errors
+
+
+def render_browse(sections, entry_map, recent=None):
     data = []
     for s in sections:
         data.append({"id": s["id"], "name": SECTION_NAMES[s["id"]], "tag": s["tag"], "intro": s["intro"],
@@ -385,8 +410,11 @@ def render_browse(sections, entry_map):
                   for qnum, e in entry_map.items()}
     with open(os.path.join(ROOT, "templates", "browse.html"), encoding="utf-8") as f:
         tpl = f.read()
+    recent = recent or {"swept": "", "items": {}}
     out = (tpl.replace("__DATA__", json.dumps(data, ensure_ascii=False))
-              .replace("__ENTRY__", json.dumps(entry_json, ensure_ascii=False)))
+              .replace("__ENTRY__", json.dumps(entry_json, ensure_ascii=False))
+              .replace("__RECENT__", json.dumps(recent["items"], ensure_ascii=False))
+              .replace("__SWEPT__", json.dumps(recent["swept"])))
     outdir = os.path.join(ROOT, "browse")
     os.makedirs(outdir, exist_ok=True)
     with open(os.path.join(outdir, "index.html"), "w", encoding="utf-8") as f:
@@ -512,8 +540,15 @@ if __name__ == "__main__":
         entry_map[e["qnum"]] = {"slug": e["meta"]["slug"], "title": e["meta"].get("short_title", e["meta"]["title"]),
                                 "status": e["meta"]["status"], "excerpt": entry_excerpt(e["body"])}
 
+    recent, recent_errors = load_recent(qindex)
+    if recent_errors:
+        print("RECENT VALIDATION FAILED:", file=sys.stderr)
+        for e in recent_errors:
+            print("  -", e, file=sys.stderr)
+        sys.exit(1)
+
     render_map(sections, entry_map)
-    render_browse(sections, entry_map)
+    render_browse(sections, entry_map, recent)
     render_poster(sections)
     qcount, lcount = render_index(sections, overview_links, outdir="all", legacy=True)
     print(f"built map (index.html), browse/, poster/, all/: {qcount} questions, "

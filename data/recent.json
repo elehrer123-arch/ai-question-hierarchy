@@ -1,0 +1,341 @@
+{
+ "swept": "August 2026",
+ "items": {
+  "q_current_paradigm_ceiling": [
+   {
+    "kind": "paper",
+    "title": "Ring-Zero: Scaling Zero RL to a Trillion Parameters for Emergent Reasoning",
+    "author": "Tang et al.",
+    "venue": "arXiv",
+    "date": "2026-07",
+    "url": "https://arxiv.org/html/2607.12395",
+    "quote": "Scaling to 1T parameters significantly enhances sample efficiency and performance ceilings",
+    "note": "Empirical evidence that RL on base models keeps yielding gains at trillion-parameter scale — the case for headroom in the current recipe."
+   },
+   {
+    "kind": "essay",
+    "title": "The next big breakthrough will be AIs learning on the job",
+    "author": "Dwarkesh Patel",
+    "venue": "dwarkesh.com",
+    "date": "2026-06",
+    "url": "https://www.dwarkesh.com/p/the-next-paradigm",
+    "quote": "Around 30-50% of a lab's compute goes to inference, and that compute is currently not really doing anything productive in helping improve the model.",
+    "note": "Argues the current paradigm wastes deployment experience and that on-the-job learning, not further scaling, is the next necessary breakthrough."
+   },
+   {
+    "kind": "post",
+    "title": "What's Continual Learning, and Why Might We Expect To See It In Advanced LLM Agents?",
+    "author": "RohanS, Arike, Terry, Menon, Jin, Ward & Herd",
+    "venue": "LessWrong",
+    "date": "2026-06",
+    "url": "https://www.lesswrong.com/posts/5mCJzimtNZc9o4e26/what-s-continual-learning-and-why-might-we-expect-to-see-it",
+    "quote": "Weight updates are probably needed for some parts of effective CL since LLMs seem quite bad at handling lots of interrelated complexity in their context window",
+    "note": "Argues in-context learning alone is not enough for continual learning, implying a real gap in the current architecture."
+   },
+   {
+    "kind": "post",
+    "title": "On Dwarkesh Patel's 2026 Podcast With Dario Amodei",
+    "author": "Zvi Mowshowitz",
+    "venue": "Don't Worry About the Vase",
+    "date": "2026-02",
+    "url": "https://thezvi.substack.com/p/on-dwarkesh-patels-2026-podcast-with",
+    "quote": "If you talk to them for the course of an hour, it's hard to tell them apart from a generally well-educated human",
+    "note": "Documents and critiques Amodei's position that the scaling recipe still holds and continual learning is not a required ingredient."
+   }
+  ],
+  "q_agent_task_horizons": [
+   {
+    "kind": "report",
+    "title": "Expenditure Horizon: Measuring Optimization Ability",
+    "author": "Cunningham, Shetty, Cheng & Rush",
+    "venue": "METR",
+    "date": "2026-07",
+    "url": "https://metr.org/blog/2026-07-21-expenditure-horizon/",
+    "quote": "We define an agent's 'expenditure horizon' over an optimization problem as the dollar value at which the improvement to the goal metric is equal to the improvement by a human with the same budget.",
+    "note": "A dollar-denominated complement to time horizon; finds current agents add little value on an open-ended AI R&D optimization task."
+   },
+   {
+    "kind": "essay",
+    "title": "The Fallacy of the 16-hour Agent",
+    "author": "Katie Parrott",
+    "venue": "Every",
+    "date": "2026-05",
+    "url": "https://every.to/context-window/the-fallacy-of-the-16-hour-agent",
+    "quote": "Benchmarks don't measure model capability alone. They measure model capability after a human has done the work",
+    "note": "Pushback on headline horizon numbers: the 80%-reliability horizon is far shorter, and benchmark tasks embed human scaffolding."
+   },
+   {
+    "kind": "essay",
+    "title": "I underestimated AI capabilities (again)",
+    "author": "Ajeya Cotra",
+    "venue": "Planned Obsolescence",
+    "date": "2026-03",
+    "url": "https://www.planned-obsolescence.org/p/i-underestimated-ai-capabilities",
+    "quote": "In 2025, agent time horizons doubled every ~3.5 months, not every ~7 months as in the long-run trend",
+    "note": "A forecaster publicly revises upward after the 2025 acceleration and works through what sustained growth would imply."
+   },
+   {
+    "kind": "post",
+    "title": "METR Time Horizons: Now 10x/Year",
+    "author": "johncrox",
+    "venue": "LessWrong",
+    "date": "2026-02",
+    "url": "https://www.lesswrong.com/posts/EYb2K9acKfyG2bome/metr-time-horizons-now-10x-year",
+    "quote": "AI models are now improving on METR's Time Horizon benchmark at about 10x per year, compared to ~3x per year before 2024.",
+    "note": "Argues the horizon curve has broken upward from its long-run trend."
+   }
+  ],
+  "q_safety_evidence": [
+   {
+    "kind": "essay",
+    "title": "America's Next Top (Cyber) Model",
+    "author": "Tom Uren",
+    "venue": "Lawfare",
+    "date": "2026-04",
+    "url": "https://www.lawfaremedia.org/article/america%27s-next-top-(cyber)-model",
+    "quote": "In the short term, cyber organizations should have access to a version of Claude, sans its cyber guardrails.",
+    "note": "Argues from real-system cyber testing that guardrail evidence and access decisions should differ by user — complicating one-size-fits-all safety cases."
+   },
+   {
+    "kind": "paper",
+    "title": "Clear, Compelling Arguments: Rethinking the Foundations of Frontier AI Safety Cases",
+    "author": "Feakins, Habli & Morgan",
+    "venue": "arXiv",
+    "date": "2026-03",
+    "url": "https://arxiv.org/abs/2603.08760",
+    "quote": "Safety cases are structured, defensible arguments that a system is acceptably safe to deploy in a given context.",
+    "note": "Brings safety-engineering discipline to frontier safety cases and questions whether current foundations are sound."
+   },
+   {
+    "kind": "report",
+    "title": "Evaluation Awareness: Why Frontier AI Models Are Getting Harder to Test",
+    "author": "Maheshwari & O'Brien",
+    "venue": "Institute for AI Policy and Strategy",
+    "date": "2026-03",
+    "url": "https://www.iaps.ai/research/evaluation-awareness-why-frontier-ai-models-are-getting-harder-to-test",
+    "quote": "When a model is 'evaluation-aware' and recognizes it is being tested, it may strategically modify its behavior to appear less dangerous.",
+    "note": "Names evaluation awareness as a structural threat to the validity of the evals safety cases depend on."
+   },
+   {
+    "kind": "report",
+    "title": "International AI Safety Report 2026",
+    "author": "Bengio (chair) et al.",
+    "venue": "internationalaisafetyreport.org",
+    "date": "2026-02",
+    "url": "https://internationalaisafetyreport.org/publication/international-ai-safety-report-2026",
+    "quote": "In 2025, 12 companies published or updated Frontier AI Safety Frameworks – documents that describe how they plan to manage risks",
+    "note": "The consensus scientific survey documents the spread of safety frameworks and endorses layered risk management over any single form of evidence."
+   }
+  ],
+  "q_ai_companionship": [
+   {
+    "kind": "report",
+    "title": "The Common Sense Media Census: AI Use by Tweens and Teens, 2026",
+    "author": "Common Sense Media",
+    "venue": "Common Sense Media",
+    "date": "2026-06",
+    "url": "https://www.commonsensemedia.org/press-releases/common-sense-media-releases-inaugural-annual-study-on-ai-use-by-tweens-and-teens",
+    "quote": "Kids who use AI daily or weekly are more likely than infrequent or non-users to report feeling lonely.",
+    "note": "First annual national census of youth AI use; links frequent use to loneliness and to feeling more understood by AI than by people."
+   },
+   {
+    "kind": "report",
+    "title": "AI companionship poses risks for teen development",
+    "author": "Ha, Figueroa, McGray et al. (ASU)",
+    "venue": "ASU News / The Lancet Child & Adolescent Health",
+    "date": "2026-06",
+    "url": "https://news.asu.edu/20260629-science-and-technology-ai-companionship-poses-risks-teen-development-study-shows",
+    "quote": "If you're given full satisfaction on everything, you don't have learning experience with challenges or obstacles.",
+    "note": "Developmental-psychology work naming relational displacement as the mechanism by which frictionless companionship could stunt relationship skills."
+   },
+   {
+    "kind": "paper",
+    "title": "How Does Turning to AI for Companionship Predict Loneliness and Vice Versa?",
+    "author": "Folk & Dunn",
+    "venue": "Psychological Science",
+    "date": "2026-04",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41870975/",
+    "quote": "Increased social chatbot use predicted increased loneliness, using a single-item measure of emotional isolation.",
+    "note": "Longitudinal evidence for a bidirectional loop: lonely people turn to chatbots, and chatbot use then predicts more loneliness."
+   },
+   {
+    "kind": "paper",
+    "title": "Can AI Companions Replace Human Relationships? Intimacy, Dependence, and the Future of Connection",
+    "author": "Zhang, Zhang & Liu",
+    "venue": "SSRN",
+    "date": "2026-04",
+    "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6457318",
+    "quote": "Whether it ultimately augments or erodes human connection will depend on how asymmetric intimacy is designed, regulated, and integrated into everyday life.",
+    "note": "Reframes augment-versus-displace as contingent on how asymmetric intimacy is designed and regulated, not an inherent property of the technology."
+   }
+  ],
+  "q_labor_displacement": [
+   {
+    "kind": "paper",
+    "title": "Rethinking Automation Risk: AI Applicability and Occupational Outcomes, 2019–24",
+    "author": "Broady, Dunson & Barr",
+    "venue": "Federal Reserve Bank of Chicago",
+    "date": "2026-07",
+    "url": "https://www.chicagofed.org/publications/working-papers/2026/2026-12",
+    "quote": "task-based measures of technological exposure are better understood as indicators of occupational restructuring than as direct forecasts of employment decline",
+    "note": "New occupational-outcomes evidence for 2019–24: AI exposure predicts restructuring of work rather than employment decline."
+   },
+   {
+    "kind": "post",
+    "title": "A Significant Increase in Digital Labor Automation",
+    "author": "Mantas Mazeika",
+    "venue": "Center for AI Safety",
+    "date": "2026-07",
+    "url": "https://safe.ai/blog/significant-increase-in-digital-labor-automation",
+    "quote": "Fable 5 reaches the highest automation rate measured so far, 15.8%, roughly double Opus 4.8 at 8.3%.",
+    "note": "Remote Labor Index update: the measured automation rate of real freelance projects roughly doubled in one model generation."
+   },
+   {
+    "kind": "report",
+    "title": "Anthropic Economic Index report: Learning curves",
+    "author": "Anthropic",
+    "venue": "Anthropic",
+    "date": "2026-03",
+    "url": "https://www.anthropic.com/research/economic-index-march-2026-report",
+    "quote": "Figure 1.3 shows that augmentation in Claude.ai increased slightly. This was driven by small bumps in validation and learning patterns.",
+    "note": "Usage data showing augmentation grew on the consumer surface while automation fell in API use — against expectations of a steady shift toward automation."
+   },
+   {
+    "kind": "post",
+    "title": "What do \"economic value\" benchmarks tell us?",
+    "author": "Brand & Burnham",
+    "venue": "Epoch AI",
+    "date": "2026-02",
+    "url": "https://epoch.ai/publications/what-do-economic-value-benchmarks-tell-us",
+    "quote": "High scores on the benchmarks, therefore, would not imply end-to-end automation of digital professions.",
+    "note": "Methodological critique: GDPval and RLI tasks are too self-contained to forecast full occupational automation."
+   }
+  ],
+  "q_entry_level_work": [
+   {
+    "kind": "report",
+    "title": "What is really happening to jobs? Separating AI hype from reality",
+    "author": "Mahoney, McEntarfer & Wahal",
+    "venue": "Stanford SIEPR",
+    "date": "2026-07",
+    "url": "https://siepr.stanford.edu/publications/policy-brief/what-really-happening-jobs-separating-ai-hype-reality",
+    "quote": "AI's impact on aggregate employment is likely small right now.",
+    "note": "Skeptical assessment co-authored by a former BLS commissioner: current aggregate labor-market effects are small."
+   },
+   {
+    "kind": "report",
+    "title": "AI Economic Indicators: June 2026 Update",
+    "author": "Stanford Digital Economy Lab",
+    "venue": "Stanford Digital Economy Lab",
+    "date": "2026-06",
+    "url": "https://digitaleconomy.stanford.edu/app/uploads/2026/06/AIEI_SDEL_Research_Note_01.pdf",
+    "quote": "employment in AI-exposed occupations is contracting at 3.8% per year",
+    "note": "Updated canaries data: continued employment contraction for early-career workers in AI-exposed occupations while other employment grows."
+   },
+   {
+    "kind": "essay",
+    "title": "AI Is Not Reducing Employment but Rather Who Gets Hired",
+    "author": "Lodefalk, Löthman, Koch & Engberg",
+    "venue": "ProMarket",
+    "date": "2026-06",
+    "url": "https://www.promarket.org/2026/06/17/ai-is-not-reducing-employment-but-rather-who-gets-hired/",
+    "quote": "Generative AI is not reducing employment, but it is changing who gets hired.",
+    "note": "Firm-level evidence that AI adoption shifts hiring composition away from junior roles without reducing total employment."
+   },
+   {
+    "kind": "post",
+    "title": "Canaries, Interest Rates, and Timing",
+    "author": "Brynjolfsson, Chandar & Chen",
+    "venue": "Stanford Digital Economy Lab",
+    "date": "2026-02",
+    "url": "https://digitaleconomy.stanford.edu/news/canaries-interest-rates-and-timinga-more-on-recent-drivers-of-employment-changes-for-young-workers",
+    "quote": "While interest rates affect overall employment, existing evidence does not suggest they are a good explanation for the disproportionate decline in entry-level hiring in AI-exposed occupations.",
+    "note": "The canaries authors' direct rebuttal to critics who attribute young-worker declines to interest rates rather than AI."
+   }
+  ],
+  "q_export_controls": [
+   {
+    "kind": "post",
+    "title": "From Huawei to DeepSeek: the galapagosization of Chinese tech deepens",
+    "author": "Robert Wu",
+    "venue": "China Translated",
+    "date": "2026-05",
+    "url": "https://www.china-translated.com/p/from-huawei-to-deepseek-the-galapagosization",
+    "quote": "Huawei cannot use global-standard tools or fabrication processes, it is forced to build an entirely separate, vertically integrated ecosystem.",
+    "note": "Argues the controls are pushing China to build a self-contained parallel stack — substitution accelerated rather than progress delayed."
+   },
+   {
+    "kind": "essay",
+    "title": "AI export controls are not the best bargaining chip",
+    "author": "Rowan Wilkinson",
+    "venue": "Chatham House",
+    "date": "2026-04",
+    "url": "https://www.chathamhouse.org/2026/04/ai-export-controls-are-not-best-bargaining-chip",
+    "quote": "the policy itself is based on a hardware-centric approach to AI capabilities that the technology has since outgrown",
+    "note": "Argues the controls rest on outdated hardware-centric assumptions and should not be traded as diplomatic leverage."
+   },
+   {
+    "kind": "post",
+    "title": "How Much Compute Does China Have?",
+    "author": "Aqib Zakaria",
+    "venue": "ChinaTalk",
+    "date": "2026-04",
+    "url": "https://www.chinatalk.media/p/how-many-chips-does-china-have",
+    "quote": "Both estimates were roughly 2.8 million H100e, and the convergence of estimates suggests we may be on the right track.",
+    "note": "Bottom-up estimate of China's AI compute stock — an empirical baseline for judging whether the controls bind."
+   },
+   {
+    "kind": "report",
+    "title": "A Changing Export Control Landscape: H200 Exports, Remote Access Rules, and What Comes Next",
+    "author": "Tang & Tran",
+    "venue": "Institute for Security and Technology",
+    "date": "2026-02",
+    "url": "https://securityandtechnology.org/virtual-library/primer/a-changing-export-control-landscape/",
+    "quote": "January 2026 underscored how quickly U.S. AI export controls are evolving.",
+    "note": "Documents the January 2026 shift reopening H200 sales to China alongside congressional moves against remote cloud access to compute."
+   }
+  ],
+  "q_concentration_of_power": [
+   {
+    "kind": "essay",
+    "title": "It's time for the SEC to come to the table on OpenAI",
+    "author": "Aguilar & Bracy",
+    "venue": "Fortune (commentary)",
+    "date": "2026-07",
+    "url": "https://fortune.com/2026/07/22/openai-foundation-class-n-stock-board-control-ipo/",
+    "quote": "The SEC has a clear responsibility to ensure investors are aware of the unprecedented nature of OpenAI's governance structure, the conflicts of interest, and the risks involved.",
+    "note": "The advocates who secured California oversight of OpenAI's restructuring propose securities disclosure as a concrete accountability lever."
+   },
+   {
+    "kind": "report",
+    "title": "Request for proposals on extreme power concentration",
+    "author": "Longview Philanthropy",
+    "venue": "Longview Philanthropy",
+    "date": "2026-07",
+    "url": "https://www.longview.org/request-for-proposals-on-extreme-power-concentration/",
+    "quote": "If power became extremely concentrated, it could translate into a global regime that could last for many generations into the future.",
+    "note": "A funder's problem statement treating AI-enabled power concentration as a distinct research field and directing money at mitigations."
+   },
+   {
+    "kind": "essay",
+    "title": "AI Overconcentration and the End of the Balance of Power?",
+    "author": "Jesse Marks",
+    "venue": "Substack",
+    "date": "2026-06",
+    "url": "https://jessemarks.substack.com/p/the-overconcentration-of-ai-and-the",
+    "quote": "A world in which whoever controls frontier AI can determine the political and economic outcomes of every other actor, with no check on that power, is a novel scenario",
+    "note": "Applies balance-of-power theory from international relations to frontier AI control."
+   },
+   {
+    "kind": "essay",
+    "title": "When Decentralization Fails",
+    "author": "Alex Chalmers",
+    "venue": "Cosmos Institute",
+    "date": "2026-04",
+    "url": "https://blog.cosmos-institute.org/p/when-decentralization-fails",
+    "quote": "Freedom has never depended on power being small. It has depended on power being answerable to more than one authority at a time",
+    "note": "Counterpoint to decentralization advocates: accountability through competing institutions matters more than dispersing capability."
+   }
+  ]
+ }
+}
