@@ -1,0 +1,82 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3.2.1 — editorial grid study</title><meta name="robots" content="noindex">
+<style>
+:root{--bg:#faf9f6;--ink:#1d1c1a;--ink2:#514d45;--ink3:#6f6b5f;--line:#e4e1d8;--c3:#3d8a6b;
+--serif:'Charter','Iowan Old Style',Georgia,serif;--sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-text-size-adjust:100%}
+.wrap{max-width:1120px;margin:0 auto;padding:26px 28px 90px}
+.study{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:#a97729;display:inline-block;padding:2px 8px;border-radius:20px;margin-bottom:18px}
+.head{max-width:760px}
+.crumb{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--c3);margin-bottom:10px}
+.crumb a{color:inherit;text-decoration:none}
+.qover{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink3);margin-bottom:6px}
+h1{font-family:var(--serif);font-size:29px;line-height:1.22;letter-spacing:-.01em;margin-bottom:12px}
+.fr{font-size:15px;color:var(--ink2);line-height:1.6;margin-bottom:10px}
+.quiet{font-size:13.5px;margin-bottom:30px}
+.quiet a{color:var(--c3);text-decoration:none;font-weight:600}
+.mvh{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink3);font-weight:600;margin-bottom:12px}
+.changed{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border-top:2px solid var(--ink);margin-bottom:40px}
+.ch{padding:14px 22px 6px 0}
+.ch+.ch{border-left:1px solid var(--line);padding-left:22px}
+.chn{font-family:var(--serif);font-size:15px;color:var(--ink3);margin-bottom:4px}
+.cht{font-family:var(--serif);font-size:17px;font-weight:700;letter-spacing:-.005em;margin-bottom:5px}
+.chb{font-size:13px;color:var(--ink2);line-height:1.55}
+.rh{font-family:var(--serif);font-size:20px;font-weight:700;margin-bottom:2px}
+.rhm{font-size:12.5px;color:var(--ink3);margin-bottom:14px}
+.sec{display:flex;gap:34px;background:color-mix(in srgb,var(--kc) 4%,transparent);border-top:2px solid var(--kc);
+border-radius:0 0 12px 12px;padding:18px 22px 20px;margin-bottom:18px}
+.gut{flex:0 0 200px}
+.gn{font-size:12.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--kc);line-height:1.4}
+.gm{font-family:var(--serif);font-style:italic;font-size:12.5px;color:var(--ink2);line-height:1.5;margin-top:5px}
+.scont{flex:1;min-width:0;max-width:760px}
+.feat{display:flex;gap:26px;align-items:flex-start}
+.fig{font-family:var(--serif);font-size:46px;font-weight:700;color:var(--kc);line-height:1;flex:0 0 auto;padding-top:6px}
+.fbody{min-width:0}
+.im{font-size:12px;color:var(--ink3);margin-bottom:3px}
+.im a.via{color:var(--ink3)}
+.ft{font-family:var(--serif);font-size:19px;font-weight:700;color:var(--ink);text-decoration:none;line-height:1.3;display:block;margin-bottom:5px;letter-spacing:-.007em}
+.ft:hover,.ct2:hover{text-decoration:underline}
+.fan{font-size:14.5px;color:var(--ink2);line-height:1.58;max-width:620px}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:4px 28px;margin-top:16px;border-top:1px solid color-mix(in srgb,var(--kc) 22%,transparent);padding-top:12px}
+.cpt{padding:8px 0}
+.ct2{font-family:var(--serif);font-size:14.5px;font-weight:600;color:var(--ink);text-decoration:none;line-height:1.35;display:block;margin-bottom:3px}
+.can{font-size:12.5px;color:var(--ink2);line-height:1.5}
+.xq summary{display:inline;font-size:11.5px;color:var(--ink3);cursor:pointer;list-style:none}
+.xq summary::after{content:' ▾'}
+.xq[open] summary::after{content:' ▴'}
+.xq{margin-top:6px}
+.xq p{font-family:var(--serif);font-style:italic;font-size:13.5px;color:var(--ink2);line-height:1.55;margin-top:5px;max-width:600px}
+.xq.sm p{font-size:12.5px}
+.tail{max-width:760px;margin-top:28px}
+details.found>summary{font-family:var(--serif);font-size:15.5px;font-weight:700;cursor:pointer}
+.nearby{font-size:12.5px;color:var(--ink3);margin-top:18px;line-height:1.7}
+.nearby a{color:var(--ink2)}
+@media(max-width:900px){
+.changed{grid-template-columns:1fr}
+.ch+.ch{border-left:0;border-top:1px solid var(--line);padding-left:0;padding-top:12px}
+.sec{flex-direction:column;gap:10px}
+.gut{flex:auto}
+.feat{flex-direction:column;gap:8px}
+.cgrid{grid-template-columns:1fr}
+}
+</style></head><body><div class="wrap">
+<span class="study">Rendering study — editorial grid</span>
+<div class="head">
+<div class="crumb"><a href="../../browse/">The map</a> · 3 Economy · 3.2 Labor, skills, and career ladders</div>
+<div class="qover">3.2.1 · Task and occupation change</div>
+<h1>Which tasks and occupations will be automated, augmented, transformed, or newly created — and how quickly?</h1>
+<p class="fr">Exposure studies flag most occupations as partially exposed; real usage data shows adoption concentrated in software, writing, and analysis. The augmentation-vs-automation split within tasks is the number to watch.</p>
+<p class="quiet"><a href="../../questions/labor-displacement/">Read the full analysis →</a> &nbsp;·&nbsp; <a href="../../#q3-2-1">View on the map →</a></p>
+</div>
+<div class="mvh">What changed · reviewed August 2, 2026</div>
+<div class="changed"><div class="ch"><div class="chn">01</div><div class="cht">Capability rose sharply</div><p class="chb">The Remote Labor Index's measured automation rate roughly doubled in one model generation — a capability fact, not yet a labor-market one.</p></div><div class="ch"><div class="chn">02</div><div class="cht">Employment stayed quiet</div><p class="chb">Occupational and usage evidence keeps showing restructured work and shifted hiring rather than decline (Chicago Fed; Anthropic; Narayanan & Kapoor).</p></div><div class="ch"><div class="chn">03</div><div class="cht">One lab, two readings</div><p class="chb">Amodei proposes displacement-pegged income support; McCrory, on internal data, reports no visible displacement in 18 months.</p></div></div>
+<div class="rh">Recent thinking</div>
+<div class="rhm">Selected for significance · 7 items</div>
+<section class="sec" style="--kc:#3d6b9e"><div class="gut"><div class="gn">Direct automation capability</div><div class="gm">What models can now complete end-to-end.</div></div><div class="scont"><div class="feat"><div class="fig">15.8%</div><div class="fbody"><div class="im">Mantas Mazeika · Center for AI Safety · Jul 2026</div><a class="ft" href="https://safe.ai/blog/significant-increase-in-digital-labor-automation">A Significant Increase in Digital Labor Automation</a><p class="fan">Remote Labor Index update: the measured automation rate of real freelance projects roughly doubled in one model generation.</p></div></div></div></section><section class="sec" style="--kc:#3d8a6b"><div class="gut"><div class="gn">Observed labor outcomes</div><div class="gm">What employment, hiring, and work organization currently show.</div></div><div class="scont"><div class="feat"><div class="fbody"><div class="im">Broady, Dunson &amp; Barr · Federal Reserve Bank of Chicago · Jul 2026</div><a class="ft" href="https://www.chicagofed.org/publications/working-papers/2026/2026-12">Rethinking Automation Risk: AI Applicability and Occupational Outcomes, 2019–24</a><p class="fan">New occupational-outcomes evidence for 2019–24: AI exposure predicts restructuring of work rather than employment decline.</p><details class="xq "><summary>Excerpt</summary><p>“task-based measures of technological exposure are better understood as indicators of occupational restructuring than as direct forecasts of employment decline”</p></details></div></div><div class="cgrid"><div class="cpt"><div class="im">Peter McCrory · X · Jul 2026 · <a class="via" href="https://fortune.com/2026/07/24/anthropic-peter-mccrory-dario-amodei-why-hasnt-it-killed-jobs/">via Fortune</a></div><a class="ct2" href="https://x.com/PeterMcCrory/status/2079979510967959634">Why hasn&#x27;t AI killed jobs? An 18-month internal-data assessment</a><p class="can">Anthropic&#x27;s head of economics, on Anthropic&#x27;s own usage data through June 2026 — a finding that cuts against his CEO&#x27;s displacement forecast.</p><details class="xq sm"><summary>Excerpt</summary><p>“no relative deterioration in unemployment among workers whose jobs contain a large share of tasks that Claude is used to automate”</p></details></div><div class="cpt"><div class="im">Anthropic · Jun 2026</div><a class="ct2" href="https://www.anthropic.com/research/economic-index-june-2026-report">Anthropic Economic Index: Cadences (June 2026)</a><p class="can">Only ~10% of workers rate their own job loss likely within a year; over a third fear for junior colleagues.</p><details class="xq sm"><summary>Excerpt</summary><p>“people who use Claude in the most automated way expect AI to take on more of their tasks in the next year, yet feel the most optimistic about what that means for their work”</p></details></div><div class="cpt"><div class="im">Narayanan &amp; Kapoor · Normal Technology · Jun 2026</div><a class="ct2" href="https://www.normaltech.ai/p/why-ai-hasnt-replaced-software-engineers">Why AI hasn&#x27;t replaced software engineers, and won&#x27;t</a><p class="can">AI compresses coding but not accountability; AI-attributed layoffs are largely narrative cover for cost-cutting.</p><details class="xq sm"><summary>Excerpt</summary><p>“growing slower post-ChatGPT compared to a no-AI counterfactual, by about 3 percentage points per year”</p></details></div></div></div></section><section class="sec" style="--kc:#a97729"><div class="gut"><div class="gn">How to interpret the measures</div><div class="gm">What the benchmarks and usage data capture — and what they cannot.</div></div><div class="scont"><div class="feat"><div class="fbody"><div class="im">Brand &amp; Burnham · Epoch AI · Feb 2026</div><a class="ft" href="https://epoch.ai/publications/what-do-economic-value-benchmarks-tell-us">What do &quot;economic value&quot; benchmarks tell us?</a><p class="fan">Methodological critique: GDPval and RLI tasks are too self-contained to forecast full occupational automation.</p><details class="xq "><summary>Excerpt</summary><p>“High scores on the benchmarks, therefore, would not imply end-to-end automation of digital professions.”</p></details></div></div></div></section><section class="sec" style="--kc:#7a5ba6"><div class="gut"><div class="gn">Policy responses</div><div class="gm">Institutional positions, included for what they reveal as much as what they argue.</div></div><div class="scont"><div class="feat"><div class="fbody"><div class="im">Dario Amodei · darioamodei.com · Jun 2026</div><a class="ft" href="https://darioamodei.com/post/policy-on-the-ai-exponential">Policy on the AI Exponential</a><p class="fan">An institutional position as much as an argument: a lab CEO proposes tiered economic responses — wage insurance up to income support — pegged to measured AI-driven displacement.</p></div></div></div></section>
+<div class="tail">
+<details class="found"><summary>Foundational reading (2)</summary><div class="cpt" style="border:0;padding:8px 0"><a class="ct2" href="https://www.science.org/doi/10.1126/science.adj0998">GPTs are GPTs: Labor Market Impact Potential of LLMs</a><div class="im">Eloundou et al., Science · 2024</div></div><div class="cpt" style="border:0;padding:8px 0"><a class="ct2" href="https://www.anthropic.com/news/the-anthropic-economic-index">The Anthropic Economic Index</a><div class="im">Anthropic · 2025</div></div></details>
+<div class="nearby">Nearby: <a href="../../browse/#q3-2-2">3.2.2 Wages</a> · <a href="../../browse/#q3-2-3">3.2.3 Entry-level work</a> · <a href="../../browse/#q3-2-4">3.2.4 Expertise formation</a> · <a href="../../browse/#q3-2-5">3.2.5 Adjustment</a></div>
+</div>
+</div></body></html>
