@@ -234,9 +234,9 @@ function renderCtx(k){
   h+=`<div class="cxb"><h4>In ${su.id} ${esc(su.t)}</h4>${su.qs.map(x=>ctxLink(x.id,k)).join('')}</div>`;
   const outs=REFS_OUT[k]||[], ins=REFS_IN[k]||[];
   if(outs.length||ins.length){
-    h+=`<div class="cxb"><h4>Cross-references</h4>`;
-    if(outs.length) h+=`<div class="dir">This framing points to</div>`+outs.map(x=>ctxLink(x,k)).join('');
-    if(ins.length) h+=`<div class="dir">Pointed to by</div>`+ins.map(x=>ctxLink(x,k)).join('');
+    h+=`<div class="cxb"><h4>Mentioned in framings</h4>`;
+    if(outs.length) h+=`<div class="dir">This framing mentions</div>`+outs.map(x=>ctxLink(x,k)).join('');
+    if(ins.length) h+=`<div class="dir">Mentioned by</div>`+ins.map(x=>ctxLink(x,k)).join('');
     h+=`</div>`;
   }
   if(q.crux){
@@ -252,7 +252,7 @@ ctx.addEventListener('click',e=>{const b=e.target.closest('[data-go]'); if(b) sh
 /* ---------- search + lenses ---------- */
 const ENTRYSET=new Set(Object.keys(ENTRY));
 const QROWS=[]; DATA.forEach(s0=>s0.subs.forEach(su=>su.qs.forEach(q=>QROWS.push({k:q.id,su:su.id,sec:s0.id,
-  txt:(q.id+' '+q.t+' '+q.q+' '+q.n).toLowerCase(),crux:!!q.crux,entry:ENTRYSET.has(q.id)}))));
+  txt:(q.id+' '+q.t+' '+q.q+' '+q.n+' '+q.links.map(l=>l.t+' '+l.s).join(' ')).toLowerCase(),crux:!!q.crux,entry:ENTRYSET.has(q.id)}))));
 let lensC=false,lensE=false;
 const qbox=document.getElementById('q');
 function applyFilter(){
