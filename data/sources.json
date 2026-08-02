@@ -1,30 +1,268 @@
 {
-  "_comment": "Discovery registry for stream sweeps. Sweeps enumerate these feeds since the last review rather than relying on web search. 'role': aggregator = mined to recover X/thread discourse; primary = the publication's own work. Editor additions welcome — this list is the editor's reading graph, not a canon.",
-  "aggregators": [
-    {"name": "Don't Worry About the Vase (Zvi Mowshowitz)", "feed": "https://thezvi.substack.com/feed", "role": "aggregator", "note": "Weekly roundups catalog the discourse incl. X threads, with links"},
-    {"name": "AI News (smol.ai)", "feed": "https://news.smol.ai/rss.xml", "role": "aggregator", "note": "Daily; comprehensive across X/Discord/Reddit"},
-    {"name": "Transformer (Shakeel Hashim)", "feed": "https://www.transformernews.ai/feed", "role": "aggregator"},
-    {"name": "Import AI (Jack Clark)", "feed": "https://importai.substack.com/feed", "role": "aggregator"}
+ "_comment": "Discovery registry for stream sweeps. Sweeps enumerate these feeds since the last review rather than relying on web search. 'role': aggregator = mined to recover X/thread discourse; primary = the publication's own work. Editor additions welcome — this list is the editor's reading graph, not a canon.",
+ "aggregators": [
+  {
+   "name": "Don't Worry About the Vase (Zvi Mowshowitz)",
+   "feed": "https://thezvi.substack.com/feed",
+   "role": "aggregator",
+   "note": "Weekly roundups catalog the discourse incl. X threads, with links"
+  },
+  {
+   "name": "AI News (smol.ai)",
+   "feed": "https://news.smol.ai/rss.xml",
+   "role": "aggregator",
+   "note": "Daily; comprehensive across X/Discord/Reddit"
+  },
+  {
+   "name": "Transformer (Shakeel Hashim)",
+   "feed": "https://www.transformernews.ai/feed",
+   "role": "aggregator"
+  },
+  {
+   "name": "Import AI (Jack Clark)",
+   "feed": "https://importai.substack.com/feed",
+   "role": "aggregator"
+  }
+ ],
+ "primary": [
+  {
+   "name": "Interconnects (Nathan Lambert)",
+   "feed": "https://www.interconnects.ai/feed",
+   "sections": [
+    "1"
+   ]
+  },
+  {
+   "name": "Epoch AI",
+   "feed": "https://epoch.ai/blog/rss.xml",
+   "sections": [
+    "1",
+    "3"
+   ]
+  },
+  {
+   "name": "METR",
+   "feed": "https://metr.org/blog/feed.xml",
+   "sections": [
+    "1",
+    "2"
+   ]
+  },
+  {
+   "name": "Planned Obsolescence (Cotra & Piper)",
+   "feed": "https://www.planned-obsolescence.org/feed",
+   "sections": [
+    "1",
+    "2"
+   ]
+  },
+  {
+   "name": "AI Snake Oil (Narayanan & Kapoor)",
+   "feed": "https://www.aisnakeoil.com/feed",
+   "sections": [
+    "1",
+    "3",
+    "5"
+   ]
+  },
+  {
+   "name": "Understanding AI (Timothy B. Lee)",
+   "feed": "https://www.understandingai.org/feed",
+   "sections": [
+    "1",
+    "3"
+   ]
+  },
+  {
+   "name": "ChinaTalk (Jordan Schneider)",
+   "feed": "https://www.chinatalk.media/feed",
+   "sections": [
+    "4"
+   ]
+  },
+  {
+   "name": "China Translated (Robert Wu)",
+   "feed": "https://www.china-translated.com/feed",
+   "sections": [
+    "4"
+   ]
+  },
+  {
+   "name": "Anthropic research & news",
+   "feed": "https://www.anthropic.com/rss.xml",
+   "sections": [
+    "1",
+    "2",
+    "3"
+   ]
+  },
+  {
+   "name": "Dwarkesh Podcast",
+   "feed": "https://www.dwarkesh.com/feed",
+   "sections": [
+    "1",
+    "5"
+   ]
+  },
+  {
+   "name": "Lawfare AI coverage",
+   "feed": "https://www.lawfaremedia.org/feeds/topic/artificial-intelligence",
+   "sections": [
+    "2",
+    "4"
+   ]
+  },
+  {
+   "name": "LessWrong (AI, curated)",
+   "feed": "https://www.lesswrong.com/feed.xml?view=curated-rss",
+   "sections": [
+    "1",
+    "2"
+   ]
+  },
+  {
+   "name": "Marginal Revolution",
+   "feed": "https://marginalrevolution.com/feed",
+   "sections": [
+    "3"
+   ]
+  },
+  {
+   "name": "Noahpinion (Noah Smith)",
+   "feed": "https://www.noahpinion.blog/feed",
+   "sections": [
+    "3"
+   ]
+  },
+  {
+   "name": "One Useful Thing (Ethan Mollick)",
+   "feed": "https://www.oneusefulthing.org/feed",
+   "sections": [
+    "3",
+    "5"
+   ]
+  },
+  {
+   "name": "Astral Codex Ten (Scott Alexander)",
+   "feed": "https://www.astralcodexten.com/feed",
+   "sections": [
+    "1",
+    "2",
+    "5"
+   ]
+  },
+  {
+   "name": "Forethought",
+   "feed": "https://www.forethought.org/rss.xml",
+   "sections": [
+    "2",
+    "4",
+    "5"
+   ]
+  },
+  {
+   "name": "Stanford Digital Economy Lab",
+   "feed": "https://digitaleconomy.stanford.edu/feed/",
+   "sections": [
+    "3"
+   ]
+  },
+  {
+   "name": "Gwern",
+   "feed": "https://gwern.net/atom.xml",
+   "sections": [
+    "1",
+    "2"
+   ]
+  },
+  {
+   "name": "Overcoming Bias (Robin Hanson)",
+   "feed": "https://www.overcomingbias.com/feed",
+   "sections": [
+    "1",
+    "3",
+    "5"
+   ]
+  },
+  {
+   "name": "The Diff (Byrne Hobart)",
+   "feed": "https://www.thediff.co/feed",
+   "sections": [
+    "3",
+    "4"
+   ]
+  },
+  {
+   "name": "Bits about Money (Patrick McKenzie)",
+   "feed": "https://www.bitsaboutmoney.com/archive/rss/",
+   "sections": [
+    "3"
+   ]
+  },
+  {
+   "name": "Andy Masley",
+   "feed": "https://andymasley.substack.com/feed",
+   "sections": [
+    "3",
+    "5"
+   ]
+  },
+  {
+   "name": "Institute for Progress",
+   "feed": "https://ifp.org/feed/",
+   "sections": [
+    "1",
+    "4"
+   ]
+  },
+  {
+   "name": "Arc Institute",
+   "feed": "https://arcinstitute.org/news",
+   "sections": [
+    "3"
+   ]
+  },
+  {
+   "name": "Togelius (Julian Togelius)",
+   "feed": "https://togelius.blogspot.com/feeds/posts/default",
+   "sections": [
+    "1"
+   ]
+  }
+ ],
+ "editor_inbox": "Links the editor sends in chat or via the suggest-improvement issue template enter the next sweep's candidate pool with priority.",
+ "x_follows": {
+  "_comment": "The editor's X reading graph. No direct API access: these names prime aggregator mining (watch for their posts in roundups) and the editor hand-feed. Names as given by the editor.",
+  "names": [
+   "Dwarkesh Patel",
+   "Demis Hassabis",
+   "Gwern",
+   "Matt Levine",
+   "Robin Hanson",
+   "Eliezer Yudkowsky",
+   "Scott Alexander",
+   "Byrne Hobart",
+   "Nathan Lambert",
+   "Peter Kuperman",
+   "John Collison",
+   "Alex Imas",
+   "Arc Institute",
+   "Andy Masley",
+   "Ben Jones",
+   "Kyle Myers",
+   "Pierre Azoulay",
+   "Paul Niehaus",
+   "Tim Fist",
+   "Chad Jones",
+   "Julian Togelius",
+   "Garry Tan",
+   "Marc Andreessen",
+   "Patrick McKenzie (patio11)",
+   "Satya Nadella",
+   "Peter McCrory"
   ],
-  "primary": [
-    {"name": "Interconnects (Nathan Lambert)", "feed": "https://www.interconnects.ai/feed", "sections": ["1"]},
-    {"name": "Epoch AI", "feed": "https://epoch.ai/blog/rss.xml", "sections": ["1", "3"]},
-    {"name": "METR", "feed": "https://metr.org/blog/feed.xml", "sections": ["1", "2"]},
-    {"name": "Planned Obsolescence (Cotra & Piper)", "feed": "https://www.planned-obsolescence.org/feed", "sections": ["1", "2"]},
-    {"name": "AI Snake Oil (Narayanan & Kapoor)", "feed": "https://www.aisnakeoil.com/feed", "sections": ["1", "3", "5"]},
-    {"name": "Understanding AI (Timothy B. Lee)", "feed": "https://www.understandingai.org/feed", "sections": ["1", "3"]},
-    {"name": "ChinaTalk (Jordan Schneider)", "feed": "https://www.chinatalk.media/feed", "sections": ["4"]},
-    {"name": "China Translated (Robert Wu)", "feed": "https://www.china-translated.com/feed", "sections": ["4"]},
-    {"name": "Anthropic research & news", "feed": "https://www.anthropic.com/rss.xml", "sections": ["1", "2", "3"]},
-    {"name": "Dwarkesh Podcast", "feed": "https://www.dwarkesh.com/feed", "sections": ["1", "5"]},
-    {"name": "Lawfare AI coverage", "feed": "https://www.lawfaremedia.org/feeds/topic/artificial-intelligence", "sections": ["2", "4"]},
-    {"name": "LessWrong (AI, curated)", "feed": "https://www.lesswrong.com/feed.xml?view=curated-rss", "sections": ["1", "2"]},
-    {"name": "Marginal Revolution", "feed": "https://marginalrevolution.com/feed", "sections": ["3"]},
-    {"name": "Noahpinion (Noah Smith)", "feed": "https://www.noahpinion.blog/feed", "sections": ["3"]},
-    {"name": "One Useful Thing (Ethan Mollick)", "feed": "https://www.oneusefulthing.org/feed", "sections": ["3", "5"]},
-    {"name": "Astral Codex Ten (Scott Alexander)", "feed": "https://www.astralcodexten.com/feed", "sections": ["1", "2", "5"]},
-    {"name": "Forethought", "feed": "https://www.forethought.org/rss.xml", "sections": ["2", "4", "5"]},
-    {"name": "Stanford Digital Economy Lab", "feed": "https://digitaleconomy.stanford.edu/feed/", "sections": ["3"]}
-  ],
-  "editor_inbox": "Links the editor sends in chat or via the suggest-improvement issue template enter the next sweep's candidate pool with priority."
+  "unresolved": [
+   "One t.co short link from the editor could not be resolved (robots-blocked); awaiting the expanded URL."
+  ]
+ }
 }

@@ -374,7 +374,7 @@
   "q_labor_displacement": {
    "tier": "high",
    "reviewed": "August 2, 2026",
-   "moved": "Direct automation measures roughly doubled in one model generation while occupational data keep showing restructuring without decline — and the institutional politics moved: a lab CEO now proposes income support pegged to measured displacement, while Narayanan and Kapoor argue AI-attributed layoffs are largely narrative cover.",
+   "moved": "Direct automation measures roughly doubled in one model generation while occupational data keep showing restructuring without decline — a tension now visible inside one lab: Amodei proposes income support pegged to measured displacement, while Anthropic's head of economics reports no visible displacement in 18 months of internal data. Narayanan and Kapoor argue AI-attributed layoffs are largely narrative cover.",
    "items": [
     {
      "kind": "paper",
@@ -442,6 +442,21 @@
      "date": "2026-06",
      "url": "https://darioamodei.com/post/policy-on-the-ai-exponential",
      "note": "An institutional position as much as an argument: a lab CEO proposes tiered economic responses — wage insurance up to income support — pegged to measured AI-driven displacement."
+    },
+    {
+     "kind": "thread",
+     "title": "Why hasn't AI killed jobs? An 18-month internal-data assessment",
+     "author": "Peter McCrory",
+     "venue": "X",
+     "date": "2026-07",
+     "url": "https://x.com/PeterMcCrory/status/2079979510967959634",
+     "via": {
+      "t": "Fortune",
+      "u": "https://fortune.com/2026/07/24/anthropic-peter-mccrory-dario-amodei-why-hasnt-it-killed-jobs/"
+     },
+     "quote": "no relative deterioration in unemployment among workers whose jobs contain a large share of tasks that Claude is used to automate",
+     "note": "Anthropic's head of economics, on Anthropic's own usage data through June 2026 — a finding that cuts against his CEO's displacement forecast.",
+     "pos": "restruct"
     }
    ]
   },
@@ -735,7 +750,7 @@
   "q_machine_consciousness": {
    "tier": "slow",
    "reviewed": "August 2, 2026",
-   "moved": "Institutions took positions: a papal encyclical denying machine experience outright, a Cambridge research agenda taking welfare seriously, and Anthropic model-welfare assessments dissected in public. The sharpest new evidence cuts both ways — self-reports flip between adjacent model versions, and injection experiments find limited real introspection.",
+   "moved": "Institutions took positions — a papal encyclical denying machine experience, a Cambridge research agenda taking welfare seriously — while the evidence sharpened on both edges: self-reports flip between adjacent model versions, injection experiments find limited real introspection, and Anthropic reports a global-workspace-like structure that emerged in training.",
    "items": [
     {
      "kind": "report",
@@ -808,6 +823,16 @@
      "url": "https://www.chinatalk.media/p/you-dont-understand-the-popes-ai",
      "quote": "Artificial intelligences do not undergo experiences, do not possess a body, do not feel joy or pain, do not mature through relationships...",
      "note": "The Vatican encyclical's position explained: AI lacks consciousness and companions are illusions of relationship — a major institutional stance."
+    },
+    {
+     "kind": "report",
+     "title": "A Global Workspace in Language Models",
+     "author": "Anthropic interpretability team",
+     "venue": "Anthropic Research",
+     "date": "2026-07",
+     "url": "https://www.anthropic.com/research/global-workspace",
+     "quote": "Claude has developed a small collection of internal neural patterns that, compared to all its other internal processing, play a special role.",
+     "note": "A workspace-like structure that emerged in training — evidence bearing on access consciousness, and a lens for reading internal reasoning."
     }
    ]
   },
@@ -882,6 +907,27 @@
      "url": "https://epochai.substack.com/p/the-missing-half-of-ai-futurism-debates",
      "quote": "we've thought hard about how good the AIs might be, but not about how hard it'll be to develop specific technologies",
      "note": "Timeline forecasts neglect the engineering feasibility of specific post-AGI technologies."
+    }
+   ]
+  },
+  "q_value_capture": {
+   "tier": "medium",
+   "reviewed": "August 2, 2026",
+   "moved": "Coverage of this question opened with Nadella's argument that enterprises pay for intelligence twice — in money and in proprietary knowledge exhaust — and should own what their usage teaches. More at the next sweep.",
+   "items": [
+    {
+     "kind": "essay",
+     "title": "The Reverse Information Paradox",
+     "author": "Satya Nadella",
+     "venue": "X (article)",
+     "date": "2026-07",
+     "url": "https://x.com/satyanadella/status/2076323181154230284",
+     "via": {
+      "t": "TechCrunch",
+      "u": "https://techcrunch.com/2026/07/13/satya-nadella-has-issued-a-shocking-warning-to-companies-using-ai/"
+     },
+     "quote": "In consuming intelligence, you are creating intelligence. And what you create should belong to you",
+     "note": "Microsoft's CEO argues model providers capture customers' proprietary knowledge through usage exhaust — an institutional position from the largest AI reseller, pushing orchestration layers and open models."
     }
    ]
   }
