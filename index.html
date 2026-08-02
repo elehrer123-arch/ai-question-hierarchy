@@ -25,7 +25,7 @@
 --serif:'Charter','Iowan Old Style','Palatino Linotype',Georgia,serif;
 --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
 *{box-sizing:border-box;margin:0}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);padding:0 26px 70px}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);padding:0 26px 70px;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 button{font-family:var(--sans)}
 button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .topbar{display:flex;gap:16px;align-items:baseline;flex-wrap:wrap;padding:16px 0 12px;border-bottom:1px solid var(--line);max-width:1360px;margin:0 auto}
@@ -99,6 +99,12 @@ footer a{color:var(--ink2)}
   body{padding:0 16px 60px}
   h1{font-size:27px}
   .bs{flex-direction:column;gap:14px}
+  .bqhead{font-size:13.5px;font-weight:650;color:var(--ink);padding:0}
+  .bqhead .bqid{font-weight:400;color:var(--ink3);font-size:10.5px}
+  .bqq{font-size:15px;margin:2px 0 0}
+  .js .bcol.mopen .bq{margin-bottom:16px}
+  .js .bcol.mopen .bsub{margin:22px 0 10px;font-size:11px}
+  .searching .bq.hit{margin-bottom:16px}
   .js .bcol .btag,.js .bcol .bsub,.js .bcol .bq{display:none}
   .js .bcol.mopen .btag,.js .bcol.mopen .bsub,.js .bcol.mopen .bq{display:block}
   .js .bcol.mopen .bqq{display:block}
