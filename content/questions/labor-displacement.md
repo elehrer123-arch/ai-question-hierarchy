@@ -11,16 +11,15 @@ editor: Elliott Lehrer
 core_revised: August 2026
 evidence_updated: August 2026
 redirect_from: cruxes/labor-complement-or-substitute
-crux: Will AI primarily complement human labor or substitute for it?
 scope_short: Primarily cognitive work in advanced economies, mid-2020s through the 2030s.
 scope: Primarily cognitive work in advanced economies, mid-2020s through the 2030s. Embodied automation, developing-country labor markets, and the long-run post-AGI case are treated where they bear on that question, not surveyed comprehensively.
-description: Which tasks and occupations AI will automate, augment, or transform, and how quickly — organized around the load-bearing crux of whether AI primarily complements human labor or substitutes for it.
+description: Which tasks and occupations AI will automate, augment, or transform, and how quickly — organized around whether AI primarily complements human labor or substitutes for it.
 ---
 
 
 ## The question
 
-Which kinds of work will AI automate outright, which will it augment, which will it transform into something new, and which will it leave largely untouched — and on what timetable? Automation, augmentation, transformation, and creation describe what happens to *tasks*. Complementarity and substitution describe what those changes ultimately do to the *demand for human labor* — the load-bearing crux this question carries. This entry answers both: the task-and-occupation map, and the crux that determines what the map means.
+Which kinds of work will AI automate outright, which will it augment, which will it transform into something new, and which will it leave largely untouched — and on what timetable? Automation, augmentation, transformation, and creation describe what happens to *tasks*. Complementarity and substitution describe what those changes ultimately do to the *demand for human labor*. This entry answers both: the task-and-occupation map, and the deeper question that determines what the map means.
 
 When an AI system enters a workplace, it can do two things to the humans there. It can *complement* them — raise the value of their time by handling sub-tasks, extending their expertise, or letting them serve more people — or it can *substitute* for them, performing their work well enough that the human's contribution commands less pay, or none. The question is which force dominates, for most workers, over the horizon in which this generation of institutions must respond.
 
@@ -40,7 +39,7 @@ This question is distinct from its neighbors: the size of AI's aggregate growth 
 
 ## Why it matters
 
-If AI primarily complements labor, its gains flow substantially through wages — wage-mediated distribution remains a plausible central channel, and policy can focus on adoption, training, and adjustment. If AI primarily substitutes for labor, gains flow to whoever owns compute, models, and capital; wages can fall even while output soars; and distribution comes to depend much more heavily on ownership, taxation, and transfer mechanisms that democracies have historically found harder to enact than employment policy. Which world we are entering determines how broadly "learn to work with AI" remains useful advice, and whether the right policy portfolio is retraining programs or a renegotiation of who owns the productive base. Note that the comfortable case is not automatically comfortable: complementarity can coexist with weakened bargaining power, rents concentrating with model providers, and a falling labor share — which is part of why the wage question (3.2.2) stays open even if this crux resolves toward complement.
+If AI primarily complements labor, its gains flow substantially through wages — wage-mediated distribution remains a plausible central channel, and policy can focus on adoption, training, and adjustment. If AI primarily substitutes for labor, gains flow to whoever owns compute, models, and capital; wages can fall even while output soars; and distribution comes to depend much more heavily on ownership, taxation, and transfer mechanisms that democracies have historically found harder to enact than employment policy. Which world we are entering determines how broadly "learn to work with AI" remains useful advice, and whether the right policy portfolio is retraining programs or a renegotiation of who owns the productive base. Note that the comfortable case is not automatically comfortable: complementarity can coexist with weakened bargaining power, rents concentrating with model providers, and a falling labor share — which is part of why the wage question (3.2.2) stays open even if this one resolves toward complement.
 
 ## Current assessment — August 2026
 

@@ -80,7 +80,12 @@ h1{font-family:var(--serif);font-size:29px;line-height:1.22;letter-spacing:-.01e
 .maplink{display:inline-block;margin-top:16px;font-size:13px;color:var(--sc)}
 .rechead{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink3);margin:26px 0 10px;font-weight:600}
 .rec{border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:10px;background:var(--panel);padding:11px 14px;margin-bottom:9px;max-width:640px}
-.rec .rq{font-family:var(--serif);font-style:italic;font-size:13.5px;color:var(--ink);line-height:1.5;margin-bottom:7px}
+.rec .rtop{font-size:12px;color:var(--ink3);margin-bottom:3px;display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
+.rec .rauth{color:var(--ink);font-size:12.5px}
+.stance{margin-left:auto;font-size:10.5px;letter-spacing:.03em;border:1px solid var(--line2);border-radius:20px;padding:1px 8px;color:var(--ink2);background:var(--bg);white-space:nowrap}
+.core{font-size:12px;color:var(--ink2);line-height:1.6;max-width:640px;margin-bottom:4px}
+.core a{color:var(--ink2)}
+.rec .rq{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--ink2);line-height:1.5;margin:5px 0 0}
 .rec a.rt{font-size:13px;font-weight:600;color:var(--ink);text-decoration:none}
 .rec a.rt:hover{text-decoration:underline}
 .rec .rmeta{font-size:11.5px;color:var(--ink3);margin-top:2px}
@@ -98,7 +103,7 @@ h1{font-family:var(--serif);font-size:29px;line-height:1.22;letter-spacing:-.01e
 <header><a class="home" href="../">The Biggest Questions About&nbsp;AI</a><span style="font-size:12.5px;color:var(--ink3)">Browse — every level is a page</span><nav class="switch" style="margin-left:auto;font-size:13px;color:var(--ink3)" aria-label="View switch"><a id="toMap" href="../" style="color:var(--ink2);text-decoration:none">Map</a> · <b style="color:var(--ink)">Browse</b></nav></header>
 <div class="wrap">
 <nav id="tree" aria-label="Map"><div id="srch"><input id="q" type="search" placeholder="Search questions…" aria-label="Search questions"></div>
-<div class="lens"><button id="lensCrux" aria-pressed="false">✱ Cruxes</button><button id="lensEntry" aria-pressed="false">Full entries</button></div>
+<div class="lens"><button id="lensEntry" aria-pressed="false">Full entries</button></div>
 <div id="rows"></div></nav>
 <main id="page"><button id="back">← Map</button><div class="cols"><div class="pin" id="pin"></div><aside id="ctx" aria-label="Context"></aside></div></main>
 </div>
@@ -124,7 +129,7 @@ DATA.forEach(s=>{
   s.subs.forEach(su=>{
     t+=`<button class="trow lv1 hide" data-k="${su.id}" data-p="${s.id}"><span class="cv">▶</span><span class="lb">${su.id} ${esc(su.t)}</span><span class="ct">${su.qs.length}</span></button>`;
     su.qs.forEach(q=>{
-      t+=`<button class="trow lv2 hide" data-k="${q.id}" data-p="${su.id}"><span class="cv"></span><span class="lb">${q.id} ${esc(q.t)}${q.crux?' <span class="cx">✱</span>':''}</span></button>`;
+      t+=`<button class="trow lv2 hide" data-k="${q.id}" data-p="${su.id}"><span class="cv"></span><span class="lb">${q.id} ${esc(q.t)}</span></button>`;
     });
   });
 });
@@ -184,30 +189,33 @@ function render(k){
     h+=crumbFor(n)+`<h1>${su.id} ${esc(su.t)}</h1>`;
     h+=`<p class="intro" style="margin-bottom:18px">${su.qs.length} questions.</p>`;
     su.qs.forEach(q=>{
-      h+=`<button class="qitem" data-go="${q.id}" style="--sc:var(--c${s.id})"><span class="qover">${q.id} · ${esc(q.t)}</span><span class="qq">${esc(q.q)}${q.crux?' <span class="cx">✱</span>':''}</span></button>`;
+      h+=`<button class="qitem" data-go="${q.id}" style="--sc:var(--c${s.id})"><span class="qover">${q.id} · ${esc(q.t)}</span><span class="qq">${esc(q.q)}</span></button>`;
     });
   }
   if(n.type==='q'){
     const {s,su,q}=n;
-    h+=crumbFor(n)+`<h1>${esc(q.q)}${q.crux?' <span class="cx">✱</span>':''}</h1>`;
-    if(q.crux) h+=`<p class="cruxnote"><span class="cx">✱</span> Bears on the load-bearing crux: <em>${esc(q.crux)}</em></p>`;
+    h+=crumbFor(n)+`<h1>${esc(q.q)}</h1>`;
+    const rc0=RECENT[q.id];
     h+=`<p class="qn">${esc(q.n).replace(/(?<![\w.])([1-5]\.\d{1,2}\.\d{1,2})(?![\w.])/g,(m0,num)=>num===q.id?num:(nodes[num]?`<a data-go="${num}" style="cursor:pointer;color:var(--c${num[0]});text-decoration:underline dotted">${num}</a>`:num))}</p>`;
     const en=ENTRY[q.id];
     if(en){
       h+=`<div class="entry" style="--sc:var(--c${s.id})"><span class="est">Full entry · ${esc(en.status)}</span><h3>${esc(en.title)}</h3><p>${esc(en.excerpt)}</p><a href="${en.href}">Continue reading →</a></div>`;
     }
-    h+=`<div class="links">`;
-    q.links.forEach(l=>{h+=`<a href="${esc(l.u)}" target="_blank" rel="noopener">${esc(l.t)}<span class="lsrc">${esc(l.s)}${l.y?' · '+l.y:''}</span></a>`});
-    h+=`</div>`;
-    const rc=RECENT[q.id];
+    const rc=rc0;
     if(rc&&rc.length){
-      h+=`<div class="rechead">Recent commentary · swept ${SWEPT}</div>`;
+      h+=`<div class="core">Core sources: `+q.links.map(l=>`<a href="${esc(l.u)}" target="_blank" rel="noopener">${esc(l.t)}</a> (${esc(l.s)}${l.y?', '+l.y:''})`).join(' · ')+`</div>`;
+      const ds=rc.map(r=>r.date).sort();
+      h+=`<div class="rechead">Recent commentary · ${rc.length} piece${rc.length>1?'s':''}, ${fmtD(ds[0])}–${fmtD(ds[ds.length-1])} · swept ${SWEPT}</div>`;
       rc.forEach(r=>{
-        h+=`<div class="rec"><p class="rq">“${esc(r.quote)}”</p>`+
+        h+=`<div class="rec"><div class="rtop"><b class="rauth">${esc(r.author)}</b> <span class="rven">· ${esc(r.venue)} · ${fmtD(r.date)}</span>${r.stance?`<span class="stance">${esc(r.stance)}</span>`:''}</div>`+
            `<a class="rt" href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a>`+
-           `<div class="rmeta">${esc(r.author)} · ${esc(r.venue)} · ${fmtD(r.date)}</div>`+
+           `<p class="rq">“${esc(r.quote)}”</p>`+
            (r.note?`<div class="rnote">${esc(r.note)}</div>`:'')+`</div>`;
       });
+    } else {
+      h+=`<div class="links">`;
+      q.links.forEach(l=>{h+=`<a href="${esc(l.u)}" target="_blank" rel="noopener">${esc(l.t)}<span class="lsrc">${esc(l.s)}${l.y?' · '+l.y:''}</span></a>`});
+      h+=`</div>`;
     }
     h+=`<a class="maplink" style="--sc:var(--c${s.id})" href="../#q${q.id.replaceAll('.','-')}">View on the map →</a>`;
   }
@@ -240,13 +248,13 @@ pin.addEventListener('click',e=>{const b=e.target.closest('[data-go]'); if(b) sh
 document.getElementById('back').addEventListener('click',()=>{document.body.classList.remove('detail')});
 /* ---------- context rail ---------- */
 const ctx=document.getElementById('ctx');
-const REFS_OUT={},REFS_IN={},CRUXG={};
+const REFS_OUT={},REFS_IN={};
 order.forEach(k=>{const n=nodes[k]; if(n.type!=='q')return;
   const q=n.q;
   const outs=[...new Set((q.n.match(/[1-5]\.\d{1,2}\.\d{1,2}/g)||[]).filter(x=>x!==k&&nodes[x]))];
   REFS_OUT[k]=outs; outs.forEach(t0=>{(REFS_IN[t0]=REFS_IN[t0]||[]).push(k)});
-  if(q.crux)(CRUXG[q.crux]=CRUXG[q.crux]||[]).push(k);});
-function ctxLink(k,cur){return `<a data-go="${k}"${k===cur?' class="cur"':''}>${esc(label(k))}${nodes[k].q&&nodes[k].q.crux?' <span class="cx">✱</span>':''}</a>`}
+  });
+function ctxLink(k,cur){return `<a data-go="${k}"${k===cur?' class="cur"':''}>${esc(label(k))}</a>`}
 function renderCtx(k){
   const n=nodes[k]; if(!n||n.type==='root'||n.type==='sec') return '';
   let h='';
@@ -305,7 +313,6 @@ function applyFilter(){
   });
 }
 qbox.addEventListener('input',applyFilter);
-document.getElementById('lensCrux').addEventListener('click',e=>{lensC=!lensC;e.target.classList.toggle('on',lensC);e.target.setAttribute('aria-pressed',lensC);applyFilter();});
 document.getElementById('lensEntry').addEventListener('click',e=>{lensE=!lensE;e.target.classList.toggle('on',lensE);e.target.setAttribute('aria-pressed',lensE);applyFilter();});
 
 const hh=(location.hash||'').replace(/^#q?/,'').replaceAll('-','.');

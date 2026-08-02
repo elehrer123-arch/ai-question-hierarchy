@@ -156,9 +156,8 @@ def render_entry(entry, qindex, sections, entry_slugs):
     review = meta.get("review", "Pending")
     dateline = (f'{meta["status"]} · editorial review {review.lower()}. '
                 f'Core article last revised {core_revised}; evidence updated {meta.get("evidence_updated", "—")}.')
-    mark = '<span class="cruxmark" title="Load-bearing crux">✱</span>' if meta.get("crux") else ""
-    cruxnote = (f'<p class="cruxnote"><span class="cx">✱</span> Bears on the load-bearing crux: <em>{E(meta["crux"])}</em></p>'
-                if meta.get("crux") else "")
+    mark = ""
+    cruxnote = ""
     scopenote = f'Scope: {E(meta.get("scope_short", ""))}' if meta.get("scope_short") else ""
     short_title = meta.get("short_title", meta["title"])
     cite = (f'“{E(meta["title"])}” <em>The Biggest Questions About AI</em>, '
@@ -260,8 +259,7 @@ def render_index(sections, overview_links, outdir="", legacy=False):
             for q in su["qs"]:
                 qid = "q" + q["id"].replace(".", "-")
                 qbid = "qbody" + q["id"].replace(".", "-")
-                mark = (f'<span class="cruxmark" title="Load-bearing crux: {E(q["crux"])}">✱</span>'
-                        if q.get("crux") else "")
+                mark = ""
                 overviews = "".join(
                     f'<a class="entrylink" href="{E(("../" if legacy else "") + href)}">Read the full entry →</a>'
                     for (title, href) in overview_links.get(q["id"], [])
@@ -341,7 +339,7 @@ def render_map(sections, entry_map):
                          f'href="browse/#{sub_anchor}">{su["id"]} · {E(su["t"])}</a>')
             for q in su["qs"]:
                 anchor = q["id"].replace(".", "-")
-                star = ' <span class="cx" title="Load-bearing crux">✱</span>' if q.get("crux") else ""
+                star = ""
                 x = " ".join([q["id"], q["t"], q["q"], q["n"]] +
                              [l["t"] + " " + l["s"] for l in q["links"]]).lower()
                 links = "".join(
@@ -478,7 +476,7 @@ def render_poster(sections):
                 flip = 90 < deg < 270
                 rot = deg + 180 if flip else deg
                 anchor = "end" if flip else "start"
-                crux = '<tspan fill="#a97729"> ✱</tspan>' if q.get("crux") else ""
+                crux = ""
                 svg.append(f'<a href="{B}#q{q["id"].replace(".","-")}"><title>{E(q["id"]+" · "+q["q"])}</title>'
                            f'<text transform="translate({lx:.1f},{ly:.1f}) rotate({rot:.1f})" text-anchor="{anchor}" '
                            f'font-size="10.5" fill="#514d45">{E(q["t"])}{crux}</text></a>')
