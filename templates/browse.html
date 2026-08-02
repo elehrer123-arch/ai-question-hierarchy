@@ -46,7 +46,7 @@ header{padding:11px 18px;border-bottom:1px solid var(--line);display:flex;gap:12
 .cxb a.cur{color:var(--ink);font-weight:600}
 .cxb .cxq{font-size:12px;font-style:italic;color:var(--ink2);line-height:1.45;margin-bottom:6px;font-family:var(--serif)}
 .cxb .dir{font-size:10px;color:var(--ink3);margin:5px 0 1px;text-transform:uppercase;letter-spacing:.08em}
-.pin{max-width:700px;padding:34px 38px 80px}
+.pin{max-width:880px;padding:34px 38px 80px}
 .crumb{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--sc,var(--ink3))}
 .crumb a{color:inherit;text-decoration:none}
 .crumb a:hover{text-decoration:underline}
@@ -84,6 +84,23 @@ h1{font-family:var(--serif);font-size:29px;line-height:1.22;letter-spacing:-.01e
 .rec .rauth{color:var(--ink);font-size:12.5px}
 .stance{margin-left:auto;font-size:10.5px;letter-spacing:.03em;border:1px solid var(--line2);border-radius:20px;padding:1px 8px;color:var(--ink2);background:var(--bg);white-space:nowrap}
 .core{font-size:12px;color:var(--ink2);line-height:1.6;max-width:640px;margin-bottom:4px}
+.debate{display:grid;grid-template-columns:repeat(var(--np),minmax(0,1fr));gap:14px;align-items:start}
+.pole{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 13px}
+.ph{border-bottom:2px solid var(--sc);padding-bottom:8px;margin-bottom:10px}
+.pl{font-size:13.5px;font-weight:700;color:var(--ink);line-height:1.3}
+.pc{font-family:var(--serif);font-style:italic;font-size:12px;color:var(--ink2);line-height:1.45;margin-top:3px}
+.pn2{font-size:10.5px;color:var(--ink3);margin-top:5px;letter-spacing:.05em;text-transform:uppercase}
+.pitem{padding:9px 0;border-bottom:1px solid var(--line)}
+.pitem:last-child{border-bottom:0;padding-bottom:2px}
+.pa{font-size:11.5px;color:var(--ink3);margin-bottom:2px}
+.pa b{color:var(--ink);font-size:12px}
+.pt{font-size:12.5px;font-weight:600;color:var(--ink);text-decoration:none;line-height:1.35;display:block}
+.pt:hover{text-decoration:underline}
+.pm{font-size:11px;color:var(--ink3);margin-top:2px}
+.ctag{border:1px solid var(--line2);border-radius:10px;padding:0 6px;font-size:9.5px;letter-spacing:.05em;text-transform:uppercase}
+.pq{font-family:var(--serif);font-style:italic;font-size:12px;color:var(--ink2);line-height:1.5;margin-top:4px}
+.pnn{font-size:12px;color:var(--ink2);line-height:1.5;margin-top:4px}
+@media(max-width:1100px){.debate{grid-template-columns:1fr}}
 .core a{color:var(--ink2)}
 .rec .rq{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--ink2);line-height:1.5;margin:5px 0 0}
 .rec a.rt{font-size:13px;font-weight:600;color:var(--ink);text-decoration:none}
@@ -110,7 +127,7 @@ h1{font-family:var(--serif);font-size:29px;line-height:1.22;letter-spacing:-.01e
 <script>
 const DATA=__DATA__, ENTRY_UNUSED=0;
 const ENTRY=__ENTRY__;
-const RECENT=__RECENT__, SWEPT=__SWEPT__;
+const RECENT=__RECENT__, SWEPT=__SWEPT__, DEBATES=__DEBATES__;
 const tree=document.getElementById('tree'), pin=document.getElementById('pin');
 const esc=t=>{const d=document.createElement('div');d.textContent=t;return d.innerHTML}
 const MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -201,16 +218,39 @@ function render(k){
     if(en){
       h+=`<div class="entry" style="--sc:var(--c${s.id})"><span class="est">Full entry · ${esc(en.status)}</span><h3>${esc(en.title)}</h3><p>${esc(en.excerpt)}</p><a href="${en.href}">Continue reading →</a></div>`;
     }
-    const rc=rc0;
-    if(rc&&rc.length){
+    const rc=rc0, deb=DEBATES[q.id];
+    if(deb&&rc&&rc.length){
+      const ds=rc.map(r=>r.date).sort();
+      // background/framing canon items
+      const frame=q.links.filter((l,i)=>deb.canon[String(i)]==='_frame');
+      if(frame.length) h+=`<div class="core">Background: `+frame.map(l=>`<a href="${esc(l.u)}" target="_blank" rel="noopener">${esc(l.t)}</a> (${esc(l.s)}${l.y?', '+l.y:''})`).join(' · ')+`</div>`;
+      h+=`<div class="rechead">The debate · ${rc.length} recent piece${rc.length>1?'s':''}, ${fmtD(ds[0])}–${fmtD(ds[ds.length-1])} · swept ${SWEPT}</div>`;
+      h+=`<div class="debate" style="--np:${deb.poles.length};--sc:var(--c${s.id})">`;
+      deb.poles.forEach(pole=>{
+        const canon=q.links.filter((l,i)=>deb.canon[String(i)]===pole.k);
+        const rec=rc.filter(r=>r.pos===pole.k).sort((a,b)=>b.date.localeCompare(a.date));
+        h+=`<div class="pole"><div class="ph"><div class="pl">${esc(pole.label)}</div><div class="pc">${esc(pole.claim)}</div><div class="pn2">${canon.length+rec.length} piece${canon.length+rec.length===1?'':'s'}</div></div>`;
+        canon.forEach(l=>{
+          h+=`<div class="pitem pcore"><a class="pt" href="${esc(l.u)}" target="_blank" rel="noopener">${esc(l.t)}</a>`+
+             `<div class="pm">${esc(l.s)}${l.y?' · '+l.y:''} · <span class="ctag">core</span></div></div>`;
+        });
+        rec.forEach(r=>{
+          h+=`<div class="pitem"><div class="pa"><b>${esc(r.author)}</b> · ${fmtD(r.date)}</div>`+
+             `<a class="pt" href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a>`+
+             (r.quote?`<p class="pq">“${esc(r.quote)}”</p>`:(r.note?`<p class="pnn">${esc(r.note)}</p>`:''))+`</div>`;
+        });
+        h+=`</div>`;
+      });
+      h+=`</div>`;
+    } else if(rc&&rc.length){
       h+=`<div class="core">Core sources: `+q.links.map(l=>`<a href="${esc(l.u)}" target="_blank" rel="noopener">${esc(l.t)}</a> (${esc(l.s)}${l.y?', '+l.y:''})`).join(' · ')+`</div>`;
       const ds=rc.map(r=>r.date).sort();
       h+=`<div class="rechead">Recent commentary · ${rc.length} piece${rc.length>1?'s':''}, ${fmtD(ds[0])}–${fmtD(ds[ds.length-1])} · swept ${SWEPT}</div>`;
       rc.forEach(r=>{
-        h+=`<div class="rec"><div class="rtop"><b class="rauth">${esc(r.author)}</b> <span class="rven">· ${esc(r.venue)} · ${fmtD(r.date)}</span>${r.stance?`<span class="stance">${esc(r.stance)}</span>`:''}</div>`+
+        h+=`<div class="rec"><div class="rtop"><b class="rauth">${esc(r.author)}</b> <span class="rven">· ${esc(r.venue)} · ${fmtD(r.date)}</span></div>`+
            `<a class="rt" href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a>`+
-           `<p class="rq">“${esc(r.quote)}”</p>`+
-           (r.note?`<div class="rnote">${esc(r.note)}</div>`:'')+`</div>`;
+           (r.quote?`<p class="rq">“${esc(r.quote)}”</p>`:'')+
+           (r.note&&!r.quote?`<div class="rnote">${esc(r.note)}</div>`:'')+`</div>`;
       });
     } else {
       h+=`<div class="links">`;
@@ -269,12 +309,6 @@ function renderCtx(k){
     h+=`<div class="cxb"><h4>Mentioned in framings</h4>`;
     if(outs.length) h+=`<div class="dir">This framing mentions</div>`+outs.map(x=>ctxLink(x,k)).join('');
     if(ins.length) h+=`<div class="dir">Mentioned by</div>`+ins.map(x=>ctxLink(x,k)).join('');
-    h+=`</div>`;
-  }
-  if(q.crux){
-    const others=(CRUXG[q.crux]||[]).filter(x=>x!==k);
-    h+=`<div class="cxb"><h4>Load-bearing crux ✱</h4><div class="cxq">${esc(q.crux)}</div>`;
-    if(others.length) h+=`<div class="dir">Also carried by</div>`+others.map(x=>ctxLink(x,k)).join('');
     h+=`</div>`;
   }
   return h;

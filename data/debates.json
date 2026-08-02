@@ -1,0 +1,217 @@
+{
+ "q_current_paradigm_ceiling": {
+  "poles": [
+   {
+    "k": "holds",
+    "label": "The recipe has headroom",
+    "claim": "Scaling, RL, and inference-time reasoning keep delivering; no new ingredient required yet."
+   },
+   {
+    "k": "missing",
+    "label": "A new ingredient is needed",
+    "claim": "Continual, on-the-job learning (or another missing capability) gates further progress."
+   }
+  ],
+  "canon": {
+   "0": "_frame",
+   "1": "missing"
+  },
+  "recent": {
+   "the-next-paradigm": "missing",
+   "continual-learning": "missing",
+   "2607.12395": "holds",
+   "dwarkesh-patels-2026": "holds"
+  }
+ },
+ "q_agent_task_horizons": {
+  "poles": [
+   {
+    "k": "fast",
+    "label": "Horizons are accelerating",
+    "claim": "The doubling time itself has shortened; the curve broke upward in 2025."
+   },
+   {
+    "k": "overstated",
+    "label": "Headline numbers overstate",
+    "claim": "Reliability-adjusted horizons are far shorter, and benchmarks embed human scaffolding."
+   }
+  ],
+  "canon": {
+   "0": "_frame",
+   "1": "_frame"
+  },
+  "recent": {
+   "10x-year": "fast",
+   "i-underestimated": "fast",
+   "16-hour-agent": "overstated",
+   "expenditure-horizon": "overstated"
+  }
+ },
+ "q_safety_evidence": {
+  "poles": [
+   {
+    "k": "maturing",
+    "label": "The machinery is maturing",
+    "claim": "Safety cases, scaling policies, and frontier frameworks are spreading and improving."
+   },
+   {
+    "k": "breaking",
+    "label": "The evidence base is weaker than it looks",
+    "claim": "Evaluation awareness, unsound foundations, and over-read null results undermine the claims."
+   }
+  ],
+  "canon": {
+   "0": "maturing",
+   "1": "maturing",
+   "2": "maturing"
+  },
+  "recent": {
+   "international-ai-safety-report": "maturing",
+   "2603.08760": "breaking",
+   "evaluation-awareness": "breaking",
+   "cyber)-model": "breaking"
+  }
+ },
+ "q_labor_displacement": {
+  "poles": [
+   {
+    "k": "arriving",
+    "label": "Substitution is showing up",
+    "claim": "End-to-end automation of real work is rising fast on direct measures."
+   },
+   {
+    "k": "restruct",
+    "label": "Restructuring without decline",
+    "claim": "Exposure predicts reorganization of work, not employment loss — so far."
+   },
+   {
+    "k": "method",
+    "label": "Measurement disputes",
+    "claim": "What the benchmarks and usage data can and cannot tell us."
+   }
+  ],
+  "canon": {
+   "0": "method",
+   "1": "method"
+  },
+  "recent": {
+   "digital-labor-automation": "arriving",
+   "chicagofed": "restruct",
+   "economic-index-march-2026": "restruct",
+   "economic-value-benchmarks": "method"
+  }
+ },
+ "q_entry_level_work": {
+  "poles": [
+   {
+    "k": "ai",
+    "label": "AI is the driver",
+    "claim": "Entry-level contraction in exposed occupations is real and attributable to AI."
+   },
+   {
+    "k": "other",
+    "label": "Other causes, small effects",
+    "claim": "Rates, remote work, and macro conditions explain most of it; aggregate effects remain small."
+   }
+  ],
+  "canon": {
+   "0": "ai",
+   "1": "other"
+  },
+  "recent": {
+   "AIEI_SDEL": "ai",
+   "canaries-interest-rates": "ai",
+   "who-gets-hired": "ai",
+   "separating-ai-hype": "other"
+  }
+ },
+ "q_export_controls": {
+  "poles": [
+   {
+    "k": "bought",
+    "label": "Controls bought real time",
+    "claim": "Compute denial slowed the frontier race and remains worth its costs."
+   },
+   {
+    "k": "backfire",
+    "label": "Substitution is accelerating",
+    "claim": "China is building a parallel stack; the controls' premises have aged."
+   },
+   {
+    "k": "ground",
+    "label": "Tracking the ground truth",
+    "claim": "Compute stocks and shifting policy, measured."
+   }
+  ],
+  "canon": {
+   "0": "bought",
+   "1": "backfire",
+   "2": "bought"
+  },
+  "recent": {
+   "bargaining-chip": "backfire",
+   "galapagosization": "backfire",
+   "how-many-chips": "ground",
+   "changing-export-control": "ground"
+  }
+ },
+ "q_concentration_of_power": {
+  "poles": [
+   {
+    "k": "danger",
+    "label": "Concentration is the danger",
+    "claim": "Unchecked control of frontier AI is a systemic, possibly irreversible risk."
+   },
+   {
+    "k": "account",
+    "label": "Accountability over dispersal",
+    "claim": "What matters is power answering to competing institutions, not power being small."
+   },
+   {
+    "k": "levers",
+    "label": "Levers and responses",
+    "claim": "Concrete mechanisms proposed or funded."
+   }
+  ],
+  "canon": {
+   "0": "danger",
+   "1": "danger"
+  },
+  "recent": {
+   "overconcentration-of-ai": "danger",
+   "when-decentralization-fails": "account",
+   "class-n-stock": "levers",
+   "extreme-power-concentration": "levers"
+  }
+ },
+ "q_ai_companionship": {
+  "poles": [
+   {
+    "k": "benefit",
+    "label": "Short-run benefits are real",
+    "claim": "Companions measurably reduce momentary loneliness."
+   },
+   {
+    "k": "harm",
+    "label": "Displacement and harm signals",
+    "claim": "Longitudinal and youth data point to dependency and relationships not formed."
+   },
+   {
+    "k": "design",
+    "label": "Depends on design and rules",
+    "claim": "The outcome is contingent on how asymmetric intimacy is built and governed."
+   }
+  ],
+  "canon": {
+   "0": "benefit",
+   "1": "_frame",
+   "2": "design"
+  },
+  "recent": {
+   "commonsensemedia": "harm",
+   "41870975": "harm",
+   "news.asu.edu": "harm",
+   "6457318": "design"
+  }
+ }
+}

@@ -384,9 +384,11 @@ def load_recent(qindex):
             errors.append(f"recent.json: unknown qid {qid!r}")
             continue
         for it in items:
-            for field in ("title", "author", "venue", "date", "url", "quote"):
+            for field in ("title", "author", "venue", "date", "url"):
                 if not it.get(field):
                     errors.append(f"recent.json {qid}: item missing '{field}'")
+            if not it.get("quote") and not it.get("note"):
+                errors.append(f"recent.json {qid}: item needs a quote or a note ({it.get('url')})")
             if urlparse(it.get("url", "")).scheme not in ("http", "https"):
                 errors.append(f"recent.json {qid}: bad URL {it.get('url')!r}")
             if not re.match(r"^\d{4}-\d{2}$", it.get("date", "")):
@@ -395,7 +397,28 @@ def load_recent(qindex):
     return {"swept": data.get("swept", ""), "items": by_id}, errors
 
 
-def render_browse(sections, entry_map, recent=None):
+def load_debates(qindex):
+    path = os.path.join(ROOT, "data", "debates.json")
+    if not os.path.exists(path):
+        return {}, []
+    with open(path, encoding="utf-8") as f:
+        data = json.load(f)
+    errors = []
+    qid_to_id = {q["qid"]: q["id"] for q in qindex.values()}
+    by_id = {}
+    for qid, deb in data.items():
+        if qid not in qid_to_id:
+            errors.append(f"debates.json: unknown qid {qid!r}")
+            continue
+        poles = {p["k"] for p in deb.get("poles", [])}
+        for idx, k in deb.get("canon", {}).items():
+            if k != "_frame" and k not in poles:
+                errors.append(f"debates.json {qid}: canon[{idx}] -> unknown pole {k!r}")
+        by_id[qid_to_id[qid]] = {"poles": deb["poles"], "canon": deb.get("canon", {})}
+    return by_id, errors
+
+
+def render_browse(sections, entry_map, recent=None, debates=None):
     data = []
     for s in sections:
         data.append({"id": s["id"], "name": SECTION_NAMES[s["id"]], "tag": s["tag"], "intro": s["intro"],
@@ -412,7 +435,8 @@ def render_browse(sections, entry_map, recent=None):
     out = (tpl.replace("__DATA__", json.dumps(data, ensure_ascii=False))
               .replace("__ENTRY__", json.dumps(entry_json, ensure_ascii=False))
               .replace("__RECENT__", json.dumps(recent["items"], ensure_ascii=False))
-              .replace("__SWEPT__", json.dumps(recent["swept"])))
+              .replace("__SWEPT__", json.dumps(recent["swept"]))
+              .replace("__DEBATES__", json.dumps(debates or {}, ensure_ascii=False)))
     outdir = os.path.join(ROOT, "browse")
     os.makedirs(outdir, exist_ok=True)
     with open(os.path.join(outdir, "index.html"), "w", encoding="utf-8") as f:
@@ -539,6 +563,8 @@ if __name__ == "__main__":
                                 "status": e["meta"]["status"], "excerpt": entry_excerpt(e["body"])}
 
     recent, recent_errors = load_recent(qindex)
+    debates, debate_errors = load_debates(qindex)
+    recent_errors += debate_errors
     if recent_errors:
         print("RECENT VALIDATION FAILED:", file=sys.stderr)
         for e in recent_errors:
@@ -546,7 +572,7 @@ if __name__ == "__main__":
         sys.exit(1)
 
     render_map(sections, entry_map)
-    render_browse(sections, entry_map, recent)
+    render_browse(sections, entry_map, recent, debates)
     render_poster(sections)
     qcount, lcount = render_index(sections, overview_links, outdir="all", legacy=True)
     print(f"built map (index.html), browse/, poster/, all/: {qcount} questions, "
