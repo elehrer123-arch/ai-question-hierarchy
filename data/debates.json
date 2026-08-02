@@ -47,31 +47,6 @@
    "expenditure-horizon": "overstated"
   }
  },
- "q_safety_evidence": {
-  "poles": [
-   {
-    "k": "maturing",
-    "label": "The machinery is maturing",
-    "claim": "Safety cases, scaling policies, and frontier frameworks are spreading and improving."
-   },
-   {
-    "k": "breaking",
-    "label": "The evidence base is weaker than it looks",
-    "claim": "Evaluation awareness, unsound foundations, and over-read null results undermine the claims."
-   }
-  ],
-  "canon": {
-   "0": "maturing",
-   "1": "maturing",
-   "2": "maturing"
-  },
-  "recent": {
-   "international-ai-safety-report": "maturing",
-   "2603.08760": "breaking",
-   "evaluation-awareness": "breaking",
-   "cyber)-model": "breaking"
-  }
- },
  "q_labor_displacement": {
   "poles": [
    {

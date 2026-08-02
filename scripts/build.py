@@ -379,11 +379,16 @@ def load_recent(qindex):
     errors = []
     qid_to_id = {q["qid"]: q["id"] for q in qindex.values()}
     by_id = {}
-    for qid, items in data.get("items", {}).items():
+    for qid, entry in data.get("questions", {}).items():
         if qid not in qid_to_id:
             errors.append(f"recent.json: unknown qid {qid!r}")
             continue
-        for it in items:
+        for field in ("tier", "reviewed", "moved"):
+            if not entry.get(field):
+                errors.append(f"recent.json {qid}: missing '{field}'")
+        if entry.get("tier") not in ("high", "medium", "slow"):
+            errors.append(f"recent.json {qid}: bad tier {entry.get('tier')!r}")
+        for it in entry.get("items", []):
             for field in ("title", "author", "venue", "date", "url"):
                 if not it.get(field):
                     errors.append(f"recent.json {qid}: item missing '{field}'")
@@ -393,7 +398,7 @@ def load_recent(qindex):
                 errors.append(f"recent.json {qid}: bad URL {it.get('url')!r}")
             if not re.match(r"^\d{4}-\d{2}$", it.get("date", "")):
                 errors.append(f"recent.json {qid}: bad date {it.get('date')!r} (want YYYY-MM)")
-        by_id[qid_to_id[qid]] = items
+        by_id[qid_to_id[qid]] = entry
     return {"swept": data.get("swept", ""), "items": by_id}, errors
 
 
