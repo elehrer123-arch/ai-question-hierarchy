@@ -49,10 +49,27 @@ reporting). Tweets and Substacks are inputs, not the product.
 - Prose over schema: format kind (paper/essay/post/report/interview) is the only
   formal label. Type, viewpoint, and role live in the note.
 
+## Discovery
+
+Sweeps do not rely on web search. Three channels, in order:
+1. **Registry enumeration** — every feed in data/sources.json is walked item-by-item
+   since the last review. Coverage is complete within the registry; growing the
+   registry is an editorial act (it is the editor's reading graph).
+2. **Aggregator mining** — comprehensive discourse roundups (Zvi, AI News, and
+   similar) are read to recover X threads and long-tail posts, with links to the
+   originals.
+3. **Editor inbox** — links the editor sends enter the next sweep's candidate pool
+   with priority. This is the primary X channel: the editor sees the feed; the
+   sweep cannot.
+
 ## Verification (absolute)
 
 No item ships unless its URL was fetched and its content checked during the sweep.
-Verbatim quotes come from the fetched content. Deleted or unreachable sources are
+Verbatim quotes come from the fetched content. Exception for X posts, which cannot
+be fetched directly: they may be included only when a fetchable secondary source
+(an aggregator) quotes or substantively describes the specific post — the item then
+carries a visible "via" attribution and its quote comes from the secondary source's
+quotation. Never reconstructed from memory. Deleted or unreachable sources are
 dropped or flagged at the next sweep.
 
 ## Cadence

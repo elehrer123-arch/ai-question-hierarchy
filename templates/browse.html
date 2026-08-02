@@ -134,6 +134,12 @@ const RECENT=__RECENT__, SWEPT=__SWEPT__, DEBATES=__DEBATES__;
 const tree=document.getElementById('tree'), pin=document.getElementById('pin');
 const esc=t=>{const d=document.createElement('div');d.textContent=t;return d.innerHTML}
 const MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+function pcard(r){
+  const via=r.via?` · <a href="${esc(r.via.u)}" target="_blank" rel="noopener" style="color:var(--ink3)">via ${esc(r.via.t)}</a>`:'';
+  return `<div class="pitem"><div class="pa"><b>${esc(r.author)}</b> · ${esc(r.venue)} · ${fmtD(r.date)}${via}</div>`+
+         `<a class="pt" href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a>`+
+         (r.quote?`<p class="pq">“${esc(r.quote)}”</p>`:(r.note?`<p class="pnn">${esc(r.note)}</p>`:''))+`</div>`;
+}
 const fmtD=d=>{const m=(d||'').match(/^(\d{4})-(\d{2})$/);return m?MON[+m[2]-1]+' '+m[1]:esc(d||'')};;
 const nodes={}, order=[];   // key -> {type,obj,s,su}; order = depth-first keys
 order.push('root'); nodes.root={type:'root'};
@@ -236,6 +242,7 @@ function render(k){
       if(frame.length) h+=`<div class="core">Background: `+frame.map(l=>`<a href="${esc(l.u)}" target="_blank" rel="noopener">${esc(l.t)}</a> (${esc(l.s)}${l.y?', '+l.y:''})`).join(' · ')+`</div>`;
       h+=`<div class="rechead">The debate · ${rc.length} recent piece${rc.length>1?'s':''}, ${fmtD(ds[0])}–${fmtD(ds[ds.length-1])}</div>`;
       h+=`<div class="debate" style="--np:${deb.poles.length};--sc:var(--c${s.id})">`;
+      const assigned=new Set(deb.poles.map(p=>p.k));
       deb.poles.forEach(pole=>{
         const canon=q.links.filter((l,i)=>deb.canon[String(i)]===pole.k);
         const rec=rc.filter(r=>r.pos===pole.k).sort((a,b)=>b.date.localeCompare(a.date));
@@ -244,20 +251,23 @@ function render(k){
           h+=`<div class="pitem pcore"><a class="pt" href="${esc(l.u)}" target="_blank" rel="noopener">${esc(l.t)}</a>`+
              `<div class="pm">${esc(l.s)}${l.y?' · '+l.y:''} · <span class="ctag">core</span></div></div>`;
         });
-        rec.forEach(r=>{
-          h+=`<div class="pitem"><div class="pa"><b>${esc(r.author)}</b> · ${fmtD(r.date)}</div>`+
-             `<a class="pt" href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a>`+
-             (r.quote?`<p class="pq">“${esc(r.quote)}”</p>`:(r.note?`<p class="pnn">${esc(r.note)}</p>`:''))+`</div>`;
-        });
+        rec.forEach(r=>{h+=pcard(r)});
         h+=`</div>`;
       });
       h+=`</div>`;
+      const cross=rc.filter(r=>!r.pos||!assigned.has(r.pos)).sort((a,b)=>b.date.localeCompare(a.date));
+      if(cross.length){
+        h+=`<div class="rechead" style="margin-top:16px">Cross-cutting</div><div class="pole" style="max-width:640px">`;
+        cross.forEach(r=>{h+=pcard(r)});
+        h+=`</div>`;
+      }
     } else if(rc&&rc.length){
       h+=`<div class="core">Core sources: `+q.links.map(l=>`<a href="${esc(l.u)}" target="_blank" rel="noopener">${esc(l.t)}</a> (${esc(l.s)}${l.y?', '+l.y:''})`).join(' · ')+`</div>`;
       const ds=rc.map(r=>r.date).sort();
       h+=`<div class="rechead">Recent thinking · ${rc.length} piece${rc.length>1?'s':''}, ${fmtD(ds[0])}–${fmtD(ds[ds.length-1])}</div>`;
       rc.forEach(r=>{
-        h+=`<div class="rec"><div class="rtop"><b class="rauth">${esc(r.author)}</b> <span class="rven">· ${esc(r.venue)} · ${fmtD(r.date)}</span></div>`+
+        const via=r.via?` · <a href="${esc(r.via.u)}" target="_blank" rel="noopener" style="color:var(--ink3)">via ${esc(r.via.t)}</a>`:'';
+        h+=`<div class="rec"><div class="rtop"><b class="rauth">${esc(r.author)}</b> <span class="rven">· ${esc(r.venue)} · ${fmtD(r.date)}${via}</span></div>`+
            `<a class="rt" href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a>`+
            (r.quote?`<p class="rq">“${esc(r.quote)}”</p>`:'')+
            (r.note&&!r.quote?`<div class="rnote">${esc(r.note)}</div>`:'')+`</div>`;
