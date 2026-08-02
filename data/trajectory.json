@@ -369,6 +369,34 @@
        "u": "https://x.com/pmarca/status/1810813293805851044"
       }
      ]
+    },
+    {
+     "id": "1.3.6",
+     "qid": "q_capability_to_power",
+     "slug": "capability-to-power",
+     "t": "Capability to power",
+     "q": "How readily can cognitive capability be converted into real-world power — money, influence, and control over infrastructure and institutions?",
+     "n": "The conversion crux beneath most takeover disagreements. One side maps concrete channels — earning money, hacking, recruiting human allies; the other holds that power is gated by deployment, permissions, trust, and institutions, so capability gains do not become power automatically. 1.3.5 tracks the economic milestone and 2.5.6 the catastrophic endpoint; this question owns the conversion mechanics both presuppose.",
+     "links": [
+      {
+       "t": "AI Could Defeat All of Us Combined",
+       "s": "Holden Karnofsky, Cold Takes",
+       "y": "2022",
+       "u": "https://www.cold-takes.com/ai-could-defeat-all-of-us-combined/"
+      },
+      {
+       "t": "AI as Normal Technology",
+       "s": "Narayanan & Kapoor, Knight First Amendment Institute",
+       "y": "2025",
+       "u": "https://knightcolumbia.org/content/ai-as-normal-technology"
+      },
+      {
+       "t": "When should we worry about AI power-seeking?",
+       "s": "Joe Carlsmith",
+       "y": "2025",
+       "u": "https://joecarlsmith.com/2025/02/19/when-should-we-worry-about-ai-power-seeking/"
+      }
+     ]
     }
    ]
   },

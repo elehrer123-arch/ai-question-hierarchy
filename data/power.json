@@ -666,6 +666,34 @@
        "u": "https://arxiv.org/abs/2501.10114"
       }
      ]
+    },
+    {
+     "id": "4.5.8",
+     "qid": "q_whose_values",
+     "slug": "whose-values",
+     "t": "Whose values",
+     "q": "When AI systems must encode contested values, who should decide what they refuse, favor, and optimize for — users, developers, governments, or some collective process?",
+     "n": "The political half of alignment: 2.1.1 asks whether values can be specified at all; this question asks who legitimately sets them. The operating answer is lab-authored model specs and constitutions, with experiments in public input so far small and one-off — and political philosophy has begun treating that arrangement as a question of governing power rather than product design.",
+     "links": [
+      {
+       "t": "Model Spec",
+       "s": "OpenAI · living document",
+       "y": "2025",
+       "u": "https://model-spec.openai.com/"
+      },
+      {
+       "t": "Collective Constitutional AI: Aligning a Language Model with Public Input",
+       "s": "Anthropic & Collective Intelligence Project",
+       "y": "2023",
+       "u": "https://www.anthropic.com/news/collective-constitutional-ai-aligning-a-language-model-with-public-input"
+      },
+      {
+       "t": "Governing the Algorithmic City",
+       "s": "Seth Lazar, Philosophy & Public Affairs",
+       "y": "2025",
+       "u": "https://doi.org/10.1111/papa.12279"
+      }
+     ]
     }
    ]
   }

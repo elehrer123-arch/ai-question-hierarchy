@@ -36,7 +36,7 @@
      "slug": "organizational-diffusion",
      "t": "Diffusion",
      "q": "How long will organizations take to redesign processes, software, incentives, and management around AI?",
-     "n": "General-purpose technologies historically take decades to show up in productivity statistics, because value requires organizational reinvention. The J-curve predicts measured productivity dips before it surges.",
+     "n": "General-purpose technologies historically take decades to show up in productivity statistics, because value requires organizational reinvention. The J-curve predicts measured productivity dips before it surges. The live counter-argument is self-diffusion: unlike past general-purpose technologies, AI might do part of its own integration work — writing the code, redesigning the processes — compressing the historical lag.",
      "links": [
       {
        "t": "The Productivity J-Curve",
