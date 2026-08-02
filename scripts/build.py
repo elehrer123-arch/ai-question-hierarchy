@@ -146,10 +146,12 @@ def render_entry(entry, qindex, sections, entry_slugs):
         for t in md.toc_tokens if t["level"] == 2
     )
     qnum = entry["qnum"]
-    qlink = (f'<a href="../../#q{qnum.replace(".", "-")}">{qnum} · {E(qindex[qnum]["t"])} — view in the map</a>')
+    anchor = qnum.replace(".", "-")
+    qlink = (f'<a href="../../#q{anchor}">{qnum} · {E(qindex[qnum]["t"])} — view on the map</a>'
+             f' · <a href="../../browse/#q{anchor}">open in Browse</a>')
     subsection = find_subsection(sections, qnum)
     crumb = f'Question {qnum} · {E(subsection["t"])}'
-    subhref = f'../../#sub{subsection["id"].replace(".", "-")}'
+    subhref = f'../../#{subsection["id"].replace(".", "-")}'
     core_revised = meta.get("core_revised", meta.get("core_reviewed", "—"))
     review = meta.get("review", "Pending")
     dateline = (f'{meta["status"]} · editorial review {review.lower()}. '
@@ -211,7 +213,7 @@ def render_entry(entry, qindex, sections, entry_slugs):
 
 
 # ---------------------------------------------------------------- index
-def render_index(sections, overview_links):
+def render_index(sections, overview_links, outdir="", legacy=False):
     qcount = sum(len(su["qs"]) for s in sections for su in s["subs"])
     lcount = sum(len(q["links"]) for s in sections for su in s["subs"] for q in su["qs"])
 
@@ -261,7 +263,7 @@ def render_index(sections, overview_links):
                 mark = (f'<span class="cruxmark" title="Load-bearing crux: {E(q["crux"])}">✱</span>'
                         if q.get("crux") else "")
                 overviews = "".join(
-                    f'<a class="entrylink" href="{E(href)}">Read the full entry →</a>'
+                    f'<a class="entrylink" href="{E(("../" if legacy else "") + href)}">Read the full entry →</a>'
                     for (title, href) in overview_links.get(q["id"], [])
                 )
                 links = "".join(
@@ -294,9 +296,195 @@ def render_index(sections, overview_links):
               .replace("__CONTENT__", "".join(content))
               .replace("__QCOUNT__", str(qcount))
               .replace("__LCOUNT__", str(lcount)))
-    with open(os.path.join(ROOT, "index.html"), "w", encoding="utf-8") as f:
+    if legacy:
+        out = out.replace('<link rel="canonical" href="https://elehrer123-arch.github.io/ai-question-hierarchy/">',
+                          '<link rel="canonical" href="https://elehrer123-arch.github.io/ai-question-hierarchy/all/">'
+                          '<meta name="robots" content="noindex">')
+        out = out.replace('<main id="main">',
+                          '<main id="main"><p style="font-size:12.5px;color:var(--ink3);border:1px solid var(--line);'
+                          'border-radius:9px;padding:8px 12px;margin-bottom:18px">This is the classic one-page view. '
+                          'The <a href="../">map</a> and <a href="../browse/">browse</a> views are the new front door.</p>')
+    dest = os.path.join(ROOT, outdir) if outdir else ROOT
+    os.makedirs(dest, exist_ok=True)
+    with open(os.path.join(dest, "index.html"), "w", encoding="utf-8") as f:
         f.write(out)
     return qcount, lcount
+
+
+# ---------------------------------------------------------------- map, browse, poster
+SECTION_NAMES = {"1": "Trajectory", "2": "Safety", "3": "Economy", "4": "Power", "5": "Humanity"}
+SECTION_COLORS = {"1": "#3d6b9e", "2": "#b0524b", "3": "#3d8a6b", "4": "#7a5ba6", "5": "#a97729"}
+
+
+def entry_excerpt(body):
+    m = re.search(r"## The question\n\n(.+?)\n\n", body, re.S)
+    if not m:
+        return ""
+    text = re.sub(r"\[([^\]]+)\]\([^)]*\)", r"\1", m.group(1))
+    return text.replace("*", "").strip()
+
+
+def render_map(sections, entry_map):
+    qcount = sum(len(su["qs"]) for s in sections for su in s["subs"])
+    lcount = sum(len(q["links"]) for s in sections for su in s["subs"] for q in su["qs"])
+    cols = []
+    for s in sections:
+        c = SECTION_COLORS[s["id"]]
+        inner = [
+            f'<button class="bsechead" data-s="{s["id"]}" aria-expanded="false">'
+            f'<span class="bnum">{s["id"]}</span><span class="bname">{SECTION_NAMES[s["id"]]}</span></button>'
+            f'<div class="btag">{E(s["tag"])}</div>'
+        ]
+        for su in s["subs"]:
+            sub_anchor = su["id"].replace(".", "-")
+            inner.append(f'<a class="bsub" id="b{sub_anchor}" data-sub="{su["id"]}" '
+                         f'href="browse/#{sub_anchor}">{su["id"]} · {E(su["t"])}</a>')
+            for q in su["qs"]:
+                anchor = q["id"].replace(".", "-")
+                star = ' <span class="cx" title="Load-bearing crux">✱</span>' if q.get("crux") else ""
+                x = " ".join([q["id"], q["t"], q["q"], q["n"]] +
+                             [l["t"] + " " + l["s"] for l in q["links"]]).lower()
+                links = "".join(
+                    f'<a href="{E(l["u"])}" target="_blank" rel="noopener">{E(l["t"])}'
+                    f'<span class="lsrc">{E(l["s"])}{" · " + l["y"] if l.get("y") else ""}</span></a>'
+                    for l in q["links"])
+                ent = entry_map.get(q["id"])
+                entlink = (f'<a class="bentry" href="questions/{ent["slug"]}/">Read the full entry →</a>'
+                           if ent else "")
+                inner.append(
+                    f'<div class="bq" id="n{anchor}" data-sec="{s["id"]}" data-sub="{su["id"]}" data-x="{E(x)}">'
+                    f'<button class="bqhead" aria-expanded="false"><span class="bqid">{q["id"]}</span>{E(q["t"])}{star}</button>'
+                    f'<p class="bqq">{E(q["q"])}</p>'
+                    f'<div class="bqbody"><div class="bqin">'
+                    f'<p class="bfull">{E(q["q"])}</p>'
+                    f'<p class="bn">{E(q["n"])}</p>'
+                    f'<div class="blinks">{links}</div>{entlink}'
+                    f'<a class="bopen" href="browse/#q{anchor}">Open in Browse →</a>'
+                    f'</div></div></div>')
+        cols.append(f'<div class="bcol" data-s="{s["id"]}" style="--sc:{c}">'
+                    f'<div class="binner">{"".join(inner)}</div></div>')
+    with open(os.path.join(ROOT, "templates", "map.html"), encoding="utf-8") as f:
+        tpl = f.read()
+    out = (tpl.replace("__COLS__", "".join(cols))
+              .replace("__QCOUNT__", str(qcount))
+              .replace("__LCOUNT__", str(lcount)))
+    with open(os.path.join(ROOT, "index.html"), "w", encoding="utf-8") as f:
+        f.write(out)
+
+
+def render_browse(sections, entry_map):
+    data = []
+    for s in sections:
+        data.append({"id": s["id"], "name": SECTION_NAMES[s["id"]], "tag": s["tag"], "intro": s["intro"],
+                     "subs": [{"id": su["id"], "t": su["t"], "qs": [
+                         {"id": q["id"], "t": q["t"], "q": q["q"], "n": q["n"],
+                          "crux": q.get("crux", ""), "slug": q["slug"], "links": q["links"]}
+                         for q in su["qs"]]} for su in s["subs"]]})
+    entry_json = {qnum: {"href": f'../questions/{e["slug"]}/', "title": e["title"],
+                         "status": e["status"], "excerpt": e["excerpt"]}
+                  for qnum, e in entry_map.items()}
+    with open(os.path.join(ROOT, "templates", "browse.html"), encoding="utf-8") as f:
+        tpl = f.read()
+    out = (tpl.replace("__DATA__", json.dumps(data, ensure_ascii=False))
+              .replace("__ENTRY__", json.dumps(entry_json, ensure_ascii=False)))
+    outdir = os.path.join(ROOT, "browse")
+    os.makedirs(outdir, exist_ok=True)
+    with open(os.path.join(outdir, "index.html"), "w", encoding="utf-8") as f:
+        f.write(out)
+
+
+def render_poster(sections):
+    import math
+    qn = sum(len(su["qs"]) for s in sections for su in s["subs"])
+    CX, CY = 560, 568
+    r1, r2, r3 = 124, 244, 336
+    gap = math.radians(3.2)
+    avail = 2 * math.pi - 5 * gap
+
+    def pol(r, t):
+        return (CX + r * math.cos(t), CY + r * math.sin(t))
+
+    def P(r, t):
+        x, y = pol(r, t)
+        return f"{x:.1f},{y:.1f}"
+
+    B = "../browse/"
+    svg = [f'<circle cx="{CX}" cy="{CY}" r="46" fill="#1d1c1a"/>'
+           f'<text x="{CX}" y="{CY-4}" fill="#fff" font-size="13" font-weight="700" text-anchor="middle" '
+           f'font-family="Georgia,serif">The map</text>'
+           f'<text x="{CX}" y="{CY+13}" fill="#cfcabd" font-size="9.5" text-anchor="middle">{qn} questions</text>']
+    theta = -math.pi / 2
+    for s in sections:
+        c = SECTION_COLORS[s["id"]]
+        nq = sum(len(su["qs"]) for su in s["subs"])
+        span = avail * nq / qn
+        s0, s1 = theta, theta + span
+        smid = (s0 + s1) / 2
+        qa, i = {}, 0
+        for su in s["subs"]:
+            for q in su["qs"]:
+                qa[q["id"]] = s0 + span * (i + 0.5) / nq
+                i += 1
+        x1, y1 = pol(48, smid); x2, y2 = pol(r1 - 30, smid)
+        svg.append(f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" '
+                   f'stroke="{c}" stroke-width="2.2" opacity=".55"/>')
+        for su in s["subs"]:
+            ua = sum(qa[q["id"]] for q in su["qs"]) / len(su["qs"])
+            svg.append(f'<path d="M {P(r1+24,smid)} C {P(r1+78,smid)} {P(r2-64,ua)} {P(r2-7,ua)}" '
+                       f'fill="none" stroke="{c}" stroke-width="1.4" opacity=".45"/>')
+            dx, dy = pol(r2, ua)
+            deg = math.degrees(ua) % 360
+            flip = 90 < deg < 270
+            rot = deg + 180 if flip else deg
+            xoff = -26 if flip else 9
+            svg.append(f'<a href="{B}#{su["id"].replace(".","-")}"><title>{E(su["t"])}</title>'
+                       f'<circle cx="{dx:.1f}" cy="{dy:.1f}" r="4" fill="{c}"/>'
+                       f'<text transform="translate({dx:.1f},{dy:.1f}) rotate({rot:.1f})" x="{xoff}" y="-5" '
+                       f'font-size="9" font-weight="700" fill="{c}">{su["id"]}</text></a>')
+            for q in su["qs"]:
+                t = qa[q["id"]]
+                svg.append(f'<path d="M {P(r2+6,ua)} C {P(r2+56,ua)} {P(r3-46,t)} {P(r3-5,t)}" '
+                           f'fill="none" stroke="{c}" stroke-width="1" opacity=".33"/>')
+                lx, ly = pol(r3, t)
+                deg = math.degrees(t) % 360
+                flip = 90 < deg < 270
+                rot = deg + 180 if flip else deg
+                anchor = "end" if flip else "start"
+                crux = '<tspan fill="#a97729"> ✱</tspan>' if q.get("crux") else ""
+                svg.append(f'<a href="{B}#q{q["id"].replace(".","-")}"><title>{E(q["id"]+" · "+q["q"])}</title>'
+                           f'<text transform="translate({lx:.1f},{ly:.1f}) rotate({rot:.1f})" text-anchor="{anchor}" '
+                           f'font-size="10.5" fill="#514d45">{E(q["t"])}{crux}</text></a>')
+        px, py = pol(r1, smid)
+        name = f'{s["id"]} {SECTION_NAMES[s["id"]]}'
+        w = len(name) * 7.6 + 22
+        svg.append(f'<a href="{B}#{s["id"]}"><rect x="{px-w/2:.1f}" y="{py-13:.1f}" width="{w:.1f}" height="26" '
+                   f'rx="13" fill="{c}"/><text x="{px:.1f}" y="{py+4:.1f}" fill="#fff" font-size="12" '
+                   f'font-weight="700" text-anchor="middle">{E(name)}</text></a>')
+        theta = s1 + gap
+    body = "".join(svg)
+    svg_doc = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 1136" '
+               f'font-family="-apple-system,Helvetica,Arial,sans-serif">'
+               f'<rect width="1120" height="1136" fill="#faf9f6"/>{body}</svg>')
+    outdir = os.path.join(ROOT, "poster")
+    os.makedirs(outdir, exist_ok=True)
+    with open(os.path.join(outdir, "map.svg"), "w", encoding="utf-8") as f:
+        f.write(svg_doc)
+    page = (f'<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">'
+            f'<meta name="viewport" content="width=device-width, initial-scale=1.0">'
+            f'<title>Poster — The Biggest Questions About AI</title>'
+            f'<link rel="canonical" href="https://elehrer123-arch.github.io/ai-question-hierarchy/poster/">'
+            f'<style>body{{background:#faf9f6;color:#1d1c1a;font-family:-apple-system,Helvetica,Arial,sans-serif;'
+            f'padding:22px 18px 60px}}a.home{{font-family:Georgia,serif;font-weight:700;color:#1d1c1a;'
+            f'text-decoration:none;font-size:15px}}h1{{font-family:Georgia,serif;font-size:24px;margin:14px 0 4px}}'
+            f'p{{color:#514d45;font-size:13.5px;max-width:620px}}p a{{color:#514d45}}'
+            f'.wrap{{overflow:auto}}svg{{display:block;margin:0 auto;max-width:1120px;min-width:760px;width:100%}}</style>'
+            f'</head><body><a class="home" href="../">← The Biggest Questions About AI</a>'
+            f'<h1>The whole map in one circle</h1>'
+            f'<p>All {qn} questions by their short labels. Hover any label for the full question; click to open it in '
+            f'<a href="../browse/">Browse</a>. <a href="map.svg" download>Download as SVG</a>.</p>'
+            f'<div class="wrap">{svg_doc}</div></body></html>')
+    with open(os.path.join(outdir, "index.html"), "w", encoding="utf-8") as f:
+        f.write(page)
 
 
 # ---------------------------------------------------------------- main
@@ -319,5 +507,14 @@ if __name__ == "__main__":
         overview_links.setdefault(entry["qnum"], []).append((entry["meta"]["title"], path))
         print(f"built {path}")
 
-    qcount, lcount = render_index(sections, overview_links)
-    print(f"built index.html: {qcount} questions, {lcount} source links, {len(entries)} entry page(s)")
+    entry_map = {}
+    for e in entries:
+        entry_map[e["qnum"]] = {"slug": e["meta"]["slug"], "title": e["meta"].get("short_title", e["meta"]["title"]),
+                                "status": e["meta"]["status"], "excerpt": entry_excerpt(e["body"])}
+
+    render_map(sections, entry_map)
+    render_browse(sections, entry_map)
+    render_poster(sections)
+    qcount, lcount = render_index(sections, overview_links, outdir="all", legacy=True)
+    print(f"built map (index.html), browse/, poster/, all/: {qcount} questions, "
+          f"{lcount} source links, {len(entries)} entry page(s)")

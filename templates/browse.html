@@ -1,0 +1,294 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Browse — The Biggest Questions About AI</title>
+<meta name="description" content="Browse the map of the biggest open questions about AI: every section, subsection, and question as a page, with framings, sources, and full entries.">
+<link rel="canonical" href="https://elehrer123-arch.github.io/ai-question-hierarchy/browse/">
+<style>
+:root{--bg:#faf9f6;--panel:#fff;--ink:#1d1c1a;--ink2:#514d45;--ink3:#6f6b5f;--line:#e4e1d8;--line2:#d6d2c6;
+--c1:#3d6b9e;--c2:#b0524b;--c3:#3d8a6b;--c4:#7a5ba6;--c5:#a97729;--gold:#a97729;
+--serif:'Charter','Iowan Old Style',Georgia,serif;--sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);display:flex;flex-direction:column}
+header{padding:11px 18px;border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.proto{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--gold);padding:2px 8px;border-radius:20px}
+.home{font-family:var(--serif);font-weight:700;text-decoration:none;color:var(--ink);font-size:15px}
+.wrap{flex:1;display:flex;min-height:0}
+#srch{padding:10px 12px 6px}
+#srch input{width:100%;border:1px solid var(--line);border-radius:8px;padding:7px 10px;font-size:13px;background:var(--panel);font-family:var(--sans)}
+.lens{display:flex;gap:6px;padding:0 12px 8px}
+.lens button{border:1px solid var(--line);background:var(--panel);border-radius:20px;padding:3px 10px;font-size:11.5px;cursor:pointer;color:var(--ink2);font-family:var(--sans)}
+.lens button.on{border-color:var(--gold);background:var(--gold);color:#fff}
+#tree{width:312px;flex:none;overflow-y:auto;border-right:1px solid var(--line);padding:10px 0 40px;font-size:13.5px}
+.trow{display:flex;align-items:flex-start;width:100%;border:0;background:none;cursor:pointer;text-align:left;padding:7px 10px;gap:6px;color:var(--ink2);font-family:var(--sans);font-size:inherit;border-radius:6px}
+.trow:hover{background:#f1efe9}
+.trow.on{background:#eae7de;color:var(--ink)}
+.trow .cv{flex:none;width:16px;color:var(--ink3);font-size:9px;transition:transform .15s;text-align:center}
+.trow.exp .cv{transform:rotate(90deg)}
+.trow .lb{flex:1;min-width:0;line-height:1.3}
+.trow .ct{flex:none;font-size:10.5px;color:var(--ink3)}
+.trow.lv0{font-weight:700;color:var(--sc)}
+.trow.lv0.on{color:var(--sc)}
+.trow.lv1{padding-left:26px;font-weight:600}
+.trow.lv2{padding-left:48px;font-size:12.5px}
+.trow.root{font-weight:700}
+.hide{display:none}
+.cx{color:var(--gold)}
+#page{flex:1;overflow-y:auto;min-width:0}
+.cols{display:flex;align-items:flex-start}
+.pin{flex:1;min-width:0}
+#ctx{width:252px;flex:none;padding:40px 22px 60px 0;display:none}
+@media(min-width:1180px){#ctx{display:block}}
+.cxb{border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:11px 13px;margin-bottom:12px}
+.cxb h4{font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink3);margin-bottom:7px;font-weight:600}
+.cxb a{display:block;font-size:12.5px;color:var(--ink2);text-decoration:none;padding:2.5px 0;cursor:pointer;line-height:1.35}
+.cxb a:hover{color:var(--ink)}
+.cxb a.cur{color:var(--ink);font-weight:600}
+.cxb .cxq{font-size:12px;font-style:italic;color:var(--ink2);line-height:1.45;margin-bottom:6px;font-family:var(--serif)}
+.cxb .dir{font-size:10px;color:var(--ink3);margin:5px 0 1px;text-transform:uppercase;letter-spacing:.08em}
+.pin{max-width:700px;padding:34px 38px 80px}
+.crumb{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--sc,var(--ink3))}
+.crumb a{color:inherit;text-decoration:none}
+.crumb a:hover{text-decoration:underline}
+h1{font-family:var(--serif);font-size:29px;line-height:1.22;letter-spacing:-.01em;margin:8px 0 6px}
+.tagl{font-family:var(--serif);font-style:italic;color:var(--ink2);font-size:16px;margin-bottom:16px}
+.intro{font-size:15px;color:var(--ink2);line-height:1.6;max-width:640px;margin-bottom:24px}
+.card{display:block;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:10px;cursor:pointer;width:100%;text-align:left;font-family:var(--sans)}
+.card:hover{border-color:var(--sc,var(--line2))}
+.card .cid{font-size:11px;font-weight:700;color:var(--sc)}
+.card .ctt{font-family:var(--serif);font-size:17px;font-weight:600;margin:1px 0 3px;color:var(--ink)}
+.card .cpv{font-size:12.5px;color:var(--ink3);line-height:1.5}
+.qitem{display:block;width:100%;text-align:left;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:10px;cursor:pointer;font-family:var(--sans)}
+.qitem:hover{border-color:var(--sc)}
+.qitem .qover{font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3)}
+.qitem .qq{display:block;font-family:var(--serif);font-size:16.5px;line-height:1.4;color:var(--ink);margin-top:4px}
+.cruxnote{font-size:13px;color:var(--ink2);border-left:3px solid var(--gold);padding:4px 12px;margin:0 0 18px;max-width:600px}
+.qn{font-size:15px;color:var(--ink2);line-height:1.6;max-width:640px;margin-bottom:22px}
+.links a{display:block;max-width:640px;border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:10px 14px;margin-bottom:8px;text-decoration:none;color:var(--ink);font-size:14px;line-height:1.4}
+.links a:hover{border-color:var(--line2)}
+.lsrc{display:block;font-size:12px;color:var(--ink3);margin-top:2px}
+.entry{border:1px solid var(--line2);border-radius:12px;background:var(--panel);padding:16px 18px;margin:6px 0 22px;max-width:640px}
+.entry .est{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.entry h3{font-family:var(--serif);font-size:18px;margin:4px 0 8px}
+.entry p{font-family:var(--serif);font-size:14.5px;line-height:1.62;color:var(--ink2)}
+.entry a{display:inline-block;margin-top:10px;font-size:13.5px;font-weight:600;color:var(--sc);text-decoration:none}
+.pn{display:flex;justify-content:space-between;gap:14px;border-top:1px solid var(--line);margin-top:34px;padding-top:16px;max-width:640px}
+.pn button{border:0;background:none;cursor:pointer;font-family:var(--sans);font-size:13px;color:var(--ink2);text-align:left;max-width:47%;padding:0;line-height:1.4}
+.pn button:hover{color:var(--ink)}
+.pn .nx{text-align:right;margin-left:auto}
+.pn small{display:block;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink3)}
+.maplink{display:inline-block;margin-top:16px;font-size:13px;color:var(--sc)}
+#back{display:none;border:1px solid var(--line);background:var(--panel);border-radius:8px;padding:5px 12px;font-size:13px;cursor:pointer;margin:14px 18px 0}
+@media(max-width:760px){
+  #tree{width:100%;border-right:0}
+  body.detail #tree{display:none}
+  #page{display:none}
+  body.detail #page{display:block}
+  body.detail #back{display:inline-block}
+  .pin{padding:10px 18px 80px}
+}
+</style></head><body>
+<header><a class="home" href="../">The Biggest Questions About&nbsp;AI</a><span style="font-size:12.5px;color:var(--ink3)">Browse — every level is a page</span><nav class="switch" style="margin-left:auto;font-size:13px;color:var(--ink3)" aria-label="View switch"><a id="toMap" href="../" style="color:var(--ink2);text-decoration:none">Map</a> · <b style="color:var(--ink)">Browse</b></nav></header>
+<div class="wrap">
+<nav id="tree" aria-label="Map"><div id="srch"><input id="q" type="search" placeholder="Search questions…" aria-label="Search questions"></div>
+<div class="lens"><button id="lensCrux" aria-pressed="false">✱ Cruxes</button><button id="lensEntry" aria-pressed="false">Full entries</button></div>
+<div id="rows"></div></nav>
+<main id="page"><button id="back">← Map</button><div class="cols"><div class="pin" id="pin"></div><aside id="ctx" aria-label="Context"></aside></div></main>
+</div>
+<script>
+const DATA=__DATA__, ENTRY_UNUSED=0;
+const ENTRY=__ENTRY__;
+const tree=document.getElementById('tree'), pin=document.getElementById('pin');
+const esc=t=>{const d=document.createElement('div');d.textContent=t;return d.innerHTML};
+const nodes={}, order=[];   // key -> {type,obj,s,su}; order = depth-first keys
+order.push('root'); nodes.root={type:'root'};
+DATA.forEach(s=>{ const sk=s.id; order.push(sk); nodes[sk]={type:'sec',s};
+  s.subs.forEach(su=>{ const uk=su.id; order.push(uk); nodes[uk]={type:'sub',s,su};
+    su.qs.forEach(q=>{ order.push(q.id); nodes[q.id]={type:'q',s,su,q}; }); }); });
+
+/* ---------- tree ---------- */
+let t='<button class="trow root" data-k="root"><span class="cv"></span><span class="lb">Overview</span></button>';
+DATA.forEach(s=>{
+  const nq=s.subs.reduce((a,su)=>a+su.qs.length,0);
+  t+=`<button class="trow lv0" data-k="${s.id}" data-p="" style="--sc:var(--c${s.id})"><span class="cv">▶</span><span class="lb">${s.id} ${s.name}</span><span class="ct">${nq}</span></button>`;
+  s.subs.forEach(su=>{
+    t+=`<button class="trow lv1 hide" data-k="${su.id}" data-p="${s.id}"><span class="cv">▶</span><span class="lb">${su.id} ${esc(su.t)}</span><span class="ct">${su.qs.length}</span></button>`;
+    su.qs.forEach(q=>{
+      t+=`<button class="trow lv2 hide" data-k="${q.id}" data-p="${su.id}"><span class="cv"></span><span class="lb">${q.id} ${esc(q.t)}${q.crux?' <span class="cx">✱</span>':''}</span></button>`;
+    });
+  });
+});
+document.getElementById('rows').innerHTML=t;
+const row=k=>tree.querySelector(`.trow[data-k="${k}"]`);
+function setExp(k,open){
+  const r=row(k); if(!r||!r.querySelector('.cv').textContent) return;
+  r.classList.toggle('exp',open); r.setAttribute('aria-expanded',open?'true':'false');
+  tree.querySelectorAll(`.trow[data-p="${k}"]`).forEach(c=>{
+    c.classList.toggle('hide',!open);
+    if(!open&&c.classList.contains('exp')) setExp(c.dataset.k,false);
+  });
+}
+tree.addEventListener('click',e=>{
+  const r=e.target.closest('.trow'); if(!r) return;
+  const k=r.dataset.k;
+  if(e.target.classList.contains('cv')&&r.querySelector('.cv').textContent){ setExp(k,!r.classList.contains('exp')); return; }
+  show(k);
+});
+
+/* ---------- pages ---------- */
+function crumbFor(n,k){
+  if(n.type==='sec') return `<div class="crumb" style="--sc:var(--c${n.s.id})"><a data-go="root">The map</a> · Section ${n.s.id}</div>`;
+  if(n.type==='sub') return `<div class="crumb" style="--sc:var(--c${n.s.id})"><a data-go="root">The map</a> · <a data-go="${n.s.id}">${n.s.id} ${n.s.name}</a></div>`;
+  if(n.type==='q') return `<div class="crumb" style="--sc:var(--c${n.s.id})"><a data-go="root">The map</a> · <a data-go="${n.s.id}">${n.s.id} ${n.s.name}</a> · <a data-go="${n.su.id}">${n.su.id} ${esc(n.su.t)}</a></div>`;
+  return '';
+}
+function label(k){
+  const n=nodes[k];
+  if(!n) return '';
+  if(n.type==='root') return 'Overview';
+  if(n.type==='sec') return `${n.s.id} ${n.s.name}`;
+  if(n.type==='sub') return `${n.su.id} ${n.su.t}`;
+  return `${n.q.id} ${n.q.t}`;
+}
+function render(k){
+  const n=nodes[k]; let h='';
+  if(n.type==='root'){
+    h+=`<div class="crumb">A living map · updated August 2026</div><h1>The Biggest Questions About AI</h1>`;
+    h+=`<p class="intro">A structured map of 127 major open questions about AI, with concise framings, selected sources, and deeper entries in development. Five sections; every level of the map is a page.</p>`;
+    DATA.forEach(s=>{
+      const nq=s.subs.reduce((a,su)=>a+su.qs.length,0);
+      h+=`<button class="card" data-go="${s.id}" style="--sc:var(--c${s.id})"><span class="cid">SECTION ${s.id} · ${nq} QUESTIONS</span><div class="ctt">${s.name}</div><div class="cpv"><em>${esc(s.tag)}</em></div></button>`;
+    });
+  }
+  if(n.type==='sec'){
+    const s=n.s;
+    h+=crumbFor(n)+`<h1 style="color:var(--c${s.id})">${s.id}. ${s.name}</h1><div class="tagl">${esc(s.tag)}</div>`;
+    h+=`<p class="intro">${esc(s.intro)}</p>`;
+    s.subs.forEach(su=>{
+      const pv=su.qs.map(q=>esc(q.t)).join(' · ');
+      h+=`<button class="card" data-go="${su.id}" style="--sc:var(--c${s.id})"><span class="cid">${su.id} · ${su.qs.length} QUESTIONS</span><div class="ctt">${esc(su.t)}</div><div class="cpv">${pv}</div></button>`;
+    });
+  }
+  if(n.type==='sub'){
+    const {s,su}=n;
+    h+=crumbFor(n)+`<h1>${su.id} ${esc(su.t)}</h1>`;
+    h+=`<p class="intro" style="margin-bottom:18px">${su.qs.length} questions.</p>`;
+    su.qs.forEach(q=>{
+      h+=`<button class="qitem" data-go="${q.id}" style="--sc:var(--c${s.id})"><span class="qover">${q.id} · ${esc(q.t)}</span><span class="qq">${esc(q.q)}${q.crux?' <span class="cx">✱</span>':''}</span></button>`;
+    });
+  }
+  if(n.type==='q'){
+    const {s,su,q}=n;
+    h+=crumbFor(n)+`<h1>${esc(q.q)}${q.crux?' <span class="cx">✱</span>':''}</h1>`;
+    if(q.crux) h+=`<p class="cruxnote"><span class="cx">✱</span> Bears on the load-bearing crux: <em>${esc(q.crux)}</em></p>`;
+    h+=`<p class="qn">${esc(q.n).replace(/(?<![\w.])([1-5]\.\d{1,2}\.\d{1,2})(?![\w.])/g,(m0,num)=>num===q.id?num:(nodes[num]?`<a data-go="${num}" style="cursor:pointer;color:var(--c${num[0]});text-decoration:underline dotted">${num}</a>`:num))}</p>`;
+    const en=ENTRY[q.id];
+    if(en){
+      h+=`<div class="entry" style="--sc:var(--c${s.id})"><span class="est">Full entry · ${esc(en.status)}</span><h3>${esc(en.title)}</h3><p>${esc(en.excerpt)}</p><a href="${en.href}">Continue reading →</a></div>`;
+    }
+    h+=`<div class="links">`;
+    q.links.forEach(l=>{h+=`<a href="${esc(l.u)}" target="_blank" rel="noopener">${esc(l.t)}<span class="lsrc">${esc(l.s)}${l.y?' · '+l.y:''}</span></a>`});
+    h+=`</div><a class="maplink" style="--sc:var(--c${s.id})" href="../#q${q.id.replaceAll('.','-')}">View on the map →</a>`;
+  }
+  const i=order.indexOf(k);
+  const prev=order[i-1], next=order[i+1];
+  h+=`<div class="pn">`;
+  if(prev) h+=`<button data-go="${prev}"><small>← Previous</small>${esc(label(prev))}</button>`;
+  if(next) h+=`<button class="nx" data-go="${next}"><small>Next →</small>${esc(label(next))}</button>`;
+  h+=`</div>`;
+  return h;
+}
+function show(k,push){
+  if(!nodes[k]) k='root';
+  pin.innerHTML=render(k); ctx.innerHTML=renderCtx(k);
+  tree.querySelectorAll('.trow').forEach(r=>{const on=r.dataset.k===k;r.classList.toggle('on',on);
+    if(on)r.setAttribute('aria-current','page');else r.removeAttribute('aria-current');});
+  // expand path
+  let p=row(k)&&row(k).dataset.p;
+  const chain=[]; let cur=k;
+  while(cur){ chain.unshift(cur); const r=row(cur); cur=r?r.dataset.p:null; }
+  chain.forEach(c=>setExp(c,true));
+  const r=row(k); if(r) r.scrollIntoView({block:'nearest'});
+  document.body.classList.add('detail');
+  document.getElementById('page').scrollTop=0;
+  if(push!==false) history.replaceState(null,'','#'+(k==='root'?'':k.replaceAll('.','-')));
+  const tm=document.getElementById('toMap');
+  if(tm){const n2=nodes[k]; tm.href = n2.type==='q' ? '../#q'+k.replaceAll('.','-') : (n2.type==='root'?'../':'../#'+k.replaceAll('.','-'));}
+}
+pin.addEventListener('click',e=>{const b=e.target.closest('[data-go]'); if(b) show(b.dataset.go)});
+document.getElementById('back').addEventListener('click',()=>{document.body.classList.remove('detail')});
+/* ---------- context rail ---------- */
+const ctx=document.getElementById('ctx');
+const REFS_OUT={},REFS_IN={},CRUXG={};
+order.forEach(k=>{const n=nodes[k]; if(n.type!=='q')return;
+  const q=n.q;
+  const outs=[...new Set((q.n.match(/[1-5]\.\d{1,2}\.\d{1,2}/g)||[]).filter(x=>x!==k&&nodes[x]))];
+  REFS_OUT[k]=outs; outs.forEach(t0=>{(REFS_IN[t0]=REFS_IN[t0]||[]).push(k)});
+  if(q.crux)(CRUXG[q.crux]=CRUXG[q.crux]||[]).push(k);});
+function ctxLink(k,cur){return `<a data-go="${k}"${k===cur?' class="cur"':''}>${esc(label(k))}${nodes[k].q&&nodes[k].q.crux?' <span class="cx">✱</span>':''}</a>`}
+function renderCtx(k){
+  const n=nodes[k]; if(!n||n.type==='root'||n.type==='sec') return '';
+  let h='';
+  if(n.type==='sub'){
+    h+=`<div class="cxb"><h4>In ${n.s.id} ${esc(n.s.name)}</h4>${n.s.subs.map(su=>ctxLink(su.id,k)).join('')}</div>`;
+    return h;
+  }
+  const {s,su,q}=n;
+  h+=`<div class="cxb"><h4>In ${su.id} ${esc(su.t)}</h4>${su.qs.map(x=>ctxLink(x.id,k)).join('')}</div>`;
+  const outs=REFS_OUT[k]||[], ins=REFS_IN[k]||[];
+  if(outs.length||ins.length){
+    h+=`<div class="cxb"><h4>Mentioned in framings</h4>`;
+    if(outs.length) h+=`<div class="dir">This framing mentions</div>`+outs.map(x=>ctxLink(x,k)).join('');
+    if(ins.length) h+=`<div class="dir">Mentioned by</div>`+ins.map(x=>ctxLink(x,k)).join('');
+    h+=`</div>`;
+  }
+  if(q.crux){
+    const others=(CRUXG[q.crux]||[]).filter(x=>x!==k);
+    h+=`<div class="cxb"><h4>Load-bearing crux ✱</h4><div class="cxq">${esc(q.crux)}</div>`;
+    if(others.length) h+=`<div class="dir">Also carried by</div>`+others.map(x=>ctxLink(x,k)).join('');
+    h+=`</div>`;
+  }
+  return h;
+}
+ctx.addEventListener('click',e=>{const b=e.target.closest('[data-go]'); if(b) show(b.dataset.go)});
+
+/* ---------- search + lenses ---------- */
+const ENTRYSET=new Set(Object.keys(ENTRY));
+const QROWS=[]; DATA.forEach(s0=>s0.subs.forEach(su=>su.qs.forEach(q=>QROWS.push({k:q.id,su:su.id,sec:s0.id,
+  txt:(q.id+' '+q.t+' '+q.q+' '+q.n+' '+q.links.map(l=>l.t+' '+l.s).join(' ')).toLowerCase(),crux:!!q.crux,entry:ENTRYSET.has(q.id)}))));
+let lensC=false,lensE=false;
+const qbox=document.getElementById('q');
+function applyFilter(){
+  const term=qbox.value.trim().toLowerCase();
+  const toks=term.split(/\s+/).filter(Boolean);
+  const active=toks.length||lensC||lensE;
+  if(!active){
+    tree.querySelectorAll('.trow').forEach(r=>{r.style.display='';});
+    tree.querySelectorAll('.trow.lv1,.trow.lv2').forEach(r=>{
+      const pr=row(r.dataset.p); r.classList.toggle('hide',!(pr&&pr.classList.contains('exp')));});
+    return;
+  }
+  const hits=new Set(), parents=new Set();
+  QROWS.forEach(x=>{
+    if(toks.length&&!toks.every(t0=>x.txt.includes(t0))) return;
+    if(lensC&&!x.crux) return;
+    if(lensE&&!x.entry) return;
+    hits.add(x.k); parents.add(x.su); parents.add(x.sec);
+  });
+  tree.querySelectorAll('.trow').forEach(r=>{
+    const k=r.dataset.k;
+    if(k==='root'){r.style.display='none';return;}
+    const shown=hits.has(k)||parents.has(k);
+    r.style.display=shown?'':'none';
+    if(shown) r.classList.remove('hide');
+  });
+}
+qbox.addEventListener('input',applyFilter);
+document.getElementById('lensCrux').addEventListener('click',e=>{lensC=!lensC;e.target.classList.toggle('on',lensC);e.target.setAttribute('aria-pressed',lensC);applyFilter();});
+document.getElementById('lensEntry').addEventListener('click',e=>{lensE=!lensE;e.target.classList.toggle('on',lensE);e.target.setAttribute('aria-pressed',lensE);applyFilter();});
+
+const hh=(location.hash||'').replace(/^#q?/,'').replaceAll('-','.');
+if(hh&&nodes[hh]) show(hh,false);
+else if(window.innerWidth>760) show('root',false);
+else { setExp('1',false); }
+</script></body></html>

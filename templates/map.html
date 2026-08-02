@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.classList.add('js')</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Biggest Questions About AI</title>
+<meta name="description" content="A living map of __QCOUNT__ major open questions about AI — trajectory, safety, economy, power, and humanity — with a framing of each live debate and __LCOUNT__ curated source links.">
+<link rel="canonical" href="https://elehrer123-arch.github.io/ai-question-hierarchy/">
+<meta property="og:title" content="The Biggest Questions About AI">
+<meta property="og:description" content="A map of the landscape of thought around AI: __QCOUNT__ open questions across trajectory, safety, economy, power, and humanity, each with a framing of the debate and curated sources.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://elehrer123-arch.github.io/ai-question-hierarchy/">
+<meta property="og:image" content="https://elehrer123-arch.github.io/ai-question-hierarchy/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Biggest Questions About AI">
+<meta name="twitter:description" content="A map of the landscape of thought around AI: __QCOUNT__ open questions, each with a framing of the debate and curated sources.">
+<meta name="twitter:image" content="https://elehrer123-arch.github.io/ai-question-hierarchy/og.png">
+<meta name="theme-color" content="#faf9f6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#191817" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Ctext%20y='0.87em'%20font-size='92'%20fill='%233d6b9e'%3E%E2%9C%B1%3C/text%3E%3C/svg%3E">
+<style>
+:root{--bg:#faf9f6;--panel:#fff;--ink:#1d1c1a;--ink2:#514d45;--ink3:#6f6b5f;--line:#e4e1d8;--line2:#d6d2c6;
+--accent:#3d5a80;--c1:#3d6b9e;--c2:#b0524b;--c3:#3d8a6b;--c4:#7a5ba6;--c5:#a97729;--gold:#a97729;
+--serif:'Charter','Iowan Old Style','Palatino Linotype',Georgia,serif;
+--sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);padding:0 26px 70px}
+button{font-family:var(--sans)}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.topbar{display:flex;gap:16px;align-items:baseline;flex-wrap:wrap;padding:16px 0 12px;border-bottom:1px solid var(--line);max-width:1360px;margin:0 auto}
+.brand{font-family:var(--serif);font-weight:700;font-size:16px;color:var(--ink);text-decoration:none}
+.switch{font-size:13px;color:var(--ink3);margin-left:auto}
+.switch b{color:var(--ink)}
+.switch a{color:var(--ink2);text-decoration:none}
+.switch a:hover{color:var(--ink);text-decoration:underline}
+.hero{max-width:1360px;margin:0 auto;padding:26px 0 8px}
+.kicker{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);margin-bottom:8px}
+h1{font-family:var(--serif);font-size:34px;letter-spacing:-.014em;line-height:1.1}
+.lede{color:var(--ink2);font-size:15px;max-width:660px;margin-top:8px}
+.toolrow{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;max-width:1360px;margin:14px auto 6px}
+#mapsearch{border:1px solid var(--line);border-radius:9px;padding:8px 12px;font-size:13.5px;background:var(--panel);width:300px;max-width:100%;font-family:var(--sans)}
+#mapcount{font-size:12.5px;color:var(--ink3);min-height:16px}
+.bs{display:flex;gap:26px;max-width:1360px;margin:14px auto 0;align-items:flex-start}
+.bcol{flex:1 1 0;min-width:0;transition:flex .38s ease}
+.bsechead{display:flex;gap:9px;align-items:baseline;border:0;background:none;cursor:pointer;padding:0 0 5px;
+border-bottom:2.5px solid var(--sc);width:100%;text-align:left;font-family:var(--serif)}
+.bsechead:hover .bname{text-decoration:underline}
+.bnum{font-size:30px;font-weight:700;color:var(--sc);line-height:1;font-family:var(--serif)}
+.bname{font-size:22px;font-weight:700;color:var(--ink);letter-spacing:-.01em;font-family:var(--serif)}
+.btag{font-family:var(--serif);font-style:italic;font-size:12px;color:var(--ink2);margin:5px 0 4px;line-height:1.4}
+.bsub{display:block;font-size:10.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--sc);text-decoration:none;margin:13px 0 3px}
+.bsub:hover{text-decoration:underline}
+.bq{border-radius:8px}
+.bqhead{display:block;width:100%;text-align:left;border:0;background:none;cursor:pointer;
+font-size:12.5px;color:var(--ink2);padding:2.5px 0;line-height:1.35}
+.bqhead:hover{color:var(--ink);text-decoration:underline}
+.bq.open{background:color-mix(in srgb,var(--sc) 4%,transparent);border-left:2px solid var(--sc);border-radius:0 8px 8px 0;margin:6px 0;padding:6px 10px}
+.bq.open .bqhead{font-weight:700;color:var(--ink)}
+.bqid{color:var(--ink3);font-size:10px;margin-right:7px;font-variant-numeric:tabular-nums}
+.bqq{font-family:var(--serif);font-size:14px;line-height:1.42;color:var(--ink);margin:0 0 9px;letter-spacing:-.003em;max-width:560px}
+.js .bqq{display:none}
+.bqbody{overflow:hidden}
+.js .bqbody{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s ease}
+.js .bq.open .bqbody{grid-template-rows:1fr}
+.bqin{overflow:hidden;min-height:0}
+.bfull{font-family:var(--serif);font-size:15.5px;line-height:1.4;color:var(--ink);margin:6px 0 7px;letter-spacing:-.003em}
+.js .bq.open .bqq{display:none}
+.bn{font-size:12.5px;color:var(--ink2);line-height:1.55;margin-bottom:9px}
+.blinks a{display:block;border:1px solid var(--line);border-radius:8px;background:var(--bg);padding:6px 9px;margin-bottom:5px;
+text-decoration:none;color:var(--ink);font-size:12px;line-height:1.35}
+.blinks a:hover{border-color:var(--line2)}
+.lsrc{display:block;font-size:10.5px;color:var(--ink3);margin-top:1px}
+.bentry,.bopen{display:inline-block;font-size:12px;font-weight:600;color:var(--sc);text-decoration:none;margin:2px 12px 2px 0}
+.bopen{font-weight:400}
+.bentry:hover,.bopen:hover{text-decoration:underline}
+.cx{color:var(--gold)}
+/* focus (zoom) mode — desktop */
+.js .bs.zoomed .bcol:not(.focus){flex:0 1 158px;cursor:pointer}
+.js .bs.zoomed .bcol:not(.focus) .btag,.js .bs.zoomed .bcol:not(.focus) .bq{display:none}
+.js .bs.zoomed .bcol:not(.focus) .bnum{font-size:19px}
+.js .bs.zoomed .bcol:not(.focus) .bname{font-size:14.5px}
+.js .bs.zoomed .bcol:not(.focus) .bsub{margin:10px 0 0;font-size:9.5px;letter-spacing:.07em;color:var(--ink3)}
+.js .bs.zoomed .bcol:not(.focus):hover .bname{text-decoration:underline}
+.js .bs.zoomed .bcol.focus{flex:2.6 1 0}
+.js .bs.zoomed .bcol.focus .bqq{display:block}
+.js .bs.zoomed .bcol.focus .bq.open .bqq{display:none}
+.js .bs.zoomed .bcol.focus .bqhead{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);font-weight:600}
+/* search states — desktop: fade, preserve geography */
+.searching .bq:not(.hit){opacity:.18}
+.searching .bsub.dim,.searching .btag{opacity:.3}
+.searching .bcol.dimcol .bsechead{opacity:.4}
+.searching.revealq .bq.hit .bqq{display:block}
+.searching.revealq .bq.hit.open .bqq{display:none}
+footer{max-width:1360px;margin:46px auto 0;border-top:1px solid var(--line);padding-top:16px;font-size:12.5px;color:var(--ink3);line-height:1.6}
+footer a{color:var(--ink2)}
+.cruxmark{color:var(--gold);cursor:default}
+@media (max-width:900px){
+  body{padding:0 16px 60px}
+  h1{font-size:27px}
+  .bs{flex-direction:column;gap:14px}
+  .js .bcol .btag,.js .bcol .bsub,.js .bcol .bq{display:none}
+  .js .bcol.mopen .btag,.js .bcol.mopen .bsub,.js .bcol.mopen .bq{display:block}
+  .js .bcol.mopen .bqq{display:block}
+  .js .bcol.mopen .bq.open .bqq{display:none}
+  .bsechead{padding:10px 0}
+  /* search on mobile: filter, keep page short */
+  .searching .bcol .bq{display:none}
+  .searching .bcol .bq.hit{display:block;opacity:1}
+  .searching .bcol .bsub:not(.dim){display:block}
+  .searching .bq.hit .bqq{display:block}
+  .searching .bq.hit.open .bqq{display:none}
+}
+@media (prefers-reduced-motion: reduce){
+  *{transition:none !important}
+}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="brand" href="#" aria-label="The Biggest Questions About AI — map view">The Biggest Questions About&nbsp;AI</a>
+  <nav class="switch" aria-label="View switch"><b>Map</b> · <a id="toBrowse" href="browse/">Browse</a></nav>
+</div>
+<div class="hero">
+  <p class="kicker">A living map · Updated August 2026</p>
+  <h1>The Biggest Questions About AI</h1>
+  <p class="lede">A structured map of __QCOUNT__ major open questions about AI, with concise framings, selected sources, and deeper entries in development. Click a section to zoom; click a question to unfold it in place.</p>
+</div>
+<div class="toolrow">
+  <label class="vh" for="mapsearch" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Search questions</label>
+  <input id="mapsearch" type="search" placeholder="Search questions, framings, sources…" autocomplete="off">
+  <span id="mapcount" aria-live="polite"></span>
+</div>
+<div class="bs" id="bs">__COLS__</div>
+<footer>
+  <p style="margin-bottom:8px"><span class="cruxmark">✱</span> marks a question that bears directly on one of ten load-bearing cruxes — the uncertainties whose answers disproportionately shape the rest of the map.</p>
+  Framings summarize live debates as of August 2026 and compress; follow the links for the full arguments. Curated with help from Claude.
+  <a href="https://github.com/elehrer123-arch/ai-question-hierarchy/issues/new?template=suggest-improvement.yml">Suggest a source or correction</a> ·
+  <a href="poster/">Poster view</a> ·
+  <a href="all/">Classic one-page view</a>
+</footer>
+<script>
+const bs=document.getElementById('bs');
+const narrow=()=>window.matchMedia('(max-width:900px)').matches;
+let openQ=null;
+function syncBrowse(){
+  const a=document.getElementById('toBrowse');
+  if(openQ){a.href='browse/#q'+openQ.id.slice(1);return}
+  const f=document.querySelector('.bcol.focus');
+  a.href=f?'browse/#'+f.dataset.s:'browse/';
+}
+function setOpen(q,on){
+  q.classList.toggle('open',on);
+  q.querySelector('.bqhead').setAttribute('aria-expanded',on?'true':'false');
+}
+document.querySelectorAll('.bqhead').forEach(b=>b.addEventListener('click',()=>{
+  const q=b.parentElement;
+  if(openQ&&openQ!==q) setOpen(openQ,false);
+  const now=!q.classList.contains('open');
+  setOpen(q,now); openQ=now?q:null; syncBrowse();
+}));
+function focusSec(id){
+  if(narrow()){
+    const col=document.querySelector('.bcol[data-s="'+id+'"]');
+    const was=col.classList.contains('mopen');
+    document.querySelectorAll('.bcol').forEach(c=>c.classList.remove('mopen'));
+    if(!was) col.classList.add('mopen');
+    col.querySelector('.bsechead').setAttribute('aria-expanded',!was);
+    syncBrowse(); return;
+  }
+  const col=document.querySelector('.bcol[data-s="'+id+'"]');
+  const already=bs.classList.contains('zoomed')&&col.classList.contains('focus');
+  document.querySelectorAll('.bcol').forEach(c=>c.classList.remove('focus'));
+  document.querySelectorAll('.bsechead').forEach(h=>h.setAttribute('aria-expanded','false'));
+  if(already){bs.classList.remove('zoomed');syncBrowse();return}
+  bs.classList.add('zoomed'); col.classList.add('focus');
+  col.querySelector('.bsechead').setAttribute('aria-expanded','true');
+  syncBrowse();
+}
+document.querySelectorAll('.bsechead').forEach(b=>b.addEventListener('click',()=>focusSec(b.dataset.s)));
+document.querySelectorAll('.bcol').forEach(col=>col.addEventListener('click',e=>{
+  if(narrow()||!bs.classList.contains('zoomed')||col.classList.contains('focus')) return;
+  e.preventDefault(); e.stopPropagation(); focusSec(col.dataset.s);
+},true));
+/* ---------- search ---------- */
+const QS=[...document.querySelectorAll('.bq')];
+const SUBS=[...document.querySelectorAll('.bsub')];
+const box=document.getElementById('mapsearch'), count=document.getElementById('mapcount');
+function clearSearch(){
+  document.body.classList.remove('searching','revealq');
+  QS.forEach(q=>q.classList.remove('hit'));
+  SUBS.forEach(s=>s.classList.remove('dim'));
+  document.querySelectorAll('.bcol').forEach(c=>c.classList.remove('dimcol'));
+  count.textContent='';
+}
+box.addEventListener('input',()=>{
+  const toks=box.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  if(!toks.length){clearSearch();return}
+  document.body.classList.add('searching');
+  let n=0;
+  QS.forEach(q=>{
+    const hit=toks.every(t=>q.dataset.x.includes(t));
+    q.classList.toggle('hit',hit); if(hit)n++;
+  });
+  SUBS.forEach(s=>{
+    const any=QS.some(q=>q.dataset.sub===s.dataset.sub&&q.classList.contains('hit'));
+    s.classList.toggle('dim',!any);
+  });
+  document.querySelectorAll('.bcol').forEach(c=>{
+    const any=QS.some(q=>q.dataset.sec===c.dataset.s&&q.classList.contains('hit'));
+    c.classList.toggle('dimcol',!any);
+    if(narrow()&&any) c.classList.add('mopen');
+  });
+  document.body.classList.toggle('revealq',n>0&&n<=12);
+  count.textContent=n?n+' of '+QS.length+' questions match':'No questions match';
+});
+box.addEventListener('keydown',e=>{if(e.key==='Escape'){box.value='';clearSearch();}});
+/* ---------- accept anchors from browse / old links ---------- */
+const m=(location.hash||'').match(/^#q?(\d)(?:-(\d+))?(?:-(\d+))?$/);
+if(m){
+  focusSec(m[1]);
+  if(m[3]){
+    const q=document.getElementById('n'+m[1]+'-'+m[2]+'-'+m[3]);
+    if(q){setOpen(q,true);openQ=q;syncBrowse();setTimeout(()=>q.scrollIntoView({block:'center'}),80);}
+  } else if(m[2]){
+    const s=document.getElementById('b'+m[1]+'-'+m[2]);
+    if(s)setTimeout(()=>s.scrollIntoView({block:'center'}),80);
+  }
+}
+</script>
+</body>
+</html>
