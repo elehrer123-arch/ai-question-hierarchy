@@ -13,13 +13,18 @@ header{padding:11px 18px;border-bottom:1px solid var(--line);display:flex;gap:12
 .proto{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--gold);padding:2px 8px;border-radius:20px}
 .home{font-family:var(--serif);font-weight:700;text-decoration:none;color:var(--ink);font-size:15px}
 .wrap{flex:1;display:flex;min-height:0}
+#srch{padding:10px 12px 6px}
+#srch input{width:100%;border:1px solid var(--line);border-radius:8px;padding:7px 10px;font-size:13px;background:var(--panel);font-family:var(--sans)}
+.lens{display:flex;gap:6px;padding:0 12px 8px}
+.lens button{border:1px solid var(--line);background:var(--panel);border-radius:20px;padding:3px 10px;font-size:11.5px;cursor:pointer;color:var(--ink2);font-family:var(--sans)}
+.lens button.on{border-color:var(--gold);background:var(--gold);color:#fff}
 #tree{width:312px;flex:none;overflow-y:auto;border-right:1px solid var(--line);padding:10px 0 40px;font-size:13.5px}
-.trow{display:flex;align-items:center;width:100%;border:0;background:none;cursor:pointer;text-align:left;padding:7px 10px;gap:6px;color:var(--ink2);font-family:var(--sans);font-size:inherit;border-radius:6px}
+.trow{display:flex;align-items:flex-start;width:100%;border:0;background:none;cursor:pointer;text-align:left;padding:7px 10px;gap:6px;color:var(--ink2);font-family:var(--sans);font-size:inherit;border-radius:6px}
 .trow:hover{background:#f1efe9}
 .trow.on{background:#eae7de;color:var(--ink)}
 .trow .cv{flex:none;width:16px;color:var(--ink3);font-size:9px;transition:transform .15s;text-align:center}
 .trow.exp .cv{transform:rotate(90deg)}
-.trow .lb{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.trow .lb{flex:1;min-width:0;line-height:1.3}
 .trow .ct{flex:none;font-size:10.5px;color:var(--ink3)}
 .trow.lv0{font-weight:700;color:var(--sc)}
 .trow.lv0.on{color:var(--sc)}
@@ -74,7 +79,9 @@ h1{font-family:var(--serif);font-size:29px;line-height:1.22;letter-spacing:-.01e
 <header><span class="proto">Prototype v2</span><a class="home" href="../../">← The Biggest Questions About AI</a>
 <span style="font-size:12.5px;color:var(--ink3)">Every level is a page: sections, subsections, questions</span></header>
 <div class="wrap">
-<nav id="tree" aria-label="Map"></nav>
+<nav id="tree" aria-label="Map"><div id="srch"><input id="q" type="search" placeholder="Search questions…" aria-label="Search questions"></div>
+<div class="lens"><button id="lensCrux" aria-pressed="false">✱ Cruxes</button><button id="lensEntry" aria-pressed="false">Full entries</button></div>
+<div id="rows"></div></nav>
 <main id="page"><button id="back">← Map</button><div class="pin" id="pin"></div></main>
 </div>
 <script>
@@ -99,11 +106,11 @@ DATA.forEach(s=>{
     });
   });
 });
-tree.innerHTML=t;
+document.getElementById('rows').innerHTML=t;
 const row=k=>tree.querySelector(`.trow[data-k="${k}"]`);
 function setExp(k,open){
   const r=row(k); if(!r||!r.querySelector('.cv').textContent) return;
-  r.classList.toggle('exp',open);
+  r.classList.toggle('exp',open); r.setAttribute('aria-expanded',open?'true':'false');
   tree.querySelectorAll(`.trow[data-p="${k}"]`).forEach(c=>{
     c.classList.toggle('hide',!open);
     if(!open&&c.classList.contains('exp')) setExp(c.dataset.k,false);
@@ -162,7 +169,7 @@ function render(k){
     const {s,su,q}=n;
     h+=crumbFor(n)+`<h1>${esc(q.q)}${q.crux?' <span class="cx">✱</span>':''}</h1>`;
     if(q.crux) h+=`<p class="cruxnote"><span class="cx">✱</span> Bears on the load-bearing crux: <em>${esc(q.crux)}</em></p>`;
-    h+=`<p class="qn">${esc(q.n)}</p>`;
+    h+=`<p class="qn">${esc(q.n).replace(/(?<![\w.])([1-5]\.\d{1,2}\.\d{1,2})(?![\w.])/g,(m0,num)=>num===q.id?num:(nodes[num]?`<a data-go="${num}" style="cursor:pointer;color:var(--c${num[0]});text-decoration:underline dotted">${num}</a>`:num))}</p>`;
     const en=ENTRY[q.id];
     if(en){
       h+=`<div class="entry" style="--sc:var(--c${s.id})"><span class="est">Full entry · ${esc(en.status)}</span><h3>${esc(en.title)}</h3><p>${esc(en.excerpt)}</p><a href="${en.href}">Continue reading →</a></div>`;
@@ -182,7 +189,8 @@ function render(k){
 function show(k,push){
   if(!nodes[k]) k='root';
   pin.innerHTML=render(k);
-  tree.querySelectorAll('.trow').forEach(r=>r.classList.toggle('on',r.dataset.k===k));
+  tree.querySelectorAll('.trow').forEach(r=>{const on=r.dataset.k===k;r.classList.toggle('on',on);
+    if(on)r.setAttribute('aria-current','page');else r.removeAttribute('aria-current');});
   // expand path
   let p=row(k)&&row(k).dataset.p;
   const chain=[]; let cur=k;
@@ -195,6 +203,41 @@ function show(k,push){
 }
 pin.addEventListener('click',e=>{const b=e.target.closest('[data-go]'); if(b) show(b.dataset.go)});
 document.getElementById('back').addEventListener('click',()=>{document.body.classList.remove('detail')});
+/* ---------- search + lenses ---------- */
+const ENTRYSET=new Set(Object.keys(ENTRY));
+const QROWS=[]; DATA.forEach(s0=>s0.subs.forEach(su=>su.qs.forEach(q=>QROWS.push({k:q.id,su:su.id,sec:s0.id,
+  txt:(q.id+' '+q.t+' '+q.q+' '+q.n).toLowerCase(),crux:!!q.crux,entry:ENTRYSET.has(q.id)}))));
+let lensC=false,lensE=false;
+const qbox=document.getElementById('q');
+function applyFilter(){
+  const term=qbox.value.trim().toLowerCase();
+  const toks=term.split(/\s+/).filter(Boolean);
+  const active=toks.length||lensC||lensE;
+  if(!active){
+    tree.querySelectorAll('.trow').forEach(r=>{r.style.display='';});
+    tree.querySelectorAll('.trow.lv1,.trow.lv2').forEach(r=>{
+      const pr=row(r.dataset.p); r.classList.toggle('hide',!(pr&&pr.classList.contains('exp')));});
+    return;
+  }
+  const hits=new Set(), parents=new Set();
+  QROWS.forEach(x=>{
+    if(toks.length&&!toks.every(t0=>x.txt.includes(t0))) return;
+    if(lensC&&!x.crux) return;
+    if(lensE&&!x.entry) return;
+    hits.add(x.k); parents.add(x.su); parents.add(x.sec);
+  });
+  tree.querySelectorAll('.trow').forEach(r=>{
+    const k=r.dataset.k;
+    if(k==='root'){r.style.display='none';return;}
+    const shown=hits.has(k)||parents.has(k);
+    r.style.display=shown?'':'none';
+    if(shown) r.classList.remove('hide');
+  });
+}
+qbox.addEventListener('input',applyFilter);
+document.getElementById('lensCrux').addEventListener('click',e=>{lensC=!lensC;e.target.classList.toggle('on',lensC);e.target.setAttribute('aria-pressed',lensC);applyFilter();});
+document.getElementById('lensEntry').addEventListener('click',e=>{lensE=!lensE;e.target.classList.toggle('on',lensE);e.target.setAttribute('aria-pressed',lensE);applyFilter();});
+
 const hh=(location.hash||'').replace(/^#q?/,'').replaceAll('-','.');
 if(hh&&nodes[hh]) show(hh,false);
 else if(window.innerWidth>760) show('root',false);
