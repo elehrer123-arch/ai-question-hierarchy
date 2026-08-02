@@ -114,6 +114,50 @@ h1{font-family:var(--serif);font-size:29px;line-height:1.22;letter-spacing:-.01e
 .rec a.rt:hover{text-decoration:underline}
 .rec .rmeta{font-size:11.5px;color:var(--ink3);margin-top:2px}
 .rec .rnote{font-size:12px;color:var(--ink2);margin-top:5px;line-height:1.45}
+
+/* ---------- editorial grid (question pages) ---------- */
+.quiet{font-size:13.5px;margin:2px 0 26px}
+.quiet a{color:var(--sc);text-decoration:none;font-weight:600}
+.quiet a:hover{text-decoration:underline}
+.mvh{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink3);font-weight:600;margin-bottom:12px}
+.changed{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));border-top:2px solid var(--ink);margin-bottom:36px}
+.ch{padding:14px 22px 6px 0}
+.ch+.ch{border-left:1px solid var(--line);padding-left:22px}
+.chn{font-family:var(--serif);font-size:14px;color:var(--ink3);margin-bottom:4px}
+.cht{font-family:var(--serif);font-size:16.5px;font-weight:700;letter-spacing:-.005em;margin-bottom:5px}
+.chb{font-size:13px;color:var(--ink2);line-height:1.55}
+.rh{font-family:var(--serif);font-size:20px;font-weight:700;margin-bottom:2px}
+.rhm{font-size:12.5px;color:var(--ink3);margin-bottom:14px}
+.gsec{display:flex;gap:32px;background:color-mix(in srgb,var(--kc) 4%,transparent);border-top:2px solid var(--kc);border-radius:0 0 12px 12px;padding:18px 22px 20px;margin-bottom:16px}
+.ggut{flex:0 0 190px}
+.ggn{font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--kc);line-height:1.4}
+.ggm{font-family:var(--serif);font-style:italic;font-size:12.5px;color:var(--ink2);line-height:1.5;margin-top:5px}
+.gcont{flex:1;min-width:0}
+.gim{font-size:12px;color:var(--ink3);margin-bottom:3px}
+.gim a.via{color:var(--ink3)}
+.gtt{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--ink);text-decoration:none;line-height:1.3;display:block;margin-bottom:5px;letter-spacing:-.007em}
+.gtt:hover,.gct:hover{text-decoration:underline}
+.gan{font-size:14px;color:var(--ink2);line-height:1.58;max-width:620px}
+.ggrid{display:grid;grid-template-columns:1fr 1fr;gap:4px 28px;margin-top:14px;border-top:1px solid color-mix(in srgb,var(--kc) 22%,transparent);padding-top:12px}
+.gcp{padding:8px 0}
+.gct{font-family:var(--serif);font-size:14.5px;font-weight:600;color:var(--ink);text-decoration:none;line-height:1.35;display:block;margin-bottom:3px}
+.gcn{font-size:12.5px;color:var(--ink2);line-height:1.5}
+.gxq summary{display:inline;font-size:11.5px;color:var(--ink3);cursor:pointer;list-style:none}
+.gxq summary::after{content:' ▾'}
+.gxq[open] summary::after{content:' ▴'}
+.gxq{margin-top:5px}
+.gxq p{font-family:var(--serif);font-style:italic;font-size:13.5px;color:var(--ink2);line-height:1.55;margin-top:5px;max-width:600px}
+.gxq.sm p{font-size:12.5px}
+.gtail{margin-top:26px}
+.gfound>summary{font-family:var(--serif);font-size:15.5px;font-weight:700;cursor:pointer}
+.gnear{font-size:12.5px;color:var(--ink3);margin-top:16px;line-height:1.7}
+.gnear a{color:var(--ink2);cursor:pointer}
+@media(max-width:760px){
+.gsec{flex-direction:column;gap:10px}
+.ggut{flex:auto}
+.ggrid{grid-template-columns:1fr}
+.ch+.ch{border-left:0;border-top:1px solid var(--line);padding-left:0;padding-top:12px}
+}
 #back{display:none;border:1px solid var(--line);background:var(--panel);border-radius:8px;padding:5px 12px;font-size:13px;cursor:pointer;margin:14px 18px 0}
 @media(max-width:760px){
   #tree{width:100%;border-right:0}
@@ -138,6 +182,26 @@ const RECENT=__RECENT__, SWEPT=__SWEPT__, DEBATES=__DEBATES__;
 const tree=document.getElementById('tree'), pin=document.getElementById('pin');
 const esc=t=>{const d=document.createElement('div');d.textContent=t;return d.innerHTML}
 const MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+function gmeta(r){
+  const a=r.author,v=r.venue;
+  const core=(a===v||v.startsWith(a.split(',')[0])||a.startsWith(v))?v:`${a} · ${v}`;
+  const via=r.via?` · <a class="via" href="${esc(r.via.u)}" target="_blank" rel="noopener">via ${esc(r.via.t)}</a>`:'';
+  return `${esc(core)} · ${fmtD(r.date)}${via}`;
+}
+function gexc(r,cls){
+  if(!r.quote) return '';
+  return `<details class="gxq ${cls||''}"><summary>Excerpt</summary><p>“${esc(r.quote)}”</p></details>`;
+}
+function gfeat(r){
+  return `<div class="gft"><div class="gim">${gmeta(r)}</div>`+
+         `<a class="gtt" href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a>`+
+         (r.note?`<p class="gan">${esc(r.note)}</p>`:'')+gexc(r)+`</div>`;
+}
+function gcpt(r){
+  return `<div class="gcp"><div class="gim">${gmeta(r)}</div>`+
+         `<a class="gct" href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a>`+
+         (r.note?`<p class="gcn">${esc(r.note)}</p>`:'')+gexc(r,'sm')+`</div>`;
+}
 function pcard(r){
   const via=r.via?` · <a href="${esc(r.via.u)}" target="_blank" rel="noopener" style="color:var(--ink3)">via ${esc(r.via.t)}</a>`:'';
   const kind=r.kind?` · <span class="pk">${esc(r.kind)}</span>`:'';
@@ -226,78 +290,63 @@ function render(k){
   }
   if(n.type==='q'){
     const {s,su,q}=n;
+    const SC=`var(--c${s.id})`;
     h+=crumbFor(n)+`<h1>${esc(q.q)}</h1>`;
     const rq=RECENT[q.id];
-    const rc0=rq?rq.items:null;
+    const rc=rq?rq.items:null;
     h+=`<p class="qn">${esc(q.n).replace(/(?<![\w.])([1-5]\.\d{1,2}\.\d{1,2})(?![\w.])/g,(m0,num)=>num===q.id?num:(nodes[num]?`<a data-go="${num}" style="cursor:pointer;color:var(--c${num[0]});text-decoration:underline dotted">${num}</a>`:num))}</p>`;
-    const rc=rc0, deb=DEBATES[q.id];
-    if(rq&&rq.moved){
-      const body=Array.isArray(rq.moved)?'<ul>'+rq.moved.map(m=>`<li>${esc(m)}</li>`).join('')+'</ul>':`<p>${esc(rq.moved)}</p>`;
-      h+=`<div class="moved"><div class="mvh">What has moved · reviewed ${esc(rq.reviewed)}</div>${body}</div>`;
-    }
     const en=ENTRY[q.id];
-    if(en){
-      h+=`<div class="entry" style="--sc:var(--c${s.id})"><span class="est">Full entry · ${esc(en.status)}</span><h3>${esc(en.title)}</h3><p>${esc(en.excerpt)}</p><a href="${en.href}">Continue reading →</a></div>`;
+    h+=`<p class="quiet" style="--sc:${SC}">`+(en?`<a href="${en.href}">Read the full analysis →</a> &nbsp;·&nbsp; `:'')+`<a href="../#q${q.id.replaceAll('.','-')}">View on the map →</a></p>`;
+    if(rq&&rq.moved){
+      const mv=Array.isArray(rq.moved)?rq.moved:[rq.moved];
+      h+=`<div class="mvh">What changed · reviewed ${esc(rq.reviewed)}</div><div class="changed">`;
+      mv.forEach((m,i)=>{
+        const t0=(typeof m==='object')?m.t:null, b=(typeof m==='object')?m.b:m;
+        h+=`<div class="ch"><div class="chn">0${i+1}</div>`+(t0?`<div class="cht">${esc(t0)}</div>`:'')+`<p class="chb">${esc(b)}</p></div>`;
+      });
+      h+=`</div>`;
     }
     if(rq&&(!rc||!rc.length)){
       h+=`<div class="core">No contribution since the last review met the inclusion threshold.</div>`;
     }
-    if(deb&&rc&&rc.length){
-      const ds=rc.map(r=>r.date).sort();
-      // background/framing canon items
-      const frame=q.links.filter((l,i)=>deb.canon[String(i)]==='_frame');
-      if(frame.length) h+=`<div class="core">Background: `+frame.map(l=>`<a href="${esc(l.u)}" target="_blank" rel="noopener">${esc(l.t)}</a> (${esc(l.s)}${l.y?', '+l.y:''})`).join(' · ')+`</div>`;
-      h+=`<div class="rechead">The debate · ${rc.length} recent piece${rc.length>1?'s':''}, ${fmtD(ds[0])}–${fmtD(ds[ds.length-1])}</div>`;
-      const assigned=new Set(deb.poles.map(p=>p.k));
-      const cols=deb.poles.filter(p=>!p.lane), lanes=deb.poles.filter(p=>p.lane);
-      h+=`<div class="debate" style="--np:${cols.length};--sc:var(--c${s.id})">`;
-      cols.forEach(pole=>{
-        const canon=q.links.filter((l,i)=>deb.canon[String(i)]===pole.k);
-        const rec=rc.filter(r=>r.pos===pole.k).sort((a,b)=>b.date.localeCompare(a.date));
-        h+=`<div class="pole"><div class="ph"><div class="pl">${esc(pole.label)}</div><div class="pc">${esc(pole.claim)}</div><div class="pn2">${canon.length+rec.length} piece${canon.length+rec.length===1?'':'s'}</div></div>`;
-        canon.forEach(l=>{
-          h+=`<div class="pitem pcore"><a class="pt" href="${esc(l.u)}" target="_blank" rel="noopener">${esc(l.t)}</a>`+
-             `<div class="pm">${esc(l.s)}${l.y?' · '+l.y:''} · <span class="ctag">core</span></div></div>`;
-        });
-        rec.forEach(r=>{h+=pcard(r)});
-        h+=`</div>`;
-      });
-      h+=`</div>`;
-      lanes.forEach(pole=>{
-        const canon=q.links.filter((l,i)=>deb.canon[String(i)]===pole.k);
-        const rec=rc.filter(r=>r.pos===pole.k).sort((a,b)=>b.date.localeCompare(a.date));
-        if(!canon.length&&!rec.length) return;
-        h+=`<div class="rechead" style="margin-top:16px">${esc(pole.label)}</div>`;
-        if(pole.claim) h+=`<div class="lclaim">${esc(pole.claim)}</div>`;
-        h+=`<div class="pole" style="max-width:640px;--sc:var(--c${s.id})">`;
-        canon.forEach(l=>{h+=`<div class="pitem pcore"><a class="pt" href="${esc(l.u)}" target="_blank" rel="noopener">${esc(l.t)}</a><div class="pm">${esc(l.s)}${l.y?' · '+l.y:''} · <span class="ctag">core</span></div></div>`});
-        rec.forEach(r=>{h+=pcard(r)});
-        h+=`</div>`;
-      });
-      h+=`<div class="core" style="margin-top:12px">“Core” marks slower-moving foundational sources; dated items are the maintained recent stream.</div>`;
-      const cross=rc.filter(r=>!r.pos||!assigned.has(r.pos)).sort((a,b)=>b.date.localeCompare(a.date));
-      if(cross.length){
-        h+=`<div class="rechead" style="margin-top:16px">Cross-cutting</div><div class="pole" style="max-width:640px">`;
-        cross.forEach(r=>{h+=pcard(r)});
-        h+=`</div>`;
+    if(rc&&rc.length){
+      const deb=DEBATES[q.id];
+      h+=`<div class="rh">Recent thinking</div><div class="rhm">Selected for significance · ${rc.length} item${rc.length>1?'s':''}</div>`;
+      let groups=[];
+      if(deb){
+        const assigned=new Set(deb.poles.map(p=>p.k));
+        groups=deb.poles.map(p=>({label:p.label,claim:p.claim,hue:p.hue||SC,
+          items:rc.filter(r=>r.pos===p.k).sort((a,b)=>b.date.localeCompare(a.date))})).filter(g=>g.items.length);
+        const cross=rc.filter(r=>!r.pos||!assigned.has(r.pos)).sort((a,b)=>b.date.localeCompare(a.date));
+        if(cross.length) groups.push({label:'Cross-cutting',claim:'',hue:SC,items:cross});
+      } else {
+        groups=[{label:null,claim:'',hue:SC,items:rc.slice().sort((a,b)=>b.date.localeCompare(a.date))}];
       }
-    } else if(rc&&rc.length){
-      h+=`<div class="core">Core sources: `+q.links.map(l=>`<a href="${esc(l.u)}" target="_blank" rel="noopener">${esc(l.t)}</a> (${esc(l.s)}${l.y?', '+l.y:''})`).join(' · ')+`</div>`;
-      const ds=rc.map(r=>r.date).sort();
-      h+=`<div class="rechead">Recent thinking · ${rc.length} piece${rc.length>1?'s':''}, ${fmtD(ds[0])}–${fmtD(ds[ds.length-1])}</div>`;
-      rc.forEach(r=>{
-        const via=r.via?` · <a href="${esc(r.via.u)}" target="_blank" rel="noopener" style="color:var(--ink3)">via ${esc(r.via.t)}</a>`:'';
-        h+=`<div class="rec"><div class="rtop"><b class="rauth">${esc(r.author)}</b> <span class="rven">· ${esc(r.venue)} · ${fmtD(r.date)}${via}</span></div>`+
-           `<a class="rt" href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a>`+
-           (r.quote?`<p class="rq">“${esc(r.quote)}”</p>`:'')+
-           (r.note&&!r.quote?`<div class="rnote">${esc(r.note)}</div>`:'')+`</div>`;
+      groups.forEach(g=>{
+        h+=`<section class="gsec" style="--kc:${g.hue}">`;
+        if(g.label) h+=`<div class="ggut"><div class="ggn">${esc(g.label)}</div>${g.claim?`<div class="ggm">${esc(g.claim)}</div>`:''}</div>`;
+        h+=`<div class="gcont">`;
+        g.items.forEach((r,i)=>{
+          if(i===0){ h+=gfeat(r); if(g.items.length>1) h+=`<div class="ggrid">`; }
+          else h+=gcpt(r);
+        });
+        if(g.items.length>1) h+=`</div>`;
+        h+=`</div></section>`;
       });
-    } else {
+      h+=`<div class="gtail">`;
+      if(q.links.length){
+        h+=`<details class="gfound"><summary>Foundational reading (${q.links.length})</summary>`;
+        q.links.forEach(l=>{h+=`<div class="gcp" style="padding:8px 0"><a class="gct" href="${esc(l.u)}" target="_blank" rel="noopener">${esc(l.t)}</a><div class="gim">${esc(l.s)}${l.y?' · '+l.y:''}</div></div>`});
+        h+=`</details>`;
+      }
+      const sibs=su.qs.filter(x=>x.id!==q.id).map(x=>`<a data-go="${x.id}">${x.id} ${esc(x.t)}</a>`).join(' · ');
+      if(sibs) h+=`<div class="gnear">Nearby: ${sibs}</div>`;
+      h+=`</div>`;
+    } else if(!rq) {
       h+=`<div class="links">`;
       q.links.forEach(l=>{h+=`<a href="${esc(l.u)}" target="_blank" rel="noopener">${esc(l.t)}<span class="lsrc">${esc(l.s)}${l.y?' · '+l.y:''}</span></a>`});
       h+=`</div>`;
     }
-    h+=`<a class="maplink" style="--sc:var(--c${s.id})" href="../#q${q.id.replaceAll('.','-')}">View on the map →</a>`;
   }
   const i=order.indexOf(k);
   const prev=order[i-1], next=order[i+1];
@@ -342,6 +391,7 @@ function renderCtx(k){
     h+=`<div class="cxb"><h4>In ${n.s.id} ${esc(n.s.name)}</h4>${n.s.subs.map(su=>ctxLink(su.id,k)).join('')}</div>`;
     return h;
   }
+  return '';
   const {s,su,q}=n;
   h+=`<div class="cxb"><h4>In ${su.id} ${esc(su.t)}</h4>${su.qs.map(x=>ctxLink(x.id,k)).join('')}</div>`;
   const outs=REFS_OUT[k]||[], ins=REFS_IN[k]||[];

@@ -51,7 +51,9 @@ reporting). Tweets and Substacks are inputs, not the product.
 - Display text must do work the title can't. Quote and note are BOTH shown when
   both exist: the quote is the author's words; the note is the curation — why this
   item belongs here — and is the differentiated value. Every item carries at least
-  one (build-enforced). Format kind is displayed on every card.
+  one (build-enforced). Format kind is displayed on every card. No typographic elevation of single-source
+  measurements (large figures, pull-stats): a number displayed at heading scale reads
+  as the page's finding, which no single benchmark has earned.
 - Prose over schema: format kind (paper/essay/post/report/interview) is the only
   formal label. Type, viewpoint, and role live in the note.
 

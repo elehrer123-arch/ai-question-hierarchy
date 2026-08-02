@@ -375,9 +375,18 @@
    "tier": "high",
    "reviewed": "August 2, 2026",
    "moved": [
-    "Direct project-automation performance roughly doubled in one model generation (Remote Labor Index) — a capability fact, not yet a labor-market one.",
-    "Occupational and usage evidence keeps showing restructured work and shifted hiring rather than employment decline (Chicago Fed; Anthropic's June index; Narayanan & Kapoor).",
-    "One lab now hosts both readings: Amodei proposes displacement-pegged income support while McCrory, on internal data, reports no visible displacement in 18 months."
+    {
+     "t": "Capability rose sharply",
+     "b": "The Remote Labor Index's measured automation rate roughly doubled in one model generation — a capability fact, not yet a labor-market one."
+    },
+    {
+     "t": "Employment stayed quiet",
+     "b": "Occupational and usage evidence keeps showing restructured work and shifted hiring rather than decline (Chicago Fed; Anthropic; Narayanan & Kapoor)."
+    },
+    {
+     "t": "One lab, two readings",
+     "b": "Amodei proposes displacement-pegged income support; McCrory, on internal data, reports no visible displacement in 18 months."
+    }
    ],
    "items": [
     {
