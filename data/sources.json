@@ -264,5 +264,17 @@
   "unresolved": [
    "One t.co short link from the editor could not be resolved (robots-blocked); awaiting the expanded URL."
   ]
+ },
+ "coverage_audit": {
+  "_comment": "Known blind spots to check at each registry review — the registry is a reading graph, and these are the directions it likely under-covers.",
+  "gaps": [
+   "central banks and labor-statistics agencies beyond the pilot's US sources",
+   "non-US and non-English research and policy analysis",
+   "unions and worker organizations",
+   "employer/job-posting data providers",
+   "corporate disclosures and earnings calls",
+   "legal decisions and dockets",
+   "academic working-paper series beyond NBER"
+  ]
  }
 }

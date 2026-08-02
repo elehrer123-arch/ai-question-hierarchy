@@ -396,7 +396,7 @@ def load_recent(qindex):
                 errors.append(f"recent.json {qid}: item needs a quote or a note ({it.get('url')})")
             if urlparse(it.get("url", "")).scheme not in ("http", "https"):
                 errors.append(f"recent.json {qid}: bad URL {it.get('url')!r}")
-            if not re.match(r"^\d{4}-\d{2}$", it.get("date", "")):
+            if not re.match(r"^\d{4}-\d{2}(-\d{2})?$", it.get("date", "")):
                 errors.append(f"recent.json {qid}: bad date {it.get('date')!r} (want YYYY-MM)")
         by_id[qid_to_id[qid]] = entry
     return {"swept": data.get("swept", ""), "items": by_id}, errors

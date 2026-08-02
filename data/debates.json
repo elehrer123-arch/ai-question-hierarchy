@@ -50,31 +50,33 @@
  "q_labor_displacement": {
   "poles": [
    {
-    "k": "arriving",
-    "label": "Substitution is showing up",
-    "claim": "End-to-end automation of real work is rising fast on direct measures."
+    "k": "capability",
+    "label": "Direct automation capability is rising",
+    "claim": "End-to-end automation of real projects is improving fast on direct measures — a fact about what models can do, not yet about employment."
    },
    {
-    "k": "restruct",
-    "label": "Restructuring without decline",
-    "claim": "Exposure predicts reorganization of work, not employment loss — so far."
+    "k": "reorg",
+    "label": "Reorganization without aggregate decline",
+    "claim": "Exposure and adoption predict restructured work and shifted hiring, not employment loss — so far."
    },
    {
     "k": "method",
-    "label": "Measurement disputes",
-    "claim": "What the benchmarks and usage data can and cannot tell us."
+    "label": "How to read the evidence",
+    "claim": "What the benchmarks, exposure measures, and usage data capture — and what they cannot.",
+    "lane": true
+   },
+   {
+    "k": "policy",
+    "label": "Policy and institutional responses",
+    "claim": "Proposals and positions from institutions, included for what they reveal as much as what they argue.",
+    "lane": true
    }
   ],
   "canon": {
    "0": "method",
    "1": "method"
   },
-  "recent": {
-   "digital-labor-automation": "arriving",
-   "chicagofed": "restruct",
-   "economic-index-march-2026": "restruct",
-   "economic-value-benchmarks": "method"
-  }
+  "recent": {}
  },
  "q_entry_level_work": {
   "poles": [
@@ -115,7 +117,8 @@
    {
     "k": "ground",
     "label": "Tracking the ground truth",
-    "claim": "Compute stocks and shifting policy, measured."
+    "claim": "Compute stocks and shifting policy, measured.",
+    "lane": true
    }
   ],
   "canon": {
@@ -145,7 +148,8 @@
    {
     "k": "levers",
     "label": "Levers and responses",
-    "claim": "Concrete mechanisms proposed or funded."
+    "claim": "Concrete mechanisms proposed or funded.",
+    "lane": true
    }
   ],
   "canon": {

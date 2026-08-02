@@ -82,6 +82,10 @@ h1{font-family:var(--serif);font-size:29px;line-height:1.22;letter-spacing:-.01e
 .moved{border-top:2px solid var(--sc);background:color-mix(in srgb,var(--sc) 3.5%,transparent);border-radius:0 0 10px 10px;padding:11px 14px;margin:20px 0 4px;max-width:640px}
 .mvh{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);font-weight:600;margin-bottom:5px}
 .moved p{font-size:13.5px;color:var(--ink);line-height:1.55}
+.moved ul{margin:0;padding-left:18px}
+.moved li{font-size:13.5px;color:var(--ink);line-height:1.55;margin-bottom:5px}
+.pk{border:1px solid var(--line2);border-radius:10px;padding:0 6px;font-size:9.5px;letter-spacing:.05em;text-transform:uppercase}
+.lclaim{font-family:var(--serif);font-style:italic;font-size:12px;color:var(--ink2);margin:-6px 0 8px}
 .rec{border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:10px;background:var(--panel);padding:11px 14px;margin-bottom:9px;max-width:640px}
 .rec .rtop{font-size:12px;color:var(--ink3);margin-bottom:3px;display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
 .rec .rauth{color:var(--ink);font-size:12.5px}
@@ -136,11 +140,13 @@ const esc=t=>{const d=document.createElement('div');d.textContent=t;return d.inn
 const MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 function pcard(r){
   const via=r.via?` · <a href="${esc(r.via.u)}" target="_blank" rel="noopener" style="color:var(--ink3)">via ${esc(r.via.t)}</a>`:'';
-  return `<div class="pitem"><div class="pa"><b>${esc(r.author)}</b> · ${esc(r.venue)} · ${fmtD(r.date)}${via}</div>`+
+  const kind=r.kind?` · <span class="pk">${esc(r.kind)}</span>`:'';
+  return `<div class="pitem"><div class="pa"><b>${esc(r.author)}</b>${kind} · ${esc(r.venue)} · ${fmtD(r.date)}${via}</div>`+
          `<a class="pt" href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a>`+
-         (r.quote?`<p class="pq">“${esc(r.quote)}”</p>`:(r.note?`<p class="pnn">${esc(r.note)}</p>`:''))+`</div>`;
+         (r.quote?`<p class="pq">“${esc(r.quote)}”</p>`:'')+
+         (r.note?`<p class="pnn">${esc(r.note)}</p>`:'')+`</div>`;
 }
-const fmtD=d=>{const m=(d||'').match(/^(\d{4})-(\d{2})$/);return m?MON[+m[2]-1]+' '+m[1]:esc(d||'')};;
+const fmtD=d=>{const m=(d||'').match(/^(\d{4})-(\d{2})(?:-(\d{2}))?$/);return m?(m[3]?+m[3]+' ':'')+MON[+m[2]-1]+' '+m[1]:esc(d||'')};;
 const nodes={}, order=[];   // key -> {type,obj,s,su}; order = depth-first keys
 order.push('root'); nodes.root={type:'root'};
 DATA.forEach(s=>{ const sk=s.id; order.push(sk); nodes[sk]={type:'sec',s};
@@ -224,13 +230,14 @@ function render(k){
     const rq=RECENT[q.id];
     const rc0=rq?rq.items:null;
     h+=`<p class="qn">${esc(q.n).replace(/(?<![\w.])([1-5]\.\d{1,2}\.\d{1,2})(?![\w.])/g,(m0,num)=>num===q.id?num:(nodes[num]?`<a data-go="${num}" style="cursor:pointer;color:var(--c${num[0]});text-decoration:underline dotted">${num}</a>`:num))}</p>`;
+    const rc=rc0, deb=DEBATES[q.id];
+    if(rq&&rq.moved){
+      const body=Array.isArray(rq.moved)?'<ul>'+rq.moved.map(m=>`<li>${esc(m)}</li>`).join('')+'</ul>':`<p>${esc(rq.moved)}</p>`;
+      h+=`<div class="moved"><div class="mvh">What has moved · reviewed ${esc(rq.reviewed)}</div>${body}</div>`;
+    }
     const en=ENTRY[q.id];
     if(en){
       h+=`<div class="entry" style="--sc:var(--c${s.id})"><span class="est">Full entry · ${esc(en.status)}</span><h3>${esc(en.title)}</h3><p>${esc(en.excerpt)}</p><a href="${en.href}">Continue reading →</a></div>`;
-    }
-    const rc=rc0, deb=DEBATES[q.id];
-    if(rq&&rq.moved){
-      h+=`<div class="moved"><div class="mvh">What has moved · reviewed ${esc(rq.reviewed)}</div><p>${esc(rq.moved)}</p></div>`;
     }
     if(rq&&(!rc||!rc.length)){
       h+=`<div class="core">No contribution since the last review met the inclusion threshold.</div>`;
@@ -241,9 +248,10 @@ function render(k){
       const frame=q.links.filter((l,i)=>deb.canon[String(i)]==='_frame');
       if(frame.length) h+=`<div class="core">Background: `+frame.map(l=>`<a href="${esc(l.u)}" target="_blank" rel="noopener">${esc(l.t)}</a> (${esc(l.s)}${l.y?', '+l.y:''})`).join(' · ')+`</div>`;
       h+=`<div class="rechead">The debate · ${rc.length} recent piece${rc.length>1?'s':''}, ${fmtD(ds[0])}–${fmtD(ds[ds.length-1])}</div>`;
-      h+=`<div class="debate" style="--np:${deb.poles.length};--sc:var(--c${s.id})">`;
       const assigned=new Set(deb.poles.map(p=>p.k));
-      deb.poles.forEach(pole=>{
+      const cols=deb.poles.filter(p=>!p.lane), lanes=deb.poles.filter(p=>p.lane);
+      h+=`<div class="debate" style="--np:${cols.length};--sc:var(--c${s.id})">`;
+      cols.forEach(pole=>{
         const canon=q.links.filter((l,i)=>deb.canon[String(i)]===pole.k);
         const rec=rc.filter(r=>r.pos===pole.k).sort((a,b)=>b.date.localeCompare(a.date));
         h+=`<div class="pole"><div class="ph"><div class="pl">${esc(pole.label)}</div><div class="pc">${esc(pole.claim)}</div><div class="pn2">${canon.length+rec.length} piece${canon.length+rec.length===1?'':'s'}</div></div>`;
@@ -255,6 +263,18 @@ function render(k){
         h+=`</div>`;
       });
       h+=`</div>`;
+      lanes.forEach(pole=>{
+        const canon=q.links.filter((l,i)=>deb.canon[String(i)]===pole.k);
+        const rec=rc.filter(r=>r.pos===pole.k).sort((a,b)=>b.date.localeCompare(a.date));
+        if(!canon.length&&!rec.length) return;
+        h+=`<div class="rechead" style="margin-top:16px">${esc(pole.label)}</div>`;
+        if(pole.claim) h+=`<div class="lclaim">${esc(pole.claim)}</div>`;
+        h+=`<div class="pole" style="max-width:640px;--sc:var(--c${s.id})">`;
+        canon.forEach(l=>{h+=`<div class="pitem pcore"><a class="pt" href="${esc(l.u)}" target="_blank" rel="noopener">${esc(l.t)}</a><div class="pm">${esc(l.s)}${l.y?' · '+l.y:''} · <span class="ctag">core</span></div></div>`});
+        rec.forEach(r=>{h+=pcard(r)});
+        h+=`</div>`;
+      });
+      h+=`<div class="core" style="margin-top:12px">“Core” marks slower-moving foundational sources; dated items are the maintained recent stream.</div>`;
       const cross=rc.filter(r=>!r.pos||!assigned.has(r.pos)).sort((a,b)=>b.date.localeCompare(a.date));
       if(cross.length){
         h+=`<div class="rechead" style="margin-top:16px">Cross-cutting</div><div class="pole" style="max-width:640px">`;

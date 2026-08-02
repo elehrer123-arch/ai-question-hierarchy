@@ -15,13 +15,18 @@ reporting). Tweets and Substacks are inputs, not the product.
 ## Page anatomy (question pages in Browse)
 
 1. Question, framing, entry teaser — unchanged.
-2. **What has moved** — one dated editorial paragraph per sweep, plain register,
-   attributed, stating how the debate moved. This is the synthesis layer; the items
-   are its evidence. Carries "reviewed <date>".
+2. **What has moved** — dated, plain-register, attributed: how the debate moved,
+   shown ABOVE the entry teaser. Prefer 2–4 scannable bullets, each traceable to
+   items below; a paragraph is acceptable for simple updates. This is the synthesis
+   layer; the items are its evidence. Carries "reviewed <date>".
 3. **The debate** — position columns, ONLY where a question genuinely has camps
    (a per-question editorial judgment recorded in data/debates.json). Core sources
-   and recent items sit together under the position they argue for. Questions
-   without real camps get a single selected list ("Recent thinking").
+   and recent items sit together under the position they argue for. Meta-layers
+   that apply across camps — measurement/method, policy and institutional
+   responses — are LANES: full-width strips below the columns, never rendered as
+   parallel positions. Column labels must never claim more than the evidence does
+   (capability evidence is not labor-market evidence). Questions without real
+   camps get a single selected list ("Recent thinking").
 4. Honest empty state — a covered question with nothing new says so: "No
    contribution since the last review met the inclusion threshold."
 
@@ -43,9 +48,10 @@ reporting). Tweets and Substacks are inputs, not the product.
 
 - Native cards only; no third-party embed scripts. Short excerpts, always linked,
   never mirrored.
-- Display text must do work the title can't: no excerpt when the title suffices;
-  the author's words when they beat a paraphrase; a note when context is needed.
-  Every item carries quote-or-note (build-enforced).
+- Display text must do work the title can't. Quote and note are BOTH shown when
+  both exist: the quote is the author's words; the note is the curation — why this
+  item belongs here — and is the differentiated value. Every item carries at least
+  one (build-enforced). Format kind is displayed on every card.
 - Prose over schema: format kind (paper/essay/post/report/interview) is the only
   formal label. Type, viewpoint, and role live in the note.
 
@@ -71,6 +77,12 @@ be fetched directly: they may be included only when a fetchable secondary source
 carries a visible "via" attribution and its quote comes from the secondary source's
 quotation. Never reconstructed from memory. Deleted or unreachable sources are
 dropped or flagged at the next sweep.
+
+## Dates
+
+Exact dates (YYYY-MM-DD) preferred for new items; month precision (YYYY-MM) is
+accepted for existing ones. Chronology, replies, and archival reconstruction all
+get easier with days.
 
 ## Cadence
 
