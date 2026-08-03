@@ -10,6 +10,12 @@
     "k": "missing",
     "label": "A new ingredient is needed",
     "claim": "Continual, on-the-job learning (or another missing capability) gates further progress."
+   },
+   {
+    "k": "breaking",
+    "label": "The returns are breaking down",
+    "claim": "Measured scaling returns are degrading; RL buys less than pretraining did.",
+    "hue": "#a97729"
    }
   ],
   "canon": {
@@ -197,5 +203,72 @@
    "news.asu.edu": "harm",
    "6457318": "design"
   }
+ },
+ "q_mechanistic_interpretability": {
+  "poles": [
+   {
+    "k": "pragmatic",
+    "label": "Pragmatic interpretability",
+    "claim": "Drop full reverse-engineering; target safety-relevant understanding grounded in proxy tasks.",
+    "hue": "#3d6b9e"
+   },
+   {
+    "k": "ambitious",
+    "label": "Ambitious interpretability",
+    "claim": "Fully understanding networks is feasible and uniquely catches what behavioural tests miss.",
+    "hue": "#b0524b"
+   },
+   {
+    "k": "faithful",
+    "label": "Do current circuits describe the model?",
+    "claim": "Sparsity objectives can reward interpretable-looking explanations that misdescribe the computation.",
+    "lane": true,
+    "hue": "#a97729"
+   }
+  ],
+  "canon": {}
+ },
+ "q_open_versus_closed": {
+  "poles": [
+   {
+    "k": "keep",
+    "label": "Openness is the safer bet",
+    "claim": "Open weights distribute capability and scrutiny; restriction concentrates power and hides risk.",
+    "hue": "#3d8a6b"
+   },
+   {
+    "k": "restrict",
+    "label": "The window should close",
+    "claim": "Once capabilities cross thresholds, releases cannot be recalled — and rivals' models are already embedded here.",
+    "hue": "#b0524b"
+   },
+   {
+    "k": "safe",
+    "label": "What would make open release safe",
+    "claim": "The technical agenda that would have to succeed for 'release responsibly' to mean something.",
+    "lane": true,
+    "hue": "#7a5ba6"
+   }
+  ],
+  "canon": {}
+ },
+ "q_loss_of_control": {
+  "poles": [
+   {
+    "k": "reading",
+    "label": "Reading the current evidence",
+    "claim": "What this year's incidents do and do not tell us about catastrophic risk.",
+    "lane": true,
+    "hue": "#b0524b"
+   },
+   {
+    "k": "response",
+    "label": "What would actually help",
+    "claim": "Proposals aimed at the overt end of the distribution — law, compute limits, delay.",
+    "lane": true,
+    "hue": "#7a5ba6"
+   }
+  ],
+  "canon": {}
  }
 }

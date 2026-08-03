@@ -340,8 +340,11 @@ def render_map(sections, entry_map, recent=None):
             for q in su["qs"]:
                 anchor = q["id"].replace(".", "-")
                 star = ""
+                _rq_x = (recent or {}).get("items", {}).get(q["id"]) or {}
+                _stream_x = [f'{it.get("title","")} {it.get("author","")} {it.get("venue","")}'
+                             for it in _rq_x.get("items", []) + _rq_x.get("ledger", [])]
                 x = " ".join([q["id"], q["t"], q["q"], q["n"]] +
-                             [l["t"] + " " + l["s"] for l in q["links"]]).lower()
+                             [l["t"] + " " + l["s"] for l in q["links"]] + _stream_x).lower()
                 links = "".join(
                     f'<a href="{E(l["u"])}" target="_blank" rel="noopener">{E(l["t"])}'
                     f'<span class="lsrc">{E(l["s"])}{" · " + l["y"] if l.get("y") else ""}</span></a>'
@@ -481,7 +484,11 @@ def render_browse(sections, entry_map, recent=None, debates=None):
         data.append({"id": s["id"], "name": SECTION_NAMES[s["id"]], "tag": s["tag"], "intro": s["intro"],
                      "subs": [{"id": su["id"], "t": su["t"], "qs": [
                          {"id": q["id"], "t": q["t"], "q": q["q"], "n": q["n"],
-                          "crux": q.get("crux", ""), "slug": q["slug"], "links": q["links"]}
+                          "crux": q.get("crux", ""), "slug": q["slug"], "links": q["links"],
+                          "sx": " ".join(
+                              f'{it.get("title","")} {it.get("author","")} {it.get("venue","")}'
+                              for it in ((recent or {"items": {}})["items"].get(q["id"]) or {}).get("items", [])
+                              + ((recent or {"items": {}})["items"].get(q["id"]) or {}).get("ledger", []))}
                          for q in su["qs"]]} for su in s["subs"]]})
     entry_json = {qnum: {"href": f'../questions/{e["slug"]}/', "title": e["title"],
                          "status": e["status"], "excerpt": e["excerpt"]}
@@ -602,13 +609,19 @@ def render_latest(sections, recent, cutoff=None):
             anchor = "q" + r["q"].replace(".", "-")
             note = f'<div class="lnote">{E(r["note"])}</div>' if (r["sel"] and r["note"]) else ""
             kind = f'<span class="lkind">{E(r["kind"])}</span>' if r["kind"] else ""
+            feat = ('<span class="lfeat" title="Featured on the question page">★ Featured</span>'
+                    if r["sel"] else "")
+            addm = ""
+            if r.get("added") and r["added"][:7] != r["d"][:7]:
+                addm = (f'<span class="ladd">Added {MONTH_NAMES[int(r["added"][5:7])-1][:3]} '
+                        f'{int(r["added"][8:10])}</span>')
             search = E(f'{r["title"]} {r["author"]} {r["venue"]} {r["q"]} {r["qt"]}'.lower())
             body.append(
                 f'<article class="li{"" if r["sel"] else " lg"}" data-s="{r["sec"]}" '
                 f'data-q="{r["q"]}" data-search="{search}">'
                 f'<div class="ld">{day_h(r["d"])}</div>'
                 f'<div class="lb"><a class="lt" href="{E(r["url"])}" rel="noopener">{E(r["title"])}</a>'
-                f'<div class="lm">{E(r["author"])} · {E(r["venue"])} {kind}</div>{note}'
+                f'<div class="lm">{E(r["author"])} · {E(r["venue"])} {kind}{feat}{addm}</div>{note}'
                 f'<a class="lq" href="../questions/{E(r["slug"])}/" style="color:var(--c{r["sec"]})">'
                 f'&rarr; {r["q"]} {E(r["qt"])}</a></div></article>')
 
@@ -716,6 +729,12 @@ body.selonly .lg{display:none}
 .qpill{display:none;align-items:center;gap:8px;margin:2px 0 10px;font-size:12.5px;color:var(--ink2)}
 .qpill.on{display:flex}
 .qpill button{border:1px solid var(--line);background:var(--panel);border-radius:12px;padding:1px 9px;font-size:11.5px;cursor:pointer;color:var(--ink2)}
+.lfeat{color:var(--gold);font-size:10.5px;font-weight:600;margin-left:7px;white-space:nowrap}
+.ladd{color:var(--ink3);font-size:10.5px;margin-left:7px;white-space:nowrap;border:1px solid var(--line);border-radius:9px;padding:0 6px}
+.rescount{font-size:12px;color:var(--ink3);margin:0 0 10px}
+.empty{display:none;border:1px solid var(--line);border-radius:10px;padding:18px;margin-top:14px;font-size:13.5px;color:var(--ink2);line-height:1.55}
+.empty.on{display:block}
+.empty button{border:1px solid var(--line);background:var(--panel);border-radius:12px;padding:2px 10px;font-size:12px;cursor:pointer;color:var(--ink2);margin-top:8px}
 .note{margin-top:30px;border-top:1px solid var(--line);padding-top:12px;
 font-size:12.5px;color:var(--ink2);line-height:1.55;max-width:620px}
 </style></head><body>
@@ -725,38 +744,64 @@ font-size:12.5px;color:var(--ink2);line-height:1.55;max-width:620px}
 <h1>Latest</h1>
 <p class="lede">Substantive recent pieces our reviews found across all 127 questions — newest first, each linked to the question it belongs to.</p>
 <p class="meta">__COUNT__ pieces from the last 90 days · updated __REVIEWED__ · substantive pieces tracked from the project&#39;s monitored sources — not a census of discussion · <a href="feed.xml">RSS</a> · <a href="../methodology/">how this works</a></p>
-<div class="fbar">__SECLINE__<input class="srch" id="srch" type="search" placeholder="Search title, author, question…" aria-label="Search"><label class="fsel"><input type="checkbox" id="selonly"> Featured only</label></div><div class="qpill" id="qpill"><span id="qpilltext"></span><button id="qclear">clear ×</button></div>
+<div class="fbar">__SECLINE__<input class="srch" id="srch" type="search" placeholder="Search title, author, question…" aria-label="Search"><label class="fsel"><input type="checkbox" id="selonly"> Featured only</label></div><div class="qpill" id="qpill"><span id="qpilltext"></span><button id="qclear">clear ×</button></div><p class="rescount" id="rescount"></p><div class="empty" id="empty">No tracked pieces match these filters.<br><button id="resetall">Reset filters</button></div>
 __BODY__
 <div class="note">Pieces appear here when the project verifies them and judges that they advance one of the map&#39;s questions — whether selected for the question&#39;s page or noted in its ledger. Publication dates are shown where sources provide them; pieces with month-only dates appear at the end of their month. Discovery runs weekly across our source registry, aggregators, and editor submissions; full reviews of each question run on their own cadence.</div>
 </div>
 <script>
 const QNAMES=__QNAMES__;
+const ALL=[...document.querySelectorAll('.li')];
 const state={secs:new Set(['1','2','3','4','5']),sel:false,q:'',txt:''};
-function apply(){
-  document.querySelectorAll('.li').forEach(li=>{
+
+function syncURL(){
+  const p=new URLSearchParams();
+  if(state.q)p.set('q',state.q);
+  if(state.txt)p.set('s',state.txt);
+  if(state.sel)p.set('featured','1');
+  if(state.secs.size!==5)p.set('sec',[...state.secs].sort().join(''));
+  const qs=p.toString();
+  history.replaceState(null,'',qs?location.pathname+'?'+qs:location.pathname);
+}
+
+function apply(write){
+  const toks=state.txt?state.txt.split(/\s+/).filter(Boolean):[];
+  let shown=0;
+  ALL.forEach(li=>{
     let show=state.secs.has(li.dataset.s);
     if(show&&state.sel&&li.classList.contains('lg'))show=false;
     if(show&&state.q&&li.dataset.q!==state.q)show=false;
-    if(show&&state.txt&&!li.dataset.search.includes(state.txt))show=false;
+    if(show&&toks.length&&!toks.every(t=>li.dataset.search.includes(t)))show=false;
     li.style.display=show?'':'none';
+    if(show)shown++;
   });
+  // month + earlier-group headings reflect visible counts
   document.querySelectorAll('.mh').forEach(h=>{
     let n=0,el=h.nextElementSibling;
     while(el&&!el.classList.contains('mh')){
       if(el.classList.contains('li')&&el.style.display!=='none')n++;
       el=el.nextElementSibling;}
-    h.style.display=n?'':'none';});
+    h.style.display=n?'':'none';
+    const c=h.querySelector('.mc'); if(c)c.textContent='('+n+')';
+  });
   document.querySelectorAll('.emh').forEach(h=>{
     let n=0,el=h.nextElementSibling;
     while(el&&!el.classList.contains('mh')&&!el.classList.contains('emh')){
       if(el.classList.contains('li')&&el.style.display!=='none')n++;
       el=el.nextElementSibling;}
     h.style.display=n?'':'none';});
+  // question pill
   const pill=document.getElementById('qpill');
   if(state.q){document.getElementById('qpilltext').textContent=
     'Showing '+state.q+' · '+(QNAMES[state.q]||'');pill.classList.add('on');}
   else pill.classList.remove('on');
+  // result count + empty state
+  const filtered=state.q||state.txt||state.sel||state.secs.size!==5;
+  document.getElementById('rescount').textContent=
+    filtered?shown+' of '+ALL.length+' pieces shown':'';
+  document.getElementById('empty').classList.toggle('on',shown===0);
+  if(write!==false)syncURL();
 }
+
 document.querySelectorAll('.fsec').forEach(b=>b.addEventListener('click',()=>{
   const on=b.getAttribute('aria-pressed')==='true';
   b.setAttribute('aria-pressed',on?'false':'true');
@@ -764,11 +809,26 @@ document.querySelectorAll('.fsec').forEach(b=>b.addEventListener('click',()=>{
   apply();}));
 document.getElementById('selonly').addEventListener('change',e=>{state.sel=e.target.checked;apply();});
 document.getElementById('srch').addEventListener('input',e=>{state.txt=e.target.value.trim().toLowerCase();apply();});
-document.getElementById('qclear').addEventListener('click',()=>{state.q='';
-  history.replaceState(null,'',location.pathname);apply();});
-const p=new URLSearchParams(location.search).get('q');
-if(p&&QNAMES[p]){state.q=p;}
-apply();
+document.getElementById('qclear').addEventListener('click',()=>{state.q='';apply();});
+document.getElementById('resetall').addEventListener('click',()=>{
+  state.q='';state.txt='';state.sel=false;state.secs=new Set(['1','2','3','4','5']);
+  document.getElementById('srch').value='';
+  document.getElementById('selonly').checked=false;
+  document.querySelectorAll('.fsec').forEach(b=>b.setAttribute('aria-pressed','true'));
+  apply();});
+
+// restore state from URL
+const P=new URLSearchParams(location.search);
+const pq=P.get('q'); if(pq&&QNAMES[pq])state.q=pq;
+const ps=P.get('s'); if(ps){state.txt=ps.toLowerCase();document.getElementById('srch').value=ps;}
+if(P.get('featured')==='1'){state.sel=true;document.getElementById('selonly').checked=true;}
+const psec=P.get('sec');
+if(psec&&/^[1-5]+$/.test(psec)){
+  state.secs=new Set(psec.split(''));
+  document.querySelectorAll('.fsec').forEach(b=>
+    b.setAttribute('aria-pressed',state.secs.has(b.dataset.s)?'true':'false'));
+}
+apply(false);
 </script>
 </body></html>"""
 
@@ -1235,11 +1295,14 @@ def render_poster(sections):
             f'padding:22px 18px 60px}}a.home{{font-family:Georgia,serif;font-weight:700;color:#1d1c1a;'
             f'text-decoration:none;font-size:15px}}h1{{font-family:Georgia,serif;font-size:24px;margin:14px 0 4px}}'
             f'p{{color:#514d45;font-size:13.5px;max-width:620px}}p a{{color:#514d45}}'
-            f'.wrap{{overflow:auto}}svg{{display:block;margin:0 auto;max-width:1120px;min-width:760px;width:100%}}</style>'
-            f'</head><body><a class="home" href="../">← The Biggest Questions About AI</a>'
+            f'.wrap{{overflow:auto}}svg{{display:block;margin:0 auto;max-width:1120px;min-width:760px;width:100%}}'f'.topbar{{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap}}'f'.switch{{margin-left:auto;font-size:13px;color:#6f6b5f}}.switch a{{color:#514d45;text-decoration:none}}'f'@media (prefers-color-scheme:dark){{body{{background:#191817;color:#f2f0ea}}a.home{{color:#f2f0ea}}'f'p{{color:#c3c0b4}}p a{{color:#c3c0b4}}.switch a{{color:#c3c0b4}}}}</style>'
+            f'</head><body><div class="topbar"><a class="home" href="../">The Biggest Questions About AI</a>'
+            f'<nav class="switch"><a href="../">Map</a> · <a href="../browse/">Browse</a> · '
+            f'<a href="../latest/">Latest</a></nav></div>'
             f'<h1>The whole map in one circle</h1>'
-            f'<p>All {qn} questions by their short labels. Hover any label for the full question; click to open it in '
-            f'<a href="../browse/">Browse</a>. <a href="map.svg" download>Download as SVG</a>.</p>'
+            f'<p>All {qn} questions by their short labels. Tap or click any label to open its question page; '
+            f'hover (on a pointer device) shows the full question. '
+            f'<a href="map.svg" download>Download as SVG</a>.</p>'
             f'<div class="wrap">{svg_doc}</div></body></html>')
     with open(os.path.join(outdir, "index.html"), "w", encoding="utf-8") as f:
         f.write(page)

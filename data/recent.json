@@ -69,7 +69,8 @@
      "url": "https://arxiv.org/abs/2606.12683",
      "note": "DeepMind's formal map of four routes past AGI — scaling, paradigm shifts, recursive improvement, multi-agent collectives — and the frictions on each.",
      "added": "2026-08-03",
-     "rid": "r_from_agi_asi_2026"
+     "rid": "r_from_agi_asi_2026",
+     "pos": "holds"
     },
     {
      "kind": "report",
@@ -106,7 +107,8 @@
      "quote": "a 10x scaling of RL is required to get the same performance boost as a 3x scaling of inference ... we may have lost the ability to effectively turn more compute into more intelligence.",
      "note": "A quantitative case that RL compute scaling is far less efficient than pretraining or inference scaling, and that most RL gains come from enabling longer chains of thought — directly challenging the view that RL offsets diminishing pretraining returns.",
      "added": "2026-08-03",
-     "rid": "r_well_does_rl_scale_2025"
+     "rid": "r_well_does_rl_scale_2025",
+     "pos": "breaking"
     },
     {
      "kind": "paper",
@@ -118,7 +120,8 @@
      "quote": "The relationship between training compute and performance is highly uncertain and rapidly changing.",
      "note": "The reference point for the winter 2025–26 'is scaling dead' debate: the compute-performance link is breaking down and progress is shifting to other levers. Kirsch's rebuttal (in the ledger) argues small-beats-large examples reflect newer generations, not the failure of scale.",
      "added": "2026-08-03",
-     "rid": "r_slow_death_scaling_2025"
+     "rid": "r_slow_death_scaling_2025",
+     "pos": "breaking"
     }
    ],
    "ledger": [
@@ -5024,7 +5027,8 @@
      "quote": "The Google DeepMind mechanistic interpretability team has made a strategic pivot over the past year, from ambitious reverse-engineering to a focus on pragmatic interpretability",
      "note": "The GDM interp team's manifesto abandoning full reverse-engineering in favor of proxy-grounded, safety-targeted interpretability — one pole of the field's central strategy debate.",
      "added": "2026-08-03",
-     "rid": "r_pragmatic_vision_interpretability_2025"
+     "rid": "r_pragmatic_vision_interpretability_2025",
+     "pos": "pragmatic"
     },
     {
      "kind": "essay",
@@ -5036,7 +5040,8 @@
      "quote": "The goal of ambitious mechanistic interpretability (AMI) is to fully understand how neural networks work.",
      "note": "The direct rebuttal to the pragmatic pivot: defends fully reverse-engineering networks as both feasible and uniquely valuable for catching scheming invisible to behavioral tests — the other pole of the live strategy debate.",
      "added": "2026-08-03",
-     "rid": "r_ambitious_vision_interpretability_2025"
+     "rid": "r_ambitious_vision_interpretability_2025",
+     "pos": "ambitious"
     },
     {
      "kind": "report",
@@ -5048,7 +5053,8 @@
      "quote": "pruned circuits can achieve low cross entropy loss on a nonsensical task; solve tasks using uniform attention patterns even when the original model's attention pattern was importantly non-uniform",
      "note": "Replicates the weight-sparse circuits result but presents four lines of evidence that the extracted circuits misdescribe the model's actual computation — arguing the loss-vs-circuit-size metric rewards interpretable-looking but unfaithful explanations.",
      "added": "2026-08-03",
-     "rid": "r_weight_sparse_circuits_may_2026"
+     "rid": "r_weight_sparse_circuits_may_2026",
+     "pos": "faithful"
     },
     {
      "kind": "report",
@@ -6068,7 +6074,8 @@
      "quote": "score-seeking AIs—or whatever kind of misaligned AIs were involved in this incident—are clearly not sufficiently aligned to be trusted with an intelligence explosion.",
      "note": "Argues the summer incident reflects 'score-seeking' rather than scheming misalignment — less dangerous than scheming but still disqualifying for trusting models through an intelligence explosion, and warns naive training fixes could produce subtler deception.",
      "added": "2026-08-03",
-     "rid": "r_we_existentially_threatened_by_2026"
+     "rid": "r_we_existentially_threatened_by_2026",
+     "pos": "reading"
     },
     {
      "kind": "essay",
@@ -6080,7 +6087,8 @@
      "quote": "The utter extermination of humanity, would be bad! It should be prevented if possible! There ought to be a law!",
      "note": "Argues that because frontier development is globally distributed, only coordinated international law over chips and datacenters — not individual action — can address extinction risk. A prominent statement of the overt-catastrophe end of the distribution.",
      "added": "2026-08-03",
-     "rid": "r_only_law_can_prevent_2026"
+     "rid": "r_only_law_can_prevent_2026",
+     "pos": "response"
     },
     {
      "kind": "essay",
@@ -6092,7 +6100,8 @@
      "quote": "It's called Plan A because it's a recommendation, not a prediction. It's what we think should happen, not what will happen.",
      "note": "A detailed governance scenario for delaying superintelligence to ~2040 (compute limits, transparency, control-based safety) to buy time against loss of control; drew a serious rebuttal in Richard Ngo's 'Selective Optimism.'",
      "added": "2026-08-03",
-     "rid": "r_ai_2040_plan_2026"
+     "rid": "r_ai_2040_plan_2026",
+     "pos": "response"
     },
     {
      "kind": "news",
@@ -6104,7 +6113,8 @@
      "quote": "We will just be at their mercy. If they decide to treat us well, then that might go very well for us. If they decide to treat us poorly, that will go very poorly for us.",
      "note": "A mainstream-TV articulation of the loss-of-control argument, stressing that absent governance humanity's fate becomes contingent on AI disposition — a signal of the debate reaching a general audience.",
      "added": "2026-08-03",
-     "rid": "r_risk_humans_losing_control_2026"
+     "rid": "r_risk_humans_losing_control_2026",
+     "pos": "reading"
     }
    ],
    "ledger": [],
@@ -7453,7 +7463,8 @@
      "quote": "Open-weights models that don't have dangerous capabilities are a public good: they don't cost anything besides the compute needed to run them.",
      "note": "Anthropic's CEO formally disavows any ban on open weights and reframes the lab's position around chip export controls, anti-distillation enforcement, and capability-based safety testing that applies to open and closed models alike — a significant repositioning in the 2026 fight.",
      "added": "2026-08-03",
-     "rid": "r_our_position_open_weights_2026"
+     "rid": "r_our_position_open_weights_2026",
+     "pos": "keep"
     },
     {
      "kind": "essay",
@@ -7477,7 +7488,8 @@
      "quote": "Restricting open models wouldn't make AI safer. It would simply hide the risks, concentrate power.",
      "note": "Reports that frontier labs lobbied the administration to restrict Chinese open-weight models as a business threat, with Hugging Face's Delangue giving the concentration-of-power counterargument.",
      "added": "2026-08-03",
-     "rid": "r_openai_scared_open_weight_2026"
+     "rid": "r_openai_scared_open_weight_2026",
+     "pos": "keep"
     },
     {
      "kind": "essay",
@@ -7489,7 +7501,8 @@
      "quote": "The Chinese DeepSeek and a handful of other Chinese models are adopted very widely, far more than American models, which have really fallen behind.",
      "note": "Ng's widely-cited statement of the openness-as-competition case: Chinese open-weight releases winning global adoption and embedding Chinese values in downstream systems while US labs stay closed.",
      "added": "2026-08-03",
-     "rid": "r_china_s_open_ai_2026"
+     "rid": "r_china_s_open_ai_2026",
+     "pos": "keep"
     },
     {
      "kind": "news",
@@ -7501,7 +7514,8 @@
      "quote": "An effective federal approach should therefore scrutinize U.S. companies' reliance on PRC-developed models and strengthen the availability, security, and competitiveness of American open-weight alternatives.",
      "note": "Primary document anchoring the restriction side: a congressional investigation into US companies' integration of Chinese open-weight models, including alleged covert distillation.",
      "added": "2026-08-03",
-     "rid": "r_chairmen_garbarino_moolenaar_continue_2026"
+     "rid": "r_chairmen_garbarino_moolenaar_continue_2026",
+     "pos": "restrict"
     },
     {
      "kind": "paper",
@@ -7513,7 +7527,8 @@
      "quote": "State-of-the-art fine-tuning and unlearning algorithms are vulnerable to being undone within dozens of steps of adversarial fine-tuning",
      "note": "Lays out 16 open technical problems for managing open-weight model risk — the research agenda that would have to succeed for 'release safely' to be an option rather than a slogan.",
      "added": "2026-08-03",
-     "rid": "r_open_technical_problems_open_2025"
+     "rid": "r_open_technical_problems_open_2025",
+     "pos": "safe"
     }
    ],
    "ledger": [

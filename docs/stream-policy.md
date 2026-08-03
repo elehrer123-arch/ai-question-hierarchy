@@ -180,3 +180,13 @@ questions, removed — with reason) append one line to `data/history.jsonl`,
 which is append-only: the file is the project's observation history and the
 basis for any future attention-over-time measurement. Items may roll off
 pages; they never leave the history.
+
+
+## Prominence follows judgment (added August 2026, sprint 3)
+
+The order of `items` in each question is the editorial ranking, most
+significant first. Renderers must preserve that order: the visually
+prominent lead item is the editor's lead, never merely the newest piece.
+Layout may not imply a judgment the data does not contain. Ledger
+(`Additional relevant discussion`) remains reverse-chronological, since it
+makes no significance claim.

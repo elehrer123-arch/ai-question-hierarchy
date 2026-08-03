@@ -7,6 +7,7 @@
 :root{--bg:#faf9f6;--panel:#fff;--ink:#1d1c1a;--ink2:#514d45;--ink3:#6f6b5f;--line:#e4e1d8;--line2:#d6d2c6;
 --c1:#3d6b9e;--c2:#b0524b;--c3:#3d8a6b;--c4:#7a5ba6;--c5:#a97729;--gold:#a97729;
 --serif:'Charter','Iowan Old Style',Georgia,serif;--sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+}
 *{box-sizing:border-box;margin:0}
 html,body{height:100%}
 body{background:var(--bg);color:var(--ink);font-family:var(--sans);display:flex;flex-direction:column}
@@ -38,7 +39,7 @@ header{padding:11px 18px;border-bottom:1px solid var(--line);display:flex;gap:12
 .cols{display:flex;align-items:flex-start}
 .pin{flex:1;min-width:0}
 #ctx{width:252px;flex:none;padding:40px 22px 60px 0;display:none}
-@media(min-width:1180px){#ctx{display:block}}
+@media(min-width:1180px){#ctx:not(:empty){display:block}}
 .cxb{border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:11px 13px;margin-bottom:12px}
 .cxb h4{font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink3);margin-bottom:7px;font-weight:600}
 .cxb a{display:block;font-size:12.5px;color:var(--ink2);text-decoration:none;padding:2.5px 0;cursor:pointer;line-height:1.35}
@@ -153,14 +154,14 @@ h1{font-family:var(--serif);font-size:29px;line-height:1.22;letter-spacing:-.01e
 .gfound>summary{font-family:var(--serif);font-size:15.5px;font-weight:700;cursor:pointer}
 .gnear{font-size:12.5px;color:var(--ink3);margin-top:16px;line-height:1.7}
 .gnear a{color:var(--ink2);cursor:pointer}
-@media(max-width:760px){
+@media(max-width:1000px){
 .gsec{flex-direction:column;gap:10px}
 .ggut{flex:auto}
 .ggrid{grid-template-columns:1fr}
 .ch+.ch{border-left:0;border-top:1px solid var(--line);padding-left:0;padding-top:12px}
 }
 #back{display:none;border:1px solid var(--line);background:var(--panel);border-radius:8px;padding:5px 12px;font-size:13px;cursor:pointer;margin:14px 18px 0}
-@media(max-width:760px){
+@media(max-width:1000px){
   #tree{width:100%;border-right:0}
   body.detail #tree{display:none}
   #page{display:none}
@@ -168,11 +169,17 @@ h1{font-family:var(--serif);font-size:29px;line-height:1.22;letter-spacing:-.01e
   body.detail #back{display:inline-block}
   .pin{padding:10px 18px 80px}
 }
+@media (prefers-color-scheme:dark){
+:root{--bg:#191817;--panel:#211f1d;--ink:#f2f0ea;--ink2:#c3c0b4;--ink3:#8f8b7e;--line:#33312d;--line2:#403d38;
+--c1:#6f9bc9;--c2:#c97a74;--c3:#63a586;--c4:#a08ac4;--c5:#c29a55;--gold:#c29a55}
+.trow:hover{background:#262421}
+.trow.on{background:#2c2a26}
+.lens[hidden]{display:none}
 </style></head><body>
 <header><a class="home" href="../">The Biggest Questions About&nbsp;AI</a><span style="font-size:12.5px;color:var(--ink3)">Browse — every level is a page</span><nav class="switch" style="margin-left:auto;font-size:13px;color:var(--ink3)" aria-label="View switch"><a id="toMap" href="../" style="color:var(--ink2);text-decoration:none">Map</a> · <b style="color:var(--ink)">Browse</b> · <a href="../latest/" style="color:var(--ink2);text-decoration:none">Latest</a></nav></header>
 <div class="wrap">
 <nav id="tree" aria-label="Map"><div id="srch"><input id="q" type="search" placeholder="Search questions…" aria-label="Search questions"></div>
-<div class="lens"><button id="lensEntry" aria-pressed="false">Full entries</button></div>
+<div class="lens" hidden><button id="lensEntry" aria-pressed="false">Full entries</button></div>
 <div id="rows"></div></nav>
 <main id="page"><button id="back">← Back to questions</button><div class="cols"><div class="pin" id="pin"></div><aside id="ctx" aria-label="Context"></aside></div></main>
 </div>
@@ -320,11 +327,11 @@ function render(k){
       if(deb){
         const assigned=new Set(deb.poles.map(p=>p.k));
         groups=deb.poles.map(p=>({label:p.label,claim:p.claim,hue:p.hue||SC,
-          items:rc.filter(r=>r.pos===p.k).sort((a,b)=>b.date.localeCompare(a.date))})).filter(g=>g.items.length);
-        const cross=rc.filter(r=>!r.pos||!assigned.has(r.pos)).sort((a,b)=>b.date.localeCompare(a.date));
+          items:rc.filter(r=>r.pos===p.k)})).filter(g=>g.items.length);
+        const cross=rc.filter(r=>!r.pos||!assigned.has(r.pos));
         if(cross.length) groups.push({label:'Cross-cutting',claim:'',hue:SC,items:cross});
       } else {
-        groups=[{label:null,claim:'',hue:SC,items:rc.slice().sort((a,b)=>b.date.localeCompare(a.date))}];
+        groups=[{label:null,claim:'',hue:SC,items:rc.slice()}];
       }
       groups.forEach(g=>{
         h+=`<section class="gsec" style="--kc:${g.hue}">`;
@@ -429,7 +436,7 @@ ctx.addEventListener('click',e=>{const b=e.target.closest('[data-go]'); if(b) sh
 /* ---------- search + lenses ---------- */
 const ENTRYSET=new Set(Object.keys(ENTRY));
 const QROWS=[]; DATA.forEach(s0=>s0.subs.forEach(su=>su.qs.forEach(q=>QROWS.push({k:q.id,su:su.id,sec:s0.id,
-  txt:(q.id+' '+q.t+' '+q.q+' '+q.n+' '+q.links.map(l=>l.t+' '+l.s).join(' ')).toLowerCase(),crux:!!q.crux,entry:ENTRYSET.has(q.id)}))));
+  txt:(q.id+' '+q.t+' '+q.q+' '+q.n+' '+q.links.map(l=>l.t+' '+l.s).join(' ')+' '+(q.sx||'')).toLowerCase(),crux:!!q.crux,entry:ENTRYSET.has(q.id)}))));
 let lensC=false,lensE=false;
 const qbox=document.getElementById('q');
 function applyFilter(){

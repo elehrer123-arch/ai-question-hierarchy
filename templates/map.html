@@ -24,6 +24,7 @@
 --accent:#3d5a80;--c1:#3d6b9e;--c2:#b0524b;--c3:#3d8a6b;--c4:#7a5ba6;--c5:#a97729;--gold:#a97729;
 --serif:'Charter','Iowan Old Style','Palatino Linotype',Georgia,serif;
 --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+}
 *{box-sizing:border-box;margin:0}
 body{background:var(--bg);color:var(--ink);font-family:var(--sans);padding:0 26px 70px;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 button{font-family:var(--sans)}
@@ -127,17 +128,22 @@ footer a{color:var(--ink2)}
 @media (prefers-reduced-motion: reduce){
   *{transition:none !important}
 }
+@media (prefers-color-scheme:dark){
+:root{--bg:#191817;--panel:#211f1d;--ink:#f2f0ea;--ink2:#c3c0b4;--ink3:#8f8b7e;--line:#33312d;--line2:#403d38;
+--accent:#6f9bc9;--c1:#6f9bc9;--c2:#c97a74;--c3:#63a586;--c4:#a08ac4;--c5:#c29a55;--gold:#c29a55}
+.trow:hover{background:#262421}
+.trow.on{background:#2c2a26}
 </style>
 </head>
 <body>
 <div class="topbar">
-  <a class="brand" href="#" aria-label="The Biggest Questions About AI — map view">The Biggest Questions About&nbsp;AI</a>
+  <a class="brand" id="brandreset" href="./" aria-label="The Biggest Questions About AI — map view">The Biggest Questions About&nbsp;AI</a>
   <nav class="switch" aria-label="View switch"><b>Map</b> · <a id="toBrowse" href="browse/">Browse</a> · <a href="latest/">Latest</a></nav>
 </div>
 <div class="hero">
   <p class="kicker">A living map · Updated August 2026</p>
   <h1>The Biggest Questions About AI</h1>
-  <p class="lede">A structured map of __QCOUNT__ major open questions about AI, with concise framings, selected sources, and deeper entries in development. Click a section to zoom; click a question to unfold it in place.</p>
+  <p class="lede">A living map of __QCOUNT__ open questions about AI — trajectory, safety, economy, power, and humanity. Each carries a framing of the live debate, curated sources, and the substantive recent discussion we track across all of them.</p>
 </div>
 <div class="toolrow">
   <label class="vh" for="mapsearch" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Search questions</label>
@@ -231,6 +237,16 @@ box.addEventListener('input',()=>{
   count.textContent=n?n+' of '+QS.length+' questions match':'No questions match';
 });
 box.addEventListener('keydown',e=>{if(e.key==='Escape'){box.value='';clearSearch();}});
+const brand=document.getElementById('brandreset');
+if(brand)brand.addEventListener('click',e=>{
+  e.preventDefault();
+  box.value='';clearSearch();
+  if(openQ){setOpen(openQ,false);openQ=null;}
+  bs.classList.remove('zoomed');
+  document.querySelectorAll('.bcol').forEach(c=>c.classList.remove('focus','mopen'));
+  history.replaceState(null,'',location.pathname);
+  window.scrollTo({top:0,behavior:'smooth'});
+});
 /* ---------- discussion-volume toggle (partial coverage, labeled) ---------- */
 const vt=document.getElementById('voltoggle');
 vt.addEventListener('click',()=>{
