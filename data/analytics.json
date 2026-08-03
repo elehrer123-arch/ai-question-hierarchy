@@ -1,0 +1,6 @@
+{
+ "_comment": "Privacy-respecting analytics. Dormant while 'enabled' is false. To turn on: create a free GoatCounter site (https://www.goatcounter.com), put its code in 'goatcounter_code', set enabled=true, rebuild. No cookies, no cross-site tracking, no personal data; the snippet is loaded with defer and the site works identically without it.",
+ "enabled": false,
+ "goatcounter_code": "",
+ "track_empty_searches": true
+}

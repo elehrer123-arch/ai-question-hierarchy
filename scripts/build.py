@@ -190,10 +190,9 @@ def render_entry(entry, qindex, sections, entry_slugs):
               .replace("__QLINK__", qlink)
               .replace("__TOC__", toc)
               .replace("__BODY__", body_html))
-    outdir = os.path.join(ROOT, entry["folder"], meta["slug"])
-    os.makedirs(outdir, exist_ok=True)
-    with open(os.path.join(outdir, "index.html"), "w", encoding="utf-8") as f:
-        f.write(out)
+    # The question page at questions/<slug>/ is this entry's canonical home
+    # (the analysis is embedded there). We only emit redirect stubs here.
+    del out
     path = f'{entry["folder"]}/{meta["slug"]}/'
     for r in entry["redirects"]:
         depth = r.count("/") + 1
@@ -396,6 +395,13 @@ def load_recent(qindex):
         if qid not in qid_to_id:
             errors.append(f"recent.json: unknown qid {qid!r}")
             continue
+        _rids_here = {it.get("rid") for it in entry.get("items", [])}
+        _mv = entry.get("moved")
+        for _st in (_mv if isinstance(_mv, list) else [_mv]):
+            if isinstance(_st, dict):
+                for _rf in _st.get("refs", []):
+                    if _rf not in _rids_here:
+                        errors.append(f"recent.json {qid}: moved ref {_rf!r} is not a featured item")
         for field in ("tier", "swept", "moved"):
             if not entry.get(field):
                 errors.append(f"recent.json {qid}: missing '{field}'")
@@ -634,6 +640,7 @@ def render_latest(sections, recent, cutoff=None):
                 .replace("__REVIEWED__", E(max_rev_h)))
     outdir = os.path.join(ROOT, "latest")
     os.makedirs(outdir, exist_ok=True)
+    html = html.replace("</body>", analytics_snippet() + "</body>")
     with open(os.path.join(outdir, "index.html"), "w", encoding="utf-8") as f:
         f.write(html)
 
@@ -799,6 +806,8 @@ function apply(write){
   document.getElementById('rescount').textContent=
     filtered?shown+' of '+ALL.length+' pieces shown':'';
   document.getElementById('empty').classList.toggle('on',shown===0);
+  if(shown===0&&(state.txt||state.q))window.dispatchEvent(
+    new CustomEvent('bq:emptysearch',{detail:state.txt||state.q}));
   if(write!==false)syncURL();
 }
 
@@ -916,6 +925,7 @@ def render_methodology(qcount):
     today = _date.today()
     today_h = f"{MONTH_NAMES[today.month-1]} {today.day}, {today.year}"
     out = METHODOLOGY_HTML.replace("__TODAY__", today_h).replace("__QCOUNT__", str(qcount))
+    out = out.replace("</body>", analytics_snippet() + "</body>")
     outdir = os.path.join(ROOT, "methodology")
     os.makedirs(outdir, exist_ok=True)
     with open(os.path.join(outdir, "index.html"), "w", encoding="utf-8") as f:
@@ -938,8 +948,12 @@ def entry_embed(entry, qindex, sections, entry_slugs):
     cite = (f'“{E(meta["title"])}” <em>The Biggest Questions About AI</em>, '
             f'Elliott Lehrer (ed.), {meta.get("evidence_updated", "2026")}. '
             f'{E(meta["status"])}.')
+    toc = "".join(f'<a href="#{t["id"]}">{E(t["name"])}</a>'
+                  for t in md.toc_tokens if t["level"] == 2)
     return {"title": meta["title"], "html": body_html, "dateline": dateline,
-            "cite": cite}
+            "cite": cite, "toc": toc, "author": meta.get("author", "—"),
+            "editor": meta.get("editor", "—"), "scope": meta.get("scope", ""),
+            "status": meta.get("status", "")}
 
 
 def render_question_pages(sections, entry_map_full, recent, debates):
@@ -968,12 +982,21 @@ def render_question_pages(sections, entry_map_full, recent, debates):
                     moved = rq.get("moved")
                     items_m = moved if isinstance(moved, list) else [moved]
                     chs = []
+                    _by_rid = {it["rid"]: it for it in rq.get("items", [])}
                     for i, mvi in enumerate(items_m):
                         t0 = mvi.get("t") if isinstance(mvi, dict) else None
                         b = mvi.get("b") if isinstance(mvi, dict) else mvi
+                        rfs = mvi.get("refs", []) if isinstance(mvi, dict) else []
+                        sup = ""
+                        if rfs:
+                            links = "".join(
+                                f'<a href="#{E(rd)}" title="{E(_by_rid[rd]["author"])} — '
+                                f'{E(_by_rid[rd]["title"])}">{j+1}</a>'
+                                for j, rd in enumerate(rfs) if rd in _by_rid)
+                            sup = f'<span class="evd">Evidence: {links}</span>'
                         chs.append(f'<div class="ch"><div class="chn">0{i+1}</div>'
                                    + (f'<div class="cht">{E(t0)}</div>' if t0 else '')
-                                   + f'<p class="chb">{E(b)}</p></div>')
+                                   + f'<p class="chb">{E(b)}{sup}</p></div>')
                     status_html = (
                         f'<div class="moved" style="--sc:{c}">'
                         f'<div class="mvh">What changed{" · " + anchor2 if anchor2 else ""}'
@@ -1046,11 +1069,18 @@ def render_question_pages(sections, entry_map_full, recent, debates):
                 emb = entry_map_full.get(disp)
                 analysis_html = ""
                 if emb:
+                    toc_html = (f'<nav class="atoc" aria-label="Analysis contents">'
+                                f'<span>Contents</span>{emb["toc"]}</nav>'
+                                if emb.get("toc") else "")
+                    scope_html = (f'<p class="ascope"><strong>Scope:</strong> {E(emb["scope"])}</p>'
+                                  if emb.get("scope") else "")
                     analysis_html = (
                         f'<section class="analysis"><hr class="asep">'
                         f'<div class="rh">Full analysis</div>'
                         f'<h2 class="atitle">{E(emb["title"])}</h2>'
-                        f'<p class="adate">{E(emb["dateline"])}</p>'
+                        f'<p class="adate">{E(emb["dateline"])}<br>'
+                        f'Written by {E(emb["author"])} · edited by {E(emb["editor"])}</p>'
+                        f'{scope_html}{toc_html}'
                         f'<div class="abody">{emb["html"]}</div>'
                         f'<p class="acite">Cite: {emb["cite"]}</p></section>')
 
@@ -1095,6 +1125,7 @@ def render_question_pages(sections, entry_map_full, recent, debates):
                     .replace("__ISSUE__", E(issue_url)))
                 outdir = os.path.join(ROOT, "questions", q["slug"])
                 os.makedirs(outdir, exist_ok=True)
+                html = html.replace("</body>", analytics_snippet() + "</body>")
                 with open(os.path.join(outdir, "index.html"), "w", encoding="utf-8") as f:
                     f.write(html)
                 n_pages += 1
@@ -1155,6 +1186,10 @@ h1{font-family:var(--serif);font-weight:400;font-size:27px;line-height:1.25;marg
 .chn{font-size:11px;color:var(--ink3);font-variant-numeric:tabular-nums;padding-top:2px}
 .cht{font-weight:600;font-size:13.5px;margin-bottom:2px}
 .chb{font-size:13.5px;line-height:1.55;margin:0}
+.evd{display:block;margin-top:6px;font-size:11px;color:var(--ink3);letter-spacing:.02em}
+.evd a{display:inline-block;min-width:17px;height:17px;line-height:17px;text-align:center;border:1px solid var(--line);border-radius:50%;color:var(--ink2);text-decoration:none;margin-left:4px;font-size:10px}
+.evd a:hover{border-color:var(--sc);color:var(--sc)}
+.rec:target{outline:2px solid var(--sc);outline-offset:3px}
 .rh{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink3);margin:24px 0 4px;font-weight:600}
 .rhm{font-size:12.5px;color:var(--ink3);margin-bottom:12px}
 .rhm a{color:var(--ink2)}
@@ -1180,6 +1215,11 @@ blockquote{font-family:var(--serif);font-size:13px;font-style:italic;color:var(-
 .analysis .asep{border:0;border-top:1px solid var(--line);margin:28px 0 4px}
 .atitle{font-family:var(--serif);font-weight:400;font-size:22px;margin:4px 0 4px}
 .adate{font-size:12px;color:var(--ink3);margin:0 0 12px}
+.ascope{font-size:12.5px;color:var(--ink2);line-height:1.5;margin:0 0 12px}
+.atoc{border:1px solid var(--line);border-radius:10px;padding:10px 13px;margin:0 0 18px;font-size:12.5px}
+.atoc span{display:block;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin-bottom:5px}
+.atoc a{display:block;color:var(--ink2);text-decoration:none;padding:2px 0;line-height:1.35}
+.atoc a:hover{color:var(--ink);text-decoration:underline}
 .abody{font-family:var(--serif);font-size:15px;line-height:1.65;color:var(--ink)}
 .abody h2{font-family:var(--serif);font-size:19px;margin:22px 0 8px}
 .abody a{color:var(--ink2)}
@@ -1209,6 +1249,32 @@ __NAV__
 <a href="__ISSUE__">Suggest a source or correction</a></footer>
 </div></body></html>"""
 
+
+
+
+
+def analytics_snippet():
+    """Return the analytics <script> block, or '' when disabled.
+
+    Config lives in data/analytics.json and is off by default. Nothing is
+    emitted unless an operator explicitly enables it, so the built site is
+    tracker-free until then.
+    """
+    path = os.path.join(ROOT, "data", "analytics.json")
+    if not os.path.exists(path):
+        return ""
+    with open(path, encoding="utf-8") as f:
+        cfg = json.load(f)
+    if not cfg.get("enabled") or not cfg.get("goatcounter_code"):
+        return ""
+    code = cfg["goatcounter_code"]
+    empty = """
+<script>window.addEventListener('bq:emptysearch',function(e){
+  if(window.goatcounter&&window.goatcounter.count)window.goatcounter.count(
+    {path:'/_search-no-results/'+encodeURIComponent((e.detail||'').slice(0,60)),
+     title:'search with no results',event:true});});</script>""" if cfg.get("track_empty_searches") else ""
+    return (f'<script data-goatcounter="https://{code}.goatcounter.com/count" '
+            f'async src="//gc.zgo.at/count.js"></script>{empty}')
 
 
 def render_poster(sections):

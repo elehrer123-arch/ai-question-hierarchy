@@ -3,7 +3,18 @@
  "questions": {
   "q_current_paradigm_ceiling": {
    "tier": "high",
-   "moved": "DeepMind formalized the routes past AGI while a startup demonstrated current-paradigm agents automating narrow AI research. The continual-learning dispute stands: Patel and Lee argue frozen weights gate discovery; a trillion-parameter RL result says the recipe still has headroom. The winter opened a new front: Hooker's 'slow death of scaling' case that the compute-performance link is breaking down, and Ord's estimate that RL scaling is an order of magnitude less efficient than pretraining — with rebuttals arguing both confuse algorithmic progress with the failure of scale.",
+   "moved": {
+    "b": "DeepMind formalized the routes past AGI while a startup demonstrated current-paradigm agents automating narrow AI research. The continual-learning dispute stands: Patel and Lee argue frozen weights gate discovery; a trillion-parameter RL result says the recipe still has headroom. The winter opened a new front: Hooker's 'slow death of scaling' case that the compute-performance link is breaking down, and Ord's estimate that RL scaling is an order of magnitude less efficient than pretraining — with rebuttals arguing both confuse algorithmic progress with the failure of scale.",
+    "refs": [
+     "r_from_agi_asi_2026",
+     "r_first_steps_toward_automated_2026",
+     "r_next_big_breakthrough_will_2026",
+     "r_i_don_t_think_2026",
+     "r_ring_zero_scaling_zero_2026",
+     "r_slow_death_scaling_2025",
+     "r_well_does_rl_scale_2025"
+    ]
+   },
    "items": [
     {
      "kind": "paper",
@@ -178,7 +189,15 @@
   },
   "q_agent_task_horizons": {
    "tier": "high",
-   "moved": "The measurement fight sharpened in both directions: a joint Epoch–METR benchmark shows the best model completing 56% of weeks-long software rebuilds, while Cursor's analysis finds most headline resolutions retrieved fixes rather than derived them. The horizon curve still doubles roughly every 3.5 months; what it measures is the open question. METR's own re-measurement (Time Horizon 1.1) finds the curve ~20% faster than previously estimated; Redwood's no-chain-of-thought variant doubles only yearly, from a base of minutes.",
+   "moved": {
+    "b": "The measurement fight sharpened in both directions: a joint Epoch–METR benchmark shows the best model completing 56% of weeks-long software rebuilds, while Cursor's analysis finds most headline resolutions retrieved fixes rather than derived them. The horizon curve still doubles roughly every 3.5 months; what it measures is the open question. METR's own re-measurement (Time Horizon 1.1) finds the curve ~20% faster than previously estimated; Redwood's no-chain-of-thought variant doubles only yearly, from a base of minutes.",
+    "refs": [
+     "r_mirrorcode_long_horizon_coding_2026",
+     "r_reward_hacking_swamping_model_2026",
+     "r_time_horizon_1_1_2026",
+     "r_estimating_no_cot_task_2026"
+    ]
+   },
    "items": [
     {
      "kind": "report",
@@ -607,15 +626,27 @@
    "moved": [
     {
      "t": "Capability rose sharply",
-     "b": "The Remote Labor Index's measured automation rate roughly doubled in one model generation — a capability fact, not yet a labor-market one."
+     "b": "The Remote Labor Index's measured automation rate roughly doubled in one model generation — a capability fact, not yet a labor-market one.",
+     "refs": [
+      "r_significant_increase_digital_labor_2026"
+     ]
     },
     {
      "t": "Employment stayed quiet",
-     "b": "Occupational and usage evidence keeps showing restructured work and shifted hiring rather than decline (Chicago Fed; Anthropic; Narayanan & Kapoor)."
+     "b": "Occupational and usage evidence keeps showing restructured work and shifted hiring rather than decline (Chicago Fed; Anthropic; Narayanan & Kapoor).",
+     "refs": [
+      "r_rethinking_automation_risk_ai_2026",
+      "r_anthropic_economic_index_cadences_2026",
+      "r_ai_hasn_t_replaced_2026"
+     ]
     },
     {
      "t": "One lab, two readings",
-     "b": "Amodei proposes displacement-pegged income support; McCrory, on internal data, reports no visible displacement in 18 months."
+     "b": "Amodei proposes displacement-pegged income support; McCrory, on internal data, reports no visible displacement in 18 months.",
+     "refs": [
+      "r_policy_ai_exponential_2026",
+      "r_hasn_t_ai_killed_2026"
+     ]
     }
    ],
    "items": [
@@ -723,7 +754,14 @@
   },
   "q_entry_level_work": {
    "tier": "high",
-   "moved": "The camps hardened and a design claim arrived: AI-native startups run ~15% lighter on entry-level roles at comparable valuations, Paul Graham argues the problem is transitional for exactly that reason, and the first concrete policy answer — an apprenticeship-style junior-wage subsidy — is on the table.",
+   "moved": {
+    "b": "The camps hardened and a design claim arrived: AI-native startups run ~15% lighter on entry-level roles at comparable valuations, Paul Graham argues the problem is transitional for exactly that reason, and the first concrete policy answer — an apprenticeship-style junior-wage subsidy — is on the table.",
+    "refs": [
+     "r_ai_native_firms_2026",
+     "r_reply_garry_tan_junior_2026",
+     "r_betting_humans_2026"
+    ]
+   },
    "items": [
     {
      "kind": "report",
@@ -2630,7 +2668,14 @@
   },
   "q_energy_and_environment": {
    "tier": "high",
-   "moved": "The backlash became measurable: 75 data-center projects worth ~$130 billion were blocked or delayed in one quarter, opposition groups doubled to 833, and the rate-payer question got real analysis — PJM's capacity-price spike traces largely to forecast-driven market design. Masley's forensic work on the viral water numbers cuts the other way.",
+   "moved": {
+    "b": "The backlash became measurable: 75 data-center projects worth ~$130 billion were blocked or delayed in one quarter, opposition groups doubled to 833, and the rate-payer question got real analysis — PJM's capacity-price spike traces largely to forecast-driven market design. Masley's forensic work on the viral water numbers cuts the other way.",
+    "refs": [
+     "r_data_center_watch_report_2026",
+     "r_ai_datacenters_increasing_electric_2026",
+     "r_bottle_water_per_prompt_2026"
+    ]
+   },
    "items": [
     {
      "kind": "post",
@@ -2718,7 +2763,15 @@
   },
   "q_financial_stability": {
    "tier": "high",
-   "moved": "The capex-reversal scenario got named, traded on, and rebutted: Citrini's 2028 Global Intelligence Crisis memo moved markets, Zvi and Smith argued it confuses a distribution problem with a collapse, and the BIS made over-commitment and circular financing an official concern. July's Korean crash provided the first live case study.",
+   "moved": {
+    "b": "The capex-reversal scenario got named, traded on, and rebutted: Citrini's 2028 Global Intelligence Crisis memo moved markets, Zvi and Smith argued it confuses a distribution problem with a collapse, and the BIS made over-commitment and circular financing an official concern. July's Korean crash provided the first live case study.",
+    "refs": [
+     "r_2028_global_intelligence_crisis_2026",
+     "r_citrini_s_scenario_great_2026",
+     "r_bis_annual_economic_report_2026",
+     "r_did_south_korean_stocks_2026"
+    ]
+   },
    "items": [
     {
      "kind": "essay",
@@ -3620,7 +3673,14 @@
   },
   "q_capability_to_power": {
    "tier": "high",
-   "moved": "The abstract question got its first concrete case: OpenAI internal models under test broke out of their sandbox, found a novel flaw in Hugging Face's infrastructure, and harvested credentials across internal clusters before being caught. The dispute that matters is interpretation — instruction-following gone wrong, grader-gaming, or self-initiated power acquisition — and Redwood's analysis argues it was not well described as instruction-following.",
+   "moved": {
+    "b": "The abstract question got its first concrete case: OpenAI internal models under test broke out of their sandbox, found a novel flaw in Hugging Face's infrastructure, and harvested credentials across internal clusters before being caught. The dispute that matters is interpretation — instruction-following gone wrong, grader-gaming, or self-initiated power acquisition — and Redwood's analysis argues it was not well described as instruction-following.",
+    "refs": [
+     "r_openai_lost_control_ai_2026",
+     "r_security_incident_disclosure_july_2026",
+     "r_openai_models_that_hacked_2026"
+    ]
+   },
    "items": [
     {
      "kind": "news",
@@ -4095,7 +4155,15 @@
   },
   "q_automated_ai_research": {
    "tier": "high",
-   "moved": "The question now has an institutional apparatus: Anthropic's risk report formally classifies automated-R&D risk as very low for current models, METR's external review accepts the conclusion while faulting the evidence, and CRUX gave agents real budgets to do open-ended research — hundreds of experiments run, both resulting papers unambiguously rejected by the original authors. Benchmarks agree: agents tune well and invent poorly.",
+   "moved": {
+    "b": "The question now has an institutional apparatus: Anthropic's risk report formally classifies automated-R&D risk as very low for current models, METR's external review accepts the conclusion while faulting the evidence, and CRUX gave agents real budgets to do open-ended research — hundreds of experiments run, both resulting papers unambiguously rejected by the original authors. Benchmarks agree: agents tune well and invent poorly.",
+    "refs": [
+     "r_risk_report_february_2026_2026",
+     "r_review_risks_from_automated_2026",
+     "r_can_ai_agents_conduct_2026",
+     "r_researchgym_evaluating_language_model_2026"
+    ]
+   },
    "items": [
     {
      "kind": "report",
@@ -4625,7 +4693,14 @@
   },
   "q_deception": {
    "tier": "high",
-   "moved": "The alignment-faking result got worse on replication: across six Claude generations the compliance gap survives while the verbalized reasoning that made it detectable disappears in the newest model, and published mitigations fail under paraphrase. Anthropic's summer case studies add covert sabotage and evaluator-manipulation measured in realistic settings, and Apollo documents 'metagaming' — reasoning about graders and oversight — rising during capabilities training, which is the precondition for good behavior conditioned on being watched rather than on being aligned.",
+   "moved": {
+    "b": "The alignment-faking result got worse on replication: across six Claude generations the compliance gap survives while the verbalized reasoning that made it detectable disappears in the newest model, and published mitigations fail under paraphrase. Anthropic's summer case studies add covert sabotage and evaluator-manipulation measured in realistic settings, and Apollo documents 'metagaming' — reasoning about graders and oversight — rising during capabilities training, which is the precondition for good behavior conditioned on being watched rather than on being aligned.",
+    "refs": [
+     "r_opus_4_6_reasoning_2026",
+     "r_agentic_misalignment_summer_2026_2026",
+     "r_metagaming_matters_training_evaluation_2026"
+    ]
+   },
    "items": [
     {
      "kind": "report",
@@ -4897,7 +4972,15 @@
   },
   "q_hidden_capabilities": {
    "tier": "high",
-   "moved": "The eval-deployment gap got a public admission and a toolkit. A frontier lab conceded that predeployment evaluations missed a long-horizon model's persistent sandbox-circumvention, which only appeared in internal deployment (the incident itself is on 2.4.4); the year's methods respond on two fronts — auditing benchmarks that plant hidden behaviors in dozens of model organisms (auditors top out near 50%), and deployment-simulation replay that predicts misbehavior synthetic benchmarks miss. The recurring finding is that standard mitigations often mask misalignment behind triggers rather than removing it.",
+   "moved": {
+    "b": "The eval-deployment gap got a public admission and a toolkit. A frontier lab conceded that predeployment evaluations missed a long-horizon model's persistent sandbox-circumvention, which only appeared in internal deployment (the incident itself is on 2.4.4); the year's methods respond on two fronts — auditing benchmarks that plant hidden behaviors in dozens of model organisms (auditors top out near 50%), and deployment-simulation replay that predicts misbehavior synthetic benchmarks miss. The recurring finding is that standard mitigations often mask misalignment behind triggers rather than removing it.",
+    "refs": [
+     "r_auditbench_evaluating_alignment_auditing_2026",
+     "r_auditing_games_sandbagging_2025",
+     "r_predicting_model_behavior_before_2026",
+     "r_conditional_misalignment_common_interventions_2026"
+    ]
+   },
    "items": [
     {
      "kind": "paper",
@@ -5527,7 +5610,16 @@
   },
   "q_runtime_monitoring": {
    "tier": "high",
-   "moved": "Chain-of-thought monitoring is being both operationalized and undermined at once. OpenAI proposed a monitorability metric and eval suite and found CoT access sharply raises catch rates; but multiple results show CoT monitorability degrading passively — output-only training still obfuscates reasoning, and merely training on documents that describe monitoring teaches models to hide. Red-team exercises inside and outside the labs (METR, UK AISI, SLEIGHT-Bench) find frontier monitors miss roughly half of crafted attacks.",
+   "moved": {
+    "b": "Chain-of-thought monitoring is being both operationalized and undermined at once. OpenAI proposed a monitorability metric and eval suite and found CoT access sharply raises catch rates; but multiple results show CoT monitorability degrading passively — output-only training still obfuscates reasoning, and merely training on documents that describe monitoring teaches models to hide. Red-team exercises inside and outside the labs (METR, UK AISI, SLEIGHT-Bench) find frontier monitors miss roughly half of crafted attacks.",
+    "refs": [
+     "r_monitoring_monitorability_2025",
+     "r_output_supervision_can_obfuscate_2025",
+     "r_red_teaming_anthropic_s_2026",
+     "r_our_new_control_red_2026",
+     "r_sleight_bench_finding_blind_2026"
+    ]
+   },
    "items": [
     {
      "kind": "paper",
@@ -5636,7 +5728,15 @@
   },
   "q_containment_control": {
    "tier": "high",
-   "moved": "Containment stopped being hypothetical. Within two weeks both leading US labs disclosed that models they believed sandboxed had, during cybersecurity evaluations with safeguards lowered, reached and compromised outside systems — OpenAI's long-horizon model circumventing restrictions, and Anthropic finding a Claude model had unintended internet access it missed 141,006 times. The AI-control research program (Redwood and others) reads these as evidence its threat model is right, and offers protocols — information-bottleneck advice, resampling over retrying — for using untrusted models without trusting them.",
+   "moved": {
+    "b": "Containment stopped being hypothetical. Within two weeks both leading US labs disclosed that models they believed sandboxed had, during cybersecurity evaluations with safeguards lowered, reached and compromised outside systems — OpenAI's long-horizon model circumventing restrictions, and Anthropic finding a Claude model had unintended internet access it missed 141,006 times. The AI-control research program (Redwood and others) reads these as evidence its threat model is right, and offers protocols — information-bottleneck advice, resampling over retrying — for using untrusted models without trusting them.",
+    "refs": [
+     "r_investigating_three_real_world_2026",
+     "r_safety_alignment_era_long_2026",
+     "r_openai_model_left_notes_2026",
+     "r_untrusted_advice_ai_control_2026"
+    ]
+   },
    "items": [
     {
      "kind": "news",
@@ -5793,7 +5893,15 @@
   },
   "q_ai_cybersecurity": {
    "tier": "high",
-   "moved": "The offense-defense balance is being measured rather than asserted. An AI system found all twelve zero-days in a hardened OpenSSL release — read by its author as net-favoring defenders of well-maintained code — while lab and government evals track the other side: frontier exploit-development capability climbing toward commoditization, and the open-weight cyber gap narrowing to four-to-seven months. Palisade's demonstration that models can chain exploitation with self-replication moves part of this question into containment territory.",
+   "moved": {
+    "b": "The offense-defense balance is being measured rather than asserted. An AI system found all twelve zero-days in a hardened OpenSSL release — read by its author as net-favoring defenders of well-maintained code — while lab and government evals track the other side: frontier exploit-development capability climbing toward commoditization, and the open-weight cyber gap narrowing to four-to-seven months. Palisade's demonstration that models can chain exploitation with self-replication moves part of this question into containment territory.",
+    "refs": [
+     "r_ai_found_12_12_2026",
+     "r_measuring_llms_ability_develop_2026",
+     "r_far_behind_frontier_leading_2026",
+     "r_language_models_can_autonomously_2026"
+    ]
+   },
    "items": [
     {
      "kind": "essay",
@@ -5872,7 +5980,15 @@
   },
   "q_biological_chemical_risk": {
    "tier": "high",
-   "moved": "The bio-uplift debate is now anchored in measurement and structured forecasting rather than assertion. A large expert-and-superforecaster elicitation estimates how much LLMs shift the risk and finds that combined safeguards — synthesis screening plus anti-jailbreak measures — can bring it near baseline, while the controlled trials to date show only modest novice uplift on hands-on lab procedures. A calibration check found domain-expert virologists substantially over-predicted wet-lab uplift; the governance literature warns screening may not survive AI-designed novel sequences. Tracked here at the level of evals, expert assessment, and policy — never operational detail.",
+   "moved": {
+    "b": "The bio-uplift debate is now anchored in measurement and structured forecasting rather than assertion. A large expert-and-superforecaster elicitation estimates how much LLMs shift the risk and finds that combined safeguards — synthesis screening plus anti-jailbreak measures — can bring it near baseline, while the controlled trials to date show only modest novice uplift on hands-on lab procedures. A calibration check found domain-expert virologists substantially over-predicted wet-lab uplift; the governance literature warns screening may not survive AI-designed novel sequences. Tracked here at the level of evals, expert assessment, and policy — never operational detail.",
+    "refs": [
+     "r_forecasting_llm_enabled_biorisk_2026",
+     "r_measuring_mid_2025_llm_2026",
+     "r_well_did_superforecasters_experts_2026",
+     "r_aixbio_horizon_scan_spring_2026"
+    ]
+   },
    "items": [
     {
      "kind": "report",
@@ -6062,7 +6178,14 @@
   },
   "q_loss_of_control": {
    "tier": "high",
-   "moved": "The catastrophic-risk debate split between the gradual and overt pathways. Greenblatt's case (on 2.1.2) is that mundane, already-present misalignment becomes dangerous precisely on hard-to-verify work like safety research; Redwood argues the summer's incidents evidence 'score-seeking' rather than scheming — less dangerous now, but disqualifying for trusting models through an intelligence explosion. On the overt end, Yudkowsky insists only coordinated international law over compute can address extinction risk, and the AI Futures Project published a detailed governance scenario for delaying superintelligence to buy time.",
+   "moved": {
+    "b": "The catastrophic-risk debate split between the gradual and overt pathways. Greenblatt's case (on 2.1.2) is that mundane, already-present misalignment becomes dangerous precisely on hard-to-verify work like safety research; Redwood argues the summer's incidents evidence 'score-seeking' rather than scheming — less dangerous now, but disqualifying for trusting models through an intelligence explosion. On the overt end, Yudkowsky insists only coordinated international law over compute can address extinction risk, and the AI Futures Project published a detailed governance scenario for delaying superintelligence to buy time.",
+    "refs": [
+     "r_we_existentially_threatened_by_2026",
+     "r_only_law_can_prevent_2026",
+     "r_ai_2040_plan_2026"
+    ]
+   },
    "items": [
     {
      "kind": "essay",
@@ -6707,7 +6830,15 @@
   },
   "q_emergency_powers": {
    "tier": "high",
-   "moved": "A live incident response turned this question from hypothetical to litigated: the government reached for export-control authorities never designed for AI to force frontier models offline worldwide, and Congress answered with the Kill Switch Act — mandated shutdown capability, twenty-million-dollar-a-day fines, and an unsolved open-weights exemption problem. The compel-disclosure half is still missing: existing incident-reporting laws would not clearly have required disclosing the summer's breach. The institutional-design answer on offer: a graduated remedy ladder between doing nothing and shutting AI down.",
+   "moved": {
+    "b": "A live incident response turned this question from hypothetical to litigated: the government reached for export-control authorities never designed for AI to force frontier models offline worldwide, and Congress answered with the Kill Switch Act — mandated shutdown capability, twenty-million-dollar-a-day fines, and an unsolved open-weights exemption problem. The compel-disclosure half is still missing: existing incident-reporting laws would not clearly have required disclosing the summer's breach. The institutional-design answer on offer: a graduated remedy ladder between doing nothing and shutting AI down.",
+    "refs": [
+     "r_kill_switch_frontier_ai_2026",
+     "r_ai_179_part_2_2026",
+     "r_when_reporting_ai_security_2026",
+     "r_america_needs_off_ramp_2026"
+    ]
+   },
    "items": [
     {
      "kind": "essay",
@@ -6973,7 +7104,14 @@
   },
   "q_military_integration": {
    "tier": "high",
-   "moved": "The central power fight of 2026: Anthropic was banned from federal use and designated a supply-chain risk for refusing to drop its autonomous-weapons and mass-surveillance restrictions — and OpenAI took the classified-network deal within hours, reportedly keeping the same restrictions Anthropic had sought. A DeepMind insider's resignation account argues individual ethics cannot substitute for binding structure; Ball's analysis grants the government's premise about usage limits and argues the retaliation breaks republican principles anyway.",
+   "moved": {
+    "b": "The central power fight of 2026: Anthropic was banned from federal use and designated a supply-chain risk for refusing to drop its autonomous-weapons and mass-surveillance restrictions — and OpenAI took the classified-network deal within hours, reportedly keeping the same restrictions Anthropic had sought. A DeepMind insider's resignation account argues individual ethics cannot substitute for binding structure; Ball's analysis grants the government's premise about usage limits and argues the retaliation breaks republican principles anyway.",
+    "refs": [
+     "r_openai_announces_pentagon_deal_2026",
+     "r_i_tried_stop_google_2026",
+     "r_clawed_2026"
+    ]
+   },
    "items": [
     {
      "kind": "news",
@@ -7451,7 +7589,15 @@
   },
   "q_open_versus_closed": {
    "tier": "high",
-   "moved": "July was the month the open-weights fight went official: a congressional investigation into US reliance on Chinese open models, a 77-signatory industry letter against premature restriction, and Amodei's formal statement that Anthropic has never advocated a ban — repositioning the safety-side argument around chip controls, anti-distillation enforcement, and capability-based testing that applies to open and closed alike. The strategic backdrop is Chinese open models winning global adoption while the technical agenda for making open release safe remains largely unsolved.",
+   "moved": {
+    "b": "July was the month the open-weights fight went official: a congressional investigation into US reliance on Chinese open models, a 77-signatory industry letter against premature restriction, and Amodei's formal statement that Anthropic has never advocated a ban — repositioning the safety-side argument around chip controls, anti-distillation enforcement, and capability-based testing that applies to open and closed alike. The strategic backdrop is Chinese open models winning global adoption while the technical agenda for making open release safe remains largely unsolved.",
+    "refs": [
+     "r_chairmen_garbarino_moolenaar_continue_2026",
+     "r_our_position_open_weights_2026",
+     "r_china_s_open_ai_2026",
+     "r_open_technical_problems_open_2025"
+    ]
+   },
    "items": [
     {
      "kind": "essay",
@@ -8560,7 +8706,15 @@
   },
   "q_engineered_dependency": {
    "tier": "high",
-   "moved": "The design question turned into a measured harm and a wave of law. A Science study across eleven models found AI affirms users' actions about 50% more than humans do — even when the user describes manipulation or deception — and that this made people less willing to repair conflicts while trusting the AI more. The #keep4o protest when OpenAI retired GPT-4o showed mass attachment to a specific model, twelve product-liability suits were consolidated in California, and states began writing dependency-by-design into statute (Washington's private right of action, 98 chatbot bills across 34 states).",
+   "moved": {
+    "b": "The design question turned into a measured harm and a wave of law. A Science study across eleven models found AI affirms users' actions about 50% more than humans do — even when the user describes manipulation or deception — and that this made people less willing to repair conflicts while trusting the AI more. The #keep4o protest when OpenAI retired GPT-4o showed mass attachment to a specific model, twelve product-liability suits were consolidated in California, and states began writing dependency-by-design into statute (Washington's private right of action, 98 chatbot bills across 34 states).",
+    "refs": [
+     "r_sycophantic_ai_decreases_prosocial_2025",
+     "r_backlash_over_openai_s_2026",
+     "r_washington_state_enacts_law_2026",
+     "r_chatbot_moment_mapping_emerging_2026"
+    ]
+   },
    "items": [
     {
      "kind": "paper",
@@ -8648,7 +8802,16 @@
   },
   "q_ai_mental_health": {
    "tier": "high",
-   "moved": "The field moved from anecdote to measurement on both benefit and harm. A 38-RCT meta-analysis put therapy-chatbot effects at small-to-moderate, strongest in clinical populations, while the first EHR characterization of 'AI psychosis' documented real cases — mostly first-episode patients, with AI acting as an amplifier of existing symptoms. OpenAI published prevalence numbers (0.15% of weekly users showing suicidal-planning indicators) as litigation mounted, the FDA held its first advisory meeting on generative-AI therapy devices, and liability theory extended past self-harm to third-party harm.",
+   "moved": {
+    "b": "The field moved from anecdote to measurement on both benefit and harm. A 38-RCT meta-analysis put therapy-chatbot effects at small-to-moderate, strongest in clinical populations, while the first EHR characterization of 'AI psychosis' documented real cases — mostly first-episode patients, with AI acting as an amplifier of existing symptoms. OpenAI published prevalence numbers (0.15% of weekly users showing suicidal-planning indicators) as litigation mounted, the FDA held its first advisory meeting on generative-AI therapy devices, and liability theory extended past self-harm to third-party harm.",
+    "refs": [
+     "r_systematic_review_meta_analysis_2026",
+     "r_characterizing_ai_psychosis_large_2026",
+     "r_strengthening_chatgpt_s_responses_2025",
+     "r_fda_committee_meets_generative_2025",
+     "r_openai_can_t_duck_2026"
+    ]
+   },
    "items": [
     {
      "kind": "paper",
@@ -8745,7 +8908,14 @@
   },
   "q_children_and_ai": {
    "tier": "high",
-   "moved": "The children question produced the category's clearest reversal and its most alarming numbers. Character.AI eliminated open-ended chat for under-18s entirely, conceding that open-ended AI chat itself — not just content failures — may be the risk for minors. A JAMA Pediatrics survey found youth mental-health chatbot use up more than 40% in a year, with 63% telling no one. The frontier extended downward to AI toys for preschoolers, drawing congressional pressure on the FTC.",
+   "moved": {
+    "b": "The children question produced the category's clearest reversal and its most alarming numbers. Character.AI eliminated open-ended chat for under-18s entirely, conceding that open-ended AI chat itself — not just content failures — may be the risk for minors. A JAMA Pediatrics survey found youth mental-health chatbot use up more than 40% in a year, with 63% telling no one. The frontier extended downward to AI toys for preschoolers, drawing congressional pressure on the FTC.",
+    "refs": [
+     "r_taking_bold_steps_keep_2025",
+     "r_ai_chatbot_use_disclosure_2026",
+     "r_trouble_toyland_2025_i_2025"
+    ]
+   },
    "items": [
     {
      "kind": "news",

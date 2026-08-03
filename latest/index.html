@@ -447,6 +447,8 @@ function apply(write){
   document.getElementById('rescount').textContent=
     filtered?shown+' of '+ALL.length+' pieces shown':'';
   document.getElementById('empty').classList.toggle('on',shown===0);
+  if(shown===0&&(state.txt||state.q))window.dispatchEvent(
+    new CustomEvent('bq:emptysearch',{detail:state.txt||state.q}));
   if(write!==false)syncURL();
 }
 

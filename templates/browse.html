@@ -81,6 +81,10 @@ h1{font-family:var(--serif);font-size:29px;line-height:1.22;letter-spacing:-.01e
 .maplink{display:inline-block;margin-top:16px;font-size:13px;color:var(--sc)}
 .rechead{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink3);margin:26px 0 10px;font-weight:600}
 .moved{border-top:2px solid var(--sc);background:color-mix(in srgb,var(--sc) 3.5%,transparent);border-radius:0 0 10px 10px;padding:11px 14px;margin:20px 0 4px;max-width:640px}
+.evd{display:block;margin-top:6px;font-size:11px;color:var(--ink3)}
+.evd a{display:inline-block;min-width:17px;height:17px;line-height:17px;text-align:center;border:1px solid var(--line2);border-radius:50%;color:var(--ink2);text-decoration:none;margin-left:4px;font-size:10px}
+.evd a:hover{border-color:var(--sc);color:var(--sc)}
+.rec:target,.gft:target,.gcp:target{outline:2px solid var(--sc);outline-offset:3px;border-radius:6px}
 .mvh{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);font-weight:600;margin-bottom:5px}
 .moved p{font-size:13.5px;color:var(--ink);line-height:1.55}
 .moved ul{margin:0;padding-left:18px}
@@ -201,12 +205,12 @@ function gexc(r,cls){
   return `<details class="gxq ${cls||''}"><summary>Excerpt</summary><p>“${esc(r.quote)}”</p></details>`;
 }
 function gfeat(r){
-  return `<div class="gft"><div class="gim">${gmeta(r)}</div>`+
+  return `<div class="gft"${r.rid?` id="${r.rid}"`:''}><div class="gim">${gmeta(r)}</div>`+
          `<a class="gtt" href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a>`+
          (r.note?`<p class="gan">${esc(r.note)}</p>`:'')+gexc(r)+`</div>`;
 }
 function gcpt(r){
-  return `<div class="gcp"><div class="gim">${gmeta(r)}</div>`+
+  return `<div class="gcp"${r.rid?` id="${r.rid}"`:''}><div class="gim">${gmeta(r)}</div>`+
          `<a class="gct" href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a>`+
          (r.note?`<p class="gcn">${esc(r.note)}</p>`:'')+gexc(r,'sm')+`</div>`;
 }
@@ -311,7 +315,11 @@ function render(k){
       h+=`<div class="mvh">What changed${anchor2?' · '+anchor2:''} · latest sweep ${esc(rq.swept)}${rq.approved?` · editor-approved ${esc(rq.approved)}`:` · <span class="rvpend">editorial review pending</span>`}</div><div class="changed">`;
       mv.forEach((m,i)=>{
         const t0=(typeof m==='object')?m.t:null, b=(typeof m==='object')?m.b:m;
-        h+=`<div class="ch"><div class="chn">0${i+1}</div>`+(t0?`<div class="cht">${esc(t0)}</div>`:'')+`<p class="chb">${esc(b)}</p></div>`;
+        const rfs=(typeof m==='object'&&m.refs)?m.refs:[];
+        const byrid={}; (rq.items||[]).forEach(it=>{byrid[it.rid]=it});
+        const sup=rfs.length?`<span class="evd">Evidence: `+rfs.filter(rd=>byrid[rd]).map((rd,j)=>
+          `<a href="#${rd}" title="${esc(byrid[rd].author)} — ${esc(byrid[rd].title)}">${j+1}</a>`).join('')+`</span>`:'';
+        h+=`<div class="ch"><div class="chn">0${i+1}</div>`+(t0?`<div class="cht">${esc(t0)}</div>`:'')+`<p class="chb">${esc(b)}${sup}</p></div>`;
       });
       h+=`</div>`;
     }

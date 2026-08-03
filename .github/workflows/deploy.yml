@@ -22,6 +22,12 @@ jobs:
         run: pip install markdown
       - name: Build site from source data
         run: python3 scripts/build.py
+      - name: Install test browser
+        run: npm install --no-save playwright@1.49.1 && npx playwright install --with-deps chromium
+      - name: Smoke and accessibility checks
+        run: node scripts/smoke.js .
+        env:
+          PW_CHROMIUM: ''
       - uses: actions/configure-pages@v5
         with:
           enablement: true

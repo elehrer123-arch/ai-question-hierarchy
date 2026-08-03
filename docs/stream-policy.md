@@ -190,3 +190,14 @@ prominent lead item is the editor's lead, never merely the newest piece.
 Layout may not imply a judgment the data does not contain. Ledger
 (`Additional relevant discussion`) remains reverse-chronological, since it
 makes no significance claim.
+
+
+## Evidence anchors (added August 2026, sprint 4)
+
+Each "What changed" statement may carry `refs`: the rids of the featured
+items that support it. Renderers show them as numbered anchors linking to
+those items, so a reader can check any synthesis claim against its sources
+in one click. Refs must point at featured items of the same question (the
+build enforces this). High-tier questions carry anchors now; other questions
+gain them as re-reviews rewrite their statements. A statement with no refs
+is not a licence to assert — it means the anchoring pass has not reached it.
