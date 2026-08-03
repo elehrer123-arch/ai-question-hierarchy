@@ -603,6 +603,13 @@ def render_latest(sections, recent, cutoff=None):
         f'<span class="dot" style="background:var(--c{sid})"></span>{SECTION_NAMES[sid]}</button>'
         for sid in "12345")
 
+    def _lbyline(r):
+        a, v = r["author"].strip(), r["venue"].strip()
+        al, vl = a.lower(), v.lower()
+        if al == vl or al.startswith(vl) or vl.startswith(al):
+            return E(a if len(a) >= len(v) else v)
+        return f'{E(a)} · {E(v)}'
+
     body = []
     for m, items in months:
         body.append(f'<h2 class="mh">{month_h(m)} <span class="mc">({len(items)})</span></h2>')
@@ -615,8 +622,8 @@ def render_latest(sections, recent, cutoff=None):
             anchor = "q" + r["q"].replace(".", "-")
             note = f'<div class="lnote">{E(r["note"])}</div>' if (r["sel"] and r["note"]) else ""
             kind = f'<span class="lkind">{E(r["kind"])}</span>' if r["kind"] else ""
-            feat = ('<span class="lfeat" title="Featured on the question page">★ Featured</span>'
-                    if r["sel"] else "")
+            feat = ("" if r["sel"] else
+                    '<span class="ltrk" title="Tracked, not featured on the question page">also tracked</span>')
             addm = ""
             if r.get("added") and r["added"][:7] != r["d"][:7]:
                 addm = (f'<span class="ladd">Added {MONTH_NAMES[int(r["added"][5:7])-1][:3]} '
@@ -627,7 +634,7 @@ def render_latest(sections, recent, cutoff=None):
                 f'data-q="{r["q"]}" data-search="{search}">'
                 f'<div class="ld">{day_h(r["d"])}</div>'
                 f'<div class="lb"><a class="lt" href="{E(r["url"])}" rel="noopener">{E(r["title"])}</a>'
-                f'<div class="lm">{E(r["author"])} · {E(r["venue"])} {kind}{feat}{addm}</div>{note}'
+                f'<div class="lm">{_lbyline(r)} {kind}{feat}{addm}</div>{note}'
                 f'<a class="lq" href="../questions/{E(r["slug"])}/" style="color:var(--c{r["sec"]})">'
                 f'&rarr; {r["q"]} {E(r["qt"])}</a></div></article>')
 
@@ -706,14 +713,16 @@ header{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:4
 .switch a{color:var(--ink2);text-decoration:none}
 h1{font-family:var(--serif);font-weight:400;font-size:30px;margin:18px 0 6px}
 .lede{color:var(--ink2);font-size:14.5px;line-height:1.5;max-width:620px;margin:0 0 4px}
-.meta{font-size:12.5px;color:var(--ink3);margin:0 0 18px}
+.meta{font-size:12.5px;color:var(--ink3);margin:0 0 3px}
+.meta b{color:var(--ink2);font-weight:600}
+.meta2{font-size:12px;color:var(--ink3);margin:0 0 20px;max-width:560px;line-height:1.5}
 .meta a{color:var(--ink2)}
 .fbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:6px}
 .fsec{border:1px solid var(--line);background:var(--panel);border-radius:16px;
 padding:4px 11px 4px 8px;font-size:12px;color:var(--ink2);cursor:pointer;display:inline-flex;align-items:center;gap:6px}
 .fsec[aria-pressed="false"]{opacity:.38}
 .dot{width:8px;height:8px;border-radius:50%;display:inline-block}
-.fsel{margin-left:auto;font-size:12px;color:var(--ink3);display:inline-flex;gap:5px;align-items:center;cursor:pointer}
+.fsel{margin-left:auto;font-size:12.5px;color:var(--ink2);display:inline-flex;gap:6px;align-items:center;cursor:pointer;white-space:nowrap}
 .mh{font-family:var(--serif);font-weight:400;font-size:19px;margin:26px 0 4px;
 border-bottom:1px solid var(--line);padding-bottom:6px}
 .mc{color:var(--ink3);font-size:13px}
@@ -731,12 +740,13 @@ border-bottom:1px solid var(--line);padding-bottom:6px}
 .lg{opacity:.92}
 body.selonly .lg{display:none}
 .emh{font-size:12px;color:var(--ink3);font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin:14px 0 0;padding:6px 0 0}
-.srch{border:1px solid var(--line);background:var(--panel);border-radius:16px;padding:5px 12px;font-size:12.5px;color:var(--ink);min-width:170px}
+.fbar2{margin:8px 0 4px}
+.srch{border:1px solid var(--line);background:var(--panel);border-radius:18px;padding:7px 14px;font-size:13px;color:var(--ink);width:100%;max-width:340px}
 .srch:focus{outline:1px solid var(--ink3)}
 .qpill{display:none;align-items:center;gap:8px;margin:2px 0 10px;font-size:12.5px;color:var(--ink2)}
 .qpill.on{display:flex}
 .qpill button{border:1px solid var(--line);background:var(--panel);border-radius:12px;padding:1px 9px;font-size:11.5px;cursor:pointer;color:var(--ink2)}
-.lfeat{color:var(--gold);font-size:10.5px;font-weight:600;margin-left:7px;white-space:nowrap}
+.ltrk{color:var(--ink3);font-size:10.5px;margin-left:7px;white-space:nowrap;font-style:italic}
 .ladd{color:var(--ink3);font-size:10.5px;margin-left:7px;white-space:nowrap;border:1px solid var(--line);border-radius:9px;padding:0 6px}
 .rescount{font-size:12px;color:var(--ink3);margin:0 0 10px}
 .empty{display:none;border:1px solid var(--line);border-radius:10px;padding:18px;margin-top:14px;font-size:13.5px;color:var(--ink2);line-height:1.55}
@@ -749,9 +759,10 @@ font-size:12.5px;color:var(--ink2);line-height:1.55;max-width:620px}
 <header><a class="home" href="../">The Biggest Questions About&nbsp;AI</a>
 <nav class="switch" aria-label="View switch"><a href="../">Map</a> · <a href="../browse/">Browse</a> · <b style="color:var(--ink)">Latest</b></nav></header>
 <h1>Latest</h1>
-<p class="lede">Substantive recent pieces our reviews found across all 127 questions — newest first, each linked to the question it belongs to.</p>
-<p class="meta">__COUNT__ pieces from the last 90 days · updated __REVIEWED__ · substantive pieces tracked from the project&#39;s monitored sources — not a census of discussion · <a href="feed.xml">RSS</a> · <a href="../methodology/">how this works</a></p>
-<div class="fbar">__SECLINE__<input class="srch" id="srch" type="search" placeholder="Search title, author, question…" aria-label="Search"><label class="fsel"><input type="checkbox" id="selonly"> Featured only</label></div><div class="qpill" id="qpill"><span id="qpilltext"></span><button id="qclear">clear ×</button></div><p class="rescount" id="rescount"></p><div class="empty" id="empty">No tracked pieces match these filters.<br><button id="resetall">Reset filters</button></div>
+<p class="lede">Substantive recent pieces, newest first — each linked to the question it belongs to.</p>
+<p class="meta"><b>__COUNT__ pieces</b> from the last 90 days · updated __REVIEWED__ · <a href="feed.xml">RSS</a></p>
+<p class="meta2">Tracked from the sources this project monitors — not a census of everything published. <a href="../methodology/">How this works</a></p>
+<div class="fbar">__SECLINE__<label class="fsel"><input type="checkbox" id="selonly"> Featured only</label></div><div class="fbar2"><input class="srch" id="srch" type="search" placeholder="Search a title, author, or question…" aria-label="Search"></div><div class="qpill" id="qpill"><span id="qpilltext"></span><button id="qclear">clear ×</button></div><p class="rescount" id="rescount"></p><div class="empty" id="empty">No tracked pieces match these filters.<br><button id="resetall">Reset filters</button></div>
 __BODY__
 <div class="note">Pieces appear here when the project verifies them and judges that they advance one of the map&#39;s questions — whether selected for the question&#39;s page or noted in its ledger. Publication dates are shown where sources provide them; pieces with month-only dates appear at the end of their month. Discovery runs weekly across our source registry, aggregators, and editor submissions; full reviews of each question run on their own cadence.</div>
 </div>
@@ -999,11 +1010,23 @@ def render_question_pages(sections, entry_map_full, recent, debates):
                                    + f'<p class="chb">{E(b)}{sup}</p></div>')
                     status_html = (
                         f'<div class="moved" style="--sc:{c}">'
-                        f'<div class="mvh">What changed{" · " + anchor2 if anchor2 else ""}'
-                        f' · latest sweep {E(rq["swept"])} · {status}</div>'
+                        f'<div class="mvh">What changed</div>'
+                        f'<div class="mvf">{anchor2}{" · " if anchor2 else ""}'
+                        f'swept {E(rq["swept"])} · {status}</div>'
                         f'{"".join(chs)}</div>')
 
                 # --- featured items (grouped by debate poles where configured)
+                def _hdate(d):
+                    mo = MONTH_NAMES[int(d[5:7]) - 1][:3]
+                    return f'{int(d[8:10])} {mo} {d[:4]}' if len(d) == 10 else f'{mo} {d[:4]}'
+
+                def _byline(it):
+                    a, v = it["author"].strip(), it["venue"].strip()
+                    al, vl = a.lower(), v.lower()
+                    if al == vl or al.startswith(vl) or vl.startswith(al):
+                        return E(a if len(a) >= len(v) else v)
+                    return f'{E(a)} · {E(v)}'
+
                 def item_card(it):
                     kind = f'<span class="pk">{E(it.get("kind",""))}</span>' if it.get("kind") else ''
                     via = (f' · via <a href="{E(it["via"]["u"])}">{E(it["via"]["t"])}</a>'
@@ -1012,8 +1035,8 @@ def render_question_pages(sections, entry_map_full, recent, debates):
                              if it.get("quote") else '')
                     note = f'<p class="rnote">{E(it["note"])}</p>' if it.get("note") else ''
                     return (f'<article class="rec" id="{E(it["rid"])}">'
-                            f'<div class="rtop"><span class="rauth">{E(it["author"])}</span>'
-                            f' · {E(it["venue"])} · {E(it["date"][:7])} {kind}{via}</div>'
+                            f'<div class="rtop"><span class="rauth">{_byline(it)}</span>'
+                            f' · {_hdate(it["date"])} {kind}{via}</div>'
                             f'<a class="rtt" href="{E(it["url"])}" rel="noopener">{E(it["title"])}</a>'
                             f'{quote}{note}</article>')
 
@@ -1022,9 +1045,11 @@ def render_question_pages(sections, entry_map_full, recent, debates):
                     items = rq["items"]
                     led = rq.get("ledger", [])
                     qual = len(items) + len(led)
+                    _cnt = (f'{len(items)} featured from {qual} tracked' if led
+                            else f'{len(items)} piece' + ('s' if len(items) != 1 else ''))
                     head = (f'<div class="rh">Recent thinking</div>'
-                            f'<div class="rhm">{len(items)} featured from {qual} substantive '
-                            f'pieces tracked{" · " + E(rq["window"]) if rq.get("window") else ""}'
+                            f'<div class="rhm">{_cnt}'
+                            f'{" · " + E(rq["window"]) if rq.get("window") else ""}'
                             f' · <a href="../../latest/?q={disp}">all {qual} chronologically →</a></div>')
                     groups_html = []
                     if deb:
@@ -1052,7 +1077,7 @@ def render_question_pages(sections, entry_map_full, recent, debates):
                         rowsl = "".join(
                             f'<div class="ledrow" id="{E(it["rid"])}">'
                             f'<a href="{E(it["url"])}" rel="noopener">{E(it["title"])}</a>'
-                            f'<span class="ledm"> — {E(it["author"])} · {E(it["venue"])} · {E(it["date"][:7])}</span></div>'
+                            f'<span class="ledm"> — {_byline(it)} · {_hdate(it["date"])}</span></div>'
                             for it in led)
                         feat_html += (f'<details class="leddet"><summary>Additional relevant '
                                       f'discussion ({len(led)})</summary>{rowsl}</details>')
@@ -1173,7 +1198,7 @@ header{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
 .switch a{color:var(--ink2);text-decoration:none}
 .crumb{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--sc);margin:22px 0 6px}
 .crumb a{color:inherit;text-decoration:none}
-.qid{color:var(--ink3);font-size:13px;font-variant-numeric:tabular-nums}
+.crumb b{color:var(--ink2);font-weight:600}
 h1{font-family:var(--serif);font-weight:400;font-size:27px;line-height:1.25;margin:2px 0 8px}
 .qq{font-family:var(--serif);font-size:17px;font-style:italic;line-height:1.45;color:var(--ink2);margin:0 0 14px}
 .qn{font-size:14.5px;color:var(--ink2);line-height:1.6;margin:0 0 8px}
@@ -1181,6 +1206,7 @@ h1{font-family:var(--serif);font-weight:400;font-size:27px;line-height:1.25;marg
 .quiet a{color:var(--ink2)}
 .moved{border-top:2px solid var(--sc);background:color-mix(in srgb,var(--sc) 3.5%,transparent);border-radius:0 0 10px 10px;padding:11px 14px;margin:20px 0 8px}
 .mvh{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);font-weight:600;margin-bottom:5px}
+.mvf{font-size:11.5px;color:var(--ink3);margin:1px 0 9px}
 .rvpend{color:var(--gold)}
 .ch{display:flex;gap:10px;margin:7px 0}
 .chn{font-size:11px;color:var(--ink3);font-variant-numeric:tabular-nums;padding-top:2px}
@@ -1199,7 +1225,7 @@ h1{font-family:var(--serif);font-weight:400;font-size:27px;line-height:1.25;marg
 .rec{border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:11px 14px;margin-bottom:9px}
 .rtop{font-size:12px;color:var(--ink3);margin-bottom:3px}
 .rauth{color:var(--ink);font-size:12.5px}
-.pk{border:1px solid var(--line);border-radius:10px;padding:0 6px;font-size:9.5px;letter-spacing:.05em;text-transform:uppercase}
+.pk{border:1px solid var(--line);border-radius:10px;padding:0 7px;font-size:10px;color:var(--ink3)}
 .rtt{font-size:14.5px;color:var(--ink);text-decoration:none;line-height:1.4}
 .rtt:hover{text-decoration:underline}
 blockquote{font-family:var(--serif);font-size:13px;font-style:italic;color:var(--ink2);border-left:2px solid var(--line);margin:7px 0 4px;padding:0 0 0 10px;line-height:1.5}
@@ -1234,8 +1260,7 @@ footer a{color:var(--ink2)}
 </style></head><body><div class="wrap">
 <header><a class="home" href="../../">The Biggest Questions About&nbsp;AI</a>
 <nav class="switch" aria-label="View switch"><a href="../../">Map</a> · <a href="../../browse/">Browse</a> · <a href="../../latest/">Latest</a></nav></header>
-<div class="crumb">__CRUMB__</div>
-<div class="qid">__QID__</div>
+<div class="crumb">__CRUMB__ · <b>__QID__</b></div>
 <h1>__SHORT__</h1>
 <p class="qq">__QUESTION__</p>
 <p class="qn">__FRAMING__</p>
@@ -1366,7 +1391,7 @@ def render_poster(sections):
             f'<nav class="switch"><a href="../">Map</a> · <a href="../browse/">Browse</a> · '
             f'<a href="../latest/">Latest</a></nav></div>'
             f'<h1>The whole map in one circle</h1>'
-            f'<p>All {qn} questions by their short labels. Tap or click any label to open its question page; '
+            f'<p>All {qn} questions in one circle. Tap or click any label to open its question page; '
             f'hover (on a pointer device) shows the full question. '
             f'<a href="map.svg" download>Download as SVG</a>.</p>'
             f'<div class="wrap">{svg_doc}</div></body></html>')
