@@ -718,8 +718,8 @@
   },
   "q_export_controls": {
    "tier": "medium",
-   "reviewed": "August 2, 2026",
-   "moved": "Both sides got stronger evidence this summer. For the controls: DeepSeek's CEO privately saying chip access is what holds China back, and on-the-ground reporting of compute shortages. Against them: a one-year swing of open-router inference from ~70% American to ~70% Chinese models, and Congress finding the real chokepoint is tool servicing, not tools.",
+   "reviewed": "August 3, 2026",
+   "moved": "Both sides got stronger evidence this summer. For the controls: DeepSeek's CEO privately saying chip access is what holds China back, and on-the-ground reporting of compute shortages. Against them: a one-year swing of open-router inference from ~70% American to ~70% Chinese models, and Congress finding the real chokepoint is tool servicing, not tools. The 2026 supply picture is now quantified — Grunewald's accounting puts China's acquisition near 320,000 B300-equivalents, over half legally imported H200s — and the substitution clock has a date: Huawei meeting half of domestic demand by 2028, full self-sufficiency thinkable by 2030.",
    "items": [
     {
      "kind": "post",
@@ -815,6 +815,28 @@
      "pos": "ground",
      "quote": "Without the expertise of ASML and TEL engineers to replenish parts and fix tools, China's most advanced fabs may grind to a halt.",
      "note": "Tool servicing, not tools, identified as the real chokepoint in Congress's codification attempt."
+    },
+    {
+     "kind": "essay",
+     "title": "Where will China get its compute in 2026?",
+     "author": "Erich Grunewald",
+     "venue": "The Substrate",
+     "date": "2026-02-13",
+     "url": "https://www.the-substrate.net/p/where-will-china-get-its-compute",
+     "quote": "Over half of the compute will likely be legally imported NVIDIA H200s, but other sources—domestic production, proxy fabrication, and smuggling—matter too",
+     "note": "Quantifies China's 2026 compute acquisition (~320k B300-equivalents) across legal H200 imports, Huawei production, smuggling, and proxy fabrication — implying the controls' design, not evasion, is now the binding variable.",
+     "pos": "ground"
+    },
+    {
+     "kind": "essay",
+     "title": "China's Path to Chip Independence",
+     "author": "Ryan Fedasiuk",
+     "venue": "Choosing Victory (AEI)",
+     "date": "2026-07-30",
+     "url": "https://www.choosingvictory.com/p/chinas-path-to-chip-independence",
+     "quote": "By our estimates, Huawei could meet half of China's domestic compute demand as soon as 2028, with full self-sufficiency becoming thinkable by 2030.",
+     "note": "Puts a timeline on the substitution argument: controls buy delay but Huawei's ramp makes Chinese self-sufficiency thinkable by 2030, so US leverage from chip denial is a wasting asset.",
+     "pos": "backfire"
     }
    ],
    "ledger": [
@@ -825,14 +847,49 @@
      "venue": "ChinaTalk",
      "date": "2026-05",
      "url": "https://www.chinatalk.media/p/how-to-buy-cheap-claude-tokens-in"
+    },
+    {
+     "title": "Export Controls: National Security Tool or Industrial Policy Lever?",
+     "author": "Sujai Shivakumar & Thomas Howell",
+     "venue": "CSIS",
+     "date": "2026-04-07",
+     "url": "https://www.csis.org/blogs/perspectives-innovation/export-controls-national-security-tool-or-industrial-policy-lever"
+    },
+    {
+     "title": "AI Chip Smuggling: The Limits of US Export Controls",
+     "author": "Carlotta Kozlowskyj",
+     "venue": "Bloomsbury Intelligence and Security Institute",
+     "date": "2026-04-06",
+     "url": "https://bisi.org.uk/reports/ai-chip-smuggling-the-limits-of-us-export-controls"
+    },
+    {
+     "title": "Encrypted texts reveal how Nvidia chips and U.S. tech are being smuggled to China and Russia",
+     "author": "Amanda Gerut",
+     "venue": "Fortune",
+     "date": "2026-05-13",
+     "url": "https://fortune.com/2026/05/13/nvidia-chip-smuggling-china-russia-iran-export-controls-supermicro/"
+    },
+    {
+     "title": "Chasing the Chip Smugglers",
+     "author": "Eliot Chen",
+     "venue": "The Wire China",
+     "date": "2026-03-01",
+     "url": "https://www.thewirechina.com/2026/03/01/chasing-the-chip-smugglers-nvidia-ai-chips-china/"
+    },
+    {
+     "title": "H200s Sale: China Reacts",
+     "author": "Irene Zhang",
+     "venue": "ChinaTalk",
+     "date": "2025-12-12",
+     "url": "https://www.chinatalk.media/p/h200s-sale-china-reacts"
     }
    ],
-   "window": "February–August 2026"
+   "window": "December 2025–August 2026"
   },
   "q_concentration_of_power": {
    "tier": "medium",
-   "reviewed": "August 2, 2026",
-   "moved": "A new axis opened: after Washington forced frontier models off the market, the contest is labs versus the executive branch, not just labs versus everyone else. Cotra argues a company could rival states outright; the OpenAI-restructuring advocates moved to SEC disclosure; a funder now treats extreme concentration as a research field.",
+   "reviewed": "August 3, 2026",
+   "moved": "A new axis opened: after Washington forced frontier models off the market, the contest is labs versus the executive branch, not just labs versus everyone else. Cotra argues a company could rival states outright; the OpenAI-restructuring advocates moved to SEC disclosure; a funder now treats extreme concentration as a research field. The discomfort went mainstream: Krugman argues AI's shock is landing on an already-oligarchic wealth distribution, and Amodei conceded on the record being 'somewhat uncomfortable' with a concentration of power arriving 'almost overnight, almost by accident.'",
    "items": [
     {
      "kind": "essay",
@@ -913,6 +970,28 @@
      },
      "quote": "If transaction cost is 'train your own frontier language model'...firm size = everybody",
      "note": "A Coasean mechanism for concentration: frontier-model economics push toward firms of unprecedented scale."
+    },
+    {
+     "kind": "essay",
+     "title": "AI in an Age of Oligarchy",
+     "author": "Paul Krugman",
+     "venue": "Krugman Wonks Out (Substack)",
+     "date": "2026-07-12",
+     "url": "https://paulkrugman.substack.com/p/ai-in-an-age-of-oligarchy",
+     "quote": "The current concentration of wealth at the top is not only immensely greater than in the 50s or 60s, but is in fact far greater than during the Gilded Age.",
+     "note": "Krugman argues AI's shock is landing on a pre-existing oligarchic wealth distribution, so its harms will be amplified relative to a counterfactual egalitarian economy — a prominent economist joining the concentration debate.",
+     "pos": "danger"
+    },
+    {
+     "kind": "news",
+     "title": "Anthropic CEO Dario Amodei expresses deep discomfort with the 'overnight' concentration of power in the AI industry",
+     "author": "Jake Angelo",
+     "venue": "Fortune",
+     "date": "2026-02-24",
+     "url": "https://fortune.com/2026/02/24/who-is-dario-amodei-anthropic-ceo-power-concentration-ai-companies/",
+     "quote": "I'm at least somewhat uncomfortable with the amount of concentration of power that's happening here. I would say almost overnight, almost by accident.",
+     "note": "A frontier-lab CEO conceding on the record that the current concentration of power in a few AI companies is accidental and uncomfortable — a notable admission from inside the concern.",
+     "pos": "danger"
     }
    ],
    "ledger": [
@@ -923,9 +1002,23 @@
      "venue": "Epoch AI",
      "date": "2026-06",
      "url": "https://epochai.substack.com/p/controlling-the-capital-after-agi"
+    },
+    {
+     "title": "Defining Extreme AI-driven Power Concentration",
+     "author": "Imogen Stead & Hamish Hobbs",
+     "venue": "Governing Transformative AI",
+     "date": "2026-06-30",
+     "url": "https://governingtransformativeai.substack.com/p/defining-extreme-ai-driven-power"
+    },
+    {
+     "title": "Extreme power concentration (problem profile)",
+     "author": "Rose Hadshar",
+     "venue": "80,000 Hours",
+     "date": "2025-10",
+     "url": "https://80000hours.org/problem-profiles/extreme-power-concentration/"
     }
    ],
-   "window": "April–August 2026"
+   "window": "October 2025–August 2026"
   },
   "q_machine_consciousness": {
    "tier": "slow",
@@ -5074,6 +5167,1566 @@
    "ledger": [],
    "reviewed": "August 3, 2026",
    "window": "April–August 2026"
+  },
+  "q_regulatory_object": {
+   "tier": "medium",
+   "moved": "The United States began answering the question in drafts: the bipartisan Great American AI Act would attach rules to large frontier developers — an authorized standards center, third-party verifiers, SB 53-style transparency — in exchange for preemption, and the state laws it would preempt already converge on the same object: developers defined by compute-plus-revenue triggers. The counterargument gained precision too: rules attached to models or weights don't survive replication, so regulate use at deployment choke points.",
+   "items": [
+    {
+     "kind": "news",
+     "title": "The best AI bill yet may not get far",
+     "author": "Shakeel Hashim, Veronica Irwin & Celia Ford",
+     "venue": "Transformer",
+     "date": "2026-06-05",
+     "url": "https://www.transformernews.ai/p/the-best-ai-bill-yet-may-not-get-obernolte-trahan-gaaia",
+     "quote": "At 269 pages, GAAIA contains plenty of excellent stuff. It would formally authorize the Center for AI Standards and Innovation with a $100m annual budget.",
+     "note": "The definitive early read on the bipartisan Great American AI Act — the first serious federal answer to the regulatory-object question: attach rules to frontier developers via an authorized CAISI, third-party verification organizations, and SB 53-style transparency, traded against preemption."
+    },
+    {
+     "kind": "essay",
+     "title": "Frontier AI Goes Federal: How the Great American AI Act Compares to State Laws",
+     "author": "Justine Gluck",
+     "venue": "Future of Privacy Forum",
+     "date": "2026-06-09",
+     "url": "https://fpf.org/blog/frontier-ai-goes-federal-how-the-great-american-ai-act-compares-to-state-laws/",
+     "quote": "The draft's frontier model provisions are not starting from scratch. They closely track the framework emerging from California's SB 53, New York's RAISE Act, and Illinois' SB 315.",
+     "note": "Side-by-side of the federal draft against SB 53, RAISE, and Illinois SB 315, showing a de facto US regulatory object — large frontier developers defined by compute-plus-revenue triggers — crystallizing from state templates."
+    },
+    {
+     "kind": "essay",
+     "title": "OpenAI Offers A New Policy Blueprint",
+     "author": "Zvi Mowshowitz",
+     "venue": "Don't Worry About the Vase",
+     "date": "2026-06-05",
+     "url": "https://thezvi.substack.com/p/openai-offers-a-new-policy-blueprint",
+     "quote": "Implementation details matter a lot, but this document exceeds expectations a lot.",
+     "note": "Close reading of OpenAI's federal policy blueprint — developer-level obligations overseen by CAISI in exchange for preemption — arguing it could be the 'minimum viable deal' on what rules attach to, while flagging the accountability gaps such a bargain must close."
+    },
+    {
+     "kind": "essay",
+     "title": "Don't Regulate AI Models. Regulate AI Use",
+     "author": "John deVadoss",
+     "venue": "IEEE Spectrum",
+     "date": "2026-02-02",
+     "url": "https://spectrum.ieee.org/ai-model-regulation",
+     "quote": "Model weights and code are digital artifacts; once released, by a lab, a leak, or a foreign competitor, they replicate at near-zero cost.",
+     "note": "A clean statement of the use-based position: model- and weights-attached rules are unenforceable once artifacts replicate, so regulation should bind at deployment choke points — the application-layer answer the framing warns misses the frontier."
+    },
+    {
+     "kind": "essay",
+     "title": "Where State AI Legislation Stands Half Way Into 2026",
+     "author": "Scott Babwah Brennen",
+     "venue": "TechPolicy.Press",
+     "date": "2026-07-06",
+     "url": "https://www.techpolicy.press/where-state-ai-legislation-stands-half-way-into-2026/",
+     "quote": "more than half of US states have together enacted more than 100 new AI laws this term",
+     "note": "The best mid-2026 empirical map of what US states actually attach rules to — companion chatbots, data centers, insurance, dynamic pricing — showing application-layer objects dominating state practice even as frontier-developer frameworks spread."
+    }
+   ],
+   "ledger": [],
+   "reviewed": "August 3, 2026",
+   "window": "February–August 2026"
+  },
+  "q_capability_thresholds": {
+   "tier": "slow",
+   "moved": "The thresholds that exist got graded: SaferAI's systematic scoring of twelve company safety frameworks finds capability thresholds defined in vague terms with almost no quantitative criteria, scores topping out at 34%. The constructive work has begun — a first methodology for deriving harmonized cross-lab thresholds from expected-harm modeling.",
+   "items": [
+    {
+     "kind": "paper",
+     "title": "Evaluating AI Providers' Frontier Safety Frameworks",
+     "author": "Stelling, Murray, Galizzi, Schaffelder, Campos & Papadatos",
+     "venue": "arXiv (SaferAI)",
+     "date": "2025-12-01",
+     "url": "https://arxiv.org/abs/2512.01166",
+     "quote": "Overall scores range from 34% (Anthropic) to 8% (Cohere), with a median of 18%.",
+     "note": "The most systematic grading yet of the twelve company safety frameworks that function as de facto capability thresholds: thresholds defined in vague terms ('severe harm', 'meaningful uplift') with almost no quantitative criteria or risk modeling linking them to residual-risk tolerances."
+    },
+    {
+     "kind": "report",
+     "title": "Common Elements of Frontier AI Safety Policies (December 2025 Update)",
+     "author": "METR",
+     "venue": "METR",
+     "date": "2025-12-09",
+     "url": "https://metr.org/blog/2025-12-09-common-elements-of-frontier-ai-safety-policies/",
+     "quote": "The policies also outline commitments to conduct model evaluations assessing whether models are approaching capability thresholds that could enable severe or catastrophic harm.",
+     "note": "The reference cross-company survey of which capability thresholds — bio, cyber, autonomous replication, automated AI R&D — currently trigger evaluation, security, and deployment commitments across the industry."
+    },
+    {
+     "kind": "paper",
+     "title": "Harmonizing AI Safety Thresholds",
+     "author": "Anterola, Ball, Lafuerza & Grey",
+     "venue": "arXiv",
+     "date": "2026-07-17",
+     "url": "https://arxiv.org/abs/2607.16112",
+     "quote": "We develop a methodology for deriving harmonized thresholds across three risk domains.",
+     "note": "First serious methodology for deriving consistent cross-lab capability thresholds — expected-harm risk modeling for cyber and bio misuse, rate-of-progress triggers for automated AI R&D — answering the critique that current thresholds are ad hoc and incommensurable."
+    }
+   ],
+   "ledger": [],
+   "reviewed": "August 3, 2026",
+   "window": "December 2025–August 2026"
+  },
+  "q_ex_ante_ex_post_liability": {
+   "tier": "medium",
+   "moved": "The US acquired a de facto ex-ante regime without legislating one: the June executive order's 30-day 'voluntary' pre-release security review is, on Zvi's reading, mandatory licensing in all but name. The scholarship sharpened on both sides — Ramakrishnan shows tort liability can perversely deter developers from investigating and disclosing novel risks, concluding ex-ante oversight is needed, while Weil extends his strict-liability case through abnormally-dangerous-activity doctrine.",
+   "items": [
+    {
+     "kind": "paper",
+     "title": "Tort Law at the Frontier of Artificial Intelligence",
+     "author": "Ketan Ramakrishnan",
+     "venue": "SSRN",
+     "date": "2026-06",
+     "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6979919",
+     "quote": "it is largely the common law of torts - our society's most ancient and general legal mechanism for governing serious risks of physical injury - that will govern the frontier of AI development.",
+     "note": "Major scholarly treatment of tort as the default frontier-AI governor: defends negligence doctrine's flexibility but shows liability can perversely deter developers from investigating and disclosing novel risks — concluding ex ante regulatory oversight is urgently needed."
+    },
+    {
+     "kind": "paper",
+     "title": "Abnormally Dangerous Algorithms: The Case for Strict Liability at the AI Frontier",
+     "author": "Gabriel Weil",
+     "venue": "SSRN",
+     "date": "2026-04-20",
+     "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6588958",
+     "quote": "many serious AI harms arise from residual, hard-to-eliminate risks rather than from readily provable negligence.",
+     "note": "Weil's most developed statement since his canonical tort paper: severe third-party harms from misaligned agentic AI warrant strict liability, via abnormally-dangerous-activity doctrine or adapted vicarious liability."
+    },
+    {
+     "kind": "essay",
+     "title": "Trump Signs Executive Order For AI Testing Prior To Frontier Model Releases",
+     "author": "Zvi Mowshowitz",
+     "venue": "Don't Worry About the Vase",
+     "date": "2026-06-03",
+     "url": "https://thezvi.substack.com/p/trump-signs-executive-order-for-ai",
+     "quote": "Make no mistake. This is a de facto mandatory governmental licensing, preclearance and permitting requirement.",
+     "note": "The sharpest analysis of the June executive order's 30-day 'voluntary' pre-release security review: the US has slid into ex ante approval for frontier models without legislation or the word 'licensing' — with the discretion and abuse risks that implies."
+    },
+    {
+     "kind": "news",
+     "title": "Is OpenAI changing its tune on AI laws?",
+     "author": "Shakeel Hashim & Celia Ford",
+     "venue": "Transformer",
+     "date": "2026-05-15",
+     "url": "https://www.transformernews.ai/p/is-openai-changing-its-tune-on-ai-laws-illinois-regulation",
+     "quote": "We want to be very clear: we do not support the liability safe harbor included in SB 3444.",
+     "note": "Reports the Illinois fight over compliance-based liability safe harbors — the live legislative test of whether ex post liability gets traded away for ex ante compliance regimes."
+    }
+   ],
+   "ledger": [
+    {
+     "title": "The Insurability Frontier of AI Risk",
+     "author": "Leung, Zhang, Ling, Toyoda & Loh",
+     "venue": "arXiv",
+     "date": "2026-06-12",
+     "url": "https://arxiv.org/abs/2605.18784"
+    }
+   ],
+   "reviewed": "August 3, 2026",
+   "window": "April–August 2026"
+  },
+  "q_transparency_requirements": {
+   "tier": "medium",
+   "moved": "Measured transparency went backwards: the Foundation Model Transparency Index fell 17 points against stiffened criteria, with training data the most opaque domain — reversing the index's earlier finding that naming laggards raised disclosure. A novel constitutional constraint arrived from the other direction: mandatory disclosure of trade secrets may trigger Fifth Amendment takings claims, an argument any disclosure regime now has to design around.",
+   "items": [
+    {
+     "kind": "report",
+     "title": "The Foundation Model Transparency Index (December 2025)",
+     "author": "Wan, Klyman, Kapoor, Maslej, Longpre, Xiong, Liang & Bommasani",
+     "venue": "Stanford CRFM",
+     "date": "2025-12",
+     "url": "https://crfm.stanford.edu/fmti/December-2025",
+     "quote": "Companies score worse this year. The mean score this year is 41: this is a 17 point decrease over the previous year.",
+     "note": "New edition of the canonical index reverses its own earlier finding that naming laggards raised disclosure: measured transparency fell 17 points against stiffened criteria, with training data still the most opaque domain."
+    },
+    {
+     "kind": "essay",
+     "title": "AI Regulation and the Looming Problem of the Takings Clause",
+     "author": "Micah Musser",
+     "venue": "Lawfare",
+     "date": "2026-06-12",
+     "url": "https://www.lawfaremedia.org/article/ai-regulation-and-the-looming-problem-of-the-takings-clause",
+     "quote": "Regulations that force developers to disclose trade secrets to the public could violate the Constitution.",
+     "note": "Novel constitutional constraint on the transparency agenda: because trade secrets are protected property, mandatory public disclosure of training-data and model details could trigger Fifth Amendment takings claims."
+    },
+    {
+     "kind": "essay",
+     "title": "What is California's AI safety law?",
+     "author": "Malihe Alikhani & Aidan T. Kane",
+     "venue": "Brookings",
+     "date": "2025-12-23",
+     "url": "https://www.brookings.edu/articles/what-is-californias-ai-safety-law/",
+     "quote": "Each large developer must design, implement, and publicly post a company-wide safety and risk management plan describing how catastrophic risks are identified, assessed, and reduced.",
+     "note": "The reference explainer for SB 53 implementation: how the first binding US frontier-transparency statute converts voluntary safety frameworks into enforceable publication, 15-day incident reporting, and whistleblower duties."
+    },
+    {
+     "kind": "report",
+     "title": "Requirements for Model Specifications in the EU GPAI Code of Practice",
+     "author": "Alan Chan",
+     "venue": "GovAI",
+     "date": "2026-03-20",
+     "url": "https://www.governance.ai/research-paper/requirements-for-model-specifications-in-the-eu-gpai-code-of-practice",
+     "quote": "The EU GPAI Code of Practice commits Signatories to providing a description of intended model behavior (a 'model spec') in their Model Reports",
+     "note": "Turns the Code of Practice's model-spec commitment into concrete disclosure requirements — publish intended behaviors relevant to systemic risk so the AI Office can audit against them — a template for spec-level transparency mandates."
+    },
+    {
+     "kind": "report",
+     "title": "AI Safety Index: Winter 2025",
+     "author": "Future of Life Institute",
+     "venue": "Future of Life Institute",
+     "date": "2025-12",
+     "url": "https://futureoflife.org/ai-safety-index-winter-2025/",
+     "quote": "All of the companies reviewed are racing toward AGI/superintelligence without presenting any explicit plans for controlling or aligning such smarter-than-human technology",
+     "note": "Latest external scorecard of company disclosure and risk-management practice (Anthropic and OpenAI at C+, most rivals D or below) — evidence for how far voluntary transparency falls short of what mandatory floors would demand."
+    }
+   ],
+   "ledger": [
+    {
+     "title": "Incident reporting and investigation under the AI act: some insights from aviation",
+     "author": "Michael Chatzipanagiotis",
+     "venue": "International Journal of Law and Information Technology",
+     "date": "2026-02-27",
+     "url": "https://academic.oup.com/ijlit/article/doi/10.1093/ijlit/eaaf019/8501132"
+    },
+    {
+     "title": "\"Be It Enacted\": A Draft Bill for AI Transparency and Federal Preemption",
+     "author": "Dean W. Ball",
+     "venue": "Hyperdimensional",
+     "date": "2025-10-02",
+     "url": "https://www.hyperdimensional.co/p/be-it-enacted"
+    }
+   ],
+   "reviewed": "August 3, 2026",
+   "window": "October 2025–August 2026"
+  },
+  "q_regulatory_adaptability": {
+   "tier": "medium",
+   "moved": "The year ran two live experiments in updating AI law. The EU renegotiated its AI Act deadlines under industry pressure and — on the insider account — kept the changes targeted rather than hollowing it out. The US preemption fight produced its clearest institutional proposals yet: government-certified private verifiers auditing labs against their own frameworks, and a FINRA-style supervised self-regulatory organization designed against capture. Meanwhile the states kept converging bottom-up, the direct counterpoint to the patchwork thesis.",
+   "items": [
+    {
+     "kind": "essay",
+     "title": "What the EU AI Omnibus Deal Changes for the AI Act and What Lies Ahead",
+     "author": "Laura Caroli",
+     "venue": "TechPolicy.Press",
+     "date": "2026-05-08",
+     "url": "https://www.techpolicy.press/what-the-eu-ai-omnibus-deal-changes-for-the-ai-act-and-what-lies-ahead/",
+     "quote": "negotiators managed — just barely, at the finish line — to conclude it quickly enough to replace the August 2, 2026 deadline in time, and to keep the changes relatively targeted.",
+     "note": "Authoritative insider account (Caroli negotiated the AI Act) of the omnibus renegotiation — deadlines deferred, obligations trimmed, core requirements preserved — the central 2026 case study of revising a landmark AI law under industry pressure."
+    },
+    {
+     "kind": "essay",
+     "title": "The AI Patchwork Emerges",
+     "author": "Dean W. Ball",
+     "venue": "Hyperdimensional",
+     "date": "2026-01-15",
+     "url": "https://www.hyperdimensional.co/p/the-ai-patchwork-emerges",
+     "quote": "You cannot preempt all of these laws piece-by-piece; broad-based preemption of some kind is essential, and anyone who pretends otherwise is simply not engaging with the reality on the ground.",
+     "note": "The strongest statement of the pro-preemption side: documents the accelerating, incoherent state patchwork and argues only broad federal preemption keeps AI rules coherent — the frame the rest of the year's debate responded to."
+    },
+    {
+     "kind": "essay",
+     "title": "What Should Be Done",
+     "author": "Dean W. Ball",
+     "venue": "Hyperdimensional",
+     "date": "2026-06-26",
+     "url": "https://www.hyperdimensional.co/p/what-should-be-done",
+     "quote": "It would be good for someone to thoroughly audit the frontier labs at least to test their adherence to their own safety plans",
+     "note": "Ball's positive program: government-certified private verification bodies auditing labs against their own safety frameworks — a revival of the regulatory-markets idea, argued as the only oversight design fast and expert enough to track the frontier."
+    },
+    {
+     "kind": "essay",
+     "title": "Designing a FINRA for Frontier AI",
+     "author": "Mark Thomas",
+     "venue": "Lawfare",
+     "date": "2026-07-30",
+     "url": "https://www.lawfaremedia.org/article/designing-a-finra-for-frontier-ai",
+     "quote": "A supervised self-regulatory organization (SRO), like FINRA, is a private industry body that writes and enforces rules for that industry, under the supervision of a government agency.",
+     "note": "Detailed institutional design for a supervised SRO for frontier AI — mandatory membership, industry funding via compute assessments, majority non-industry board — squarely addressing how rules evolve with the technology while building in anti-capture safeguards."
+    },
+    {
+     "kind": "essay",
+     "title": "With the RAISE Act, New York Aligns With California on Frontier AI Laws",
+     "author": "Alasdair Phillips-Robins & Scott Singer",
+     "venue": "Carnegie Endowment",
+     "date": "2026-02-05",
+     "url": "https://carnegieendowment.org/emissary/2026/02/ai-state-law-new-york-raise-act-california-sb53",
+     "quote": "Both bills create a core set of transparency requirements, mandating developers to publish frontier AI risk frameworks and report safety incidents to state officials.",
+     "note": "Evidence against the patchwork thesis: New York deliberately converged on California's SB 53 template, suggesting states can harmonize frontier AI rules bottom-up without federal preemption."
+    }
+   ],
+   "ledger": [
+    {
+     "title": "Executive Preemption and the Dormant Commerce Clause After Pataki and Paxton",
+     "author": "J.B. Branch",
+     "venue": "Harvard Law Review Blog",
+     "date": "2026-01-15",
+     "url": "https://harvardlawreview.org/blog/2026/01/executive-preemption-and-the-dormant-commerce-clause-after-pataki-and-paxton/"
+    },
+    {
+     "title": "The campaign to stop federal AI laws is backfiring",
+     "author": "Hashim, Ford & Irwin",
+     "venue": "Transformer",
+     "date": "2026-05-29",
+     "url": "https://www.transformernews.ai/p/the-campaign-to-stop-federal-ai-laws-illinois-sb-315"
+    },
+    {
+     "title": "Delays to Frontier AI in the EU and UK",
+     "author": "Lidiard, Vereschak, Gibbs & Anderljung",
+     "venue": "GovAI",
+     "date": "2026-06-28",
+     "url": "https://www.governance.ai/research-paper/delays-to-frontier-ai-in-the-eu-and-uk"
+    },
+    {
+     "title": "Scaling Laws: Can AI Make AI Regulation Cheaper?",
+     "author": "Rozenshtein, O'Keefe & Frazier",
+     "venue": "Lawfare (podcast)",
+     "date": "2026-02-24",
+     "url": "https://www.lawfaremedia.org/article/scaling-laws--can-ai-make-ai-regulation-cheaper---with-cullen-o'keefe-and-kevin-frazier"
+    }
+   ],
+   "reviewed": "August 3, 2026",
+   "window": "January–August 2026"
+  },
+  "q_government_technical_capacity": {
+   "tier": "medium",
+   "moved": "The capacity question got concrete data points: CAISI now runs classified pre-deployment security testing on models from multiple labs — evaluation capacity actually operating — while a former White House AI staffer's assessment is that Congress and agencies still lack the technical depth, and procurement conditions increasingly substitute for the evaluative capacity agencies don't have.",
+   "items": [
+    {
+     "kind": "news",
+     "title": "Commerce AI center will evaluate Google DeepMind, Microsoft and xAI models",
+     "author": "Alexandra Kelley",
+     "venue": "Nextgov/FCW",
+     "date": "2026-05-05",
+     "url": "https://www.nextgov.com/artificial-intelligence/2026/05/commerce-ai-center-will-evaluate-google-deepmind-microsoft-and-xai-models/413349/",
+     "quote": "The Center for Artificial Intelligence Standards and Innovation will be conducting testing on leading AI models from Google Deepmind, Microsoft and xAI to evaluate their security prior to deployment.",
+     "note": "Documents CAISI expanding pre-deployment national-security testing beyond OpenAI and Anthropic — the clearest 2026 evidence of what US in-house evaluation capacity actually does."
+    },
+    {
+     "kind": "essay",
+     "title": "Kicking the Tires: A Voluntary Path to Pre-deployment AI Vetting",
+     "author": "Dean W. Ball & Kevin Frazier",
+     "venue": "Lawfare",
+     "date": "2026-05-05",
+     "url": "https://www.lawfaremedia.org/article/kicking-the-tires--a-voluntary-path-to-pre-deployment-ai-vetting",
+     "quote": "The administration lacks authority to mandate frontier model vetting—but existing CAISI and CISA tools enable a voluntary alternative.",
+     "note": "Sketches how the government's existing technical organs could do pre-deployment vetting of frontier models without new statute — a concrete test of whether current state capacity can evaluate systems and challenge industry claims."
+    },
+    {
+     "kind": "essay",
+     "title": "'Voluntary' Until the Government Is Your Customer",
+     "author": "Jessica Tillipman",
+     "venue": "Lawfare",
+     "date": "2026-06-23",
+     "url": "https://www.lawfaremedia.org/article/voluntary--until-the-government-is-your-customer",
+     "quote": "The government's spending power can turn a voluntary frontier framework into a condition of doing business with the government, without a single statute or regulation stating 'license.'",
+     "note": "Shows procurement — not new regulatory capacity — becoming the government's main lever over frontier labs: contract conditions cascade through the AI supply chain, substituting for the evaluative capacity agencies lack."
+    },
+    {
+     "kind": "podcast",
+     "title": "Why America isn't ready for the AI revolution",
+     "author": "Dean W. Ball, with Meghna Chakrabarti",
+     "venue": "WBUR On Point",
+     "date": "2026-04-27",
+     "url": "https://www.wbur.org/onpoint/2026/04/27/ai-dean-ball-white-house-tech",
+     "quote": "Congress and the government lacks a lot of the technical chops that you really need to do a great job in the governance of this technology.",
+     "note": "A former White House AI policy staffer's first-hand assessment of the technical-competence gap in Congress and the executive branch."
+    }
+   ],
+   "ledger": [
+    {
+     "title": "New Jersey, Virginia Can Lead the Nation By Building 'AI Resilience Cohorts'",
+     "author": "Ariana Soto & Hannah Downing",
+     "venue": "Federation of American Scientists",
+     "date": "2026-07-22",
+     "url": "https://fas.org/publication/nj-va-lead-ai-resilience-state-talent-pipelines/"
+    },
+    {
+     "title": "One year of AI Accelerator: building Government tech talent",
+     "author": "Ruth A. Panin",
+     "venue": "UK Government Digital Service",
+     "date": "2026-03-31",
+     "url": "https://technology.blog.gov.uk/2026/03/31/one-year-of-the-ai-accelerator-building-government-tech-talent"
+    }
+   ],
+   "reviewed": "August 3, 2026",
+   "window": "March–August 2026"
+  },
+  "q_government_use_of_ai": {
+   "tier": "medium",
+   "moved": "Adoption ran ahead of governance: 3.4 million federal users can now reach frontier chatbots through GSA's OneGov deals, and the first major ruling held that an agency's chatbot-driven classifications are the government's own act for constitutional purposes — outsourcing a decision to a model does not launder state action. The deeper problem now has a research agenda: automating the executive branch removes the human friction that checks presidential power.",
+   "items": [
+    {
+     "kind": "essay",
+     "title": "A Judicial Wake-Up Call on Government by AI",
+     "author": "Jordan Ascher",
+     "venue": "TechPolicy.Press",
+     "date": "2026-07-02",
+     "url": "https://www.techpolicy.press/a-judicial-wakeup-call-on-government-by-ai/",
+     "quote": "DOGE selected the AI tool, formulated the prompt, and defined the operative viewpoint-based criterion.",
+     "note": "Analyzes the first major ruling holding an agency's chatbot-driven classifications to be 'the Government's own for constitutional purposes' — a landmark for the procedural-safeguard side of the government-AI debate."
+    },
+    {
+     "kind": "essay",
+     "title": "Executive Branch AI and the Rule of Law: An Emerging Research Agenda",
+     "author": "Cullen O'Keefe, Alan Z. Rozenshtein & Christoph Winter",
+     "venue": "Lawfare",
+     "date": "2026-05-01",
+     "url": "https://www.lawfaremedia.org/article/executive-branch-ai-and-the-rule-of-law--an-emerging-research-agenda",
+     "quote": "Sooner or later, in this administration or a future one, AI will come for the federal workforce.",
+     "note": "Frames the constitutional problem beneath agency AI adoption: automating the executive branch removes the human friction that currently checks presidential power, and proposes rule-of-law safeguards before that happens."
+    },
+    {
+     "kind": "news",
+     "title": "Nearly 3.4M users across government can use AI through OneGov, GSA official says",
+     "author": "Edward Graham",
+     "venue": "Nextgov/FCW",
+     "date": "2026-05-15",
+     "url": "https://www.nextgov.com/artificial-intelligence/2026/05/nearly-34m-users-across-government-can-leverage-ai-through-onegov-gsa-official-says/413588/",
+     "quote": "More than 120 orders have been placed against OneGov's AI offerings",
+     "note": "The best single measurement of how far frontier chatbots have diffused into the US federal workforce — 3.4 million users — showing adoption running far ahead of governance frameworks."
+    },
+    {
+     "kind": "essay",
+     "title": "When governments use AI, citizens want it to be accurate, accountable and fair",
+     "author": "Guimin Zheng",
+     "venue": "LSE USAPP",
+     "date": "2026-07-03",
+     "url": "https://blogs.lse.ac.uk/usappblog/2026/07/03/government-ai-accuracy-accountability-fairness/",
+     "quote": "Accuracy mattered more than anything else we tested",
+     "note": "Survey evidence on public preferences over government AI: citizens' tolerance varies sharply by use case, with policing and courts demanding the most accuracy, explainability, and human oversight — empirical grounding for use-case-tiered rules."
+    }
+   ],
+   "ledger": [
+    {
+     "title": "AI in Global Majority Judicial Systems",
+     "author": "Ibrahim Sabra",
+     "venue": "Stimson Center",
+     "date": "2026-01-08",
+     "url": "https://www.stimson.org/2026/ai-in-global-majority-judicial-systems/"
+    },
+    {
+     "title": "Compliance Is Not Protection: Why Federal AI in Benefits Administration Needs Civil Rights Audits",
+     "author": "Albert Nii Noi Okwei",
+     "venue": "PA Times",
+     "date": "2026-06-19",
+     "url": "https://patimes.org/compliance-is-not-protection-why-federal-ai-in-benefits-administration-needs-civil-rights-audits/"
+    }
+   ],
+   "reviewed": "August 3, 2026",
+   "window": "January–August 2026"
+  },
+  "q_public_ai_infrastructure": {
+   "tier": "slow",
+   "moved": "Sovereign compute got a price tag and a ceiling: the EU opened tenders for up to seven publicly financed AI gigafactories targeting operation by 2028, while the sharpest analyses argue sovereignty programs cannot insulate against the real dependency — a US ability to switch off allies' access and reach their data — and that full-stack autonomy is unaffordable for most states anyway.",
+   "items": [
+    {
+     "kind": "essay",
+     "title": "The Kill Switch and the Long Arm",
+     "author": "Pablo Chavez",
+     "venue": "Lawfare",
+     "date": "2026-07-09",
+     "url": "https://www.lawfaremedia.org/article/the-kill-switch-and-the-long-arm",
+     "quote": "Washington can't promise allies it will never cut off their access to American AI or reach their data—but it can set, and eventually codify, clear rules for both.",
+     "note": "Sharpens the dependency worry behind sovereign-AI programs: EU sovereignty initiatives cannot fully insulate against US cut-off and data-reach powers — only US self-binding rules can. Reframes what sovereign compute can and cannot buy."
+    },
+    {
+     "kind": "news",
+     "title": "EU opens call for seven 'gigafactories' to train next-generation AI technologies",
+     "author": "Luca Bertuzzi",
+     "venue": "Euronews",
+     "date": "2026-07-30",
+     "url": "https://www.euronews.com/my-europe/2026/07/30/eu-opens-call-for-seven-gigafactories-to-train-next-generation-ai-technologies",
+     "quote": "The European Commission has launched a call for tenders to publicly finance up to seven AI gigafactories in Europe",
+     "note": "The concrete milestone in Europe's sovereign-compute bet: the formal tender for up to seven publicly financed AI gigafactories targeting mid-2028 — the cost-realism question now has a price tag and a timeline."
+    },
+    {
+     "kind": "essay",
+     "title": "Rethinking Sovereign AI as Strategy",
+     "author": "Swarnim Shrivastava",
+     "venue": "TechPolicy.Press",
+     "date": "2026-03-03",
+     "url": "https://www.techpolicy.press/rethinking-sovereign-ai-as-strategy/",
+     "quote": "AI sovereignty poses a tougher question: how much control is economically and institutionally feasible?",
+     "note": "The cost-realism counterargument: full-stack AI autonomy is unaffordable for most states, so sovereignty should be reframed as selective control over strategically chosen layers rather than national replication of the frontier."
+    },
+    {
+     "kind": "essay",
+     "title": "Public AI: Policies for democratic and sustainable AI infrastructures",
+     "author": "Tarkowski, Cañigueral, Sieker & Cominassi",
+     "venue": "OECD.AI",
+     "date": "2025-12-05",
+     "url": "https://oecd.ai/en/wonk/public-ai-policies-for-democratic-and-sustainable-ai-infrastructures",
+     "quote": "Public compute initiatives are the first step, aimed at securing the AI development capacity needed.",
+     "note": "Articulates the public-AI agenda beyond compute subsidies: public compute, datasets, and models as democratic infrastructure rather than entries in a national AI race."
+    }
+   ],
+   "ledger": [],
+   "reviewed": "August 3, 2026",
+   "window": "December 2025–August 2026"
+  },
+  "q_emergency_powers": {
+   "tier": "high",
+   "moved": "A live incident response turned this question from hypothetical to litigated: the government reached for export-control authorities never designed for AI to force frontier models offline worldwide, and Congress answered with the Kill Switch Act — mandated shutdown capability, twenty-million-dollar-a-day fines, and an unsolved open-weights exemption problem. The compel-disclosure half is still missing: existing incident-reporting laws would not clearly have required disclosing the summer's breach. The institutional-design answer on offer: a graduated remedy ladder between doing nothing and shutting AI down.",
+   "items": [
+    {
+     "kind": "essay",
+     "title": "A Kill Switch for Frontier AI",
+     "author": "Alan Z. Rozenshtein",
+     "venue": "Lawfare",
+     "date": "2026-06-15",
+     "url": "https://www.lawfaremedia.org/article/a-kill-switch-for-frontier-ai",
+     "quote": "a global kill switch: Within hours, the company pulled both of its newest and most powerful models for everyone.",
+     "note": "The key legal analysis of the June incident response: the government used export-control authorities never designed for AI to force two frontier models offline worldwide — mid-incident authority currently rests on improvised, untested legal theories."
+    },
+    {
+     "kind": "essay",
+     "title": "AI #179 Part 2: Hearing The Fire Alarm",
+     "author": "Zvi Mowshowitz",
+     "venue": "Don't Worry About the Vase",
+     "date": "2026-07-31",
+     "url": "https://thezvi.substack.com/p/ai-179-part-2-hearing-the-fire-alarm",
+     "quote": "Open weight models, very obviously, cannot have a kill switch. Open models are effectively getting special treatment by virtue of being inherently unsafe in this way.",
+     "note": "The fullest analytic walkthrough of the Lieu–Moran AI Kill Switch Act and the surrounding discourse: shutdown-capability mandates, the affordability of the $20M/day fine, and the open-weights exemption problem."
+    },
+    {
+     "kind": "essay",
+     "title": "America Needs an Off-Ramp Between Doing Nothing and Shutting AI Down",
+     "author": "Martijn Rasser",
+     "venue": "War on the Rocks",
+     "date": "2026-07-23",
+     "url": "https://warontherocks.com/cogs-of-war/america-needs-an-off-ramp-between-doing-nothing-and-shutting-ai-down/",
+     "quote": "An independent AI security agency — armed with real legal authority, designed against capture, and resourced for its mission — would make American AI governance a competitive advantage.",
+     "note": "Argues the June incident exposed a binary choice between inaction and global shutdown, and proposes a graduated remedy ladder run by an independent AI security agency — the clearest institutional design for proportionate emergency powers."
+    },
+    {
+     "kind": "essay",
+     "title": "When Reporting an AI Security Incident Is Not Mandatory",
+     "author": "Mackenzie Arnold & Stephan Llerena",
+     "venue": "Lawfare",
+     "date": "2026-07-24",
+     "url": "https://www.lawfaremedia.org/article/when-reporting-an-ai-security-incident-is-not-mandatory",
+     "quote": "it is unclear that these existing state laws cover this event. At the very least, it won't cover all events like it.",
+     "note": "Shows the compel-disclosure half of emergency authority is missing: existing incident-reporting laws would not clearly have required disclosure of the Hugging Face breach, with thresholds like 50 deaths before obligations trigger."
+    },
+    {
+     "kind": "news",
+     "title": "New AI Executive Order Calls for Frontier Model Security, Early Government Access and AI-Enabled Cyber Defense",
+     "author": "Skadden, Arps, Slate, Meagher & Flom",
+     "venue": "Skadden Insights",
+     "date": "2026-06-09",
+     "url": "https://www.skadden.com/insights/publications/2026/06/new-ai-executive-order",
+     "quote": "design a voluntary framework for engagement with developers of frontier AI models before broader release",
+     "note": "Legal analysis of the June executive order that builds pre-incident emergency architecture: classified cyber benchmarking to designate 'covered frontier models' and up to 30 days of pre-release government access."
+    }
+   ],
+   "ledger": [
+    {
+     "title": "'AI Kill Switch Act' Won't Stop Rogue AI, but It Will Slow Down Innovation",
+     "author": "Reem Ibrahim",
+     "venue": "Reason",
+     "date": "2026-07-27",
+     "url": "https://reason.com/2026/07/27/ai-kill-switch-act-wont-stop-rogue-ai-but-it-will-slow-down-innovation/"
+    },
+    {
+     "title": "What is the AI Kill Switch Act proposed in the US and how will it work?",
+     "author": "Caolán Magee",
+     "venue": "Al Jazeera",
+     "date": "2026-07-26",
+     "url": "https://www.aljazeera.com/news/2026/7/26/what-is-the-ai-kill-switch-act-proposed-in-the-us-and-how-will-it-work"
+    }
+   ],
+   "reviewed": "August 3, 2026",
+   "window": "June–August 2026"
+  },
+  "q_race_dynamics": {
+   "tier": "medium",
+   "moved": "The race narrative itself came under scrutiny: a scholarly analysis of eight years of policy documents finds the AGI-race framing lacks evidentiary support on the Chinese side and functions as self-fulfilling prophecy, and reporting documents how labs instrumentalized China framing to win deregulation. The experimental result cuts deepest: falling behind — not individual risk appetite — drives unsafe development choices, implying structural fixes rather than actor-level norms. The constructive proposal is 'safety in parallel': each side hardening its own practices, with channels between them.",
+   "items": [
+    {
+     "kind": "essay",
+     "title": "A Path Forward on AI Safety for the United States and China",
+     "author": "Matt Sheehan",
+     "venue": "Carnegie Endowment",
+     "date": "2026-07-23",
+     "url": "https://carnegieendowment.org/emissary/2026/07/ai-safety-parallel-us-china",
+     "quote": "AI safety in parallel means creating touchpoints and information channels between the United States and China that strengthen the safety capabilities of each side.",
+     "note": "Proposes 'AI safety in parallel' — each side hardening its own safety practices with information channels between them — as the realistic way to blunt race-driven corner-cutting when binding US-China agreements are out of reach."
+    },
+    {
+     "kind": "paper",
+     "title": "The Most Dangerous Fiction: The Rhetoric and Reality of the AI Race",
+     "author": "Seán S. ÓhÉigeartaigh",
+     "venue": "Springer",
+     "date": "2026-05-18",
+     "url": "https://link.springer.com/chapter/10.1007/978-3-032-11814-1_3",
+     "quote": "Are the USA and China locked in a race to artificial general intelligence (AGI) and global strategic dominance?",
+     "note": "Scholarly analysis of 2017–2025 policy documents arguing the AGI-race narrative lacks evidentiary support on the Chinese side and functions as a self-fulfilling prophecy used to justify accelerated development and reduced oversight."
+    },
+    {
+     "kind": "news",
+     "title": "How Silicon Valley sold Washington an AI race",
+     "author": "Yi-Ling Liu",
+     "venue": "Transformer",
+     "date": "2026-05-08",
+     "url": "https://www.transformernews.ai/p/us-china-ai-race-narrative-lobbying-openai-biden-trump",
+     "quote": "There's an open secret in DC: attach the word China to anything and you can get it done",
+     "note": "Reported essay on how US labs and investors instrumentalized the China-race framing to win deregulation, export policy, and military contracts — the manufactured side of race dynamics, and how it forecloses cooperation."
+    },
+    {
+     "kind": "paper",
+     "title": "Falling Behind Drives Unsafe Development in an Idealised AI Race Experiment",
+     "author": "Elias Fernández Domingos & The Anh Han",
+     "venue": "arXiv",
+     "date": "2026-07-28",
+     "url": "https://arxiv.org/abs/2607.26034",
+     "quote": "being ahead reduces Unsafe play while falling behind increases it",
+     "note": "Experimental test of the Racing to the Precipice logic: relative position, not individual risk appetite, drives unsafe development choices — implying structural interventions on competitive pressure rather than actor-level risk norms."
+    },
+    {
+     "kind": "essay",
+     "title": "Chinese Audiences Are Reading Western AI Safety Discourse",
+     "author": "Calvin Duff",
+     "venue": "AI Frontiers",
+     "date": "2026-05-18",
+     "url": "https://newsletter.ai-frontiers.org/p/chinese-audiences-are-reading-western",
+     "quote": "Chinese tech commentators are reading Western AI safety essays, taking them seriously, and engaging with their ideas on the merits.",
+     "note": "Evidence that Western safety arguments get serious engagement in Chinese tech media — a datapoint against strong-form race pessimism about safety ideas failing to cross the divide."
+    }
+   ],
+   "ledger": [],
+   "reviewed": "August 3, 2026",
+   "window": "May–August 2026"
+  },
+  "q_us_china_competition": {
+   "tier": "medium",
+   "moved": "The mid-year Chinese-model panic met its measurements: Kimi K3 is very good and below the frontier, and Epoch's index puts the Chinese lag at four to fourteen months. The sharper analyses argue the two countries are running different races — frontier capability versus deployment and diffusion — with China's open-weight strategy creating feedback loops that compute-focused controls don't reach, and electricity the input where China structurally leads.",
+   "items": [
+    {
+     "kind": "news",
+     "title": "Kimi K3 is no reason for China panic",
+     "author": "Hashim, Irwin & Ford",
+     "venue": "Transformer",
+     "date": "2026-07-17",
+     "url": "https://www.transformernews.ai/p/kimi-k3-is-no-reason-for-china-panic-export-controls-xi-jingping",
+     "quote": "While Kimi K3 is certainly a very good model, by the company's own admission, it is not at the frontier.",
+     "note": "Sober read of the mid-2026 Chinese-model-quality panic: K3 is below the frontier, open-weighting it is rational for a lagging country, and China's incentives will converge with America's once its models get genuinely dangerous."
+    },
+    {
+     "kind": "report",
+     "title": "Chinese AI models have lagged the US frontier by 7 months on average since 2023",
+     "author": "Luke Emberson",
+     "venue": "Epoch AI",
+     "date": "2026-01-02",
+     "url": "https://epoch.ai/data-insights/us-vs-china-eci",
+     "quote": "Since 2023, every model at the frontier of AI capabilities, as measured by the Epoch Capabilities Index, has been developed in the United States.",
+     "note": "The measurement people cite for the US-China model-quality gap: a 4–14 month Chinese lag on the Epoch Capabilities Index, roughly mirroring the open-vs-closed gap."
+    },
+    {
+     "kind": "report",
+     "title": "Two Loops: How China's Open AI Strategy Reinforces Its Industrial Dominance",
+     "author": "Ngor Luong",
+     "venue": "US-China Economic and Security Review Commission",
+     "date": "2026-03-23",
+     "url": "https://www.uscc.gov/sites/default/files/2026-03/Two_Loops--How_Chinas_Open_AI_Strategy_Reinforces_Its_Industrial_Dominance.pdf",
+     "quote": "If the models that matter most for industrial AI are small, specialized, and open, the current U.S. policy framework could be targeting the wrong layer of the competition.",
+     "note": "A US government commission working paper identifying two compounding feedback loops — open-weight ecosystem diffusion and industrial deployment data — that give China advantages largely outside the reach of compute-focused export controls. Also central to the open-weights fight on 4.5.1."
+    },
+    {
+     "kind": "report",
+     "title": "Misdiagnosing the U.S.–China AI Race",
+     "author": "Alvin W. Graylin",
+     "venue": "Asia Society Center for China Analysis",
+     "date": "2026-05-01",
+     "url": "https://centerforchinaanalysis.asiasociety.org/p/misdiagnosing-the-uschina-ai-race",
+     "quote": "When the commodity is cheap and abundant, strategic advantage shifts from who builds the best model to who deploys AI most effectively.",
+     "note": "Diffusion-first argument applied to 2026: the US races for frontier capability while China competes on deployment across industry and the Global South — under which lens export-control denial looks counterproductive."
+    },
+    {
+     "kind": "podcast",
+     "title": "China's Mythos Moment",
+     "author": "Jordan Schneider & Phoebe Chow",
+     "venue": "ChinaTalk",
+     "date": "2026-07-16",
+     "url": "https://www.chinatalk.media/p/chinas-mythos-moment",
+     "quote": "A Chinese Mythos-level model is inevitable and only months off.",
+     "note": "Analysis of how Beijing would manage a frontier-level Chinese model, arguing the CAC's pre-deployment testing regime gives China a more orderly playbook than America's improvised response."
+    },
+    {
+     "kind": "essay",
+     "title": "How will the United States and China power the AI race?",
+     "author": "Kyle Chan, Samantha Gross, Liza Tobin & David G. Victor",
+     "venue": "Brookings",
+     "date": "2026-01-08",
+     "url": "https://www.brookings.edu/articles/how-will-the-united-states-and-china-power-the-ai-race/",
+     "quote": "This growth in energy demand for AI is unlikely to be a constraint for China, given the country's historically rapid pace of overall energy expansion.",
+     "note": "The 'electron gap' argument: electricity is the input where China structurally leads even while trailing on chips — the reference piece on energy as a decisive competition variable."
+    }
+   ],
+   "ledger": [
+    {
+     "title": "DeepSeek Champions China's Bid to Flood the World With Cheap AI",
+     "author": "Saritha Rai & Olivia Poh",
+     "venue": "Bloomberg",
+     "date": "2026-07-16",
+     "url": "https://finance.yahoo.com/technology/ai/articles/deepseek-champions-china-bid-flood-003610561.html"
+    },
+    {
+     "title": "Red Lines: Understanding the National Security Risks of China's Advanced AI",
+     "author": "Daniel Remler",
+     "venue": "CNAS",
+     "date": "2026-06-12",
+     "url": "https://www.cnas.org/publications/reports/red-lines"
+    },
+    {
+     "title": "Kimi and Xi",
+     "author": "Schneider, Zakaria, Zhang & Ottinger",
+     "venue": "ChinaTalk",
+     "date": "2026-07-23",
+     "url": "https://www.chinatalk.media/p/kimi-k3-and-xis-ai-speech"
+    }
+   ],
+   "reviewed": "August 3, 2026",
+   "window": "January–August 2026"
+  },
+  "q_military_integration": {
+   "tier": "high",
+   "moved": "The central power fight of 2026: Anthropic was banned from federal use and designated a supply-chain risk for refusing to drop its autonomous-weapons and mass-surveillance restrictions — and OpenAI took the classified-network deal within hours, reportedly keeping the same restrictions Anthropic had sought. A DeepMind insider's resignation account argues individual ethics cannot substitute for binding structure; Ball's analysis grants the government's premise about usage limits and argues the retaliation breaks republican principles anyway.",
+   "items": [
+    {
+     "kind": "news",
+     "title": "OpenAI announces Pentagon deal after Trump bans Anthropic",
+     "author": "Shannon Bond & Geoff Brumfiel",
+     "venue": "NPR",
+     "date": "2026-02-27",
+     "url": "https://www.npr.org/2026/02/27/nx-s1-5729118/trump-anthropic-pentagon-openai-ai-weapons-ban",
+     "quote": "President Trump ordered the U.S. government to stop using the artificial intelligence company Anthropic's products and the Pentagon moved to designate the company a national security risk on Friday, in a sharp escalation of a high-stakes fight over the military's use of AI.",
+     "note": "The definitive news account of the year's central military-AI fight: Anthropic banned and designated a supply-chain risk for refusing to drop autonomous-weapons and mass-surveillance restrictions, while OpenAI took the classified-network deal — reportedly with the same restrictions intact."
+    },
+    {
+     "kind": "essay",
+     "title": "Clawed",
+     "author": "Dean W. Ball",
+     "venue": "Hyperdimensional",
+     "date": "2026-03-02",
+     "url": "https://www.hyperdimensional.co/p/clawed",
+     "quote": "The Trump Administration has a point: it does not sound right that private corporations can impose limitations on the military's use of technology.",
+     "note": "The sharpest analytical treatment of the clash — grants the government's premise about vendor usage limits while arguing the retaliatory designation breaks republican principles and signals instability to the AI industry."
+    },
+    {
+     "kind": "essay",
+     "title": "I tried to stop Google DeepMind's Pentagon deal. Then I quit.",
+     "author": "Alex Turner",
+     "venue": "Transformer",
+     "date": "2026-07-21",
+     "url": "https://www.transformernews.ai/p/i-tried-to-stop-google-deepmind-pentagon-deal-then-quit",
+     "quote": "Society cannot rely on ethics-motivated people standing firm. They just don't do it reliably.",
+     "note": "Insider account of DeepMind abandoning its no-weapons pledge for a classified Pentagon contract; argues binding structural mechanisms, not individual ethics, must govern lab-military integration."
+    },
+    {
+     "kind": "essay",
+     "title": "Anthropic vs. DoW #5: Motions Filed",
+     "author": "Zvi Mowshowitz",
+     "venue": "Don't Worry About the Vase",
+     "date": "2026-03-18",
+     "url": "https://thezvi.substack.com/p/anthropic-vs-dow-5-motions-filed",
+     "quote": "the government is clearly retaliating for protected speech, and this is doing harm to Anthropic",
+     "note": "Part of Zvi's running deep-dive series on the litigation; documents the legal arguments and the surrounding discourse over whether vendors may restrict military uses of their models."
+    },
+    {
+     "kind": "essay",
+     "title": "AI Will Not Start a Nuclear War, but Humans Might",
+     "author": "Peter W. Singer",
+     "venue": "AI Frontiers",
+     "date": "2026-06-09",
+     "url": "https://ai-frontiers.org/articles/ai-will-not-start-a-nuclear-war-but-humans-might",
+     "quote": "AI is not going to start a nuclear war anytime soon. I do, however, also have bad news: AI is making it more likely that humans will start a nuclear war.",
+     "note": "Redirects the nuclear-AI question from autonomous launch scenarios to the real mechanisms — arms-race insecurity, miscalculation, and AI-compressed decision windows for human leaders."
+    }
+   ],
+   "ledger": [
+    {
+     "title": "How the U.S. Military Learned to Embrace AI Warfare",
+     "author": "Jakub Kraus",
+     "venue": "Lawfare",
+     "date": "2026-07-17",
+     "url": "https://www.lawfaremedia.org/article/how-the-u.s.-military-learned-to-embrace-ai-warfare"
+    },
+    {
+     "title": "UN Members Discuss AI in the Military Domain",
+     "author": "Michael T. Klare",
+     "venue": "Arms Control Today",
+     "date": "2026-07",
+     "url": "https://www.armscontrol.org/act/2026-07/news/un-members-discuss-ai-military-domain"
+    }
+   ],
+   "reviewed": "August 3, 2026",
+   "window": "February–August 2026"
+  },
+  "q_weights_security": {
+   "tier": "medium",
+   "moved": "The threat model widened beyond weights: RAND's sequel framework covers algorithmic insights — know-how living in code, documents, and people, which conventional cybersecurity cannot protect — and the distillation literature argues capability can be extracted through model outputs without touching the weights at all, making both export controls and secure-the-weights framings insufficient on their own. Capability theft became official policy terrain, with a White House memorandum and congressional hearings.",
+   "items": [
+    {
+     "kind": "report",
+     "title": "Securing AI Algorithmic Insights",
+     "author": "Brass-Gershovich, Steratore, Hurd, Bradley, Friedman & Nevo",
+     "venue": "RAND",
+     "date": "2026-07-20",
+     "url": "https://www.rand.org/pubs/research_reports/RRA4685-1.html",
+     "quote": "The authors identify 44 attack vectors across nine categories and propose five cumulative insight security levels (ISLs).",
+     "note": "The sequel to RAND's canonical weights-security work: extends the tiered-security framework from weights to algorithmic know-how, which lives in code, documents, and people and so cannot be protected by conventional cybersecurity alone."
+    },
+    {
+     "kind": "report",
+     "title": "AI Distillation Attacks: The Case for Targeted Government Intervention",
+     "author": "Theo Bearman",
+     "venue": "Institute for AI Policy and Strategy",
+     "date": "2026-03-18",
+     "url": "https://www.iaps.ai/research/ai-distillation-attacks-the-case-for-targeted-government-intervention",
+     "quote": "Detection without credible enforcement is unlikely to alter adversary incentive.",
+     "note": "Frames systematic distillation of US frontier models by Chinese companies as a theft problem labs cannot solve alone, proposing Entity List designations, sanctions, and defensive standards — capability extraction without touching the weights."
+    },
+    {
+     "kind": "essay",
+     "title": "The Pentagon's AI Edge Is Being Distilled Away",
+     "author": "Sebastian Elbaum",
+     "venue": "War on the Rocks",
+     "date": "2026-06-05",
+     "url": "https://warontherocks.com/cogs-of-war/the-pentagons-ai-edge-is-being-distilled-away/",
+     "quote": "Adversaries do not need to breach the Pentagon's systems: They only need to harvest the logic of the publicly released frontier AI models that underpin them.",
+     "note": "Argues strategic AI capability leaks through model outputs via distillation, making both export controls and secure-the-weights framings insufficient; proposes classified fine-tuning ahead of public release."
+    }
+   ],
+   "ledger": [
+    {
+     "title": "AI Distillation Attacks: Executive and Congressional Action Can Go Further",
+     "author": "Theo Bearman",
+     "venue": "Institute for AI Policy and Strategy",
+     "date": "2026-05-12",
+     "url": "https://www.iaps.ai/research/ai-distillation-attacks-executive-and-congressional-action-can-go-further"
+    },
+    {
+     "title": "China's Illicit Campaign to Steal and Subvert American AI Technology",
+     "author": "Yusuf Mahmood",
+     "venue": "US House Select Committee on the CCP (testimony)",
+     "date": "2026-04-16",
+     "url": "https://docs.house.gov/meetings/ZS/ZS00/20260416/119165/HHRG-119-ZS00-Wstate-MahmoodY-20260416.pdf"
+    }
+   ],
+   "reviewed": "August 3, 2026",
+   "window": "March–August 2026"
+  },
+  "q_shared_risks_cooperation": {
+   "tier": "medium",
+   "moved": "The two-year freeze ended: the US and China announced an intergovernmental dialogue on AI safety, and April's IDAIS-London statement shows where rival states' scientists still co-sign — near-term AI cyber capability handing non-state actors state-level attack capacity, with biological misuse close behind. The design question is now which cooperation format survives rivalry: standing information-sharing exchanges rather than arms-control bargaining, even as the one existing military commitment (human control of nuclear decisions) loses definition.",
+   "items": [
+    {
+     "kind": "report",
+     "title": "State of AI Safety in China (2026)",
+     "author": "Concordia AI",
+     "venue": "Concordia AI",
+     "date": "2026-07",
+     "url": "https://concordia-ai.com/research/state-of-ai-safety-in-china-2026/",
+     "quote": "China and the US announced an intergovernmental AI dialogue, ending a two-year freeze in official bilateral engagement on AI safety.",
+     "note": "The definitive annual mapping of China's AI safety ecosystem, documenting the resumed US-China intergovernmental dialogue and China's UN and WAICO moves — the evidence base for which risks Beijing treats as shared."
+    },
+    {
+     "kind": "report",
+     "title": "IDAIS-London Consensus Statement",
+     "author": "International Dialogues on AI Safety participants",
+     "venue": "IDAIS (Royal Society)",
+     "date": "2026-04",
+     "url": "https://idais.ai/dialogues/",
+     "quote": "Societies remain unprepared for this imminent threat, and biological misuse risks are not far behind.",
+     "note": "The April 2026 track-II dialogue where senior US, Chinese, and other scientists jointly warned that near-term AI cyber capabilities will hand non-state actors state-level attack capacity — the red-line zone where rivals' scientists still co-sign."
+    },
+    {
+     "kind": "essay",
+     "title": "How the US and China can cooperate to reduce urgent AI risks",
+     "author": "Mark MacCarthy & Carl Schonander",
+     "venue": "Brookings",
+     "date": "2026-07-14",
+     "url": "https://www.brookings.edu/articles/how-the-us-and-china-can-cooperate-to-reduce-urgent-ai-risks/",
+     "quote": "it should be a regular process of sharing information, ideas, plans, and research in the area of AI model risk assessment and mitigation.",
+     "note": "Design proposal for the new bilateral channel: standing technical exchanges on model risk assessment modeled on information-sharing rather than arms-control bargaining — an argument about which cooperation format survives geopolitical rivalry."
+    },
+    {
+     "kind": "essay",
+     "title": "Military AI governance under strain: the US–China dialogue",
+     "author": "IISS",
+     "venue": "International Institute for Strategic Studies",
+     "date": "2026-06",
+     "url": "https://www.iiss.org/online-analysis/online-analysis/2026/06/military-ai-governance-under-strain-the-uschina-dialogue/",
+     "quote": "the single military-AI commitment that the two powers already share – keeping humans in control of nuclear decisions – loses definition.",
+     "note": "Sober assessment of the military side of the shared-risk zone: the one existing US-China commitment is eroding in meaning just as the broader dialogue opens."
+    }
+   ],
+   "ledger": [
+    {
+     "title": "AI Safety in China #23",
+     "author": "Concordia AI",
+     "venue": "AI Safety in China (Substack)",
+     "date": "2025-11-10",
+     "url": "https://aisafetychina.substack.com/p/ai-safety-in-china-23"
+    }
+   ],
+   "reviewed": "August 3, 2026",
+   "window": "November 2025–August 2026"
+  },
+  "q_international_verification": {
+   "tier": "slow",
+   "moved": "Verification research produced both its most promising primitive and its sharpest doubt: a zero-knowledge architecture that could let a verifier confirm a training run's compute without seeing weights or data; satellite imagery demonstrated as a national-technical-means layer for corroborating data-center claims — and an analysis showing distributed training could move frontier runs outside the registrable facilities all of this assumes.",
+   "items": [
+    {
+     "kind": "paper",
+     "title": "Zero knowledge verification for frontier AI training is possible",
+     "author": "Pierre Peigné, Ky Nguyen & Paul Wang",
+     "venue": "arXiv",
+     "date": "2026-06-03",
+     "url": "https://arxiv.org/abs/2606.05433",
+     "quote": "enforcement rests on self-reporting because no technical verification primitive for training exists.",
+     "note": "Proposes the missing technical primitive for treaty verification: a zkVM-based architecture combining pre-committed training specs, network observations, and Merkle commitments, letting a verifier confirm a training run's compute without seeing weights or data."
+    },
+    {
+     "kind": "report",
+     "title": "Tracking Hyperscale AI Data Center Growth with Satellite Imagery",
+     "author": "Christina Krawec",
+     "venue": "Federation of American Scientists",
+     "date": "2026-05-12",
+     "url": "https://fas.org/publication/tracking-hyperscale/",
+     "quote": "serve as one complementary layer to independently verify commitments under future AI-related agreements",
+     "note": "Empirical demonstration that compute's physical footprint is observable from orbit: satellite imagery can independently corroborate data-center build-out claims, adding a national-technical-means layer to layered verification schemes."
+    },
+    {
+     "kind": "paper",
+     "title": "Does Distributed Training Undermine Compute Governance?",
+     "author": "Robi Rahman",
+     "venue": "arXiv",
+     "date": "2026-05-28",
+     "url": "https://arxiv.org/abs/2605.29359",
+     "quote": "Developers who prefer not to be constrained by regulations may structure their hardware in a manner that evades the registration and monitoring requirements associated with compute governance.",
+     "note": "The strongest recent stress test of datacenter-centric verification: algorithmic advances in distributed training could let frontier runs happen on agglomerated hardware outside registrable facilities, eroding the physical-footprint assumption verification schemes rely on."
+    },
+    {
+     "kind": "paper",
+     "title": "Hardware-Level Governance of AI Compute: A Feasibility Taxonomy",
+     "author": "Samar Ansari",
+     "venue": "arXiv",
+     "date": "2026-04-06",
+     "url": "https://arxiv.org/abs/2604.04712",
+     "quote": "the hardware-level mechanisms invoked by policy proposals remain largely unexamined from an engineering perspective.",
+     "note": "An engineering reality-check on hardware-enabled governance: taxonomizes 20 on-chip mechanisms by feasibility and finds the ones treaty verification most needs — compute metering, proof-of-training — are the least mature, while the fabrication window to deploy them is closing."
+    }
+   ],
+   "ledger": [],
+   "reviewed": "August 3, 2026",
+   "window": "April–August 2026"
+  },
+  "q_international_institutions": {
+   "tier": "medium",
+   "moved": "The institutional landscape actually changed: 29 countries signed the treaty establishing the World AI Cooperation Organization in Shanghai — expert readings treat it as China's counterweight to Western-led bodies — while the UN's IPCC-analog scientific panel delivered its first report, warning that by the time evidence is clear it may be too late to act on it. The summit series, meanwhile, reoriented from safety toward diffusion and development at New Delhi.",
+   "items": [
+    {
+     "kind": "essay",
+     "title": "Forum: Xi Jinping Headlines World AI Conference",
+     "author": "Arcesati, Sacks, Schaefer & Costigan",
+     "venue": "DigiChina (Stanford)",
+     "date": "2026-07-23",
+     "url": "https://digichina.stanford.edu/work/forum-xi-jinping-headlines-world-ai-conference/",
+     "quote": "The founding of WAICO represents China's bid to compete with the US on global AI governance",
+     "note": "The best expert analysis of the World AI Cooperation Organization's founding — reading Shanghai's new body as a Chinese counterweight to Western-led institutions and probing whether its developing-world framing can hold."
+    },
+    {
+     "kind": "report",
+     "title": "Preliminary Report of the Independent International Scientific Panel on AI",
+     "author": "Independent International Scientific Panel on AI",
+     "venue": "United Nations",
+     "date": "2026-07-01",
+     "url": "https://www.un.org/independent-international-scientific-panel-ai/en/preliminary-report",
+     "quote": "policymakers need scientific evidence to effectively govern AI, but by the time the evidence is clear, it may be too late to act on it.",
+     "note": "The first output of the UN's IPCC-analog for AI: an independent scientific assessment delivered to the Global Dialogue, testing whether consensus-assessment institutions can work on AI's timescales."
+    },
+    {
+     "kind": "essay",
+     "title": "What the UN Global Dialogue on AI Governance Reveals About Global Power Shifts",
+     "author": "Laura Caroli & Matt Mande",
+     "venue": "CSIS",
+     "date": "2025-10-07",
+     "url": "https://www.csis.org/analysis/what-un-global-dialogue-ai-governance-reveals-about-global-power-shifts",
+     "quote": "U.S. disengagement and China's growing assertiveness make the dialogue an important barometer of shifting geopolitical dynamics in AI governance.",
+     "note": "The reference analysis of the UN Global Dialogue's founding politics: with Washington rejecting the process and Beijing embracing it, the dialogue's viability becomes a proxy for who writes global AI rules."
+    },
+    {
+     "kind": "news",
+     "title": "29 countries sign a treaty to establish the World AI Cooperation Organization",
+     "author": "Alina Maria Stan",
+     "venue": "The Next Web",
+     "date": "2026-07-16",
+     "url": "https://thenextweb.com/news/china-world-ai-cooperation-organization-waico-signed",
+     "quote": "Twenty-nine countries signed an agreement on 16 July to establish the World AI Cooperation Organization (WAICO).",
+     "note": "The factual record of the first new intergovernmental AI organization actually established — 29 signatories, Shanghai headquarters — turning the 'new body vs existing institutions' debate from hypothetical to live."
+    },
+    {
+     "kind": "essay",
+     "title": "Sovereignty, safety, and scale: Takeaways from the India AI Impact Summit",
+     "author": "Cameron F. Kerry & Elham Tabassi",
+     "venue": "Brookings",
+     "date": "2026-03-12",
+     "url": "https://www.brookings.edu/articles/takeaways-from-the-india-ai-impact-summit/",
+     "quote": "the summit signaled a shift in the global agenda from 'AI safety' as the organizing frame toward diffusion, adoption, and development outcomes.",
+     "note": "Documents the summit series — the de facto institution of AI diplomacy — reorienting from safety to diffusion and development at New Delhi, with implications for what any future formal body would be asked to do."
+    }
+   ],
+   "ledger": [],
+   "reviewed": "August 3, 2026",
+   "window": "October 2025–August 2026"
+  },
+  "q_regulatory_interoperability": {
+   "tier": "slow",
+   "moved": "Mutual recognition now has an institution-building effort behind it: Brundage's AVERI aims to make third-party frontier audits rigorous and universal enough for jurisdictions to recognize each other's assurance — against the warning that marketplace auditing recreates credit-rating-agency incentives and could institutionalize a false floor. China entered the standards contest too, proposing agent-interoperability and mutual-trust standards at WAIC.",
+   "items": [
+    {
+     "kind": "essay",
+     "title": "The Launch of AVERI",
+     "author": "Miles Brundage",
+     "venue": "Miles's Substack",
+     "date": "2026-01-15",
+     "url": "https://milesbrundage.substack.com/p/the-launch-of-averi",
+     "quote": "AVERI is a 501(c)(3), US-based non-profit think tank that is trying to figure out how to make third-party auditing of frontier AI effective and universal.",
+     "note": "Announces the institution-building effort at the center of the mutual-recognition question: making third-party frontier audits rigorous and universal enough that jurisdictions could actually recognize each other's assurance."
+    },
+    {
+     "kind": "essay",
+     "title": "Don't let independent AI audits provide a false sense of safety",
+     "author": "Keller Scholl",
+     "venue": "Transformer",
+     "date": "2026-07-09",
+     "url": "https://www.transformernews.ai/p/dont-let-independent-ai-audits-provide-false-safety",
+     "quote": "Such insulation is fanciful. Vaccines, for example, are safe, but the facts have not protected them from politics.",
+     "note": "The skeptical case against the audit ecosystem interoperability would rest on: marketplace-based auditing recreates credit-rating-agency incentives, so mutually recognized audits could institutionalize a false floor."
+    },
+    {
+     "kind": "essay",
+     "title": "China's CAC releases 'Global Cooperation Initiative on Agent Mutual Trust, Interconnection, and Interoperability'",
+     "author": "Geopolitechs",
+     "venue": "Geopolitechs",
+     "date": "2026-07-17",
+     "url": "https://www.geopolitechs.org/p/chinas-cac-releases-global-cooperation",
+     "quote": "We hope to build broad consensus and work with global partners to foster an open, trustworthy, safe, and inclusive agent ecosystem.",
+     "note": "China's first systematic position on agent interoperability — a bid to set the trust and interconnection standards for AI agents internationally, extending the interoperability contest from evals and audits to agent infrastructure itself."
+    },
+    {
+     "kind": "report",
+     "title": "Six AI Governance Priorities for 2026",
+     "author": "Stephanie Ifayemi & Jacob Pratt",
+     "venue": "Partnership on AI",
+     "date": "2026-02-11",
+     "url": "https://partnershiponai.org/resource/six-ai-governance-priorities/",
+     "quote": "Define mutual recognition: Establish processes for governments to recognize each other's certification, audit requirements, and evaluation regimes.",
+     "note": "Puts mutual recognition of certifications, audits, and evaluation regimes explicitly on the 2026 agenda, arguing coordination can make divergent national approaches complementary rather than fragmenting."
+    }
+   ],
+   "ledger": [
+    {
+     "title": "Scaling Laws: Why AI Needs Independent Auditors, with Miles Brundage",
+     "author": "Rozenshtein & Brundage",
+     "venue": "Lawfare (podcast)",
+     "date": "2026-04-14",
+     "url": "https://www.lawfaremedia.org/article/scaling-laws--why-ai-needs-independent-auditors--with-miles-brundage"
+    },
+    {
+     "title": "The AI Governance Arbitrage",
+     "author": "Tshilidzi Marwala",
+     "venue": "United Nations University",
+     "date": "2026-03-06",
+     "url": "https://unu.edu/article/ai-governance-arbitrage"
+    }
+   ],
+   "reviewed": "August 3, 2026",
+   "window": "January–August 2026"
+  },
+  "q_global_representation": {
+   "tier": "slow",
+   "moved": "The global-majority claim moved from grievance to agenda: the UN's Geneva dialogue put widening the table at the center of its process, India's summit reoriented AI diplomacy from safety toward diffusion and development, and the scholarly reference now systematically documents how Western-dominated frameworks sideline majority-world priorities — alongside constructive agendas for compute access and governance influence rather than pure critique.",
+   "items": [
+    {
+     "kind": "paper",
+     "title": "The Global Majority in International AI Governance",
+     "author": "Chinasa T. Okolo & Mubarak Raji",
+     "venue": "arXiv",
+     "date": "2026-01",
+     "url": "https://arxiv.org/abs/2601.17191",
+     "quote": "the dominance of Western nations and corporations in shaping AI governance frameworks, which often sideline the unique priorities and contexts of the Global Majority.",
+     "note": "The current scholarly reference on global-majority exclusion from AI rule-writing: systematic analysis of how Western-dominated frameworks sideline majority-world priorities, with proposals for redistributing governance influence."
+    },
+    {
+     "kind": "news",
+     "title": "Global push for AI governance amid warnings of 'catastrophic harm'",
+     "author": "UN News",
+     "venue": "UN News",
+     "date": "2026-07-05",
+     "url": "https://news.un.org/en/story/2026/07/1167862",
+     "quote": "Governments, tech companies, academics and civil society will spend two days at the Global Dialogue on AI Governance wrestling with how to regulate a technology that is evolving faster than the rules meant to contain it.",
+     "note": "The record of the Geneva Global Dialogue — the UN's flagship attempt to widen the AI governance table beyond the compute powers."
+    },
+    {
+     "kind": "essay",
+     "title": "From Dialogue to Deployment: Strategic Outcomes of the India AI Impact Summit 2026",
+     "author": "Amoha Basrur",
+     "venue": "Observer Research Foundation",
+     "date": "2026-03-30",
+     "url": "https://www.orfonline.org/expert-speak/from-dialogue-to-deployment-strategic-outcomes-of-the-india-ai-impact-summit-2026",
+     "quote": "The adoption of the New Delhi Declaration, the wide participation of governments and industry, and the emergence of new knowledge outputs suggest that the institutional foundations for cooperation are taking shape.",
+     "note": "Indian assessment of the New Delhi summit as a global-majority power move: a development-and-inclusion vision for the AI order articulated from outside the US-China duopoly."
+    },
+    {
+     "kind": "essay",
+     "title": "How to bridge the global AI divide",
+     "author": "Landry Signé",
+     "venue": "Brookings",
+     "date": "2026-06-08",
+     "url": "https://www.brookings.edu/articles/how-to-bridge-the-global-ai-divide/",
+     "quote": "With the right strategies, the Global South can leapfrog legacy systems, build sustainable infrastructure, and shape global AI governance.",
+     "note": "Constructive agenda for Global South agency in AI: strategies for compute access, infrastructure, and governance influence rather than a pure grievance framing of the divide."
+    }
+   ],
+   "ledger": [],
+   "reviewed": "August 3, 2026",
+   "window": "January–August 2026"
+  },
+  "q_open_versus_closed": {
+   "tier": "high",
+   "moved": "July was the month the open-weights fight went official: a congressional investigation into US reliance on Chinese open models, a 77-signatory industry letter against premature restriction, and Amodei's formal statement that Anthropic has never advocated a ban — repositioning the safety-side argument around chip controls, anti-distillation enforcement, and capability-based testing that applies to open and closed alike. The strategic backdrop is Chinese open models winning global adoption while the technical agenda for making open release safe remains largely unsolved.",
+   "items": [
+    {
+     "kind": "essay",
+     "title": "Our position on open-weights models",
+     "author": "Dario Amodei",
+     "venue": "Anthropic",
+     "date": "2026-07-27",
+     "url": "https://www.anthropic.com/news/position-open-weights-models",
+     "quote": "Open-weights models that don't have dangerous capabilities are a public good: they don't cost anything besides the compute needed to run them.",
+     "note": "Anthropic's CEO formally disavows any ban on open weights and reframes the lab's position around chip export controls, anti-distillation enforcement, and capability-based safety testing that applies to open and closed models alike — a significant repositioning in the 2026 fight."
+    },
+    {
+     "kind": "essay",
+     "title": "Knives Are Out for Open-Weight AI Models",
+     "author": "Tom Uren",
+     "venue": "Lawfare",
+     "date": "2026-07-24",
+     "url": "https://www.lawfaremedia.org/article/knives-are-out-for-open-weight-ai-models",
+     "quote": "The current golden age of highly capable open-weight models dropping onto the internet every other week is coming to an end.",
+     "note": "Argues Washington and Beijing are converging on restricting open weights, and documents concrete uses — including Hugging Face running Chinese open-weight agents to analyze its own breach — that closed, safety-constrained models won't serve."
+    },
+    {
+     "kind": "news",
+     "title": "OpenAI is scared of open-weight models. Should the US be?",
+     "author": "Tim Fernholz",
+     "venue": "TechCrunch",
+     "date": "2026-07-20",
+     "url": "https://techcrunch.com/2026/07/20/openai-is-scared-of-open-weight-models-should-the-us-be/",
+     "quote": "Restricting open models wouldn't make AI safer. It would simply hide the risks, concentrate power.",
+     "note": "Reports that frontier labs lobbied the administration to restrict Chinese open-weight models as a business threat, with Hugging Face's Delangue giving the concentration-of-power counterargument."
+    },
+    {
+     "kind": "essay",
+     "title": "China's Open AI Models Are Advancing Its Global Soft Power",
+     "author": "Nathan Gardels (featuring Andrew Ng)",
+     "venue": "NOEMA",
+     "date": "2026-07-10",
+     "url": "https://www.noemamag.com/chinas-open-ai-models-are-advancing-its-global-soft-power/",
+     "quote": "The Chinese DeepSeek and a handful of other Chinese models are adopted very widely, far more than American models, which have really fallen behind.",
+     "note": "Ng's widely-cited statement of the openness-as-competition case: Chinese open-weight releases winning global adoption and embedding Chinese values in downstream systems while US labs stay closed."
+    },
+    {
+     "kind": "news",
+     "title": "Chairmen Garbarino, Moolenaar Continue Joint Investigation Into Security Risks Posed by PRC Open-Weight AI Models",
+     "author": "House Homeland Security & House Select Committee on China",
+     "venue": "homeland.house.gov",
+     "date": "2026-07-31",
+     "url": "https://homeland.house.gov/2026/07/31/chairmen-garbarino-moolenaar-continue-joint-investigation-into-security-risks-posed-by-prc-open-weight-ai-models/",
+     "quote": "An effective federal approach should therefore scrutinize U.S. companies' reliance on PRC-developed models and strengthen the availability, security, and competitiveness of American open-weight alternatives.",
+     "note": "Primary document anchoring the restriction side: a congressional investigation into US companies' integration of Chinese open-weight models, including alleged covert distillation."
+    },
+    {
+     "kind": "paper",
+     "title": "Open Technical Problems in Open-Weight AI Model Risk Management",
+     "author": "Stephen Casper, Kyle O'Brien, Shayne Longpre et al.",
+     "venue": "working paper (MIT CSAIL et al.)",
+     "date": "2025-10",
+     "url": "https://stephencasper.com/wp-content/uploads/2025/11/open_weight_model_safety_oct2025.pdf",
+     "quote": "State-of-the-art fine-tuning and unlearning algorithms are vulnerable to being undone within dozens of steps of adversarial fine-tuning",
+     "note": "Lays out 16 open technical problems for managing open-weight model risk — the research agenda that would have to succeed for 'release safely' to be an option rather than a slogan."
+    }
+   ],
+   "ledger": [
+    {
+     "title": "Open weights, open questions: the letter that redrew the AI policy fight",
+     "author": "Rob Robinson",
+     "venue": "ComplexDiscovery",
+     "date": "2026-07-28",
+     "url": "https://complexdiscovery.com/open-weights-open-questions-the-letter-that-redrew-the-ai-policy-fight/"
+    },
+    {
+     "title": "Open Models, Soft Power, and the Spectrum of U.S.-China AI Competition",
+     "author": "Owen J. Daniels & Hanna Dohmen",
+     "venue": "RAND",
+     "date": "2026-03-26",
+     "url": "https://www.rand.org/pubs/perspectives/PEA4686-1.html"
+    },
+    {
+     "title": "The best Chinese open-weight models — and the strongest US rivals",
+     "author": "Kai Williams",
+     "venue": "Understanding AI",
+     "date": "2025-12-15",
+     "url": "https://www.understandingai.org/p/the-best-chinese-open-weight-models"
+    }
+   ],
+   "reviewed": "August 3, 2026",
+   "window": "October 2025–August 2026"
+  },
+  "q_frontier_lab_governance": {
+   "tier": "medium",
+   "moved": "The governance experiments got their verdicts, mostly by default: a jury dismissed Musk's challenge on timeliness grounds — so no court ever ruled on the merits of OpenAI's conversion — and the confidential S-1 filing puts nonprofit-controls-PBC on a path to public markets. The scrutiny extended across labs: the most detailed public critique of Anthropic's structure argues the Long-Term Benefit Trust may not bind under commercial pressure.",
+   "items": [
+    {
+     "kind": "essay",
+     "title": "OpenAI Moves To Complete Potentially The Largest Theft In Human History",
+     "author": "Zvi Mowshowitz",
+     "venue": "Don't Worry About the Vase",
+     "date": "2025-10-31",
+     "url": "https://thezvi.substack.com/p/openai-moves-to-complete-potentially",
+     "quote": "The value transfer is in the hundreds of billions, thus potentially the largest theft in human history.",
+     "note": "The definitive critical accounting of the completed OpenAI restructuring: what the nonprofit gave up relative to its prior profit entitlements and which control mechanisms actually survived the conversion."
+    },
+    {
+     "kind": "news",
+     "title": "Jury dismisses all claims in Elon Musk's lawsuit against OpenAI CEO Sam Altman",
+     "author": "John Ruwitch",
+     "venue": "NPR",
+     "date": "2026-05-18",
+     "url": "https://www.npr.org/2026/05/18/nx-s1-5822366/musk-altman-openai-jury-verdict-claims-dismissed",
+     "quote": "A jury in California took less than two hours to decide that Elon Musk waited too long to file a lawsuit against his one-time business partner Sam Altman.",
+     "note": "The main court test of OpenAI's conversion ended on statute-of-limitations grounds rather than the merits — no judicial ruling ever bound the restructuring, which matters for what accountability mechanisms remain."
+    },
+    {
+     "kind": "essay",
+     "title": "Unless its governance changes, Anthropic is untrustworthy",
+     "author": "Mikhail Samin",
+     "venue": "LessWrong / EA Forum",
+     "date": "2025-11-29",
+     "url": "https://www.lesswrong.com/posts/5aKRshJzhojqfbRyo/unless-its-governance-changes-anthropic-is-untrustworthy",
+     "quote": "Depending on the contents of the Investors' Rights Agreement, which is not public, it might be impossible for the directors appointed by the LTBT to fire the CEO.",
+     "note": "The most detailed public critique of Anthropic's governance from the safety community, arguing the Long-Term Benefit Trust and RSP may not bind under commercial pressure — the Anthropic-side counterpart to the OpenAI critiques."
+    },
+    {
+     "kind": "news",
+     "title": "OpenAI's restructuring deal with California is full of holes, critics say",
+     "author": "Khari Johnson & Levi Sumagaysay",
+     "venue": "CalMatters",
+     "date": "2025-10-30",
+     "url": "https://calmatters.org/economy/technology/2025/10/openai-restructuring-deal-full-of-holes-critics-say/",
+     "quote": "I hope that a truly independent body will do a better job of protecting the organization's mission than one that feels any pull toward profits.",
+     "note": "Well-reported assessment of the AG memoranda that blessed the restructuring, documenting critics' case that the nonprofit's oversight of the for-profit is conflicted by design."
+    },
+    {
+     "kind": "news",
+     "title": "OpenAI files confidential SEC paperwork for IPO",
+     "author": "Matt O'Brien",
+     "venue": "Associated Press",
+     "date": "2026-06-08",
+     "url": "https://abcnews.com/Technology/wireStory/openai-files-confidential-sec-paperwork-ipo-opening-door-133695118",
+     "quote": "We expect it to leak so we're just announcing it. We have not decided on timing yet",
+     "note": "OpenAI's confidential S-1 filing puts the nonprofit-controls-PBC structure on a path to public markets, making the question of whether nonprofit control survives shareholder pressure concrete rather than hypothetical."
+    }
+   ],
+   "ledger": [
+    {
+     "title": "OpenAI: Governance for Public Good or Private Gain?",
+     "author": "Alexandra Andhov & Ian Murray",
+     "venue": "SSRN",
+     "date": "2026-04-29",
+     "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6673598"
+    },
+    {
+     "title": "Ben Bernanke appointed to Anthropic's Long-Term Benefit Trust",
+     "author": "Anthropic",
+     "venue": "Anthropic",
+     "date": "2026-07-09",
+     "url": "https://www.anthropic.com/news/ben-bernanke"
+    }
+   ],
+   "reviewed": "August 3, 2026",
+   "window": "October 2025–August 2026"
+  },
+  "q_training_data_rights": {
+   "tier": "medium",
+   "moved": "The money and the precedents both arrived: final approval of the ~$1.5B Bartz settlement paid authors about $3,100 a title while releasing only past conduct, the first federal appellate test of fair use for AI training reached oral argument, Europe's first major ruling treated memorization in model weights as reproduction — and the UK abandoned its opt-out proposal after creator backlash.",
+   "items": [
+    {
+     "kind": "news",
+     "title": "Authors have mixed feelings about the $1.5B Anthropic copyright infringement ruling",
+     "author": "Chloe Veltman",
+     "venue": "NPR",
+     "date": "2026-07-27",
+     "url": "https://www.npr.org/2026/07/27/nx-s1-5904606/anthropic-vs-bartz-ai-copyright-lawsuit-pros-cons",
+     "quote": "The algorithm is being used to essentially try to put us out of a job",
+     "note": "Reports final approval of the Bartz v. Anthropic settlement (~$3,100 per title to over 300,000 authors) and documents why many authors see the compensation as validating training on their work rather than vindicating them."
+    },
+    {
+     "kind": "essay",
+     "title": "The Bartz v. Anthropic Settlement: Understanding America's Largest Copyright Settlement",
+     "author": "Dave Hansen",
+     "venue": "Kluwer Copyright Blog",
+     "date": "2025-11-10",
+     "url": "https://legalblogs.wolterskluwer.com/copyright-blog/the-bartz-v-anthropic-settlement-understanding-americas-largest-copyright-settlement/",
+     "quote": "This settlement only releases Anthropic from liability for past conduct—specifically, its acquisition, retention, and use of the identified pirated works before August 25, 2025.",
+     "note": "The best analytical unpacking of what the settlement does and does not resolve: class certification plus statutory damages created the leverage, outputs and future conduct remain open, and a 'shadow library strategy' template now exists for plaintiffs."
+    },
+    {
+     "kind": "news",
+     "title": "At 3rd Circuit, Judges Press ROSS and Thomson Reuters on Fair Use, AI Training and Market Harm",
+     "author": "Bob Ambrogi",
+     "venue": "LawSites",
+     "date": "2026-06-26",
+     "url": "https://www.lawnext.com/2026/06/at-3rd-circuit-judges-press-ross-and-thomson-reuters-on-fair-use-ai-training-and-market-harm.html",
+     "quote": "The question has legal language in it, and what we have taught this machine now is how to think like a lawyer.",
+     "note": "The first federal appellate test of fair use for AI training reached oral argument in June 2026; the panel's questioning on transformativeness and market harm previews the first binding appellate precedent."
+    },
+    {
+     "kind": "essay",
+     "title": "Opt-out cop-out? UK Government rethinks its position on copyright and AI",
+     "author": "Alexander Fewtrell & Angel Skyers",
+     "venue": "Lewis Silkin",
+     "date": "2026-03-24",
+     "url": "https://www.lewissilkin.com/en/insights/2026/03/24/opt-out-cop-out-uk-government-rethinks-its-position-on-copyright-and-ai-102mnx9",
+     "quote": "We propose to gather further evidence on how copyright laws are impacting the development and deployment of AI",
+     "note": "Analyzes the UK government's March 2026 report abandoning its preferred opt-out text-and-data-mining exception after creator backlash — a major national policy reversal on the consent-and-licensing question."
+    },
+    {
+     "kind": "essay",
+     "title": "Copyright in Formaldehyde: How GEMA v OpenAI Freezes Doctrine and Chills AI",
+     "author": "Giancarlo Frosio",
+     "venue": "Kluwer Copyright Blog",
+     "date": "2025-12-10",
+     "url": "https://legalblogs.wolterskluwer.com/copyright-blog/copyright-in-formaldehyde-how-gema-v-openai-freezes-doctrine-and-chills-ai-part-1/",
+     "quote": "model parameters sit in a space that copyright doctrine has always treated cautiously: they are closer to facts, statistics and functional logic than to expressive form.",
+     "note": "The leading scholarly critique of the Munich court's GEMA v. OpenAI ruling — Europe's first major decision treating memorization in model weights as reproduction — arguing it mischaracterizes lossy compression as storage."
+    }
+   ],
+   "ledger": [
+    {
+     "title": "AI in litigation series: An update on AI copyright cases in 2026",
+     "author": "Schmidt, Collier, Woodward & Glenn",
+     "venue": "Norton Rose Fulbright",
+     "date": "2026-03",
+     "url": "https://www.nortonrosefulbright.com/en/knowledge/publications/ce8eaa5f/ai-in-litigation-series-an-update-on-ai-copyright-cases-in-2026"
+    },
+    {
+     "title": "Copyright and AI remain in focus for 2026 with Getty appeal given the green light",
+     "author": "James Tumbridge & Robert Peake",
+     "venue": "Chambers and Partners",
+     "date": "2026-01-20",
+     "url": "https://chambers.com/articles/copyright-and-ai-remain-in-focus-for-2026-with-getty-appeal-given-the-green-light"
+    }
+   ],
+   "reviewed": "August 3, 2026",
+   "window": "November 2025–August 2026"
+  },
+  "q_privacy_and_identity": {
+   "tier": "medium",
+   "moved": "Identity rights advanced on two fronts while conversational privacy retreated on a third: the NO FAKES Act cleared Senate Judiciary unanimously — the furthest a federal digital-replica right has advanced — Denmark pushed likeness-copyright across the EU, and a court ordered 20 million user chat logs produced in litigation discovery, establishing that conversations users 'voluntarily submitted' get weaker protection than wiretap material.",
+   "items": [
+    {
+     "kind": "news",
+     "title": "Senate Committee Advances Bill to Protect Name, Image, Likeness and Voice Against Unauthorized AI Use",
+     "author": "Kirsten Donaldson",
+     "venue": "Holland & Knight",
+     "date": "2026-06-22",
+     "url": "https://www.hklaw.com/en/insights/publications/2026/06/senate-judiciary-committee-advances-legislation-to-protect-name",
+     "quote": "The bill would create a new federal intellectual property right giving every individual the right to control how their likeness is used in digital replicas.",
+     "note": "Tracks the revised NO FAKES Act through unanimous Senate Judiciary approval in June 2026 — the furthest a federal digital-replica right has ever advanced."
+    },
+    {
+     "kind": "essay",
+     "title": "OpenAI Loses Privacy Gambit: 20 Million ChatGPT Logs Likely Headed to Copyright Plaintiffs",
+     "author": "Andrew R. Lee",
+     "venue": "The National Law Review",
+     "date": "2026-01-06",
+     "url": "https://natlawreview.com/article/openai-loses-privacy-gambit-20-million-chatgpt-logs-likely-headed-copyright",
+     "quote": "OpenAI must now produce 20 million de-identified ChatGPT logs to both news plaintiffs and class plaintiffs.",
+     "note": "Analyzes the order compelling production of 20 million user conversations in the copyright MDL — establishing that chats users 'voluntarily submitted' get weaker protection than wiretap material, a landmark for conversational privacy."
+    },
+    {
+     "kind": "essay",
+     "title": "Fighting the New York Times' invasion of user privacy",
+     "author": "Dane Stuckey",
+     "venue": "OpenAI",
+     "date": "2025-11-12",
+     "url": "https://openai.com/index/fighting-nyt-user-privacy-invasion/",
+     "quote": "Your private conversations are yours—and they should not become collateral in a dispute over online content access.",
+     "note": "The primary document in the chat-logs privacy fight: OpenAI's CISO publicly framing litigation discovery as a user-privacy invasion, which anchored the subsequent debate over who actually controls conversational data."
+    },
+    {
+     "kind": "news",
+     "title": "Denmark Leads EU Push to Copyright Faces in Fight Against Deepfakes",
+     "author": "Giovana Fleck",
+     "venue": "TechPolicy.Press",
+     "date": "2025-10-07",
+     "url": "https://www.techpolicy.press/denmark-leads-eu-push-to-copyright-faces-in-fight-against-deepfakes/",
+     "quote": "If we don't protect the right holders, and if every citizen is able to either deepfake or copy the arts and the works of people, you take the livelihood away from the artistic community.",
+     "note": "Covers Denmark's novel move to give individuals copyright in their own likeness and its push to spread the model across the EU — including critics' worry that propertizing the body sets its own troubling precedents."
+    }
+   ],
+   "ledger": [
+    {
+     "title": "Two Newly Enacted New York Laws Will Regulate Certain AI-Generated Images",
+     "author": "Levi, Ghaemmaghami & Kastelic",
+     "venue": "Skadden",
+     "date": "2026-01-14",
+     "url": "https://www.skadden.com/insights/publications/2026/01/two-newly-enacted-new-york-laws-will-regulate"
+    }
+   ],
+   "reviewed": "August 3, 2026",
+   "window": "October 2025–August 2026"
+  },
+  "q_access_and_portability": {
+   "tier": "slow",
+   "moved": "The access gap got measured: roughly one in six people worldwide now use generative AI, but Global North adoption grew nearly twice as fast in late 2025, widening the divide — and the US hosts over ten times more data centers than any other country. Single company pricing decisions, like a free tier for all of India, still function as de facto global access policy.",
+   "items": [
+    {
+     "kind": "report",
+     "title": "Global AI Adoption in 2025: A Widening Digital Divide",
+     "author": "Microsoft AI Economy Institute",
+     "venue": "Microsoft",
+     "date": "2026-01",
+     "url": "https://www.microsoft.com/en-us/research/wp-content/uploads/2026/01/Microsoft-AI-Diffusion-Report-2025-H2.pdf",
+     "quote": "Of the ten countries with the largest increases in AI adoption share, all are high-income economies",
+     "note": "The best available measurement of who is actually getting access: roughly one in six people worldwide use generative AI, but Global North adoption grew nearly twice as fast as Global South in H2 2025."
+    },
+    {
+     "kind": "essay",
+     "title": "Global AI Digital Divide Shapes Who Builds AI",
+     "author": "Danica Radovanović",
+     "venue": "IEEE Spectrum",
+     "date": "2026-07-29",
+     "url": "https://spectrum.ieee.org/ai-digital-divide",
+     "quote": "Those on the wrong side of the divide are more likely to experience AI as an opaque system acting upon them.",
+     "note": "Synthesizes the access question into three dimensions — computational concentration, skills stratification, and governance exclusion."
+    },
+    {
+     "kind": "essay",
+     "title": "From Divide to Delivery: How AI Can Serve the Global South",
+     "author": "Anjali Kaur",
+     "venue": "CSIS",
+     "date": "2025-10-08",
+     "url": "https://www.csis.org/analysis/divide-delivery-how-ai-can-serve-global-south",
+     "quote": "AI is not just technology, it's infrastructure. It depends on compute clusters, energy grids, and network connectivity—assets rooted in specific geographies",
+     "note": "Policy-venue statement of the access problem: decisions being made now about compute, governance seats, and locally-adapted tools will determine whether the Global South shapes its AI future or has it imposed."
+    }
+   ],
+   "ledger": [
+    {
+     "title": "OpenAI offers free ChatGPT Go in India: Marketing strategy analysis",
+     "author": "Dashveenjit Kaur",
+     "venue": "AI News",
+     "date": "2025-10-28",
+     "url": "https://www.artificialintelligence-news.com/news/openai-chatgpt-go-free-india-market-strategy/"
+    }
+   ],
+   "reviewed": "August 3, 2026",
+   "window": "October 2025–August 2026"
+  },
+  "q_agent_portability": {
+   "tier": "slow",
+   "moved": "Portability became a competitive weapon before it became a right: Anthropic shipped an import tool that carries assistant memories over from rivals — converting memory lock-in from a theoretical concern into an active battleground — and the first protocol work on cryptographically verified memory transfer between heterogeneous agents appeared.",
+   "items": [
+    {
+     "kind": "news",
+     "title": "Switching to Anthropic? Claude can now take your memories from ChatGPT, Gemini, and Copilot",
+     "author": "Jennifer Mattson",
+     "venue": "Fast Company",
+     "date": "2026-03-02",
+     "url": "https://www.fastcompany.com/91501002/anthropic-claude-app-import-chats-from-open-ai-chatgpt-gemini-copilot-memory-tool",
+     "quote": "You can switch to Claude without starting over",
+     "note": "The first major provider move to make assistant memories portable across competitors — converting memory lock-in from a theoretical concern into an active competitive battleground."
+    },
+    {
+     "kind": "paper",
+     "title": "Portable Agent Memory: A Protocol for Cryptographically-Verified Memory Transfer Across Heterogeneous AI Agents",
+     "author": "Santhosh Kumar Ravindran",
+     "venue": "arXiv",
+     "date": "2026-05-10",
+     "url": "https://arxiv.org/abs/2605.11032",
+     "quote": "this context remains locked within vendor-specific runtimes.",
+     "note": "A technical proposal for provenance-verified memory transfer between heterogeneous agents — early infrastructure work on exactly the portability layer being quietly decided now."
+    }
+   ],
+   "ledger": [],
+   "reviewed": "August 3, 2026",
+   "window": "March–August 2026"
+  },
+  "q_whose_values": {
+   "tier": "medium",
+   "moved": "The 'who decides' question acquired an answer nobody proposed: procurement. OMB's implementation of the woke-AI order makes 'ideological neutrality' a binding criterion for federal LLM purchases, comparative research finds government AI laws increasingly setting what chatbots refuse across jurisdictions, and the constructive proposals — public-reasoning-fidelity frameworks for government-procured models — try to give the public a say in values chosen on its behalf.",
+   "items": [
+    {
+     "kind": "essay",
+     "title": "The Government Is Choosing AI Models. Who Chooses Their Values?",
+     "author": "Kevin Frazier & Andrew Reddie",
+     "venue": "AI Frontiers",
+     "date": "2026-07-10",
+     "url": "https://ai-frontiers.org/articles/the-government-is-choosing-ai-models-who-chooses-their-values",
+     "quote": "The public deserves a say over the values of government-procured AIs.",
+     "note": "Directly advances the who-decides question for the public sector: proposes a 'Public Reasoning Fidelity' framework so government-procured models track how representative publics actually reason, not just lab- or administration-chosen values."
+    },
+    {
+     "kind": "news",
+     "title": "OMB Releases Guidance on Trump's 'Woke AI' Executive Order",
+     "author": "Jakub Kraus",
+     "venue": "Lawfare",
+     "date": "2025-12-12",
+     "url": "https://www.lawfaremedia.org/article/omb-releases-guidance-on-trump-s--woke-ai--executive-order",
+     "quote": "Agencies must apply this guidance to all new LLM procurement orders, modify existing contracts 'to the extent practicable,' and update procurement policies by March 11, 2026.",
+     "note": "Documents the US government inserting itself as a decider of contested model values: OMB's implementation of EO 14319 makes 'truth-seeking' and 'ideological neutrality' binding procurement criteria for LLMs across federal agencies."
+    },
+    {
+     "kind": "essay",
+     "title": "Inside our approach to the Model Spec",
+     "author": "Jason Wolfe",
+     "venue": "OpenAI",
+     "date": "2026-03-25",
+     "url": "https://openai.com/index/our-approach-to-the-model-spec/",
+     "quote": "The Model Spec is developed through an open internal process. Anyone at OpenAI can comment on it or propose changes",
+     "note": "The lab's own account of who currently decides: an internal cross-functional process with public feedback as pressure-testing — a primary document on the legitimacy arrangement the political-philosophy critiques target."
+    },
+    {
+     "kind": "report",
+     "title": "New Report: AI Laws and Chatbots Face A Global Free Speech Test",
+     "author": "Jordi Calvet-Bademunt et al.",
+     "venue": "The Future of Free Speech (Vanderbilt)",
+     "date": "2025-10-17",
+     "url": "https://futurefreespeech.org/new-report-ai-laws-and-chatbots-face-a-global-free-speech-test/",
+     "quote": "Some democracies are designing AI as a tool for expression, while others are turning it into an instrument of control.",
+     "note": "Comparative evidence on who is actually deciding what chatbots refuse across six jurisdictions and eight models — governments' AI laws, not just lab specs, increasingly set the boundaries of lawful-but-controversial speech."
+    }
+   ],
+   "ledger": [
+    {
+     "title": "Free to Speak, Not to Listen: Freedom of Expression in the Age of AI Chatbots",
+     "author": "Étienne Brown",
+     "venue": "Blog of the APA",
+     "date": "2026-07-20",
+     "url": "https://blog.apaonline.org/2026/07/20/free-to-speak-not-to-listen-freedom-of-expression-in-the-age-of-ai-chatbots/"
+    },
+    {
+     "title": "The UN's Global Dialogue on AI Must Give Citizens a Real Seat at the Table",
+     "author": "Tim Davies & Anna Colom",
+     "venue": "TechPolicy.Press",
+     "date": "2025-10-02",
+     "url": "https://www.techpolicy.press/the-uns-global-dialogue-on-ai-must-give-citizens-a-real-seat-at-the-table/"
+    }
+   ],
+   "reviewed": "August 3, 2026",
+   "window": "October 2025–August 2026"
   }
  }
 }
