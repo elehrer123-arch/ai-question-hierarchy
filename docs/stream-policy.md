@@ -169,3 +169,14 @@ terms stay in this policy; they should not appear in primary UI.
 The 90-day volume window is computed at build time (build date − 90 days),
 with month-only dates treated as the first of the month so recency is
 never overstated.
+
+
+## Item identity and history (added August 2026, sprint 2)
+
+Every stream item carries a permanent `rid`. Question pages anchor items by
+rid; RSS GUIDs use them; corrections and moves reference them. All item
+lifecycle events (observed, promoted to featured, demoted, moved between
+questions, removed — with reason) append one line to `data/history.jsonl`,
+which is append-only: the file is the project's observation history and the
+basis for any future attention-over-time measurement. Items may roll off
+pages; they never leave the history.

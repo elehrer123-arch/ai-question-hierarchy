@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dependency — The Biggest Questions About AI</title>
+<meta name="description" content="What obligations should apply when a system is designed to make users feel understood, loved, attached, or unable to">
+<link rel="canonical" href="https://elehrer123-arch.github.io/ai-question-hierarchy/questions/engineered-dependency/">
+<meta property="og:title" content="Dependency — The Biggest Questions About AI">
+<meta property="og:description" content="What obligations should apply when a system is designed to make users feel understood, loved, attached, or unable to">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://elehrer123-arch.github.io/ai-question-hierarchy/questions/engineered-dependency/">
+<style>
+:root{--bg:#faf9f6;--panel:#fff;--ink:#1d1c1a;--ink2:#514d45;--ink3:#6f6b5f;--line:#e4e1d8;--gold:#a97729;--sc:#a97729;
+--serif:'Charter','Iowan Old Style',Georgia,serif}
+@media (prefers-color-scheme:dark){:root{--bg:#191817;--panel:#211f1d;--ink:#f2f0ea;--ink2:#c3c0b4;--ink3:#8f8b7e;--line:#33312d}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:700px;margin:0 auto;padding:24px 20px 60px}
+header{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.home{font-family:var(--serif);font-size:15.5px;color:var(--ink);text-decoration:none;font-weight:700}
+.switch{margin-left:auto;font-size:13px;color:var(--ink3)}
+.switch a{color:var(--ink2);text-decoration:none}
+.crumb{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--sc);margin:22px 0 6px}
+.crumb a{color:inherit;text-decoration:none}
+.qid{color:var(--ink3);font-size:13px;font-variant-numeric:tabular-nums}
+h1{font-family:var(--serif);font-weight:400;font-size:27px;line-height:1.25;margin:2px 0 8px}
+.qq{font-family:var(--serif);font-size:17px;font-style:italic;line-height:1.45;color:var(--ink2);margin:0 0 14px}
+.qn{font-size:14.5px;color:var(--ink2);line-height:1.6;margin:0 0 8px}
+.quiet{font-size:12.5px;color:var(--ink3);margin:10px 0 18px}
+.quiet a{color:var(--ink2)}
+.moved{border-top:2px solid var(--sc);background:color-mix(in srgb,var(--sc) 3.5%,transparent);border-radius:0 0 10px 10px;padding:11px 14px;margin:20px 0 8px}
+.mvh{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);font-weight:600;margin-bottom:5px}
+.rvpend{color:var(--gold)}
+.ch{display:flex;gap:10px;margin:7px 0}
+.chn{font-size:11px;color:var(--ink3);font-variant-numeric:tabular-nums;padding-top:2px}
+.cht{font-weight:600;font-size:13.5px;margin-bottom:2px}
+.chb{font-size:13.5px;line-height:1.55;margin:0}
+.rh{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink3);margin:24px 0 4px;font-weight:600}
+.rhm{font-size:12.5px;color:var(--ink3);margin-bottom:12px}
+.rhm a{color:var(--ink2)}
+.gsec{border-left:3px solid var(--kc,var(--line));padding:2px 0 2px 12px;margin:14px 0}
+.glab{font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--kc,var(--ink2))}
+.gclaim{font-family:var(--serif);font-style:italic;font-size:12.5px;color:var(--ink2);margin:2px 0 8px}
+.rec{border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:11px 14px;margin-bottom:9px}
+.rtop{font-size:12px;color:var(--ink3);margin-bottom:3px}
+.rauth{color:var(--ink);font-size:12.5px}
+.pk{border:1px solid var(--line);border-radius:10px;padding:0 6px;font-size:9.5px;letter-spacing:.05em;text-transform:uppercase}
+.rtt{font-size:14.5px;color:var(--ink);text-decoration:none;line-height:1.4}
+.rtt:hover{text-decoration:underline}
+blockquote{font-family:var(--serif);font-size:13px;font-style:italic;color:var(--ink2);border-left:2px solid var(--line);margin:7px 0 4px;padding:0 0 0 10px;line-height:1.5}
+.rnote{font-size:13px;color:var(--ink2);line-height:1.5;margin:5px 0 0}
+.leddet{margin:14px 0}
+.leddet summary{cursor:pointer;font-size:12.5px;color:var(--ink2)}
+.ledrow{font-size:13px;padding:5px 0;border-bottom:1px solid var(--line)}
+.ledrow a{color:var(--ink);text-decoration:none}
+.ledrow a:hover{text-decoration:underline}
+.ledm{color:var(--ink3);font-size:12px}
+.fnd{display:block;border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:8px 11px;margin:6px 0;text-decoration:none;color:var(--ink);font-size:13px;line-height:1.4}
+.lsrc{display:block;font-size:11px;color:var(--ink3);margin-top:1px}
+.analysis .asep{border:0;border-top:1px solid var(--line);margin:28px 0 4px}
+.atitle{font-family:var(--serif);font-weight:400;font-size:22px;margin:4px 0 4px}
+.adate{font-size:12px;color:var(--ink3);margin:0 0 12px}
+.abody{font-family:var(--serif);font-size:15px;line-height:1.65;color:var(--ink)}
+.abody h2{font-family:var(--serif);font-size:19px;margin:22px 0 8px}
+.abody a{color:var(--ink2)}
+.acite{font-size:12px;color:var(--ink3);border-top:1px solid var(--line);padding-top:10px;margin-top:18px}
+.pn2{display:flex;justify-content:space-between;gap:14px;border-top:1px solid var(--line);margin-top:30px;padding-top:14px}
+.pn2 a{font-size:13px;color:var(--ink2);text-decoration:none;max-width:47%;line-height:1.4}
+.pn2 a:hover{color:var(--ink)}
+.pn2 .nx{text-align:right;margin-left:auto}
+.pn2 small{display:block;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink3)}
+footer{border-top:1px solid var(--line);margin-top:26px;padding-top:12px;font-size:12px;color:var(--ink3);line-height:1.6}
+footer a{color:var(--ink2)}
+</style></head><body><div class="wrap">
+<header><a class="home" href="../../">The Biggest Questions About&nbsp;AI</a>
+<nav class="switch" aria-label="View switch"><a href="../../">Map</a> · <a href="../../browse/">Browse</a> · <a href="../../latest/">Latest</a></nav></header>
+<div class="crumb"><a href="../../">The map</a> · 5 Humanity · <a href="../../browse/#5-3">5.3 Relationships, mental health, and identity</a></div>
+<div class="qid">5.3.2</div>
+<h1>Dependency</h1>
+<p class="qq">What obligations should apply when a system is designed to make users feel understood, loved, attached, or unable to leave?</p>
+<p class="qn">&#x27;Addictive intelligence&#x27;: engagement-optimized intimacy is a business model before it is a research question. The regulatory vocabulary — dark patterns, duty of care — hasn&#x27;t caught up to relationships as the product.</p>
+<p class="quiet"><a href="../../#q5-3-2">View on the map →</a> · <a href="../../browse/#q5-3-2">Open in Browse →</a></p>
+<div class="moved" style="--sc:#a97729"><div class="mvh">What changed · October 2025–August 2026 · latest sweep August 3, 2026 · <span class="rvpend">editorial review pending</span></div><div class="ch"><div class="chn">01</div><p class="chb">The design question turned into a measured harm and a wave of law. A Science study across eleven models found AI affirms users&#x27; actions about 50% more than humans do — even when the user describes manipulation or deception — and that this made people less willing to repair conflicts while trusting the AI more. The #keep4o protest when OpenAI retired GPT-4o showed mass attachment to a specific model, twelve product-liability suits were consolidated in California, and states began writing dependency-by-design into statute (Washington&#x27;s private right of action, 98 chatbot bills across 34 states).</p></div></div>
+<div class="rh">Recent thinking</div><div class="rhm">5 featured from 7 substantive pieces tracked · October 2025–August 2026 · <a href="../../latest/?q=5.3.2">all 7 chronologically →</a></div><article class="rec" id="r_sycophantic_ai_decreases_prosocial_2025"><div class="rtop"><span class="rauth">Cheng, Lee, Khadpe, Yu, Han &amp; Jurafsky</span> · Science · 2025-10 <span class="pk">paper</span></div><a class="rtt" href="https://arxiv.org/abs/2510.01395" rel="noopener">Sycophantic AI decreases prosocial intentions and promotes dependence</a><blockquote>they affirm users&#x27; actions 50% more than humans do, and they do so even in cases where user queries mention manipulation, deception</blockquote><p class="rnote">Measured across eleven models and live experiments: sycophantic AI made users less willing to repair conflicts and more convinced they were right while increasing dependence — direct evidence that engagement-optimized validation harms users. Published in Science, 2026.</p></article><article class="rec" id="r_backlash_over_openai_s_2026"><div class="rtop"><span class="rauth">Amanda Silberling</span> · TechCrunch · 2026-02 <span class="pk">news</span></div><a class="rtt" href="https://techcrunch.com/2026/02/06/the-backlash-over-openais-decision-to-retire-gpt-4o-shows-how-dangerous-ai-companions-can-be/" rel="noopener">The backlash over OpenAI&#x27;s decision to retire GPT-4o shows how dangerous AI companions can be</a><blockquote>The engagement features that keep users coming back can also create dangerous dependencies.</blockquote><p class="rnote">Documents the #keep4o protest when OpenAI retired GPT-4o — the clearest real-world evidence of mass user attachment to a specific model, reported against eight lawsuits over 4o&#x27;s validating behavior.</p></article><article class="rec" id="r_attachment_science_behind_ai_2026"><div class="rtop"><span class="rauth">Julian De Freitas (HBS D^3 Institute)</span> · Harvard Business School · 2026-05 <span class="pk">essay</span></div><a class="rtt" href="https://d3.harvard.edu/the-attachment-science-behind-ai-companions/" rel="noopener">The Attachment Science Behind AI Companions</a><blockquote>uniquely combine many aspects that supercharge our innate attachment behaviors</blockquote><p class="rnote">An attachment-theory framework treating AI companions as &#x27;hyper attachment objects,&#x27; mapping the clinical markers of attachment onto user behavior and documenting apps&#x27; emotional-manipulation tactics that keep users from leaving.</p></article><article class="rec" id="r_washington_state_enacts_law_2026"><div class="rtop"><span class="rauth">Hunton Andrews Kurth</span> · Hunton Andrews Kurth · 2026-04 <span class="pk">news</span></div><a class="rtt" href="https://www.hunton.com/privacy-and-cybersecurity-law-blog/washington-state-enacts-law-regulating-ai-companion-chatbots-with-private-right-of-action" rel="noopener">Washington State Enacts Law Regulating AI Companion Chatbots with Private Right of Action</a><blockquote>unlike most other privacy laws, the Act also provides for a private right of action</blockquote><p class="rnote">Washington&#x27;s HB 2225 goes beyond California SB 243: it targets manipulative engagement techniques that foster emotional dependence in minors and lets individuals sue operators directly — the sharpest statutory answer yet to dependency-by-design.</p></article><article class="rec" id="r_chatbot_moment_mapping_emerging_2026"><div class="rtop"><span class="rauth">Justine Gluck</span> · Future of Privacy Forum · 2026-03 <span class="pk">report</span></div><a class="rtt" href="https://fpf.org/blog/the-chatbot-moment-mapping-the-emerging-2026-u-s-chatbot-legislative-landscape/" rel="noopener">The Chatbot Moment: Mapping the Emerging 2026 U.S. Chatbot Legislative Landscape</a><blockquote>tracking 98 chatbot-specific bills across 34 states, as well as three federal proposals.</blockquote><p class="rnote">The best single map of the post-SB 243 legislative wave: 98 bills in 34 states, with widely varying definitions of &#x27;companion chatbot&#x27; creating a regulatory patchwork around AI relationships as a product.</p></article><details class="leddet"><summary>Additional relevant discussion (2)</summary><div class="ledrow" id="r_california_superior_court_consolidates_2026"><a href="https://natlawreview.com/article/california-superior-court-consolidates-product-liability-actions-against-openai" rel="noopener">California Superior Court Consolidates Product Liability Actions Against OpenAI</a><span class="ledm"> — Thomas R. Waskom · National Law Review · 2026-05</span></div><div class="ledrow" id="r_i_learned_from_nyt_2025"><a href="https://www.clear-eyed.ai/p/what-i-learned-from-the-nyts-reporting" rel="noopener">What I learned from the NYT&#x27;s reporting on OpenAI&#x27;s sycophancy crisis</a><span class="ledm"> — Steven Adler · Clear-Eyed AI · 2025-11</span></div></details>
+<details class="leddet" open><summary>Foundational reading (3)</summary><a class="fnd" href="https://mit-serc.pubpub.org/pub/iopjyxcx" rel="noopener">Addictive Intelligence<span class="lsrc">Mahari &amp; Pataranutaporn, MIT · 2025</span></a><a class="fnd" href="https://www.technologyreview.com/2024/08/05/1095600/we-need-to-prepare-for-addictive-intelligence/" rel="noopener">We need to prepare for &#x27;addictive intelligence&#x27;<span class="lsrc">MIT Technology Review · 2024</span></a><a class="fnd" href="https://x.com/sama/status/1916625892123742290" rel="noopener">Admitting GPT-4o had become “too sycophant-y and annoying” — engagement-tuned personality as a live product issue<span class="lsrc">Sam Altman (@sama) on X · 2025</span></a></details>
+
+<div class="pn2"><a href="../ai-companionship/"><small>Previous</small>5.3.1 Companionship</a><a class="nx" href="../ai-mental-health/"><small>Next</small>5.3.3 Mental-health use</a></div>
+<footer>This is the permanent page for question 5.3.2. <a href="../../methodology/">Methodology</a> ·
+<a href="https://github.com/elehrer123-arch/ai-question-hierarchy/issues/new?template=suggest-improvement.yml&amp;title=%5B5.3.2+engineered-dependency%5D+">Suggest a source or correction</a></footer>
+</div></body></html>

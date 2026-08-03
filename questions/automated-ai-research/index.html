@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Automated AI research — The Biggest Questions About AI</title>
+<meta name="description" content="How much of model design, coding, experimentation, evaluation, and engineering can AI perform">
+<link rel="canonical" href="https://elehrer123-arch.github.io/ai-question-hierarchy/questions/automated-ai-research/">
+<meta property="og:title" content="Automated AI research — The Biggest Questions About AI">
+<meta property="og:description" content="How much of model design, coding, experimentation, evaluation, and engineering can AI perform">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://elehrer123-arch.github.io/ai-question-hierarchy/questions/automated-ai-research/">
+<style>
+:root{--bg:#faf9f6;--panel:#fff;--ink:#1d1c1a;--ink2:#514d45;--ink3:#6f6b5f;--line:#e4e1d8;--gold:#a97729;--sc:#3d6b9e;
+--serif:'Charter','Iowan Old Style',Georgia,serif}
+@media (prefers-color-scheme:dark){:root{--bg:#191817;--panel:#211f1d;--ink:#f2f0ea;--ink2:#c3c0b4;--ink3:#8f8b7e;--line:#33312d}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:700px;margin:0 auto;padding:24px 20px 60px}
+header{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.home{font-family:var(--serif);font-size:15.5px;color:var(--ink);text-decoration:none;font-weight:700}
+.switch{margin-left:auto;font-size:13px;color:var(--ink3)}
+.switch a{color:var(--ink2);text-decoration:none}
+.crumb{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--sc);margin:22px 0 6px}
+.crumb a{color:inherit;text-decoration:none}
+.qid{color:var(--ink3);font-size:13px;font-variant-numeric:tabular-nums}
+h1{font-family:var(--serif);font-weight:400;font-size:27px;line-height:1.25;margin:2px 0 8px}
+.qq{font-family:var(--serif);font-size:17px;font-style:italic;line-height:1.45;color:var(--ink2);margin:0 0 14px}
+.qn{font-size:14.5px;color:var(--ink2);line-height:1.6;margin:0 0 8px}
+.quiet{font-size:12.5px;color:var(--ink3);margin:10px 0 18px}
+.quiet a{color:var(--ink2)}
+.moved{border-top:2px solid var(--sc);background:color-mix(in srgb,var(--sc) 3.5%,transparent);border-radius:0 0 10px 10px;padding:11px 14px;margin:20px 0 8px}
+.mvh{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);font-weight:600;margin-bottom:5px}
+.rvpend{color:var(--gold)}
+.ch{display:flex;gap:10px;margin:7px 0}
+.chn{font-size:11px;color:var(--ink3);font-variant-numeric:tabular-nums;padding-top:2px}
+.cht{font-weight:600;font-size:13.5px;margin-bottom:2px}
+.chb{font-size:13.5px;line-height:1.55;margin:0}
+.rh{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink3);margin:24px 0 4px;font-weight:600}
+.rhm{font-size:12.5px;color:var(--ink3);margin-bottom:12px}
+.rhm a{color:var(--ink2)}
+.gsec{border-left:3px solid var(--kc,var(--line));padding:2px 0 2px 12px;margin:14px 0}
+.glab{font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--kc,var(--ink2))}
+.gclaim{font-family:var(--serif);font-style:italic;font-size:12.5px;color:var(--ink2);margin:2px 0 8px}
+.rec{border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:11px 14px;margin-bottom:9px}
+.rtop{font-size:12px;color:var(--ink3);margin-bottom:3px}
+.rauth{color:var(--ink);font-size:12.5px}
+.pk{border:1px solid var(--line);border-radius:10px;padding:0 6px;font-size:9.5px;letter-spacing:.05em;text-transform:uppercase}
+.rtt{font-size:14.5px;color:var(--ink);text-decoration:none;line-height:1.4}
+.rtt:hover{text-decoration:underline}
+blockquote{font-family:var(--serif);font-size:13px;font-style:italic;color:var(--ink2);border-left:2px solid var(--line);margin:7px 0 4px;padding:0 0 0 10px;line-height:1.5}
+.rnote{font-size:13px;color:var(--ink2);line-height:1.5;margin:5px 0 0}
+.leddet{margin:14px 0}
+.leddet summary{cursor:pointer;font-size:12.5px;color:var(--ink2)}
+.ledrow{font-size:13px;padding:5px 0;border-bottom:1px solid var(--line)}
+.ledrow a{color:var(--ink);text-decoration:none}
+.ledrow a:hover{text-decoration:underline}
+.ledm{color:var(--ink3);font-size:12px}
+.fnd{display:block;border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:8px 11px;margin:6px 0;text-decoration:none;color:var(--ink);font-size:13px;line-height:1.4}
+.lsrc{display:block;font-size:11px;color:var(--ink3);margin-top:1px}
+.analysis .asep{border:0;border-top:1px solid var(--line);margin:28px 0 4px}
+.atitle{font-family:var(--serif);font-weight:400;font-size:22px;margin:4px 0 4px}
+.adate{font-size:12px;color:var(--ink3);margin:0 0 12px}
+.abody{font-family:var(--serif);font-size:15px;line-height:1.65;color:var(--ink)}
+.abody h2{font-family:var(--serif);font-size:19px;margin:22px 0 8px}
+.abody a{color:var(--ink2)}
+.acite{font-size:12px;color:var(--ink3);border-top:1px solid var(--line);padding-top:10px;margin-top:18px}
+.pn2{display:flex;justify-content:space-between;gap:14px;border-top:1px solid var(--line);margin-top:30px;padding-top:14px}
+.pn2 a{font-size:13px;color:var(--ink2);text-decoration:none;max-width:47%;line-height:1.4}
+.pn2 a:hover{color:var(--ink)}
+.pn2 .nx{text-align:right;margin-left:auto}
+.pn2 small{display:block;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink3)}
+footer{border-top:1px solid var(--line);margin-top:26px;padding-top:12px;font-size:12px;color:var(--ink3);line-height:1.6}
+footer a{color:var(--ink2)}
+</style></head><body><div class="wrap">
+<header><a class="home" href="../../">The Biggest Questions About&nbsp;AI</a>
+<nav class="switch" aria-label="View switch"><a href="../../">Map</a> · <a href="../../browse/">Browse</a> · <a href="../../latest/">Latest</a></nav></header>
+<div class="crumb"><a href="../../">The map</a> · 1 Trajectory · <a href="../../browse/#1-5">1.5 Recursive acceleration and automated discovery</a></div>
+<div class="qid">1.5.1</div>
+<h1>Automated AI research</h1>
+<p class="qq">How much of model design, coding, experimentation, evaluation, and engineering can AI perform itself?</p>
+<p class="qn">AI R&amp;D automation is simultaneously a capability frontier and a risk threshold in several frontier labs&#x27; safety frameworks. Current agents beat human experts on short research tasks and degrade on long ones.</p>
+<p class="quiet"><a href="../../#q1-5-1">View on the map →</a> · <a href="../../browse/#q1-5-1">Open in Browse →</a></p>
+<div class="moved" style="--sc:#3d6b9e"><div class="mvh">What changed · February–August 2026 · latest sweep August 3, 2026 · <span class="rvpend">editorial review pending</span></div><div class="ch"><div class="chn">01</div><p class="chb">The question now has an institutional apparatus: Anthropic&#x27;s risk report formally classifies automated-R&amp;D risk as very low for current models, METR&#x27;s external review accepts the conclusion while faulting the evidence, and CRUX gave agents real budgets to do open-ended research — hundreds of experiments run, both resulting papers unambiguously rejected by the original authors. Benchmarks agree: agents tune well and invent poorly.</p></div></div>
+<div class="rh">Recent thinking</div><div class="rhm">6 featured from 7 substantive pieces tracked · February–August 2026 · <a href="../../latest/?q=1.5.1">all 7 chronologically →</a></div><article class="rec" id="r_review_risks_from_automated_2026"><div class="rtop"><span class="rauth">Jurkovic, Barnes &amp; Wijk</span> · METR · 2026-05 <span class="pk">report</span></div><a class="rtt" href="https://metr.org/blog/2026-05-08-rd-section-anthropic-risk-report-feb-2026-review/" rel="noopener">Review of the &quot;Risks from automated R&amp;D&quot; section in the Anthropic Risk Report</a><blockquote>we agree with the bottom-line conclusion of the report — that the risk of a catastrophe from Opus 4.6 or a less capable Anthropic model automating R&amp;D in any domain is very low — but we think the evidence presented in the report is inadequate to establish this.</blockquote><p class="rnote">First public third-party review of a frontier lab&#x27;s own assessment of how far its models are from automating AI R&amp;D — a template for external verification of AI-R&amp;D capability claims.</p></article><article class="rec" id="r_risk_report_february_2026_2026"><div class="rtop"><span class="rauth">Anthropic</span> · Anthropic · 2026-02 <span class="pk">report</span></div><a class="rtt" href="https://www.anthropic.com/feb-2026-risk-report" rel="noopener">Risk Report: February 2026</a><blockquote>we think the model is far from being able to fully automate the activities needed for R&amp;D in key domains.</blockquote><p class="rnote">The primary lab document classifying risk from models automating AI R&amp;D as &#x27;very low&#x27; for current models — making AI-R&amp;D automation an explicit tracked threshold in a frontier safety framework.</p></article><article class="rec" id="r_can_ai_agents_conduct_2026"><div class="rtop"><span class="rauth">Kirgis, Kapoor, Schwartz et al.</span> · CRUX · 2026-07 <span class="pk">report</span></div><a class="rtt" href="https://cruxevals.com/crux/can-ai-agents-conduct-research/" rel="noopener">Can AI agents conduct open-ended AI research? Early evidence from two case studies</a><blockquote>The papers produced by the agents were unambiguously rejected.</blockquote><p class="rnote">Empirical test giving agents real resources to reproduce and extend two papers: agents ran hundreds of experiments but failed on research judgment, and the original authors rejected both AI-written papers.</p></article><article class="rec" id="r_researchgym_evaluating_language_model_2026"><div class="rtop"><span class="rauth">Garikaparthi, Patwardhan &amp; Cohan</span> · arXiv · 2026-02 <span class="pk">paper</span></div><a class="rtt" href="https://arxiv.org/abs/2602.15112" rel="noopener">ResearchGym: Evaluating Language Model Agents on Real-World AI Research</a><blockquote>impatience, poor time and resource management, overconfidence in weak hypotheses, difficulty coordinating parallel experiments, and hard limits from context length.</blockquote><p class="rnote">End-to-end research benchmark: GPT-5 beat baselines in only 6.7% of evaluations and completed 26.5% of subtasks — quantifying the capability-reliability gap in autonomous AI research.</p></article><article class="rec" id="r_simpler_ai_timelines_model_2026"><div class="rtop"><span class="rauth">Thomas Kwa</span> · METR · 2026-02 <span class="pk">report</span></div><a class="rtt" href="https://metr.org/notes/2026-02-10-simpler-ai-timelines-model/" rel="noopener">A simpler AI timelines model predicts 99% AI R&amp;D automation in ~2032</a><blockquote>At current rates of compute growth and algorithmic progress, this model&#x27;s median prediction is &gt;99% automation of AI R&amp;D in late 2032.</blockquote><p class="rnote">A deliberately minimal 8-parameter model of when AI R&amp;D becomes fully automated, offered as a transparent alternative to the 33-parameter AI Futures model.</p></article><article class="rec" id="r_ai_starting_build_better_2026"><div class="rtop"><span class="rauth">Matthew Hutson</span> · IEEE Spectrum · 2026-05 <span class="pk">news</span></div><a class="rtt" href="https://spectrum.ieee.org/amp/recursive-self-improvement-2676580377" rel="noopener">AI Is Starting to Build Better AI</a><blockquote>We are right around the corner from recursively self-improving systems.</blockquote><p class="rnote">Reported survey of how much AI already does AI research — self-assisting coding models, AlphaEvolve, Darwin Gödel Machines — with lab researchers quoted on both promise and limits.</p></article><details class="leddet"><summary>Additional relevant discussion (1)</summary><div class="ledrow" id="r_mls_bench_holistic_rigorous_2026"><a href="https://arxiv.org/abs/2605.08678" rel="noopener">MLS-Bench: A Holistic and Rigorous Assessment of AI Systems on Building Better AI</a><span class="ledm"> — Lyu, Yang, Huang et al. · arXiv · 2026-05</span></div></details>
+<details class="leddet" open><summary>Foundational reading (3)</summary><a class="fnd" href="https://arxiv.org/abs/2411.15114" rel="noopener">RE-Bench: Evaluating frontier AI R&amp;D capabilities<span class="lsrc">METR · 2024</span></a><a class="fnd" href="https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/" rel="noopener">AlphaEvolve: A coding agent for designing advanced algorithms<span class="lsrc">Google DeepMind · 2025</span></a><a class="fnd" href="https://x.com/_jasonwei/status/1939762496757539297" rel="noopener">AI self-improvement will be a game-changer — and “extremely gradual across many years, probably a decade”<span class="lsrc">Jason Wei (@_jasonwei) on X · 2025</span></a></details>
+
+<div class="pn2"><a class="nx" href="../recursive-feedback-speed/"><small>Next</small>1.5.2 Feedback speed</a></div>
+<footer>This is the permanent page for question 1.5.1. <a href="../../methodology/">Methodology</a> ·
+<a href="https://github.com/elehrer123-arch/ai-question-hierarchy/issues/new?template=suggest-improvement.yml&amp;title=%5B1.5.1+automated-ai-research%5D+">Suggest a source or correction</a></footer>
+</div></body></html>

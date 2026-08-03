@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Autonomous mobility — The Biggest Questions About AI</title>
+<meta name="description" content="How capable will self-driving vehicles, drones, ships, and industrial machines become outside controlled">
+<link rel="canonical" href="https://elehrer123-arch.github.io/ai-question-hierarchy/questions/autonomous-mobility/">
+<meta property="og:title" content="Autonomous mobility — The Biggest Questions About AI">
+<meta property="og:description" content="How capable will self-driving vehicles, drones, ships, and industrial machines become outside controlled">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://elehrer123-arch.github.io/ai-question-hierarchy/questions/autonomous-mobility/">
+<style>
+:root{--bg:#faf9f6;--panel:#fff;--ink:#1d1c1a;--ink2:#514d45;--ink3:#6f6b5f;--line:#e4e1d8;--gold:#a97729;--sc:#3d6b9e;
+--serif:'Charter','Iowan Old Style',Georgia,serif}
+@media (prefers-color-scheme:dark){:root{--bg:#191817;--panel:#211f1d;--ink:#f2f0ea;--ink2:#c3c0b4;--ink3:#8f8b7e;--line:#33312d}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:700px;margin:0 auto;padding:24px 20px 60px}
+header{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.home{font-family:var(--serif);font-size:15.5px;color:var(--ink);text-decoration:none;font-weight:700}
+.switch{margin-left:auto;font-size:13px;color:var(--ink3)}
+.switch a{color:var(--ink2);text-decoration:none}
+.crumb{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--sc);margin:22px 0 6px}
+.crumb a{color:inherit;text-decoration:none}
+.qid{color:var(--ink3);font-size:13px;font-variant-numeric:tabular-nums}
+h1{font-family:var(--serif);font-weight:400;font-size:27px;line-height:1.25;margin:2px 0 8px}
+.qq{font-family:var(--serif);font-size:17px;font-style:italic;line-height:1.45;color:var(--ink2);margin:0 0 14px}
+.qn{font-size:14.5px;color:var(--ink2);line-height:1.6;margin:0 0 8px}
+.quiet{font-size:12.5px;color:var(--ink3);margin:10px 0 18px}
+.quiet a{color:var(--ink2)}
+.moved{border-top:2px solid var(--sc);background:color-mix(in srgb,var(--sc) 3.5%,transparent);border-radius:0 0 10px 10px;padding:11px 14px;margin:20px 0 8px}
+.mvh{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);font-weight:600;margin-bottom:5px}
+.rvpend{color:var(--gold)}
+.ch{display:flex;gap:10px;margin:7px 0}
+.chn{font-size:11px;color:var(--ink3);font-variant-numeric:tabular-nums;padding-top:2px}
+.cht{font-weight:600;font-size:13.5px;margin-bottom:2px}
+.chb{font-size:13.5px;line-height:1.55;margin:0}
+.rh{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink3);margin:24px 0 4px;font-weight:600}
+.rhm{font-size:12.5px;color:var(--ink3);margin-bottom:12px}
+.rhm a{color:var(--ink2)}
+.gsec{border-left:3px solid var(--kc,var(--line));padding:2px 0 2px 12px;margin:14px 0}
+.glab{font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--kc,var(--ink2))}
+.gclaim{font-family:var(--serif);font-style:italic;font-size:12.5px;color:var(--ink2);margin:2px 0 8px}
+.rec{border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:11px 14px;margin-bottom:9px}
+.rtop{font-size:12px;color:var(--ink3);margin-bottom:3px}
+.rauth{color:var(--ink);font-size:12.5px}
+.pk{border:1px solid var(--line);border-radius:10px;padding:0 6px;font-size:9.5px;letter-spacing:.05em;text-transform:uppercase}
+.rtt{font-size:14.5px;color:var(--ink);text-decoration:none;line-height:1.4}
+.rtt:hover{text-decoration:underline}
+blockquote{font-family:var(--serif);font-size:13px;font-style:italic;color:var(--ink2);border-left:2px solid var(--line);margin:7px 0 4px;padding:0 0 0 10px;line-height:1.5}
+.rnote{font-size:13px;color:var(--ink2);line-height:1.5;margin:5px 0 0}
+.leddet{margin:14px 0}
+.leddet summary{cursor:pointer;font-size:12.5px;color:var(--ink2)}
+.ledrow{font-size:13px;padding:5px 0;border-bottom:1px solid var(--line)}
+.ledrow a{color:var(--ink);text-decoration:none}
+.ledrow a:hover{text-decoration:underline}
+.ledm{color:var(--ink3);font-size:12px}
+.fnd{display:block;border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:8px 11px;margin:6px 0;text-decoration:none;color:var(--ink);font-size:13px;line-height:1.4}
+.lsrc{display:block;font-size:11px;color:var(--ink3);margin-top:1px}
+.analysis .asep{border:0;border-top:1px solid var(--line);margin:28px 0 4px}
+.atitle{font-family:var(--serif);font-weight:400;font-size:22px;margin:4px 0 4px}
+.adate{font-size:12px;color:var(--ink3);margin:0 0 12px}
+.abody{font-family:var(--serif);font-size:15px;line-height:1.65;color:var(--ink)}
+.abody h2{font-family:var(--serif);font-size:19px;margin:22px 0 8px}
+.abody a{color:var(--ink2)}
+.acite{font-size:12px;color:var(--ink3);border-top:1px solid var(--line);padding-top:10px;margin-top:18px}
+.pn2{display:flex;justify-content:space-between;gap:14px;border-top:1px solid var(--line);margin-top:30px;padding-top:14px}
+.pn2 a{font-size:13px;color:var(--ink2);text-decoration:none;max-width:47%;line-height:1.4}
+.pn2 a:hover{color:var(--ink)}
+.pn2 .nx{text-align:right;margin-left:auto}
+.pn2 small{display:block;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink3)}
+footer{border-top:1px solid var(--line);margin-top:26px;padding-top:12px;font-size:12px;color:var(--ink3);line-height:1.6}
+footer a{color:var(--ink2)}
+</style></head><body><div class="wrap">
+<header><a class="home" href="../../">The Biggest Questions About&nbsp;AI</a>
+<nav class="switch" aria-label="View switch"><a href="../../">Map</a> · <a href="../../browse/">Browse</a> · <a href="../../latest/">Latest</a></nav></header>
+<div class="crumb"><a href="../../">The map</a> · 1 Trajectory · <a href="../../browse/#1-4">1.4 Embodied and physical intelligence</a></div>
+<div class="qid">1.4.4</div>
+<h1>Autonomous mobility</h1>
+<p class="qq">How capable will self-driving vehicles, drones, ships, and industrial machines become outside controlled settings?</p>
+<p class="qn">Driving is the furthest-deployed case of open-world embodied autonomy, with quantified safety records now public — a preview of the deployment, liability, and trust questions every other mobile system will face. (Military autonomy is treated under Safety 2.5 and Power 4.3.)</p>
+<p class="quiet"><a href="../../#q1-4-4">View on the map →</a> · <a href="../../browse/#q1-4-4">Open in Browse →</a></p>
+<div class="moved" style="--sc:#3d6b9e"><div class="mvh">What changed · November 2025–August 2026 · latest sweep August 3, 2026 · <span class="rvpend">editorial review pending</span></div><div class="ch"><div class="chn">01</div><p class="chb">Independent validation arrived: IIHS — not Waymo — finds 68% fewer police-reportable crashes than human drivers over 50 million driverless miles, while Waymo&#x27;s own 170-million-mile update claims a serious-injury crash prevented every eight days. The number that changes the economics debate: roughly 70 remote overseers per 3,000 vehicles. Tesla&#x27;s robotaxi data, by contrast, has to be reverse-engineered — and looks an order of magnitude behind.</p></div></div>
+<div class="rh">Recent thinking</div><div class="rhm">7 featured from 12 substantive pieces tracked · November 2025–August 2026 · <a href="../../latest/?q=1.4.4">all 12 chronologically →</a></div><article class="rec" id="r_waymo_s_driverless_cars_2026"><div class="rtop"><span class="rauth">Insurance Institute for Highway Safety</span> · IIHS · 2026-07 <span class="pk">report</span></div><a class="rtt" href="https://www.iihs.org/news/detail/waymos-driverless-cars-crash-less-often-than-people" rel="noopener">Waymo&#x27;s driverless cars crash less often than people</a><blockquote>The results show that, on a limited scale, these driverless cars are safer than human drivers — who can be impaired or drowsy or suffer lapses in attention.</blockquote><p class="rnote">First fully independent validation of robotaxi safety claims: 68% lower police-reportable crash rates over 50 million driverless miles, with caveats on small samples in Austin and inadequate federal data collection.</p></article><article class="rec" id="r_waymo_safety_impact_update_2026"><div class="rtop"><span class="rauth">Waymo</span> · Waymo · 2026-03 <span class="pk">report</span></div><a class="rtt" href="https://waymo.com/blog/shorts/waymo-safety-impact-update-170m/" rel="noopener">Waymo Safety Impact update: 170 million rider-only miles</a><blockquote>our analysis suggests the Waymo Driver is preventing approximately one serious-injury crash every 8 days.</blockquote><p class="rnote">Update to the canonical rider-only crash benchmark: 92% fewer serious-or-fatal-injury crashes than matched human drivers across 170M autonomous miles — the largest self-reported safety dataset in open-world autonomy.</p></article><article class="rec" id="r_waymo_just_revealed_crucial_2026"><div class="rtop"><span class="rauth">Timothy B. Lee</span> · Understanding AI · 2026-02 <span class="pk">news</span></div><a class="rtt" href="https://www.understandingai.org/p/waymo-just-revealed-a-crucial-statistic" rel="noopener">Waymo just revealed a crucial statistic for scaling its technology</a><blockquote>the vehicles have the ability to &#x27;phone home&#x27; and get assistance from humans if they encounter situations they don&#x27;t understand.</blockquote><p class="rnote">First hard number on the human-in-the-loop overhead of driverless scaling: roughly 70 remote overseers for a 3,000-vehicle fleet — the key economics-of-autonomy statistic the industry had never disclosed.</p></article><article class="rec" id="r_does_tesla_really_have_2026"><div class="rtop"><span class="rauth">Brad Templeton</span> · Forbes · 2026-04 <span class="pk">essay</span></div><a class="rtt" href="https://www.forbes.com/sites/bradtempleton/2026/04/08/does-tesla-really-have-a-robotaxi-they-dont-make-it-easy-to-find-out/" rel="noopener">Does Tesla Really Have A Robotaxi? They Don&#x27;t Make It Easy To Find Out</a><blockquote>One has to ask why, if the data would suggest they are ready to go, they want to keep it hidden.</blockquote><p class="rnote">The most careful independent read of Tesla&#x27;s robotaxi expansion: an estimated 15 crashes in ~800,000 supervised Austin miles, far behind Waymo, with deployment decisions tracking CEO optimism rather than disclosed performance.</p></article><article class="rec" id="r_human_drivers_keep_crashing_2026"><div class="rtop"><span class="rauth">Kai Williams &amp; Timothy B. Lee</span> · Understanding AI · 2026-04 <span class="pk">news</span></div><a class="rtt" href="https://www.understandingai.org/p/human-drivers-keep-crashing-into-454" rel="noopener">Human drivers keep crashing into Waymos</a><blockquote>Another way of looking at it would be, well, would a taxi stop here?</blockquote><p class="rnote">Crash-by-crash review of 78 serious Waymo incidents over seven months: 61% were rear-endings of Waymos, and only one involved a moving Waymo plausibly at fault — but lawful-yet-unnatural robot driving creates its own hazards.</p></article><article class="rec" id="r_house_cleaning_my_january_2026"><div class="rtop"><span class="rauth">Rodney Brooks</span> · rodneybrooks.com · 2026-07 <span class="pk">essay</span></div><a class="rtt" href="https://rodneybrooks.com/house-cleaning-my-january-1-2018-predictions/" rel="noopener">House Cleaning My January 1, 2018 Predictions</a><blockquote>There have not been any plausible demos of this capability</blockquote><p class="rnote">Brooks retrospectively grades 8.5 years of self-driving predictions: driverless taxis remain limited to two operators, and his &#x27;truly driverless&#x27; bar only survives by admitting remote human intervention — a disciplined base-rate check on deployment speed.</p></article><article class="rec" id="r_zipline_eyes_houston_phoenix_2026"><div class="rtop"><span class="rauth">Ishveena Singh</span> · DroneDJ · 2026-01 <span class="pk">news</span></div><a class="rtt" href="https://dronedj.com/2026/01/21/zipline-drone-delivery-valuation-expansion/" rel="noopener">Zipline eyes Houston, Phoenix after 2 million drone deliveries</a><blockquote>Autonomous logistics has become an everyday staple for people across several states in the US.</blockquote><p class="rnote">The drone side of open-world autonomy: 2 million commercial deliveries, 125 million autonomous miles, and 15% week-over-week US growth as delivery drones quietly scale.</p></article><details class="leddet"><summary>Additional relevant discussion (5)</summary><div class="ledrow" id="r_waymo_releases_apples_apples_2026"><a href="https://www.forbes.com/sites/bradtempleton/2026/07/07/waymo-releases-apples-to-apples-incident-data-it-speaks-to-regulation/" rel="noopener">Waymo Releases Apples-To-Apples Incident Data, It Speaks To Regulation</a><span class="ledm"> — Brad Templeton · Forbes · 2026-07</span></div><div class="ledrow" id="r_waymo_s_next_five_2025"><a href="https://www.understandingai.org/p/waymos-next-five-cities-are-all-in" rel="noopener">Waymo&#x27;s next five cities are all in red states</a><span class="ledm"> — Timothy B. Lee &amp; Kai Williams · Understanding AI · 2025-11</span></div><div class="ledrow" id="r_it_might_not_make_2026"><a href="https://www.understandingai.org/p/why-it-might-not-make-sense-for-you" rel="noopener">Why it might not make sense for you to own a self-driving car</a><span class="ledm"> — Timothy B. Lee · Understanding AI · 2026-05</span></div><div class="ledrow" id="r_autonomous_vehicles_blind_spot_2026"><a href="https://www.axios.com/2026/07/29/autonomous-waymo-blind-spot-uber" rel="noopener">Autonomous vehicles&#x27; blind spot</a><span class="ledm"> — Joann Muller · Axios · 2026-07</span></div><div class="ledrow" id="r_feds_probing_waymo_s_2026"><a href="https://www.understandingai.org/p/the-feds-are-probing-waymos-behavior" rel="noopener">The feds are probing Waymo&#x27;s behavior around school children</a><span class="ledm"> — Timothy B. Lee · Understanding AI · 2026-01</span></div></details>
+<details class="leddet" open><summary>Foundational reading (1)</summary><a class="fnd" href="https://waymo.com/research/comparison-of-waymo-rider-only-crash-data-to-human/" rel="noopener">Waymo rider-only crash data vs. human benchmarks<span class="lsrc">Kusano et al., Waymo · 2024</span></a></details>
+
+<div class="pn2"><a href="../robot-dexterity/"><small>Previous</small>1.4.3 Dexterity and robustness</a><a class="nx" href="../embodied-ai-economics/"><small>Next</small>1.4.5 Economic significance</a></div>
+<footer>This is the permanent page for question 1.4.4. <a href="../../methodology/">Methodology</a> ·
+<a href="https://github.com/elehrer123-arch/ai-question-hierarchy/issues/new?template=suggest-improvement.yml&amp;title=%5B1.4.4+autonomous-mobility%5D+">Suggest a source or correction</a></footer>
+</div></body></html>

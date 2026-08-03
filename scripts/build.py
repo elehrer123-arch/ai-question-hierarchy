@@ -364,6 +364,7 @@ def render_map(sections, entry_map, recent=None):
                     f'<p class="bfull">{E(q["q"])}</p>'
                     f'<p class="bn">{E(q["n"])}</p>'
                     f'<div class="blinks">{links}</div>{entlink}'
+                    f'<a class="bopen" href="questions/{q["slug"]}/">Question page →</a>'
                     f'<a class="bopen" href="browse/#q{anchor}">Open in Browse →</a>'
                     f'</div></div></div>')
         cols.append(f'<div class="bcol" data-s="{s["id"]}" style="--sc:{c}">'
@@ -427,6 +428,7 @@ def load_recent(qindex):
         except ValueError:
             return False
     seen_urls = {}
+    seen_rids = {}
     for qid, entry in data.get("questions", {}).items():
         for kind, lst in (("items", entry.get("items", [])), ("ledger", entry.get("ledger", []))):
             for it in lst:
@@ -435,8 +437,16 @@ def load_recent(qindex):
                     errors.append(f"duplicate URL across stream: {u} ({seen_urls[u]} and {qid})")
                 else:
                     seen_urls[u] = qid
+                _rid = it.get("rid")
+                if _rid:
+                    if _rid in seen_rids:
+                        errors.append(f"duplicate rid: {_rid} ({seen_rids[_rid]} and {qid})")
+                    else:
+                        seen_rids[_rid] = qid
                 if not it.get("added"):
                     errors.append(f"recent.json {qid}: item missing 'added' ({u})")
+                if not it.get("rid"):
+                    errors.append(f"recent.json {qid}: item missing 'rid' ({u})")
                 elif not re.match(r"^\d{4}-\d{2}-\d{2}$", it["added"]) or not _valid_day(it["added"]):
                     errors.append(f"recent.json {qid}: bad added date {it.get('added')!r}")
                 if it.get("date") and not _valid_day(it["date"]):
@@ -534,7 +544,7 @@ def render_latest(sections, recent, cutoff=None):
     for s in sections:
         for su in s["subs"]:
             for q in su["qs"]:
-                qmeta[q["id"]] = {"t": q["t"], "sec": s["id"]}
+                qmeta[q["id"]] = {"t": q["t"], "sec": s["id"], "slug": q["slug"]}
 
     rows = []
     max_reviewed = ""
@@ -548,6 +558,7 @@ def render_latest(sections, recent, cutoff=None):
                 rows.append({"d": it["date"], "added": it.get("added", ""), "sel": sel,
                              "q": qid_disp, "qt": qmeta[qid_disp]["t"],
                              "sec": qmeta[qid_disp]["sec"],
+                             "slug": qmeta[qid_disp]["slug"], "rid": it.get("rid", ""),
                              "title": it["title"], "author": it["author"],
                              "venue": it["venue"], "url": it["url"],
                              "kind": it.get("kind", ""), "note": it.get("note", "")})
@@ -598,7 +609,7 @@ def render_latest(sections, recent, cutoff=None):
                 f'<div class="ld">{day_h(r["d"])}</div>'
                 f'<div class="lb"><a class="lt" href="{E(r["url"])}" rel="noopener">{E(r["title"])}</a>'
                 f'<div class="lm">{E(r["author"])} · {E(r["venue"])} {kind}</div>{note}'
-                f'<a class="lq" href="../browse/#{anchor}" style="color:var(--c{r["sec"]})">'
+                f'<a class="lq" href="../questions/{E(r["slug"])}/" style="color:var(--c{r["sec"]})">'
                 f'&rarr; {r["q"]} {E(r["qt"])}</a></div></article>')
 
     qnames = {r["q"]: r["qt"] for r in rows}
@@ -631,12 +642,16 @@ def render_latest(sections, recent, cutoff=None):
         pub = r.get("added") or r["d"]
         desc = X(r["note"]) if r["note"] else f'{X(r["author"])} · {X(r["venue"])}'
         pubd = f' (published {r["d"]})' if r["d"][:7] != pub[:7] else ""
+        qpage = f"https://elehrer123-arch.github.io/ai-question-hierarchy/questions/{r['slug']}/"
+        guid = f"{qpage}#{r['rid']}" if r.get("rid") else r['url']
+        qline = f" — On question {X(r['q'])} {X(r['qt'])}: {qpage}"
+        featline = " Featured on the question page." if r["sel"] else ""
         rss_items.append(
             f"<item><title>{X(r['title'])}</title><link>{X(r['url'])}</link>"
-            f"<guid isPermaLink=\"true\">{X(r['url'])}</guid>"
+            f"<guid isPermaLink=\"true\">{X(guid)}</guid>"
             f"<pubDate>{rfc822(pub)}</pubDate>"
             f"<category>{X(r['q'] + ' ' + r['qt'])}</category>"
-            f"<description>{desc}{X(pubd)}</description></item>")
+            f"<description>{desc}{X(pubd)}{qline}{featline}</description></item>")
     rss = ("<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
            "<rss version=\"2.0\"><channel>"
            "<title>The Biggest Questions About AI — Latest</title>"
@@ -847,6 +862,295 @@ def render_methodology(qcount):
         f.write(out)
 
 
+
+
+def entry_embed(entry, qindex, sections, entry_slugs):
+    """Render an entry's body for embedding under its question brief."""
+    meta, body = entry["meta"], entry["body"]
+    body = crosslink(body, entry["qnum"], entry_slugs)
+    md = markdown.Markdown(extensions=["toc", "tables"])
+    body_html = md.convert(body)
+    core_revised = meta.get("core_revised", meta.get("core_reviewed", "—"))
+    review = meta.get("review", "Pending")
+    dateline = (f'{meta["status"]} · editorial review {review.lower()}. '
+                f'Core article last revised {core_revised}; evidence updated '
+                f'{meta.get("evidence_updated", "—")}.')
+    cite = (f'“{E(meta["title"])}” <em>The Biggest Questions About AI</em>, '
+            f'Elliott Lehrer (ed.), {meta.get("evidence_updated", "2026")}. '
+            f'{E(meta["status"])}.')
+    return {"title": meta["title"], "html": body_html, "dateline": dateline,
+            "cite": cite}
+
+
+def render_question_pages(sections, entry_map_full, recent, debates):
+    """Static permanent page per question: /questions/<slug>/."""
+    base = "https://elehrer123-arch.github.io/ai-question-hierarchy"
+    _cut = window_cutoff(90)
+    n_pages = 0
+    for s in sections:
+        c = SECTION_COLORS[s["id"]]
+        for su in s["subs"]:
+            qs = su["qs"]
+            for qi, q in enumerate(qs):
+                disp = q["id"]
+                anchor = disp.replace(".", "-")
+                rq = recent["items"].get(disp)
+                deb = debates.get(disp) if debates else None
+
+                # --- status + what-changed
+                status_html = ""
+                if rq:
+                    apv = rq.get("approved")
+                    status = (f'editor-approved {E(apv)}' if apv
+                              else '<span class="rvpend">editorial review pending</span>')
+                    anchor2 = (f'since {E(rq["prev_swept"])}' if rq.get("prev_swept")
+                               else E(rq.get("window", "")))
+                    moved = rq.get("moved")
+                    items_m = moved if isinstance(moved, list) else [moved]
+                    chs = []
+                    for i, mvi in enumerate(items_m):
+                        t0 = mvi.get("t") if isinstance(mvi, dict) else None
+                        b = mvi.get("b") if isinstance(mvi, dict) else mvi
+                        chs.append(f'<div class="ch"><div class="chn">0{i+1}</div>'
+                                   + (f'<div class="cht">{E(t0)}</div>' if t0 else '')
+                                   + f'<p class="chb">{E(b)}</p></div>')
+                    status_html = (
+                        f'<div class="moved" style="--sc:{c}">'
+                        f'<div class="mvh">What changed{" · " + anchor2 if anchor2 else ""}'
+                        f' · latest sweep {E(rq["swept"])} · {status}</div>'
+                        f'{"".join(chs)}</div>')
+
+                # --- featured items (grouped by debate poles where configured)
+                def item_card(it):
+                    kind = f'<span class="pk">{E(it.get("kind",""))}</span>' if it.get("kind") else ''
+                    via = (f' · via <a href="{E(it["via"]["u"])}">{E(it["via"]["t"])}</a>'
+                           if it.get("via") else '')
+                    quote = (f'<blockquote>{E(it["quote"])}</blockquote>'
+                             if it.get("quote") else '')
+                    note = f'<p class="rnote">{E(it["note"])}</p>' if it.get("note") else ''
+                    return (f'<article class="rec" id="{E(it["rid"])}">'
+                            f'<div class="rtop"><span class="rauth">{E(it["author"])}</span>'
+                            f' · {E(it["venue"])} · {E(it["date"][:7])} {kind}{via}</div>'
+                            f'<a class="rtt" href="{E(it["url"])}" rel="noopener">{E(it["title"])}</a>'
+                            f'{quote}{note}</article>')
+
+                feat_html = ""
+                if rq and rq.get("items"):
+                    items = rq["items"]
+                    led = rq.get("ledger", [])
+                    qual = len(items) + len(led)
+                    head = (f'<div class="rh">Recent thinking</div>'
+                            f'<div class="rhm">{len(items)} featured from {qual} substantive '
+                            f'pieces tracked{" · " + E(rq["window"]) if rq.get("window") else ""}'
+                            f' · <a href="../../latest/?q={disp}">all {qual} chronologically →</a></div>')
+                    groups_html = []
+                    if deb:
+                        assigned = set()
+                        for p in deb["poles"]:
+                            sub_items = [it for it in items if it.get("pos") == p["k"]]
+                            if not sub_items:
+                                continue
+                            assigned.update(id(it) for it in sub_items)
+                            hue = p.get("hue", c)
+                            groups_html.append(
+                                f'<section class="gsec" style="--kc:{hue}">'
+                                f'<div class="glab">{E(p["label"])}</div>'
+                                f'<p class="gclaim">{E(p.get("claim",""))}</p>'
+                                + "".join(item_card(it) for it in sub_items) + '</section>')
+                        rest = [it for it in items if id(it) not in assigned]
+                        if rest:
+                            groups_html.append(
+                                '<section class="gsec"><div class="glab">Also featured</div>'
+                                + "".join(item_card(it) for it in rest) + '</section>')
+                    else:
+                        groups_html.append("".join(item_card(it) for it in items))
+                    feat_html = head + "".join(groups_html)
+                    if led:
+                        rowsl = "".join(
+                            f'<div class="ledrow" id="{E(it["rid"])}">'
+                            f'<a href="{E(it["url"])}" rel="noopener">{E(it["title"])}</a>'
+                            f'<span class="ledm"> — {E(it["author"])} · {E(it["venue"])} · {E(it["date"][:7])}</span></div>'
+                            for it in led)
+                        feat_html += (f'<details class="leddet"><summary>Additional relevant '
+                                      f'discussion ({len(led)})</summary>{rowsl}</details>')
+
+                # --- foundational reading
+                canon = "".join(
+                    f'<a class="fnd" href="{E(l["u"])}" rel="noopener">{E(l["t"])}'
+                    f'<span class="lsrc">{E(l.get("s",""))}{" · " + l["y"] if l.get("y") else ""}</span></a>'
+                    for l in q["links"])
+                canon_html = (f'<details class="leddet" open><summary>Foundational reading '
+                              f'({len(q["links"])})</summary>{canon}</details>') if q["links"] else ""
+
+                # --- embedded full analysis
+                emb = entry_map_full.get(disp)
+                analysis_html = ""
+                if emb:
+                    analysis_html = (
+                        f'<section class="analysis"><hr class="asep">'
+                        f'<div class="rh">Full analysis</div>'
+                        f'<h2 class="atitle">{E(emb["title"])}</h2>'
+                        f'<p class="adate">{E(emb["dateline"])}</p>'
+                        f'<div class="abody">{emb["html"]}</div>'
+                        f'<p class="acite">Cite: {emb["cite"]}</p></section>')
+
+                # --- neighbors
+                prevq = qs[qi-1] if qi > 0 else None
+                nextq = qs[qi+1] if qi < len(qs)-1 else None
+                nav = '<div class="pn2">'
+                if prevq:
+                    nav += (f'<a href="../{E(prevq["slug"])}/"><small>Previous</small>'
+                            f'{prevq["id"]} {E(prevq["t"])}</a>')
+                if nextq:
+                    nav += (f'<a class="nx" href="../{E(nextq["slug"])}/"><small>Next</small>'
+                            f'{nextq["id"]} {E(nextq["t"])}</a>')
+                nav += '</div>'
+
+                issue_url = (f'{REPO_ISSUES}/new?template=suggest-improvement.yml&title='
+                             + quote_plus(f'[{disp} {q["slug"]}] '))
+                desc = q["q"][:155].rsplit(" ", 1)[0] + ("…" if len(q["q"]) > 155 else "")
+                page_url = f'{base}/questions/{q["slug"]}/'
+
+                html = QPAGE_TEMPLATE
+                html = (html
+                    .replace("__PTITLE__", E(f'{q["t"]} — The Biggest Questions About AI'))
+                    .replace("__DESC__", E(desc))
+                    .replace("__URL__", page_url)
+                    .replace("__SC__", c)
+                    .replace("__CRUMB__",
+                             f'<a href="../../">The map</a> · {s["id"]} {SECTION_NAMES[s["id"]]}'
+                             f' · <a href="../../browse/#{su["id"].replace(".", "-")}">'
+                             f'{su["id"]} {E(su["t"])}</a>')
+                    .replace("__QID__", disp)
+                    .replace("__SHORT__", E(q["t"]))
+                    .replace("__QUESTION__", E(q["q"]))
+                    .replace("__FRAMING__", E(q.get("n", "")))
+                    .replace("__STATUS__", status_html)
+                    .replace("__FEATURED__", feat_html)
+                    .replace("__CANON__", canon_html)
+                    .replace("__ANALYSIS__", analysis_html)
+                    .replace("__NAV__", nav)
+                    .replace("__MAPHREF__", f'../../#q{anchor}')
+                    .replace("__BROWSEHREF__", f'../../browse/#q{anchor}')
+                    .replace("__ISSUE__", E(issue_url)))
+                outdir = os.path.join(ROOT, "questions", q["slug"])
+                os.makedirs(outdir, exist_ok=True)
+                with open(os.path.join(outdir, "index.html"), "w", encoding="utf-8") as f:
+                    f.write(html)
+                n_pages += 1
+    return n_pages
+
+
+def render_sitemap(sections):
+    base = "https://elehrer123-arch.github.io/ai-question-hierarchy"
+    today = _date.today().isoformat()
+    urls = [f"{base}/", f"{base}/browse/", f"{base}/latest/",
+            f"{base}/methodology/", f"{base}/poster/"]
+    for s in sections:
+        for su in s["subs"]:
+            for q in su["qs"]:
+                urls.append(f'{base}/questions/{q["slug"]}/')
+    body = "".join(f"<url><loc>{u}</loc><lastmod>{today}</lastmod></url>" for u in urls)
+    with open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8") as f:
+        f.write('<?xml version="1.0" encoding="UTF-8"?>'
+                '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+                + body + '</urlset>')
+    return len(urls)
+
+
+QPAGE_TEMPLATE = """<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>__PTITLE__</title>
+<meta name="description" content="__DESC__">
+<link rel="canonical" href="__URL__">
+<meta property="og:title" content="__PTITLE__">
+<meta property="og:description" content="__DESC__">
+<meta property="og:type" content="article">
+<meta property="og:url" content="__URL__">
+<style>
+:root{--bg:#faf9f6;--panel:#fff;--ink:#1d1c1a;--ink2:#514d45;--ink3:#6f6b5f;--line:#e4e1d8;--gold:#a97729;--sc:__SC__;
+--serif:'Charter','Iowan Old Style',Georgia,serif}
+@media (prefers-color-scheme:dark){:root{--bg:#191817;--panel:#211f1d;--ink:#f2f0ea;--ink2:#c3c0b4;--ink3:#8f8b7e;--line:#33312d}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:700px;margin:0 auto;padding:24px 20px 60px}
+header{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.home{font-family:var(--serif);font-size:15.5px;color:var(--ink);text-decoration:none;font-weight:700}
+.switch{margin-left:auto;font-size:13px;color:var(--ink3)}
+.switch a{color:var(--ink2);text-decoration:none}
+.crumb{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--sc);margin:22px 0 6px}
+.crumb a{color:inherit;text-decoration:none}
+.qid{color:var(--ink3);font-size:13px;font-variant-numeric:tabular-nums}
+h1{font-family:var(--serif);font-weight:400;font-size:27px;line-height:1.25;margin:2px 0 8px}
+.qq{font-family:var(--serif);font-size:17px;font-style:italic;line-height:1.45;color:var(--ink2);margin:0 0 14px}
+.qn{font-size:14.5px;color:var(--ink2);line-height:1.6;margin:0 0 8px}
+.quiet{font-size:12.5px;color:var(--ink3);margin:10px 0 18px}
+.quiet a{color:var(--ink2)}
+.moved{border-top:2px solid var(--sc);background:color-mix(in srgb,var(--sc) 3.5%,transparent);border-radius:0 0 10px 10px;padding:11px 14px;margin:20px 0 8px}
+.mvh{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);font-weight:600;margin-bottom:5px}
+.rvpend{color:var(--gold)}
+.ch{display:flex;gap:10px;margin:7px 0}
+.chn{font-size:11px;color:var(--ink3);font-variant-numeric:tabular-nums;padding-top:2px}
+.cht{font-weight:600;font-size:13.5px;margin-bottom:2px}
+.chb{font-size:13.5px;line-height:1.55;margin:0}
+.rh{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink3);margin:24px 0 4px;font-weight:600}
+.rhm{font-size:12.5px;color:var(--ink3);margin-bottom:12px}
+.rhm a{color:var(--ink2)}
+.gsec{border-left:3px solid var(--kc,var(--line));padding:2px 0 2px 12px;margin:14px 0}
+.glab{font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--kc,var(--ink2))}
+.gclaim{font-family:var(--serif);font-style:italic;font-size:12.5px;color:var(--ink2);margin:2px 0 8px}
+.rec{border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:11px 14px;margin-bottom:9px}
+.rtop{font-size:12px;color:var(--ink3);margin-bottom:3px}
+.rauth{color:var(--ink);font-size:12.5px}
+.pk{border:1px solid var(--line);border-radius:10px;padding:0 6px;font-size:9.5px;letter-spacing:.05em;text-transform:uppercase}
+.rtt{font-size:14.5px;color:var(--ink);text-decoration:none;line-height:1.4}
+.rtt:hover{text-decoration:underline}
+blockquote{font-family:var(--serif);font-size:13px;font-style:italic;color:var(--ink2);border-left:2px solid var(--line);margin:7px 0 4px;padding:0 0 0 10px;line-height:1.5}
+.rnote{font-size:13px;color:var(--ink2);line-height:1.5;margin:5px 0 0}
+.leddet{margin:14px 0}
+.leddet summary{cursor:pointer;font-size:12.5px;color:var(--ink2)}
+.ledrow{font-size:13px;padding:5px 0;border-bottom:1px solid var(--line)}
+.ledrow a{color:var(--ink);text-decoration:none}
+.ledrow a:hover{text-decoration:underline}
+.ledm{color:var(--ink3);font-size:12px}
+.fnd{display:block;border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:8px 11px;margin:6px 0;text-decoration:none;color:var(--ink);font-size:13px;line-height:1.4}
+.lsrc{display:block;font-size:11px;color:var(--ink3);margin-top:1px}
+.analysis .asep{border:0;border-top:1px solid var(--line);margin:28px 0 4px}
+.atitle{font-family:var(--serif);font-weight:400;font-size:22px;margin:4px 0 4px}
+.adate{font-size:12px;color:var(--ink3);margin:0 0 12px}
+.abody{font-family:var(--serif);font-size:15px;line-height:1.65;color:var(--ink)}
+.abody h2{font-family:var(--serif);font-size:19px;margin:22px 0 8px}
+.abody a{color:var(--ink2)}
+.acite{font-size:12px;color:var(--ink3);border-top:1px solid var(--line);padding-top:10px;margin-top:18px}
+.pn2{display:flex;justify-content:space-between;gap:14px;border-top:1px solid var(--line);margin-top:30px;padding-top:14px}
+.pn2 a{font-size:13px;color:var(--ink2);text-decoration:none;max-width:47%;line-height:1.4}
+.pn2 a:hover{color:var(--ink)}
+.pn2 .nx{text-align:right;margin-left:auto}
+.pn2 small{display:block;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink3)}
+footer{border-top:1px solid var(--line);margin-top:26px;padding-top:12px;font-size:12px;color:var(--ink3);line-height:1.6}
+footer a{color:var(--ink2)}
+</style></head><body><div class="wrap">
+<header><a class="home" href="../../">The Biggest Questions About&nbsp;AI</a>
+<nav class="switch" aria-label="View switch"><a href="../../">Map</a> · <a href="../../browse/">Browse</a> · <a href="../../latest/">Latest</a></nav></header>
+<div class="crumb">__CRUMB__</div>
+<div class="qid">__QID__</div>
+<h1>__SHORT__</h1>
+<p class="qq">__QUESTION__</p>
+<p class="qn">__FRAMING__</p>
+<p class="quiet"><a href="__MAPHREF__">View on the map →</a> · <a href="__BROWSEHREF__">Open in Browse →</a></p>
+__STATUS__
+__FEATURED__
+__CANON__
+__ANALYSIS__
+__NAV__
+<footer>This is the permanent page for question __QID__. <a href="../../methodology/">Methodology</a> ·
+<a href="__ISSUE__">Suggest a source or correction</a></footer>
+</div></body></html>"""
+
+
+
 def render_poster(sections):
     import math
     qn = sum(len(su["qs"]) for s in sections for su in s["subs"])
@@ -992,8 +1296,11 @@ if __name__ == "__main__":
     render_map(sections, entry_map, recent)
     render_browse(sections, entry_map, recent, debates)
     render_poster(sections)
+    entry_embeds = {e["qnum"]: entry_embed(e, qindex, sections, entry_slugs) for e in entries}
+    qp_n = render_question_pages(sections, entry_embeds, recent, debates)
+    sm_n = render_sitemap(sections)
     latest_n = render_latest(sections, recent)
     render_methodology(sum(len(su["qs"]) for s in sections for su in s["subs"]))
     qcount, lcount = render_index(sections, overview_links, outdir="all", legacy=True)
-    print(f"built map (index.html), browse/, latest/ ({latest_n} pieces + RSS), poster/, all/: {qcount} questions, "
+    print(f"built map (index.html), browse/, latest/ ({latest_n} pieces + RSS), {qp_n} question pages, sitemap ({sm_n} URLs), poster/, all/: {qcount} questions, "
           f"{lcount} source links, {len(entries)} entry page(s)")

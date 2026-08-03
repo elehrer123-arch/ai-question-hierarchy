@@ -297,7 +297,7 @@ function render(k){
     const rc=rq?rq.items:null;
     h+=`<p class="qn">${esc(q.n).replace(/(?<![\w.])([1-5]\.\d{1,2}\.\d{1,2})(?![\w.])/g,(m0,num)=>num===q.id?num:(nodes[num]?`<a data-go="${num}" style="cursor:pointer;color:var(--c${num[0]});text-decoration:underline dotted">${num}</a>`:num))}</p>`;
     const en=ENTRY[q.id];
-    h+=`<p class="quiet" style="--sc:${SC}">`+(en?`<a href="${en.href}">Read the full analysis →</a> &nbsp;·&nbsp; `:'')+`<a href="../#q${q.id.replaceAll('.','-')}">View on the map →</a></p>`;
+    h+=`<p class="quiet" style="--sc:${SC}">`+`<a href="../questions/${q.slug}/">Permanent page${en?' & full analysis':''} →</a> &nbsp;·&nbsp; `+`<a href="../#q${q.id.replaceAll('.','-')}">View on the map →</a></p>`;
     if(rq&&rq.moved){
       const mv=Array.isArray(rq.moved)?rq.moved:[rq.moved];
       const anchor2=rq.prev_swept?`since ${esc(rq.prev_swept)}`:(rq.window?esc(rq.window):'');

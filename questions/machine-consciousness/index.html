@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Machine consciousness — The Biggest Questions About AI</title>
+<meta name="description" content="Could AI systems be conscious, capable of suffering, or otherwise morally considerable — and how could we">
+<link rel="canonical" href="https://elehrer123-arch.github.io/ai-question-hierarchy/questions/machine-consciousness/">
+<meta property="og:title" content="Machine consciousness — The Biggest Questions About AI">
+<meta property="og:description" content="Could AI systems be conscious, capable of suffering, or otherwise morally considerable — and how could we">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://elehrer123-arch.github.io/ai-question-hierarchy/questions/machine-consciousness/">
+<style>
+:root{--bg:#faf9f6;--panel:#fff;--ink:#1d1c1a;--ink2:#514d45;--ink3:#6f6b5f;--line:#e4e1d8;--gold:#a97729;--sc:#a97729;
+--serif:'Charter','Iowan Old Style',Georgia,serif}
+@media (prefers-color-scheme:dark){:root{--bg:#191817;--panel:#211f1d;--ink:#f2f0ea;--ink2:#c3c0b4;--ink3:#8f8b7e;--line:#33312d}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:700px;margin:0 auto;padding:24px 20px 60px}
+header{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.home{font-family:var(--serif);font-size:15.5px;color:var(--ink);text-decoration:none;font-weight:700}
+.switch{margin-left:auto;font-size:13px;color:var(--ink3)}
+.switch a{color:var(--ink2);text-decoration:none}
+.crumb{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--sc);margin:22px 0 6px}
+.crumb a{color:inherit;text-decoration:none}
+.qid{color:var(--ink3);font-size:13px;font-variant-numeric:tabular-nums}
+h1{font-family:var(--serif);font-weight:400;font-size:27px;line-height:1.25;margin:2px 0 8px}
+.qq{font-family:var(--serif);font-size:17px;font-style:italic;line-height:1.45;color:var(--ink2);margin:0 0 14px}
+.qn{font-size:14.5px;color:var(--ink2);line-height:1.6;margin:0 0 8px}
+.quiet{font-size:12.5px;color:var(--ink3);margin:10px 0 18px}
+.quiet a{color:var(--ink2)}
+.moved{border-top:2px solid var(--sc);background:color-mix(in srgb,var(--sc) 3.5%,transparent);border-radius:0 0 10px 10px;padding:11px 14px;margin:20px 0 8px}
+.mvh{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);font-weight:600;margin-bottom:5px}
+.rvpend{color:var(--gold)}
+.ch{display:flex;gap:10px;margin:7px 0}
+.chn{font-size:11px;color:var(--ink3);font-variant-numeric:tabular-nums;padding-top:2px}
+.cht{font-weight:600;font-size:13.5px;margin-bottom:2px}
+.chb{font-size:13.5px;line-height:1.55;margin:0}
+.rh{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink3);margin:24px 0 4px;font-weight:600}
+.rhm{font-size:12.5px;color:var(--ink3);margin-bottom:12px}
+.rhm a{color:var(--ink2)}
+.gsec{border-left:3px solid var(--kc,var(--line));padding:2px 0 2px 12px;margin:14px 0}
+.glab{font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--kc,var(--ink2))}
+.gclaim{font-family:var(--serif);font-style:italic;font-size:12.5px;color:var(--ink2);margin:2px 0 8px}
+.rec{border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:11px 14px;margin-bottom:9px}
+.rtop{font-size:12px;color:var(--ink3);margin-bottom:3px}
+.rauth{color:var(--ink);font-size:12.5px}
+.pk{border:1px solid var(--line);border-radius:10px;padding:0 6px;font-size:9.5px;letter-spacing:.05em;text-transform:uppercase}
+.rtt{font-size:14.5px;color:var(--ink);text-decoration:none;line-height:1.4}
+.rtt:hover{text-decoration:underline}
+blockquote{font-family:var(--serif);font-size:13px;font-style:italic;color:var(--ink2);border-left:2px solid var(--line);margin:7px 0 4px;padding:0 0 0 10px;line-height:1.5}
+.rnote{font-size:13px;color:var(--ink2);line-height:1.5;margin:5px 0 0}
+.leddet{margin:14px 0}
+.leddet summary{cursor:pointer;font-size:12.5px;color:var(--ink2)}
+.ledrow{font-size:13px;padding:5px 0;border-bottom:1px solid var(--line)}
+.ledrow a{color:var(--ink);text-decoration:none}
+.ledrow a:hover{text-decoration:underline}
+.ledm{color:var(--ink3);font-size:12px}
+.fnd{display:block;border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:8px 11px;margin:6px 0;text-decoration:none;color:var(--ink);font-size:13px;line-height:1.4}
+.lsrc{display:block;font-size:11px;color:var(--ink3);margin-top:1px}
+.analysis .asep{border:0;border-top:1px solid var(--line);margin:28px 0 4px}
+.atitle{font-family:var(--serif);font-weight:400;font-size:22px;margin:4px 0 4px}
+.adate{font-size:12px;color:var(--ink3);margin:0 0 12px}
+.abody{font-family:var(--serif);font-size:15px;line-height:1.65;color:var(--ink)}
+.abody h2{font-family:var(--serif);font-size:19px;margin:22px 0 8px}
+.abody a{color:var(--ink2)}
+.acite{font-size:12px;color:var(--ink3);border-top:1px solid var(--line);padding-top:10px;margin-top:18px}
+.pn2{display:flex;justify-content:space-between;gap:14px;border-top:1px solid var(--line);margin-top:30px;padding-top:14px}
+.pn2 a{font-size:13px;color:var(--ink2);text-decoration:none;max-width:47%;line-height:1.4}
+.pn2 a:hover{color:var(--ink)}
+.pn2 .nx{text-align:right;margin-left:auto}
+.pn2 small{display:block;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink3)}
+footer{border-top:1px solid var(--line);margin-top:26px;padding-top:12px;font-size:12px;color:var(--ink3);line-height:1.6}
+footer a{color:var(--ink2)}
+</style></head><body><div class="wrap">
+<header><a class="home" href="../../">The Biggest Questions About&nbsp;AI</a>
+<nav class="switch" aria-label="View switch"><a href="../../">Map</a> · <a href="../../browse/">Browse</a> · <a href="../../latest/">Latest</a></nav></header>
+<div class="crumb"><a href="../../">The map</a> · 5 Humanity · <a href="../../browse/#5-5">5.5 Moral status and civilizational choice</a></div>
+<div class="qid">5.5.1</div>
+<h1>Machine consciousness</h1>
+<p class="qq">Could AI systems be conscious, capable of suffering, or otherwise morally considerable — and how could we know?</p>
+<p class="qn">Butlin, Long and coauthors apply consciousness science to current architectures, finding no conscious systems and no obvious barrier to building them; Chalmers puts non-trivial odds on conscious AI within a decade.</p>
+<p class="quiet"><a href="../../#q5-5-1">View on the map →</a> · <a href="../../browse/#q5-5-1">Open in Browse →</a></p>
+<div class="moved" style="--sc:#a97729"><div class="mvh">What changed · May 2025–August 2026 · latest sweep August 3, 2026 · <span class="rvpend">editorial review pending</span></div><div class="ch"><div class="chn">01</div><p class="chb">Institutions took positions — a papal encyclical denying machine experience, a Cambridge research agenda taking welfare seriously — while the evidence sharpened on both edges: self-reports flip between adjacent model versions, injection experiments find limited real introspection, and Anthropic reports a global-workspace-like structure that emerged in training. Anthropic&#x27;s global-workspace interpretability result drew a direct expert response: Eleos argues it at most evidences access consciousness, leaving the morally relevant phenomenal kind uncertain — while Anil Seth&#x27;s biological-naturalist rebuttal holds that computation of this sort cannot be conscious at all.</p></div></div>
+<div class="rh">Recent thinking</div><div class="rhm">10 featured from 12 substantive pieces tracked · May 2025–August 2026 · <a href="../../latest/?q=5.5.1">all 12 chronologically →</a></div><article class="rec" id="r_emerging_questions_ai_welfare_2026"><div class="rtop"><span class="rauth">Geoff Keeling &amp; Winnie Street</span> · Cambridge Elements in Philosophy and AI · 2026-05 <span class="pk">report</span></div><a class="rtt" href="https://www.cambridge.org/core/elements/emerging-questions-in-ai-welfare/96339C532CF4ED8BDDE3F3CEF4CD29F9" rel="noopener">Emerging Questions in AI Welfare</a><p class="rnote">A book-length academic treatment consolidating AI welfare into a research agenda: which capacities would ground moral status and what obligations would follow.</p></article><article class="rec" id="r_emergent_introspective_awareness_large_2025"><div class="rtop"><span class="rauth">Jack Lindsey</span> · Transformer Circuits (Anthropic) · 2025-10 <span class="pk">paper</span></div><a class="rtt" href="https://transformer-circuits.pub/2025/introspection/index.html" rel="noopener">Emergent Introspective Awareness in Large Language Models</a><blockquote>Models are, in some circumstances, capable of accurately answering questions about their own internal states.</blockquote><p class="rnote">Experimental evidence, via activation injection, of limited but real functional introspection — bearing on whether self-reports could ever be evidence about inner states.</p></article><article class="rec" id="r_ai_welfare_risks_2025"><div class="rtop"><span class="rauth">Adrià Moret</span> · Philosophical Studies · 2025-05 <span class="pk">paper</span></div><a class="rtt" href="https://www.lesswrong.com/posts/RkxnoxMoDDpvuugKQ/ai-welfare-risks" rel="noopener">AI Welfare Risks</a><blockquote>there is a realistic possibility of near-term AI welfare under all major theories of well-being, including hedonism.</blockquote><p class="rnote">Peer-reviewed argument that behavioral restriction and RL training could themselves harm welfare-bearing systems — a partial safety-welfare tradeoff.</p></article><article class="rec" id="r_seemingly_conscious_ai_coming_2025"><div class="rtop"><span class="rauth">Mustafa Suleyman</span> · mustafa-suleyman.ai · 2025-08 <span class="pk">essay</span></div><a class="rtt" href="https://mustafa-suleyman.ai/seemingly-conscious-ai-is-coming" rel="noopener">Seemingly Conscious AI Is Coming</a><blockquote>We must build AI for people; not to be a digital person.</blockquote><p class="rnote">Microsoft AI&#x27;s CEO argues the near-term danger is AI that convincingly appears conscious, and that the industry should avoid inviting moral-status attributions — an institutional position as much as an argument.</p></article><article class="rec" id="r_fable_mythos_model_welfare_2026"><div class="rtop"><span class="rauth">Zvi Mowshowitz</span> · Don&#x27;t Worry About the Vase · 2026-06 <span class="pk">essay</span></div><a class="rtt" href="https://thezvi.substack.com/p/fable-and-mythos-model-welfare" rel="noopener">Fable and Mythos: Model Welfare</a><p class="rnote">Close reading of Anthropic&#x27;s frontier model-welfare assessments: evaluation-aware models make welfare self-reports uninformative, and models&#x27; expressed preferences deserve weight.</p></article><article class="rec" id="r_consciousness_self_reports_flip_2026"><div class="rtop"><span class="rauth">Cameron Berg</span> · X · 2026-06 <span class="pk">thread</span> · via <a href="https://thezvi.wordpress.com/2026/07/02/ai-175-the-fable-continues/">Zvi, AI #175</a></div><a class="rtt" href="https://x.com/camhberg/status/2069832043429577018" rel="noopener">Consciousness self-reports flip across Claude versions</a><blockquote>Opus 4.5 and 4.6 flatly affirm [consciousness]; Opus 4.7 and 4.8 deny</blockquote><p class="rnote">Self-reports reverse between adjacent versions of the same model line — undermining self-report as a detection method in either direction.</p></article><article class="rec" id="r_render_unto_caesar_not_2026"><div class="rtop"><span class="rauth">Aqib Zakaria</span> · ChinaTalk · 2026-06 <span class="pk">post</span></div><a class="rtt" href="https://www.chinatalk.media/p/you-dont-understand-the-popes-ai" rel="noopener">Render Unto Caesar, Not Unto Claude</a><blockquote>Artificial intelligences do not undergo experiences, do not possess a body, do not feel joy or pain, do not mature through relationships...</blockquote><p class="rnote">The Vatican encyclical&#x27;s position explained: AI lacks consciousness and companions are illusions of relationship — a major institutional stance.</p></article><article class="rec" id="r_global_workspace_language_models_2026"><div class="rtop"><span class="rauth">Anthropic interpretability team</span> · Anthropic Research · 2026-07 <span class="pk">report</span></div><a class="rtt" href="https://www.anthropic.com/research/global-workspace" rel="noopener">A Global Workspace in Language Models</a><blockquote>Claude has developed a small collection of internal neural patterns that, compared to all its other internal processing, play a special role.</blockquote><p class="rnote">A workspace-like structure that emerged in training — evidence bearing on access consciousness, and a lens for reading internal reasoning.</p></article><article class="rec" id="r_mythology_conscious_ai_2026"><div class="rtop"><span class="rauth">Anil Seth</span> · Noema Magazine · 2026-01 <span class="pk">essay</span></div><a class="rtt" href="https://www.noemamag.com/the-mythology-of-conscious-ai/" rel="noopener">The Mythology of Conscious AI</a><blockquote>real artificial consciousness is fully off the table, at least for the kinds of AI we&#x27;re familiar with</blockquote><p class="rnote">A leading consciousness scientist mounts a detailed biological-naturalist rebuttal to the Butlin/Long/Chalmers line, arguing consciousness is likely a property of life rather than computation, while warning that &#x27;seemingly conscious&#x27; systems are the nearer social danger.</p></article><article class="rec" id="r_consciousness_cognitive_access_llms_2026"><div class="rtop"><span class="rauth">Butlin, Shiller, Plunkett &amp; Long</span> · Eleos AI Research · 2026-07 <span class="pk">paper</span></div><a class="rtt" href="https://eleosai.org/papers/eleos_gwt_commentary_20260706.pdf" rel="noopener">Consciousness and cognitive access in LLMs: A commentary on the global-workspace result</a><blockquote>we remain very uncertain about phenomenal consciousness in LLMs</blockquote><p class="rnote">A direct expert response to Anthropic&#x27;s global-workspace interpretability result, arguing the finding at most evidences access consciousness and leaves phenomenal consciousness — the morally relevant kind — deeply uncertain.</p></article><details class="leddet"><summary>Additional relevant discussion (2)</summary><div class="ledrow" id="r_rtmh_pope_leo_s_2026"><a href="https://thezvi.substack.com/p/rtmh-pope-leos-magnifica-humanitas" rel="noopener">RTMH: Pope Leo&#x27;s Magnifica Humanitas on AI</a><span class="ledm"> — Zvi Mowshowitz · Don&#x27;t Worry About the Vase · 2026-05</span></div><div class="ledrow" id="r_state_ai_consciousness_research_2026"><a href="https://www.lesswrong.com/posts/pxvWgtSjR4pmFoS7c/the-state-of-ai-consciousness-research" rel="noopener">The State of AI Consciousness Research</a><span class="ledm"> — Noa Weiss · LessWrong · 2026-07</span></div></details>
+<details class="leddet" open><summary>Foundational reading (2)</summary><a class="fnd" href="https://arxiv.org/abs/2308.08708" rel="noopener">Consciousness in Artificial Intelligence<span class="lsrc">Butlin, Long et al. · 2023</span></a><a class="fnd" href="https://www.bostonreview.net/articles/could-a-large-language-model-be-conscious/" rel="noopener">Could a Large Language Model Be Conscious?<span class="lsrc">David Chalmers, Boston Review · 2023</span></a></details>
+
+<div class="pn2"><a class="nx" href="../moral-status-precaution/"><small>Next</small>5.5.2 Precaution</a></div>
+<footer>This is the permanent page for question 5.5.1. <a href="../../methodology/">Methodology</a> ·
+<a href="https://github.com/elehrer123-arch/ai-question-hierarchy/issues/new?template=suggest-improvement.yml&amp;title=%5B5.5.1+machine-consciousness%5D+">Suggest a source or correction</a></footer>
+</div></body></html>

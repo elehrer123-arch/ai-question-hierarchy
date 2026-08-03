@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Timelines — The Biggest Questions About AI</title>
+<meta name="description" content="When, if ever, might broadly human-level systems">
+<link rel="canonical" href="https://elehrer123-arch.github.io/ai-question-hierarchy/questions/agi-timelines/">
+<meta property="og:title" content="Timelines — The Biggest Questions About AI">
+<meta property="og:description" content="When, if ever, might broadly human-level systems">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://elehrer123-arch.github.io/ai-question-hierarchy/questions/agi-timelines/">
+<style>
+:root{--bg:#faf9f6;--panel:#fff;--ink:#1d1c1a;--ink2:#514d45;--ink3:#6f6b5f;--line:#e4e1d8;--gold:#a97729;--sc:#3d6b9e;
+--serif:'Charter','Iowan Old Style',Georgia,serif}
+@media (prefers-color-scheme:dark){:root{--bg:#191817;--panel:#211f1d;--ink:#f2f0ea;--ink2:#c3c0b4;--ink3:#8f8b7e;--line:#33312d}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:700px;margin:0 auto;padding:24px 20px 60px}
+header{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.home{font-family:var(--serif);font-size:15.5px;color:var(--ink);text-decoration:none;font-weight:700}
+.switch{margin-left:auto;font-size:13px;color:var(--ink3)}
+.switch a{color:var(--ink2);text-decoration:none}
+.crumb{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--sc);margin:22px 0 6px}
+.crumb a{color:inherit;text-decoration:none}
+.qid{color:var(--ink3);font-size:13px;font-variant-numeric:tabular-nums}
+h1{font-family:var(--serif);font-weight:400;font-size:27px;line-height:1.25;margin:2px 0 8px}
+.qq{font-family:var(--serif);font-size:17px;font-style:italic;line-height:1.45;color:var(--ink2);margin:0 0 14px}
+.qn{font-size:14.5px;color:var(--ink2);line-height:1.6;margin:0 0 8px}
+.quiet{font-size:12.5px;color:var(--ink3);margin:10px 0 18px}
+.quiet a{color:var(--ink2)}
+.moved{border-top:2px solid var(--sc);background:color-mix(in srgb,var(--sc) 3.5%,transparent);border-radius:0 0 10px 10px;padding:11px 14px;margin:20px 0 8px}
+.mvh{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);font-weight:600;margin-bottom:5px}
+.rvpend{color:var(--gold)}
+.ch{display:flex;gap:10px;margin:7px 0}
+.chn{font-size:11px;color:var(--ink3);font-variant-numeric:tabular-nums;padding-top:2px}
+.cht{font-weight:600;font-size:13.5px;margin-bottom:2px}
+.chb{font-size:13.5px;line-height:1.55;margin:0}
+.rh{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink3);margin:24px 0 4px;font-weight:600}
+.rhm{font-size:12.5px;color:var(--ink3);margin-bottom:12px}
+.rhm a{color:var(--ink2)}
+.gsec{border-left:3px solid var(--kc,var(--line));padding:2px 0 2px 12px;margin:14px 0}
+.glab{font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--kc,var(--ink2))}
+.gclaim{font-family:var(--serif);font-style:italic;font-size:12.5px;color:var(--ink2);margin:2px 0 8px}
+.rec{border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:11px 14px;margin-bottom:9px}
+.rtop{font-size:12px;color:var(--ink3);margin-bottom:3px}
+.rauth{color:var(--ink);font-size:12.5px}
+.pk{border:1px solid var(--line);border-radius:10px;padding:0 6px;font-size:9.5px;letter-spacing:.05em;text-transform:uppercase}
+.rtt{font-size:14.5px;color:var(--ink);text-decoration:none;line-height:1.4}
+.rtt:hover{text-decoration:underline}
+blockquote{font-family:var(--serif);font-size:13px;font-style:italic;color:var(--ink2);border-left:2px solid var(--line);margin:7px 0 4px;padding:0 0 0 10px;line-height:1.5}
+.rnote{font-size:13px;color:var(--ink2);line-height:1.5;margin:5px 0 0}
+.leddet{margin:14px 0}
+.leddet summary{cursor:pointer;font-size:12.5px;color:var(--ink2)}
+.ledrow{font-size:13px;padding:5px 0;border-bottom:1px solid var(--line)}
+.ledrow a{color:var(--ink);text-decoration:none}
+.ledrow a:hover{text-decoration:underline}
+.ledm{color:var(--ink3);font-size:12px}
+.fnd{display:block;border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:8px 11px;margin:6px 0;text-decoration:none;color:var(--ink);font-size:13px;line-height:1.4}
+.lsrc{display:block;font-size:11px;color:var(--ink3);margin-top:1px}
+.analysis .asep{border:0;border-top:1px solid var(--line);margin:28px 0 4px}
+.atitle{font-family:var(--serif);font-weight:400;font-size:22px;margin:4px 0 4px}
+.adate{font-size:12px;color:var(--ink3);margin:0 0 12px}
+.abody{font-family:var(--serif);font-size:15px;line-height:1.65;color:var(--ink)}
+.abody h2{font-family:var(--serif);font-size:19px;margin:22px 0 8px}
+.abody a{color:var(--ink2)}
+.acite{font-size:12px;color:var(--ink3);border-top:1px solid var(--line);padding-top:10px;margin-top:18px}
+.pn2{display:flex;justify-content:space-between;gap:14px;border-top:1px solid var(--line);margin-top:30px;padding-top:14px}
+.pn2 a{font-size:13px;color:var(--ink2);text-decoration:none;max-width:47%;line-height:1.4}
+.pn2 a:hover{color:var(--ink)}
+.pn2 .nx{text-align:right;margin-left:auto}
+.pn2 small{display:block;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink3)}
+footer{border-top:1px solid var(--line);margin-top:26px;padding-top:12px;font-size:12px;color:var(--ink3);line-height:1.6}
+footer a{color:var(--ink2)}
+</style></head><body><div class="wrap">
+<header><a class="home" href="../../">The Biggest Questions About&nbsp;AI</a>
+<nav class="switch" aria-label="View switch"><a href="../../">Map</a> · <a href="../../browse/">Browse</a> · <a href="../../latest/">Latest</a></nav></header>
+<div class="crumb"><a href="../../">The map</a> · 1 Trajectory · <a href="../../browse/#1-2">1.2 General intelligence and missing capabilities</a></div>
+<div class="qid">1.2.6</div>
+<h1>Timelines</h1>
+<p class="qq">When, if ever, might broadly human-level systems arrive?</p>
+<p class="qn">Expert forecasts span decades and have shortened with each survey wave. Most trajectory disagreements are actually about timing, not possibility — yet &#x27;that cannot work&#x27; and &#x27;that will not work soon&#x27; are routinely argued as if they were the same claim.</p>
+<p class="quiet"><a href="../../#q1-2-6">View on the map →</a> · <a href="../../browse/#q1-2-6">Open in Browse →</a></p>
+<div class="moved" style="--sc:#3d6b9e"><div class="mvh">What changed · October 2025–August 2026 · latest sweep August 3, 2026 · <span class="rvpend">editorial review pending</span></div><div class="ch"><div class="chn">01</div><p class="chb">Forecasters oscillated and then converged: everyone tracked who updated between January and April 2026 shortened their timelines, and the AI 2027 authors pulled their medians about 1.5 years sooner — while METR warns against extrapolating its time-horizon curve to AGI dates, and Karpathy holds the decade-out position. Amodei put his numbers on the record in February: 90% on a &#x27;country of geniuses in a data center&#x27; within ten years.</p></div></div>
+<div class="rh">Recent thinking</div><div class="rhm">8 featured from 10 substantive pieces tracked · October 2025–August 2026 · <a href="../../latest/?q=1.2.6">all 10 chronologically →</a></div><article class="rec" id="r_q1_2026_timelines_update_2026"><div class="rtop"><span class="rauth">Kokotajlo, Lifland &amp; Halstead</span> · AI Futures Project · 2026-04 <span class="pk">post</span></div><a class="rtt" href="https://blog.aifutures.org/p/q1-2026-timelines-update" rel="noopener">Q1 2026 Timelines Update</a><blockquote>Our medians for Top-Expert-Dominating AI (TED-AI) similarly shifted about 1.5 years sooner.</blockquote><p class="rnote">The AI 2027 authors re-shorten their forecasts, reversing their earlier lengthening, citing METR-measured coding progress and the winter 2025–26 model releases.</p></article><article class="rec" id="r_agi_timeline_predictions_top_2026"><div class="rtop"><span class="rauth">Dan Schwarz</span> · FutureSearch · 2026-04 <span class="pk">report</span></div><a class="rtt" href="https://futuresearch.ai/blog/agi-timeline-tracker/" rel="noopener">AGI Timeline Predictions: How Top Forecasters Updated, 2023 to 2026</a><blockquote>every single person who updated their timelines from January 2026 to April 2026 has moved their timeline to say AGI is coming sooner</blockquote><p class="rnote">Three years of tracked forecasts: a lengthen-then-shorten oscillation, with uniform shortening among early-2026 updaters.</p></article><article class="rec" id="r_clarifying_limitations_time_horizon_2026"><div class="rtop"><span class="rauth">Thomas Kwa</span> · METR · 2026-01 <span class="pk">post</span></div><a class="rtt" href="https://metr.org/notes/2026-01-22-time-horizon-limitations/" rel="noopener">Clarifying limitations of time horizon</a><p class="rnote">METR itself cautions against extrapolating its time-horizon metric to AGI dates: task-distribution gaps, reliability thresholds, and growth-rate sensitivity spanning 2028 to 2050.</p></article><article class="rec" id="r_andrej_karpathy_agi_still_2025"><div class="rtop"><span class="rauth">Andrej Karpathy, with Dwarkesh Patel</span> · Dwarkesh Podcast · 2025-10 <span class="pk">interview</span></div><a class="rtt" href="https://www.dwarkesh.com/p/andrej-karpathy" rel="noopener">Andrej Karpathy — AGI is still a decade away</a><p class="rnote">A prominent practitioner stakes the decade-out position, grounded in unsolved continual learning, reliability, and agency problems.</p></article><article class="rec" id="r_my_ai_opinions_2026"><div class="rtop"><span class="rauth">Scott Alexander</span> · Astral Codex Ten · 2026-06 <span class="pk">essay</span></div><a class="rtt" href="https://www.astralcodexten.com/p/my-ai-opinions" rel="noopener">My AI Opinions</a><blockquote>I think there&#x27;s a 25% chance of AGI by 2027, a 50% chance by 2034, and a 75% chance by 2045.</blockquote><p class="rnote">A widely read generalist&#x27;s consolidated credences on arrival, takeoff, and the diffusion gap.</p></article><article class="rec" id="r_long_until_ai_doesn_2026"><div class="rtop"><span class="rauth">Ajeya Cotra &amp; Timothy B. Lee</span> · Asterisk Magazine · 2026-04 <span class="pk">interview</span></div><a class="rtt" href="https://asteriskmag.com/issues/14/how-long-until-ai-doesn-t-need-humans" rel="noopener">How Long Until AI Doesn&#x27;t Need Humans?</a><p class="rnote">A structured disagreement: Cotra puts fully self-sustaining AI more likely than not within 10 years; Lee under 10% within 20 — hinging on robotics and tacit knowledge.</p></article><article class="rec" id="r_missing_half_ai_futurism_2026"><div class="rtop"><span class="rauth">Denain &amp; Ho</span> · Epoch AI · 2026-07 <span class="pk">essay</span></div><a class="rtt" href="https://epochai.substack.com/p/the-missing-half-of-ai-futurism-debates" rel="noopener">The missing half of AI futurism debates</a><blockquote>we&#x27;ve thought hard about how good the AIs might be, but not about how hard it&#x27;ll be to develop specific technologies</blockquote><p class="rnote">Timeline forecasts neglect the engineering feasibility of specific post-AGI technologies.</p></article><article class="rec" id="r_dario_amodei_we_near_2026"><div class="rtop"><span class="rauth">Dario Amodei, with Dwarkesh Patel</span> · Dwarkesh Podcast · 2026-02 <span class="pk">podcast</span></div><a class="rtt" href="https://www.dwarkesh.com/p/dario-amodei-2" rel="noopener">Dario Amodei — &quot;We are near the end of the exponential&quot;</a><blockquote>On the basic hypothesis of, as you put it, within ten years we&#x27;ll get to what I call a &#x27;country of geniuses in a data center&#x27;, I&#x27;m at 90% on that.</blockquote><p class="rnote">The clearest on-record lab-leadership timeline of 2026, with explicit probabilities: 90% within ten years, central estimate 1–3 years for expert-level systems. Question 1.1.1 carries Zvi&#x27;s commentary on the same episode.</p></article><details class="leddet"><summary>Additional relevant discussion (2)</summary><div class="ledrow" id="r_before_he_wrote_ai_2026"><a href="https://asteriskmag.substack.com/p/before-he-wrote-ai-2027-he-predicted" rel="noopener">Before he wrote AI 2027, he predicted the world in 2026. How did he do?</a><span class="ledm"> — Clara Collier &amp; Daniel Kokotajlo · Asterisk Magazine · 2026-04</span></div><div class="ledrow" id="r_will_ai_progress_accelerate_2026"><a href="https://www.lesswrong.com/posts/wM9LCAtuza4d3Z7oA/will-ai-progress-accelerate-or-slow-down-projecting-metr" rel="noopener">Will AI Progress Accelerate or Slow Down? Projecting METR Time Horizons</a><span class="ledm"> — Alvin Ånestrand · LessWrong · 2026-03</span></div></details>
+<details class="leddet" open><summary>Foundational reading (3)</summary><a class="fnd" href="https://arxiv.org/abs/2401.02843" rel="noopener">Thousands of AI Authors on the Future of AI<span class="lsrc">Grace et al. · 2024</span></a><a class="fnd" href="https://epoch.ai/blog/literature-review-of-transformative-artificial-intelligence-timelines/" rel="noopener">Literature Review of Transformative AI Timelines<span class="lsrc">Epoch AI · 2023</span></a><a class="fnd" href="https://www.cold-takes.com/where-ai-forecasting-stands-today/" rel="noopener">AI Timelines: Where the Arguments, and the “Experts,” Stand<span class="lsrc">Holden Karnofsky, Cold Takes · 2021</span></a></details>
+
+<div class="pn2"><a href="../agi-recognition/"><small>Previous</small>1.2.5 AGI recognition</a></div>
+<footer>This is the permanent page for question 1.2.6. <a href="../../methodology/">Methodology</a> ·
+<a href="https://github.com/elehrer123-arch/ai-question-hierarchy/issues/new?template=suggest-improvement.yml&amp;title=%5B1.2.6+agi-timelines%5D+">Suggest a source or correction</a></footer>
+</div></body></html>

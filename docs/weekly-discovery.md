@@ -34,7 +34,8 @@ not weekly.
    (record it in `via`). Drop anything unverifiable. Never fabricate.
 5. **Dates.** Store full `YYYY-MM-DD` publication dates whenever the source
    shows one; month-only (`YYYY-MM`) only when a day is genuinely
-   unascertainable. Also stamp every new item with `"added": "YYYY-MM-DD"`
+   unascertainable. Also stamp every new item with a unique `"rid"`
+   (short slug of title + year, e.g. `r_time_horizon_1_1_2026`) and `"added": "YYYY-MM-DD"`
    (the run date) — the Latest page sorts by publication date, but the RSS
    feed sorts by added date so retrospective additions still reach
    subscribers.
@@ -45,7 +46,9 @@ not weekly.
    result the question's framing turns on — and then keep the existing
    selection untouched otherwise. Do not rewrite `moved`, `tier`, `reviewed`,
    or `window` — those belong to full reviews. Dedup against every existing
-   URL in the file.
+   URL in the file. Append one JSON line per new item to
+   `data/history.jsonl` (append-only — never edit or remove existing lines):
+   `{"event":"observed","rid":...,"url":...,"qid":...,"state":"tracked","published":...,"added":...,"on":<run date>}`.
 7. **Build and check.** Run `python3 scripts/build.py`. It validates the data
    and rebuilds the site including `latest/`. Fix any validation errors.
 8. **Publish or report.** If a push credential is available, commit

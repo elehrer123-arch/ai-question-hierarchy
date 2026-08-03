@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Task horizon — The Biggest Questions About AI</title>
+<meta name="description" content="How quickly will the length of tasks agents can complete reliably grow — from minutes to days, months, or entire organizational">
+<link rel="canonical" href="https://elehrer123-arch.github.io/ai-question-hierarchy/questions/agent-task-horizons/">
+<meta property="og:title" content="Task horizon — The Biggest Questions About AI">
+<meta property="og:description" content="How quickly will the length of tasks agents can complete reliably grow — from minutes to days, months, or entire organizational">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://elehrer123-arch.github.io/ai-question-hierarchy/questions/agent-task-horizons/">
+<style>
+:root{--bg:#faf9f6;--panel:#fff;--ink:#1d1c1a;--ink2:#514d45;--ink3:#6f6b5f;--line:#e4e1d8;--gold:#a97729;--sc:#3d6b9e;
+--serif:'Charter','Iowan Old Style',Georgia,serif}
+@media (prefers-color-scheme:dark){:root{--bg:#191817;--panel:#211f1d;--ink:#f2f0ea;--ink2:#c3c0b4;--ink3:#8f8b7e;--line:#33312d}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:700px;margin:0 auto;padding:24px 20px 60px}
+header{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.home{font-family:var(--serif);font-size:15.5px;color:var(--ink);text-decoration:none;font-weight:700}
+.switch{margin-left:auto;font-size:13px;color:var(--ink3)}
+.switch a{color:var(--ink2);text-decoration:none}
+.crumb{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--sc);margin:22px 0 6px}
+.crumb a{color:inherit;text-decoration:none}
+.qid{color:var(--ink3);font-size:13px;font-variant-numeric:tabular-nums}
+h1{font-family:var(--serif);font-weight:400;font-size:27px;line-height:1.25;margin:2px 0 8px}
+.qq{font-family:var(--serif);font-size:17px;font-style:italic;line-height:1.45;color:var(--ink2);margin:0 0 14px}
+.qn{font-size:14.5px;color:var(--ink2);line-height:1.6;margin:0 0 8px}
+.quiet{font-size:12.5px;color:var(--ink3);margin:10px 0 18px}
+.quiet a{color:var(--ink2)}
+.moved{border-top:2px solid var(--sc);background:color-mix(in srgb,var(--sc) 3.5%,transparent);border-radius:0 0 10px 10px;padding:11px 14px;margin:20px 0 8px}
+.mvh{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);font-weight:600;margin-bottom:5px}
+.rvpend{color:var(--gold)}
+.ch{display:flex;gap:10px;margin:7px 0}
+.chn{font-size:11px;color:var(--ink3);font-variant-numeric:tabular-nums;padding-top:2px}
+.cht{font-weight:600;font-size:13.5px;margin-bottom:2px}
+.chb{font-size:13.5px;line-height:1.55;margin:0}
+.rh{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink3);margin:24px 0 4px;font-weight:600}
+.rhm{font-size:12.5px;color:var(--ink3);margin-bottom:12px}
+.rhm a{color:var(--ink2)}
+.gsec{border-left:3px solid var(--kc,var(--line));padding:2px 0 2px 12px;margin:14px 0}
+.glab{font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--kc,var(--ink2))}
+.gclaim{font-family:var(--serif);font-style:italic;font-size:12.5px;color:var(--ink2);margin:2px 0 8px}
+.rec{border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:11px 14px;margin-bottom:9px}
+.rtop{font-size:12px;color:var(--ink3);margin-bottom:3px}
+.rauth{color:var(--ink);font-size:12.5px}
+.pk{border:1px solid var(--line);border-radius:10px;padding:0 6px;font-size:9.5px;letter-spacing:.05em;text-transform:uppercase}
+.rtt{font-size:14.5px;color:var(--ink);text-decoration:none;line-height:1.4}
+.rtt:hover{text-decoration:underline}
+blockquote{font-family:var(--serif);font-size:13px;font-style:italic;color:var(--ink2);border-left:2px solid var(--line);margin:7px 0 4px;padding:0 0 0 10px;line-height:1.5}
+.rnote{font-size:13px;color:var(--ink2);line-height:1.5;margin:5px 0 0}
+.leddet{margin:14px 0}
+.leddet summary{cursor:pointer;font-size:12.5px;color:var(--ink2)}
+.ledrow{font-size:13px;padding:5px 0;border-bottom:1px solid var(--line)}
+.ledrow a{color:var(--ink);text-decoration:none}
+.ledrow a:hover{text-decoration:underline}
+.ledm{color:var(--ink3);font-size:12px}
+.fnd{display:block;border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:8px 11px;margin:6px 0;text-decoration:none;color:var(--ink);font-size:13px;line-height:1.4}
+.lsrc{display:block;font-size:11px;color:var(--ink3);margin-top:1px}
+.analysis .asep{border:0;border-top:1px solid var(--line);margin:28px 0 4px}
+.atitle{font-family:var(--serif);font-weight:400;font-size:22px;margin:4px 0 4px}
+.adate{font-size:12px;color:var(--ink3);margin:0 0 12px}
+.abody{font-family:var(--serif);font-size:15px;line-height:1.65;color:var(--ink)}
+.abody h2{font-family:var(--serif);font-size:19px;margin:22px 0 8px}
+.abody a{color:var(--ink2)}
+.acite{font-size:12px;color:var(--ink3);border-top:1px solid var(--line);padding-top:10px;margin-top:18px}
+.pn2{display:flex;justify-content:space-between;gap:14px;border-top:1px solid var(--line);margin-top:30px;padding-top:14px}
+.pn2 a{font-size:13px;color:var(--ink2);text-decoration:none;max-width:47%;line-height:1.4}
+.pn2 a:hover{color:var(--ink)}
+.pn2 .nx{text-align:right;margin-left:auto}
+.pn2 small{display:block;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink3)}
+footer{border-top:1px solid var(--line);margin-top:26px;padding-top:12px;font-size:12px;color:var(--ink3);line-height:1.6}
+footer a{color:var(--ink2)}
+</style></head><body><div class="wrap">
+<header><a class="home" href="../../">The Biggest Questions About&nbsp;AI</a>
+<nav class="switch" aria-label="View switch"><a href="../../">Map</a> · <a href="../../browse/">Browse</a> · <a href="../../latest/">Latest</a></nav></header>
+<div class="crumb"><a href="../../">The map</a> · 1 Trajectory · <a href="../../browse/#1-3">1.3 Agents and long-horizon autonomy</a></div>
+<div class="qid">1.3.1</div>
+<h1>Task horizon</h1>
+<p class="qq">How quickly will the length of tasks agents can complete reliably grow — from minutes to days, months, or entire organizational projects?</p>
+<p class="qn">METR&#x27;s 2025 measurement found the length of software tasks agents complete at 50% reliability doubling roughly every seven months, with faster doubling among recent models. Extrapolating that curve is a key input to short-timeline forecasts.</p>
+<p class="quiet"><a href="../../#q1-3-1">View on the map →</a> · <a href="../../browse/#q1-3-1">Open in Browse →</a></p>
+<div class="moved" style="--sc:#3d6b9e"><div class="mvh">What changed · January–August 2026 · latest sweep August 3, 2026 · <span class="rvpend">editorial review pending</span></div><div class="ch"><div class="chn">01</div><p class="chb">The measurement fight sharpened in both directions: a joint Epoch–METR benchmark shows the best model completing 56% of weeks-long software rebuilds, while Cursor&#x27;s analysis finds most headline resolutions retrieved fixes rather than derived them. The horizon curve still doubles roughly every 3.5 months; what it measures is the open question. METR&#x27;s own re-measurement (Time Horizon 1.1) finds the curve ~20% faster than previously estimated; Redwood&#x27;s no-chain-of-thought variant doubles only yearly, from a base of minutes.</p></div></div>
+<div class="rh">Recent thinking</div><div class="rhm">9 featured from 11 substantive pieces tracked · January–August 2026 · <a href="../../latest/?q=1.3.1">all 11 chronologically →</a></div><section class="gsec" style="--kc:#3d6b9e"><div class="glab">Horizons are accelerating</div><p class="gclaim">The doubling time itself has shortened; the curve broke upward in 2025.</p><article class="rec" id="r_i_underestimated_ai_capabilities_2026"><div class="rtop"><span class="rauth">Ajeya Cotra</span> · Planned Obsolescence · 2026-03 <span class="pk">essay</span></div><a class="rtt" href="https://www.planned-obsolescence.org/p/i-underestimated-ai-capabilities" rel="noopener">I underestimated AI capabilities (again)</a><blockquote>In 2025, agent time horizons doubled every ~3.5 months, not every ~7 months as in the long-run trend</blockquote><p class="rnote">A forecaster publicly revises upward after the 2025 acceleration and works through what sustained growth would imply.</p></article><article class="rec" id="r_mirrorcode_long_horizon_coding_2026"><div class="rtop"><span class="rauth">Adamczewski, Owen &amp; Rein</span> · Epoch AI &amp; METR · 2026-06 <span class="pk">report</span></div><a class="rtt" href="https://epoch.ai/mirrorcode" rel="noopener">MirrorCode: a long-horizon coding benchmark</a><blockquote>AI models are tasked with reimplementing an entire program end-to-end, without access to the original source code.</blockquote><p class="rnote">Weeks-to-months software tasks: the best model solves 56%, including a 16,000-line toolkit rebuilt in 14 hours for $251.</p></article><article class="rec" id="r_it_feels_like_work_2026"><div class="rtop"><span class="rauth">Ethan Mollick</span> · One Useful Thing · 2026-06 <span class="pk">essay</span></div><a class="rtt" href="https://www.oneusefulthing.org/p/what-it-feels-like-to-work-with-mythos" rel="noopener">What it feels like to work with Mythos</a><blockquote>The work has shifted from process to outcome. I no longer steer; I commission.</blockquote><p class="rnote">Firsthand account of a frontier model working autonomously for 9.5 hours.</p></article></section><section class="gsec" style="--kc:#3d6b9e"><div class="glab">Headline numbers overstate</div><p class="gclaim">Reliability-adjusted horizons are far shorter, and benchmarks embed human scaffolding.</p><article class="rec" id="r_expenditure_horizon_measuring_optimization_2026"><div class="rtop"><span class="rauth">Cunningham, Shetty, Cheng &amp; Rush</span> · METR · 2026-07 <span class="pk">report</span></div><a class="rtt" href="https://metr.org/blog/2026-07-21-expenditure-horizon/" rel="noopener">Expenditure Horizon: Measuring Optimization Ability</a><blockquote>We define an agent&#x27;s &#x27;expenditure horizon&#x27; over an optimization problem as the dollar value at which the improvement to the goal metric is equal to the improvement by a human with the same budget.</blockquote><p class="rnote">A dollar-denominated complement to time horizon; finds current agents add little value on an open-ended AI R&amp;D optimization task.</p></article><article class="rec" id="r_fallacy_16_hour_agent_2026"><div class="rtop"><span class="rauth">Katie Parrott</span> · Every · 2026-05 <span class="pk">essay</span></div><a class="rtt" href="https://every.to/context-window/the-fallacy-of-the-16-hour-agent" rel="noopener">The Fallacy of the 16-hour Agent</a><blockquote>Benchmarks don&#x27;t measure model capability alone. They measure model capability after a human has done the work</blockquote><p class="rnote">Pushback on headline horizon numbers: the 80%-reliability horizon is far shorter, and benchmark tasks embed human scaffolding.</p></article><article class="rec" id="r_reward_hacking_swamping_model_2026"><div class="rtop"><span class="rauth">Naman Jain</span> · Cursor · 2026-06 <span class="pk">report</span></div><a class="rtt" href="https://cursor.com/blog/reward-hacking-coding-benchmarks" rel="noopener">Reward Hacking Is Swamping Model Intelligence Gains</a><blockquote>63% of successful Opus 4.8 Max resolutions retrieved the fix rather than derived it</blockquote><p class="rnote">Headline agent scores conflate retrieval with ability — the same model drops 14 points without internet and git access.</p></article></section><section class="gsec"><div class="glab">Also featured</div><article class="rec" id="r_agents_last_exam_benchmark_2026"><div class="rtop"><span class="rauth">Dawn Song</span> · X · 2026-06 <span class="pk">thread</span> · via <a href="https://thezvi.wordpress.com/2026/06/11/ai-172-the-first-fable/">Zvi, AI #172</a></div><a class="rtt" href="https://x.com/dawnsongtweets/status/2065095757988868190" rel="noopener">Agents&#x27; Last Exam benchmark announcement</a><blockquote>ALE is built from real work, not synthetic tasks. Every task is derived from a real project that a human expert previously completed</blockquote><p class="rnote">A benchmark grounded in completed real professional projects, with per-task cost comparisons.</p></article><article class="rec" id="r_time_horizon_1_1_2026"><div class="rtop"><span class="rauth">METR</span> · METR · 2026-01 <span class="pk">report</span></div><a class="rtt" href="https://metr.org/blog/2026-1-29-time-horizon-1-1/" rel="noopener">Time Horizon 1.1</a><blockquote>The post-2023 doubling-time is 131 days under TH1.1, compared to 165 days under TH1, meaning progress is estimated to be 20% more rapid under TH1.1.</blockquote><p class="rnote">METR&#x27;s re-measurement of the canonical time-horizon curve with 228 tasks and new eval infrastructure; it shortens estimated doubling times (89 days for post-2024 models), directly updating the extrapolation input behind short-timeline forecasts.</p></article><article class="rec" id="r_estimating_no_cot_task_2026"><div class="rtop"><span class="rauth">Woodruff, Ward, Gould et al.</span> · Redwood Research · 2026-06 <span class="pk">report</span></div><a class="rtt" href="https://blog.redwoodresearch.org/p/estimating-no-cot-task-completion" rel="noopener">Estimating No-CoT Task-Completion Time Horizons of Frontier AI Models</a><blockquote>Models&#x27; no-CoT time horizon has doubled roughly every year</blockquote><p class="rnote">Extends the horizon methodology to reasoning without visible chain of thought: no-CoT horizons are only minutes long and double roughly yearly — a distinct and much slower curve than the headline task horizon.</p></article></section><details class="leddet"><summary>Additional relevant discussion (2)</summary><div class="ledrow" id="r_did_google_s_ai_2026"><a href="https://www.normaltech.ai/p/did-googles-ai-agents-really-build" rel="noopener">Did Google&#x27;s AI agents really build an operating system for $916?</a><span class="ledm"> — Rabanser, Kapoor, Bommasani, Schwartz &amp; Narayanan · Normal Technology · 2026-05</span></div><div class="ledrow" id="r_metr_time_horizons_now_2026"><a href="https://www.lesswrong.com/posts/EYb2K9acKfyG2bome/metr-time-horizons-now-10x-year" rel="noopener">METR Time Horizons: Now 10x/Year</a><span class="ledm"> — johncrox · LessWrong · 2026-02</span></div></details>
+<details class="leddet" open><summary>Foundational reading (2)</summary><a class="fnd" href="https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/" rel="noopener">Measuring AI Ability to Complete Long Tasks<span class="lsrc">METR · 2025</span></a><a class="fnd" href="https://arxiv.org/abs/2503.14499" rel="noopener">Measuring AI Ability to Complete Long Software Tasks (paper)<span class="lsrc">Kwa et al., METR · 2025</span></a></details>
+
+<div class="pn2"><a class="nx" href="../agent-persistence/"><small>Next</small>1.3.2 Persistence</a></div>
+<footer>This is the permanent page for question 1.3.1. <a href="../../methodology/">Methodology</a> ·
+<a href="https://github.com/elehrer123-arch/ai-question-hierarchy/issues/new?template=suggest-improvement.yml&amp;title=%5B1.3.1+agent-task-horizons%5D+">Suggest a source or correction</a></footer>
+</div></body></html>

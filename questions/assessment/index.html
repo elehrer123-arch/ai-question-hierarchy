@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Assessment — The Biggest Questions About AI</title>
+<meta name="description" content="How can schools and employers determine what a person genuinely knows or can">
+<link rel="canonical" href="https://elehrer123-arch.github.io/ai-question-hierarchy/questions/assessment/">
+<meta property="og:title" content="Assessment — The Biggest Questions About AI">
+<meta property="og:description" content="How can schools and employers determine what a person genuinely knows or can">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://elehrer123-arch.github.io/ai-question-hierarchy/questions/assessment/">
+<style>
+:root{--bg:#faf9f6;--panel:#fff;--ink:#1d1c1a;--ink2:#514d45;--ink3:#6f6b5f;--line:#e4e1d8;--gold:#a97729;--sc:#a97729;
+--serif:'Charter','Iowan Old Style',Georgia,serif}
+@media (prefers-color-scheme:dark){:root{--bg:#191817;--panel:#211f1d;--ink:#f2f0ea;--ink2:#c3c0b4;--ink3:#8f8b7e;--line:#33312d}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:700px;margin:0 auto;padding:24px 20px 60px}
+header{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.home{font-family:var(--serif);font-size:15.5px;color:var(--ink);text-decoration:none;font-weight:700}
+.switch{margin-left:auto;font-size:13px;color:var(--ink3)}
+.switch a{color:var(--ink2);text-decoration:none}
+.crumb{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--sc);margin:22px 0 6px}
+.crumb a{color:inherit;text-decoration:none}
+.qid{color:var(--ink3);font-size:13px;font-variant-numeric:tabular-nums}
+h1{font-family:var(--serif);font-weight:400;font-size:27px;line-height:1.25;margin:2px 0 8px}
+.qq{font-family:var(--serif);font-size:17px;font-style:italic;line-height:1.45;color:var(--ink2);margin:0 0 14px}
+.qn{font-size:14.5px;color:var(--ink2);line-height:1.6;margin:0 0 8px}
+.quiet{font-size:12.5px;color:var(--ink3);margin:10px 0 18px}
+.quiet a{color:var(--ink2)}
+.moved{border-top:2px solid var(--sc);background:color-mix(in srgb,var(--sc) 3.5%,transparent);border-radius:0 0 10px 10px;padding:11px 14px;margin:20px 0 8px}
+.mvh{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);font-weight:600;margin-bottom:5px}
+.rvpend{color:var(--gold)}
+.ch{display:flex;gap:10px;margin:7px 0}
+.chn{font-size:11px;color:var(--ink3);font-variant-numeric:tabular-nums;padding-top:2px}
+.cht{font-weight:600;font-size:13.5px;margin-bottom:2px}
+.chb{font-size:13.5px;line-height:1.55;margin:0}
+.rh{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink3);margin:24px 0 4px;font-weight:600}
+.rhm{font-size:12.5px;color:var(--ink3);margin-bottom:12px}
+.rhm a{color:var(--ink2)}
+.gsec{border-left:3px solid var(--kc,var(--line));padding:2px 0 2px 12px;margin:14px 0}
+.glab{font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--kc,var(--ink2))}
+.gclaim{font-family:var(--serif);font-style:italic;font-size:12.5px;color:var(--ink2);margin:2px 0 8px}
+.rec{border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:11px 14px;margin-bottom:9px}
+.rtop{font-size:12px;color:var(--ink3);margin-bottom:3px}
+.rauth{color:var(--ink);font-size:12.5px}
+.pk{border:1px solid var(--line);border-radius:10px;padding:0 6px;font-size:9.5px;letter-spacing:.05em;text-transform:uppercase}
+.rtt{font-size:14.5px;color:var(--ink);text-decoration:none;line-height:1.4}
+.rtt:hover{text-decoration:underline}
+blockquote{font-family:var(--serif);font-size:13px;font-style:italic;color:var(--ink2);border-left:2px solid var(--line);margin:7px 0 4px;padding:0 0 0 10px;line-height:1.5}
+.rnote{font-size:13px;color:var(--ink2);line-height:1.5;margin:5px 0 0}
+.leddet{margin:14px 0}
+.leddet summary{cursor:pointer;font-size:12.5px;color:var(--ink2)}
+.ledrow{font-size:13px;padding:5px 0;border-bottom:1px solid var(--line)}
+.ledrow a{color:var(--ink);text-decoration:none}
+.ledrow a:hover{text-decoration:underline}
+.ledm{color:var(--ink3);font-size:12px}
+.fnd{display:block;border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:8px 11px;margin:6px 0;text-decoration:none;color:var(--ink);font-size:13px;line-height:1.4}
+.lsrc{display:block;font-size:11px;color:var(--ink3);margin-top:1px}
+.analysis .asep{border:0;border-top:1px solid var(--line);margin:28px 0 4px}
+.atitle{font-family:var(--serif);font-weight:400;font-size:22px;margin:4px 0 4px}
+.adate{font-size:12px;color:var(--ink3);margin:0 0 12px}
+.abody{font-family:var(--serif);font-size:15px;line-height:1.65;color:var(--ink)}
+.abody h2{font-family:var(--serif);font-size:19px;margin:22px 0 8px}
+.abody a{color:var(--ink2)}
+.acite{font-size:12px;color:var(--ink3);border-top:1px solid var(--line);padding-top:10px;margin-top:18px}
+.pn2{display:flex;justify-content:space-between;gap:14px;border-top:1px solid var(--line);margin-top:30px;padding-top:14px}
+.pn2 a{font-size:13px;color:var(--ink2);text-decoration:none;max-width:47%;line-height:1.4}
+.pn2 a:hover{color:var(--ink)}
+.pn2 .nx{text-align:right;margin-left:auto}
+.pn2 small{display:block;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink3)}
+footer{border-top:1px solid var(--line);margin-top:26px;padding-top:12px;font-size:12px;color:var(--ink3);line-height:1.6}
+footer a{color:var(--ink2)}
+</style></head><body><div class="wrap">
+<header><a class="home" href="../../">The Biggest Questions About&nbsp;AI</a>
+<nav class="switch" aria-label="View switch"><a href="../../">Map</a> · <a href="../../browse/">Browse</a> · <a href="../../latest/">Latest</a></nav></header>
+<div class="crumb"><a href="../../">The map</a> · 5 Humanity · <a href="../../browse/#5-2">5.2 Education and human cognition</a></div>
+<div class="qid">5.2.3</div>
+<h1>Assessment</h1>
+<p class="qq">How can schools and employers determine what a person genuinely knows or can do?</p>
+<p class="qn">Take-home assessment is broken — Mollick&#x27;s &#x27;Homework Apocalypse&#x27; arrived on schedule. The redesign question is what to verify (process? performance under observation?) and at what cost to learning itself.</p>
+<p class="quiet"><a href="../../#q5-2-3">View on the map →</a> · <a href="../../browse/#q5-2-3">Open in Browse →</a></p>
+<div class="moved" style="--sc:#a97729"><div class="mvh">What changed · March–August 2026 · latest sweep August 3, 2026 · <span class="rvpend">editorial review pending</span></div><div class="ch"><div class="chn">01</div><p class="chb">The credential-validity problem got measured and the responses began: a 20-university, 95,000-student study found about a third regularly use AI on assignments and 9% admit outright cheating, and the visible reaction has been the return of blue books and oral exams — each verifying authorship at a real cost to what it can measure and to equity.</p></div></div>
+<div class="rh">Recent thinking</div><div class="rhm">3 featured from 3 substantive pieces tracked · March–August 2026 · <a href="../../latest/?q=5.2.3">all 3 chronologically →</a></div><article class="rec" id="r_widespread_ai_misuse_means_2026"><div class="rtop"><span class="rauth">Patricia Waldron</span> · Cornell Chronicle · 2026-05 <span class="pk">news</span></div><a class="rtt" href="https://news.cornell.edu/stories/2026/05/widespread-ai-misuse-means-higher-ed-must-rethink-assessment" rel="noopener">Widespread AI misuse means higher ed must rethink assessment</a><blockquote>The fact that students are misusing GenAI is a problem for assessment validity, and that&#x27;s a problem for the credibility of university credentials.</blockquote><p class="rnote">Reports the Kizilcec, Chirikov &amp; Smirnov study (Science, 2026) across 20 universities and 95,000+ students: about a third regularly use GenAI on assignments and 9% admit cheating — the largest measurement grounding the &#x27;what does the credential certify&#x27; problem.</p></article><article class="rec" id="r_blue_books_make_out_2026"><div class="rtop"><span class="rauth">Josephine Walker</span> · Axios · 2026-03 <span class="pk">news</span></div><a class="rtt" href="https://www.axios.com/2026/03/14/ai-blue-books-colleges-jobs" rel="noopener">Blue books make an &quot;out of step&quot; campus comeback in the AI era</a><blockquote>Colleges besieged by AI-generated writing brought back blue-book exams to deter cheating, but some educators say hand-written tests don&#x27;t showcase students&#x27; best work and disadvantage swaths of learners.</blockquote><p class="rnote">Documents the return of blue books as the live assessment response and surfaces the tradeoff: in-class handwriting verifies authorship but may under-measure ability and disadvantage some learners.</p></article><article class="rec" id="r_oral_assessment_ai_eraequity_2026"><div class="rtop"><span class="rauth">Hengzhi Hu &amp; Harwati Hashim</span> · Educational Researcher · 2026-03 <span class="pk">paper</span></div><a class="rtt" href="https://journals.sagepub.com/doi/10.3102/0013189X261426370" rel="noopener">Oral Assessment in the AI Era—Equity, Validity, and Scale</a><blockquote>Operationalize equity by separating language production from disciplinary reasoning and providing targeted accommodations</blockquote><p class="rnote">Peer-reviewed treatment of the other main verification response — oral exams — taking the equity, validity, and scalability objections seriously rather than treating orals as an obvious fix.</p></article>
+<details class="leddet" open><summary>Foundational reading (2)</summary><a class="fnd" href="https://www.teqsa.gov.au/guides-resources/resources/corporate-publications/assessment-reform-age-artificial-intelligence" rel="noopener">Assessment reform for the age of artificial intelligence<span class="lsrc">Lodge, Dawson et al., TEQSA · 2023</span></a><a class="fnd" href="https://www.oneusefulthing.org/p/the-homework-apocalypse" rel="noopener">The Homework Apocalypse<span class="lsrc">Ethan Mollick · 2023</span></a></details>
+
+<div class="pn2"><a href="../learning-versus-outsourcing/"><small>Previous</small>5.2.2 Learning versus outsourcing</a><a class="nx" href="../cognitive-inequality/"><small>Next</small>5.2.4 Cognitive inequality</a></div>
+<footer>This is the permanent page for question 5.2.3. <a href="../../methodology/">Methodology</a> ·
+<a href="https://github.com/elehrer123-arch/ai-question-hierarchy/issues/new?template=suggest-improvement.yml&amp;title=%5B5.2.3+assessment%5D+">Suggest a source or correction</a></footer>
+</div></body></html>

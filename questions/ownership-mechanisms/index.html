@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ownership mechanisms — The Biggest Questions About AI</title>
+<meta name="description" content="Could broader capital ownership, sovereign funds, social dividends, UBI, negative income taxes, or shorter workweeks distribute gains">
+<link rel="canonical" href="https://elehrer123-arch.github.io/ai-question-hierarchy/questions/ownership-mechanisms/">
+<meta property="og:title" content="Ownership mechanisms — The Biggest Questions About AI">
+<meta property="og:description" content="Could broader capital ownership, sovereign funds, social dividends, UBI, negative income taxes, or shorter workweeks distribute gains">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://elehrer123-arch.github.io/ai-question-hierarchy/questions/ownership-mechanisms/">
+<style>
+:root{--bg:#faf9f6;--panel:#fff;--ink:#1d1c1a;--ink2:#514d45;--ink3:#6f6b5f;--line:#e4e1d8;--gold:#a97729;--sc:#3d8a6b;
+--serif:'Charter','Iowan Old Style',Georgia,serif}
+@media (prefers-color-scheme:dark){:root{--bg:#191817;--panel:#211f1d;--ink:#f2f0ea;--ink2:#c3c0b4;--ink3:#8f8b7e;--line:#33312d}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:700px;margin:0 auto;padding:24px 20px 60px}
+header{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.home{font-family:var(--serif);font-size:15.5px;color:var(--ink);text-decoration:none;font-weight:700}
+.switch{margin-left:auto;font-size:13px;color:var(--ink3)}
+.switch a{color:var(--ink2);text-decoration:none}
+.crumb{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--sc);margin:22px 0 6px}
+.crumb a{color:inherit;text-decoration:none}
+.qid{color:var(--ink3);font-size:13px;font-variant-numeric:tabular-nums}
+h1{font-family:var(--serif);font-weight:400;font-size:27px;line-height:1.25;margin:2px 0 8px}
+.qq{font-family:var(--serif);font-size:17px;font-style:italic;line-height:1.45;color:var(--ink2);margin:0 0 14px}
+.qn{font-size:14.5px;color:var(--ink2);line-height:1.6;margin:0 0 8px}
+.quiet{font-size:12.5px;color:var(--ink3);margin:10px 0 18px}
+.quiet a{color:var(--ink2)}
+.moved{border-top:2px solid var(--sc);background:color-mix(in srgb,var(--sc) 3.5%,transparent);border-radius:0 0 10px 10px;padding:11px 14px;margin:20px 0 8px}
+.mvh{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);font-weight:600;margin-bottom:5px}
+.rvpend{color:var(--gold)}
+.ch{display:flex;gap:10px;margin:7px 0}
+.chn{font-size:11px;color:var(--ink3);font-variant-numeric:tabular-nums;padding-top:2px}
+.cht{font-weight:600;font-size:13.5px;margin-bottom:2px}
+.chb{font-size:13.5px;line-height:1.55;margin:0}
+.rh{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink3);margin:24px 0 4px;font-weight:600}
+.rhm{font-size:12.5px;color:var(--ink3);margin-bottom:12px}
+.rhm a{color:var(--ink2)}
+.gsec{border-left:3px solid var(--kc,var(--line));padding:2px 0 2px 12px;margin:14px 0}
+.glab{font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--kc,var(--ink2))}
+.gclaim{font-family:var(--serif);font-style:italic;font-size:12.5px;color:var(--ink2);margin:2px 0 8px}
+.rec{border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:11px 14px;margin-bottom:9px}
+.rtop{font-size:12px;color:var(--ink3);margin-bottom:3px}
+.rauth{color:var(--ink);font-size:12.5px}
+.pk{border:1px solid var(--line);border-radius:10px;padding:0 6px;font-size:9.5px;letter-spacing:.05em;text-transform:uppercase}
+.rtt{font-size:14.5px;color:var(--ink);text-decoration:none;line-height:1.4}
+.rtt:hover{text-decoration:underline}
+blockquote{font-family:var(--serif);font-size:13px;font-style:italic;color:var(--ink2);border-left:2px solid var(--line);margin:7px 0 4px;padding:0 0 0 10px;line-height:1.5}
+.rnote{font-size:13px;color:var(--ink2);line-height:1.5;margin:5px 0 0}
+.leddet{margin:14px 0}
+.leddet summary{cursor:pointer;font-size:12.5px;color:var(--ink2)}
+.ledrow{font-size:13px;padding:5px 0;border-bottom:1px solid var(--line)}
+.ledrow a{color:var(--ink);text-decoration:none}
+.ledrow a:hover{text-decoration:underline}
+.ledm{color:var(--ink3);font-size:12px}
+.fnd{display:block;border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:8px 11px;margin:6px 0;text-decoration:none;color:var(--ink);font-size:13px;line-height:1.4}
+.lsrc{display:block;font-size:11px;color:var(--ink3);margin-top:1px}
+.analysis .asep{border:0;border-top:1px solid var(--line);margin:28px 0 4px}
+.atitle{font-family:var(--serif);font-weight:400;font-size:22px;margin:4px 0 4px}
+.adate{font-size:12px;color:var(--ink3);margin:0 0 12px}
+.abody{font-family:var(--serif);font-size:15px;line-height:1.65;color:var(--ink)}
+.abody h2{font-family:var(--serif);font-size:19px;margin:22px 0 8px}
+.abody a{color:var(--ink2)}
+.acite{font-size:12px;color:var(--ink3);border-top:1px solid var(--line);padding-top:10px;margin-top:18px}
+.pn2{display:flex;justify-content:space-between;gap:14px;border-top:1px solid var(--line);margin-top:30px;padding-top:14px}
+.pn2 a{font-size:13px;color:var(--ink2);text-decoration:none;max-width:47%;line-height:1.4}
+.pn2 a:hover{color:var(--ink)}
+.pn2 .nx{text-align:right;margin-left:auto}
+.pn2 small{display:block;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink3)}
+footer{border-top:1px solid var(--line);margin-top:26px;padding-top:12px;font-size:12px;color:var(--ink3);line-height:1.6}
+footer a{color:var(--ink2)}
+</style></head><body><div class="wrap">
+<header><a class="home" href="../../">The Biggest Questions About&nbsp;AI</a>
+<nav class="switch" aria-label="View switch"><a href="../../">Map</a> · <a href="../../browse/">Browse</a> · <a href="../../latest/">Latest</a></nav></header>
+<div class="crumb"><a href="../../">The map</a> · 3 Economy · <a href="../../browse/#3-5">3.5 Distribution, ownership, and development</a></div>
+<div class="qid">3.5.3</div>
+<h1>Ownership mechanisms</h1>
+<p class="qq">Could broader capital ownership, sovereign funds, social dividends, UBI, negative income taxes, or shorter workweeks distribute gains effectively?</p>
+<p class="qn">Proposals range from Altman&#x27;s taxed-equity &#x27;Moore&#x27;s Law for Everything&#x27; to windfall clauses committing labs to share extreme profits. The design question — mechanisms, not just transfers — is underdeveloped relative to its stakes.</p>
+<p class="quiet"><a href="../../#q3-5-3">View on the map →</a> · <a href="../../browse/#q3-5-3">Open in Browse →</a></p>
+<div class="moved" style="--sc:#3d8a6b"><div class="mvh">What changed · January–August 2026 · latest sweep August 3, 2026 · <span class="rvpend">editorial review pending</span></div><div class="ch"><div class="chn">01</div><p class="chb">The mechanisms went from thought experiment to legislation: the June Sanders bill would tax leading AI firms 50% equity stakes into a public fund, Korinek and Lockwood built the public-finance framework for when labor-tax bases erode, and Smith made the political-durability case for sovereign wealth over taxation.</p></div></div>
+<div class="rh">Recent thinking</div><div class="rhm">3 featured from 3 substantive pieces tracked · January–August 2026 · <a href="../../latest/?q=3.5.3">all 3 chronologically →</a></div><article class="rec" id="r_bernie_sanders_ai_sovereign_2026"><div class="rtop"><span class="rauth">Matt Bruenig</span> · People&#x27;s Policy Project · 2026-06 <span class="pk">post</span></div><a class="rtt" href="https://www.peoplespolicyproject.org/2026/06/26/bernie-sanders-ai-swf/" rel="noopener">The Bernie Sanders AI Sovereign Wealth Fund Proposal</a><blockquote>This would be akin to transferring over $1 trillion of stock equity from Anthropic, OpenAI, and the spun-off Gemini to the government</blockquote><p class="rnote">Analyzes the June 2026 bill taxing leading AI companies 50% equity stakes into a public fund — state ownership with control rights, not a passive dividend.</p></article><article class="rec" id="r_future_tax_policy_public_2026"><div class="rtop"><span class="rauth">Korinek &amp; Lockwood</span> · Brookings / NBER · 2026-01 <span class="pk">paper</span></div><a class="rtt" href="https://www.brookings.edu/articles/future-tax-policy-a-public-finance-framework-for-the-age-of-ai/" rel="noopener">Future tax policy: A public finance framework for the age of AI</a><p class="rnote">How to fund redistribution as labor income tax bases erode: consumption taxation over taxing productive AI capital; equity mechanisms for advanced scenarios.</p></article><article class="rec" id="r_democratic_economic_policy_age_2026"><div class="rtop"><span class="rauth">Noah Smith</span> · Noahpinion · 2026-02 <span class="pk">essay</span></div><a class="rtt" href="https://www.noahpinion.blog/p/democratic-economic-policy-in-the" rel="noopener">Democratic economic policy in the age of AI</a><p class="rnote">A sovereign wealth fund taking broad equity stakes as redistribution more politically durable than taxation.</p></article>
+<details class="leddet" open><summary>Foundational reading (3)</summary><a class="fnd" href="https://moores.samaltman.com/" rel="noopener">Moore&#x27;s Law for Everything<span class="lsrc">Sam Altman · 2021</span></a><a class="fnd" href="https://www.governance.ai/research-paper/the-windfall-clause-distributing-the-benefits-of-ai-for-the-common-good" rel="noopener">The Windfall Clause<span class="lsrc">O&#x27;Keefe et al., GovAI · 2020</span></a><a class="fnd" href="https://www.nber.org/papers/w32719" rel="noopener">The Employment Effects of a Guaranteed Income: Experimental Evidence from Two U.S. States<span class="lsrc">Vivalt et al., NBER · 2024</span></a></details>
+
+<div class="pn2"><a href="../global-inequality/"><small>Previous</small>3.5.2 Global inequality</a></div>
+<footer>This is the permanent page for question 3.5.3. <a href="../../methodology/">Methodology</a> ·
+<a href="https://github.com/elehrer123-arch/ai-question-hierarchy/issues/new?template=suggest-improvement.yml&amp;title=%5B3.5.3+ownership-mechanisms%5D+">Suggest a source or correction</a></footer>
+</div></body></html>

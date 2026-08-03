@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Human oversight — The Biggest Questions About AI</title>
+<meta name="description" content="When should humans remain in the loop, remain only as monitors, or be excluded because intermittent intervention degrades">
+<link rel="canonical" href="https://elehrer123-arch.github.io/ai-question-hierarchy/questions/human-oversight/">
+<meta property="og:title" content="Human oversight — The Biggest Questions About AI">
+<meta property="og:description" content="When should humans remain in the loop, remain only as monitors, or be excluded because intermittent intervention degrades">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://elehrer123-arch.github.io/ai-question-hierarchy/questions/human-oversight/">
+<style>
+:root{--bg:#faf9f6;--panel:#fff;--ink:#1d1c1a;--ink2:#514d45;--ink3:#6f6b5f;--line:#e4e1d8;--gold:#a97729;--sc:#b0524b;
+--serif:'Charter','Iowan Old Style',Georgia,serif}
+@media (prefers-color-scheme:dark){:root{--bg:#191817;--panel:#211f1d;--ink:#f2f0ea;--ink2:#c3c0b4;--ink3:#8f8b7e;--line:#33312d}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:700px;margin:0 auto;padding:24px 20px 60px}
+header{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.home{font-family:var(--serif);font-size:15.5px;color:var(--ink);text-decoration:none;font-weight:700}
+.switch{margin-left:auto;font-size:13px;color:var(--ink3)}
+.switch a{color:var(--ink2);text-decoration:none}
+.crumb{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--sc);margin:22px 0 6px}
+.crumb a{color:inherit;text-decoration:none}
+.qid{color:var(--ink3);font-size:13px;font-variant-numeric:tabular-nums}
+h1{font-family:var(--serif);font-weight:400;font-size:27px;line-height:1.25;margin:2px 0 8px}
+.qq{font-family:var(--serif);font-size:17px;font-style:italic;line-height:1.45;color:var(--ink2);margin:0 0 14px}
+.qn{font-size:14.5px;color:var(--ink2);line-height:1.6;margin:0 0 8px}
+.quiet{font-size:12.5px;color:var(--ink3);margin:10px 0 18px}
+.quiet a{color:var(--ink2)}
+.moved{border-top:2px solid var(--sc);background:color-mix(in srgb,var(--sc) 3.5%,transparent);border-radius:0 0 10px 10px;padding:11px 14px;margin:20px 0 8px}
+.mvh{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);font-weight:600;margin-bottom:5px}
+.rvpend{color:var(--gold)}
+.ch{display:flex;gap:10px;margin:7px 0}
+.chn{font-size:11px;color:var(--ink3);font-variant-numeric:tabular-nums;padding-top:2px}
+.cht{font-weight:600;font-size:13.5px;margin-bottom:2px}
+.chb{font-size:13.5px;line-height:1.55;margin:0}
+.rh{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink3);margin:24px 0 4px;font-weight:600}
+.rhm{font-size:12.5px;color:var(--ink3);margin-bottom:12px}
+.rhm a{color:var(--ink2)}
+.gsec{border-left:3px solid var(--kc,var(--line));padding:2px 0 2px 12px;margin:14px 0}
+.glab{font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--kc,var(--ink2))}
+.gclaim{font-family:var(--serif);font-style:italic;font-size:12.5px;color:var(--ink2);margin:2px 0 8px}
+.rec{border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:11px 14px;margin-bottom:9px}
+.rtop{font-size:12px;color:var(--ink3);margin-bottom:3px}
+.rauth{color:var(--ink);font-size:12.5px}
+.pk{border:1px solid var(--line);border-radius:10px;padding:0 6px;font-size:9.5px;letter-spacing:.05em;text-transform:uppercase}
+.rtt{font-size:14.5px;color:var(--ink);text-decoration:none;line-height:1.4}
+.rtt:hover{text-decoration:underline}
+blockquote{font-family:var(--serif);font-size:13px;font-style:italic;color:var(--ink2);border-left:2px solid var(--line);margin:7px 0 4px;padding:0 0 0 10px;line-height:1.5}
+.rnote{font-size:13px;color:var(--ink2);line-height:1.5;margin:5px 0 0}
+.leddet{margin:14px 0}
+.leddet summary{cursor:pointer;font-size:12.5px;color:var(--ink2)}
+.ledrow{font-size:13px;padding:5px 0;border-bottom:1px solid var(--line)}
+.ledrow a{color:var(--ink);text-decoration:none}
+.ledrow a:hover{text-decoration:underline}
+.ledm{color:var(--ink3);font-size:12px}
+.fnd{display:block;border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:8px 11px;margin:6px 0;text-decoration:none;color:var(--ink);font-size:13px;line-height:1.4}
+.lsrc{display:block;font-size:11px;color:var(--ink3);margin-top:1px}
+.analysis .asep{border:0;border-top:1px solid var(--line);margin:28px 0 4px}
+.atitle{font-family:var(--serif);font-weight:400;font-size:22px;margin:4px 0 4px}
+.adate{font-size:12px;color:var(--ink3);margin:0 0 12px}
+.abody{font-family:var(--serif);font-size:15px;line-height:1.65;color:var(--ink)}
+.abody h2{font-family:var(--serif);font-size:19px;margin:22px 0 8px}
+.abody a{color:var(--ink2)}
+.acite{font-size:12px;color:var(--ink3);border-top:1px solid var(--line);padding-top:10px;margin-top:18px}
+.pn2{display:flex;justify-content:space-between;gap:14px;border-top:1px solid var(--line);margin-top:30px;padding-top:14px}
+.pn2 a{font-size:13px;color:var(--ink2);text-decoration:none;max-width:47%;line-height:1.4}
+.pn2 a:hover{color:var(--ink)}
+.pn2 .nx{text-align:right;margin-left:auto}
+.pn2 small{display:block;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink3)}
+footer{border-top:1px solid var(--line);margin-top:26px;padding-top:12px;font-size:12px;color:var(--ink3);line-height:1.6}
+footer a{color:var(--ink2)}
+</style></head><body><div class="wrap">
+<header><a class="home" href="../../">The Biggest Questions About&nbsp;AI</a>
+<nav class="switch" aria-label="View switch"><a href="../../">Map</a> · <a href="../../browse/">Browse</a> · <a href="../../latest/">Latest</a></nav></header>
+<div class="crumb"><a href="../../">The map</a> · 2 Safety · <a href="../../browse/#2-3">2.3 Reliability and human–AI interaction</a></div>
+<div class="qid">2.3.3</div>
+<h1>Human oversight</h1>
+<p class="qq">When should humans remain in the loop, remain only as monitors, or be excluded because intermittent intervention degrades performance?</p>
+<p class="qn">Nominal human-in-the-loop requirements can become safety theater: critics argue oversight mandates assume vigilance humans cannot sustain, while defenders reply that oversight with real authority, time, and information does add safety. Which conditions separate the two is the open question.</p>
+<p class="quiet"><a href="../../#q2-3-3">View on the map →</a> · <a href="../../browse/#q2-3-3">Open in Browse →</a></p>
+<div class="moved" style="--sc:#b0524b"><div class="mvh">What changed · October 2025–August 2026 · latest sweep August 3, 2026 · <span class="rvpend">editorial review pending</span></div><div class="ch"><div class="chn">01</div><p class="chb">The literature is trying to move &#x27;keep a human in the loop&#x27; from slogan to design. Proposals converge on exploiting the solve-verify asymmetry — engineer AI outputs so a human can check them without redoing the work — and a formal treatment proves conditions under which granting an agent more autonomy cannot hurt the overseer. A counterweight comes from experiments showing the human side of the loop degrades for social reasons: teams performed worse merely believing a competent teammate was an AI.</p></div></div>
+<div class="rh">Recent thinking</div><div class="rhm">4 featured from 5 substantive pieces tracked · October 2025–August 2026 · <a href="../../latest/?q=2.3.3">all 5 chronologically →</a></div><article class="rec" id="r_designing_meaningful_human_oversight_2026"><div class="rtop"><span class="rauth">Zhu, Lu, Ding, Lee &amp; Wang</span> · AI and Ethics (Springer) · 2026-05 <span class="pk">paper</span></div><a class="rtt" href="https://link.springer.com/article/10.1007/s43681-026-01147-7" rel="noopener">Designing meaningful human oversight in AI</a><blockquote>We also exploit the solve-verify asymmetry by designing AI outputs so that humans can efficiently check and contest them without having to resolve the task.</blockquote><p class="rnote">A concrete design answer to the oversight-as-theater critique: keep AI&#x27;s operative agency but engineer outputs for human evaluative agency, exploiting the asymmetry that verifying is cheaper than solving.</p></article><article class="rec" id="r_keeping_eye_ai_framework_2026"><div class="rtop"><span class="rauth">Gaube, Langer, Miller et al. (16 authors)</span> · arXiv · 2026-04 <span class="pk">paper</span></div><a class="rtt" href="https://arxiv.org/html/2605.16278" rel="noopener">Keeping an Eye on AI: A Framework for Effective Human Oversight of AI Systems</a><blockquote>a foundational framework, with a working definition, architecture and processes for effective human oversight of AI systems</blockquote><p class="rnote">A 16-author interdisciplinary attempt to give &#x27;effective human oversight&#x27; a working definition, architecture, and research agenda — the synthesis that regulators invoking oversight requirements currently lack.</p></article><article class="rec" id="r_oversight_game_learning_cooperatively_2025"><div class="rtop"><span class="rauth">William Overman &amp; Mohsen Bayati</span> · arXiv · 2025-10 <span class="pk">paper</span></div><a class="rtt" href="https://arxiv.org/abs/2510.26752" rel="noopener">The Oversight Game: Learning to Cooperatively Balance an AI Agent&#x27;s Safety and Autonomy</a><blockquote>When this game forms a Markov Potential Game, we prove an alignment guarantee: any increase in the agent&#x27;s utility from acting more autonomously cannot decrease the human&#x27;s value.</blockquote><p class="rnote">Formalizes the ask-for-oversight vs act-autonomously decision as a game and proves conditions under which granting autonomy cannot hurt the human overseer — a rare theoretical handle on when humans can safely step back.</p></article><article class="rec" id="r_covert_perception_ai_adversely_2026"><div class="rtop"><span class="rauth">Yinuo Qin, Richard T. Lee &amp; Paul Sajda</span> · npj Artificial Intelligence · 2026-06 <span class="pk">paper</span></div><a class="rtt" href="https://www.nature.com/articles/s44387-026-00130-1" rel="noopener">Covert perception of AI adversely impacts team performance despite human-level AI competence</a><blockquote>teams performed worse when a teammate was perceived as AI, especially when task difficulty increased.</blockquote><p class="rnote">Experimental evidence that merely believing a competent teammate is an AI degrades team performance and communication — the human side of the loop malfunctions for social-psychological reasons even when the AI is at human level.</p></article><details class="leddet"><summary>Additional relevant discussion (1)</summary><div class="ledrow" id="r_human_guided_agentic_research_2026"><a href="https://www.lesswrong.com/posts/8KrTuCAzL2fdYHNrv/human-guided-agentic-research-a-research-agenda" rel="noopener">Human-Guided Agentic Research: A Research Agenda</a><span class="ledm"> — fastfedora · LessWrong · 2026-06</span></div></details>
+<details class="leddet" open><summary>Foundational reading (2)</summary><a class="fnd" href="https://scholarship.law.vanderbilt.edu/vlr/vol76/iss2/2/" rel="noopener">Humans in the Loop<span class="lsrc">Crootof, Kaminski &amp; Price, Vanderbilt Law Review · 2023</span></a><a class="fnd" href="https://www.sciencedirect.com/science/article/pii/S0267364922000292" rel="noopener">The flaws of policies requiring human oversight<span class="lsrc">Ben Green · 2022</span></a></details>
+
+<div class="pn2"><a href="../distribution-shift/"><small>Previous</small>2.3.2 Distribution shift</a><a class="nx" href="../automation-bias/"><small>Next</small>2.3.4 Automation bias</a></div>
+<footer>This is the permanent page for question 2.3.3. <a href="../../methodology/">Methodology</a> ·
+<a href="https://github.com/elehrer123-arch/ai-question-hierarchy/issues/new?template=suggest-improvement.yml&amp;title=%5B2.3.3+human-oversight%5D+">Suggest a source or correction</a></footer>
+</div></body></html>
