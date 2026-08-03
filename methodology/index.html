@@ -14,8 +14,10 @@ header{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
 .home{font-family:var(--serif);font-size:16px;color:var(--ink);text-decoration:none}
 .switch{margin-left:auto;font-size:13px;color:var(--ink3)}
 .switch a{color:var(--ink2);text-decoration:none}
-h1{font-family:var(--serif);font-weight:400;font-size:30px;margin:18px 0 10px}
-h2{font-family:var(--serif);font-weight:400;font-size:20px;margin:26px 0 6px}
+h1{font-family:var(--serif);font-weight:400;font-size:31px;margin:6px 0 8px;padding-bottom:12px;border-bottom:2px solid var(--gold)}
+.mkick{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink3);margin:22px 0 0}
+h2#review{scroll-margin-top:20px}
+h2{font-family:var(--serif);font-weight:400;font-size:20px;margin:28px 0 6px;padding-left:11px;border-left:3px solid var(--gold)}
 p{font-size:14.5px;line-height:1.62;color:var(--ink2);margin:0 0 12px}
 strong{color:var(--ink)}
 a{color:var(--ink2)}
@@ -23,8 +25,9 @@ a{color:var(--ink2)}
 </style></head><body><div class="wrap">
 <header><a class="home" href="../">The Biggest Questions About&nbsp;AI</a>
 <nav class="switch"><a href="../">Map</a> · <a href="../browse/">Browse</a> · <a href="../latest/">Latest</a></nav></header>
+<p class="mkick">How this site is made</p>
 <h1>Methodology</h1>
-<p class="upd">Updated August 3, 2026.</p>
+<p class="upd">Updated August 3, 2026 · <a href="../">the map</a> · <a href="../latest/">latest</a></p>
 
 <h2>What this site is</h2>
 <p>A map of 127 open questions about AI, each with a short framing of the live debate,
@@ -51,7 +54,7 @@ what crossed the threshold appears under &ldquo;Additional relevant discussion&r
 <a href="../latest/">Latest</a>. Featuring reflects significance, author diversity, and the
 shape of the debate — not a verdict that other pieces failed.</p>
 
-<h2>The role of AI, honestly</h2>
+<h2 id="review">The role of AI, honestly</h2>
 <p>This is an AI-assisted publication. Discovery, verification, and first-draft synthesis
 (including each question&#39;s &ldquo;What changed&rdquo; note) are performed by AI — Claude — operating
 under a written editorial policy, with the editor directing and spot-checking. Every question

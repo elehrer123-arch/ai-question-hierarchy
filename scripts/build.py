@@ -321,6 +321,32 @@ def entry_excerpt(body):
     return text.replace("*", "").strip()
 
 
+def recent_strip(sections, recent, n=4):
+    """The five most recently added items, for the homepage."""
+    meta = {q["id"]: (q["t"], s["id"], q["slug"])
+            for s in sections for su in s["subs"] for q in su["qs"]}
+    rows = []
+    for disp, entry in (recent or {"items": {}})["items"].items():
+        for it in entry.get("items", []) + entry.get("ledger", []):
+            rows.append((it.get("added", ""), it["date"], disp, it))
+    rows.sort(key=lambda r: (r[0], r[1]), reverse=True)
+    seen, out = set(), []
+    for _a, d, disp, it in rows:
+        if it["url"] in seen:
+            continue
+        seen.add(it["url"])
+        t, sec, slug = meta[disp]
+        mo = MONTH_NAMES[int(d[5:7]) - 1][:3]
+        when = f'{int(d[8:10])} {mo}' if len(d) == 10 else mo
+        out.append(
+            f'<a class="recit" href="questions/{slug}/" style="--rc:var(--c{sec})">'
+            f'<span class="rt">{E(it["title"])}</span>'
+            f'<span class="rm">{when} · <span class="rq">{disp} {E(t)}</span></span></a>')
+        if len(out) == n:
+            break
+    return "".join(out)
+
+
 def render_map(sections, entry_map, recent=None):
     qcount = sum(len(su["qs"]) for s in sections for su in s["subs"])
     lcount = sum(len(q["links"]) for s in sections for su in s["subs"] for q in su["qs"])
@@ -371,10 +397,12 @@ def render_map(sections, entry_map, recent=None):
                     f'</div></div></div>')
         cols.append(f'<div class="bcol" data-s="{s["id"]}" style="--sc:{c}">'
                     f'<div class="binner">{"".join(inner)}</div></div>')
+    _reclist = recent_strip(sections, recent)
     with open(os.path.join(ROOT, "templates", "map.html"), encoding="utf-8") as f:
         tpl = f.read()
     tracked = len((recent or {}).get("items", {}))
     out = (tpl.replace("__COLS__", "".join(cols))
+              .replace("__RECENTLIST__", _reclist)
               .replace("__QCOUNT__", str(qcount))
               .replace("__LCOUNT__", str(lcount))
               .replace("__TRACKED__", str(tracked)))
@@ -718,6 +746,13 @@ h1{font-family:var(--serif);font-weight:400;font-size:30px;margin:18px 0 6px}
 .meta2{font-size:12px;color:var(--ink3);margin:0 0 20px;max-width:560px;line-height:1.5}
 .meta a{color:var(--ink2)}
 .fbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:6px}
+@media (max-width:620px){
+  .fbar{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-bottom:2px;margin-bottom:2px}
+  .fbar::-webkit-scrollbar{display:none}
+  .fsec{flex:0 0 auto}
+  .fsel{margin-left:0;flex:0 0 auto;padding-left:6px}
+  .srch{max-width:none}
+}
 .fsec{border:1px solid var(--line);background:var(--panel);border-radius:16px;
 padding:4px 11px 4px 8px;font-size:12px;color:var(--ink2);cursor:pointer;display:inline-flex;align-items:center;gap:6px}
 .fsec[aria-pressed="false"]{opacity:.38}
@@ -747,7 +782,7 @@ body.selonly .lg{display:none}
 .qpill.on{display:flex}
 .qpill button{border:1px solid var(--line);background:var(--panel);border-radius:12px;padding:1px 9px;font-size:11.5px;cursor:pointer;color:var(--ink2)}
 .ltrk{color:var(--ink3);font-size:10.5px;margin-left:7px;white-space:nowrap;font-style:italic}
-.ladd{color:var(--ink3);font-size:10.5px;margin-left:7px;white-space:nowrap;border:1px solid var(--line);border-radius:9px;padding:0 6px}
+.ladd{color:var(--ink3);font-size:10.5px;margin-left:7px;white-space:nowrap}
 .rescount{font-size:12px;color:var(--ink3);margin:0 0 10px}
 .empty{display:none;border:1px solid var(--line);border-radius:10px;padding:18px;margin-top:14px;font-size:13.5px;color:var(--ink2);line-height:1.55}
 .empty.on{display:block}
@@ -871,8 +906,10 @@ header{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
 .home{font-family:var(--serif);font-size:16px;color:var(--ink);text-decoration:none}
 .switch{margin-left:auto;font-size:13px;color:var(--ink3)}
 .switch a{color:var(--ink2);text-decoration:none}
-h1{font-family:var(--serif);font-weight:400;font-size:30px;margin:18px 0 10px}
-h2{font-family:var(--serif);font-weight:400;font-size:20px;margin:26px 0 6px}
+h1{font-family:var(--serif);font-weight:400;font-size:31px;margin:6px 0 8px;padding-bottom:12px;border-bottom:2px solid var(--gold)}
+.mkick{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink3);margin:22px 0 0}
+h2#review{scroll-margin-top:20px}
+h2{font-family:var(--serif);font-weight:400;font-size:20px;margin:28px 0 6px;padding-left:11px;border-left:3px solid var(--gold)}
 p{font-size:14.5px;line-height:1.62;color:var(--ink2);margin:0 0 12px}
 strong{color:var(--ink)}
 a{color:var(--ink2)}
@@ -880,8 +917,9 @@ a{color:var(--ink2)}
 </style></head><body><div class="wrap">
 <header><a class="home" href="../">The Biggest Questions About&nbsp;AI</a>
 <nav class="switch"><a href="../">Map</a> · <a href="../browse/">Browse</a> · <a href="../latest/">Latest</a></nav></header>
+<p class="mkick">How this site is made</p>
 <h1>Methodology</h1>
-<p class="upd">Updated __TODAY__.</p>
+<p class="upd">Updated __TODAY__ · <a href="../">the map</a> · <a href="../latest/">latest</a></p>
 
 <h2>What this site is</h2>
 <p>A map of __QCOUNT__ open questions about AI, each with a short framing of the live debate,
@@ -908,7 +946,7 @@ what crossed the threshold appears under &ldquo;Additional relevant discussion&r
 <a href="../latest/">Latest</a>. Featuring reflects significance, author diversity, and the
 shape of the debate — not a verdict that other pieces failed.</p>
 
-<h2>The role of AI, honestly</h2>
+<h2 id="review">The role of AI, honestly</h2>
 <p>This is an AI-assisted publication. Discovery, verification, and first-draft synthesis
 (including each question&#39;s &ldquo;What changed&rdquo; note) are performed by AI — Claude — operating
 under a written editorial policy, with the editor directing and spot-checking. Every question
@@ -986,8 +1024,11 @@ def render_question_pages(sections, entry_map_full, recent, debates):
                 status_html = ""
                 if rq:
                     apv = rq.get("approved")
-                    status = (f'editor-approved {E(apv)}' if apv
-                              else '<span class="rvpend">editorial review pending</span>')
+                    status = (
+                        f'<a class="rvlink" href="../../methodology/#review">'
+                        f'editor-approved {E(apv)}</a>' if apv else
+                        '<a class="rvlink rvpend" href="../../methodology/#review">'
+                        'editorial review pending</a>')
                     anchor2 = (f'since {E(rq["prev_swept"])}' if rq.get("prev_swept")
                                else E(rq.get("window", "")))
                     moved = rq.get("moved")
@@ -1208,6 +1249,8 @@ h1{font-family:var(--serif);font-weight:400;font-size:27px;line-height:1.25;marg
 .mvh{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);font-weight:600;margin-bottom:5px}
 .mvf{font-size:11.5px;color:var(--ink3);margin:1px 0 9px}
 .rvpend{color:var(--gold)}
+.rvlink{text-decoration:underline;text-decoration-style:dotted;text-underline-offset:2px;color:inherit}
+.rvlink:hover{text-decoration-style:solid}
 .ch{display:flex;gap:10px;margin:7px 0}
 .chn{font-size:11px;color:var(--ink3);font-variant-numeric:tabular-nums;padding-top:2px}
 .cht{font-weight:600;font-size:13.5px;margin-bottom:2px}

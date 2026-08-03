@@ -46,7 +46,8 @@ header{padding:11px 18px;border-bottom:1px solid var(--line);display:flex;gap:12
 .cxb a.cur{color:var(--ink);font-weight:600}
 .cxb .cxq{font-size:12px;font-style:italic;color:var(--ink2);line-height:1.45;margin-bottom:6px;font-family:var(--serif)}
 .cxb .dir{font-size:10px;color:var(--ink3);margin:5px 0 1px;text-transform:uppercase;letter-spacing:.08em}
-.pin{max-width:880px;padding:34px 38px 80px}
+.pin{max-width:880px;padding:34px 38px 80px;margin:0 auto}
+.cols{justify-content:center}
 .crumb{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--sc,var(--ink3))}
 .crumb a{color:inherit;text-decoration:none}
 .crumb a:hover{text-decoration:underline}
@@ -85,6 +86,8 @@ h1{font-family:var(--serif);font-size:29px;line-height:1.22;letter-spacing:-.01e
 .evd a:hover{border-color:var(--sc);color:var(--sc)}
 .rec:target,.gft:target,.gcp:target{outline:2px solid var(--sc);outline-offset:3px;border-radius:6px}
 .mvf{font-size:11.5px;color:var(--ink3);margin:0 0 9px}
+.rvlink{text-decoration:underline;text-decoration-style:dotted;text-underline-offset:2px;color:inherit}
+.rvlink:hover{text-decoration-style:solid}
 .mvh{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);font-weight:600;margin-bottom:5px}
 .moved p{font-size:13.5px;color:var(--ink);line-height:1.55}
 .moved ul{margin:0;padding-left:18px}
@@ -321,7 +324,7 @@ function render(k){
     if(rq&&rq.moved){
       const mv=Array.isArray(rq.moved)?rq.moved:[rq.moved];
       const anchor2=rq.prev_swept?`since ${esc(rq.prev_swept)}`:(rq.window?esc(rq.window):'');
-      h+=`<div class="mvh">What changed</div><div class="mvf">${anchor2?esc(anchor2)+' · ':''}swept ${esc(rq.swept)}${rq.approved?` · editor-approved ${esc(rq.approved)}`:` · <span class="rvpend">editorial review pending</span>`}</div><div class="changed">`;
+      h+=`<div class="mvh">What changed</div><div class="mvf">${anchor2?esc(anchor2)+' · ':''}swept ${esc(rq.swept)}${rq.approved?` · <a class="rvlink" href="../methodology/#review">editor-approved ${esc(rq.approved)}</a>`:` · <a class="rvlink rvpend" href="../methodology/#review">editorial review pending</a>`}</div><div class="changed">`;
       mv.forEach((m,i)=>{
         const t0=(typeof m==='object')?m.t:null, b=(typeof m==='object')?m.b:m;
         const rfs=(typeof m==='object'&&m.refs)?m.refs:[];
