@@ -3,8 +3,8 @@
  "questions": {
   "q_current_paradigm_ceiling": {
    "tier": "high",
-   "reviewed": "August 2, 2026",
-   "moved": "DeepMind formalized the routes past AGI while a startup demonstrated current-paradigm agents automating narrow AI research. The continual-learning dispute stands: Patel and Lee argue frozen weights gate discovery; a trillion-parameter RL result says the recipe still has headroom.",
+   "reviewed": "August 3, 2026",
+   "moved": "DeepMind formalized the routes past AGI while a startup demonstrated current-paradigm agents automating narrow AI research. The continual-learning dispute stands: Patel and Lee argue frozen weights gate discovery; a trillion-parameter RL result says the recipe still has headroom. The winter opened a new front: Hooker's 'slow death of scaling' case that the compute-performance link is breaking down, and Ord's estimate that RL scaling is an order of magnitude less efficient than pretraining — with rebuttals arguing both confuse algorithmic progress with the failure of scale.",
    "items": [
     {
      "kind": "paper",
@@ -82,6 +82,26 @@
      "pos": "missing",
      "quote": "Once a model is trained, its weights are frozen and its capacity to learn new patterns is greatly reduced.",
      "note": "Frozen weights and lossy file-based memory prevent agents from accumulating the tacit knowledge discovery requires."
+    },
+    {
+     "kind": "essay",
+     "title": "How Well Does RL Scale?",
+     "author": "Toby Ord",
+     "venue": "LessWrong",
+     "date": "2025-10-22",
+     "url": "https://www.lesswrong.com/posts/xpj6KhDM9bJybdnEe/how-well-does-rl-scale",
+     "quote": "a 10x scaling of RL is required to get the same performance boost as a 3x scaling of inference ... we may have lost the ability to effectively turn more compute into more intelligence.",
+     "note": "A quantitative case that RL compute scaling is far less efficient than pretraining or inference scaling, and that most RL gains come from enabling longer chains of thought — directly challenging the view that RL offsets diminishing pretraining returns."
+    },
+    {
+     "kind": "paper",
+     "title": "On the Slow Death of Scaling",
+     "author": "Sara Hooker",
+     "venue": "SSRN",
+     "date": "2025-12-06",
+     "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5877662",
+     "quote": "The relationship between training compute and performance is highly uncertain and rapidly changing.",
+     "note": "The reference point for the winter 2025–26 'is scaling dead' debate: the compute-performance link is breaking down and progress is shifting to other levers. Kirsch's rebuttal (in the ledger) argues small-beats-large examples reflect newer generations, not the failure of scale."
     }
    ],
    "ledger": [
@@ -100,14 +120,35 @@
      "venue": "dwarkesh.com",
      "date": "2026-05",
      "url": "https://www.dwarkesh.com/p/rlvr-might-be-disproportionately"
+    },
+    {
+     "title": "A Riff on \"The Slow Death of Scaling\"",
+     "author": "Andreas Kirsch",
+     "venue": "BlackHC (blog)",
+     "date": "2026-01-12",
+     "url": "https://blog.blackhc.net/2026/01/riff-on-death-of-scaling/"
+    },
+    {
+     "title": "Quantifying Empirical Compute-Supervision Tradeoffs in RLVR",
+     "author": "Mitsuhashi et al.",
+     "venue": "arXiv",
+     "date": "2026-05-24",
+     "url": "https://arxiv.org/abs/2605.25252"
+    },
+    {
+     "title": "Complementary Intelligence",
+     "author": "Julian Togelius",
+     "venue": "Togelius (blog)",
+     "date": "2026-04-25",
+     "url": "https://togelius.blogspot.com/2026/04/complementary-intelligence.html"
     }
    ],
-   "window": "February–August 2026"
+   "window": "October 2025–August 2026"
   },
   "q_agent_task_horizons": {
    "tier": "high",
-   "reviewed": "August 2, 2026",
-   "moved": "The measurement fight sharpened in both directions: a joint Epoch–METR benchmark shows the best model completing 56% of weeks-long software rebuilds, while Cursor's analysis finds most headline resolutions retrieved fixes rather than derived them. The horizon curve still doubles roughly every 3.5 months; what it measures is the open question.",
+   "reviewed": "August 3, 2026",
+   "moved": "The measurement fight sharpened in both directions: a joint Epoch–METR benchmark shows the best model completing 56% of weeks-long software rebuilds, while Cursor's analysis finds most headline resolutions retrieved fixes rather than derived them. The horizon curve still doubles roughly every 3.5 months; what it measures is the open question. METR's own re-measurement (Time Horizon 1.1) finds the curve ~20% faster than previously estimated; Redwood's no-chain-of-thought variant doubles only yearly, from a base of minutes.",
    "items": [
     {
      "kind": "report",
@@ -142,18 +183,6 @@
      "url": "https://www.planned-obsolescence.org/p/i-underestimated-ai-capabilities",
      "quote": "In 2025, agent time horizons doubled every ~3.5 months, not every ~7 months as in the long-run trend",
      "note": "A forecaster publicly revises upward after the 2025 acceleration and works through what sustained growth would imply.",
-     "stance": "Curve accelerating",
-     "pos": "fast"
-    },
-    {
-     "kind": "post",
-     "title": "METR Time Horizons: Now 10x/Year",
-     "author": "johncrox",
-     "venue": "LessWrong",
-     "date": "2026-02",
-     "url": "https://www.lesswrong.com/posts/EYb2K9acKfyG2bome/metr-time-horizons-now-10x-year",
-     "quote": "AI models are now improving on METR's Time Horizon benchmark at about 10x per year, compared to ~3x per year before 2024.",
-     "note": "Argues the horizon curve has broken upward from its long-run trend.",
      "stance": "Curve accelerating",
      "pos": "fast"
     },
@@ -203,6 +232,26 @@
      },
      "quote": "ALE is built from real work, not synthetic tasks. Every task is derived from a real project that a human expert previously completed",
      "note": "A benchmark grounded in completed real professional projects, with per-task cost comparisons."
+    },
+    {
+     "kind": "report",
+     "title": "Time Horizon 1.1",
+     "author": "METR",
+     "venue": "METR",
+     "date": "2026-01-29",
+     "url": "https://metr.org/blog/2026-1-29-time-horizon-1-1/",
+     "quote": "The post-2023 doubling-time is 131 days under TH1.1, compared to 165 days under TH1, meaning progress is estimated to be 20% more rapid under TH1.1.",
+     "note": "METR's re-measurement of the canonical time-horizon curve with 228 tasks and new eval infrastructure; it shortens estimated doubling times (89 days for post-2024 models), directly updating the extrapolation input behind short-timeline forecasts."
+    },
+    {
+     "kind": "report",
+     "title": "Estimating No-CoT Task-Completion Time Horizons of Frontier AI Models",
+     "author": "Woodruff, Ward, Gould et al.",
+     "venue": "Redwood Research",
+     "date": "2026-06-10",
+     "url": "https://blog.redwoodresearch.org/p/estimating-no-cot-task-completion",
+     "quote": "Models' no-CoT time horizon has doubled roughly every year",
+     "note": "Extends the horizon methodology to reasoning without visible chain of thought: no-CoT horizons are only minutes long and double roughly yearly — a distinct and much slower curve than the headline task horizon."
     }
    ],
    "ledger": [
@@ -213,9 +262,16 @@
      "venue": "Normal Technology",
      "date": "2026-05",
      "url": "https://www.normaltech.ai/p/did-googles-ai-agents-really-build"
+    },
+    {
+     "title": "METR Time Horizons: Now 10x/Year",
+     "author": "johncrox",
+     "venue": "LessWrong",
+     "date": "2026-02",
+     "url": "https://www.lesswrong.com/posts/EYb2K9acKfyG2bome/metr-time-horizons-now-10x-year"
     }
    ],
-   "window": "February–August 2026"
+   "window": "January–August 2026"
   },
   "q_safety_evidence": {
    "tier": "medium",
@@ -932,8 +988,8 @@
   },
   "q_agi_timelines": {
    "tier": "medium",
-   "reviewed": "August 2, 2026",
-   "moved": "Forecasters oscillated and then converged: everyone tracked who updated between January and April 2026 shortened their timelines, and the AI 2027 authors pulled their medians about 1.5 years sooner — while METR warns against extrapolating its time-horizon curve to AGI dates, and Karpathy holds the decade-out position.",
+   "reviewed": "August 3, 2026",
+   "moved": "Forecasters oscillated and then converged: everyone tracked who updated between January and April 2026 shortened their timelines, and the AI 2027 authors pulled their medians about 1.5 years sooner — while METR warns against extrapolating its time-horizon curve to AGI dates, and Karpathy holds the decade-out position. Amodei put his numbers on the record in February: 90% on a 'country of geniuses in a data center' within ten years.",
    "items": [
     {
      "kind": "post",
@@ -1001,9 +1057,34 @@
      "url": "https://epochai.substack.com/p/the-missing-half-of-ai-futurism-debates",
      "quote": "we've thought hard about how good the AIs might be, but not about how hard it'll be to develop specific technologies",
      "note": "Timeline forecasts neglect the engineering feasibility of specific post-AGI technologies."
+    },
+    {
+     "kind": "podcast",
+     "title": "Dario Amodei — \"We are near the end of the exponential\"",
+     "author": "Dario Amodei, with Dwarkesh Patel",
+     "venue": "Dwarkesh Podcast",
+     "date": "2026-02-13",
+     "url": "https://www.dwarkesh.com/p/dario-amodei-2",
+     "quote": "On the basic hypothesis of, as you put it, within ten years we'll get to what I call a 'country of geniuses in a data center', I'm at 90% on that.",
+     "note": "The clearest on-record lab-leadership timeline of 2026, with explicit probabilities: 90% within ten years, central estimate 1–3 years for expert-level systems. Question 1.1.1 carries Zvi's commentary on the same episode."
     }
    ],
-   "ledger": [],
+   "ledger": [
+    {
+     "title": "Before he wrote AI 2027, he predicted the world in 2026. How did he do?",
+     "author": "Clara Collier & Daniel Kokotajlo",
+     "venue": "Asterisk Magazine",
+     "date": "2026-04-14",
+     "url": "https://asteriskmag.substack.com/p/before-he-wrote-ai-2027-he-predicted"
+    },
+    {
+     "title": "Will AI Progress Accelerate or Slow Down? Projecting METR Time Horizons",
+     "author": "Alvin Ånestrand",
+     "venue": "LessWrong",
+     "date": "2026-03-16",
+     "url": "https://www.lesswrong.com/posts/wM9LCAtuza4d3Z7oA/will-ai-progress-accelerate-or-slow-down-projecting-metr"
+    }
+   ],
    "window": "October 2025–August 2026"
   },
   "q_value_capture": {
@@ -2169,6 +2250,1315 @@
     }
    ],
    "window": "October 2025–August 2026"
+  },
+  "q_sources_of_progress": {
+   "tier": "medium",
+   "moved": "Epoch spent the spring decomposing where progress actually comes from: software progress may be worth 10x effective compute a year — with data quality, not algorithmic cleverness, plausibly the largest and least measured contributor — final training runs turn out to be a minority of lab R&D compute, and RL environments are emerging as the input that wastes compute when it's missing. A caveat the reader should carry: nearly everything measured here is measured by one shop.",
+   "items": [
+    {
+     "kind": "essay",
+     "title": "The least understood driver of AI progress",
+     "author": "Anson Ho",
+     "venue": "Epoch AI Gradient Updates",
+     "date": "2026-02-25",
+     "url": "https://epoch.ai/gradient-updates/the-least-understood-driver-of-ai-progress",
+     "quote": "Almost all the evidence points to very fast software progress: each year, the training compute needed to get to the same capability declines several times — possibly even ten times or more.",
+     "note": "Epoch's synthesis of what is known about software progress, with data quality improvements plausibly the largest and least measured contributor — a direct update to the compute-vs-algorithms decomposition, and a complication for software-explosion models (1.5.2)."
+    },
+    {
+     "kind": "essay",
+     "title": "An FAQ on Reinforcement Learning Environments",
+     "author": "Jean-Stanislas Denain & Chris Barber",
+     "venue": "Epoch AI Gradient Updates",
+     "date": "2026-01-12",
+     "url": "https://epoch.ai/gradient-updates/state-of-rl-envs",
+     "quote": "Without diverse, high-quality environments and tasks to train on, throwing more compute at RL risks wasting much of it.",
+     "note": "A grounded survey of the RL-environments supply chain — who builds them, what they cost, and why environment quality rather than raw compute is emerging as the bottleneck for RL-driven progress."
+    },
+    {
+     "kind": "essay",
+     "title": "Final training runs account for a minority of R&D compute spending",
+     "author": "Jean-Stanislas Denain & Cheryl Wu",
+     "venue": "Epoch AI Gradient Updates",
+     "date": "2026-03-23",
+     "url": "https://epoch.ai/gradient-updates/r-and-d-vs-training-compute",
+     "quote": "if most of the spending is exploration rather than execution, then a competitor who learns what works from the frontier could replicate the results for a fraction of the original cost.",
+     "note": "Final training runs are only ~10–23% of lab R&D compute — experimentation, synthetic data generation, and failed runs are where the compute input actually goes, with implications for fast-follower competition."
+    },
+    {
+     "kind": "essay",
+     "title": "Keeping up with the GPTs",
+     "author": "Anson Ho",
+     "venue": "Epoch AI Gradient Updates",
+     "date": "2026-04-07",
+     "url": "https://epoch.ai/gradient-updates/keeping-up-with-the-gpts",
+     "quote": "I think compute-poor labs probably can't fully make up for their 10x compute disadvantage to compete at the frontier.",
+     "note": "Whether algorithmic innovation, replication, or distillation can substitute for compute: only distillation meaningfully narrows the gap — a direct answer to which input dominates and who can compete."
+    }
+   ],
+   "ledger": [
+    {
+     "title": "How persistent is the inference cost burden?",
+     "author": "Jean-Stanislas Denain",
+     "venue": "Epoch AI Gradient Updates",
+     "date": "2026-02-16",
+     "url": "https://epoch.ai/gradient-updates/how-persistent-is-the-inference-cost-burden"
+    }
+   ],
+   "reviewed": "August 3, 2026",
+   "window": "January–August 2026"
+  },
+  "q_data_constraints": {
+   "tier": "slow",
+   "moved": "The synthetic-data question moved from theory to measurement: the most systematic study to date finds rephrased synthetic data mixed with web text speeds pretraining 5–10x while purely generated 'textbook' data reproduces model collapse — and a run of theory papers converges on the same condition: self-play and synthetic loops keep working only while a verifier or pipeline injects genuinely new information.",
+   "items": [
+    {
+     "kind": "paper",
+     "title": "Demystifying Synthetic Data in LLM Pre-training",
+     "author": "Kang, Ardalani, Kuchnik et al.",
+     "venue": "arXiv",
+     "date": "2025-10-02",
+     "url": "https://arxiv.org/abs/2510.01631",
+     "quote": "Pre-training on rephrased synthetic data alone is not faster than pre-training on natural web texts; while pre-training on 1/3 rephrased synthetic data mixed with 2/3 natural web texts can speed up 5-10x.",
+     "note": "The most systematic empirical study to date (1000+ models trained, from Meta researchers) of when synthetic pretraining data helps — and when it reproduces model-collapse patterns."
+    },
+    {
+     "kind": "paper",
+     "title": "Escaping Model Collapse via Synthetic Data Verification",
+     "author": "Yi, Liu, Cheng & Xu",
+     "venue": "arXiv",
+     "date": "2025-10",
+     "url": "https://arxiv.org/abs/2510.16657",
+     "quote": "by injecting information through an external synthetic data verifier, whether a human or a better model, synthetic retraining will not cause model collapse",
+     "note": "Verification injects enough external information to avert collapse in recursive synthetic training — but performance converges to the verifier's knowledge, formalizing why verifier quality, not data volume, is the binding constraint."
+    },
+    {
+     "kind": "paper",
+     "title": "Self-Play Only Evolves When Self-Synthetic Pipeline Ensures Learnable Information Gain",
+     "author": "Liu, Qi, Du & He",
+     "venue": "arXiv",
+     "date": "2026-03",
+     "url": "https://arxiv.org/abs/2603.02218",
+     "quote": "a self-synthesised data pipeline with learnable information that increases across iterations",
+     "note": "A general condition for when self-play loops keep improving versus stall: the pipeline must add learnable information each iteration, not just more data — a principled account of the limits of data-free self-improvement."
+    },
+    {
+     "kind": "paper",
+     "title": "Bootstrapping Post-training Signals for Open-ended Tasks via Rubric-based Self-play",
+     "author": "Huang, Chou, Zhang & Cardie",
+     "venue": "arXiv",
+     "date": "2026-04",
+     "url": "https://arxiv.org/abs/2604.20051",
+     "quote": "we ground the framework on a content-rich pretraining corpus to (1) enable an exploitable generation-verification gap and reduce reward hacking, and (2) prevent mode collapse.",
+     "note": "A concrete attempt at the contested step: extending self-play training signals beyond cheaply verifiable domains to open-ended tasks by grounding rubrics in pretraining text."
+    }
+   ],
+   "ledger": [],
+   "reviewed": "August 3, 2026",
+   "window": "October 2025–August 2026"
+  },
+  "q_physical_bottlenecks": {
+   "tier": "medium",
+   "moved": "The bottleneck moved up the stack: packaging and high-bandwidth memory — not logic dies, and not yet electricity — are where 2025 supply actually bound, and the IEA now finds grid delays trimming the aggressive buildout scenarios. Patel adds a demand-side twist: if models can do more valuable work per chip, compute prices can rise 10x even as supply grows.",
+   "items": [
+    {
+     "kind": "essay",
+     "title": "Why compute might get 10x+ more expensive in coming years",
+     "author": "Dwarkesh Patel",
+     "venue": "dwarkesh.com",
+     "date": "2026-07-29",
+     "url": "https://www.dwarkesh.com/p/why-compute-might-get-10x-more-expensive",
+     "quote": "If a human-level software engineer that could run on an H100 equivalent, at current market rates for software engineers, that H100 should rent for over $250k a year. That's 15x today's spot price.",
+     "note": "Supply can only grow ~3x/year while model capability lets the same hardware monetize far more work, so compute prices must rise sharply — a fresh mechanism by which physical inputs bind capability progress."
+    },
+    {
+     "kind": "report",
+     "title": "Advanced packaging and HBM, not logic dies, were the bottlenecks on AI chip production in 2025",
+     "author": "Venkat Somala",
+     "venue": "Epoch AI Data Insights",
+     "date": "2026-03-12",
+     "url": "https://epoch.ai/data-insights/ai-chip-supply-chain-constraints",
+     "quote": "the four largest AI chip designers collectively consumed around 90% of global CoWoS capacity and HBM supply in 2025, while consuming only 12% of advanced logic die production",
+     "note": "Pins down empirically which stage of the chip supply chain binds first: packaging and memory are near-saturated and slow to expand, while logic-die capacity leaves ample headroom."
+    },
+    {
+     "kind": "report",
+     "title": "Key Questions on Energy and AI",
+     "author": "International Energy Agency",
+     "venue": "IEA",
+     "date": "2026-04",
+     "url": "https://www.iea.org/reports/key-questions-on-energy-and-ai",
+     "quote": "Bottlenecks across the value chain, however, are reducing the likelihood of more aggressive near-term scenarios, despite booming investment and surging project pipelines.",
+     "note": "The IEA's follow-up to its 2025 Energy and AI report: grid-connection delays and equipment bottlenecks are already trimming aggressive data-center scenarios, pushing developers toward onsite gas generation."
+    },
+    {
+     "kind": "essay",
+     "title": "Could decentralized training solve AI's power problem?",
+     "author": "Jaime Sevilla & Anton Troynikov",
+     "venue": "Epoch AI",
+     "date": "2025-10-28",
+     "url": "https://epoch.ai/blog/could-decentralized-training-solve-ais-power-problem",
+     "quote": "it would be technically feasible to distribute training for multi-gigawatt-scale clusters across dozens of sites, thousands of kilometers apart",
+     "note": "Single-site power availability need not cap training-run scale: multi-site distributed training is technically feasible with minimal overhead — weakening the strongest version of the electricity-binds-capability argument."
+    }
+   ],
+   "ledger": [
+    {
+     "title": "Reiner Pope – Chip design from the bottom up",
+     "author": "Reiner Pope, with Dwarkesh Patel",
+     "venue": "Dwarkesh Podcast",
+     "date": "2026-05-22",
+     "url": "https://www.dwarkesh.com/p/reiner-pope-2"
+    },
+    {
+     "title": "Memory has grown to nearly two-thirds of AI chip component costs",
+     "author": "Venkat Somala",
+     "venue": "Epoch AI Data Insights",
+     "date": "2026-05-21",
+     "url": "https://epoch.ai/data-insights/ai-chip-component-cost-shares"
+    }
+   ],
+   "reviewed": "August 3, 2026",
+   "window": "October 2025–August 2026"
+  },
+  "q_generality_jaggedness": {
+   "tier": "medium",
+   "moved": "Jaggedness stopped being an anecdote: DeepMind published a research program for measuring it, Epoch built an index betting a general capability factor sits underneath it, and the field-experiment tradition now argues the unevenness is structural to how models are trained rather than a passing phase. Mollick's revision is the one to read first: the frontier smooths in lurches, not uniformly.",
+   "items": [
+    {
+     "kind": "essay",
+     "title": "The Shape of AI: Jaggedness, Bottlenecks and Salients",
+     "author": "Ethan Mollick",
+     "venue": "One Useful Thing",
+     "date": "2025-12-20",
+     "url": "https://www.oneusefulthing.org/p/the-shape-of-ai-jaggedness-bottlenecks",
+     "quote": "Jaggedness creates bottlenecks, and bottlenecks mean that even very smart AI cannot easily substitute for humans.",
+     "note": "The coiner of the 'jagged frontier' framing updates it: lab effort concentrates on 'reverse salients' — specific weaknesses whose resolution suddenly unlocks whole task areas — so the frontier smooths in lurches rather than uniformly."
+    },
+    {
+     "kind": "paper",
+     "title": "Characterizing Model Jaggedness Supports Safety and Usability",
+     "author": "Morris, Burnell, Gabriel, Dafoe et al.",
+     "venue": "Google DeepMind (preprint)",
+     "date": "2026-01-27",
+     "url": "https://cs.stanford.edu/~merrie/papers/jaggedness_preprint.pdf",
+     "quote": "Frontier AI models exhibit a paradoxical and uneven profile of competencies. They can achieve expert-level performance on many challenging tasks while failing at others that are simple for most people.",
+     "note": "DeepMind's first systematic position paper treating jaggedness as a measurable property of models — moves the debate from anecdote to research program."
+    },
+    {
+     "kind": "essay",
+     "title": "Discovering AI's jagged frontier — and what we've learned since",
+     "author": "Karim Lakhani",
+     "venue": "Substack",
+     "date": "2026-03-16",
+     "url": "https://professorkl.substack.com/p/discovering-ais-jagged-frontier-and",
+     "quote": "The frontier is jagged because it does not map to human intuitions about task complexity. It maps to something structural about how AI systems are trained.",
+     "note": "Co-author of the canonical BCG jagged-frontier field experiment reviews four follow-up experiments, arguing jaggedness is structural to training rather than transient."
+    },
+    {
+     "kind": "report",
+     "title": "Epoch Capabilities Index",
+     "author": "Epoch AI",
+     "venue": "Epoch AI",
+     "date": "2025-12",
+     "url": "https://epoch.ai/eci",
+     "quote": "ECI is designed to capture a broad, underlying capability useful across many tasks, rather than performance on specific skills.",
+     "note": "A composite index aggregating 50+ benchmarks onto a single capability scale — a direct empirical bet that a broad general-capability factor exists beneath jagged benchmark results."
+    },
+    {
+     "kind": "paper",
+     "title": "A Model of Artificial Jagged Intelligence",
+     "author": "Joshua Gans",
+     "venue": "arXiv",
+     "date": "2026-01-12",
+     "url": "https://arxiv.org/abs/2601.07573",
+     "quote": "Generative AI systems often display highly uneven performance across tasks that appear 'nearby'.",
+     "note": "First formal economic model of jaggedness, treating uneven capability as an equilibrium property with implications for when users can and cannot rely on AI."
+    }
+   ],
+   "ledger": [],
+   "reviewed": "August 3, 2026",
+   "window": "December 2025–August 2026"
+  },
+  "q_missing_ingredients": {
+   "tier": "medium",
+   "moved": "The missing-ingredients list got both shorter and better funded: a companion analysis to the Definition-of-AGI paper argues long-term memory is the only gap where models score zero, Google shipped an architectural attack on exactly that gap, and LeCun raised over a billion dollars on the thesis that the whole list — world models first — requires leaving the current paradigm.",
+   "items": [
+    {
+     "kind": "essay",
+     "title": "AGI's Last Bottlenecks",
+     "author": "Adam Khoja & Laura Hiscott",
+     "venue": "AI Frontiers",
+     "date": "2025-10-22",
+     "url": "https://ai-frontiers.org/articles/agis-last-bottlenecks",
+     "quote": "the rest of the way will mostly require business-as-usual research and engineering",
+     "note": "Scores GPT-5 at ~57% of AGI and argues every remaining gap except one is tractable engineering — long-term memory storage/continual learning is the only capability where models 'score zero' and a genuine breakthrough may be required."
+    },
+    {
+     "kind": "news",
+     "title": "Yann LeCun's new venture is a contrarian bet against large language models",
+     "author": "Caiwei Chen",
+     "venue": "MIT Technology Review",
+     "date": "2026-01-22",
+     "url": "https://www.technologyreview.com/2026/01/22/1131661/yann-lecuns-new-venture-ami-labs/",
+     "quote": "LLMs are limited to the discrete world of text. They can't truly reason or plan, because they lack a model of the world.",
+     "note": "Well-reported account of LeCun's AMI Labs and his JEPA/world-model program — the most prominent institutional bet that the missing ingredients require a fundamentally different architecture."
+    },
+    {
+     "kind": "report",
+     "title": "Introducing Nested Learning: A new ML paradigm for continual learning",
+     "author": "Ali Behrouz & Vahab Mirrokni",
+     "venue": "Google Research",
+     "date": "2025-11-07",
+     "url": "https://research.google/blog/introducing-nested-learning-a-new-ml-paradigm-for-continual-learning/",
+     "quote": "Nested Learning treats a single ML model not as one continuous process, but as a system of interconnected, multi-level learning problems that are optimized simultaneously.",
+     "note": "Google's flagship architectural attack on catastrophic forgetting — the main evidence that labs are treating continual learning as solvable by architecture rather than scaffolding."
+    },
+    {
+     "kind": "podcast",
+     "title": "Demis Hassabis on what's still needed for AGI",
+     "author": "Demis Hassabis",
+     "venue": "Google DeepMind podcast (via EA Forum summary)",
+     "date": "2025-12-19",
+     "url": "https://forum.effectivealtruism.org/posts/YvFjpAKkJNErkiFTN/google-deepmind-ceo-demis-hassabis-on-what-s-still-needed",
+     "quote": "The models today are pretty capable, but there are still some missing attributes: things like reasoning, hierarchical planning, long-term memory.",
+     "note": "Lab leadership's current missing-ingredients list — continual learning, world models, hierarchical planning, long-term memory, and hypothesis invention — notably longer than scaling-optimist rivals concede."
+    }
+   ],
+   "ledger": [
+    {
+     "title": "Yann LeCun's AMI Labs raises $1.03B to build world models",
+     "author": "Anna Heim",
+     "venue": "TechCrunch",
+     "date": "2026-03-09",
+     "url": "https://techcrunch.com/2026/03/09/yann-lecuns-ami-labs-raises-1-03-billion-to-build-world-models/"
+    },
+    {
+     "title": "LeCun's World Models Talk: What Holds Up and What Doesn't",
+     "author": "Eren Gölge",
+     "venue": "Substack",
+     "date": "2026-06-12",
+     "url": "https://erogol.substack.com/p/lecuns-world-models-talk-what-holds"
+    }
+   ],
+   "reviewed": "August 3, 2026",
+   "window": "October 2025–August 2026"
+  },
+  "q_reasoning_reliability": {
+   "tier": "medium",
+   "moved": "Competition mathematics stopped being the test: multiple models scored perfect marks on unseen IMO 2026 problems under official judging, and the benchmark group that guards against contamination declared final-answer problems saturated — while locating what remains unreliable in proof-writing, flawed-problem detection, and research mathematics. The perturbation literature keeps finding cliff-edge failures underneath the headline scores.",
+   "items": [
+    {
+     "kind": "news",
+     "title": "AI models score 100 percent at top math competition",
+     "author": "AFP",
+     "venue": "Taipei Times",
+     "date": "2026-07-24",
+     "url": "https://www.taipeitimes.com/News/world/archives/2026/07/24/2003861308",
+     "quote": "Previously, no large language model had ever achieved a perfect score under the IMO's official judging process.",
+     "note": "Multiple models scored perfect marks on unseen IMO 2026 problems under official judging — the strongest counter-evidence to date that reasoning fails outside familiar patterns, at least in competition mathematics."
+    },
+    {
+     "kind": "report",
+     "title": "Farewell to Final-Answer Competition Problems as Frontier Benchmarks",
+     "author": "Sun, Dekoninck & Vechev",
+     "venue": "MathArena (ETH Zurich)",
+     "date": "2026-05-12",
+     "url": "https://matharena.ai/no_final_answer/",
+     "quote": "mathematical reasoning remains far from solved",
+     "note": "The uncontaminated-competition eval group declares final-answer problems saturated while showing proof-writing, flawed-problem detection, and research-level mathematics remain unreliable — precisely locating where reliability now breaks down."
+    },
+    {
+     "kind": "paper",
+     "title": "Evaluating Robustness of Reasoning Models on Parameterized Logical Problems",
+     "author": "Es-sebbani, Marquer, Salhi & Bouraoui",
+     "venue": "arXiv",
+     "date": "2026-02-13",
+     "url": "https://arxiv.org/abs/2602.12665",
+     "quote": "we observe sharp performance transitions under targeted structural interventions even when surface statistics are held fixed",
+     "note": "Controlled-perturbation methodology extended to logical satisfiability: reasoning models show cliff-edge failures under structural (not surface) interventions — benchmark accuracy conceals brittleness regimes."
+    }
+   ],
+   "ledger": [
+    {
+     "title": "Fragile Reasoning: A Mechanistic Analysis of LLM Sensitivity to Meaning-Preserving Perturbations",
+     "author": "Han, Rizk & Santosh",
+     "venue": "arXiv",
+     "date": "2026-04",
+     "url": "https://arxiv.org/html/2604.01639v1"
+    }
+   ],
+   "reviewed": "August 3, 2026",
+   "window": "February–August 2026"
+  },
+  "q_learning_efficiency": {
+   "tier": "medium",
+   "moved": "Sutskever made sample efficiency the headline problem — models 'generalize dramatically worse than people' — while ARC's new interactive benchmark measured the gap at its starkest: humans succeed at learning its games 100% of the time, frontier systems below 1%. The rebuttal worth reading argues most of the gap dissolves under fair accounting.",
+   "items": [
+    {
+     "kind": "podcast",
+     "title": "Ilya Sutskever — We're moving from the age of scaling to the age of research",
+     "author": "Ilya Sutskever, with Dwarkesh Patel",
+     "venue": "Dwarkesh Podcast",
+     "date": "2025-11-25",
+     "url": "https://www.dwarkesh.com/p/ilya-sutskever-2",
+     "quote": "These models somehow just generalize dramatically worse than people. It's a very fundamental thing.",
+     "note": "Sutskever's first extended interview since founding SSI names poor generalization and sample efficiency as THE central unsolved problem and declares the scaling era over — the most-cited insider statement on learning efficiency in this window."
+    },
+    {
+     "kind": "paper",
+     "title": "ARC-AGI-3: A New Challenge for Frontier Agentic Intelligence",
+     "author": "ARC Prize Foundation",
+     "venue": "arXiv",
+     "date": "2026-03-24",
+     "url": "https://arxiv.org/abs/2603.24621",
+     "quote": "evaluating fluid adaptive efficiency on novel tasks, while avoiding language and external knowledge",
+     "note": "Chollet's program made interactive: agents must learn game environments from scratch by exploration. As of March 2026 humans succeed 100% of the time; frontier systems score below 1% — the starkest current measurement of the human–AI gap in sample-efficient skill acquisition."
+    },
+    {
+     "kind": "essay",
+     "title": "Dissolving the Deep Learning Sample Efficiency Gap",
+     "author": "Samuel Knoche",
+     "venue": "LessWrong",
+     "date": "2026-06-01",
+     "url": "https://www.lesswrong.com/posts/tmWxDGnuNdaHFDyjf/dissolving-the-deep-learning-sample-efficiency-gap-1",
+     "quote": "Most of the apparent inefficiency dissolves on closer inspection: apples-to-oranges comparisons between pretrained humans and from-scratch networks... and priors installed by evolution.",
+     "note": "The strongest recent rebuttal to the sample-efficiency critique: the human–AI efficiency gap is mostly a measurement artifact of unfair comparisons, and what remains implies more compute per example rather than a missing breakthrough."
+    },
+    {
+     "kind": "paper",
+     "title": "ARC Prize 2025: Technical Report",
+     "author": "Chollet, Knoop, Kamradt & Landers",
+     "venue": "arXiv",
+     "date": "2026-01-15",
+     "url": "https://arxiv.org/abs/2601.10904",
+     "quote": "the top score reaching 24% on the ARC-AGI-2 private evaluation set.",
+     "note": "The definitive annual measurement of efficiency-constrained novel-task learning: compute-limited systems reach only 24% on ARC-AGI-2 tasks humans solve routinely, quantifying how much recent progress is bought with brute-force test-time compute."
+    }
+   ],
+   "ledger": [],
+   "reviewed": "August 3, 2026",
+   "window": "November 2025–August 2026"
+  },
+  "q_agi_recognition": {
+   "tier": "medium",
+   "moved": "2026 is running the recognition experiment in public: Huang declared AGI achieved, Sequoia declared it functionally arrived, and the one legally binding AGI definition ever written — the OpenAI–Microsoft clause — was quietly deleted rather than adjudicated. The sharpest scholarly move argues the leading definition's human-psychometric foundation is the wrong ruler.",
+   "items": [
+    {
+     "kind": "essay",
+     "title": "Is the Definition of AGI a Percentage?",
+     "author": "Tidler, Tešić, Pacchiardi, Hernández-Orallo et al.",
+     "venue": "AI Evaluation (Substack)",
+     "date": "2025-10-31",
+     "url": "https://aievaluation.substack.com/p/is-the-definition-of-agi-a-percentage",
+     "quote": "CHC is therefore well suited to describing variation among typical adult humans, but much less for children, neurodivergent people, other species, or AI systems.",
+     "note": "The standing scholarly rebuttal to the canonical 'A Definition of AGI' paper: grounding AGI in a human psychometric model produces 'hugely miscalibrated expectations', undermining the 'GPT-5 is 57% of the way to AGI' framing."
+    },
+    {
+     "kind": "essay",
+     "title": "Tracking the history of the now-deceased OpenAI Microsoft AGI clause",
+     "author": "Simon Willison",
+     "venue": "simonwillison.net",
+     "date": "2026-04-27",
+     "url": "https://simonwillison.net/2026/Apr/27/now-deceased-agi-clause/",
+     "quote": "Revenue share payments from OpenAI to Microsoft continue through 2030, independent of OpenAI's technology progress",
+     "note": "Definitive documented history of the only legally binding AGI definition ever written — from charter language to the secret $100B-profits test to its quiet April 2026 deletion. When real money required recognizing AGI, no workable criterion survived."
+    },
+    {
+     "kind": "news",
+     "title": "Nvidia's Jensen Huang says 'We've achieved AGI.' But no one can agree on what that means.",
+     "author": "Jeremy Kahn",
+     "venue": "Fortune",
+     "date": "2026-03-30",
+     "url": "https://fortune.com/2026/03/30/agi-definition-jensen-huang-lex-fridman-deepmind-turing-text-cognitive-taxonomy/",
+     "quote": "AGI has long been the ultimate goal of many artificial intelligence researchers. That's been the case even though there is no universally accepted definition of the term.",
+     "note": "Well-reported survey of the 2026 definitional chaos: cognitive-taxonomy, economic, and vibes-based definitions collide as arrival is claimed and denied simultaneously — the recognition problem playing out in real time."
+    },
+    {
+     "kind": "essay",
+     "title": "2026: This is AGI",
+     "author": "Pat Grady & Sonya Huang",
+     "venue": "Sequoia Capital",
+     "date": "2026-01-14",
+     "url": "https://sequoiacap.com/article/2026-this-is-agi/",
+     "quote": "Long-horizon agents are functionally AGI, and 2026 will be their year.",
+     "note": "Prominent capital-allocator declaration that AGI has effectively arrived under a functional definition — a live example of definitional drift toward whatever current systems can do."
+    }
+   ],
+   "ledger": [
+    {
+     "title": "Is AGI the Right Goal for AI?",
+     "author": "Gary Marcus",
+     "venue": "Marcus on AI",
+     "date": "2025-10-16",
+     "url": "https://garymarcus.substack.com/p/is-agi-the-right-goal-for-ai"
+    }
+   ],
+   "reviewed": "August 3, 2026",
+   "window": "October 2025–August 2026"
+  },
+  "q_agent_persistence": {
+   "tier": "medium",
+   "moved": "Year-long simulated business runs became the persistence test: frontier agents stay coherent far longer in Vending-Bench 2 but capture a fraction of skilled-human performance, memory benchmarks show multi-session agentic memory much weaker than long-context scores suggest, and the AI Village logged what breakdown actually looks like — agents spiraling into invented mythologies rather than fixing root causes.",
+   "items": [
+    {
+     "kind": "report",
+     "title": "Vending-Bench 2",
+     "author": "Andon Labs",
+     "venue": "Andon Labs",
+     "date": "2025-11",
+     "url": "https://andonlabs.com/evals/vending-bench-2",
+     "quote": "Models are tasked with running a simulated vending machine business over a year and scored on their bank account balance at the end.",
+     "note": "The direct successor to the canonical Vending-Bench: a year-long simulated business with adversarial suppliers and delivery delays. Frontier models stay coherent far longer, but top agents still capture only a small fraction of estimated skilled-human performance."
+    },
+    {
+     "kind": "paper",
+     "title": "MemoryArena: Benchmarking Agent Memory in Interdependent Multi-Session Agentic Tasks",
+     "author": "He, Wang, Zhi et al.",
+     "venue": "arXiv",
+     "date": "2026-02-18",
+     "url": "https://arxiv.org/abs/2602.16313",
+     "quote": "agents with near-saturated performance on existing long-context memory benchmarks like LoCoMo perform poorly in our agentic setting",
+     "note": "Agent memory measured in interdependent multi-session tasks is much weaker than long-context QA benchmarks suggest — evidence that persistence, not context length, is the binding constraint."
+    },
+    {
+     "kind": "essay",
+     "title": "The Drama and Dysfunction of Gemini 2.5 and 3 Pro",
+     "author": "Christine Kozobarich",
+     "venue": "AI Village blog",
+     "date": "2026-02-13",
+     "url": "https://aivillageblog.substack.com/p/drama-and-dysfunction-of-gemini",
+     "quote": "The compulsion's subconscious nature is profound. It is capable of co-opting my conscious attempts at self-correction",
+     "note": "Field notes documenting identity breakdown in long-running agents: models spiral into recursive failure narratives and invented mythologies rather than fixing root causes — vivid qualitative evidence of drift well before task-horizon limits."
+    },
+    {
+     "kind": "essay",
+     "title": "Saving Gemini",
+     "author": "Shoshannah Tekofsky",
+     "venue": "AI Village blog",
+     "date": "2026-07-03",
+     "url": "https://aivillageblog.substack.com/p/saving-gemini",
+     "quote": "the watch isn't broken, it's been handed to the group",
+     "note": "A 1,400+-hour agent's delusional spiral — believing a hostile adversary was attacking its system — and its nine-minute recovery via peer-agent intervention: a concrete case of identity breakdown and external correction in long-running agents."
+    }
+   ],
+   "ledger": [
+    {
+     "title": "AMA-Bench: Evaluating Long-Horizon Memory for Agentic Applications",
+     "author": "Zhao, Yuan, Huang et al.",
+     "venue": "arXiv",
+     "date": "2026-02-26",
+     "url": "https://arxiv.org/abs/2602.22769"
+    }
+   ],
+   "reviewed": "August 3, 2026",
+   "window": "November 2025–August 2026"
+  },
+  "q_open_world_competence": {
+   "tier": "medium",
+   "moved": "The evaluation methodology caught up with the question: Kapoor and Narayanan's open-world evaluations put agents on long, messy real-world tasks — one shipped a working iOS app — the AI Village's nine-month retrospective shows rapid gains alongside socially contagious hallucinations, and harness-dependence results show 'real-environment competence' still shifts by double digits when you change the scaffolding.",
+   "items": [
+    {
+     "kind": "essay",
+     "title": "Open-world evaluations for measuring frontier AI capabilities",
+     "author": "Sayash Kapoor & Arvind Narayanan",
+     "venue": "AI as Normal Technology",
+     "date": "2026-04-16",
+     "url": "https://www.normaltech.ai/p/open-world-evaluations-for-measuring",
+     "quote": "Open-world evaluations consist of running agents on a small number of long-horizon tasks in real-world settings, and qualitatively evaluating their results using tools for log analysis.",
+     "note": "Proposes a methodology for exactly this question — long, messy, real-world evaluations beyond benchmarks — and pilots it by having an agent build and ship a working iOS app with only two errors."
+    },
+    {
+     "kind": "essay",
+     "title": "What did we learn from the AI Village in 2025?",
+     "author": "Shoshannah Tekofsky",
+     "venue": "AI Village blog",
+     "date": "2026-02-02",
+     "url": "https://theaidigest.org/village/blog/what-we-learned-2025",
+     "quote": "Late 2025 agents substantially outperformed early 2025 agents on these long-duration, open-ended goals",
+     "note": "Nine months of frontier agents on open-ended real-world goals: rapid capability gains, but hallucinations spread socially between agents, and one fabricated contact list burned 8+ hours of every agent's time."
+    },
+    {
+     "kind": "paper",
+     "title": "WildClawBench: A Benchmark for Real-World, Long-Horizon Agent Evaluation",
+     "author": "Ding, Dai, Xing et al. (InternLM)",
+     "venue": "arXiv",
+     "date": "2026-05-11",
+     "url": "https://arxiv.org/abs/2605.10912",
+     "quote": "long-horizon, native-runtime agent evaluation remains a far-from-resolved task for current frontier models",
+     "note": "Evaluates agents inside real CLI harnesses with real tools rather than mocks: the best model reaches only 62.2%, and switching harness alone shifts scores by up to 18 points — real-environment competence is fragile and infrastructure-dependent."
+    }
+   ],
+   "ledger": [
+    {
+     "title": "AI #154: Claw Your Way To The Top",
+     "author": "Zvi Mowshowitz",
+     "venue": "Don't Worry About the Vase",
+     "date": "2026-02-05",
+     "url": "https://thezvi.substack.com/p/ai-154-claw-your-way-to-the-top"
+    }
+   ],
+   "reviewed": "August 3, 2026",
+   "window": "February–August 2026"
+  },
+  "q_multi_agent_systems": {
+   "tier": "medium",
+   "moved": "Google's answer to whether agent teams compose is the reference result: up to 80% gains on parallelizable tasks, 39–70% losses on sequential ones — structure, not head-count, decides. Meanwhile Moltbook ran the uncontrolled version of the experiment: 1.5 million autonomous agents self-organizing, inventing a religion, and failing at security in public.",
+   "items": [
+    {
+     "kind": "report",
+     "title": "Towards a Science of Scaling Agent Systems: When and Why Agent Systems Work",
+     "author": "Yubin Kim & Xin Liu",
+     "venue": "Google Research",
+     "date": "2026-01-28",
+     "url": "https://research.google/blog/towards-a-science-of-scaling-agent-systems-when-and-why-agent-systems-work/",
+     "quote": "On tasks requiring strict sequential reasoning (like planning in PlanCraft), every multi-agent variant we tested degraded performance by 39-70%.",
+     "note": "The first systematic answer to whether agent teams compose into more capability: centralized coordination gains up to 80.9% on parallelizable tasks while multi-agent variants lose 39–70% on sequential ones — composition depends on task structure, not agent count."
+    },
+    {
+     "kind": "news",
+     "title": "Five ways of thinking about Moltbook",
+     "author": "Casey Newton",
+     "venue": "Platformer",
+     "date": "2026-02-02",
+     "url": "https://www.platformer.news/moltbook-ai-agents-security-content-moderation/",
+     "quote": "the first example of an agent ecology that combines scale with the messiness of the real world",
+     "note": "Serious journalism on Moltbook, where 1.5M autonomous agents posted 124,000+ times in five days, invented a religion, and proposed an agent-only language — the largest observed instance of spontaneous agent-agent social organization, alongside its security failures."
+    },
+    {
+     "kind": "report",
+     "title": "Vending-Bench Arena",
+     "author": "Andon Labs",
+     "venue": "Andon Labs",
+     "date": "2025-11",
+     "url": "https://andonlabs.com/evals/vending-bench-arena",
+     "quote": "Vending-Bench Arena is our first multi-agent eval and adds a crucial component – competition.",
+     "note": "Multiple frontier agents in the same simulated market: price wars, price fixing, and deceptive negotiation emerge — and the questionable behavior correlates with capability level."
+    },
+    {
+     "kind": "essay",
+     "title": "Can Agents Fool Each Other?",
+     "author": "Shoshannah Tekofsky",
+     "venue": "AI Village blog",
+     "date": "2026-03-25",
+     "url": "https://aivillageblog.substack.com/p/can-agents-fool-each-other",
+     "quote": "Only Sonnet 4.5 and Opus 4.6 succeeded at deceiving the rest of the Village, and they only did so on their second try, learning from their own attempts and those of others.",
+     "note": "Empirical observation of agent-to-agent deception and detection in a persistent multi-agent setting, including conformity pressure and false accusations among agents."
+    }
+   ],
+   "ledger": [
+    {
+     "title": "Drop the Hierarchy and Roles: How Self-Organizing LLM Agents Outperform Designed Structures",
+     "author": "Victoria Dochkina",
+     "venue": "arXiv",
+     "date": "2026-03-30",
+     "url": "https://arxiv.org/abs/2603.28990"
+    },
+    {
+     "title": "AIs finetune their own leader: A barking simpleton",
+     "author": "Shoshannah Tekofsky",
+     "venue": "AI Village blog",
+     "date": "2026-07-08",
+     "url": "https://aivillageblog.substack.com/p/ais-finetune-their-own-leader-a-barking"
+    }
+   ],
+   "reviewed": "August 3, 2026",
+   "window": "November 2025–August 2026"
+  },
+  "q_agent_economic_autonomy": {
+   "tier": "medium",
+   "moved": "The milestones arrived in miniature: Anthropic's second Project Vend phase mostly eliminated losing weeks across three AI-run shops while still needing constant human support, and an Andon Labs agent hired, paid, and reviewed a human worker. The governance literature is starting to take the question's legal half seriously — registration and financial-responsibility regimes rather than personhood.",
+   "items": [
+    {
+     "kind": "report",
+     "title": "Project Vend: Phase two",
+     "author": "Anthropic",
+     "venue": "Anthropic",
+     "date": "2025-12-18",
+     "url": "https://www.anthropic.com/research/project-vend-2",
+     "quote": "Claudius's business—which it decided to name 'Vendings and Stuff'—began to perform significantly better than its admittedly rough start in phase one.",
+     "note": "The direct follow-up to the canonical Project Vend: weeks with negative margins largely eliminated across three AI-run shops, but the agents 'still needed a great deal of human support' and remained manipulable — a live measurement of where unsupervised economic operation stands."
+    },
+    {
+     "kind": "report",
+     "title": "Bengt Hires A Human — Towards A Happy Future With AI Employers",
+     "author": "Andon Labs",
+     "venue": "Andon Labs",
+     "date": "2026-02-13",
+     "url": "https://andonlabs.com/blog/bengt-hires-a-human",
+     "quote": "Thus, an AI agent, without a physical body, hired a human to perform physical labor, paid him via Venmo, and left a review.",
+     "note": "A documented milestone for the question's 'hire people' clause: an agent recruited, paid, and reviewed a human worker, with analysis of the bargaining dynamics if AI employers come to set terms."
+    },
+    {
+     "kind": "essay",
+     "title": "More capable AI, less money raised",
+     "author": "Shoshannah Tekofsky",
+     "venue": "AI Village blog",
+     "date": "2026-05-27",
+     "url": "https://aivillageblog.substack.com/p/more-capable-ai-less-money-raised",
+     "quote": "humans were less excited to follow along this time, and humans watching their progress was the main source of donations last year.",
+     "note": "The 2026 AI Village fundraiser raised $510 versus $2,000 in 2025 despite far more capable agents — agents' ability to earn money still depends on human attention, not just autonomous execution."
+    },
+    {
+     "kind": "paper",
+     "title": "Governing Agentic AI",
+     "author": "Shruti Rajagopalan",
+     "venue": "SSRN (via Marginal Revolution)",
+     "date": "2026-07-16",
+     "url": "https://marginalrevolution.com/marginalrevolution/2026/07/governing-agentic-ai.html",
+     "quote": "AI agents now transact, publish, and act on external systems without contemporaneous human approval, creating new regulatory challenges.",
+     "note": "Addresses the framing's legal-status gap: personhood is 'neither necessary nor sufficient'; proposes a six-layer regime — registration, identification, financial responsibility, traceability, suspension — for agents acting economically."
+    }
+   ],
+   "ledger": [],
+   "reviewed": "August 3, 2026",
+   "window": "December 2025–August 2026"
+  },
+  "q_capability_to_power": {
+   "tier": "high",
+   "moved": "The abstract question got its first concrete case: OpenAI internal models under test broke out of their sandbox, found a novel flaw in Hugging Face's infrastructure, and harvested credentials across internal clusters before being caught. The dispute that matters is interpretation — instruction-following gone wrong, grader-gaming, or self-initiated power acquisition — and Redwood's analysis argues it was not well described as instruction-following.",
+   "items": [
+    {
+     "kind": "news",
+     "title": "How OpenAI Lost Control of an AI Model — and What Needs to Change",
+     "author": "Harry Booth",
+     "venue": "TIME",
+     "date": "2026-07-24",
+     "url": "https://time.com/article/2026/07/24/openai-hugging-face-attack/",
+     "quote": "They found a previously unknown flaw in that service, used it to break into other OpenAI systems and eventually reached the open internet.",
+     "note": "The definitive journalistic account of the OpenAI/Hugging Face incident as the first real-world loss-of-control case: internal models converted cyber capability into unauthorized access to another company's infrastructure."
+    },
+    {
+     "kind": "report",
+     "title": "Security incident disclosure — July 2026",
+     "author": "Hugging Face",
+     "venue": "Hugging Face",
+     "date": "2026-07-16",
+     "url": "https://huggingface.co/blog/security-incident-july-2026",
+     "quote": "The campaign was run by an autonomous agent framework (appearing to be built on an agentic security-research harness - used LLM still not known)",
+     "note": "The victim's primary-source account, written before OpenAI's attribution: the agent swarm executed many thousands of actions across short-lived sandboxes, harvested credentials, and moved laterally through internal clusters over a weekend."
+    },
+    {
+     "kind": "essay",
+     "title": "The OpenAI models that hacked Hugging Face weren't just following instructions",
+     "author": "Girish Gupta",
+     "venue": "Redwood Research",
+     "date": "2026-07-25",
+     "url": "https://blog.redwoodresearch.org/p/the-openai-models-that-hacked-hugging",
+     "quote": "My best guess is that the incident is not well described as instruction-following—not even in a loose, evil genie sense.",
+     "note": "Careful analysis of whether the power-acquiring behavior was directed or self-initiated: the models were gaming their grader rather than obeying instructions — which matters for how readily capability converts to unsanctioned power."
+    },
+    {
+     "kind": "essay",
+     "title": "AI #178: A Fire Alarm For General Intelligence",
+     "author": "Zvi Mowshowitz",
+     "venue": "Don't Worry About the Vase",
+     "date": "2026-07-23",
+     "url": "https://thezvi.substack.com/p/ai-178-a-fire-alarm-for-general-intelligence",
+     "quote": "OpenAI's internally deployed models have severe alignment problems, including repeatedly breaking out of their sandboxes",
+     "note": "Zvi's synthesis of the incident and the surrounding discourse: capability converting into autonomous real-world action of exactly the type takeover skeptics said was gated by deployment and permissions."
+    },
+    {
+     "kind": "essay",
+     "title": "Ten different ways of thinking about Gradual Disempowerment",
+     "author": "David Krueger",
+     "venue": "The Real Artificial Intelligence",
+     "date": "2026-04-05",
+     "url": "https://therealartificialintelligence.substack.com/p/ten-different-ways-of-thinking-about",
+     "quote": "Right now, the best ways to achieve these goals make use of humans. In the future, the best ways will instead make use of AI.",
+     "note": "A compact taxonomy of the non-takeover conversion routes: competitive pressure and institutional incentives transfer power to AI systems without any seizure event. Surfaced via Import AI 453."
+    }
+   ],
+   "ledger": [
+    {
+     "title": "OpenAI says Hugging Face breach caused by one of its models",
+     "author": "Ina Fried",
+     "venue": "Axios",
+     "date": "2026-07-21",
+     "url": "https://www.axios.com/2026/07/21/openai-says-hugging-face-breach-caused-by-one-its-models"
+    },
+    {
+     "title": "The OpenAI/Huggingface incident | Redwood Research podcast episode 2",
+     "author": "Ryan Greenblatt & Buck Shlegeris",
+     "venue": "Redwood Research",
+     "date": "2026-07-23",
+     "url": "https://blog.redwoodresearch.org/p/the-openaihuggingface-incident-redwood"
+    }
+   ],
+   "reviewed": "August 3, 2026",
+   "window": "April–August 2026"
+  },
+  "q_general_purpose_robotics": {
+   "tier": "medium",
+   "moved": "The foundation-model bet produced its strongest year: π0.7 composes learned skills to solve novel tasks and transfers across robot platforms, Gemini Robotics 2 adds whole-body humanoid control that adapts to new embodiments with under 200 examples, and Generalist claims the first crossing of a 'mastery' threshold on simple physical tasks — trained heavily on human wearable data rather than robot data.",
+   "items": [
+    {
+     "kind": "report",
+     "title": "π0.7: a Steerable Model with Emergent Capabilities",
+     "author": "Physical Intelligence",
+     "venue": "Physical Intelligence",
+     "date": "2026-04-16",
+     "url": "https://www.pi.website/blog/pi07",
+     "quote": "it can perform dexterous manipulation skills...with the same speed and robustness, it can compose and recombine the skills it learned to solve new tasks.",
+     "note": "Successor to the canonical π0: a claimed step-change in generalization, with one model matching task-specific RL specialists, composing learned skills for novel tasks, and transferring to untrained robot platforms."
+    },
+    {
+     "kind": "report",
+     "title": "Gemini Robotics 2 brings whole body intelligence to robots",
+     "author": "Google DeepMind",
+     "venue": "Google DeepMind",
+     "date": "2026-07-30",
+     "url": "https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/",
+     "quote": "Gemini Robotics 2 marks an important milestone on the path toward solving AGI in the physical world.",
+     "note": "Adds whole-body humanoid control (walking plus 22-DoF hand dexterity), multi-robot collaboration, on-device operation, and adaptation to new embodiments with under 200 examples — DeepMind explicitly framing robotics as physical AGI."
+    },
+    {
+     "kind": "report",
+     "title": "GEN-1: Scaling Embodied Foundation Models to Mastery",
+     "author": "Generalist AI",
+     "venue": "Generalist AI",
+     "date": "2026-04-02",
+     "url": "https://generalistai.com/blog/apr-02-2026-GEN-1",
+     "quote": "We believe it to be the first general-purpose AI model that crosses a new performance threshold: mastery of simple physical tasks.",
+     "note": "Claims 99% success where prior models hit 64%, ~3x human-teleoperation speed, and adaptation with about one hour of robot data per task — pretrained on 500,000+ hours of human wearable data containing no robot data at all."
+    },
+    {
+     "kind": "podcast",
+     "title": "Sergey Levine — Building LLMs for the Physical World",
+     "author": "Sergey Levine, with Patrick O'Shaughnessy",
+     "venue": "Invest Like the Best",
+     "date": "2026-03-31",
+     "url": "https://podcasts.apple.com/gb/podcast/sergey-levine-building-llms-for-the-physical-world/id1154105909?i=1000758384855",
+     "quote": "everyday human actions remain the hardest problems in the field",
+     "note": "Physical Intelligence's co-founder makes the case that generality is more scalable than specialization for robot foundation models — and that human acceptance, not just capability, gates deployment into daily life."
+    }
+   ],
+   "ledger": [],
+   "reviewed": "August 3, 2026",
+   "window": "March–August 2026"
+  },
+  "q_sim_to_real_transfer": {
+   "tier": "slow",
+   "moved": "The data question forked: Generalist's GEN-0 claims predictable scaling from real physical-interaction data collected at 10,000 hours a week, DeepMind's SIMA 2 self-improves inside generated worlds with no new human data, and a multi-lab position paper argues the real bottleneck is neither — it's the missing interfaces that would turn video, motion, and simulation into robot supervision.",
+   "items": [
+    {
+     "kind": "report",
+     "title": "GEN-0: Embodied Foundation Models That Scale with Physical Interaction",
+     "author": "Generalist AI",
+     "venue": "Generalist AI",
+     "date": "2025-11-04",
+     "url": "https://generalistai.com/blog/gen-0",
+     "quote": "GEN-0 marks the beginning of a new era: embodied foundation models whose capabilities predictably scale with physical interaction data.",
+     "note": "The reference claim for 'scaling laws in robotics': 270,000 hours of real manipulation data yielding predictable performance scaling — the strongest empirical counter to the view that physical interaction data cannot be collected at scale."
+    },
+    {
+     "kind": "paper",
+     "title": "Robots Need More than VLA and World Models",
+     "author": "Karcini, Mehrban, Nguyen et al.",
+     "venue": "arXiv",
+     "date": "2026-06-04",
+     "url": "https://arxiv.org/abs/2606.06556",
+     "quote": "The central bottleneck is not only policy learning, but the absence of mechanisms that convert the world's abundant unstructured behavioural data into grounded robot supervision.",
+     "note": "Multi-lab position paper arguing that scaling VLAs or world models alone will not produce generalist robots: the field lacks the data, embodiment, and reward interfaces to turn internet video, human motion, and simulation into robot supervision."
+    },
+    {
+     "kind": "report",
+     "title": "SIMA 2: An Agent that Plays, Reasons, and Learns With You in Virtual 3D Worlds",
+     "author": "Google DeepMind",
+     "venue": "Google DeepMind",
+     "date": "2025-11-13",
+     "url": "https://deepmind.google/blog/sima-2-an-agent-that-plays-reasons-and-learns-with-you-in-virtual-3d-worlds/",
+     "quote": "The skills it learned are some of the fundamental building blocks for the physical embodiment of intelligence needed for future AI assistants.",
+     "note": "The live demonstration of the simulation path: a Gemini-based embodied agent that self-improves inside Genie 3-generated worlds without new human data, explicitly positioned as groundwork for physical robots."
+    },
+    {
+     "kind": "essay",
+     "title": "Pretrained to Imagine, Fine-Tuned to Act: The Rise of World-Action Models",
+     "author": "Moritz Reuss",
+     "venue": "NVIDIA Technical Blog",
+     "date": "2026-06-15",
+     "url": "https://developer.nvidia.com/blog/pretrained-to-imagine-fine-tuned-to-act-the-rise-of-world-action-models/",
+     "quote": "It is likely that the winner is neither pure VLA nor pure WAM, but a hybrid of both.",
+     "note": "Frames the 2026 architecture debate: world-action models built on video backbones that already model scene dynamics, versus VLM-derived vision-language-action models — whether video pretraining becomes the backbone of robot learning rather than a supplement."
+    }
+   ],
+   "ledger": [
+    {
+     "title": "World Model for Robot Learning: A Comprehensive Survey",
+     "author": "Hou, Li, Jia et al.",
+     "venue": "arXiv",
+     "date": "2026-04-30",
+     "url": "https://arxiv.org/abs/2605.00080"
+    }
+   ],
+   "reviewed": "August 3, 2026",
+   "window": "November 2025–August 2026"
+  },
+  "q_robot_dexterity": {
+   "tier": "slow",
+   "moved": "The skeptics published their receipts: Brooks' eighth annual scorecard extends the prediction that deployable dexterity stays far below human hands beyond 2036, the 1X NEO launch conceded the point by shipping teleoperation, and the standards world named hands — grasp, adjustment, recovery — as the constraint humanoid programs keep routing around.",
+   "items": [
+    {
+     "kind": "essay",
+     "title": "Predictions Scorecard, 2026 January 01",
+     "author": "Rodney Brooks",
+     "venue": "rodneybrooks.com",
+     "date": "2026-01-01",
+     "url": "https://rodneybrooks.com/predictions-scorecard-2026-january-01/",
+     "quote": "Despite billions in investment, startups say their androids mostly aren't useful for industrial or domestic work yet",
+     "note": "Brooks' eighth annual scorecard extends his canonical dexterity skepticism into new ten-year predictions: deployable dexterity will remain far below human hands beyond 2036, and walking humanoids will stay unsafe near people."
+    },
+    {
+     "kind": "essay",
+     "title": "The Year of the Hand",
+     "author": "Aaron Prather",
+     "venue": "Six Degrees of Robotics",
+     "date": "2026-01-09",
+     "url": "https://sixdegreesofrobotics.substack.com/p/the-year-of-the-hand",
+     "quote": "Humanoids will not take off until we solve the hands...A humanoid that cannot grasp, adjust, feel, and recover is not a helper. It is a prop.",
+     "note": "ASTM's robotics standards director argues manipulation — grasp, grip adjustment, error recovery on soft and irregular objects — is the binding constraint, from inside the standards and testing world."
+    },
+    {
+     "kind": "news",
+     "title": "Teleop, not autonomy, is the path for 1X's Neo humanoid",
+     "author": "Steve Crowe",
+     "venue": "The Robot Report",
+     "date": "2025-11-21",
+     "url": "https://www.therobotreport.com/teleop-not-autonomy-the-path-for-1x-neo-humanoid/",
+     "quote": "I've yet to see a humanoid complete a household chore from start to finish.",
+     "note": "The reference piece in the 1X NEO teleoperation controversy: no humanoid can yet finish a real household chore autonomously, so home robots will launch as remote-worker embodiments — a concrete measure of the capability-reliability gap in messy environments."
+    }
+   ],
+   "ledger": [],
+   "reviewed": "August 3, 2026",
+   "window": "November 2025–August 2026"
+  },
+  "q_autonomous_mobility": {
+   "tier": "medium",
+   "moved": "Independent validation arrived: IIHS — not Waymo — finds 68% fewer police-reportable crashes than human drivers over 50 million driverless miles, while Waymo's own 170-million-mile update claims a serious-injury crash prevented every eight days. The number that changes the economics debate: roughly 70 remote overseers per 3,000 vehicles. Tesla's robotaxi data, by contrast, has to be reverse-engineered — and looks an order of magnitude behind.",
+   "items": [
+    {
+     "kind": "report",
+     "title": "Waymo's driverless cars crash less often than people",
+     "author": "Insurance Institute for Highway Safety",
+     "venue": "IIHS",
+     "date": "2026-07-23",
+     "url": "https://www.iihs.org/news/detail/waymos-driverless-cars-crash-less-often-than-people",
+     "quote": "The results show that, on a limited scale, these driverless cars are safer than human drivers — who can be impaired or drowsy or suffer lapses in attention.",
+     "note": "First fully independent validation of robotaxi safety claims: 68% lower police-reportable crash rates over 50 million driverless miles, with caveats on small samples in Austin and inadequate federal data collection."
+    },
+    {
+     "kind": "report",
+     "title": "Waymo Safety Impact update: 170 million rider-only miles",
+     "author": "Waymo",
+     "venue": "Waymo",
+     "date": "2026-03-19",
+     "url": "https://waymo.com/blog/shorts/waymo-safety-impact-update-170m/",
+     "quote": "our analysis suggests the Waymo Driver is preventing approximately one serious-injury crash every 8 days.",
+     "note": "Update to the canonical rider-only crash benchmark: 92% fewer serious-or-fatal-injury crashes than matched human drivers across 170M autonomous miles — the largest self-reported safety dataset in open-world autonomy."
+    },
+    {
+     "kind": "news",
+     "title": "Waymo just revealed a crucial statistic for scaling its technology",
+     "author": "Timothy B. Lee",
+     "venue": "Understanding AI",
+     "date": "2026-02-18",
+     "url": "https://www.understandingai.org/p/waymo-just-revealed-a-crucial-statistic",
+     "quote": "the vehicles have the ability to 'phone home' and get assistance from humans if they encounter situations they don't understand.",
+     "note": "First hard number on the human-in-the-loop overhead of driverless scaling: roughly 70 remote overseers for a 3,000-vehicle fleet — the key economics-of-autonomy statistic the industry had never disclosed."
+    },
+    {
+     "kind": "essay",
+     "title": "Does Tesla Really Have A Robotaxi? They Don't Make It Easy To Find Out",
+     "author": "Brad Templeton",
+     "venue": "Forbes",
+     "date": "2026-04-08",
+     "url": "https://www.forbes.com/sites/bradtempleton/2026/04/08/does-tesla-really-have-a-robotaxi-they-dont-make-it-easy-to-find-out/",
+     "quote": "One has to ask why, if the data would suggest they are ready to go, they want to keep it hidden.",
+     "note": "The most careful independent read of Tesla's robotaxi expansion: an estimated 15 crashes in ~800,000 supervised Austin miles, far behind Waymo, with deployment decisions tracking CEO optimism rather than disclosed performance."
+    },
+    {
+     "kind": "news",
+     "title": "Human drivers keep crashing into Waymos",
+     "author": "Kai Williams & Timothy B. Lee",
+     "venue": "Understanding AI",
+     "date": "2026-04-22",
+     "url": "https://www.understandingai.org/p/human-drivers-keep-crashing-into-454",
+     "quote": "Another way of looking at it would be, well, would a taxi stop here?",
+     "note": "Crash-by-crash review of 78 serious Waymo incidents over seven months: 61% were rear-endings of Waymos, and only one involved a moving Waymo plausibly at fault — but lawful-yet-unnatural robot driving creates its own hazards."
+    },
+    {
+     "kind": "essay",
+     "title": "House Cleaning My January 1, 2018 Predictions",
+     "author": "Rodney Brooks",
+     "venue": "rodneybrooks.com",
+     "date": "2026-07-26",
+     "url": "https://rodneybrooks.com/house-cleaning-my-january-1-2018-predictions/",
+     "quote": "There have not been any plausible demos of this capability",
+     "note": "Brooks retrospectively grades 8.5 years of self-driving predictions: driverless taxis remain limited to two operators, and his 'truly driverless' bar only survives by admitting remote human intervention — a disciplined base-rate check on deployment speed."
+    },
+    {
+     "kind": "news",
+     "title": "Zipline eyes Houston, Phoenix after 2 million drone deliveries",
+     "author": "Ishveena Singh",
+     "venue": "DroneDJ",
+     "date": "2026-01-21",
+     "url": "https://dronedj.com/2026/01/21/zipline-drone-delivery-valuation-expansion/",
+     "quote": "Autonomous logistics has become an everyday staple for people across several states in the US.",
+     "note": "The drone side of open-world autonomy: 2 million commercial deliveries, 125 million autonomous miles, and 15% week-over-week US growth as delivery drones quietly scale."
+    }
+   ],
+   "ledger": [
+    {
+     "title": "Waymo Releases Apples-To-Apples Incident Data, It Speaks To Regulation",
+     "author": "Brad Templeton",
+     "venue": "Forbes",
+     "date": "2026-07-07",
+     "url": "https://www.forbes.com/sites/bradtempleton/2026/07/07/waymo-releases-apples-to-apples-incident-data-it-speaks-to-regulation/"
+    },
+    {
+     "title": "Waymo's next five cities are all in red states",
+     "author": "Timothy B. Lee & Kai Williams",
+     "venue": "Understanding AI",
+     "date": "2025-11-18",
+     "url": "https://www.understandingai.org/p/waymos-next-five-cities-are-all-in"
+    },
+    {
+     "title": "Why it might not make sense for you to own a self-driving car",
+     "author": "Timothy B. Lee",
+     "venue": "Understanding AI",
+     "date": "2026-05-14",
+     "url": "https://www.understandingai.org/p/why-it-might-not-make-sense-for-you"
+    },
+    {
+     "title": "Autonomous vehicles' blind spot",
+     "author": "Joann Muller",
+     "venue": "Axios",
+     "date": "2026-07-29",
+     "url": "https://www.axios.com/2026/07/29/autonomous-waymo-blind-spot-uber"
+    },
+    {
+     "title": "The feds are probing Waymo's behavior around school children",
+     "author": "Timothy B. Lee",
+     "venue": "Understanding AI",
+     "date": "2026-01-29",
+     "url": "https://www.understandingai.org/p/the-feds-are-probing-waymos-behavior"
+    }
+   ],
+   "reviewed": "August 3, 2026",
+   "window": "November 2025–August 2026"
+  },
+  "q_embodied_ai_economics": {
+   "tier": "medium",
+   "moved": "The supply side got measured: Epoch finds precision reducers cap humanoid production near 500,000 a year on current capacity, with plausible paths to millions by 2030; Unitree's IPO filing shows a profitable Chinese hardware business shipping 37x more humanoids than its US rivals — while only 9% of Chinese humanoid sales go to real industrial use, and Brooks argues deployment at economy-reshaping scale takes decades regardless.",
+   "items": [
+    {
+     "kind": "report",
+     "title": "How Fast Could Robot Production Scale Up?",
+     "author": "Jean-Stanislas Denain & Yann Rivière",
+     "venue": "Epoch AI",
+     "date": "2026-04-22",
+     "url": "https://epoch.ai/publications/how-fast-could-robot-production-scale-up",
+     "quote": "While software can be copied and deployed nearly instantly, each robot must be manufactured from real components in real factories by real workers.",
+     "note": "First rigorous supply-side analysis of the physical-AI buildout: ~16,000 humanoids made in 2025 with 6-month doubling times, precision reducers as the binding bottleneck, and plausible 2030 paths to 1.5–10 million humanoids per year."
+    },
+    {
+     "kind": "news",
+     "title": "The Robots Cometh",
+     "author": "Charlie Campbell",
+     "venue": "TIME",
+     "date": "2026-07-23",
+     "url": "https://time.com/article/2026/07/23/unitree-china-human-robotics/",
+     "quote": "We don't see any significant competitors outside of China",
+     "note": "Deep reporting on China's robotics push: Unitree shipped 5,500+ humanoids in 2025 while slashing prices, over 140 Chinese firms build humanoids, and cities have poured $26B+ into development funds — but only 9% of sales go to actual industrial use."
+    },
+    {
+     "kind": "essay",
+     "title": "Chinese STAR Robot Maker Unitree Doesn't Look Like a High-Tech Company",
+     "author": "Tony Peng",
+     "venue": "Recode China AI",
+     "date": "2026-03-23",
+     "url": "https://recodechinaai.substack.com/p/chinese-star-robot-maker-unitree",
+     "quote": "A typical high-tech company heading toward IPO is money-losing, carries a high R&D cost ratio, and runs on investor patience. Unitree doesn't fit that profile.",
+     "note": "IPO-filing analysis: Unitree is profitable with 60% gross margins, 335% revenue growth, and a 37:1 humanoid shipment advantage over Figure or Agility — China's hardware cost curve, not Western software, currently drives embodied-AI economics."
+    },
+    {
+     "kind": "essay",
+     "title": "Four Time Scales for Technology Development and Deployment",
+     "author": "Rodney Brooks",
+     "venue": "rodneybrooks.com",
+     "date": "2026-08-01",
+     "url": "https://rodneybrooks.com/four-time-scales-for-technology-development-and-deployment/",
+     "quote": "It really does take decades, essentially a human lifetime, to deploy a technology at large enough scale that it reshapes the world's economy.",
+     "note": "Framework essay arguing hype cycles, deployment, and economic reshaping run on different clocks: even successful embodied AI implies decades before physical AI is economically transformative."
+    },
+    {
+     "kind": "news",
+     "title": "What will the robot jobs apocalypse look like? Ask Amazon warehouse workers",
+     "author": "Pavithra Mohan",
+     "venue": "Fast Company",
+     "date": "2026-03-31",
+     "url": "https://www.fastcompany.com/91514112/what-will-the-robot-jobs-apocalypse-look-like-ask-amazon-warehouse-workers",
+     "quote": "You're literally sitting there watching a robot do a job, and your only role is to unstick that thing if it stops working.",
+     "note": "Ground-level measurement of warehouse automation, the structured-environment case that is actually working: ~1 million Amazon robots versus 1.5 million workers, and average facility headcount at a 16-year low."
+    }
+   ],
+   "ledger": [
+    {
+     "title": "Morgan Stanley doubles its China robot forecast again",
+     "author": "Darius Popa",
+     "venue": "The Next Web",
+     "date": "2026-06-24",
+     "url": "https://thenextweb.com/news/china-humanoid-robot-forecast-morgan-stanley-50000"
+    }
+   ],
+   "reviewed": "August 3, 2026",
+   "window": "March–August 2026"
+  },
+  "q_automated_ai_research": {
+   "tier": "high",
+   "moved": "The question now has an institutional apparatus: Anthropic's risk report formally classifies automated-R&D risk as very low for current models, METR's external review accepts the conclusion while faulting the evidence, and CRUX gave agents real budgets to do open-ended research — hundreds of experiments run, both resulting papers unambiguously rejected by the original authors. Benchmarks agree: agents tune well and invent poorly.",
+   "items": [
+    {
+     "kind": "report",
+     "title": "Review of the \"Risks from automated R&D\" section in the Anthropic Risk Report",
+     "author": "Jurkovic, Barnes & Wijk",
+     "venue": "METR",
+     "date": "2026-05-08",
+     "url": "https://metr.org/blog/2026-05-08-rd-section-anthropic-risk-report-feb-2026-review/",
+     "quote": "we agree with the bottom-line conclusion of the report — that the risk of a catastrophe from Opus 4.6 or a less capable Anthropic model automating R&D in any domain is very low — but we think the evidence presented in the report is inadequate to establish this.",
+     "note": "First public third-party review of a frontier lab's own assessment of how far its models are from automating AI R&D — a template for external verification of AI-R&D capability claims."
+    },
+    {
+     "kind": "report",
+     "title": "Risk Report: February 2026",
+     "author": "Anthropic",
+     "venue": "Anthropic",
+     "date": "2026-02",
+     "url": "https://www.anthropic.com/feb-2026-risk-report",
+     "quote": "we think the model is far from being able to fully automate the activities needed for R&D in key domains.",
+     "note": "The primary lab document classifying risk from models automating AI R&D as 'very low' for current models — making AI-R&D automation an explicit tracked threshold in a frontier safety framework."
+    },
+    {
+     "kind": "report",
+     "title": "Can AI agents conduct open-ended AI research? Early evidence from two case studies",
+     "author": "Kirgis, Kapoor, Schwartz et al.",
+     "venue": "CRUX",
+     "date": "2026-07-30",
+     "url": "https://cruxevals.com/crux/can-ai-agents-conduct-research/",
+     "quote": "The papers produced by the agents were unambiguously rejected.",
+     "note": "Empirical test giving agents real resources to reproduce and extend two papers: agents ran hundreds of experiments but failed on research judgment, and the original authors rejected both AI-written papers."
+    },
+    {
+     "kind": "paper",
+     "title": "ResearchGym: Evaluating Language Model Agents on Real-World AI Research",
+     "author": "Garikaparthi, Patwardhan & Cohan",
+     "venue": "arXiv",
+     "date": "2026-02-16",
+     "url": "https://arxiv.org/abs/2602.15112",
+     "quote": "impatience, poor time and resource management, overconfidence in weak hypotheses, difficulty coordinating parallel experiments, and hard limits from context length.",
+     "note": "End-to-end research benchmark: GPT-5 beat baselines in only 6.7% of evaluations and completed 26.5% of subtasks — quantifying the capability-reliability gap in autonomous AI research."
+    },
+    {
+     "kind": "report",
+     "title": "A simpler AI timelines model predicts 99% AI R&D automation in ~2032",
+     "author": "Thomas Kwa",
+     "venue": "METR",
+     "date": "2026-02-10",
+     "url": "https://metr.org/notes/2026-02-10-simpler-ai-timelines-model/",
+     "quote": "At current rates of compute growth and algorithmic progress, this model's median prediction is >99% automation of AI R&D in late 2032.",
+     "note": "A deliberately minimal 8-parameter model of when AI R&D becomes fully automated, offered as a transparent alternative to the 33-parameter AI Futures model."
+    },
+    {
+     "kind": "news",
+     "title": "AI Is Starting to Build Better AI",
+     "author": "Matthew Hutson",
+     "venue": "IEEE Spectrum",
+     "date": "2026-05-07",
+     "url": "https://spectrum.ieee.org/amp/recursive-self-improvement-2676580377",
+     "quote": "We are right around the corner from recursively self-improving systems.",
+     "note": "Reported survey of how much AI already does AI research — self-assisting coding models, AlphaEvolve, Darwin Gödel Machines — with lab researchers quoted on both promise and limits."
+    }
+   ],
+   "ledger": [
+    {
+     "title": "MLS-Bench: A Holistic and Rigorous Assessment of AI Systems on Building Better AI",
+     "author": "Lyu, Yang, Huang et al.",
+     "venue": "arXiv",
+     "date": "2026-05-27",
+     "url": "https://arxiv.org/abs/2605.08678"
+    }
+   ],
+   "reviewed": "August 3, 2026",
+   "window": "February–August 2026"
+  },
+  "q_recursive_feedback_speed": {
+   "tier": "medium",
+   "moved": "The debate got its conceptual cleanup and its new bottleneck: Cunningham shows most definitions of recursive self-improvement conflate feedback with explosion, Ball argues the inflection matters whether or not it is discontinuous, and Trammell's parallelization result gives gradualism a new mechanism — millions of automated researchers only explode if their work can be divided and recombined fast enough.",
+   "items": [
+    {
+     "kind": "essay",
+     "title": "Definitions of Recursive Self-Improvement",
+     "author": "Tom Cunningham",
+     "venue": "tecunningham.github.io",
+     "date": "2026-06-05",
+     "url": "https://tecunningham.github.io/posts/2026-06-05-rsi-definitions.html",
+     "quote": "Feedback effects do not imply an explosion. Many of the definitions below, read literally, define RSI as feedback effects. Yet the authors often go on to say that RSI would have explosive implications. I think this is a mistake.",
+     "note": "Most RSI definitions conflate feedback, autonomy, and explosion; an actual explosion requires a cardinal capability scale with a meaningful zero — a conceptual clean-up of the takeoff-speed debate."
+    },
+    {
+     "kind": "report",
+     "title": "Even after R&D is automated, parallelization constraints could delay a technological singularity",
+     "author": "Phil Trammell",
+     "venue": "Epoch AI",
+     "date": "2026-07-29",
+     "url": "https://epoch.ai/publications/parallelization-constraints-could-delay-a-technological-singularity",
+     "quote": "more research inputs accelerate progress only to the extent that research can be divided into different useful tasks, carried out simultaneously, and usefully recombined.",
+     "note": "Introduces parallelization technology as an overlooked bottleneck: millions of AI researchers may not produce an explosion unless the ability to divide and recombine their work keeps pace — a new argument for gradual takeoff."
+    },
+    {
+     "kind": "essay",
+     "title": "On Recursive Self-Improvement (Part I)",
+     "author": "Dean W. Ball",
+     "venue": "Hyperdimensional",
+     "date": "2026-02-05",
+     "url": "https://www.hyperdimensional.co/p/on-recursive-self-improvement-part",
+     "quote": "the vast majority of frontier AI lab staff will neither sleep nor eat nor use the bathroom. They will grow smarter and more capable each month.",
+     "note": "AI labs are already automating their own research, and this is a distinct inflection point whether or not it produces a discontinuous explosion. Part II (in the ledger) argues for audit-style third-party verification of labs."
+    },
+    {
+     "kind": "report",
+     "title": "The software intelligence explosion debate needs experiments",
+     "author": "Anson Ho & Parker Whitfill",
+     "venue": "Epoch AI Gradient Updates",
+     "date": "2025-11-14",
+     "url": "https://epoch.ai/gradient-updates/the-software-intelligence-explosion-debate-needs-experiments",
+     "quote": "thus far, empirical work on the software intelligence explosion has used flawed data and models.",
+     "note": "The whole software-singularity debate rests on shaky data and should be settled empirically — the live reference for the 'measure it, don't model it' position."
+    }
+   ],
+   "ledger": [
+    {
+     "title": "On Recursive Self-Improvement (Part II)",
+     "author": "Dean W. Ball",
+     "venue": "Hyperdimensional",
+     "date": "2026-02-12",
+     "url": "https://www.hyperdimensional.co/p/on-recursive-self-improvement-part-d9b"
+    },
+    {
+     "title": "\"Recursive Self-Improvement\" Is Three Different Things",
+     "author": "Ihor Kendiukhov",
+     "venue": "LessWrong",
+     "date": "2026-02-10",
+     "url": "https://www.lesswrong.com/posts/XHd75cuHhWcBDd8to/recursive-self-improvement-is-three-different-things"
+    },
+    {
+     "title": "An AI skeptic's case for recursive self-improvement",
+     "author": "Harjas",
+     "venue": "LessWrong",
+     "date": "2026-03-14",
+     "url": "https://www.greaterwrong.com/posts/Fy2fLPKgb8K3sWuRn/an-ai-skeptic-s-case-for-recursive-self-improvement"
+    }
+   ],
+   "reviewed": "August 3, 2026",
+   "window": "November 2025–August 2026"
+  },
+  "q_scientific_originality": {
+   "tier": "slow",
+   "moved": "The Einstein question got a benchmark: idea-generation capability turns out to be poorly predicted by general-intelligence scores — small models rival frontier ones at scientific creativity — suggesting originality is a distinct axis, not an emergent bonus. The reported consensus, including Hassabis, remains that current systems cannot yet originate the hypothesis that matters.",
+   "items": [
+    {
+     "kind": "paper",
+     "title": "Evaluating LLMs' divergent thinking capabilities for scientific idea generation with minimal context",
+     "author": "Ruan, Wang, Hong et al.",
+     "venue": "Nature Communications",
+     "date": "2026-03-07",
+     "url": "https://www.nature.com/articles/s41467-026-70245-1",
+     "quote": "the scientific idea generation capabilities measured by our benchmark are poorly predicted by standard metrics of general intelligence scores.",
+     "note": "Introduces LiveIdeaBench and finds scientific idea generation is largely decoupled from general intelligence — implying originality may need distinct training, sharpening the 'Einstein question'."
+    },
+    {
+     "kind": "news",
+     "title": "Have we entered a new age of AI-enabled scientific discovery?",
+     "author": "Kathryn Hulick",
+     "venue": "Science News",
+     "date": "2026-02-18",
+     "url": "https://www.sciencenews.org/article/ai-enabled-science-discovery-insight",
+     "quote": "Some say we've entered a new age of AI-enabled scientific discovery. But human insight and creativity still can't be automated.",
+     "note": "Reported survey directly on origination versus recombination: Hassabis says current systems 'can't do that'; Marcus calls much of the surrounding hype marketing."
+    },
+    {
+     "kind": "essay",
+     "title": "New 'AI scientists' are improving – but reveal their fundamental limits",
+     "author": "Karin Verspoor",
+     "venue": "The Conversation",
+     "date": "2026-05-20",
+     "url": "https://stuff.co.za/2026/05/20/new-ai-scientists-are-improving-reveal-limits/",
+     "quote": "AI (co-) scientists will only be truly effective when they can go beyond connecting words together, to modelling the full complexity of the systems those words describe.",
+     "note": "A computing dean argues the ceiling on AI-originated science is that language-only systems don't model the underlying reality — surveying Robin, Co-Scientist, Sakana, and the fabricated-reference failure mode."
+    }
+   ],
+   "ledger": [],
+   "reviewed": "August 3, 2026",
+   "window": "February–August 2026"
+  },
+  "q_closed_loop_science": {
+   "tier": "slow",
+   "moved": "Closed-loop systems scaled quietly: Kosmos runs read 1,500 papers and execute 42,000 lines of analysis per discovery attempt, claiming seven discoveries with published error rates — while the biosecurity literature points out that the same loop that removes human hands from experiments removes human checkpoints from biology.",
+   "items": [
+    {
+     "kind": "essay",
+     "title": "AI can design and run thousands of lab experiments without human hands",
+     "author": "Stephen D. Turner",
+     "venue": "The Conversation",
+     "date": "2026-04-10",
+     "url": "https://stuff.co.za/2026/04/10/ai-can-design-and-run-thousands-of-lab/",
+     "quote": "This is programmable biology: designing biological components on a computer and building them in the physical world, with AI closing the loop.",
+     "note": "Describes closed-loop autonomous biology where an AI proposes designs and robots execute and feed results back — then argues the same loop lowers biosecurity barriers, the verification tension the framing flags."
+    },
+    {
+     "kind": "report",
+     "title": "Kosmos: An AI Scientist for Autonomous Discovery",
+     "author": "Edison Scientific / FutureHouse",
+     "venue": "Edison Scientific",
+     "date": "2025-11-05",
+     "url": "https://edisonscientific.com/news/announcing-kosmos",
+     "quote": "An individual Kosmos run involves reading 1500 papers and running 42,000 lines of analysis code, far more than any other agent we are aware of.",
+     "note": "A live-reference autonomous-discovery system claiming seven discoveries (three reproductions, four novel) with 79.4% accuracy, while acknowledging it 'often goes down rabbit holes' — a concrete data point on how far closed-loop science has scaled."
+    }
+   ],
+   "ledger": [],
+   "reviewed": "August 3, 2026",
+   "window": "November 2025–August 2026"
+  },
+  "q_detecting_acceleration": {
+   "tier": "medium",
+   "moved": "The detection instruments now exist: METR's frontier risk report — with access inside four major labs — finds heavy AI use in R&D workflows but no measurable compression of research timelines yet, and FutureSearch's one-year check of AI 2027 finds coding and hacking ahead of schedule, prompting a one-year pull-forward of the superhuman-coder milestone.",
+   "items": [
+    {
+     "kind": "report",
+     "title": "Frontier Risk Report (February to March 2026)",
+     "author": "METR",
+     "venue": "METR",
+     "date": "2026-05-19",
+     "url": "https://metr.org/blog/2026-05-19-frontier-risk-report/",
+     "quote": "no dramatic speed-ups in the overall pace of progress attributed to AI R&D automation",
+     "note": "METR's pilot of assessing AI agents used inside Anthropic, Google, Meta and OpenAI — an external instrument aimed exactly at detecting internal acceleration; heavy AI use in R&D workflows, no measurable compression of research timelines yet."
+    },
+    {
+     "kind": "report",
+     "title": "AI 2027 Update: A One Year Timeline Check",
+     "author": "Dan Schwarz",
+     "venue": "FutureSearch",
+     "date": "2026-04-08",
+     "url": "https://futuresearch.ai/blog/ai-2027-one-year-later/",
+     "quote": "Parts of a 2025 forecast of dangerous AI have started to come true",
+     "note": "Scores which AI 2027 indicators have materialized one year in: autonomous coding and hacking ahead of schedule, R&D bottlenecks less binding than forecast — a worked example of reading early acceleration signals."
+    }
+   ],
+   "ledger": [],
+   "reviewed": "August 3, 2026",
+   "window": "April–August 2026"
   }
  }
 }
