@@ -322,7 +322,7 @@ def entry_excerpt(body):
     return text.replace("*", "").strip()
 
 
-def render_map(sections, entry_map):
+def render_map(sections, entry_map, recent=None):
     qcount = sum(len(su["qs"]) for s in sections for su in s["subs"])
     lcount = sum(len(q["links"]) for s in sections for su in s["subs"] for q in su["qs"])
     cols = []
@@ -349,9 +349,15 @@ def render_map(sections, entry_map):
                 ent = entry_map.get(q["id"])
                 entlink = (f'<a class="bentry" href="questions/{ent["slug"]}/">Read the full entry →</a>'
                            if ent else "")
+                rqe = (recent or {}).get("items", {}).get(q["id"])
+                vol = ""
+                if rqe:
+                    n90 = sum(1 for it in rqe.get("items", []) + rqe.get("ledger", [])
+                              if it.get("date", "") >= "2026-05")
+                    vol = '<span class="vol"> · ' + str(n90) + ' in 90d</span>'
                 inner.append(
                     f'<div class="bq" id="n{anchor}" data-sec="{s["id"]}" data-sub="{su["id"]}" data-x="{E(x)}">'
-                    f'<button class="bqhead" aria-expanded="false"><span class="bqid">{q["id"]}</span>{E(q["t"])}{star}</button>'
+                    f'<button class="bqhead" aria-expanded="false"><span class="bqid">{q["id"]}</span>{E(q["t"])}{star}{vol}</button>'
                     f'<p class="bqq">{E(q["q"])}</p>'
                     f'<div class="bqbody"><div class="bqin">'
                     f'<p class="bfull">{E(q["q"])}</p>'
@@ -363,9 +369,11 @@ def render_map(sections, entry_map):
                     f'<div class="binner">{"".join(inner)}</div></div>')
     with open(os.path.join(ROOT, "templates", "map.html"), encoding="utf-8") as f:
         tpl = f.read()
+    tracked = len((recent or {}).get("items", {}))
     out = (tpl.replace("__COLS__", "".join(cols))
               .replace("__QCOUNT__", str(qcount))
-              .replace("__LCOUNT__", str(lcount)))
+              .replace("__LCOUNT__", str(lcount))
+              .replace("__TRACKED__", str(tracked)))
     with open(os.path.join(ROOT, "index.html"), "w", encoding="utf-8") as f:
         f.write(out)
 
@@ -398,6 +406,12 @@ def load_recent(qindex):
                 errors.append(f"recent.json {qid}: bad URL {it.get('url')!r}")
             if not re.match(r"^\d{4}-\d{2}(-\d{2})?$", it.get("date", "")):
                 errors.append(f"recent.json {qid}: bad date {it.get('date')!r} (want YYYY-MM)")
+        for it in entry.get("ledger", []):
+            for field in ("title", "author", "venue", "date", "url"):
+                if not it.get(field):
+                    errors.append(f"recent.json {qid} ledger: item missing '{field}'")
+            if urlparse(it.get("url", "")).scheme not in ("http", "https"):
+                errors.append(f"recent.json {qid} ledger: bad URL {it.get('url')!r}")
         by_id[qid_to_id[qid]] = entry
     return {"swept": data.get("swept", ""), "items": by_id}, errors
 
@@ -576,7 +590,7 @@ if __name__ == "__main__":
             print("  -", e, file=sys.stderr)
         sys.exit(1)
 
-    render_map(sections, entry_map)
+    render_map(sections, entry_map, recent)
     render_browse(sections, entry_map, recent, debates)
     render_poster(sections)
     qcount, lcount = render_index(sections, overview_links, outdir="all", legacy=True)

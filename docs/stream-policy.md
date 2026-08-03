@@ -15,7 +15,10 @@ reporting). Tweets and Substacks are inputs, not the product.
 ## Page anatomy (question pages in Browse)
 
 1. Question, framing, entry teaser — unchanged.
-2. **What has moved** — dated, plain-register, attributed: how the debate moved,
+2. **What changed** — dated, plain-register, attributed, and ANCHORED: the header
+   states the interval explicitly ("since <previous review date>", or the examined
+   window on a first review). Never an unanchored "recently".
+   Plain-register statements of how the debate moved,
    shown ABOVE the entry teaser. Prefer 2–4 scannable bullets, each traceable to
    items below; a paragraph is acceptable for simple updates. This is the synthesis
    layer; the items are its evidence. Carries "reviewed <date>".
@@ -34,6 +37,12 @@ reporting). Tweets and Substacks are inputs, not the product.
 
 - Significance-based, not window-based: the most recent 3–8 significant items,
   regardless of date. "Recent" means recently relevant, not merely newly published.
+- **The ledger**: every sweep persists its full qualifying candidate list, not just
+  selections. Items that met the relevance bar but were not selected appear in a
+  collapsed "More from this sweep" section, and the header states the denominator:
+  "N selected of M qualifying pieces observed." "Observed" means within our
+  discovery scope (registry + aggregators + editor feed) — a quality-filtered
+  volume measure, comparable across questions, never claimed as "all discussion."
 - Quality bar per item: adds evidence, a distinct argument, a forecast update, a
   substantive response, or represents an important position unusually well.
   Not news churn, not explainers.
@@ -79,6 +88,20 @@ be fetched directly: they may be included only when a fetchable secondary source
 carries a visible "via" attribution and its quote comes from the secondary source's
 quotation. Never reconstructed from memory. Deleted or unreachable sources are
 dropped or flagged at the next sweep.
+
+## Volume signals
+
+The map offers a "Show discussion volume" toggle: qualifying pieces observed in
+the last 90 days per tracked question, off by default (volume is a lens, not a
+property of the map). While coverage is partial the toggle's note states it
+plainly ("N of 127 questions tracked so far"); untracked questions display
+nothing, never zero.
+
+## Coverage plan
+
+Expansion runs a section per sweep (next: all of Economy), so every question is
+tracked within roughly five sweeps. A covered question is a standing maintenance
+commitment; if the cadence cannot be held, coverage shrinks rather than rots.
 
 ## Dates
 

@@ -41,6 +41,10 @@ h1{font-family:var(--serif);font-size:34px;letter-spacing:-.014em;line-height:1.
 .toolrow{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;max-width:1360px;margin:14px auto 6px}
 #mapsearch{border:1px solid var(--line);border-radius:9px;padding:8px 12px;font-size:13.5px;background:var(--panel);width:300px;max-width:100%;font-family:var(--sans)}
 #mapcount{font-size:12.5px;color:var(--ink3);min-height:16px}
+#voltoggle{border:1px solid var(--line);background:var(--panel);border-radius:20px;padding:5px 12px;font-size:12px;cursor:pointer;color:var(--ink2)}
+#voltoggle[aria-pressed="true"]{border-color:var(--gold);background:var(--gold);color:#fff}
+.vol{display:none;font-size:10.5px;color:var(--gold);font-weight:600;white-space:nowrap}
+.showvol .vol{display:inline}
 .bs{display:flex;gap:26px;max-width:1360px;margin:14px auto 0;align-items:flex-start}
 .bcol{flex:1 1 0;min-width:0;transition:flex .38s ease}
 .bsechead{display:flex;gap:9px;align-items:baseline;border:0;background:none;cursor:pointer;padding:0 0 5px;
@@ -135,6 +139,7 @@ footer a{color:var(--ink2)}
 <div class="toolrow">
   <label class="vh" for="mapsearch" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Search questions</label>
   <input id="mapsearch" type="search" placeholder="Search questions, framings, sources…" autocomplete="off">
+  <button id="voltoggle" aria-pressed="false">Show discussion volume</button>
   <span id="mapcount" aria-live="polite"></span>
 </div>
 <div class="bs" id="bs">__COLS__</div>
@@ -220,6 +225,15 @@ box.addEventListener('input',()=>{
   count.textContent=n?n+' of '+QS.length+' questions match':'No questions match';
 });
 box.addEventListener('keydown',e=>{if(e.key==='Escape'){box.value='';clearSearch();}});
+/* ---------- discussion-volume toggle (partial coverage, labeled) ---------- */
+const vt=document.getElementById('voltoggle');
+vt.addEventListener('click',()=>{
+  const on=!document.body.classList.contains('showvol');
+  document.body.classList.toggle('showvol',on);
+  vt.setAttribute('aria-pressed',on);
+  vt.textContent=on?'Hide discussion volume':'Show discussion volume';
+  count.textContent=on?'Qualifying pieces observed in our sweep scope, last 90 days · __TRACKED__ of __QCOUNT__ questions tracked so far':'';
+});
 /* ---------- accept anchors from browse / old links ---------- */
 const m=(location.hash||'').match(/^#q?(\d)(?:-(\d+))?(?:-(\d+))?$/);
 if(m){

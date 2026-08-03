@@ -299,7 +299,8 @@ function render(k){
     h+=`<p class="quiet" style="--sc:${SC}">`+(en?`<a href="${en.href}">Read the full analysis →</a> &nbsp;·&nbsp; `:'')+`<a href="../#q${q.id.replaceAll('.','-')}">View on the map →</a></p>`;
     if(rq&&rq.moved){
       const mv=Array.isArray(rq.moved)?rq.moved:[rq.moved];
-      h+=`<div class="mvh">What changed · reviewed ${esc(rq.reviewed)}</div><div class="changed">`;
+      const anchor2=rq.prev_reviewed?`since ${esc(rq.prev_reviewed)}`:(rq.window?esc(rq.window):'');
+      h+=`<div class="mvh">What changed${anchor2?' · '+anchor2:''} · reviewed ${esc(rq.reviewed)}</div><div class="changed">`;
       mv.forEach((m,i)=>{
         const t0=(typeof m==='object')?m.t:null, b=(typeof m==='object')?m.b:m;
         h+=`<div class="ch"><div class="chn">0${i+1}</div>`+(t0?`<div class="cht">${esc(t0)}</div>`:'')+`<p class="chb">${esc(b)}</p></div>`;
@@ -311,7 +312,9 @@ function render(k){
     }
     if(rc&&rc.length){
       const deb=DEBATES[q.id];
-      h+=`<div class="rh">Recent thinking</div><div class="rhm">Selected for significance · ${rc.length} item${rc.length>1?'s':''}</div>`;
+      const led=rq.ledger||[];
+      const qual=rc.length+led.length;
+      h+=`<div class="rh">Recent thinking</div><div class="rhm">${led.length?`${rc.length} selected of ${qual} qualifying pieces observed`:`Selected for significance · ${rc.length} item${rc.length>1?'s':''}`}${rq.window?` · ${esc(rq.window)}`:''}</div>`;
       let groups=[];
       if(deb){
         const assigned=new Set(deb.poles.map(p=>p.k));
@@ -334,6 +337,15 @@ function render(k){
         h+=`</div></section>`;
       });
       h+=`<div class="gtail">`;
+      const led2=rq.ledger||[];
+      if(led2.length){
+        h+=`<details class="gfound"><summary>More from this sweep (${led2.length})</summary>`+
+           `<div class="gim" style="margin:6px 0 4px">Met the relevance bar during the sweep; not selected for the reading list above.</div>`;
+        led2.slice().sort((a,b)=>b.date.localeCompare(a.date)).forEach(l=>{
+          h+=`<div class="gcp" style="padding:7px 0"><a class="gct" href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.title)}</a><div class="gim">${esc(l.author)} · ${esc(l.venue)} · ${fmtD(l.date)}</div></div>`;
+        });
+        h+=`</details>`;
+      }
       if(q.links.length){
         h+=`<details class="gfound"><summary>Foundational reading (${q.links.length})</summary>`;
         q.links.forEach(l=>{h+=`<div class="gcp" style="padding:8px 0"><a class="gct" href="${esc(l.u)}" target="_blank" rel="noopener">${esc(l.t)}</a><div class="gim">${esc(l.s)}${l.y?' · '+l.y:''}</div></div>`});

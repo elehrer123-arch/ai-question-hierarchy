@@ -83,7 +83,26 @@
      "quote": "Once a model is trained, its weights are frozen and its capacity to learn new patterns is greatly reduced.",
      "note": "Frozen weights and lossy file-based memory prevent agents from accumulating the tacit knowledge discovery requires."
     }
-   ]
+   ],
+   "ledger": [
+    {
+     "kind": "essay",
+     "title": "The data black hole at the center of AI",
+     "author": "Dwarkesh Patel",
+     "venue": "dwarkesh.com",
+     "date": "2026-06",
+     "url": "https://www.dwarkesh.com/p/the-sample-efficiency-black-hole"
+    },
+    {
+     "kind": "post",
+     "title": "RLVR might be disproportionately bad at science",
+     "author": "Dwarkesh Patel",
+     "venue": "dwarkesh.com",
+     "date": "2026-05",
+     "url": "https://www.dwarkesh.com/p/rlvr-might-be-disproportionately"
+    }
+   ],
+   "window": "February–August 2026"
   },
   "q_agent_task_horizons": {
    "tier": "high",
@@ -185,7 +204,18 @@
      "quote": "ALE is built from real work, not synthetic tasks. Every task is derived from a real project that a human expert previously completed",
      "note": "A benchmark grounded in completed real professional projects, with per-task cost comparisons."
     }
-   ]
+   ],
+   "ledger": [
+    {
+     "kind": "post",
+     "title": "Did Google's AI agents really build an operating system for $916?",
+     "author": "Rabanser, Kapoor, Bommasani, Schwartz & Narayanan",
+     "venue": "Normal Technology",
+     "date": "2026-05",
+     "url": "https://www.normaltech.ai/p/did-googles-ai-agents-really-build"
+    }
+   ],
+   "window": "February–August 2026"
   },
   "q_safety_evidence": {
    "tier": "medium",
@@ -282,7 +312,18 @@
      "url": "https://www.sequent.org/launch",
      "note": "A $100–150M alignment nonprofit whose founding claim is that lab empirical programs cannot deliver principled confidence — proposing theory-plus-empirics safety cases."
     }
-   ]
+   ],
+   "ledger": [
+    {
+     "kind": "essay",
+     "title": "Total research transparency would be nice",
+     "author": "Ajeya Cotra",
+     "venue": "Planned Obsolescence",
+     "date": "2026-07",
+     "url": "https://www.planned-obsolescence.org/p/total-research-transparency-would"
+    }
+   ],
+   "window": "February–August 2026"
   },
   "q_ai_companionship": {
    "tier": "medium",
@@ -369,7 +410,9 @@
      "pos": "design",
      "note": "Chinese labs deliberately building companionship products, and the regulations closing in on them."
     }
-   ]
+   ],
+   "ledger": [],
+   "window": "April–August 2026"
   },
   "q_labor_displacement": {
    "tier": "high",
@@ -472,7 +515,34 @@
      "note": "Anthropic's head of economics, on Anthropic's own usage data through June 2026 — a finding that cuts against his CEO's displacement forecast.",
      "pos": "reorg"
     }
-   ]
+   ],
+   "ledger": [
+    {
+     "kind": "essay",
+     "title": "What will be left for us to work on?",
+     "author": "Arvind Narayanan",
+     "venue": "Normal Technology (ICML keynote)",
+     "date": "2026-07",
+     "url": "https://www.normaltech.ai/p/what-will-be-left-for-us-to-work"
+    },
+    {
+     "kind": "essay",
+     "title": "Your future job will be to keep AI on task",
+     "author": "Noah Smith",
+     "venue": "Noahpinion",
+     "date": "2026-05",
+     "url": "https://www.noahpinion.blog/p/your-future-job-will-be-to-keep-ai"
+    },
+    {
+     "kind": "interview",
+     "title": "What remains scarce after AGI? (Alex Imas and Phil Trammell)",
+     "author": "Dwarkesh Patel with Imas & Trammell",
+     "venue": "Dwarkesh Podcast",
+     "date": "2026-06",
+     "url": "https://www.dwarkesh.com/p/alex-imas-phil-trammell"
+    }
+   ],
+   "window": "February–August 2026"
   },
   "q_entry_level_work": {
    "tier": "high",
@@ -570,7 +640,9 @@
      "url": "https://www.oneusefulthing.org/p/choosing-to-stay-human",
      "note": "The mechanism behind the pipeline worry: reflexive delegation degrades learning, so which skills stay human must be chosen deliberately."
     }
-   ]
+   ],
+   "ledger": [],
+   "window": "February–August 2026"
   },
   "q_export_controls": {
    "tier": "medium",
@@ -672,7 +744,18 @@
      "quote": "Without the expertise of ASML and TEL engineers to replenish parts and fix tools, China's most advanced fabs may grind to a halt.",
      "note": "Tool servicing, not tools, identified as the real chokepoint in Congress's codification attempt."
     }
-   ]
+   ],
+   "ledger": [
+    {
+     "kind": "post",
+     "title": "How to Buy Cheap Claude Tokens in China",
+     "author": "Zilan Qian",
+     "venue": "ChinaTalk",
+     "date": "2026-05",
+     "url": "https://www.chinatalk.media/p/how-to-buy-cheap-claude-tokens-in"
+    }
+   ],
+   "window": "February–August 2026"
   },
   "q_concentration_of_power": {
    "tier": "medium",
@@ -759,7 +842,18 @@
      "quote": "If transaction cost is 'train your own frontier language model'...firm size = everybody",
      "note": "A Coasean mechanism for concentration: frontier-model economics push toward firms of unprecedented scale."
     }
-   ]
+   ],
+   "ledger": [
+    {
+     "kind": "post",
+     "title": "Controlling the capital after AGI",
+     "author": "Trammell & Ho",
+     "venue": "Epoch AI",
+     "date": "2026-06",
+     "url": "https://epochai.substack.com/p/controlling-the-capital-after-agi"
+    }
+   ],
+   "window": "April–August 2026"
   },
   "q_machine_consciousness": {
    "tier": "slow",
@@ -848,7 +942,18 @@
      "quote": "Claude has developed a small collection of internal neural patterns that, compared to all its other internal processing, play a special role.",
      "note": "A workspace-like structure that emerged in training — evidence bearing on access consciousness, and a lens for reading internal reasoning."
     }
-   ]
+   ],
+   "ledger": [
+    {
+     "kind": "essay",
+     "title": "RTMH: Pope Leo's Magnifica Humanitas on AI",
+     "author": "Zvi Mowshowitz",
+     "venue": "Don't Worry About the Vase",
+     "date": "2026-05",
+     "url": "https://thezvi.substack.com/p/rtmh-pope-leos-magnifica-humanitas"
+    }
+   ],
+   "window": "May 2025–August 2026"
   },
   "q_agi_timelines": {
    "tier": "medium",
@@ -922,7 +1027,9 @@
      "quote": "we've thought hard about how good the AIs might be, but not about how hard it'll be to develop specific technologies",
      "note": "Timeline forecasts neglect the engineering feasibility of specific post-AGI technologies."
     }
-   ]
+   ],
+   "ledger": [],
+   "window": "October 2025–August 2026"
   },
   "q_value_capture": {
    "tier": "medium",
@@ -943,7 +1050,9 @@
      "quote": "In consuming intelligence, you are creating intelligence. And what you create should belong to you",
      "note": "Microsoft's CEO argues model providers capture customers' proprietary knowledge through usage exhaust — an institutional position from the largest AI reseller, pushing orchestration layers and open models."
     }
-   ]
+   ],
+   "ledger": [],
+   "window": "July–August 2026"
   }
  }
 }
