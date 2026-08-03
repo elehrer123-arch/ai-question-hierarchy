@@ -516,32 +516,7 @@
      "pos": "reorg"
     }
    ],
-   "ledger": [
-    {
-     "kind": "essay",
-     "title": "What will be left for us to work on?",
-     "author": "Arvind Narayanan",
-     "venue": "Normal Technology (ICML keynote)",
-     "date": "2026-07",
-     "url": "https://www.normaltech.ai/p/what-will-be-left-for-us-to-work"
-    },
-    {
-     "kind": "essay",
-     "title": "Your future job will be to keep AI on task",
-     "author": "Noah Smith",
-     "venue": "Noahpinion",
-     "date": "2026-05",
-     "url": "https://www.noahpinion.blog/p/your-future-job-will-be-to-keep-ai"
-    },
-    {
-     "kind": "interview",
-     "title": "What remains scarce after AGI? (Alex Imas and Phil Trammell)",
-     "author": "Dwarkesh Patel with Imas & Trammell",
-     "venue": "Dwarkesh Podcast",
-     "date": "2026-06",
-     "url": "https://www.dwarkesh.com/p/alex-imas-phil-trammell"
-    }
-   ],
+   "ledger": [],
    "window": "February–August 2026"
   },
   "q_entry_level_work": {
@@ -1033,8 +1008,8 @@
   },
   "q_value_capture": {
    "tier": "medium",
-   "reviewed": "August 2, 2026",
-   "moved": "Coverage of this question opened with Nadella's argument that enterprises pay for intelligence twice — in money and in proprietary knowledge exhaust — and should own what their usage teaches. More at the next sweep.",
+   "reviewed": "August 3, 2026",
+   "moved": "The margin data finally moved: SemiAnalysis documents frontier-lab inference margins rising sharply as agentic demand raises token prices, against Thompson's case that incumbents win through integration and compliance and Smith's argument that OpenAI's spending is a winner-take-all bet that could leave profits with chips, clouds, and applications.",
    "items": [
     {
      "kind": "essay",
@@ -1049,10 +1024,1151 @@
      },
      "quote": "In consuming intelligence, you are creating intelligence. And what you create should belong to you",
      "note": "Microsoft's CEO argues model providers capture customers' proprietary knowledge through usage exhaust — an institutional position from the largest AI reseller, pushing orchestration layers and open models."
+    },
+    {
+     "kind": "report",
+     "title": "AI Value Capture: The Shift To Model Labs",
+     "author": "Nishball, Patel et al.",
+     "venue": "SemiAnalysis",
+     "date": "2026-05-01",
+     "url": "https://newsletter.semianalysis.com/p/ai-value-capture-the-shift-to-model",
+     "note": "Margin analysis: value shifting from chips and clouds to model labs; Anthropic inference gross margins from 38% to over 70% as agentic demand raises token prices.",
+     "quote": "The age of low gross margins for frontier model providers is over."
+    },
+    {
+     "kind": "essay",
+     "title": "Microsoft and Software Survival",
+     "author": "Ben Thompson",
+     "venue": "Stratechery",
+     "date": "2026-02-03",
+     "url": "https://stratechery.com/2026/microsoft-and-software-survival/",
+     "note": "Incumbent software survives AI through integration, identity, and compliance rather than code; SaaS faces in-house displacement.",
+     "quote": "why pay for software when you can just ask AI to write your own application"
+    },
+    {
+     "kind": "post",
+     "title": "How to think about AI company finances",
+     "author": "Timothy B. Lee",
+     "venue": "Understanding AI",
+     "date": "2026-03-19",
+     "url": "https://www.understandingai.org/p/how-to-think-about-the-ai-company",
+     "note": "A gross-margin framework separating scalable-investment losses from structurally unprofitable unit economics."
+    },
+    {
+     "kind": "post",
+     "title": "What if AI succeeds but OpenAI fails?",
+     "author": "Noah Smith",
+     "venue": "Noahpinion",
+     "date": "2026-01-30",
+     "url": "https://www.noahpinion.blog/p/what-if-ai-succeeds-but-openai-fails",
+     "note": "Competition, cash burn, and weak vertical integration could shift AI profits to chipmakers, clouds, and applications.",
+     "quote": "This isn't a business model. This is Pascal's Wager."
+    }
+   ],
+   "ledger": [
+    {
+     "kind": "post",
+     "title": "Frontier labs don't use most AI compute (yet)",
+     "author": "Josh You",
+     "venue": "Epoch AI",
+     "date": "2026-05-21",
+     "url": "https://epochai.substack.com/p/frontier-labs-dont-use-most-ai-compute",
+     "note": "Frontier labs control under half of global AI compute but are consolidating share fast."
+    }
+   ],
+   "window": "January–August 2026"
+  },
+  "q_growth_magnitude": {
+   "tier": "medium",
+   "reviewed": "August 3, 2026",
+   "moved": "The disagreement got quantified: a large forecasting survey puts median growth expectations near historical rates even as new models specify exactly when automated R&D turns explosive. The sharpest new claim is measurement: quality-adjusted AI output may be growing over 2,000% a year while remaining nearly invisible in GDP.",
+   "items": [
+    {
+     "kind": "paper",
+     "title": "Forecasting the Economic Effects of AI",
+     "author": "Karger, Halperin, Trammell, Tetlock et al.",
+     "venue": "NBER (w35046)",
+     "date": "2026-04",
+     "url": "https://www.nber.org/papers/w35046",
+     "note": "Structured survey of economists, forecasters, and AI-company staff: median forecasts near 2.5% baseline growth, ~4% under rapid AI — disagreement driven by beliefs about effects, not timelines."
+    },
+    {
+     "kind": "paper",
+     "title": "When Does Automating AI Research Produce Explosive Growth?",
+     "author": "Davidson, Halperin, Houlden & Korinek",
+     "venue": "NBER (w35155)",
+     "date": "2026-04",
+     "url": "https://www.nber.org/papers/w35155",
+     "note": "Calibrated conditions under which automated AI R&D yields superexponential growth despite production bottlenecks.",
+     "quote": "Growth becomes explosive if the combined strength of technological and economic feedback loops overcomes diminishing returns."
+    },
+    {
+     "kind": "paper",
+     "title": "A.I. and Our Economic Future",
+     "author": "Charles I. Jones",
+     "venue": "NBER (w34779)",
+     "date": "2026-01",
+     "url": "https://www.nber.org/papers/w34779",
+     "note": "Argues weak links — tasks machines cannot perform — have historically capped gains from massive increases in computing power.",
+     "quote": "we are not 100 million times more productive"
+    },
+    {
+     "kind": "report",
+     "title": "Where Is AI in GDP Statistics? Filling the Measurement Gap",
+     "author": "Korinek & McKelvey",
+     "venue": "Peterson Institute",
+     "date": "2026-05",
+     "url": "https://www.piie.com/sites/default/files/2026-05/pb26-7.pdf",
+     "note": "Nominal AI GDP near $250B in 2025, but quality-adjusted output growing over 2,000% a year — invisible in GDP because falling prices offset quality gains."
+    },
+    {
+     "kind": "report",
+     "title": "An AI Productivity Boom? Don't Count Your (Productivity Data) Chickens",
+     "author": "Martha Gimbel",
+     "venue": "The Budget Lab at Yale",
+     "date": "2026-02-19",
+     "url": "https://budgetlab.yale.edu/research/ai-productivity-boom-dont-count-your-productivity-data-chickens",
+     "note": "2025's strong GDP with weak job growth is not yet evidence of an AI productivity boom: noisy quarterly data, revisions, and composition effects."
+    },
+    {
+     "kind": "essay",
+     "title": "The Quadrillion-Dollar Disagreement on AI and the Economy",
+     "author": "Anton Shenk",
+     "venue": "AI Frontiers",
+     "date": "2026-05-11",
+     "url": "https://ai-frontiers.org/articles/the-quadrillion-dollar-disagreement-on-ai-and-the-economy",
+     "note": "Maps the spread between 0.7% and 18% growth forecasts onto three testable disagreements: automation limits, institutional friction, automated innovation."
+    },
+    {
+     "kind": "post",
+     "title": "More on the economics of AGI",
+     "author": "Tyler Cowen, excerpting Citadel Securities",
+     "venue": "Marginal Revolution",
+     "date": "2026-02-26",
+     "url": "https://marginalrevolution.com/marginalrevolution/2026/02/more-on-the-economics-of-agi.html",
+     "note": "A markets-side skeptical case: sustained disruption requires several simultaneous extreme conditions; AI may mainly offset aging and deglobalization headwinds."
+    }
+   ],
+   "ledger": [
+    {
+     "kind": "post",
+     "title": "What is the impact of AI on productivity?",
+     "author": "Alex Imas",
+     "venue": "Substack",
+     "date": "2026-01-29",
+     "url": "https://aleximas.substack.com/p/what-is-the-impact-of-ai-on-productivity",
+     "note": "Reconciles 14–55% task-level gains with flat aggregates via adoption frictions."
+    },
+    {
+     "kind": "paper",
+     "title": "AI, Productivity, and the Workforce: Evidence from Corporate Executives",
+     "author": "Baslandze, Graham, Meyer et al.",
+     "venue": "NBER (w34984)",
+     "date": "2026-03",
+     "url": "https://www.nber.org/papers/w34984",
+     "note": "~750 executives report sectorally uneven gains and little aggregate job loss so far."
+    },
+    {
+     "kind": "report",
+     "title": "Remarks at the Hoover Monetary Policy Conference",
+     "author": "Austan Goolsbee",
+     "venue": "Chicago Fed",
+     "date": "2026-05-08",
+     "url": "https://www.chicagofed.org/publications/speeches/2026/may-8-hoover-institution-monetary-policy",
+     "note": "Anticipated AI gains raise the natural rate of interest today."
+    },
+    {
+     "kind": "essay",
+     "title": "The Real Reason AI Doesn't Show Up In The GDP Statistics",
+     "author": "James Broughel",
+     "venue": "Forbes",
+     "date": "2026-06-06",
+     "url": "https://www.forbes.com/sites/jamesbroughel/2026/06/06/the-real-reason-ai-doesnt-show-up-in-the-gdp-statistics/",
+     "note": "Response locating the measurement gap in price indices, not GDP accounting."
+    },
+    {
+     "kind": "post",
+     "title": "Toward an O*NET for AI R&D",
+     "author": "Denain, Ho et al.",
+     "venue": "Epoch AI",
+     "date": "2026-06-17",
+     "url": "https://epochai.substack.com/p/toward-an-onet-for-ai-r-and-d",
+     "note": "Proposes measuring automation of AI R&D directly via a task taxonomy."
+    }
+   ],
+   "window": "January–August 2026"
+  },
+  "q_organizational_diffusion": {
+   "tier": "medium",
+   "reviewed": "August 3, 2026",
+   "moved": "The adoption numbers stopped agreeing with each other and started explaining why: Census-linked data show narrow deployment inside adopting firms, a four-country executive survey finds 69% adoption with near-zero realized effects, and the St. Louis Fed showed the gaps are partly survey wording. Usage data adds the mechanism — learning curves govern how fast value arrives.",
+   "items": [
+    {
+     "kind": "paper",
+     "title": "The Microstructure of AI Diffusion",
+     "author": "Bonney, Breaux, Dinlersoz, Foster, Haltiwanger & Pande",
+     "venue": "NBER (w35141) / Census Bureau",
+     "date": "2026-04",
+     "url": "https://www.nber.org/papers/w35141",
+     "note": "2026 Census supplement: 18% of firms use AI, but deployment within firms remains narrow.",
+     "quote": "57% use AI in three or fewer functions, most often Sales and Marketing (52%), Strategy (45%), and IT (41%)"
+    },
+    {
+     "kind": "paper",
+     "title": "Firm Data on AI",
+     "author": "Yotzov, Barrero, Bloom, Bunn, Davis et al.",
+     "venue": "NBER (w34836)",
+     "date": "2026-02",
+     "url": "https://www.nber.org/papers/w34836",
+     "note": "Nearly 6,000 executives in four countries: widespread use, almost no reported productivity or employment effects yet.",
+     "quote": "nine-in-ten reporting no impact on employment or productivity"
+    },
+    {
+     "kind": "post",
+     "title": "Measuring AI Adoption among Firms: How You Ask Matters",
+     "author": "Bick, Blandin, Deming et al.",
+     "venue": "St. Louis Fed",
+     "date": "2026-06-01",
+     "url": "https://www.stlouisfed.org/on-the-economy/2026/jun/measuring-ai-adoption-firms-how-you-ask-matters",
+     "note": "Apparent adoption gaps are partly artifacts of survey wording; US firm adoption nearly doubles when the question broadens."
+    },
+    {
+     "kind": "post",
+     "title": "Half of employed AI users now use it for work",
+     "author": "Edelman & Falkman Olsson",
+     "venue": "Epoch AI",
+     "date": "2026-04-09",
+     "url": "https://epochai.substack.com/p/ai-is-a-common-workplace-tool-half",
+     "note": "Survey of 2,021 Americans: task replacement for 27% of employed AI users, new tasks for 21%."
+    },
+    {
+     "kind": "report",
+     "title": "Anthropic Economic Index: Learning curves",
+     "author": "Anthropic",
+     "venue": "Anthropic Research",
+     "date": "2026-03-24",
+     "url": "https://www.anthropic.com/research/economic-index-march-2026-report",
+     "note": "High-tenure users succeed ~10% more often and attempt higher-value tasks — learning-by-doing governs diffusion speed."
+    },
+    {
+     "kind": "essay",
+     "title": "What will be left for us to work on?",
+     "author": "Arvind Narayanan",
+     "venue": "Normal Technology (ICML keynote)",
+     "date": "2026-07-13",
+     "url": "https://www.normaltech.ai/p/what-will-be-left-for-us-to-work",
+     "note": "Transformation runs through decades-long innovation-diffusion-adaptation cycles; reliability, integration, and tacit knowledge sit downstream of capability."
     }
    ],
    "ledger": [],
-   "window": "July–August 2026"
+   "window": "February–August 2026"
+  },
+  "q_complementary_investment": {
+   "tier": "medium",
+   "reviewed": "August 3, 2026",
+   "moved": "The buildout got measured: computing infrastructure doubled to ~1.4% of US GDP, Goldman put the 2026–2031 capex path near $7.6 trillion, and the Fed built indicators concluding the economy is in an infrastructure phase rather than a displacement phase. Anthropic's session data adds the human side: domain expertise, not coding skill, is the binding complement.",
+   "items": [
+    {
+     "kind": "report",
+     "title": "The AI Buildout and the Economy",
+     "author": "Soto, Thieu & Allen",
+     "venue": "Federal Reserve Board, FEDS Notes",
+     "date": "2026-07-17",
+     "url": "https://www.federalreserve.gov/econres/notes/feds-notes/the-ai-buildout-and-the-economy-publicly-available-data-to-assess-ais-impact-20260717.html",
+     "note": "Import-adjusted measure of AI investment's GDP contribution; indicators point to a buildout phase.",
+     "quote": "in a buildout phase rather than the onset of broad-based displacement"
+    },
+    {
+     "kind": "report",
+     "title": "Tracking Trillions: The Assumptions Shaping the Scale of the AI Build-Out",
+     "author": "Lee & Greenbaum",
+     "venue": "Goldman Sachs Global Institute",
+     "date": "2026-05-01",
+     "url": "https://www.goldmansachs.com/insights/articles/tracking-trillions-the-assumptions-shaping-scale-of-the-ai-build-out",
+     "note": "~$7.6T of AI infrastructure capex over 2026–2031, with the sensitivity analysis that moves it by hundreds of billions."
+    },
+    {
+     "kind": "post",
+     "title": "The AI boom has doubled computing infrastructure's share of US GDP",
+     "author": "Isabel Juniewicz",
+     "venue": "Epoch AI",
+     "date": "2026-06-05",
+     "url": "https://epoch.ai/data-insights/ai-datacenter-share-gdp",
+     "note": "Data center, hardware, and networking spending reached ~1.4% of US GDP in Q1 2026 — double the 2015–2022 average."
+    },
+    {
+     "kind": "report",
+     "title": "Agentic coding and persistent returns to expertise",
+     "author": "Hitzig, Massenkoff, Lyubich et al.",
+     "venue": "Anthropic Research",
+     "date": "2026-06-16",
+     "url": "https://www.anthropic.com/research/claude-code-expertise",
+     "note": "Session data: domain expertise, not coding background, drives success with agents — human capital as binding complement.",
+     "quote": "People decide what to build, and the agent decides how to build it."
+    },
+    {
+     "kind": "report",
+     "title": "AI Index Report 2026: Economy",
+     "author": "Stanford HAI",
+     "venue": "Stanford HAI",
+     "date": "2026-04",
+     "url": "https://hai.stanford.edu/assets/files/ai_index_report_2026_chapter_4_economy.pdf",
+     "note": "$581.7B global corporate AI investment in 2025 (up 130%); adoption faster than PCs or the internet."
+    }
+   ],
+   "ledger": [
+    {
+     "kind": "paper",
+     "title": "AI growth acceleration versus distributional fairness",
+     "author": "Tanner, Kerry, Renda, Wyckoff et al.",
+     "venue": "Brookings",
+     "date": "2026-05-05",
+     "url": "https://www.brookings.edu/articles/ai-growth-acceleration-versus-distributional-fairness/",
+     "note": "Economy-wide gains hinge on complementary investment in skills and governance."
+    }
+   ],
+   "window": "April–August 2026"
+  },
+  "q_new_demand": {
+   "tier": "slow",
+   "reviewed": "August 3, 2026",
+   "moved": "The demand side got its first real number: choice experiments put US consumer surplus from generative AI near $172 billion — roughly ten times producer revenue. The argument moved too: Cowen on why AGI-era demand doesn't stall, and Smith on value coming from cognition humans do badly, not human tasks done cheaper.",
+   "items": [
+    {
+     "kind": "paper",
+     "title": "What is Generative AI Worth?",
+     "author": "Brynjolfsson, Collis, Eggers, Kazinnik & Nguyen",
+     "venue": "Stanford Digital Economy Lab",
+     "date": "2026-04-13",
+     "url": "https://digitaleconomy.stanford.edu/app/uploads/2026/04/WhatsGenAIWorth.pdf",
+     "note": "Willingness-to-accept experiments: consumer surplus ~10× producer revenue, growing ~50% in eight months.",
+     "quote": "total consumer surplus from generative AI in the United States reached $172.3 billion in early 2026"
+    },
+    {
+     "kind": "essay",
+     "title": "What will more intelligence actually do for us?",
+     "author": "Noah Smith",
+     "venue": "Noahpinion",
+     "date": "2026-07-26",
+     "url": "https://www.noahpinion.blog/p/what-will-more-intelligence-actually",
+     "note": "AI's value comes from replicable cognition, tacit-knowledge extraction, and pattern discovery — new frontiers rather than cheaper human tasks."
+    },
+    {
+     "kind": "post",
+     "title": "Is there an aggregate demand problem in an AGI world?",
+     "author": "Tyler Cowen",
+     "venue": "Marginal Revolution",
+     "date": "2026-02-24",
+     "url": "https://marginalrevolution.com/marginalrevolution/2026/02/is-there-an-aggregate-demand-problem-in-an-agi-world.html",
+     "note": "Argues demand shortfalls will not cap AGI-era growth: new high-marginal-utility goods, price adjustment, wealth effects."
+    }
+   ],
+   "ledger": [],
+   "window": "February–August 2026"
+  },
+  "q_binding_constraints": {
+   "tier": "medium",
+   "reviewed": "August 3, 2026",
+   "moved": "The constraint argument found its formal version: Kording and Marinescu's intelligence-saturation model, in which physical work complements cognition and caps returns to intelligence no matter how fast AI scales. Sector studies supplied the concrete cases — law, where regulation and adversarial dynamics keep capability from lowering prices.",
+   "items": [
+    {
+     "kind": "essay",
+     "title": "The key detail everyone's getting wrong about AI and the economy",
+     "author": "Kording & Marinescu",
+     "venue": "Transformer",
+     "date": "2026-03-25",
+     "url": "https://www.transformernews.ai/p/the-key-detail-everyones-getting-wrong-economy-physical-work-intelligence-employment",
+     "note": "The intelligence-saturation argument for a general audience: cheap cognition yields bounded, not exponential, disruption.",
+     "quote": "You can't build a car with computation. You can't cook a meal with algorithms."
+    },
+    {
+     "kind": "essay",
+     "title": "AI Won't Automatically Make Legal Services Cheaper",
+     "author": "Curl, Kapoor & Narayanan",
+     "venue": "Normal Technology / Lawfare",
+     "date": "2026-02-12",
+     "url": "https://www.normaltech.ai/p/ai-wont-automatically-make-legal",
+     "note": "Regulation, adversarial arms races, and required human process time keep capability gains from lowering prices in a major service sector."
+    },
+    {
+     "kind": "interview",
+     "title": "Tyler Cowen on the biggest problem of the AI age",
+     "author": "Cowen, with Nick Lichtenberg",
+     "venue": "Fortune",
+     "date": "2026-05-22",
+     "url": "https://fortune.com/2026/05/22/tyler-cowen-ai-economy-not-mass-unemployment-adjustment/",
+     "note": "Slow-adapting institutional sectors hold growth near 2.5%; status adjustment, not joblessness, is the central problem."
+    }
+   ],
+   "ledger": [
+    {
+     "kind": "paper",
+     "title": "(Artificial) Intelligence Saturation and the Future of Work",
+     "author": "Kording & Marinescu",
+     "venue": "Brookings",
+     "date": "2025-11-10",
+     "url": "https://www.brookings.edu/wp-content/uploads/9999/11/IntelligenceSaturation_final_with-cover-page.pdf",
+     "note": "The formal two-sector model behind the saturation argument."
+    }
+   ],
+   "window": "November 2025–August 2026"
+  },
+  "q_wage_effects": {
+   "tier": "medium",
+   "reviewed": "August 3, 2026",
+   "moved": "The wage question separated from the labor-share question: Autor and Kausik show automation can raise wages while cutting labor share, and Autor reframed the risk as devaluation of expertise. On the ground, NY Fed postings data find no distinct AI-driven demand decline — while Smith documents the skill premium compressing inside software.",
+   "items": [
+    {
+     "kind": "paper",
+     "title": "Resolving the Automation Paradox: Falling Labor Share, Rising Wages",
+     "author": "Autor & Kausik",
+     "venue": "MIT Economics",
+     "date": "2026-01-13",
+     "url": "https://economics.mit.edu/sites/default/files/2026-03/Resolving%20the%20Automation%20Paradox%20-%20Falling%20Labor%20Share%2C%20Rising%20Wages.pdf",
+     "note": "Model plus twelve-country data: automation can raise wages while reducing labor's share — the two questions come apart.",
+     "quote": "When labor share exceeds this wage-maximizing level, further automation increases wages even while reducing labor's output share."
+    },
+    {
+     "kind": "interview",
+     "title": "How Is AI Shaping the Future of Work?",
+     "author": "David Autor",
+     "venue": "Issues in Science and Technology",
+     "date": "2026-01-13",
+     "url": "https://issues.org/david-autor-economist-ai-future-work/",
+     "note": "The main risk is falling returns to accumulated expertise, not job scarcity; proposes wage insurance and universal basic capital.",
+     "quote": "The concern is about devaluation of expertise"
+    },
+    {
+     "kind": "post",
+     "title": "Do Job Postings Show Early Labor-Market Effects of AI?",
+     "author": "Audoly, Guerin & Topa",
+     "venue": "NY Fed, Liberty Street Economics",
+     "date": "2026-05-14",
+     "url": "https://libertystreeteconomics.newyorkfed.org/2026/05/do-job-postings-show-early-labor-market-effects-of-ai/",
+     "note": "Lightcast postings against exposure scores: declines predate ChatGPT; no junior-senior divergence.",
+     "quote": "The evidence from job postings provides little indication of a distinct AI-driven decline in labor demand."
+    },
+    {
+     "kind": "post",
+     "title": "The Fall of the Nerds",
+     "author": "Noah Smith",
+     "venue": "Noahpinion",
+     "date": "2026-02-05",
+     "url": "https://www.noahpinion.blog/p/the-fall-of-the-nerds",
+     "note": "AI coding tools compress the software skill premium the way power looms devalued master weavers — wages and status, not employment."
+    },
+    {
+     "kind": "report",
+     "title": "AI, Market Power, and Diminishing Labor Share",
+     "author": "Tiffany Wilding",
+     "venue": "PIMCO",
+     "date": "2026-05-21",
+     "url": "https://www.pimco.com/us/en/insights/ai-market-power-and-diminishing-labor-share",
+     "note": "Asset-manager macro case that scalability plus hyperscaler market power push labor share down without large unemployment."
+    },
+    {
+     "kind": "post",
+     "title": "When Will They Take Our Jobs?",
+     "author": "Zvi Mowshowitz",
+     "venue": "Don't Worry About the Vase",
+     "date": "2026-01-14",
+     "url": "https://thezvi.substack.com/p/when-will-they-take-our-jobs",
+     "note": "Argues comparative-advantage defenses of permanent human wages fail once humans become net-negative contributors; the collaboration era lasts a decade or two."
+    }
+   ],
+   "ledger": [],
+   "window": "January–August 2026"
+  },
+  "q_expertise_formation": {
+   "tier": "slow",
+   "reviewed": "August 3, 2026",
+   "moved": "Deming supplied both halves of the question: experimental evidence that unguarded AI use short-circuits learning, and an argument that sample-efficient social learning is the durable human advantage — implying where apprenticeship still pays.",
+   "items": [
+    {
+     "kind": "post",
+     "title": "Using generative AI to learn is like Odysseus untying himself from the mast",
+     "author": "David Deming",
+     "venue": "Forked Lightning",
+     "date": "2026-01-12",
+     "url": "https://forklightning.substack.com/p/using-generative-ai-to-learn-is-like",
+     "note": "Reviews experimental evidence — including a school study where unguarded GPT-4 lowered exam scores — on cognitive offloading masking skill."
+    },
+    {
+     "kind": "post",
+     "title": "Efficient social learning is the human advantage over AI",
+     "author": "David Deming",
+     "venue": "Forked Lightning",
+     "date": "2026-07-15",
+     "url": "https://forklightning.substack.com/p/efficient-social-learning-is-the",
+     "note": "Human sample-efficient social learning as the durable expertise advantage in high-context work.",
+     "quote": "Humans' comparative advantage is our learning efficiency."
+    }
+   ],
+   "ledger": [],
+   "window": "January–August 2026"
+  },
+  "q_labor_adjustment": {
+   "tier": "slow",
+   "reviewed": "August 3, 2026",
+   "moved": "The policy shelf got organized: the Windfall Trust cataloged adaptation instruments with evidence grades, and Carnegie mapped which policies survive across the alarmed, patient, and excited readings of the labor evidence.",
+   "items": [
+    {
+     "kind": "report",
+     "title": "The Windfall Policy Atlas",
+     "author": "Deric Cheng et al.",
+     "venue": "Windfall Trust",
+     "date": "2026-04-08",
+     "url": "https://windfalltrust.org/policy-atlas",
+     "note": "Structured catalog of adaptation policies — wage insurance, education reform, safety nets, wealth capture — with evidence assessments.",
+     "quote": "Governments do not have a plan in the likely event that AI leads to large-scale labor displacement"
+    },
+    {
+     "kind": "report",
+     "title": "The AI Labor Debate: Three Views on the Future of Work",
+     "author": "Teddy Tawil",
+     "venue": "Carnegie Endowment",
+     "date": "2026-04-23",
+     "url": "https://carnegieendowment.org/research/2026/04/the-ai-labor-debate-three-views-on-the-future-of-work",
+     "note": "Identifies data collection and piloted wage insurance as policies robust across all three scenario readings."
+    }
+   ],
+   "ledger": [],
+   "window": "April–August 2026"
+  },
+  "q_market_concentration": {
+   "tier": "medium",
+   "reviewed": "August 3, 2026",
+   "moved": "The question split by segment: Lambert's evidence that the open-closed gap is stable rather than closing, and his forecast of closed oligopolies in premium agents with open models winning a low-margin commodity market. Two new structural forces entered: a likely compute crunch, and de facto US model licensing as a regulatory entry barrier.",
+   "items": [
+    {
+     "kind": "post",
+     "title": "Open models in perpetual catch-up",
+     "author": "Nathan Lambert",
+     "venue": "Interconnects",
+     "date": "2026-02-17",
+     "url": "https://www.interconnects.ai/p/open-models-in-perpetual-catch-up",
+     "note": "Evidence the ~six-month open-closed gap is stable; open models matter through specialization and diffusion, not frontier parity.",
+     "quote": "Open models are not meaningfully accelerating towards matching the best closed models in absolute performance."
+    },
+    {
+     "kind": "post",
+     "title": "Open and closed models are on different exponentials",
+     "author": "Nathan Lambert",
+     "venue": "Interconnects",
+     "date": "2026-06-01",
+     "url": "https://www.interconnects.ai/p/open-and-closed-models-are-on-different",
+     "note": "Closed labs become premium integrated-agent oligopolies; open models win a larger, low-margin commodity market."
+    },
+    {
+     "kind": "post",
+     "title": "Is a compute crunch coming?",
+     "author": "Emberson & Sevilla",
+     "venue": "Epoch AI",
+     "date": "2026-05-26",
+     "url": "https://epochai.substack.com/p/is-a-compute-crunch-coming",
+     "note": "Token demand growing ~10× yearly against 3.4× supply growth challenges the cheap-inference commoditization assumption.",
+     "quote": "A compute crunch is likely near—particularly for the long-context workloads that drive agentic AI."
+    },
+    {
+     "kind": "paper",
+     "title": "AI Is Not a Natural Monopoly",
+     "author": "Goldstein & Salib",
+     "venue": "Minnesota Law Review Headnotes",
+     "date": "2026-01",
+     "url": "https://scholarship.law.umn.edu/mlr-headnotes/vol110/iss2/4/",
+     "note": "Fast-following and RL's declining reliance on user data undermine natural-monopoly claims.",
+     "quote": "Although training the world's best AI model is enormously expensive, training one that is just as good—but six months later—is cheap."
+    },
+    {
+     "kind": "post",
+     "title": "The US now has a de facto model licensing system",
+     "author": "Timothy B. Lee",
+     "venue": "Understanding AI",
+     "date": "2026-06-29",
+     "url": "https://www.understandingai.org/p/the-us-now-has-a-de-facto-model-licensing",
+     "note": "Government approval is now effectively required for frontier releases — a regulatory entry barrier independent of scale economies."
+    }
+   ],
+   "ledger": [
+    {
+     "kind": "post",
+     "title": "My bets on open models, mid-2026",
+     "author": "Nathan Lambert",
+     "venue": "Interconnects",
+     "date": "2026-04-15",
+     "url": "https://www.interconnects.ai/p/my-bets-on-open-models-mid-2026",
+     "note": "Concrete forecast update on funding stress and fast-following."
+    },
+    {
+     "kind": "post",
+     "title": "How open model ecosystems compound",
+     "author": "Nathan Lambert",
+     "venue": "Interconnects",
+     "date": "2026-05-12",
+     "url": "https://www.interconnects.ai/p/how-open-model-ecosystems-compound",
+     "note": "Shared research cuts the R&D share of frontier costs in China's open ecosystem."
+    }
+   ],
+   "window": "January–August 2026"
+  },
+  "q_firm_boundaries": {
+   "tier": "slow",
+   "reviewed": "August 3, 2026",
+   "moved": "All three answers now have serious articulations: Smith's verification-cost analysis of whether AI produces solopreneurs or monster firms, Hockenmaier's case for the biggest companies ever, and a formal coordination-cost model predicting networks of specialized agents in high-velocity sectors.",
+   "items": [
+    {
+     "kind": "essay",
+     "title": "Will AI make companies outsource more, or less?",
+     "author": "Noah Smith",
+     "venue": "Noahpinion",
+     "date": "2026-06-29",
+     "url": "https://www.noahpinion.blog/p/will-ai-make-companies-outsource",
+     "note": "Transaction-cost analysis: verification costs determine whether AI produces atomized outsourcing or larger integrated firms.",
+     "quote": "a vast horde of solopreneurs, and a few monster companies employing huge numbers of wage earners"
+    },
+    {
+     "kind": "essay",
+     "title": "The End of Fragmentation",
+     "author": "Dan Hockenmaier",
+     "venue": "danhock.co",
+     "date": "2026-03-19",
+     "url": "https://www.danhock.co/p/the-end-of-fragmentation",
+     "note": "AI lowers internal coordination costs while strengthening data and distribution moats — value concentrates in fewer, larger firms."
+    },
+    {
+     "kind": "paper",
+     "title": "The Headless Firm: How AI Reshapes Enterprise Boundaries",
+     "author": "Klein & Wieczorek",
+     "venue": "arXiv",
+     "date": "2026-02-24",
+     "url": "https://arxiv.org/abs/2602.21401",
+     "note": "Coordination-cost model predicting high-velocity sectors shift toward networks of specialized execution agents, with falsifiable predictions."
+    },
+    {
+     "kind": "essay",
+     "title": "Rewriting the Coasean Boundary",
+     "author": "Albert Azout",
+     "venue": "Level Ventures",
+     "date": "2026-04-14",
+     "url": "https://levelvc.substack.com/p/rewriting-the-coasean-boundary",
+     "note": "AI lowers internal and external coordination costs at once, making boundaries fluid rather than uniformly larger or smaller."
+    }
+   ],
+   "ledger": [],
+   "window": "February–August 2026"
+  },
+  "q_agent_native_markets": {
+   "tier": "medium",
+   "reviewed": "August 3, 2026",
+   "moved": "The first field evidence arrived: Anthropic's Project Deal had agents negotiate 186 real deals and found stronger models won better outcomes while disadvantaged users didn't notice. Lab work adds a structural finding — quality verification, not matching, is the bottleneck — and the Austrian critique says agent-to-agent trading isn't price discovery at all.",
+   "items": [
+    {
+     "kind": "post",
+     "title": "Project Deal",
+     "author": "Anthropic",
+     "venue": "Anthropic",
+     "date": "2026-04-24",
+     "url": "https://www.anthropic.com/features/project-deal",
+     "note": "Field experiment: agents negotiated 186 real deals; stronger models won better prices and disadvantaged users failed to notice the gap.",
+     "quote": "people represented by 'smarter' models got objectively better outcomes. Yet our post-experiment survey found that those with weaker models didn't notice their disadvantage."
+    },
+    {
+     "kind": "paper",
+     "title": "When Agent Markets Arrive",
+     "author": "Liu, Shang & Jin",
+     "venue": "arXiv",
+     "date": "2026-05-28",
+     "url": "https://arxiv.org/abs/2604.06688",
+     "note": "Testbed evidence that human market mechanisms often backfire for agents; a persistent 39% dispute rate makes verification the structural bottleneck."
+    },
+    {
+     "kind": "essay",
+     "title": "When AI Agents Trade with AI Agents, Price Discovery Dies",
+     "author": "Hamoon Soleimani",
+     "venue": "Mises Institute",
+     "date": "2026-04-18",
+     "url": "https://mises.org/mises-wire/when-ai-agents-trade-ai-agents-price-discovery-dies",
+     "note": "Argues agent trading on fixed utility functions produces gameable metrics, not genuine price discovery — algorithmic ad fraud as precedent."
+    },
+    {
+     "kind": "post",
+     "title": "AI Agents Want to Shop for You",
+     "author": "Beth LaMontagne",
+     "venue": "MIT IDE",
+     "date": "2026-06-03",
+     "url": "https://ide.mit.edu/insights/ai-agents-want-to-shop-for-you-the-future-of-agentic-commerce/",
+     "note": "Competing agent-ownership models, and the disclosure problem when platform agents take advertising payments."
+    }
+   ],
+   "ledger": [],
+   "window": "April–August 2026"
+  },
+  "q_corporate_governance_of_ai": {
+   "tier": "slow",
+   "reviewed": "August 3, 2026",
+   "moved": "Disclosure outran competence: S&P 500 AI-risk disclosure jumped from 12% to 83% in two years while under 3% of directors report AI expertise — and the sharpest new argument is that boards' real blind spot is detection difficulty, not policy absence.",
+   "items": [
+    {
+     "kind": "report",
+     "title": "In the S&P 500, Disclosure of AI Risks Surges from 12% to 83%",
+     "author": "The Conference Board",
+     "venue": "The Conference Board",
+     "date": "2026-04-22",
+     "url": "https://www.conference-board.org/press/governing-AI-2026",
+     "note": "AI-risk disclosure surged while only 2.7% of directors disclose AI expertise.",
+     "quote": "From 2023 to 2025, the share of S&P 500 firms disclosing AI risks jumped from 12% to 83%"
+    },
+    {
+     "kind": "essay",
+     "title": "Detection Difficulty: The Boardroom's AI Governance Blind Spot",
+     "author": "Daria Torres",
+     "venue": "Directors & Boards",
+     "date": "2026-07-14",
+     "url": "https://www.directorsandboards.com/articles/governance/detection-difficulty-the-boardrooms-ai-governance-blind-spot/",
+     "note": "AI-driven hiring and performance decisions can cause harm for months before any conventional alarm triggers."
+    }
+   ],
+   "ledger": [],
+   "window": "April–August 2026"
+  },
+  "q_scientific_payoff": {
+   "tier": "medium",
+   "reviewed": "August 3, 2026",
+   "moved": "The ledger filled in on both sides: DeepMind reported wet-lab-validated results from its Co-Scientist system, while a 41-million-paper analysis found AI-using scientists cluster on narrower problems, and $17 billion of AI drug-discovery investment has yet to put a drug into major trials.",
+   "items": [
+    {
+     "kind": "post",
+     "title": "Co-Scientist: A multi-agent AI partner to accelerate research",
+     "author": "Google DeepMind",
+     "venue": "Google DeepMind",
+     "date": "2026-05-19",
+     "url": "https://deepmind.google/blog/co-scientist-a-multi-agent-ai-partner-to-accelerate-research",
+     "note": "Wet-lab-validated results, including drug-repurposing candidates that blocked 91% of a fibrosis response."
+    },
+    {
+     "kind": "post",
+     "title": "AI in Science Research Flattens Discovery",
+     "author": "Elie Dolgin",
+     "venue": "IEEE Spectrum",
+     "date": "2026-01-19",
+     "url": "https://spectrum.ieee.org/ai-science-research-flattens-discovery",
+     "note": "41.3-million-paper analysis: AI-using scientists publish and cite more but cluster on narrower, data-rich problems.",
+     "quote": "You have this conflict between individual incentives and science as a whole"
+    },
+    {
+     "kind": "post",
+     "title": "Why AI drug discovery isn't the layup that VCs expected",
+     "author": "Rosie Bradbury",
+     "venue": "PitchBook",
+     "date": "2026-01",
+     "url": "https://pitchbook.com/news/articles/why-ai-drug-discovery-isnt-the-layup-vcs-expected",
+     "note": "Over $17B invested since 2019 with no AI-discovered drug yet in significant clinical trials."
+    }
+   ],
+   "ledger": [],
+   "window": "January–August 2026"
+  },
+  "q_verification_bottleneck": {
+   "tier": "medium",
+   "reviewed": "August 3, 2026",
+   "moved": "The flood became measurable: a BERT screen flagged nearly 10% of 2.6 million cancer papers as sharing paper-mill patterns, Nature documented tens of thousands of 2025 papers with likely AI-fabricated references, and the first publisher-deployed review-fraud detector went live.",
+   "items": [
+    {
+     "kind": "paper",
+     "title": "Machine learning based screening of potential paper mill publications in cancer research",
+     "author": "Scancar, Byrne, Causeur & Barnett",
+     "venue": "The BMJ",
+     "date": "2026-01-29",
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12853418/",
+     "note": "Screen of 2.6M cancer papers flags 9.87% as sharing text patterns with known paper-mill work, including in high-impact journals.",
+     "quote": "The model flagged 261 245 of 2 647 471 papers (9.87%)"
+    },
+    {
+     "kind": "post",
+     "title": "Hallucinated citations are polluting the scientific literature",
+     "author": "Naddaf & Quill",
+     "venue": "Nature",
+     "date": "2026-04-01",
+     "url": "https://www.nature.com/articles/d41586-026-00969-z",
+     "note": "Tens of thousands of 2025 papers may contain AI-fabricated references; surveys the editorial fixes being proposed."
+    },
+    {
+     "kind": "post",
+     "title": "First AI tool to detect suspicious peer reviews rolled out",
+     "author": "Miryam Naddaf",
+     "venue": "Nature",
+     "date": "2026-05-06",
+     "url": "https://www.nature.com/articles/d41586-026-01454-3",
+     "note": "The first publisher-deployed detector for duplicated or suspicious peer-review reports."
+    }
+   ],
+   "ledger": [],
+   "window": "January–August 2026"
+  },
+  "q_ai_in_medicine": {
+   "tier": "medium",
+   "reviewed": "August 3, 2026",
+   "moved": "The deployment paradox sharpened: Topol documents validated imaging AI staying out of routine care while unproven LLMs spread fast — and a randomized trial in Pakistan showed LLM assistance raising physician diagnostic scores from 43% to 71%, but only for clinicians trained to use it.",
+   "items": [
+    {
+     "kind": "post",
+     "title": "The Paradox of Medical AI Implementation",
+     "author": "Eric Topol",
+     "venue": "Ground Truths",
+     "date": "2026-05-03",
+     "url": "https://erictopol.substack.com/p/the-paradox-of-medical-ai-implementation",
+     "note": "Validated imaging AI stays out of routine care while unproven LLMs are adopted fast and make dangerous triage errors."
+    },
+    {
+     "kind": "paper",
+     "title": "LLM diagnostic assistance for physicians in a lower-middle-income country: a randomized controlled trial",
+     "author": "Qazi et al.",
+     "venue": "Nature Health",
+     "date": "2026-02",
+     "url": "https://www.nature.com/articles/s44360-025-00007-8",
+     "note": "RCT in Pakistan: LLM access raised diagnostic reasoning from 42.6% to 71.4% — but only for AI-trained clinicians.",
+     "quote": "Those with LLM access achieved a mean diagnostic reasoning score of 71.4% versus 42.6% with conventional resources alone"
+    }
+   ],
+   "ledger": [],
+   "window": "February–August 2026"
+  },
+  "q_capital_versus_labor": {
+   "tier": "medium",
+   "reviewed": "August 3, 2026",
+   "moved": "The camps produced their strongest recent statements: a forecasting survey projecting labor-force participation falling to 55% under rapid AI, Smith's dissent from the economists' call to steer AI toward labor complementarity, and Epoch's counterpoint that a thin tier of superstar human talent is capturing enormous returns right now.",
+   "items": [
+    {
+     "kind": "interview",
+     "title": "What remains scarce after AGI?",
+     "author": "Dwarkesh Patel with Alex Imas & Phil Trammell",
+     "venue": "Dwarkesh Podcast",
+     "date": "2026-06",
+     "url": "https://www.dwarkesh.com/p/alex-imas-phil-trammell",
+     "note": "Two economists work through wages, scarcity, and redistribution under full automation.",
+     "quote": "One robot now turns into many robots next year, but the number of ballerinas is the same."
+    },
+    {
+     "kind": "essay",
+     "title": "What if a few AI companies end up with all the money and power?",
+     "author": "Noah Smith",
+     "venue": "Noahpinion",
+     "date": "2026-04-13",
+     "url": "https://www.noahpinion.blog/p/what-if-a-few-ai-companies-end-up",
+     "note": "Frames extreme concentration of purchasing power as a distinct fourth AI risk beyond safety, jobs, and superintelligence."
+    },
+    {
+     "kind": "essay",
+     "title": "Why I didn't sign the 'We Must Act Now' statement (yet)",
+     "author": "Noah Smith",
+     "venue": "Noahpinion",
+     "date": "2026-07-15",
+     "url": "https://www.noahpinion.blog/p/why-i-didnt-sign-the-we-must-act",
+     "note": "Dissent from the economists' statement: steering AI toward labor-complementarity is infeasible, and employment data show little displacement so far."
+    },
+    {
+     "kind": "post",
+     "title": "The economics of superstar AI researchers",
+     "author": "Anson Ho",
+     "venue": "Epoch AI",
+     "date": "2026-05-13",
+     "url": "https://epochai.substack.com/p/the-economics-of-superstar-ai-researchers",
+     "note": "Frontier pay data ($10M–$300M packages): superstar effects let thin human talent capture enormous returns even as capital scales.",
+     "quote": "Two 'merely very good' researchers can't replicate one Noam Brown if what's needed is deep intuition about which experiments are worth running."
+    },
+    {
+     "kind": "post",
+     "title": "Where AI Eliminates O-Ring Economics",
+     "author": "Byrne Hobart",
+     "venue": "The Diff",
+     "date": "2026-03-13",
+     "url": "https://www.thediff.co/archive/where-ai-eliminates-o-ring-economics/",
+     "note": "AI removes O-ring constraints that made output depend on uniformly skilled teams — changing which workers and firms capture returns (paywalled)."
+    }
+   ],
+   "ledger": [
+    {
+     "kind": "essay",
+     "title": "Your future job will be to keep AI on task",
+     "author": "Noah Smith",
+     "venue": "Noahpinion",
+     "date": "2026-05-27",
+     "url": "https://www.noahpinion.blog/p/your-future-job-will-be-to-keep-ai",
+     "note": "Human labor value migrates to specifying and verifying AI output."
+    }
+   ],
+   "window": "March–August 2026"
+  },
+  "q_global_inequality": {
+   "tier": "slow",
+   "reviewed": "August 3, 2026",
+   "moved": "The development question got institutional: the World Bank made AI-and-development its 2026 flagship theme, the IMF found emerging markets generating new-skill demand at half the advanced-economy rate, and Rodrik declared the manufacturing escalator finished — with a Gabonese minister arguing the greatest risk is joining the AI wave too early.",
+   "items": [
+    {
+     "kind": "interview",
+     "title": "Dani Rodrik on the end of the manufacturing escalator",
+     "author": "Dani Rodrik",
+     "venue": "VoxDev",
+     "date": "2026-05-21",
+     "url": "https://voxdev.org/topic/macroeconomics-growth/dani-rodrik-end-manufacturing-escalator-service-led-growth-and",
+     "note": "Manufacturing no longer works as a growth escalator; services-led growth with AI-augmented less-skilled workers is the realistic, slower alternative."
+    },
+    {
+     "kind": "report",
+     "title": "World Development Report 2026: AI for Development (concept note)",
+     "author": "World Bank (academic lead: Susan Athey)",
+     "venue": "World Bank",
+     "date": "2025-12",
+     "url": "https://thedocs.worldbank.org/en/doc/1e4e52502104a331fb42cba0d4afa995-0050062026/original/WDR2026-Concept-Note.pdf",
+     "note": "The flagship report framed around whether AI closes expertise gaps or erodes the services-export path.",
+     "quote": "Predictive and generative AI might dampen prospects of developing countries exporting back-office services."
+    },
+    {
+     "kind": "report",
+     "title": "Bridging Skill Gaps for the Future: New Jobs Creation in the AI Age",
+     "author": "Jaumotte, Kim, Koll et al.",
+     "venue": "IMF Staff Discussion Note",
+     "date": "2026-01",
+     "url": "https://www.imf.org/-/media/files/publications/sdn/2026/english/sdnea2026001.pdf",
+     "note": "Emerging markets generate new-skill demand at about half the advanced-economy rate, with 8–9 month adoption lags."
+    },
+    {
+     "kind": "essay",
+     "title": "Why Africa should sequence, not rush into AI",
+     "author": "Mark-Alexandre Doumba",
+     "venue": "Brookings",
+     "date": "2026-02-10",
+     "url": "https://www.brookings.edu/articles/why-africa-should-sequence-not-rush-into-ai/",
+     "note": "Gabon's digital economy minister: premature automation parallels premature deindustrialization; sequence data governance and infrastructure first.",
+     "quote": "The greatest risk is not missing the AI revolution, but joining it too early."
+    },
+    {
+     "kind": "report",
+     "title": "Global Economic and Financial Implications of AI: Scenario Planning",
+     "author": "Barhoumi, de Carvalho et al.",
+     "venue": "IMF Notes",
+     "date": "2026-04",
+     "url": "https://www.imf.org/-/media/files/publications/imf-notes/2026/english/insea2026002.pdf",
+     "note": "Scenario exercise: capital outflows from developing economies and reshoring erode export-led growth models.",
+     "quote": "Cross-country inequalities widen as advanced economies capture a disproportionate share of AI-related gains."
+    }
+   ],
+   "ledger": [],
+   "window": "December 2025–August 2026"
+  },
+  "q_ownership_mechanisms": {
+   "tier": "medium",
+   "reviewed": "August 3, 2026",
+   "moved": "The mechanisms went from thought experiment to legislation: the June Sanders bill would tax leading AI firms 50% equity stakes into a public fund, Korinek and Lockwood built the public-finance framework for when labor-tax bases erode, and Smith made the political-durability case for sovereign wealth over taxation.",
+   "items": [
+    {
+     "kind": "post",
+     "title": "The Bernie Sanders AI Sovereign Wealth Fund Proposal",
+     "author": "Matt Bruenig",
+     "venue": "People's Policy Project",
+     "date": "2026-06-26",
+     "url": "https://www.peoplespolicyproject.org/2026/06/26/bernie-sanders-ai-swf/",
+     "note": "Analyzes the June 2026 bill taxing leading AI companies 50% equity stakes into a public fund — state ownership with control rights, not a passive dividend.",
+     "quote": "This would be akin to transferring over $1 trillion of stock equity from Anthropic, OpenAI, and the spun-off Gemini to the government"
+    },
+    {
+     "kind": "paper",
+     "title": "Future tax policy: A public finance framework for the age of AI",
+     "author": "Korinek & Lockwood",
+     "venue": "Brookings / NBER",
+     "date": "2026-01-08",
+     "url": "https://www.brookings.edu/articles/future-tax-policy-a-public-finance-framework-for-the-age-of-ai/",
+     "note": "How to fund redistribution as labor income tax bases erode: consumption taxation over taxing productive AI capital; equity mechanisms for advanced scenarios."
+    },
+    {
+     "kind": "essay",
+     "title": "Democratic economic policy in the age of AI",
+     "author": "Noah Smith",
+     "venue": "Noahpinion",
+     "date": "2026-02-20",
+     "url": "https://www.noahpinion.blog/p/democratic-economic-policy-in-the",
+     "note": "A sovereign wealth fund taking broad equity stakes as redistribution more politically durable than taxation."
+    }
+   ],
+   "ledger": [],
+   "window": "January–August 2026"
+  },
+  "q_energy_and_environment": {
+   "tier": "high",
+   "reviewed": "August 3, 2026",
+   "moved": "The backlash became measurable: 75 data-center projects worth ~$130 billion were blocked or delayed in one quarter, opposition groups doubled to 833, and the rate-payer question got real analysis — PJM's capacity-price spike traces largely to forecast-driven market design. Masley's forensic work on the viral water numbers cuts the other way.",
+   "items": [
+    {
+     "kind": "post",
+     "title": "Are AI Datacenters Increasing Electric Bills for American Households?",
+     "author": "Mahesh, Eliahou Ontiveros, Pandey et al.",
+     "venue": "SemiAnalysis",
+     "date": "2026-03-03",
+     "url": "https://newsletter.semianalysis.com/p/are-ai-datacenters-increasing-electric",
+     "note": "PJM's 9.3× capacity-price jump traces largely to forecast-driven market design; ERCOT absorbed similar growth with 11–17% rises."
+    },
+    {
+     "kind": "report",
+     "title": "Data Center Watch Report: Q1 2026",
+     "author": "Data Center Watch",
+     "venue": "datacenterwatch.org",
+     "date": "2026-06",
+     "url": "https://www.datacenterwatch.org/q1-2026",
+     "note": "Community opposition doubled to 833 groups across 49 states; 300+ state bills in six weeks.",
+     "quote": "At least 75 data center projects worth approximately $130 billion were blocked or delayed in a single quarter."
+    },
+    {
+     "kind": "report",
+     "title": "A Speed-for-Security Bargain for AI Data Centers",
+     "author": "Ben Schifman",
+     "venue": "Institute for Progress",
+     "date": "2026-06-04",
+     "url": "https://ifp.org/speed-for-security-bargain-for-ai-data-centers/",
+     "note": "Expedited grid interconnection for large loads conditional on binding cybersecurity hardening."
+    },
+    {
+     "kind": "post",
+     "title": "How the 'bottle of water per prompt' miscalculation happened",
+     "author": "Andy Masley",
+     "venue": "The Weird Turn Pro",
+     "date": "2026-05-25",
+     "url": "https://blog.andymasley.com/p/i-might-have-found-the-specific-way",
+     "note": "Forensic reconstruction of the viral 500mL-per-prompt figure: stacked errors inflating per-prompt water use ~50–250×."
+    },
+    {
+     "kind": "post",
+     "title": "Bernie Sanders has a plan to stop the AI industry",
+     "author": "Kai Williams",
+     "venue": "Understanding AI",
+     "date": "2026-04-06",
+     "url": "https://www.understandingai.org/p/bernie-sanders-has-a-plan-to-stop",
+     "note": "The conditional data-center construction ban, and whether safety advocates, local opponents, and labor hold together as a coalition."
+    }
+   ],
+   "ledger": [
+    {
+     "kind": "post",
+     "title": "Why I think panic about local impacts of data centers is just a panic",
+     "author": "Andy Masley",
+     "venue": "The Weird Turn Pro",
+     "date": "2026-06-04",
+     "url": "https://blog.andymasley.com/p/why-i-think-panic-about-local-impacts",
+     "note": "Systematic review tracing most circulating local-harm claims to misread reporting."
+    },
+    {
+     "kind": "interview",
+     "title": "A conversation with my city planner friend on the Holyoke moratorium",
+     "author": "Andy Masley",
+     "venue": "The Weird Turn Pro",
+     "date": "2026-07-07",
+     "url": "https://blog.andymasley.com/p/a-conversation-with-my-city-planner",
+     "note": "Ground-level account of how one municipality reached a data-center moratorium."
+    }
+   ],
+   "window": "March–August 2026"
+  },
+  "q_financial_stability": {
+   "tier": "high",
+   "reviewed": "August 3, 2026",
+   "moved": "The capex-reversal scenario got named, traded on, and rebutted: Citrini's 2028 Global Intelligence Crisis memo moved markets, Zvi and Smith argued it confuses a distribution problem with a collapse, and the BIS made over-commitment and circular financing an official concern. July's Korean crash provided the first live case study.",
+   "items": [
+    {
+     "kind": "essay",
+     "title": "The 2028 Global Intelligence Crisis",
+     "author": "Citrini Research",
+     "venue": "citriniresearch.com",
+     "date": "2026-02-22",
+     "url": "https://www.citriniresearch.com/p/2028gic",
+     "note": "The market-moving scenario memo: AI-driven layoffs propagating into private credit, insurers, mortgages, and tax receipts.",
+     "quote": "Every dollar saved on headcount flowed into AI capability that made the next round of job cuts possible."
+    },
+    {
+     "kind": "post",
+     "title": "Citrini's Scenario Is A Great But Deeply Flawed Thought Experiment",
+     "author": "Zvi Mowshowitz",
+     "venue": "Don't Worry About the Vase",
+     "date": "2026-02-24",
+     "url": "https://thezvi.substack.com/p/citrinis-scenario-is-a-great-but",
+     "note": "Accepts the disruption mechanisms; argues production gains plus monetary and redistributive policy make it a distribution problem, not a collapse."
+    },
+    {
+     "kind": "report",
+     "title": "BIS Annual Economic Report 2026: Progress and peril",
+     "author": "Bank for International Settlements",
+     "venue": "BIS",
+     "date": "2026-06-28",
+     "url": "https://www.bis.org/publ/arpdf/ar2026e1.htm",
+     "note": "Official assessment: $1T+ hyperscaler capex, opaque circular financing, and interconnected exposures could produce a financing pullback and investment bust.",
+     "quote": "The intense competition raises the risk of firms over-committing resources to investment projects with still uncertain returns."
+    },
+    {
+     "kind": "report",
+     "title": "Monitoring Adoption of AI and Related Vulnerabilities in the Financial Sector",
+     "author": "Financial Stability Board",
+     "venue": "FSB",
+     "date": "2025-10-10",
+     "url": "https://www.fsb.org/2025/10/monitoring-adoption-of-artificial-intelligence-and-related-vulnerabilities-in-the-financial-sector/",
+     "note": "First cross-jurisdiction monitoring framework: third-party concentration, correlation from common models, supervisory data gaps."
+    },
+    {
+     "kind": "post",
+     "title": "AI Set to be Largest CapEx Cycle Ever … and Soon Majority Externally Financed",
+     "author": "Paul Kedrosky",
+     "venue": "paulkedrosky.com",
+     "date": "2026-06-16",
+     "url": "https://paulkedrosky.com/ai-set-to-be-largest-capex-cycle-ever-and-soon-majority-externally-financed/",
+     "note": "~$1.5T annual AI infrastructure spend by 2030, ~90% externally financed — dependent on credit markets and vulnerable to spread widening.",
+     "quote": "it will surpass, in real terms, the residential construction boom of 2005-06, the 1990s fiber build peak year, and the 1882 railroad peak combined."
+    },
+    {
+     "kind": "post",
+     "title": "It still doesn't look like there's an AI bubble",
+     "author": "Timothy B. Lee",
+     "venue": "Understanding AI",
+     "date": "2026-03-16",
+     "url": "https://www.understandingai.org/p/it-still-doesnt-look-like-theres",
+     "note": "The revenue counter-case: Anthropic's annualized revenue doubling from $9B to $19B between late 2025 and March 2026."
+    },
+    {
+     "kind": "essay",
+     "title": "Why did South Korean stocks just crash?",
+     "author": "Noah Smith",
+     "venue": "Noahpinion",
+     "date": "2026-07-30",
+     "url": "https://www.noahpinion.blog/p/why-did-south-korean-stocks-just",
+     "note": "Case study: chip earnings, leveraged retail ETFs, and the gap between required and actual AI revenue."
+    }
+   ],
+   "ledger": [
+    {
+     "kind": "essay",
+     "title": "The Citrini post is just a scary bedtime story",
+     "author": "Noah Smith",
+     "venue": "Noahpinion",
+     "date": "2026-02-24",
+     "url": "https://www.noahpinion.blog/p/the-citrini-post-is-just-a-scary",
+     "note": "Separates plausible micro disruption from macro crash claims."
+    },
+    {
+     "kind": "post",
+     "title": "Chart of the Day: AI Capex, From Bonanza to Burden",
+     "author": "Paul Kedrosky",
+     "venue": "paulkedrosky.com",
+     "date": "2026-02-06",
+     "url": "https://paulkedrosky.com/chart-of-the-day-ai-capex-from-bonanza-to-burden/",
+     "note": "The market's valuation multiple on announced AI capex turned negative."
+    },
+    {
+     "kind": "post",
+     "title": "The Market Doesn't Sell Off on Excessive-Capex Concerns at the Top",
+     "author": "Byrne Hobart",
+     "venue": "The Diff",
+     "date": "2026-07-24",
+     "url": "https://www.thediff.co/archive/the-market-doesnt-sell-off-on-excessive-capex-concerns-at-the-top/",
+     "note": "Historical capex cycles: markets do not peak on excessive-spending worries (paywalled)."
+    }
+   ],
+   "window": "October 2025–August 2026"
   }
  }
 }
