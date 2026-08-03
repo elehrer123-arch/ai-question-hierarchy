@@ -34,7 +34,10 @@ not weekly.
    (record it in `via`). Drop anything unverifiable. Never fabricate.
 5. **Dates.** Store full `YYYY-MM-DD` publication dates whenever the source
    shows one; month-only (`YYYY-MM`) only when a day is genuinely
-   unascertainable.
+   unascertainable. Also stamp every new item with `"added": "YYYY-MM-DD"`
+   (the run date) — the Latest page sorts by publication date, but the RSS
+   feed sorts by added date so retrospective additions still reach
+   subscribers.
 6. **Merge.** Add each verified piece to its **one** primary question in
    `data/recent.json` (the one-place rule): into `ledger` by default. Only
    place a piece directly into `items` (selected) when it is unambiguously

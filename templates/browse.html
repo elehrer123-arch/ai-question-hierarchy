@@ -314,7 +314,7 @@ function render(k){
       const deb=DEBATES[q.id];
       const led=rq.ledger||[];
       const qual=rc.length+led.length;
-      h+=`<div class="rh">Recent thinking</div><div class="rhm">${led.length?`${rc.length} selected of ${qual} qualifying pieces observed`:`Selected for significance · ${rc.length} item${rc.length>1?'s':''}`}${rq.window?` · ${esc(rq.window)}`:''}</div>`;
+      h+=`<div class="rh">Recent thinking</div><div class="rhm">${led.length?`${rc.length} selected of ${qual} qualifying pieces observed`:`Selected for significance · ${rc.length} item${rc.length>1?'s':''}`}${rq.window?` · ${esc(rq.window)}`:''} · <a href="../latest/?q=${q.id}" style="color:var(--ink2)">all ${qual} chronologically →</a></div>`;
       let groups=[];
       if(deb){
         const assigned=new Set(deb.poles.map(p=>p.k));

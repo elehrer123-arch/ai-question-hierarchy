@@ -44,7 +44,7 @@ h1{font-family:var(--serif);font-size:34px;letter-spacing:-.014em;line-height:1.
 #voltoggle{border:1px solid var(--line);background:var(--panel);border-radius:20px;padding:5px 12px;font-size:12px;cursor:pointer;color:var(--ink2)}
 #voltoggle[aria-pressed="true"]{border-color:var(--gold);background:var(--gold);color:#fff}
 .vol{display:none;font-size:10.5px;color:var(--gold);font-weight:600;white-space:nowrap}
-.showvol .vol{display:inline}
+.showvol .vol{display:inline;cursor:pointer;text-decoration:underline dotted}
 .bs{display:flex;gap:26px;max-width:1360px;margin:14px auto 0;align-items:flex-start}
 .bcol{flex:1 1 0;min-width:0;transition:flex .38s ease}
 .bsechead{display:flex;gap:9px;align-items:baseline;border:0;background:none;cursor:pointer;padding:0 0 5px;
@@ -246,6 +246,14 @@ if(m){
     if(s)setTimeout(()=>s.scrollIntoView({block:'center'}),80);
   }
 }
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var v=e.target.closest('.vol');
+  if(v&&document.body.classList.contains('showvol')){
+    e.preventDefault();e.stopPropagation();
+    location.href='latest/?q='+v.dataset.qid;}
+},true);
 </script>
 </body>
 </html>

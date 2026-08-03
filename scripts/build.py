@@ -354,7 +354,7 @@ def render_map(sections, entry_map, recent=None):
                 if rqe:
                     n90 = sum(1 for it in rqe.get("items", []) + rqe.get("ledger", [])
                               if it.get("date", "") >= "2026-05")
-                    vol = '<span class="vol"> · ' + str(n90) + ' in 90d</span>'
+                    vol = ('<span class="vol" data-qid="' + q['id'] + '" role="link" tabindex="0" title="See these pieces on Latest"> · ' + str(n90) + ' in 90d</span>')
                 inner.append(
                     f'<div class="bq" id="n{anchor}" data-sec="{s["id"]}" data-sub="{su["id"]}" data-x="{E(x)}">'
                     f'<button class="bqhead" aria-expanded="false"><span class="bqid">{q["id"]}</span>{E(q["t"])}{star}{vol}</button>'
@@ -477,10 +477,11 @@ def _parse_reviewed(s):
 def render_latest(sections, recent, cutoff="2026-05"):
     """Render latest/index.html and latest/feed.xml from stream data.
 
-    Shows every selected and ledger item published on/after `cutoff`
-    (same cutoff as the map's 90-day volume lens, so counts reconcile).
-    Month sections, newest first; day-precision items sort before
-    month-only ones within a month.
+    Page: every selected and ledger item published on/after `cutoff`
+    (same cutoff as the map's 90-day volume lens), month sections newest
+    first, day-precision items before an "Earlier in <month>" group.
+    RSS: ordered by when we ADDED the item (so retrospective additions
+    still reach subscribers), pubDate = added date.
     """
     qmeta = {}
     for s in sections:
@@ -494,15 +495,16 @@ def render_latest(sections, recent, cutoff="2026-05"):
         rv = _parse_reviewed(entry.get("reviewed", ""))
         if rv > max_reviewed:
             max_reviewed = rv
-        for it, sel in [(i, True) for i in entry.get("items", [])] +                        [(i, False) for i in entry.get("ledger", [])]:
+        for it, sel in [(i, True) for i in entry.get("items", [])] + \
+                       [(i, False) for i in entry.get("ledger", [])]:
             if it["date"][:7] >= cutoff:
-                rows.append({"d": it["date"], "sel": sel, "q": qid_disp,
-                             "qt": qmeta[qid_disp]["t"], "sec": qmeta[qid_disp]["sec"],
+                rows.append({"d": it["date"], "added": it.get("added", ""), "sel": sel,
+                             "q": qid_disp, "qt": qmeta[qid_disp]["t"],
+                             "sec": qmeta[qid_disp]["sec"],
                              "title": it["title"], "author": it["author"],
                              "venue": it["venue"], "url": it["url"],
                              "kind": it.get("kind", ""), "note": it.get("note", "")})
 
-    # newest month first; within a month, day-precision (desc) before month-only
     rows.sort(key=lambda r: (r["d"][:7], len(r["d"]), r["d"], r["sel"]), reverse=True)
     months = []
     for r in rows:
@@ -533,29 +535,38 @@ def render_latest(sections, recent, cutoff="2026-05"):
     body = []
     for m, items in months:
         body.append(f'<h2 class="mh">{month_h(m)} <span class="mc">({len(items)})</span></h2>')
+        shown_earlier = False
         for r in items:
+            if len(r["d"]) == 7 and not shown_earlier:
+                body.append(f'<h3 class="emh">Earlier in {month_h(m).split(" ")[0]} '
+                            f'<span class="mc">(day not stated by source)</span></h3>')
+                shown_earlier = True
             anchor = "q" + r["q"].replace(".", "-")
             note = f'<div class="lnote">{E(r["note"])}</div>' if (r["sel"] and r["note"]) else ""
             kind = f'<span class="lkind">{E(r["kind"])}</span>' if r["kind"] else ""
+            search = E(f'{r["title"]} {r["author"]} {r["venue"]} {r["q"]} {r["qt"]}'.lower())
             body.append(
-                f'<article class="li{"" if r["sel"] else " lg"}" data-s="{r["sec"]}">'
+                f'<article class="li{"" if r["sel"] else " lg"}" data-s="{r["sec"]}" '
+                f'data-q="{r["q"]}" data-search="{search}">'
                 f'<div class="ld">{day_h(r["d"])}</div>'
                 f'<div class="lb"><a class="lt" href="{E(r["url"])}" rel="noopener">{E(r["title"])}</a>'
                 f'<div class="lm">{E(r["author"])} · {E(r["venue"])} {kind}</div>{note}'
                 f'<a class="lq" href="../browse/#{anchor}" style="color:var(--c{r["sec"]})">'
                 f'&rarr; {r["q"]} {E(r["qt"])}</a></div></article>')
 
+    qnames = {r["q"]: r["qt"] for r in rows}
     html = LATEST_TEMPLATE
     html = (html.replace("__BODY__", "\n".join(body))
                 .replace("__SECLINE__", secline)
                 .replace("__COUNT__", str(len(rows)))
+                .replace("__QNAMES__", json.dumps(qnames, ensure_ascii=False))
                 .replace("__REVIEWED__", E(max_rev_h)))
     outdir = os.path.join(ROOT, "latest")
     os.makedirs(outdir, exist_ok=True)
     with open(os.path.join(outdir, "index.html"), "w", encoding="utf-8") as f:
         f.write(html)
 
-    # RSS: 60 most recent entries
+    # RSS: ordered by added date (newest additions first), pubDate = added.
     def rfc822(d):
         dd = d if len(d) == 10 else d + "-01"
         y, mo, day = int(dd[:4]), int(dd[5:7]), int(dd[8:10])
@@ -565,23 +576,26 @@ def render_latest(sections, recent, cutoff="2026-05"):
                 f"{MONTH_NAMES[mo-1][:3]} {y} 00:00:00 GMT")
 
     def X(s):
-        return (s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;"))
+        return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
+    rss_rows = sorted(rows, key=lambda r: (r.get("added") or r["d"], r["d"]), reverse=True)[:60]
     rss_items = []
-    for r in rows[:60]:
+    for r in rss_rows:
+        pub = r.get("added") or r["d"]
         desc = X(r["note"]) if r["note"] else f'{X(r["author"])} · {X(r["venue"])}'
+        pubd = f' (published {r["d"]})' if r["d"][:7] != pub[:7] else ""
         rss_items.append(
             f"<item><title>{X(r['title'])}</title><link>{X(r['url'])}</link>"
             f"<guid isPermaLink=\"true\">{X(r['url'])}</guid>"
-            f"<pubDate>{rfc822(r['d'])}</pubDate>"
+            f"<pubDate>{rfc822(pub)}</pubDate>"
             f"<category>{X(r['q'] + ' ' + r['qt'])}</category>"
-            f"<description>{desc}</description></item>")
+            f"<description>{desc}{X(pubd)}</description></item>")
     rss = ("<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
            "<rss version=\"2.0\"><channel>"
            "<title>The Biggest Questions About AI — Latest</title>"
            "<link>https://elehrer123-arch.github.io/ai-question-hierarchy/latest/</link>"
            "<description>Substantive recent pieces observed by our reviews, "
-           "across all 127 questions.</description>"
+           "across all 127 questions. Ordered by when items were added.</description>"
            + "".join(rss_items) + "</channel></rss>")
     with open(os.path.join(outdir, "feed.xml"), "w", encoding="utf-8") as f:
         f.write(rss)
@@ -634,6 +648,12 @@ border-bottom:1px solid var(--line);padding-bottom:6px}
 .lg .lt{color:var(--ink2)}
 .lg{opacity:.92}
 body.selonly .lg{display:none}
+.emh{font-size:12px;color:var(--ink3);font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin:14px 0 0;padding:6px 0 0}
+.srch{border:1px solid var(--line);background:var(--panel);border-radius:16px;padding:5px 12px;font-size:12.5px;color:var(--ink);min-width:170px}
+.srch:focus{outline:1px solid var(--ink3)}
+.qpill{display:none;align-items:center;gap:8px;margin:2px 0 10px;font-size:12.5px;color:var(--ink2)}
+.qpill.on{display:flex}
+.qpill button{border:1px solid var(--line);background:var(--panel);border-radius:12px;padding:1px 9px;font-size:11.5px;cursor:pointer;color:var(--ink2)}
 .note{margin-top:30px;border-top:1px solid var(--line);padding-top:12px;
 font-size:12.5px;color:var(--ink2);line-height:1.55;max-width:620px}
 </style></head><body>
@@ -643,23 +663,50 @@ font-size:12.5px;color:var(--ink2);line-height:1.55;max-width:620px}
 <h1>Latest</h1>
 <p class="lede">Substantive recent pieces our reviews found across all 127 questions — newest first, each linked to the question it belongs to.</p>
 <p class="meta">__COUNT__ pieces since May 2026 · drawn from reviews through __REVIEWED__ · what our reviews observed, not a census of discussion · <a href="feed.xml">RSS</a></p>
-<div class="fbar">__SECLINE__<label class="fsel"><input type="checkbox" id="selonly"> Selected only</label></div>
+<div class="fbar">__SECLINE__<input class="srch" id="srch" type="search" placeholder="Search title, author, question…" aria-label="Search"><label class="fsel"><input type="checkbox" id="selonly"> Selected only</label></div><div class="qpill" id="qpill"><span id="qpilltext"></span><button id="qclear">clear ×</button></div>
 __BODY__
 <div class="note">Pieces appear here when a review verifies them and judges that they advance one of the map&#39;s questions — whether selected for the question&#39;s page or noted in its ledger. Publication dates are shown where sources provide them; pieces with month-only dates appear at the end of their month. Discovery runs weekly across our source registry, aggregators, and editor submissions; full reviews of each question run on their own cadence.</div>
 </div>
 <script>
+const QNAMES=__QNAMES__;
+const state={secs:new Set(['1','2','3','4','5']),sel:false,q:'',txt:''};
+function apply(){
+  document.querySelectorAll('.li').forEach(li=>{
+    let show=state.secs.has(li.dataset.s);
+    if(show&&state.sel&&li.classList.contains('lg'))show=false;
+    if(show&&state.q&&li.dataset.q!==state.q)show=false;
+    if(show&&state.txt&&!li.dataset.search.includes(state.txt))show=false;
+    li.style.display=show?'':'none';
+  });
+  document.querySelectorAll('.mh').forEach(h=>{
+    let n=0,el=h.nextElementSibling;
+    while(el&&!el.classList.contains('mh')){
+      if(el.classList.contains('li')&&el.style.display!=='none')n++;
+      el=el.nextElementSibling;}
+    h.style.display=n?'':'none';});
+  document.querySelectorAll('.emh').forEach(h=>{
+    let n=0,el=h.nextElementSibling;
+    while(el&&!el.classList.contains('mh')&&!el.classList.contains('emh')){
+      if(el.classList.contains('li')&&el.style.display!=='none')n++;
+      el=el.nextElementSibling;}
+    h.style.display=n?'':'none';});
+  const pill=document.getElementById('qpill');
+  if(state.q){document.getElementById('qpilltext').textContent=
+    'Showing '+state.q+' · '+(QNAMES[state.q]||'');pill.classList.add('on');}
+  else pill.classList.remove('on');
+}
 document.querySelectorAll('.fsec').forEach(b=>b.addEventListener('click',()=>{
   const on=b.getAttribute('aria-pressed')==='true';
   b.setAttribute('aria-pressed',on?'false':'true');
-  const active=new Set([...document.querySelectorAll('.fsec[aria-pressed="true"]')].map(x=>x.dataset.s));
-  document.querySelectorAll('.li').forEach(li=>{li.style.display=active.has(li.dataset.s)?'':'none';});
-  document.querySelectorAll('.mh').forEach(h=>{
-    let n=0,el=h.nextElementSibling;
-    while(el&&!el.classList.contains('mh')){if(el.classList.contains('li')&&el.style.display!=='none'&&(!document.body.classList.contains('selonly')||!el.classList.contains('lg')))n++;el=el.nextElementSibling;}
-    h.style.display=n?'':'none';});
-}));
-document.getElementById('selonly').addEventListener('change',e=>{
-  document.body.classList.toggle('selonly',e.target.checked);});
+  if(on)state.secs.delete(b.dataset.s);else state.secs.add(b.dataset.s);
+  apply();}));
+document.getElementById('selonly').addEventListener('change',e=>{state.sel=e.target.checked;apply();});
+document.getElementById('srch').addEventListener('input',e=>{state.txt=e.target.value.trim().toLowerCase();apply();});
+document.getElementById('qclear').addEventListener('click',()=>{state.q='';
+  history.replaceState(null,'',location.pathname);apply();});
+const p=new URLSearchParams(location.search).get('q');
+if(p&&QNAMES[p]){state.q=p;}
+apply();
 </script>
 </body></html>"""
 

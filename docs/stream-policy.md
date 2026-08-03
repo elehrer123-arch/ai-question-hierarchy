@@ -149,4 +149,7 @@ selected-vs-ledger call sound.
 Store full `YYYY-MM-DD` publication dates whenever the source shows one;
 `YYYY-MM` only when a day is genuinely unascertainable. Day precision is
 exposed only on the Latest page; question pages continue to display
-month-level dates.
+month-level dates. Every item also carries `added` (when it entered the
+stream): pages sort by publication date, RSS by added date, so a
+retrospectively discovered piece never looks newly published but still
+reaches subscribers.
