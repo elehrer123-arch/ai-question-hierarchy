@@ -50,8 +50,17 @@ const ok = (cond, msg) => { if (!cond) fails.push(msg); };
       const links = [...document.querySelectorAll('a[href]')].filter(
         (l) => !l.textContent.trim() && !l.getAttribute('aria-label') && !l.querySelector('svg,img'));
       const nested = document.querySelectorAll('button a, a button, button button').length;
+      const anchors = [...document.querySelectorAll('a[href]')];
+      const isExt = (a) => { try { const u = new URL(a.href, location.href);
+        return (u.protocol === 'http:' || u.protocol === 'https:') && u.host !== location.host;
+      } catch (e) { return false; } };
+      const ext = anchors.filter(isExt);
+      const extNotBlank = ext.filter((a) => a.target !== '_blank').length;
+      const extNoRel = ext.filter((a) => !/noopener/.test(a.rel)).length;
+      const intBlank = anchors.filter((a) => !isExt(a) && a.target === '_blank').length;
       return { imgsNoAlt: imgs.length, h1, unlabeledButtons: btns.length,
-               emptyLinks: links.length, nestedInteractive: nested, title: document.title };
+               emptyLinks: links.length, nestedInteractive: nested, title: document.title,
+               extNotBlank, extNoRel, intBlank };
     });
     ok(consoleErrors.length === 0, `${label}: console errors — ${consoleErrors.join(' | ')}`);
     ok(a.title && a.title.length > 5, `${label}: missing/short <title>`);
@@ -60,6 +69,9 @@ const ok = (cond, msg) => { if (!cond) fails.push(msg); };
     ok(a.unlabeledButtons === 0, `${label}: ${a.unlabeledButtons} unlabeled buttons`);
     ok(a.emptyLinks === 0, `${label}: ${a.emptyLinks} links with no accessible text`);
     ok(a.nestedInteractive === 0, `${label}: ${a.nestedInteractive} nested interactive elements`);
+    ok(a.extNotBlank === 0, `${label}: ${a.extNotBlank} external links not opening in a new tab`);
+    ok(a.extNoRel === 0, `${label}: ${a.extNoRel} external links missing rel=noopener`);
+    ok(a.intBlank === 0, `${label}: ${a.intBlank} internal links wrongly opening in a new tab`);
   }
 
   // keyboard: tab reaches the map search box

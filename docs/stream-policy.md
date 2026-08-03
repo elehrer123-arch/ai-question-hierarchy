@@ -201,3 +201,13 @@ in one click. Refs must point at featured items of the same question (the
 build enforces this). High-tier questions carry anchors now; other questions
 gain them as re-reviews rewrite their statements. A statement with no refs
 is not a licence to assert — it means the anchoring pass has not reached it.
+
+
+## External links (added August 2026)
+
+Every link that leaves the site opens in a new tab with
+`rel="noopener noreferrer"`; internal navigation never does. This is applied
+at runtime by a small script on every page rather than hand-authored per
+link, so it also covers Browse's dynamically rendered content and anything
+added later. `scripts/smoke.js` asserts it on every surface — including that
+internal links are *not* retargeted.

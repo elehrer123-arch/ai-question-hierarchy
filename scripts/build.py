@@ -303,6 +303,7 @@ def render_index(sections, overview_links, outdir="", legacy=False):
                           'The <a href="../">map</a> and <a href="../browse/">browse</a> views are the new front door.</p>')
     dest = os.path.join(ROOT, outdir) if outdir else ROOT
     os.makedirs(dest, exist_ok=True)
+    out = out.replace("</body>", tail_scripts() + "</body>")
     with open(os.path.join(dest, "index.html"), "w", encoding="utf-8") as f:
         f.write(out)
     return qcount, lcount
@@ -406,6 +407,7 @@ def render_map(sections, entry_map, recent=None):
               .replace("__QCOUNT__", str(qcount))
               .replace("__LCOUNT__", str(lcount))
               .replace("__TRACKED__", str(tracked)))
+    out = out.replace("</body>", tail_scripts() + "</body>")
     with open(os.path.join(ROOT, "index.html"), "w", encoding="utf-8") as f:
         f.write(out)
 
@@ -535,6 +537,7 @@ def render_browse(sections, entry_map, recent=None, debates=None):
               .replace("__RECENT__", json.dumps(recent["items"], ensure_ascii=False))
               .replace("__SWEPT__", json.dumps(recent["swept"]))
               .replace("__DEBATES__", json.dumps(debates or {}, ensure_ascii=False)))
+    out = out.replace("</body>", tail_scripts() + "</body>")
     outdir = os.path.join(ROOT, "browse")
     os.makedirs(outdir, exist_ok=True)
     with open(os.path.join(outdir, "index.html"), "w", encoding="utf-8") as f:
@@ -675,7 +678,7 @@ def render_latest(sections, recent, cutoff=None):
                 .replace("__REVIEWED__", E(max_rev_h)))
     outdir = os.path.join(ROOT, "latest")
     os.makedirs(outdir, exist_ok=True)
-    html = html.replace("</body>", analytics_snippet() + "</body>")
+    html = html.replace("</body>", tail_scripts() + "</body>")
     with open(os.path.join(outdir, "index.html"), "w", encoding="utf-8") as f:
         f.write(html)
 
@@ -974,7 +977,7 @@ def render_methodology(qcount):
     today = _date.today()
     today_h = f"{MONTH_NAMES[today.month-1]} {today.day}, {today.year}"
     out = METHODOLOGY_HTML.replace("__TODAY__", today_h).replace("__QCOUNT__", str(qcount))
-    out = out.replace("</body>", analytics_snippet() + "</body>")
+    out = out.replace("</body>", tail_scripts() + "</body>")
     outdir = os.path.join(ROOT, "methodology")
     os.makedirs(outdir, exist_ok=True)
     with open(os.path.join(outdir, "index.html"), "w", encoding="utf-8") as f:
@@ -1191,7 +1194,7 @@ def render_question_pages(sections, entry_map_full, recent, debates):
                     .replace("__ISSUE__", E(issue_url)))
                 outdir = os.path.join(ROOT, "questions", q["slug"])
                 os.makedirs(outdir, exist_ok=True)
-                html = html.replace("</body>", analytics_snippet() + "</body>")
+                html = html.replace("</body>", tail_scripts() + "</body>")
                 with open(os.path.join(outdir, "index.html"), "w", encoding="utf-8") as f:
                     f.write(html)
                 n_pages += 1
@@ -1321,6 +1324,38 @@ __NAV__
 
 
 
+EXTLINKS_JS = """<script>(function(){
+function mark(root){
+  var as=root.querySelectorAll?root.querySelectorAll('a[href]'):[];
+  for(var i=0;i<as.length;i++){
+    var a=as[i];
+    if(a.target) continue;
+    var h=a.getAttribute('href')||'';
+    if(!h||h.charAt(0)==='#'||/^(mailto:|tel:|javascript:)/i.test(h)) continue;
+    var u; try{u=new URL(a.href,location.href);}catch(e){continue}
+    if(u.protocol!=='http:'&&u.protocol!=='https:') continue;
+    if(u.host===location.host) continue;
+    a.target='_blank';
+    if(!/\bnoopener\b/.test(a.rel)) a.rel=(a.rel?a.rel+' ':'')+'noopener noreferrer';
+  }
+}
+mark(document);
+if(window.MutationObserver){
+  new MutationObserver(function(ms){
+    for(var i=0;i<ms.length;i++){
+      var n=ms[i].addedNodes;
+      for(var j=0;j<n.length;j++) if(n[j].nodeType===1) mark(n[j]);
+    }
+  }).observe(document.documentElement,{childList:true,subtree:true});
+}
+})();</script>"""
+
+
+def tail_scripts():
+    """Scripts appended to every built page: external-link handling, then analytics."""
+    return EXTLINKS_JS + analytics_snippet()
+
+
 def analytics_snippet():
     """Return the analytics <script> block, or '' when disabled.
 
@@ -1437,7 +1472,7 @@ def render_poster(sections):
             f'<p>All {qn} questions in one circle. Tap or click any label to open its question page; '
             f'hover (on a pointer device) shows the full question. '
             f'<a href="map.svg" download>Download as SVG</a>.</p>'
-            f'<div class="wrap">{svg_doc}</div></body></html>')
+            f'<div class="wrap">{svg_doc}</div>' + tail_scripts() + '</body></html>')
     with open(os.path.join(outdir, "index.html"), "w", encoding="utf-8") as f:
         f.write(page)
 

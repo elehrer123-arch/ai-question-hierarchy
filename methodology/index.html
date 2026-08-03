@@ -75,4 +75,28 @@ comparable.</p>
 <p>Disagree with a framing, spot a stale claim, or know a piece we missed?
 <a href="https://github.com/elehrer123-arch/ai-question-hierarchy/issues/new?template=suggest-improvement.yml">Suggest a source or correction</a>.
 The main criterion for additions: what does this add that the existing material doesn&#39;t?</p>
-</div></body></html>
+</div><script>(function(){
+function mark(root){
+  var as=root.querySelectorAll?root.querySelectorAll('a[href]'):[];
+  for(var i=0;i<as.length;i++){
+    var a=as[i];
+    if(a.target) continue;
+    var h=a.getAttribute('href')||'';
+    if(!h||h.charAt(0)==='#'||/^(mailto:|tel:|javascript:)/i.test(h)) continue;
+    var u; try{u=new URL(a.href,location.href);}catch(e){continue}
+    if(u.protocol!=='http:'&&u.protocol!=='https:') continue;
+    if(u.host===location.host) continue;
+    a.target='_blank';
+    if(!/noopener/.test(a.rel)) a.rel=(a.rel?a.rel+' ':'')+'noopener noreferrer';
+  }
+}
+mark(document);
+if(window.MutationObserver){
+  new MutationObserver(function(ms){
+    for(var i=0;i<ms.length;i++){
+      var n=ms[i].addedNodes;
+      for(var j=0;j<n.length;j++) if(n[j].nodeType===1) mark(n[j]);
+    }
+  }).observe(document.documentElement,{childList:true,subtree:true});
+}
+})();</script></body></html>
