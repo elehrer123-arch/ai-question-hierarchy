@@ -462,6 +462,208 @@ def render_browse(sections, entry_map, recent=None, debates=None):
         f.write(out)
 
 
+
+
+MONTH_NAMES = ["January", "February", "March", "April", "May", "June", "July",
+               "August", "September", "October", "November", "December"]
+
+def _parse_reviewed(s):
+    m = re.match(r"([A-Z][a-z]+) (\d{1,2}), (\d{4})", s or "")
+    if not m or m.group(1) not in MONTH_NAMES:
+        return ""
+    return f"{m.group(3)}-{MONTH_NAMES.index(m.group(1))+1:02d}-{int(m.group(2)):02d}"
+
+
+def render_latest(sections, recent, cutoff="2026-05"):
+    """Render latest/index.html and latest/feed.xml from stream data.
+
+    Shows every selected and ledger item published on/after `cutoff`
+    (same cutoff as the map's 90-day volume lens, so counts reconcile).
+    Month sections, newest first; day-precision items sort before
+    month-only ones within a month.
+    """
+    qmeta = {}
+    for s in sections:
+        for su in s["subs"]:
+            for q in su["qs"]:
+                qmeta[q["id"]] = {"t": q["t"], "sec": s["id"]}
+
+    rows = []
+    max_reviewed = ""
+    for qid_disp, entry in recent["items"].items():
+        rv = _parse_reviewed(entry.get("reviewed", ""))
+        if rv > max_reviewed:
+            max_reviewed = rv
+        for it, sel in [(i, True) for i in entry.get("items", [])] +                        [(i, False) for i in entry.get("ledger", [])]:
+            if it["date"][:7] >= cutoff:
+                rows.append({"d": it["date"], "sel": sel, "q": qid_disp,
+                             "qt": qmeta[qid_disp]["t"], "sec": qmeta[qid_disp]["sec"],
+                             "title": it["title"], "author": it["author"],
+                             "venue": it["venue"], "url": it["url"],
+                             "kind": it.get("kind", ""), "note": it.get("note", "")})
+
+    # newest month first; within a month, day-precision (desc) before month-only
+    rows.sort(key=lambda r: (r["d"][:7], len(r["d"]), r["d"], r["sel"]), reverse=True)
+    months = []
+    for r in rows:
+        m = r["d"][:7]
+        if not months or months[-1][0] != m:
+            months.append((m, []))
+        months[-1][1].append(r)
+
+    max_rev_h = ""
+    if max_reviewed:
+        y, mo, dd = max_reviewed.split("-")
+        max_rev_h = f"{MONTH_NAMES[int(mo)-1]} {int(dd)}, {int(y)}"
+
+    def month_h(m):
+        y, mo = m.split("-")
+        return f"{MONTH_NAMES[int(mo)-1]} {y}"
+
+    def day_h(d):
+        if len(d) == 10:
+            return f"{MONTH_NAMES[int(d[5:7])-1][:3]} {int(d[8:10])}"
+        return "—"
+
+    secline = "".join(
+        f'<button class="fsec" data-s="{sid}" aria-pressed="true">'
+        f'<span class="dot" style="background:var(--c{sid})"></span>{SECTION_NAMES[sid]}</button>'
+        for sid in "12345")
+
+    body = []
+    for m, items in months:
+        body.append(f'<h2 class="mh">{month_h(m)} <span class="mc">({len(items)})</span></h2>')
+        for r in items:
+            anchor = "q" + r["q"].replace(".", "-")
+            note = f'<div class="lnote">{E(r["note"])}</div>' if (r["sel"] and r["note"]) else ""
+            kind = f'<span class="lkind">{E(r["kind"])}</span>' if r["kind"] else ""
+            body.append(
+                f'<article class="li{"" if r["sel"] else " lg"}" data-s="{r["sec"]}">'
+                f'<div class="ld">{day_h(r["d"])}</div>'
+                f'<div class="lb"><a class="lt" href="{E(r["url"])}" rel="noopener">{E(r["title"])}</a>'
+                f'<div class="lm">{E(r["author"])} · {E(r["venue"])} {kind}</div>{note}'
+                f'<a class="lq" href="../browse/#{anchor}" style="color:var(--c{r["sec"]})">'
+                f'&rarr; {r["q"]} {E(r["qt"])}</a></div></article>')
+
+    html = LATEST_TEMPLATE
+    html = (html.replace("__BODY__", "\n".join(body))
+                .replace("__SECLINE__", secline)
+                .replace("__COUNT__", str(len(rows)))
+                .replace("__REVIEWED__", E(max_rev_h)))
+    outdir = os.path.join(ROOT, "latest")
+    os.makedirs(outdir, exist_ok=True)
+    with open(os.path.join(outdir, "index.html"), "w", encoding="utf-8") as f:
+        f.write(html)
+
+    # RSS: 60 most recent entries
+    def rfc822(d):
+        dd = d if len(d) == 10 else d + "-01"
+        y, mo, day = int(dd[:4]), int(dd[5:7]), int(dd[8:10])
+        import calendar
+        wd = calendar.weekday(y, mo, day)
+        return (f"{['Mon','Tue','Wed','Thu','Fri','Sat','Sun'][wd]}, {day:02d} "
+                f"{MONTH_NAMES[mo-1][:3]} {y} 00:00:00 GMT")
+
+    def X(s):
+        return (s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;"))
+
+    rss_items = []
+    for r in rows[:60]:
+        desc = X(r["note"]) if r["note"] else f'{X(r["author"])} · {X(r["venue"])}'
+        rss_items.append(
+            f"<item><title>{X(r['title'])}</title><link>{X(r['url'])}</link>"
+            f"<guid isPermaLink=\"true\">{X(r['url'])}</guid>"
+            f"<pubDate>{rfc822(r['d'])}</pubDate>"
+            f"<category>{X(r['q'] + ' ' + r['qt'])}</category>"
+            f"<description>{desc}</description></item>")
+    rss = ("<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+           "<rss version=\"2.0\"><channel>"
+           "<title>The Biggest Questions About AI — Latest</title>"
+           "<link>https://elehrer123-arch.github.io/ai-question-hierarchy/latest/</link>"
+           "<description>Substantive recent pieces observed by our reviews, "
+           "across all 127 questions.</description>"
+           + "".join(rss_items) + "</channel></rss>")
+    with open(os.path.join(outdir, "feed.xml"), "w", encoding="utf-8") as f:
+        f.write(rss)
+    return len(rows)
+
+
+LATEST_TEMPLATE = """<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Latest — The Biggest Questions About AI</title>
+<meta name="description" content="Substantive recent pieces on the biggest open questions about AI, newest first.">
+<link rel="alternate" type="application/rss+xml" title="Latest — The Biggest Questions About AI" href="feed.xml">
+<style>
+:root{--bg:#faf9f6;--panel:#fff;--ink:#1d1c1a;--ink2:#514d45;--ink3:#6f6b5f;--line:#e4e1d8;
+--c1:#3d6b9e;--c2:#b0524b;--c3:#3d8a6b;--c4:#7a5ba6;--c5:#a97729;
+--serif:Georgia,'Times New Roman',serif}
+@media (prefers-color-scheme:dark){:root{--bg:#191817;--panel:#211f1d;--ink:#f2f0ea;--ink2:#c3c0b4;--ink3:#8f8b7e;--line:#33312d;
+--c1:#6f9bc9;--c2:#c97a74;--c3:#63a586;--c4:#a08ac4;--c5:#c29a55}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:760px;margin:0 auto;padding:26px 20px 60px}
+header{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:4px}
+.home{font-family:var(--serif);font-size:16px;color:var(--ink);text-decoration:none}
+.switch{margin-left:auto;font-size:13px;color:var(--ink3)}
+.switch a{color:var(--ink2);text-decoration:none}
+h1{font-family:var(--serif);font-weight:400;font-size:30px;margin:18px 0 6px}
+.lede{color:var(--ink2);font-size:14.5px;line-height:1.5;max-width:620px;margin:0 0 4px}
+.meta{font-size:12.5px;color:var(--ink3);margin:0 0 18px}
+.meta a{color:var(--ink2)}
+.fbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:6px}
+.fsec{border:1px solid var(--line);background:var(--panel);border-radius:16px;
+padding:4px 11px 4px 8px;font-size:12px;color:var(--ink2);cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.fsec[aria-pressed="false"]{opacity:.38}
+.dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+.fsel{margin-left:auto;font-size:12px;color:var(--ink3);display:inline-flex;gap:5px;align-items:center;cursor:pointer}
+.mh{font-family:var(--serif);font-weight:400;font-size:19px;margin:26px 0 4px;
+border-bottom:1px solid var(--line);padding-bottom:6px}
+.mc{color:var(--ink3);font-size:13px}
+.li{display:flex;gap:14px;padding:11px 0;border-bottom:1px solid var(--line)}
+.ld{flex:0 0 44px;font-size:11.5px;color:var(--ink3);padding-top:3px;font-variant-numeric:tabular-nums}
+.lb{flex:1;min-width:0}
+.lt{font-size:15px;color:var(--ink);text-decoration:none;line-height:1.35}
+.lt:hover{text-decoration:underline}
+.lm{font-size:12px;color:var(--ink3);margin-top:2px}
+.lkind{border:1px solid var(--line);border-radius:9px;padding:0 6px;font-size:10.5px;margin-left:4px}
+.lnote{font-size:13px;color:var(--ink2);line-height:1.45;margin-top:4px;max-width:600px}
+.lq{display:inline-block;font-size:12px;text-decoration:none;margin-top:5px}
+.lq:hover{text-decoration:underline}
+.lg .lt{color:var(--ink2)}
+.lg{opacity:.92}
+body.selonly .lg{display:none}
+.note{margin-top:30px;border-top:1px solid var(--line);padding-top:12px;
+font-size:12.5px;color:var(--ink2);line-height:1.55;max-width:620px}
+</style></head><body>
+<div class="wrap">
+<header><a class="home" href="../">The Biggest Questions About&nbsp;AI</a>
+<nav class="switch" aria-label="View switch"><a href="../">Map</a> · <a href="../browse/">Browse</a> · <b style="color:var(--ink)">Latest</b></nav></header>
+<h1>Latest</h1>
+<p class="lede">Substantive recent pieces our reviews found across all 127 questions — newest first, each linked to the question it belongs to.</p>
+<p class="meta">__COUNT__ pieces since May 2026 · drawn from reviews through __REVIEWED__ · what our reviews observed, not a census of discussion · <a href="feed.xml">RSS</a></p>
+<div class="fbar">__SECLINE__<label class="fsel"><input type="checkbox" id="selonly"> Selected only</label></div>
+__BODY__
+<div class="note">Pieces appear here when a review verifies them and judges that they advance one of the map&#39;s questions — whether selected for the question&#39;s page or noted in its ledger. Publication dates are shown where sources provide them; pieces with month-only dates appear at the end of their month. Discovery runs weekly across our source registry, aggregators, and editor submissions; full reviews of each question run on their own cadence.</div>
+</div>
+<script>
+document.querySelectorAll('.fsec').forEach(b=>b.addEventListener('click',()=>{
+  const on=b.getAttribute('aria-pressed')==='true';
+  b.setAttribute('aria-pressed',on?'false':'true');
+  const active=new Set([...document.querySelectorAll('.fsec[aria-pressed="true"]')].map(x=>x.dataset.s));
+  document.querySelectorAll('.li').forEach(li=>{li.style.display=active.has(li.dataset.s)?'':'none';});
+  document.querySelectorAll('.mh').forEach(h=>{
+    let n=0,el=h.nextElementSibling;
+    while(el&&!el.classList.contains('mh')){if(el.classList.contains('li')&&el.style.display!=='none'&&(!document.body.classList.contains('selonly')||!el.classList.contains('lg')))n++;el=el.nextElementSibling;}
+    h.style.display=n?'':'none';});
+}));
+document.getElementById('selonly').addEventListener('change',e=>{
+  document.body.classList.toggle('selonly',e.target.checked);});
+</script>
+</body></html>"""
+
+
 def render_poster(sections):
     import math
     qn = sum(len(su["qs"]) for s in sections for su in s["subs"])
@@ -593,6 +795,7 @@ if __name__ == "__main__":
     render_map(sections, entry_map, recent)
     render_browse(sections, entry_map, recent, debates)
     render_poster(sections)
+    latest_n = render_latest(sections, recent)
     qcount, lcount = render_index(sections, overview_links, outdir="all", legacy=True)
-    print(f"built map (index.html), browse/, poster/, all/: {qcount} questions, "
+    print(f"built map (index.html), browse/, latest/ ({latest_n} pieces + RSS), poster/, all/: {qcount} questions, "
           f"{lcount} source links, {len(entries)} entry page(s)")

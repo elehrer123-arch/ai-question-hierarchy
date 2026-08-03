@@ -133,3 +133,20 @@ Fame bias, platform bias, recency bias, feedification, maintenance debt, and
 selection without synthesis. The "What has moved" paragraph is the answer to the
 last; the reviewed-date and tier system to the second-to-last; the portfolio
 checks to the first two.
+
+
+## Weekly discovery cadence (added August 2026)
+
+Discovery runs weekly (see `docs/weekly-discovery.md` for the standalone
+procedure): enumerate the registry for the last 7 days, verify, and append to
+ledgers so the Latest page stays no more than a week stale. Weekly runs do NOT
+re-select, re-tier, or rewrite "What changed" — editorial judgment stays on
+the per-question review cadence, where a week's context makes the
+selected-vs-ledger call sound.
+
+## Dates (amended August 2026)
+
+Store full `YYYY-MM-DD` publication dates whenever the source shows one;
+`YYYY-MM` only when a day is genuinely unascertainable. Day precision is
+exposed only on the Latest page; question pages continue to display
+month-level dates.
