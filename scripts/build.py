@@ -352,12 +352,13 @@ def render_map(sections, entry_map, recent=None):
                 rqe = (recent or {}).get("items", {}).get(q["id"])
                 vol = ""
                 if rqe:
+                    _cut = window_cutoff(90)
                     n90 = sum(1 for it in rqe.get("items", []) + rqe.get("ledger", [])
-                              if it.get("date", "") >= "2026-05")
-                    vol = ('<span class="vol" data-qid="' + q['id'] + '" role="link" tabindex="0" title="See these pieces on Latest"> · ' + str(n90) + ' in 90d</span>')
+                              if in_window(it.get("date", ""), _cut))
+                    vol = ('<a class="vol" href="latest/?q=' + q['id'] + '" title="See these pieces on Latest">· ' + str(n90) + ' in 90d</a>')
                 inner.append(
                     f'<div class="bq" id="n{anchor}" data-sec="{s["id"]}" data-sub="{su["id"]}" data-x="{E(x)}">'
-                    f'<button class="bqhead" aria-expanded="false"><span class="bqid">{q["id"]}</span>{E(q["t"])}{star}{vol}</button>'
+                    f'<div class="bqrow"><button class="bqhead" aria-expanded="false"><span class="bqid">{q["id"]}</span>{E(q["t"])}{star}</button>{vol}</div>'
                     f'<p class="bqq">{E(q["q"])}</p>'
                     f'<div class="bqbody"><div class="bqin">'
                     f'<p class="bfull">{E(q["q"])}</p>'
@@ -391,7 +392,7 @@ def load_recent(qindex):
         if qid not in qid_to_id:
             errors.append(f"recent.json: unknown qid {qid!r}")
             continue
-        for field in ("tier", "reviewed", "moved"):
+        for field in ("tier", "swept", "moved"):
             if not entry.get(field):
                 errors.append(f"recent.json {qid}: missing '{field}'")
         if entry.get("tier") not in ("high", "medium", "slow"):
@@ -413,6 +414,33 @@ def load_recent(qindex):
             if urlparse(it.get("url", "")).scheme not in ("http", "https"):
                 errors.append(f"recent.json {qid} ledger: bad URL {it.get('url')!r}")
         by_id[qid_to_id[qid]] = entry
+
+    # global integrity checks
+    from datetime import date as _d
+    def _valid_day(ds):
+        try:
+            if len(ds) == 10:
+                _d(int(ds[:4]), int(ds[5:7]), int(ds[8:10]))
+            else:
+                _d(int(ds[:4]), int(ds[5:7]), 1)
+            return True
+        except ValueError:
+            return False
+    seen_urls = {}
+    for qid, entry in data.get("questions", {}).items():
+        for kind, lst in (("items", entry.get("items", [])), ("ledger", entry.get("ledger", []))):
+            for it in lst:
+                u = (it.get("url") or "").rstrip("/")
+                if u in seen_urls:
+                    errors.append(f"duplicate URL across stream: {u} ({seen_urls[u]} and {qid})")
+                else:
+                    seen_urls[u] = qid
+                if not it.get("added"):
+                    errors.append(f"recent.json {qid}: item missing 'added' ({u})")
+                elif not re.match(r"^\d{4}-\d{2}-\d{2}$", it["added"]) or not _valid_day(it["added"]):
+                    errors.append(f"recent.json {qid}: bad added date {it.get('added')!r}")
+                if it.get("date") and not _valid_day(it["date"]):
+                    errors.append(f"recent.json {qid}: non-calendar date {it['date']!r}")
     return {"swept": data.get("swept", ""), "items": by_id}, errors
 
 
@@ -464,6 +492,24 @@ def render_browse(sections, entry_map, recent=None, debates=None):
 
 
 
+
+from datetime import date as _date, timedelta as _timedelta
+
+def window_cutoff(days=90):
+    """Rolling cutoff (build date - days) as YYYY-MM-DD.
+
+    Month-only item dates are compared as their first day, so a piece can
+    fall out of the window early but never stays in it late (conservative:
+    recency is never overstated). The window rolls forward at build time;
+    weekly discovery builds keep it fresh.
+    """
+    return (_date.today() - _timedelta(days=days)).isoformat()
+
+
+def in_window(d, cutoff):
+    return (d if len(d) == 10 else d + "-01") >= cutoff
+
+
 MONTH_NAMES = ["January", "February", "March", "April", "May", "June", "July",
                "August", "September", "October", "November", "December"]
 
@@ -474,7 +520,7 @@ def _parse_reviewed(s):
     return f"{m.group(3)}-{MONTH_NAMES.index(m.group(1))+1:02d}-{int(m.group(2)):02d}"
 
 
-def render_latest(sections, recent, cutoff="2026-05"):
+def render_latest(sections, recent, cutoff=None):
     """Render latest/index.html and latest/feed.xml from stream data.
 
     Page: every selected and ledger item published on/after `cutoff`
@@ -483,6 +529,7 @@ def render_latest(sections, recent, cutoff="2026-05"):
     RSS: ordered by when we ADDED the item (so retrospective additions
     still reach subscribers), pubDate = added date.
     """
+    cutoff = cutoff or window_cutoff(90)
     qmeta = {}
     for s in sections:
         for su in s["subs"]:
@@ -492,12 +539,12 @@ def render_latest(sections, recent, cutoff="2026-05"):
     rows = []
     max_reviewed = ""
     for qid_disp, entry in recent["items"].items():
-        rv = _parse_reviewed(entry.get("reviewed", ""))
+        rv = _parse_reviewed(entry.get("swept", ""))
         if rv > max_reviewed:
             max_reviewed = rv
         for it, sel in [(i, True) for i in entry.get("items", [])] + \
                        [(i, False) for i in entry.get("ledger", [])]:
-            if it["date"][:7] >= cutoff:
+            if in_window(it["date"], cutoff):
                 rows.append({"d": it["date"], "added": it.get("added", ""), "sel": sel,
                              "q": qid_disp, "qt": qmeta[qid_disp]["t"],
                              "sec": qmeta[qid_disp]["sec"],
@@ -662,10 +709,10 @@ font-size:12.5px;color:var(--ink2);line-height:1.55;max-width:620px}
 <nav class="switch" aria-label="View switch"><a href="../">Map</a> · <a href="../browse/">Browse</a> · <b style="color:var(--ink)">Latest</b></nav></header>
 <h1>Latest</h1>
 <p class="lede">Substantive recent pieces our reviews found across all 127 questions — newest first, each linked to the question it belongs to.</p>
-<p class="meta">__COUNT__ pieces since May 2026 · drawn from reviews through __REVIEWED__ · what our reviews observed, not a census of discussion · <a href="feed.xml">RSS</a></p>
-<div class="fbar">__SECLINE__<input class="srch" id="srch" type="search" placeholder="Search title, author, question…" aria-label="Search"><label class="fsel"><input type="checkbox" id="selonly"> Selected only</label></div><div class="qpill" id="qpill"><span id="qpilltext"></span><button id="qclear">clear ×</button></div>
+<p class="meta">__COUNT__ pieces from the last 90 days · updated __REVIEWED__ · substantive pieces tracked from the project&#39;s monitored sources — not a census of discussion · <a href="feed.xml">RSS</a> · <a href="../methodology/">how this works</a></p>
+<div class="fbar">__SECLINE__<input class="srch" id="srch" type="search" placeholder="Search title, author, question…" aria-label="Search"><label class="fsel"><input type="checkbox" id="selonly"> Featured only</label></div><div class="qpill" id="qpill"><span id="qpilltext"></span><button id="qclear">clear ×</button></div>
 __BODY__
-<div class="note">Pieces appear here when a review verifies them and judges that they advance one of the map&#39;s questions — whether selected for the question&#39;s page or noted in its ledger. Publication dates are shown where sources provide them; pieces with month-only dates appear at the end of their month. Discovery runs weekly across our source registry, aggregators, and editor submissions; full reviews of each question run on their own cadence.</div>
+<div class="note">Pieces appear here when the project verifies them and judges that they advance one of the map&#39;s questions — whether selected for the question&#39;s page or noted in its ledger. Publication dates are shown where sources provide them; pieces with month-only dates appear at the end of their month. Discovery runs weekly across our source registry, aggregators, and editor submissions; full reviews of each question run on their own cadence.</div>
 </div>
 <script>
 const QNAMES=__QNAMES__;
@@ -709,6 +756,95 @@ if(p&&QNAMES[p]){state.q=p;}
 apply();
 </script>
 </body></html>"""
+
+
+
+
+METHODOLOGY_HTML = """<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Methodology — The Biggest Questions About AI</title>
+<meta name="description" content="How this site is made: discovery sources, the inclusion threshold, featured versus tracked pieces, the role of AI, human review status, and corrections.">
+<style>
+:root{--bg:#faf9f6;--panel:#fff;--ink:#1d1c1a;--ink2:#514d45;--ink3:#6f6b5f;--line:#e4e1d8;--gold:#a97729;
+--serif:Georgia,'Times New Roman',serif}
+@media (prefers-color-scheme:dark){:root{--bg:#191817;--panel:#211f1d;--ink:#f2f0ea;--ink2:#c3c0b4;--ink3:#8f8b7e;--line:#33312d}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:680px;margin:0 auto;padding:26px 20px 60px}
+header{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.home{font-family:var(--serif);font-size:16px;color:var(--ink);text-decoration:none}
+.switch{margin-left:auto;font-size:13px;color:var(--ink3)}
+.switch a{color:var(--ink2);text-decoration:none}
+h1{font-family:var(--serif);font-weight:400;font-size:30px;margin:18px 0 10px}
+h2{font-family:var(--serif);font-weight:400;font-size:20px;margin:26px 0 6px}
+p{font-size:14.5px;line-height:1.62;color:var(--ink2);margin:0 0 12px}
+strong{color:var(--ink)}
+a{color:var(--ink2)}
+.upd{font-size:12.5px;color:var(--ink3)}
+</style></head><body><div class="wrap">
+<header><a class="home" href="../">The Biggest Questions About&nbsp;AI</a>
+<nav class="switch"><a href="../">Map</a> · <a href="../browse/">Browse</a> · <a href="../latest/">Latest</a></nav></header>
+<h1>Methodology</h1>
+<p class="upd">Updated __TODAY__.</p>
+
+<h2>What this site is</h2>
+<p>A map of __QCOUNT__ open questions about AI, each with a short framing of the live debate,
+curated sources, and a maintained record of substantive recent discussion. The taxonomy — the
+sections, the questions, what is included and deliberately left out — is the editor&#39;s.</p>
+
+<h2>Where pieces come from</h2>
+<p>Discovery runs over a fixed registry of publications, researchers, and aggregators
+(listed in the site&#39;s public repository), supplemented by targeted search and editor
+submissions. It is deliberately bounded: counts and coverage describe <strong>what the project
+monitors, not everything posted online</strong>. Discovery runs weekly; full reviews of each
+question run on their own cadence — faster for fast-moving questions.</p>
+
+<h2>What gets included</h2>
+<p>A piece is tracked when it would matter to a thoughtful reader following that question:
+new evidence, a distinct argument, a serious rebuttal, a measurement, a well-reported
+development. Quality of thought over fame of author. Every tracked piece is fetched and
+verified — the piece exists, the author, venue, and date are right — before it appears
+anywhere. Social-media posts are included only via a verifiable secondary source.</p>
+
+<h2>Featured versus tracked</h2>
+<p>Each question&#39;s page features a small set of pieces, organized editorially; the rest of
+what crossed the threshold appears under &ldquo;Additional relevant discussion&rdquo; and in
+<a href="../latest/">Latest</a>. Featuring reflects significance, author diversity, and the
+shape of the debate — not a verdict that other pieces failed.</p>
+
+<h2>The role of AI, honestly</h2>
+<p>This is an AI-assisted publication. Discovery, verification, and first-draft synthesis
+(including each question&#39;s &ldquo;What changed&rdquo; note) are performed by AI — Claude — operating
+under a written editorial policy, with the editor directing and spot-checking. Every question
+page shows two dates: <strong>latest sweep</strong> (when the AI pipeline last fully reviewed it) and its
+<strong>editorial review</strong> status. &ldquo;Editorial review pending&rdquo; means a human editor has not yet
+examined that page&#39;s selections and synthesis line by line; pages flip to
+&ldquo;editor-approved&rdquo; as that happens. One question (3.2.1) additionally carries a long-form
+entry with its own review status.</p>
+
+<h2>Volume counts</h2>
+<p>The optional discussion-volume numbers (&ldquo;N in 90d&rdquo;) count tracked substantive pieces
+in a rolling 90-day window — one count per piece, assigned to one primary question. They are
+a lens on where attention is concentrating within the monitored sources, not a measure of
+total online discussion, and counts across broad and narrow questions are not perfectly
+comparable.</p>
+
+<h2>Corrections</h2>
+<p>Disagree with a framing, spot a stale claim, or know a piece we missed?
+<a href="https://github.com/elehrer123-arch/ai-question-hierarchy/issues/new?template=suggest-improvement.yml">Suggest a source or correction</a>.
+The main criterion for additions: what does this add that the existing material doesn&#39;t?</p>
+</div></body></html>"""
+
+
+def render_methodology(qcount):
+    today = _date.today()
+    today_h = f"{MONTH_NAMES[today.month-1]} {today.day}, {today.year}"
+    out = METHODOLOGY_HTML.replace("__TODAY__", today_h).replace("__QCOUNT__", str(qcount))
+    outdir = os.path.join(ROOT, "methodology")
+    os.makedirs(outdir, exist_ok=True)
+    with open(os.path.join(outdir, "index.html"), "w", encoding="utf-8") as f:
+        f.write(out)
 
 
 def render_poster(sections):
@@ -833,6 +969,20 @@ if __name__ == "__main__":
     recent, recent_errors = load_recent(qindex)
     debates, debate_errors = load_debates(qindex)
     recent_errors += debate_errors
+    # pos classifications must reference a real pole; debates canon idx must be in range
+    _qid_by_disp = {q["id"]: q for q in qindex.values()}
+    for disp, entry in recent["items"].items():
+        dcfg = debates.get(disp)
+        poles = {p["k"] for p in dcfg["poles"]} if dcfg else set()
+        for it in entry.get("items", []) + entry.get("ledger", []):
+            if it.get("pos") and it["pos"] not in poles:
+                recent_errors.append(f"{disp}: pos {it['pos']!r} has no matching debate pole")
+    for disp, dcfg in (debates or {}).items():
+        qq = _qid_by_disp.get(disp)
+        ncanon = len(qq["links"]) if qq else 0
+        for idx in (dcfg.get("canon") or {}):
+            if not idx.isdigit() or int(idx) >= ncanon:
+                recent_errors.append(f"debates {disp}: canon index {idx} out of range (canon has {ncanon})")
     if recent_errors:
         print("RECENT VALIDATION FAILED:", file=sys.stderr)
         for e in recent_errors:
@@ -843,6 +993,7 @@ if __name__ == "__main__":
     render_browse(sections, entry_map, recent, debates)
     render_poster(sections)
     latest_n = render_latest(sections, recent)
+    render_methodology(sum(len(su["qs"]) for s in sections for su in s["subs"]))
     qcount, lcount = render_index(sections, overview_links, outdir="all", legacy=True)
     print(f"built map (index.html), browse/, latest/ ({latest_n} pieces + RSS), poster/, all/: {qcount} questions, "
           f"{lcount} source links, {len(entries)} entry page(s)")

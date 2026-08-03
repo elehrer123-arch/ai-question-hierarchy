@@ -3,22 +3,36 @@
 **Live site:** https://elehrer123-arch.github.io/ai-question-hierarchy/
 
 A navigable map of the landscape of thought around AI: 5 sections, 26 subsections,
-127 open questions — each with a short framing of the live debate and curated
-source links (277 in total, from papers to notable posts). The ten load-bearing
-cruxes are marked ✱ on the questions that carry them.
+127 open questions — each with a short framing of the live debate, curated
+source links, and a maintained stream of substantive recent discussion
+(690+ tracked pieces and counting). All 127 questions carry recent-thinking
+coverage; discovery runs weekly.
+
+This is an AI-assisted publication: sweeps, verification, and first-draft
+synthesis are performed by Claude under `docs/stream-policy.md`, with the
+editor directing and spot-checking. Every question page shows its latest
+sweep date and human-review status (`pending` → `editor-approved`). See
+`/methodology/` on the site.
 
 ## How this repository works
 
 The site is built from structured source data — edit the data, not the HTML.
-Four public surfaces, each with one job: **the map** (`/`, whole-map overview
-with zoom and in-place disclosure), **browse** (`/browse/`, every section,
-subsection, and question as a page), **entries** (`/questions/<slug>/`,
-standalone citable articles), and **the poster** (`/poster/`, the radial
-one-circle view). The classic one-page accordion remains at `/all/`.
+Five public surfaces, each with one job: **the map** (`/`, whole-map overview
+with zoom, in-place disclosure, and an optional discussion-volume lens),
+**browse** (`/browse/`, every section, subsection, and question as a page,
+including each question's recent-thinking brief), **latest** (`/latest/`,
+all tracked recent pieces chronologically, with filters, search, and RSS),
+**entries** (`/questions/<slug>/`, standalone citable articles), and
+**the poster** (`/poster/`, the radial one-circle view). The classic
+one-page accordion remains at `/all/`. `/methodology/` explains how the
+stream is made.
 
 ```
 data/              Map content, one JSON file per section
   trajectory.json  safety.json  economy.json  power.json  humanity.json
+  recent.json      The stream: featured + tracked pieces per question
+  debates.json     Debate-column configs for questions with real camps
+  sources.json     Discovery registry (feeds, aggregators, follows)
 content/
   questions/       One entry per question (front-mattered Markdown)
 templates/

@@ -128,6 +128,7 @@ h1{font-family:var(--serif);font-size:29px;line-height:1.22;letter-spacing:-.01e
 .chb{font-size:13px;color:var(--ink2);line-height:1.55}
 .rh{font-family:var(--serif);font-size:20px;font-weight:700;margin-bottom:2px}
 .rhm{font-size:12.5px;color:var(--ink3);margin-bottom:14px}
+.rvpend{color:var(--gold)}
 .gsec{display:flex;gap:32px;background:color-mix(in srgb,var(--kc) 4%,transparent);border-top:2px solid var(--kc);border-radius:0 0 12px 12px;padding:18px 22px 20px;margin-bottom:16px}
 .ggut{flex:0 0 190px}
 .ggn{font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--kc);line-height:1.4}
@@ -173,7 +174,7 @@ h1{font-family:var(--serif);font-size:29px;line-height:1.22;letter-spacing:-.01e
 <nav id="tree" aria-label="Map"><div id="srch"><input id="q" type="search" placeholder="Search questions…" aria-label="Search questions"></div>
 <div class="lens"><button id="lensEntry" aria-pressed="false">Full entries</button></div>
 <div id="rows"></div></nav>
-<main id="page"><button id="back">← Map</button><div class="cols"><div class="pin" id="pin"></div><aside id="ctx" aria-label="Context"></aside></div></main>
+<main id="page"><button id="back">← Back to questions</button><div class="cols"><div class="pin" id="pin"></div><aside id="ctx" aria-label="Context"></aside></div></main>
 </div>
 <script>
 const DATA=__DATA__, ENTRY_UNUSED=0;
@@ -299,8 +300,8 @@ function render(k){
     h+=`<p class="quiet" style="--sc:${SC}">`+(en?`<a href="${en.href}">Read the full analysis →</a> &nbsp;·&nbsp; `:'')+`<a href="../#q${q.id.replaceAll('.','-')}">View on the map →</a></p>`;
     if(rq&&rq.moved){
       const mv=Array.isArray(rq.moved)?rq.moved:[rq.moved];
-      const anchor2=rq.prev_reviewed?`since ${esc(rq.prev_reviewed)}`:(rq.window?esc(rq.window):'');
-      h+=`<div class="mvh">What changed${anchor2?' · '+anchor2:''} · reviewed ${esc(rq.reviewed)}</div><div class="changed">`;
+      const anchor2=rq.prev_swept?`since ${esc(rq.prev_swept)}`:(rq.window?esc(rq.window):'');
+      h+=`<div class="mvh">What changed${anchor2?' · '+anchor2:''} · latest sweep ${esc(rq.swept)}${rq.approved?` · editor-approved ${esc(rq.approved)}`:` · <span class="rvpend">editorial review pending</span>`}</div><div class="changed">`;
       mv.forEach((m,i)=>{
         const t0=(typeof m==='object')?m.t:null, b=(typeof m==='object')?m.b:m;
         h+=`<div class="ch"><div class="chn">0${i+1}</div>`+(t0?`<div class="cht">${esc(t0)}</div>`:'')+`<p class="chb">${esc(b)}</p></div>`;
@@ -314,7 +315,7 @@ function render(k){
       const deb=DEBATES[q.id];
       const led=rq.ledger||[];
       const qual=rc.length+led.length;
-      h+=`<div class="rh">Recent thinking</div><div class="rhm">${led.length?`${rc.length} selected of ${qual} qualifying pieces observed`:`Selected for significance · ${rc.length} item${rc.length>1?'s':''}`}${rq.window?` · ${esc(rq.window)}`:''} · <a href="../latest/?q=${q.id}" style="color:var(--ink2)">all ${qual} chronologically →</a></div>`;
+      h+=`<div class="rh">Recent thinking</div><div class="rhm">${led.length?`${rc.length} featured from ${qual} substantive pieces tracked`:`${rc.length} featured piece${rc.length>1?'s':''}`}${rq.window?` · ${esc(rq.window)}`:''} · <a href="../latest/?q=${q.id}" style="color:var(--ink2)">all ${qual} chronologically →</a></div>`;
       let groups=[];
       if(deb){
         const assigned=new Set(deb.poles.map(p=>p.k));
@@ -339,7 +340,7 @@ function render(k){
       h+=`<div class="gtail">`;
       const led2=rq.ledger||[];
       if(led2.length){
-        h+=`<details class="gfound"><summary>More from this sweep (${led2.length})</summary>`+
+        h+=`<details class="gfound"><summary>Additional relevant discussion (${led2.length})</summary>`+
            `<div class="gim" style="margin:6px 0 4px">Met the relevance bar during the sweep; not selected for the reading list above.</div>`;
         led2.slice().sort((a,b)=>b.date.localeCompare(a.date)).forEach(l=>{
           h+=`<div class="gcp" style="padding:7px 0"><a class="gct" href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.title)}</a><div class="gim">${esc(l.author)} · ${esc(l.venue)} · ${fmtD(l.date)}</div></div>`;
@@ -381,11 +382,19 @@ function show(k,push){
   const r=row(k); if(r) r.scrollIntoView({block:'nearest'});
   document.body.classList.add('detail');
   document.getElementById('page').scrollTop=0;
-  if(push!==false) history.replaceState(null,'','#'+(k==='root'?'':k.replaceAll('.','-')));
+  if(push!==false){
+    const h='#'+(k==='root'?'':k.replaceAll('.','-'));
+    if(location.hash!==h) history.pushState({k:k},'',h); else history.replaceState({k:k},'',h);
+  }
   const tm=document.getElementById('toMap');
   if(tm){const n2=nodes[k]; tm.href = n2.type==='q' ? '../#q'+k.replaceAll('.','-') : (n2.type==='root'?'../':'../#'+k.replaceAll('.','-'));}
 }
 pin.addEventListener('click',e=>{const b=e.target.closest('[data-go]'); if(b) show(b.dataset.go)});
+window.addEventListener('popstate',()=>{
+  const h=(location.hash||'').replace(/^#q?/,'').replaceAll('-','.');
+  const k=h&&nodes[h]?h:'root';
+  show(k,false);
+});
 document.getElementById('back').addEventListener('click',()=>{document.body.classList.remove('detail')});
 /* ---------- context rail ---------- */
 const ctx=document.getElementById('ctx');

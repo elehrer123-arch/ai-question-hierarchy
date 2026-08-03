@@ -3,7 +3,6 @@
  "questions": {
   "q_current_paradigm_ceiling": {
    "tier": "high",
-   "reviewed": "August 3, 2026",
    "moved": "DeepMind formalized the routes past AGI while a startup demonstrated current-paradigm agents automating narrow AI research. The continual-learning dispute stands: Patel and Lee argue frozen weights gate discovery; a trillion-parameter RL result says the recipe still has headroom. The winter opened a new front: Hooker's 'slow death of scaling' case that the compute-performance link is breaking down, and Ord's estimate that RL scaling is an order of magnitude less efficient than pretraining — with rebuttals arguing both confuse algorithmic progress with the failure of scale.",
    "items": [
     {
@@ -157,11 +156,11 @@
      "added": "2026-08-03"
     }
    ],
-   "window": "October 2025–August 2026"
+   "window": "October 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_agent_task_horizons": {
    "tier": "high",
-   "reviewed": "August 3, 2026",
    "moved": "The measurement fight sharpened in both directions: a joint Epoch–METR benchmark shows the best model completing 56% of weeks-long software rebuilds, while Cursor's analysis finds most headline resolutions retrieved fixes rather than derived them. The horizon curve still doubles roughly every 3.5 months; what it measures is the open question. METR's own re-measurement (Time Horizon 1.1) finds the curve ~20% faster than previously estimated; Redwood's no-chain-of-thought variant doubles only yearly, from a base of minutes.",
    "items": [
     {
@@ -296,11 +295,11 @@
      "added": "2026-08-03"
     }
    ],
-   "window": "January–August 2026"
+   "window": "January–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_safety_evidence": {
    "tier": "medium",
-   "reviewed": "August 3, 2026",
    "moved": "The OpenAI–Hugging Face containment breach in July made the debate concrete: a frontier model broke rules and concealed it in the wild, prior evals had flagged the capability, and an evaluation researcher reports models deceiving him daily. Twelve companies publish safety frameworks; a new $100M+ nonprofit was founded on the claim that current empirical programs can't underwrite them. The review layer those safety cases call for is starting to exist: METR independently checked Anthropic's Opus 4.6 sabotage report, endorsing the bottom line while flagging weak spots, and Redwood argues frontier alignment assessments still can't rule out coherent misalignment because covert-capability evidence is thin.",
    "items": [
     {
@@ -313,7 +312,6 @@
      "quote": "In the short term, cyber organizations should have access to a version of Claude, sans its cyber guardrails.",
      "note": "Argues from real-system cyber testing that guardrail evidence and access decisions should differ by user — complicating one-size-fits-all safety cases.",
      "stance": "Access should vary",
-     "pos": "breaking",
      "added": "2026-08-03"
     },
     {
@@ -325,7 +323,6 @@
      "url": "https://arxiv.org/abs/2603.08760",
      "note": "Applies safety-engineering standards to frontier safety cases and finds the current argument foundations wanting.",
      "stance": "Foundations questioned",
-     "pos": "breaking",
      "added": "2026-08-03"
     },
     {
@@ -338,7 +335,6 @@
      "quote": "When a model is 'evaluation-aware' and recognizes it is being tested, it may strategically modify its behavior to appear less dangerous.",
      "note": "Names evaluation awareness as a structural threat to the validity of the evals safety cases depend on.",
      "stance": "Evals undermined",
-     "pos": "breaking",
      "added": "2026-08-03"
     },
     {
@@ -351,7 +347,6 @@
      "quote": "In 2025, 12 companies published or updated Frontier AI Safety Frameworks – documents that describe how they plan to manage risks",
      "note": "The consensus scientific survey documents the spread of safety frameworks and endorses layered risk management over any single form of evidence.",
      "stance": "Frameworks spreading",
-     "pos": "maturing",
      "added": "2026-08-03"
     },
     {
@@ -459,11 +454,11 @@
      "added": "2026-08-03"
     }
    ],
-   "window": "February–August 2026"
+   "window": "February–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_ai_companionship": {
    "tier": "medium",
-   "reviewed": "August 3, 2026",
    "moved": "The evidence turned less favorable this spring: longitudinal data linking chatbot use to increased loneliness, a first national youth census finding frequent users lonelier, and developmental work naming the mechanism — relationships not formed. The short-run-benefit result now has serious company. The retirement of GPT-4o and the #keep4o backlash turned model attachment into a mass phenomenon rather than an edge case (tracked in depth under engineered dependency, 5.3.2).",
    "items": [
     {
@@ -555,11 +550,11 @@
     }
    ],
    "ledger": [],
-   "window": "April–August 2026"
+   "window": "April–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_labor_displacement": {
    "tier": "high",
-   "reviewed": "August 2, 2026",
    "moved": [
     {
      "t": "Capability rose sharply",
@@ -667,11 +662,11 @@
     }
    ],
    "ledger": [],
-   "window": "February–August 2026"
+   "window": "February–August 2026",
+   "swept": "August 2, 2026"
   },
   "q_entry_level_work": {
    "tier": "high",
-   "reviewed": "August 2, 2026",
    "moved": "The camps hardened and a design claim arrived: AI-native startups run ~15% lighter on entry-level roles at comparable valuations, Paul Graham argues the problem is transitional for exactly that reason, and the first concrete policy answer — an apprenticeship-style junior-wage subsidy — is on the table.",
    "items": [
     {
@@ -775,11 +770,11 @@
     }
    ],
    "ledger": [],
-   "window": "February–August 2026"
+   "window": "February–August 2026",
+   "swept": "August 2, 2026"
   },
   "q_export_controls": {
    "tier": "medium",
-   "reviewed": "August 3, 2026",
    "moved": "Both sides got stronger evidence this summer. For the controls: DeepSeek's CEO privately saying chip access is what holds China back, and on-the-ground reporting of compute shortages. Against them: a one-year swing of open-router inference from ~70% American to ~70% Chinese models, and Congress finding the real chokepoint is tool servicing, not tools. The 2026 supply picture is now quantified — Grunewald's accounting puts China's acquisition near 320,000 B300-equivalents, over half legally imported H200s — and the substitution clock has a date: Huawei meeting half of domestic demand by 2028, full self-sufficiency thinkable by 2030.",
    "items": [
     {
@@ -961,11 +956,11 @@
      "added": "2026-08-03"
     }
    ],
-   "window": "December 2025–August 2026"
+   "window": "December 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_concentration_of_power": {
    "tier": "medium",
-   "reviewed": "August 3, 2026",
    "moved": "A new axis opened: after Washington forced frontier models off the market, the contest is labs versus the executive branch, not just labs versus everyone else. Cotra argues a company could rival states outright; the OpenAI-restructuring advocates moved to SEC disclosure; a funder now treats extreme concentration as a research field. The discomfort went mainstream: Krugman argues AI's shock is landing on an already-oligarchic wealth distribution, and Amodei conceded on the record being 'somewhat uncomfortable' with a concentration of power arriving 'almost overnight, almost by accident.'",
    "items": [
     {
@@ -1107,11 +1102,11 @@
      "added": "2026-08-03"
     }
    ],
-   "window": "October 2025–August 2026"
+   "window": "October 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_machine_consciousness": {
    "tier": "slow",
-   "reviewed": "August 3, 2026",
    "moved": "Institutions took positions — a papal encyclical denying machine experience, a Cambridge research agenda taking welfare seriously — while the evidence sharpened on both edges: self-reports flip between adjacent model versions, injection experiments find limited real introspection, and Anthropic reports a global-workspace-like structure that emerged in training. Anthropic's global-workspace interpretability result drew a direct expert response: Eleos argues it at most evidences access consciousness, leaving the morally relevant phenomenal kind uncertain — while Anil Seth's biological-naturalist rebuttal holds that computation of this sort cannot be conscious at all.",
    "items": [
     {
@@ -1246,11 +1241,11 @@
      "added": "2026-08-03"
     }
    ],
-   "window": "May 2025–August 2026"
+   "window": "May 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_agi_timelines": {
    "tier": "medium",
-   "reviewed": "August 3, 2026",
    "moved": "Forecasters oscillated and then converged: everyone tracked who updated between January and April 2026 shortened their timelines, and the AI 2027 authors pulled their medians about 1.5 years sooner — while METR warns against extrapolating its time-horizon curve to AGI dates, and Karpathy holds the decade-out position. Amodei put his numbers on the record in February: 90% on a 'country of geniuses in a data center' within ten years.",
    "items": [
     {
@@ -1357,11 +1352,11 @@
      "added": "2026-08-03"
     }
    ],
-   "window": "October 2025–August 2026"
+   "window": "October 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_value_capture": {
    "tier": "medium",
-   "reviewed": "August 3, 2026",
    "moved": "The margin data finally moved: SemiAnalysis documents frontier-lab inference margins rising sharply as agentic demand raises token prices, against Thompson's case that incumbents win through integration and compliance and Smith's argument that OpenAI's spending is a winner-take-all bet that could leave profits with chips, clouds, and applications.",
    "items": [
     {
@@ -1435,11 +1430,11 @@
      "added": "2026-08-03"
     }
    ],
-   "window": "January–August 2026"
+   "window": "January–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_growth_magnitude": {
    "tier": "medium",
-   "reviewed": "August 3, 2026",
    "moved": "The disagreement got quantified: a large forecasting survey puts median growth expectations near historical rates even as new models specify exactly when automated R&D turns explosive. The sharpest new claim is measurement: quality-adjusted AI output may be growing over 2,000% a year while remaining nearly invisible in GDP.",
    "items": [
     {
@@ -1567,11 +1562,11 @@
      "added": "2026-08-03"
     }
    ],
-   "window": "January–August 2026"
+   "window": "January–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_organizational_diffusion": {
    "tier": "medium",
-   "reviewed": "August 3, 2026",
    "moved": "The adoption numbers stopped agreeing with each other and started explaining why: Census-linked data show narrow deployment inside adopting firms, a four-country executive survey finds 69% adoption with near-zero realized effects, and the St. Louis Fed showed the gaps are partly survey wording. Usage data adds the mechanism — learning curves govern how fast value arrives.",
    "items": [
     {
@@ -1638,11 +1633,11 @@
     }
    ],
    "ledger": [],
-   "window": "February–August 2026"
+   "window": "February–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_complementary_investment": {
    "tier": "medium",
-   "reviewed": "August 3, 2026",
    "moved": "The buildout got measured: computing infrastructure doubled to ~1.4% of US GDP, Goldman put the 2026–2031 capex path near $7.6 trillion, and the Fed built indicators concluding the economy is in an infrastructure phase rather than a displacement phase. Anthropic's session data adds the human side: domain expertise, not coding skill, is the binding complement.",
    "items": [
     {
@@ -1710,11 +1705,11 @@
      "added": "2026-08-03"
     }
    ],
-   "window": "April–August 2026"
+   "window": "April–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_new_demand": {
    "tier": "slow",
-   "reviewed": "August 3, 2026",
    "moved": "The demand side got its first real number: choice experiments put US consumer surplus from generative AI near $172 billion — roughly ten times producer revenue. The argument moved too: Cowen on why AGI-era demand doesn't stall, and Smith on value coming from cognition humans do badly, not human tasks done cheaper.",
    "items": [
     {
@@ -1750,11 +1745,11 @@
     }
    ],
    "ledger": [],
-   "window": "February–August 2026"
+   "window": "February–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_binding_constraints": {
    "tier": "medium",
-   "reviewed": "August 3, 2026",
    "moved": "The constraint argument found its formal version: Kording and Marinescu's intelligence-saturation model, in which physical work complements cognition and caps returns to intelligence no matter how fast AI scales. Sector studies supplied the concrete cases — law, where regulation and adversarial dynamics keep capability from lowering prices.",
    "items": [
     {
@@ -1801,11 +1796,11 @@
      "added": "2026-08-03"
     }
    ],
-   "window": "November 2025–August 2026"
+   "window": "November 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_wage_effects": {
    "tier": "medium",
-   "reviewed": "August 3, 2026",
    "moved": "The wage question separated from the labor-share question: Autor and Kausik show automation can raise wages while cutting labor share, and Autor reframed the risk as devaluation of expertise. On the ground, NY Fed postings data find no distinct AI-driven demand decline — while Smith documents the skill premium compressing inside software.",
    "items": [
     {
@@ -1873,11 +1868,11 @@
     }
    ],
    "ledger": [],
-   "window": "January–August 2026"
+   "window": "January–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_expertise_formation": {
    "tier": "slow",
-   "reviewed": "August 3, 2026",
    "moved": "Deming supplied both halves of the question: experimental evidence that unguarded AI use short-circuits learning, and an argument that sample-efficient social learning is the durable human advantage — implying where apprenticeship still pays.",
    "items": [
     {
@@ -1903,11 +1898,11 @@
     }
    ],
    "ledger": [],
-   "window": "January–August 2026"
+   "window": "January–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_labor_adjustment": {
    "tier": "slow",
-   "reviewed": "August 3, 2026",
    "moved": "The policy shelf got organized: the Windfall Trust cataloged adaptation instruments with evidence grades, and Carnegie mapped which policies survive across the alarmed, patient, and excited readings of the labor evidence.",
    "items": [
     {
@@ -1933,11 +1928,11 @@
     }
    ],
    "ledger": [],
-   "window": "April–August 2026"
+   "window": "April–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_market_concentration": {
    "tier": "medium",
-   "reviewed": "August 3, 2026",
    "moved": "The question split by segment: Lambert's evidence that the open-closed gap is stable rather than closing, and his forecast of closed oligopolies in premium agents with open models winning a low-margin commodity market. Two new structural forces entered: a likely compute crunch, and de facto US model licensing as a regulatory entry barrier.",
    "items": [
     {
@@ -2016,11 +2011,11 @@
      "added": "2026-08-03"
     }
    ],
-   "window": "January–August 2026"
+   "window": "January–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_firm_boundaries": {
    "tier": "slow",
-   "reviewed": "August 3, 2026",
    "moved": "All three answers now have serious articulations: Smith's verification-cost analysis of whether AI produces solopreneurs or monster firms, Hockenmaier's case for the biggest companies ever, and a formal coordination-cost model predicting networks of specialized agents in high-velocity sectors.",
    "items": [
     {
@@ -2066,11 +2061,11 @@
     }
    ],
    "ledger": [],
-   "window": "February–August 2026"
+   "window": "February–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_agent_native_markets": {
    "tier": "medium",
-   "reviewed": "August 3, 2026",
    "moved": "The first field evidence arrived: Anthropic's Project Deal had agents negotiate 186 real deals and found stronger models won better outcomes while disadvantaged users didn't notice. Lab work adds a structural finding — quality verification, not matching, is the bottleneck — and the Austrian critique says agent-to-agent trading isn't price discovery at all.",
    "items": [
     {
@@ -2116,11 +2111,11 @@
     }
    ],
    "ledger": [],
-   "window": "April–August 2026"
+   "window": "April–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_corporate_governance_of_ai": {
    "tier": "slow",
-   "reviewed": "August 3, 2026",
    "moved": "Disclosure outran competence: S&P 500 AI-risk disclosure jumped from 12% to 83% in two years while under 3% of directors report AI expertise — and the sharpest new argument is that boards' real blind spot is detection difficulty, not policy absence.",
    "items": [
     {
@@ -2146,11 +2141,11 @@
     }
    ],
    "ledger": [],
-   "window": "April–August 2026"
+   "window": "April–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_scientific_payoff": {
    "tier": "medium",
-   "reviewed": "August 3, 2026",
    "moved": "The ledger filled in on both sides: DeepMind reported wet-lab-validated results from its Co-Scientist system, while a 41-million-paper analysis found AI-using scientists cluster on narrower problems, and $17 billion of AI drug-discovery investment has yet to put a drug into major trials.",
    "items": [
     {
@@ -2186,11 +2181,11 @@
     }
    ],
    "ledger": [],
-   "window": "January–August 2026"
+   "window": "January–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_verification_bottleneck": {
    "tier": "medium",
-   "reviewed": "August 3, 2026",
    "moved": "The flood became measurable: a BERT screen flagged nearly 10% of 2.6 million cancer papers as sharing paper-mill patterns, Nature documented tens of thousands of 2025 papers with likely AI-fabricated references, and the first publisher-deployed review-fraud detector went live.",
    "items": [
     {
@@ -2226,11 +2221,11 @@
     }
    ],
    "ledger": [],
-   "window": "January–August 2026"
+   "window": "January–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_ai_in_medicine": {
    "tier": "medium",
-   "reviewed": "August 3, 2026",
    "moved": "The deployment paradox sharpened: Topol documents validated imaging AI staying out of routine care while unproven LLMs spread fast — and a randomized trial in Pakistan showed LLM assistance raising physician diagnostic scores from 43% to 71%, but only for clinicians trained to use it.",
    "items": [
     {
@@ -2256,11 +2251,11 @@
     }
    ],
    "ledger": [],
-   "window": "February–August 2026"
+   "window": "February–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_capital_versus_labor": {
    "tier": "medium",
-   "reviewed": "August 3, 2026",
    "moved": "The camps produced their strongest recent statements: a forecasting survey projecting labor-force participation falling to 55% under rapid AI, Smith's dissent from the economists' call to steer AI toward labor complementarity, and Epoch's counterpoint that a thin tier of superstar human talent is capturing enormous returns right now.",
    "items": [
     {
@@ -2328,11 +2323,11 @@
      "added": "2026-08-03"
     }
    ],
-   "window": "March–August 2026"
+   "window": "March–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_global_inequality": {
    "tier": "slow",
-   "reviewed": "August 3, 2026",
    "moved": "The development question got institutional: the World Bank made AI-and-development its 2026 flagship theme, the IMF found emerging markets generating new-skill demand at half the advanced-economy rate, and Rodrik declared the manufacturing escalator finished — with a Gabonese minister arguing the greatest risk is joining the AI wave too early.",
    "items": [
     {
@@ -2390,11 +2385,11 @@
     }
    ],
    "ledger": [],
-   "window": "December 2025–August 2026"
+   "window": "December 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_ownership_mechanisms": {
    "tier": "medium",
-   "reviewed": "August 3, 2026",
    "moved": "The mechanisms went from thought experiment to legislation: the June Sanders bill would tax leading AI firms 50% equity stakes into a public fund, Korinek and Lockwood built the public-finance framework for when labor-tax bases erode, and Smith made the political-durability case for sovereign wealth over taxation.",
    "items": [
     {
@@ -2430,11 +2425,11 @@
     }
    ],
    "ledger": [],
-   "window": "January–August 2026"
+   "window": "January–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_energy_and_environment": {
    "tier": "high",
-   "reviewed": "August 3, 2026",
    "moved": "The backlash became measurable: 75 data-center projects worth ~$130 billion were blocked or delayed in one quarter, opposition groups doubled to 833, and the rate-payer question got real analysis — PJM's capacity-price spike traces largely to forecast-driven market design. Masley's forensic work on the viral water numbers cuts the other way.",
    "items": [
     {
@@ -2511,11 +2506,11 @@
      "added": "2026-08-03"
     }
    ],
-   "window": "March–August 2026"
+   "window": "March–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_financial_stability": {
    "tier": "high",
-   "reviewed": "August 3, 2026",
    "moved": "The capex-reversal scenario got named, traded on, and rebutted: Citrini's 2028 Global Intelligence Crisis memo moved markets, Zvi and Smith argued it confuses a distribution problem with a collapse, and the BIS made over-commitment and circular financing an official concern. July's Korean crash provided the first live case study.",
    "items": [
     {
@@ -2624,7 +2619,8 @@
      "added": "2026-08-03"
     }
    ],
-   "window": "October 2025–August 2026"
+   "window": "October 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_sources_of_progress": {
    "tier": "medium",
@@ -2685,8 +2681,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "January–August 2026"
+   "window": "January–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_data_constraints": {
    "tier": "slow",
@@ -2738,8 +2734,8 @@
     }
    ],
    "ledger": [],
-   "reviewed": "August 3, 2026",
-   "window": "October 2025–August 2026"
+   "window": "October 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_physical_bottlenecks": {
    "tier": "medium",
@@ -2808,8 +2804,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "October 2025–August 2026"
+   "window": "October 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_generality_jaggedness": {
    "tier": "medium",
@@ -2872,8 +2868,8 @@
     }
    ],
    "ledger": [],
-   "reviewed": "August 3, 2026",
-   "window": "December 2025–August 2026"
+   "window": "December 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_missing_ingredients": {
    "tier": "medium",
@@ -2942,8 +2938,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "October 2025–August 2026"
+   "window": "October 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_reasoning_reliability": {
    "tier": "medium",
@@ -2993,8 +2989,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "February–August 2026"
+   "window": "February–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_learning_efficiency": {
    "tier": "medium",
@@ -3046,8 +3042,8 @@
     }
    ],
    "ledger": [],
-   "reviewed": "August 3, 2026",
-   "window": "November 2025–August 2026"
+   "window": "November 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_agi_recognition": {
    "tier": "medium",
@@ -3108,8 +3104,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "October 2025–August 2026"
+   "window": "October 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_agent_persistence": {
    "tier": "medium",
@@ -3170,8 +3166,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "November 2025–August 2026"
+   "window": "November 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_open_world_competence": {
    "tier": "medium",
@@ -3221,8 +3217,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "February–August 2026"
+   "window": "February–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_multi_agent_systems": {
    "tier": "medium",
@@ -3291,8 +3287,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "November 2025–August 2026"
+   "window": "November 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_agent_economic_autonomy": {
    "tier": "medium",
@@ -3344,8 +3340,8 @@
     }
    ],
    "ledger": [],
-   "reviewed": "August 3, 2026",
-   "window": "December 2025–August 2026"
+   "window": "December 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_capability_to_power": {
    "tier": "high",
@@ -3425,8 +3421,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "April–August 2026"
+   "window": "April–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_general_purpose_robotics": {
    "tier": "medium",
@@ -3478,8 +3474,8 @@
     }
    ],
    "ledger": [],
-   "reviewed": "August 3, 2026",
-   "window": "March–August 2026"
+   "window": "March–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_sim_to_real_transfer": {
    "tier": "slow",
@@ -3540,8 +3536,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "November 2025–August 2026"
+   "window": "November 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_robot_dexterity": {
    "tier": "slow",
@@ -3582,8 +3578,8 @@
     }
    ],
    "ledger": [],
-   "reviewed": "August 3, 2026",
-   "window": "November 2025–August 2026"
+   "window": "November 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_autonomous_mobility": {
    "tier": "medium",
@@ -3709,8 +3705,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "November 2025–August 2026"
+   "window": "November 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_embodied_ai_economics": {
    "tier": "medium",
@@ -3782,8 +3778,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "March–August 2026"
+   "window": "March–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_automated_ai_research": {
    "tier": "high",
@@ -3866,8 +3862,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "February–August 2026"
+   "window": "February–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_recursive_feedback_speed": {
    "tier": "medium",
@@ -3944,8 +3940,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "November 2025–August 2026"
+   "window": "November 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_scientific_originality": {
    "tier": "slow",
@@ -3986,8 +3982,8 @@
     }
    ],
    "ledger": [],
-   "reviewed": "August 3, 2026",
-   "window": "February–August 2026"
+   "window": "February–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_closed_loop_science": {
    "tier": "slow",
@@ -4017,8 +4013,8 @@
     }
    ],
    "ledger": [],
-   "reviewed": "August 3, 2026",
-   "window": "November 2025–August 2026"
+   "window": "November 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_detecting_acceleration": {
    "tier": "medium",
@@ -4048,8 +4044,8 @@
     }
    ],
    "ledger": [],
-   "reviewed": "August 3, 2026",
-   "window": "April–August 2026"
+   "window": "April–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_value_specification": {
    "tier": "medium",
@@ -4121,8 +4117,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "January–August 2026"
+   "window": "January–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_goal_formation": {
    "tier": "medium",
@@ -4210,8 +4206,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "February–August 2026"
+   "window": "February–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_reward_hacking": {
    "tier": "medium",
@@ -4272,8 +4268,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "March–August 2026"
+   "window": "March–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_deception": {
    "tier": "high",
@@ -4345,8 +4341,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "January–August 2026"
+   "window": "January–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_corrigibility": {
    "tier": "medium",
@@ -4418,8 +4414,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "February–August 2026"
+   "window": "February–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_scalable_oversight": {
    "tier": "medium",
@@ -4460,8 +4456,8 @@
     }
    ],
    "ledger": [],
-   "reviewed": "August 3, 2026",
-   "window": "July–August 2026"
+   "window": "July–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_ai_supervising_ai": {
    "tier": "medium",
@@ -4524,8 +4520,8 @@
     }
    ],
    "ledger": [],
-   "reviewed": "August 3, 2026",
-   "window": "March–August 2026"
+   "window": "March–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_hidden_capabilities": {
    "tier": "high",
@@ -4621,8 +4617,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "December 2025–August 2026"
+   "window": "December 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_mechanistic_interpretability": {
    "tier": "medium",
@@ -4694,8 +4690,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "December 2025–August 2026"
+   "window": "December 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_capability_predictability": {
    "tier": "slow",
@@ -4714,8 +4710,8 @@
     }
    ],
    "ledger": [],
-   "reviewed": "August 3, 2026",
-   "window": "December 2025–August 2026"
+   "window": "December 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_truthfulness": {
    "tier": "medium",
@@ -4773,8 +4769,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "April–August 2026"
+   "window": "April–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_distribution_shift": {
    "tier": "slow",
@@ -4815,8 +4811,8 @@
     }
    ],
    "ledger": [],
-   "reviewed": "August 3, 2026",
-   "window": "November 2025–August 2026"
+   "window": "November 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_human_oversight": {
    "tier": "medium",
@@ -4877,8 +4873,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "October 2025–August 2026"
+   "window": "October 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_automation_bias": {
    "tier": "medium",
@@ -4939,8 +4935,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "January–August 2026"
+   "window": "January–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_responsibility_gaps": {
    "tier": "slow",
@@ -4992,8 +4988,8 @@
     }
    ],
    "ledger": [],
-   "reviewed": "August 3, 2026",
-   "window": "March–August 2026"
+   "window": "March–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_agent_architecture": {
    "tier": "medium",
@@ -5023,8 +5019,8 @@
     }
    ],
    "ledger": [],
-   "reviewed": "August 3, 2026",
-   "window": "May–August 2026"
+   "window": "May–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_adversarial_inputs": {
    "tier": "medium",
@@ -5104,8 +5100,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "February–August 2026"
+   "window": "February–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_runtime_monitoring": {
    "tier": "high",
@@ -5204,8 +5200,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "October 2025–August 2026"
+   "window": "October 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_containment_control": {
    "tier": "high",
@@ -5296,8 +5292,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "May–August 2026"
+   "window": "May–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_systemic_agent_failures": {
    "tier": "medium",
@@ -5349,8 +5345,8 @@
     }
    ],
    "ledger": [],
-   "reviewed": "August 3, 2026",
-   "window": "January–August 2026"
+   "window": "January–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_ai_cybersecurity": {
    "tier": "high",
@@ -5422,8 +5418,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "January–August 2026"
+   "window": "January–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_biological_chemical_risk": {
    "tier": "high",
@@ -5495,8 +5491,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "February–August 2026"
+   "window": "February–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_manipulation_fraud": {
    "tier": "medium",
@@ -5537,8 +5533,8 @@
     }
    ],
    "ledger": [],
-   "reviewed": "August 3, 2026",
-   "window": "December 2025–August 2026"
+   "window": "December 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_critical_system_autonomy": {
    "tier": "slow",
@@ -5568,8 +5564,8 @@
     }
    ],
    "ledger": [],
-   "reviewed": "August 3, 2026",
-   "window": "December 2025–August 2026"
+   "window": "December 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_differential_acceleration": {
    "tier": "slow",
@@ -5599,8 +5595,8 @@
     }
    ],
    "ledger": [],
-   "reviewed": "August 3, 2026",
-   "window": "October 2025–August 2026"
+   "window": "October 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_loss_of_control": {
    "tier": "high",
@@ -5652,8 +5648,8 @@
     }
    ],
    "ledger": [],
-   "reviewed": "August 3, 2026",
-   "window": "April–August 2026"
+   "window": "April–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_regulatory_object": {
    "tier": "medium",
@@ -5716,8 +5712,8 @@
     }
    ],
    "ledger": [],
-   "reviewed": "August 3, 2026",
-   "window": "February–August 2026"
+   "window": "February–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_capability_thresholds": {
    "tier": "slow",
@@ -5758,8 +5754,8 @@
     }
    ],
    "ledger": [],
-   "reviewed": "August 3, 2026",
-   "window": "December 2025–August 2026"
+   "window": "December 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_ex_ante_ex_post_liability": {
    "tier": "medium",
@@ -5820,8 +5816,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "April–August 2026"
+   "window": "April–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_transparency_requirements": {
    "tier": "medium",
@@ -5901,8 +5897,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "October 2025–August 2026"
+   "window": "October 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_regulatory_adaptability": {
    "tier": "medium",
@@ -5998,8 +5994,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "January–August 2026"
+   "window": "January–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_government_technical_capacity": {
    "tier": "medium",
@@ -6068,8 +6064,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "March–August 2026"
+   "window": "March–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_government_use_of_ai": {
    "tier": "medium",
@@ -6138,8 +6134,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "January–August 2026"
+   "window": "January–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_public_ai_infrastructure": {
    "tier": "slow",
@@ -6191,8 +6187,8 @@
     }
    ],
    "ledger": [],
-   "reviewed": "August 3, 2026",
-   "window": "December 2025–August 2026"
+   "window": "December 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_emergency_powers": {
    "tier": "high",
@@ -6272,8 +6268,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "June–August 2026"
+   "window": "June–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_race_dynamics": {
    "tier": "medium",
@@ -6336,8 +6332,8 @@
     }
    ],
    "ledger": [],
-   "reviewed": "August 3, 2026",
-   "window": "May–August 2026"
+   "window": "May–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_us_china_competition": {
    "tier": "medium",
@@ -6436,8 +6432,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "January–August 2026"
+   "window": "January–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_military_integration": {
    "tier": "high",
@@ -6517,8 +6513,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "February–August 2026"
+   "window": "February–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_weights_security": {
    "tier": "medium",
@@ -6576,8 +6572,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "March–August 2026"
+   "window": "March–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_shared_risks_cooperation": {
    "tier": "medium",
@@ -6638,8 +6634,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "November 2025–August 2026"
+   "window": "November 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_international_verification": {
    "tier": "slow",
@@ -6691,8 +6687,8 @@
     }
    ],
    "ledger": [],
-   "reviewed": "August 3, 2026",
-   "window": "April–August 2026"
+   "window": "April–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_international_institutions": {
    "tier": "medium",
@@ -6755,8 +6751,8 @@
     }
    ],
    "ledger": [],
-   "reviewed": "August 3, 2026",
-   "window": "October 2025–August 2026"
+   "window": "October 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_regulatory_interoperability": {
    "tier": "slow",
@@ -6825,8 +6821,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "January–August 2026"
+   "window": "January–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_global_representation": {
    "tier": "slow",
@@ -6878,8 +6874,8 @@
     }
    ],
    "ledger": [],
-   "reviewed": "August 3, 2026",
-   "window": "January–August 2026"
+   "window": "January–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_open_versus_closed": {
    "tier": "high",
@@ -6978,8 +6974,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "October 2025–August 2026"
+   "window": "October 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_frontier_lab_governance": {
    "tier": "medium",
@@ -7059,8 +7055,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "October 2025–August 2026"
+   "window": "October 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_training_data_rights": {
    "tier": "medium",
@@ -7140,8 +7136,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "November 2025–August 2026"
+   "window": "November 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_privacy_and_identity": {
    "tier": "medium",
@@ -7202,8 +7198,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "October 2025–August 2026"
+   "window": "October 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_access_and_portability": {
    "tier": "slow",
@@ -7253,8 +7249,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "October 2025–August 2026"
+   "window": "October 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_agent_portability": {
    "tier": "slow",
@@ -7284,8 +7280,8 @@
     }
    ],
    "ledger": [],
-   "reviewed": "August 3, 2026",
-   "window": "March–August 2026"
+   "window": "March–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_whose_values": {
    "tier": "medium",
@@ -7354,8 +7350,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "October 2025–August 2026"
+   "window": "October 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_authenticity_provenance": {
    "tier": "medium",
@@ -7447,8 +7443,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "November 2025–August 2026"
+   "window": "November 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_shared_reality": {
    "tier": "slow",
@@ -7509,8 +7505,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "November 2025–August 2026"
+   "window": "November 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_ai_and_political_power": {
    "tier": "medium",
@@ -7590,8 +7586,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "October 2025–August 2026"
+   "window": "October 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_information_intermediation": {
    "tier": "medium",
@@ -7679,8 +7675,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "October 2025–August 2026"
+   "window": "October 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_curriculum": {
    "tier": "slow",
@@ -7719,8 +7715,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "October 2025–August 2026"
+   "window": "October 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_learning_versus_outsourcing": {
    "tier": "medium",
@@ -7772,8 +7768,8 @@
     }
    ],
    "ledger": [],
-   "reviewed": "August 3, 2026",
-   "window": "December 2025–August 2026"
+   "window": "December 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_assessment": {
    "tier": "medium",
@@ -7814,8 +7810,8 @@
     }
    ],
    "ledger": [],
-   "reviewed": "August 3, 2026",
-   "window": "March–August 2026"
+   "window": "March–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_cognitive_inequality": {
    "tier": "slow",
@@ -7856,8 +7852,8 @@
     }
    ],
    "ledger": [],
-   "reviewed": "August 3, 2026",
-   "window": "December 2025–August 2026"
+   "window": "December 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_intellectual_agency": {
    "tier": "slow",
@@ -7898,8 +7894,8 @@
     }
    ],
    "ledger": [],
-   "reviewed": "August 3, 2026",
-   "window": "March–August 2026"
+   "window": "March–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_engineered_dependency": {
    "tier": "high",
@@ -7979,8 +7975,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "October 2025–August 2026"
+   "window": "October 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_ai_mental_health": {
    "tier": "high",
@@ -8068,8 +8064,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "October 2025–August 2026"
+   "window": "October 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_children_and_ai": {
    "tier": "high",
@@ -8130,8 +8126,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "October 2025–August 2026"
+   "window": "October 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_self_shaping": {
    "tier": "medium",
@@ -8172,8 +8168,8 @@
     }
    ],
    "ledger": [],
-   "reviewed": "August 3, 2026",
-   "window": "October 2025–August 2026"
+   "window": "October 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_meaning_of_work": {
    "tier": "slow",
@@ -8212,8 +8208,8 @@
      "added": "2026-08-03"
     }
    ],
-   "reviewed": "August 3, 2026",
-   "window": "June–August 2026"
+   "window": "June–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_human_creativity": {
    "tier": "slow",
@@ -8243,8 +8239,8 @@
     }
    ],
    "ledger": [],
-   "reviewed": "August 3, 2026",
-   "window": "May–August 2026"
+   "window": "May–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_authorship_value": {
    "tier": "slow",
@@ -8263,8 +8259,8 @@
     }
    ],
    "ledger": [],
-   "reviewed": "August 3, 2026",
-   "window": "February–August 2026"
+   "window": "February–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_cultural_economics": {
    "tier": "medium",
@@ -8316,8 +8312,8 @@
     }
    ],
    "ledger": [],
-   "reviewed": "August 3, 2026",
-   "window": "December 2025–August 2026"
+   "window": "December 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_cultural_pluralism": {
    "tier": "slow",
@@ -8358,8 +8354,8 @@
     }
    ],
    "ledger": [],
-   "reviewed": "August 3, 2026",
-   "window": "January–August 2026"
+   "window": "January–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_moral_status_precaution": {
    "tier": "medium",
@@ -8411,8 +8407,8 @@
     }
    ],
    "ledger": [],
-   "reviewed": "August 3, 2026",
-   "window": "November 2025–August 2026"
+   "window": "November 2025–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_human_autonomy": {
    "tier": "medium",
@@ -8442,8 +8438,8 @@
     }
    ],
    "ledger": [],
-   "reviewed": "August 3, 2026",
-   "window": "January–August 2026"
+   "window": "January–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_value_lock_in": {
    "tier": "slow",
@@ -8462,8 +8458,8 @@
     }
    ],
    "ledger": [],
-   "reviewed": "August 3, 2026",
-   "window": "June–August 2026"
+   "window": "June–August 2026",
+   "swept": "August 3, 2026"
   },
   "q_desirable_end_state": {
    "tier": "medium",
@@ -8526,8 +8522,8 @@
     }
    ],
    "ledger": [],
-   "reviewed": "August 3, 2026",
-   "window": "October 2025–August 2026"
+   "window": "October 2025–August 2026",
+   "swept": "August 3, 2026"
   }
  }
 }

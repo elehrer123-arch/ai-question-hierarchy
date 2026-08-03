@@ -99,7 +99,7 @@ nothing, never zero.
 
 ## Coverage plan
 
-Expansion runs a section per sweep (next: all of Economy), so every question is
+Expansion runs a section per sweep (completed August 3, 2026 — all 127 questions now covered; ongoing work is weekly discovery plus per-question re-reviews by tier) (next: all of Economy), so every question is
 tracked within roughly five sweeps. A covered question is a standing maintenance
 commitment; if the cadence cannot be held, coverage shrinks rather than rots.
 
@@ -153,3 +153,19 @@ month-level dates. Every item also carries `added` (when it entered the
 stream): pages sort by publication date, RSS by added date, so a
 retrospectively discovered piece never looks newly published but still
 reaches subscribers.
+
+
+## Status vocabulary (added August 2026, sprint 1)
+
+Public language distinguishes what the AI pipeline did from what a human
+editor has done. Per question: `swept` = date of the last full AI review
+of that question; `approved` = date a human editor examined the page's
+selections and synthesis (absent until then; UI shows "editorial review
+pending"). Reader-facing vocabulary: "featured" (not "selected"),
+"substantive pieces tracked" (not "qualifying pieces observed"),
+"Additional relevant discussion" (not "More from this sweep"). Internal
+terms stay in this policy; they should not appear in primary UI.
+
+The 90-day volume window is computed at build time (build date − 90 days),
+with month-only dates treated as the first of the month so recency is
+never overstated.
