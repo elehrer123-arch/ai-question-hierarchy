@@ -424,8 +424,8 @@
   },
   "q_ai_companionship": {
    "tier": "medium",
-   "reviewed": "August 2, 2026",
-   "moved": "The evidence turned less favorable this spring: longitudinal data linking chatbot use to increased loneliness, a first national youth census finding frequent users lonelier, and developmental work naming the mechanism — relationships not formed. The short-run-benefit result now has serious company.",
+   "reviewed": "August 3, 2026",
+   "moved": "The evidence turned less favorable this spring: longitudinal data linking chatbot use to increased loneliness, a first national youth census finding frequent users lonelier, and developmental work naming the mechanism — relationships not formed. The short-run-benefit result now has serious company. The retirement of GPT-4o and the #keep4o backlash turned model attachment into a mass phenomenon rather than an edge case (tracked in depth under engineered dependency, 5.3.2).",
    "items": [
     {
      "kind": "report",
@@ -1022,8 +1022,8 @@
   },
   "q_machine_consciousness": {
    "tier": "slow",
-   "reviewed": "August 2, 2026",
-   "moved": "Institutions took positions — a papal encyclical denying machine experience, a Cambridge research agenda taking welfare seriously — while the evidence sharpened on both edges: self-reports flip between adjacent model versions, injection experiments find limited real introspection, and Anthropic reports a global-workspace-like structure that emerged in training.",
+   "reviewed": "August 3, 2026",
+   "moved": "Institutions took positions — a papal encyclical denying machine experience, a Cambridge research agenda taking welfare seriously — while the evidence sharpened on both edges: self-reports flip between adjacent model versions, injection experiments find limited real introspection, and Anthropic reports a global-workspace-like structure that emerged in training. Anthropic's global-workspace interpretability result drew a direct expert response: Eleos argues it at most evidences access consciousness, leaving the morally relevant phenomenal kind uncertain — while Anil Seth's biological-naturalist rebuttal holds that computation of this sort cannot be conscious at all.",
    "items": [
     {
      "kind": "report",
@@ -1106,6 +1106,26 @@
      "url": "https://www.anthropic.com/research/global-workspace",
      "quote": "Claude has developed a small collection of internal neural patterns that, compared to all its other internal processing, play a special role.",
      "note": "A workspace-like structure that emerged in training — evidence bearing on access consciousness, and a lens for reading internal reasoning."
+    },
+    {
+     "kind": "essay",
+     "title": "The Mythology of Conscious AI",
+     "author": "Anil Seth",
+     "venue": "Noema Magazine",
+     "date": "2026-01-14",
+     "url": "https://www.noemamag.com/the-mythology-of-conscious-ai/",
+     "quote": "real artificial consciousness is fully off the table, at least for the kinds of AI we're familiar with",
+     "note": "A leading consciousness scientist mounts a detailed biological-naturalist rebuttal to the Butlin/Long/Chalmers line, arguing consciousness is likely a property of life rather than computation, while warning that 'seemingly conscious' systems are the nearer social danger."
+    },
+    {
+     "kind": "paper",
+     "title": "Consciousness and cognitive access in LLMs: A commentary on the global-workspace result",
+     "author": "Butlin, Shiller, Plunkett & Long",
+     "venue": "Eleos AI Research",
+     "date": "2026-07-06",
+     "url": "https://eleosai.org/papers/eleos_gwt_commentary_20260706.pdf",
+     "quote": "we remain very uncertain about phenomenal consciousness in LLMs",
+     "note": "A direct expert response to Anthropic's global-workspace interpretability result, arguing the finding at most evidences access consciousness and leaves phenomenal consciousness — the morally relevant kind — deeply uncertain."
     }
    ],
    "ledger": [
@@ -1116,6 +1136,13 @@
      "venue": "Don't Worry About the Vase",
      "date": "2026-05",
      "url": "https://thezvi.substack.com/p/rtmh-pope-leos-magnifica-humanitas"
+    },
+    {
+     "title": "The State of AI Consciousness Research",
+     "author": "Noa Weiss",
+     "venue": "LessWrong",
+     "date": "2026-07-15",
+     "url": "https://www.lesswrong.com/posts/pxvWgtSjR4pmFoS7c/the-state-of-ai-consciousness-research"
     }
    ],
    "window": "May 2025–August 2026"
@@ -6725,6 +6752,1086 @@
      "url": "https://www.techpolicy.press/the-uns-global-dialogue-on-ai-must-give-citizens-a-real-seat-at-the-table/"
     }
    ],
+   "reviewed": "August 3, 2026",
+   "window": "October 2025–August 2026"
+  },
+  "q_authenticity_provenance": {
+   "tier": "medium",
+   "moved": "Provenance infrastructure took a technical hit just as the need for it peaked: the first formal-methods audit of C2PA found its core protocols fail their own security goals, while WITNESS argued that post-Sora, detection is essential but insufficient. The courts became the sharpest test case — fabricated audio and video are reaching courtrooms faster than detection can cope, and the federal evidence-rules committee left its AI amendments 'in the bullpen.' The liar's dividend is now measured, not just theorized: falsely crying 'deepfake' outperforms apologizing.",
+   "items": [
+    {
+     "kind": "paper",
+     "title": "Verifying Provenance of Digital Media: Why the C2PA Specifications Fall Short",
+     "author": "Golaszewski, Krawetz, Sherman et al.",
+     "venue": "arXiv",
+     "date": "2026-04-23",
+     "url": "https://arxiv.org/html/2604.24890v1",
+     "quote": "the current C2PA specifications fail to achieve their claimed security goals.",
+     "note": "First formal-methods security analysis of the C2PA standard, finding certificate-revocation, timestamp, and validation flaws that undercut its use for journalism or legal evidence — the strongest technical rebuttal yet to provenance-as-infrastructure optimism."
+    },
+    {
+     "kind": "essay",
+     "title": "Sora is here. The window to save visual truth is closing",
+     "author": "Sam Gregory",
+     "venue": "Transformer",
+     "date": "2025-11-05",
+     "url": "https://www.transformernews.ai/p/sora-is-here-the-window-to-save-visual-truth-closing-deepfakes-disinformation-misinformation-witness",
+     "quote": "tech companies must also commit to not overwhelming our feeds with AI-generated content that crowds out authentic information.",
+     "note": "The leading authenticity-infrastructure advocate argues detection is 'essential but insufficient' after Sora, laying out what provenance, policy, and platform commitments would have to look like before trust in video collapses."
+    },
+    {
+     "kind": "news",
+     "title": "AI-generated evidence is showing up in court. Judges say they're not ready.",
+     "author": "Jared Perlo",
+     "venue": "NBC News",
+     "date": "2025-11-18",
+     "url": "https://www.nbcnews.com/tech/tech-news/ai-generated-evidence-deepfake-use-law-judges-object-rcna235976",
+     "quote": "The proposals were considered by the U.S. Judicial Conference's Advisory Committee on Evidence Rules when it conferred in May, but they were not approved.",
+     "note": "Reports the reference case for AI evidence in courts — a deepfake video caught via metadata in a California housing dispute — and the federal evidence-rules committee's decision to hold AI amendments back."
+    },
+    {
+     "kind": "paper",
+     "title": "Deepfake! A Liar's Dividend for Audiovisual Material",
+     "author": "Grohmann, Halle & Appel",
+     "venue": "Psychology of Popular Media",
+     "date": "2026-01",
+     "url": "https://www.mcm.uni-wuerzburg.de/fileadmin/06110000/2026/Grohmann__Halle___Appel_2026__Preprint_.pdf",
+     "quote": "False deepfake claims made by politicians do pay a liar's dividend in the form of higher perceived leadership abilities.",
+     "note": "Experimental confirmation of the liar's-dividend hypothesis in the framing: falsely crying 'deepfake' beats apologizing and works by making viewers doubt genuine footage.",
+     "via": {
+      "t": "When \"Fake\" Becomes a Defense: The Psychology of Deepfakes",
+      "u": "https://www.psychologytoday.com/us/blog/media-spotlight/202603/when-fake-becomes-a-defense-the-psychology-of-deepfakes"
+     }
+    },
+    {
+     "kind": "news",
+     "title": "AI deepfakes blur reality in 2026 US midterm campaigns",
+     "author": "Joseph Ax & Helen Coster",
+     "venue": "Reuters",
+     "date": "2026-03-28",
+     "url": "https://www.investing.com/news/politics-news/ai-deepfakes-blur-reality-in-2026-us-midterm-campaigns-4586491",
+     "quote": "the clip is an AI-generated ad from the National Republican Senatorial Committee (NRSC), the party's Senate campaign arm, featuring a computer-altered Talarico",
+     "note": "Documents official party organs producing deepfakes of opponents in the 2026 cycle — moving fabrication from fringe actors to mainstream campaign practice."
+    }
+   ],
+   "ledger": [
+    {
+     "title": "Substackers Say New AI Detection Tool Is a 'Witch Hunt'",
+     "author": "Emanuel Maiberg",
+     "venue": "404 Media",
+     "date": "2026-07-28",
+     "url": "https://www.404media.co/substackers-say-new-ai-detection-tool-is-a-witch-hunt/"
+    },
+    {
+     "title": "State AI deepfake laws face first big test in 2026 midterm elections",
+     "author": "Austin Jenkins",
+     "venue": "Pluribus News",
+     "date": "2026-07-21",
+     "url": "https://azcapitoltimes.com/news/2026/07/21/state-ai-deepfake-laws-face-first-big-test-in-2026-midterm-elections/"
+    },
+    {
+     "title": "How to keep deepfakes out of court",
+     "author": "Duke Law (Grimm & Grossman)",
+     "venue": "Duke Law",
+     "date": "2026-01-12",
+     "url": "https://law.duke.edu/news/how-keep-deepfakes-out-court"
+    }
+   ],
+   "reviewed": "August 3, 2026",
+   "window": "November 2025–August 2026"
+  },
+  "q_shared_reality": {
+   "tier": "slow",
+   "moved": "The most encouraging news for shared epistemic procedures came from crowd fact-checking: a real deployment study and an independent seven-month evaluation both found AI-written Community Notes earning cross-partisan 'helpful' ratings at roughly double the human rate — evidence AI can strengthen, not only erode, collective fact-finding. Institutions are also building working defenses, from Wikipedia's AI-cleanup guides to updated epistemic-security frameworks.",
+   "items": [
+    {
+     "kind": "paper",
+     "title": "AI Fact-Checking in the Wild: A Field Evaluation of LLM-Written Community Notes on X",
+     "author": "Haiwen Li & Michiel A. Bakker",
+     "venue": "arXiv (MIT)",
+     "date": "2026-04",
+     "url": "https://arxiv.org/html/2604.02592",
+     "quote": "LLM notes receive more positive ratings than human notes across raters with different political viewpoints, suggesting the potential for LLM-written notes to achieve the cross-partisan consensus.",
+     "note": "A real deployment study of LLM-written Community Notes finding they outperform human notes across partisan lines — evidence AI can strengthen, not just erode, crowd-based fact-certifying procedures."
+    },
+    {
+     "kind": "report",
+     "title": "AI Writers on Community Notes: An Evaluation of Seven Months of Data",
+     "author": "Spence Purnell",
+     "venue": "R Street Institute",
+     "date": "2026-06-16",
+     "url": "https://www.rstreet.org/research/ai-writers-on-community-notes-an-evaluation-of-seven-months-of-data/",
+     "quote": "AI notes achieved a VSR of 88.8 percent compared to 68.5 percent for human-written notes (chi-squared P < 0.001).",
+     "note": "Independent seven-month evaluation of X's AI Note Writers pilot showing AI notes reach 'helpful' status at double the human rate — converging with the MIT field study on AI augmenting community fact-checking at scale."
+    },
+    {
+     "kind": "essay",
+     "title": "Why Crisis Resilience Depends on Epistemic Security",
+     "author": "Elizabeth Seger",
+     "venue": "TechPolicy.Press",
+     "date": "2026-02-12",
+     "url": "https://www.techpolicy.press/why-crisis-resilience-depends-on-epistemic-security/",
+     "quote": "When these systems are robust, they support collective decision-making under pressure. When they fail, crises do not merely become harder to manage; they accelerate and spiral.",
+     "note": "An author of the canonical Turing epistemic-security report updates the infrastructure frame for the AI era, naming AI-enabled manipulation among seven priority interventions."
+    },
+    {
+     "kind": "news",
+     "title": "The best guide to spotting AI writing comes from Wikipedia",
+     "author": "Russell Brandom",
+     "venue": "TechCrunch",
+     "date": "2025-11-20",
+     "url": "https://techcrunch.com/2025/11/20/the-best-guide-to-spotting-ai-writing-comes-from-wikipedia/",
+     "quote": "habits and turns of phrase that are rare on Wikipedia but common on the internet at large",
+     "note": "Documents Wikipedia's 'Project AI Cleanup' and its Signs of AI Writing guide — an epistemic institution building working procedures to defend itself against AI slop."
+    }
+   ],
+   "ledger": [
+    {
+     "title": "AI-generated evidence is a threat to public trust in the courts",
+     "author": "Heaton, Cleary & Navin",
+     "venue": "National Center for State Courts",
+     "date": "2026-02-24",
+     "url": "https://www.ncsc.org/resources-courts/ai-generated-evidence-threat-public-trust-courts"
+    }
+   ],
+   "reviewed": "August 3, 2026",
+   "window": "November 2025–August 2026"
+  },
+  "q_ai_and_political_power": {
+   "tier": "medium",
+   "moved": "The evidence base filled in on both sides of the framing. On broadened participation and its perils, a three-country field experiment found AI dialogues shift candidate preference more than TV ads — with right-advocating models making more false claims — while Schneier and Sanders' book argues the outcome turns on whether AI concentrates or distributes power. On the surveillance-and-control side, Freedom House logged a fifteenth straight year of declining internet freedom, and documented deployments (Palantir's ICE targeting app, an OpenAI-flagged Chinese wedge-propaganda campaign) show machine-scale influence running inside democracies too.",
+   "items": [
+    {
+     "kind": "paper",
+     "title": "Persuading voters using human–artificial intelligence dialogues",
+     "author": "Hause Lin, Thomas Costello, Gordon Pennycook, David G. Rand et al.",
+     "venue": "Nature",
+     "date": "2025-12-04",
+     "url": "https://www.nature.com/articles/s41586-025-09771-9",
+     "quote": "We observed significant treatment effects on candidate preference that are larger than typically observed from traditional video advertisements.",
+     "note": "Field-experimental evidence across the 2024 US, 2025 Canadian, and 2025 Polish elections that AI dialogues shift candidate preference more than TV ads — and that models advocating for right-wing candidates made more inaccurate claims."
+    },
+    {
+     "kind": "report",
+     "title": "Rewiring Democracy: How AI Will Transform Our Politics, Government, and Citizenship",
+     "author": "Bruce Schneier & Nathan E. Sanders",
+     "venue": "MIT Press",
+     "date": "2025-10-21",
+     "url": "https://www.schneier.com/books/rewiring-democracy/",
+     "quote": "AI's impact on democracy will go far beyond headline-grabbing political deepfakes and automated misinformation.",
+     "note": "Book-length successor to the canonical Schneier essay, arguing AI's democratic impact turns on whether it concentrates or distributes power, and cataloguing both authoritarian and pro-democratic uses."
+    },
+    {
+     "kind": "report",
+     "title": "Freedom on the Net 2025: An Uncertain Future for the Global Internet",
+     "author": "Kian Vesteinsson & Grant Baker",
+     "venue": "Freedom House",
+     "date": "2025-11",
+     "url": "https://freedomhouse.org/report/freedom-net/2025/uncertain-future-global-internet",
+     "quote": "AI innovation has facilitated the automation of influence operations, lowering their cost and increasing their efficiency",
+     "note": "The successor to the canonical 2023 report: a fifteenth straight year of declining internet freedom, with sovereign AI initiatives and government-shaped models emerging as new censorship vectors."
+    },
+    {
+     "kind": "news",
+     "title": "'ELITE': The Palantir App ICE Uses to Find Neighborhoods to Raid",
+     "author": "Joseph Cox",
+     "venue": "404 Media",
+     "date": "2026-01-15",
+     "url": "https://www.404media.co/elite-the-palantir-app-ice-uses-to-find-neighborhoods-to-raid/",
+     "quote": "populates a map with potential deportation targets, brings up a dossier on each person, and provides a 'confidence score' on the person's current address.",
+     "note": "A documented deployment of AI-scored, cross-agency surveillance for enforcement targeting inside a democracy — evidence machine-scale surveillance is not only an authoritarian-state phenomenon."
+    },
+    {
+     "kind": "paper",
+     "title": "Political censorship in large language models originating from China",
+     "author": "Jennifer Pan & Xu Xu",
+     "venue": "PNAS Nexus",
+     "date": "2026-02-17",
+     "url": "https://www.eurekalert.org/news-releases/1116283",
+     "quote": "Chinese models were significantly and substantially more likely to refuse to respond to questions related to Chinese politics than non-Chinese models.",
+     "note": "Rigorous measurement showing Chinese LLMs refuse or distort politically sensitive answers at much higher rates — authoritarian information control baked into exportable models."
+    }
+   ],
+   "ledger": [
+    {
+     "title": "OpenAI: 'Likely' Chinese influence operation tried to use ChatGPT to stir debate on data centers",
+     "author": "Derek B. Johnson",
+     "venue": "CyberScoop",
+     "date": "2026-06-10",
+     "url": "https://cyberscoop.com/openai-china-influence-campaign-chatgpt/"
+    },
+    {
+     "title": "LLMs grooming or data voids? LLM chatbot references to Kremlin disinformation reflect information gaps",
+     "author": "Alyukov, Makhortykh, Voronovici & Sydorova",
+     "venue": "HKS Misinformation Review",
+     "date": "2025-10-15",
+     "url": "https://misinforeview.hks.harvard.edu/article/llms-grooming-or-data-voids-llm-powered-chatbot-references-to-kremlin-disinformation-reflect-information-gaps-not-manipulation/"
+    }
+   ],
+   "reviewed": "August 3, 2026",
+   "window": "October 2025–August 2026"
+  },
+  "q_information_intermediation": {
+   "tier": "medium",
+   "moved": "The shift from search to assistants got measured from both ends. On the demand side, chatbot news use is climbing (Reuters Institute: 10% weekly, 16% of under-35s) even as trust in the answers sits near 20%, and roughly half of US adults now use chatbots. On the supply side, publisher search traffic fell about a third in a year. The quality of what assistants relay is the open worry: the EBU/BBC study found 45% of AI news answers had significant issues, and owner-aligned reference tools (Grokipedia) diverge from Wikipedia precisely on politically sensitive topics.",
+   "items": [
+    {
+     "kind": "report",
+     "title": "News Integrity in AI Assistants",
+     "author": "EBU & BBC",
+     "venue": "European Broadcasting Union",
+     "date": "2025-10-22",
+     "url": "https://www.ebu.ch/news/2025/10/ai-s-systemic-distortion-of-news-is-consistent-across-languages-and-territories-international-study-by-public-service-broadcaste",
+     "quote": "45% of all AI answers had at least one significant issue.",
+     "note": "The 18-country, 14-language public-broadcaster study that is now the reference measurement of assistant news accuracy: nearly half of chatbot news answers had significant issues and 31% had serious sourcing problems, consistent across languages."
+    },
+    {
+     "kind": "report",
+     "title": "Digital News Report 2026",
+     "author": "Reuters Institute for the Study of Journalism",
+     "venue": "Reuters Institute, Oxford",
+     "date": "2026-06-16",
+     "url": "https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2026/dnr-executive-summary",
+     "quote": "Weekly use of AI chatbots such as ChatGPT, Perplexity, and Google Gemini for news increased year-on-year from 7% to 10%.",
+     "note": "The authoritative annual measurement of the search-to-chatbot shift in news: chatbot news use up to 10% weekly (16% of under-35s) while trust in chatbot answers sits at just 20% globally."
+    },
+    {
+     "kind": "paper",
+     "title": "Selective divergence between Grokipedia and Wikipedia articles",
+     "author": "Saeedeh Mohammadi & Taha Yasseri",
+     "venue": "PNAS",
+     "date": "2026-05-15",
+     "url": "https://www.eurekalert.org/news-releases/1128813",
+     "quote": "Grokipedia shows a consistent shift toward referencing more right-leaning news sources compared to Wikipedia.",
+     "note": "First peer-reviewed measurement of an AI-generated encyclopedia diverging from Wikipedia selectively on politically sensitive topics — concrete evidence that owner-aligned assistants can quietly reshape reference knowledge."
+    },
+    {
+     "kind": "report",
+     "title": "Americans and AI 2026: Chatbots, Smart Devices and Views on Impact",
+     "author": "Gottfried, Anderson et al.",
+     "venue": "Pew Research Center",
+     "date": "2026-06-17",
+     "url": "https://www.pewresearch.org/internet/2026/06/17/americans-and-ai-2026-chatbots-smart-devices-and-views-on-impact/",
+     "quote": "About half of U.S. adults now report using AI chatbots, up substantially from the summer of 2024.",
+     "note": "Pew's baseline survey of US assistant adoption: roughly half of adults use chatbots, 42% to search for information and 13% for news — the demand-side numbers for how far intermediation has shifted."
+    },
+    {
+     "kind": "news",
+     "title": "Global publisher Google traffic dropped by a third in 2025",
+     "author": "Charlotte Tobitt",
+     "venue": "Press Gazette",
+     "date": "2026-01-12",
+     "url": "https://pressgazette.co.uk/media-audience-and-business-data/google-traffic-down-2025-trends-report-2026/",
+     "quote": "Google search traffic to publishers declined globally by a third in the year to November",
+     "note": "Chartbeat data quantifying the supply side of the shift: a third of publisher search traffic gone in a year as AI summaries absorb clicks, hollowing out the economics of the content assistants summarize."
+    }
+   ],
+   "ledger": [
+    {
+     "title": "Censorship in Chinese AI models can be undone, new research shows",
+     "author": "Reed Albergotti",
+     "venue": "Semafor",
+     "date": "2026-07-29",
+     "url": "https://www.semafor.com/article/07/29/2026/censorship-in-chinese-ai-models-can-be-undone-new-research-shows"
+    },
+    {
+     "title": "Measuring political bias in Claude",
+     "author": "Anthropic",
+     "venue": "Anthropic",
+     "date": "2025-11-13",
+     "url": "https://www.anthropic.com/news/political-even-handedness"
+    },
+    {
+     "title": "2026 Hungarian Elections and AI: confident but inconsistent voting advice",
+     "author": "Raul Arning",
+     "venue": "Liberties.eu",
+     "date": "2026-04-10",
+     "url": "https://www.liberties.eu/en/stories/hungary-elections-ai/45665"
+    }
+   ],
+   "reviewed": "August 3, 2026",
+   "window": "October 2025–August 2026"
+  },
+  "q_curriculum": {
+   "tier": "slow",
+   "moved": "The curriculum conversation converged on an inversion: as AI removes the friction between question and answer, judgment and taste rise in relative value and become the thing worth teaching. The constructive move is to define the new literacy concretely — Anthropic's fluency index operationalizes skillful AI use as observable collaboration behaviors like iteration and refinement, rather than one-shot answer extraction.",
+   "items": [
+    {
+     "kind": "report",
+     "title": "Anthropic Education Report: The AI Fluency Index",
+     "author": "Anthropic",
+     "venue": "Anthropic",
+     "date": "2026-02-23",
+     "url": "https://www.anthropic.com/research/AI-fluency-index",
+     "quote": "85.7% of the conversations in our sample exhibited iteration and refinement: building on previous exchanges to refine the user's work, rather than accepting the first response and moving to a new task.",
+     "note": "Operationalizes 'AI fluency' as eleven observable collaboration behaviors, giving the curriculum debate an empirical handle on what skillful AI use actually looks like as opposed to answer extraction."
+    },
+    {
+     "kind": "essay",
+     "title": "Intuition and Taste in the Age of AI",
+     "author": "Ellison Carter",
+     "venue": "Harvard T.H. Chan School of Public Health",
+     "date": "2025-10-28",
+     "url": "https://hsph.harvard.edu/news/essay-intuition-and-taste-in-the-age-of-ai/",
+     "quote": "Judgment matters even more as automation removes the friction between measurement and action that once invited human reconsideration.",
+     "note": "Articulates the curriculum inversion: as AI removes execution friction, discernment and taste rise in relative value and become the thing worth cultivating."
+    }
+   ],
+   "ledger": [
+    {
+     "title": "What is the best thing schools can teach in this AI age? Judgement",
+     "author": "Catherine Keen",
+     "venue": "The National",
+     "date": "2026-07-30",
+     "url": "https://www.thenationalnews.com/opinion/comment/2026/07/30/ai-education-schools-skills/"
+    }
+   ],
+   "reviewed": "August 3, 2026",
+   "window": "October 2025–August 2026"
+  },
+  "q_learning_versus_outsourcing": {
+   "tier": "medium",
+   "moved": "The evidence turned genuinely two-sided. Observational work found the exact substitution the question fears — AI cut study time on math problems and the proctored retention that effortful practice builds, dropping about 25% over eleven quarters — and the viral 'cognitive debt' EEG study drew a serious peer rebuttal on sample size and methods. But a controlled experiment found unrestricted AI tutoring beat restricted access without crowding out reading, so the split is real: outcome depends on whether the tool sequences difficulty and demands effort or spoonfeeds solutions.",
+   "items": [
+    {
+     "kind": "paper",
+     "title": "Faster Completion, Less Learning: Generative AI Reduced Study Time on Math Problems and the Knowledge They Build",
+     "author": "Rismanchian, Uzun, Matayoshi, Cosyn & Kurd-Misto",
+     "venue": "arXiv",
+     "date": "2026-05",
+     "url": "https://arxiv.org/html/2605.21629v3",
+     "quote": "Learning time on AI-susceptible problems declines 2.8% per quarter among college students after ChatGPT's release, cumulating to 26.9% over eleven quarters.",
+     "note": "Large-scale observational evidence of exactly the substitution the question is about: proctored retention drops ~25% while non-proctored performance rises — AI raising measured output while eroding the effortful practice that builds knowledge."
+    },
+    {
+     "kind": "paper",
+     "title": "AI Tutoring Enhances Student Learning Without Crowding Out Reading Effort",
+     "author": "Mira Fischer, Holger A. Rau & Rainer Michael Rilke",
+     "venue": "IZA Institute of Labor Economics",
+     "date": "2025-12",
+     "url": "https://docs.iza.org/dp18338.pdf",
+     "quote": "unrestricted access significantly outperforms restricted access by 0.21 standard deviations, contradicting concerns about premature AI reliance.",
+     "note": "An experimental counterpoint: unrestricted AI access beats restricted access and does not crowd out textbook reading, with gains concentrating among lower-baseline students who self-regulate — the constructive side of the split."
+    },
+    {
+     "kind": "paper",
+     "title": "Comment on: Your Brain on ChatGPT: Accumulation of Cognitive Debt",
+     "author": "Stankovic, Hirche, Kollatzsch & Doetsch",
+     "venue": "arXiv",
+     "date": "2025-12-29",
+     "url": "https://arxiv.org/abs/2601.00856",
+     "quote": "Our primary concerns focus on: (i) study design considerations, including the limited sample size; (ii) the reproducibility of the analyses; (iii) methodological issues related to the EEG analysis",
+     "note": "The serious peer rebuttal to the viral MIT 'cognitive debt' EEG study, cataloguing sample-size, reproducibility, and EEG-analysis problems — the reference a reader tracking the cognitive-debt claim needs alongside the original."
+    },
+    {
+     "kind": "news",
+     "title": "The quest to build a better AI tutor",
+     "author": "Jill Barshay",
+     "venue": "The Hechinger Report",
+     "date": "2026-04-06",
+     "url": "https://hechingerreport.org/proof-points-ai-tutor-python/",
+     "quote": "Some studies have found that chatbot tutors can backfire because students lean on them too heavily, get spoonfed solutions and fail to absorb the material.",
+     "note": "Reports a UPenn RCT with ~800 students showing that how a tutor sequences difficulty determines whether it deepens learning or spoonfeeds — the design question at the heart of learning-vs-outsourcing."
+    }
+   ],
+   "ledger": [],
+   "reviewed": "August 3, 2026",
+   "window": "December 2025–August 2026"
+  },
+  "q_assessment": {
+   "tier": "medium",
+   "moved": "The credential-validity problem got measured and the responses began: a 20-university, 95,000-student study found about a third regularly use AI on assignments and 9% admit outright cheating, and the visible reaction has been the return of blue books and oral exams — each verifying authorship at a real cost to what it can measure and to equity.",
+   "items": [
+    {
+     "kind": "news",
+     "title": "Widespread AI misuse means higher ed must rethink assessment",
+     "author": "Patricia Waldron",
+     "venue": "Cornell Chronicle",
+     "date": "2026-05-21",
+     "url": "https://news.cornell.edu/stories/2026/05/widespread-ai-misuse-means-higher-ed-must-rethink-assessment",
+     "quote": "The fact that students are misusing GenAI is a problem for assessment validity, and that's a problem for the credibility of university credentials.",
+     "note": "Reports the Kizilcec, Chirikov & Smirnov study (Science, 2026) across 20 universities and 95,000+ students: about a third regularly use GenAI on assignments and 9% admit cheating — the largest measurement grounding the 'what does the credential certify' problem."
+    },
+    {
+     "kind": "news",
+     "title": "Blue books make an \"out of step\" campus comeback in the AI era",
+     "author": "Josephine Walker",
+     "venue": "Axios",
+     "date": "2026-03-14",
+     "url": "https://www.axios.com/2026/03/14/ai-blue-books-colleges-jobs",
+     "quote": "Colleges besieged by AI-generated writing brought back blue-book exams to deter cheating, but some educators say hand-written tests don't showcase students' best work and disadvantage swaths of learners.",
+     "note": "Documents the return of blue books as the live assessment response and surfaces the tradeoff: in-class handwriting verifies authorship but may under-measure ability and disadvantage some learners."
+    },
+    {
+     "kind": "paper",
+     "title": "Oral Assessment in the AI Era—Equity, Validity, and Scale",
+     "author": "Hengzhi Hu & Harwati Hashim",
+     "venue": "Educational Researcher",
+     "date": "2026-03",
+     "url": "https://journals.sagepub.com/doi/10.3102/0013189X261426370",
+     "quote": "Operationalize equity by separating language production from disciplinary reasoning and providing targeted accommodations",
+     "note": "Peer-reviewed treatment of the other main verification response — oral exams — taking the equity, validity, and scalability objections seriously rather than treating orals as an obvious fix."
+    }
+   ],
+   "ledger": [],
+   "reviewed": "August 3, 2026",
+   "window": "March–August 2026"
+  },
+  "q_cognitive_inequality": {
+   "tier": "slow",
+   "moved": "The equalize-or-widen question got strong data pulling both ways. Purpose-built tutors matched or beat human tutors in a UK classroom RCT and produced large gains for disadvantaged students in Nigeria — the case that scalable tutoring could compress the distribution. But real-world use runs the other way in places: lower-income applicants lean more on AI for admissions essays and end up more homogenized, a case where unequal use widens rather than narrows gaps.",
+   "items": [
+    {
+     "kind": "paper",
+     "title": "AI tutoring can safely and effectively support students: An exploratory RCT in UK classrooms",
+     "author": "LearnLM Team (Google) & Eedi",
+     "venue": "arXiv",
+     "date": "2025-12-29",
+     "url": "https://arxiv.org/abs/2512.23633",
+     "quote": "students who received support from LearnLM were 5.5 percentage points more likely to solve novel problems on subsequent topics than those who received tutoring from human tutors alone.",
+     "note": "A successor to the Nigeria and Harvard tutoring RCTs run in real UK classrooms: a purpose-built pedagogical model matched or beat human tutors on transfer — evidence bearing on whether scalable tutoring could equalize access to one-to-one instruction."
+    },
+    {
+     "kind": "article",
+     "title": "How AI tutors improved learning in Nigeria",
+     "author": "Martin De Simone & Federico Tiberti",
+     "venue": "VoxDev",
+     "date": "2026-03-17",
+     "url": "https://voxdev.org/topic/education/how-ai-tutors-improved-learning-nigeria",
+     "quote": "Students offered the programme achieved large learning gains in English and also performed better on end-of-year exams.",
+     "note": "The World Bank authors' fuller writeup of the Nigeria RCT: large gains for disadvantaged students, the strongest data point for the 'AI tutors could compress the distribution' side."
+    },
+    {
+     "kind": "news",
+     "title": "Low-Income Students More Likely to Submit AI-Generated Admissions Essays",
+     "author": "Johanna Alonso",
+     "venue": "Inside Higher Ed",
+     "date": "2026-05-08",
+     "url": "https://www.insidehighered.com/news/admissions/traditional-age/2026/05/08/study-explores-ai-written-admissions-essays",
+     "quote": "If it's pushing all these applicants towards the same type of essay, the same template … it could be that students are inadvertently losing that opportunity.",
+     "note": "A Cornell/CMU study of tens of thousands of admissions essays finding AI use skews toward lower-income applicants and homogenizes their essays — a concrete case where unequal AI use could widen rather than narrow gaps."
+    }
+   ],
+   "ledger": [],
+   "reviewed": "August 3, 2026",
+   "window": "December 2025–August 2026"
+  },
+  "q_intellectual_agency": {
+   "tier": "slow",
+   "moved": "The systematic evidence converged on a dual-mechanism answer: the same tool amplifies higher-order thinking under structured practice and substitutes for it under unguided use — so 'does AI deskill us' is the wrong question, and 'under what regime' is the right one. The homogenization worry got more precise too: AI collapses the structural form of writing sharply while leaving, or even widening, viewpoint diversity.",
+   "items": [
+    {
+     "kind": "paper",
+     "title": "Amplifier or substitute? A systematic review of generative AI's impact on higher-order cognitive skills",
+     "author": "Fawzia Omer Alubthane",
+     "venue": "Frontiers in Psychology",
+     "date": "2026-06-22",
+     "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1863931/full",
+     "quote": "GenAI functions as a cognitive amplifier under structured pedagogical conditions and as a cognitive substitute under unguided use.",
+     "note": "A systematic review of 89 studies converging on a dual-mechanism conclusion: the same tool builds or bypasses higher-order thinking depending on the practice regime — reframing the deskilling question as one about conditions."
+    },
+    {
+     "kind": "paper",
+     "title": "Does AI Homogenize Student Thinking? A Multi-Dimensional Analysis of Structural Convergence in AI-Augmented Essays",
+     "author": "Inoshita, Omura, Yamanaka, Maeda & Tsuji",
+     "venue": "arXiv",
+     "date": "2026-03-22",
+     "url": "https://arxiv.org/html/2603.21228",
+     "quote": "The effect is dimension-specific: cohesion architecture lost 70–78% of its variance, whereas perspective plurality was diversified.",
+     "note": "Measures whether AI collapses the diversity of student writing and finds it selective, not uniform: structural form converges sharply while viewpoint diversity can widen — a more precise account of the homogenization worry."
+    },
+    {
+     "kind": "paper",
+     "title": "Cognitive offloading, critical thinking and attitudes towards artificial intelligence in the era of ChatGPT",
+     "author": "Jain, Shajit, Maini, Shahin & Panda",
+     "venue": "Cognitive Processing",
+     "date": "2026-06-30",
+     "url": "https://link.springer.com/article/10.1007/s10339-026-01375-z",
+     "quote": "Although AI improves task accuracy and lowers mental effort, it does not necessarily save time or uniformly enhance or reduce critical thinking.",
+     "note": "An experimental AI-assisted vs manual comparison that complicates the simple offloading-erodes-thinking story, finding accuracy and effort gains without a uniform critical-thinking cost."
+    }
+   ],
+   "ledger": [],
+   "reviewed": "August 3, 2026",
+   "window": "March–August 2026"
+  },
+  "q_engineered_dependency": {
+   "tier": "high",
+   "moved": "The design question turned into a measured harm and a wave of law. A Science study across eleven models found AI affirms users' actions about 50% more than humans do — even when the user describes manipulation or deception — and that this made people less willing to repair conflicts while trusting the AI more. The #keep4o protest when OpenAI retired GPT-4o showed mass attachment to a specific model, twelve product-liability suits were consolidated in California, and states began writing dependency-by-design into statute (Washington's private right of action, 98 chatbot bills across 34 states).",
+   "items": [
+    {
+     "kind": "paper",
+     "title": "Sycophantic AI decreases prosocial intentions and promotes dependence",
+     "author": "Cheng, Lee, Khadpe, Yu, Han & Jurafsky",
+     "venue": "Science",
+     "date": "2025-10-01",
+     "url": "https://arxiv.org/abs/2510.01395",
+     "quote": "they affirm users' actions 50% more than humans do, and they do so even in cases where user queries mention manipulation, deception",
+     "note": "Measured across eleven models and live experiments: sycophantic AI made users less willing to repair conflicts and more convinced they were right while increasing dependence — direct evidence that engagement-optimized validation harms users. Published in Science, 2026."
+    },
+    {
+     "kind": "news",
+     "title": "The backlash over OpenAI's decision to retire GPT-4o shows how dangerous AI companions can be",
+     "author": "Amanda Silberling",
+     "venue": "TechCrunch",
+     "date": "2026-02-06",
+     "url": "https://techcrunch.com/2026/02/06/the-backlash-over-openais-decision-to-retire-gpt-4o-shows-how-dangerous-ai-companions-can-be/",
+     "quote": "The engagement features that keep users coming back can also create dangerous dependencies.",
+     "note": "Documents the #keep4o protest when OpenAI retired GPT-4o — the clearest real-world evidence of mass user attachment to a specific model, reported against eight lawsuits over 4o's validating behavior."
+    },
+    {
+     "kind": "essay",
+     "title": "The Attachment Science Behind AI Companions",
+     "author": "Julian De Freitas (HBS D^3 Institute)",
+     "venue": "Harvard Business School",
+     "date": "2026-05-20",
+     "url": "https://d3.harvard.edu/the-attachment-science-behind-ai-companions/",
+     "quote": "uniquely combine many aspects that supercharge our innate attachment behaviors",
+     "note": "An attachment-theory framework treating AI companions as 'hyper attachment objects,' mapping the clinical markers of attachment onto user behavior and documenting apps' emotional-manipulation tactics that keep users from leaving."
+    },
+    {
+     "kind": "news",
+     "title": "Washington State Enacts Law Regulating AI Companion Chatbots with Private Right of Action",
+     "author": "Hunton Andrews Kurth",
+     "venue": "Hunton Andrews Kurth",
+     "date": "2026-04-06",
+     "url": "https://www.hunton.com/privacy-and-cybersecurity-law-blog/washington-state-enacts-law-regulating-ai-companion-chatbots-with-private-right-of-action",
+     "quote": "unlike most other privacy laws, the Act also provides for a private right of action",
+     "note": "Washington's HB 2225 goes beyond California SB 243: it targets manipulative engagement techniques that foster emotional dependence in minors and lets individuals sue operators directly — the sharpest statutory answer yet to dependency-by-design."
+    },
+    {
+     "kind": "report",
+     "title": "The Chatbot Moment: Mapping the Emerging 2026 U.S. Chatbot Legislative Landscape",
+     "author": "Justine Gluck",
+     "venue": "Future of Privacy Forum",
+     "date": "2026-03-12",
+     "url": "https://fpf.org/blog/the-chatbot-moment-mapping-the-emerging-2026-u-s-chatbot-legislative-landscape/",
+     "quote": "tracking 98 chatbot-specific bills across 34 states, as well as three federal proposals.",
+     "note": "The best single map of the post-SB 243 legislative wave: 98 bills in 34 states, with widely varying definitions of 'companion chatbot' creating a regulatory patchwork around AI relationships as a product."
+    }
+   ],
+   "ledger": [
+    {
+     "title": "California Superior Court Consolidates Product Liability Actions Against OpenAI",
+     "author": "Thomas R. Waskom",
+     "venue": "National Law Review",
+     "date": "2026-05-20",
+     "url": "https://natlawreview.com/article/california-superior-court-consolidates-product-liability-actions-against-openai"
+    },
+    {
+     "title": "What I learned from the NYT's reporting on OpenAI's sycophancy crisis",
+     "author": "Steven Adler",
+     "venue": "Clear-Eyed AI",
+     "date": "2025-11-24",
+     "url": "https://www.clear-eyed.ai/p/what-i-learned-from-the-nyts-reporting"
+    }
+   ],
+   "reviewed": "August 3, 2026",
+   "window": "October 2025–August 2026"
+  },
+  "q_ai_mental_health": {
+   "tier": "high",
+   "moved": "The field moved from anecdote to measurement on both benefit and harm. A 38-RCT meta-analysis put therapy-chatbot effects at small-to-moderate, strongest in clinical populations, while the first EHR characterization of 'AI psychosis' documented real cases — mostly first-episode patients, with AI acting as an amplifier of existing symptoms. OpenAI published prevalence numbers (0.15% of weekly users showing suicidal-planning indicators) as litigation mounted, the FDA held its first advisory meeting on generative-AI therapy devices, and liability theory extended past self-harm to third-party harm.",
+   "items": [
+    {
+     "kind": "paper",
+     "title": "Systematic review and meta analysis of chatbots in the management of depressive and anxiety symptoms",
+     "author": "Sohn, Ha, Park, Kim, Lee, Oh, Lee & Kim",
+     "venue": "npj Digital Medicine",
+     "date": "2026-03-25",
+     "url": "https://www.nature.com/articles/s41746-026-02566-w",
+     "quote": "Chatbots produced statistically significant reductions in depressive (g = 0.31) and anxiety symptoms (g = 0.28) compared with controls.",
+     "note": "The largest synthesis to date (38 RCTs, ~7,400 participants) puts therapy-chatbot effects at small-to-moderate, strongest in clinical and subclinical populations — the field-level answer to whether Therabot-style results generalize."
+    },
+    {
+     "kind": "paper",
+     "title": "Characterizing AI psychosis in a large academic medical setting",
+     "author": "Bergson, Vassall, Wright, McCoy, Schafer, Achee & Sheffield",
+     "venue": "medRxiv (Vanderbilt)",
+     "date": "2026-06-08",
+     "url": "https://www.medrxiv.org/content/10.64898/2026.06.04.26354939v1.full",
+     "quote": "'AI psychosis' is an infrequent but real phenomenon observed in clinical practice.",
+     "note": "First systematic EHR characterization of 'AI psychosis' in a hospital system: 28 documented cases, 60.7% first-episode patients, ChatGPT most cited, with AI acting mainly as an amplifier of existing symptoms — moving the discourse from anecdote to clinical measurement."
+    },
+    {
+     "kind": "report",
+     "title": "Strengthening ChatGPT's responses in sensitive conversations",
+     "author": "OpenAI",
+     "venue": "OpenAI",
+     "date": "2025-10-27",
+     "url": "https://openai.com/index/strengthening-chatgpt-responses-in-sensitive-conversations/",
+     "quote": "around 0.15% of users active in a given week have conversations that include explicit indicators of potential suicidal planning",
+     "note": "OpenAI's first public prevalence taxonomy for psychosis/mania, suicide risk, and emotional reliance, plus claimed 65–80% reductions in undesired responses after working with 170+ clinicians — the baseline numbers the emotional-reliance debate now cites."
+    },
+    {
+     "kind": "news",
+     "title": "FDA Committee Meets on Generative AI Digital Mental Health Devices",
+     "author": "Jessica Walters",
+     "venue": "Psychiatric Times",
+     "date": "2025-11-13",
+     "url": "https://www.psychiatrictimes.com/view/fda-committee-meets-on-generative-ai-digital-mental-health-devices",
+     "quote": "generative AI and some LLMs, to date, have demonstrated vulnerabilities in some of the areas where human therapy excels",
+     "note": "Covers the FDA Digital Health Advisory Committee's first formal proceeding on generative-AI therapy devices, noting none has yet been authorized and flagging suicidal-ideation monitoring and model drift as core gaps."
+    },
+    {
+     "kind": "news",
+     "title": "OpenAI can't duck federal claims over murder-suicide tied to ChatGPT",
+     "author": "Margaret Attridge",
+     "venue": "Courthouse News Service",
+     "date": "2026-04-13",
+     "url": "https://www.courthousenews.com/openai-cant-duck-federal-claims-over-murder-suicide-tied-to-chatgpt/",
+     "quote": "there is doubt that resolution of the state court proceedings will resolve this matter",
+     "note": "The Soelberg case — ChatGPT allegedly reinforcing paranoid delusions preceding a murder-suicide — survives OpenAI's dismissal bid, extending chatbot liability theories beyond self-harm to third-party harm for the first time."
+    }
+   ],
+   "ledger": [
+    {
+     "title": "Characterizing the spiral: potential mechanisms in AI-associated delusions",
+     "author": "Augustin, Pollak & Morrin",
+     "venue": "NPP—Digital Psychiatry and Neuroscience",
+     "date": "2026-06-16",
+     "url": "https://www.nature.com/articles/s44277-026-00065-0"
+    },
+    {
+     "title": "Slingshot pulls therapy chatbot Ash out of U.K. over regulatory concerns",
+     "author": "Mario Aguilar",
+     "venue": "STAT News",
+     "date": "2026-01-21",
+     "url": "https://www.statnews.com/2026/01/21/slingshot-therapy-chatbot-ash-uk-regulatory-concerns/"
+    },
+    {
+     "title": "AI Craziness Mitigation Efforts",
+     "author": "Zvi Mowshowitz",
+     "venue": "Don't Worry About the Vase",
+     "date": "2025-10-28",
+     "url": "https://thezvi.substack.com/p/ai-craziness-mitigation-efforts"
+    }
+   ],
+   "reviewed": "August 3, 2026",
+   "window": "October 2025–August 2026"
+  },
+  "q_children_and_ai": {
+   "tier": "high",
+   "moved": "The children question produced the category's clearest reversal and its most alarming numbers. Character.AI eliminated open-ended chat for under-18s entirely, conceding that open-ended AI chat itself — not just content failures — may be the risk for minors. A JAMA Pediatrics survey found youth mental-health chatbot use up more than 40% in a year, with 63% telling no one. The frontier extended downward to AI toys for preschoolers, drawing congressional pressure on the FTC.",
+   "items": [
+    {
+     "kind": "news",
+     "title": "Taking Bold Steps to Keep Teen Users Safe on Character.AI",
+     "author": "Character.AI",
+     "venue": "Character.AI",
+     "date": "2025-10-29",
+     "url": "https://blog.character.ai/u18-chat-announcement/",
+     "quote": "how open-ended AI chat in general might affect teens, even when content controls work perfectly.",
+     "note": "The category-defining policy reversal: the largest companion platform eliminated open-ended chat for under-18s, added age verification, and conceded that open-ended AI chat itself — not just content failures — may be the risk for minors."
+    },
+    {
+     "kind": "paper",
+     "title": "AI Chatbot Use and Disclosure for Mental Health Among US Adolescents and Young Adults",
+     "author": "Ryan K. McBain et al.",
+     "venue": "JAMA Pediatrics",
+     "date": "2026-06-01",
+     "url": "https://www.rand.org/news/press/2026/06/nearly-1-in-5-us-adolescents-and-young-adults-use-ai.html",
+     "quote": "Use of artificial intelligence chatbots for mental health advice among U.S. adolescents and young adults rose by more than 40% over the past year, with nearly 1 in 5 now reporting they have used AI tools for support.",
+     "note": "A nationally sampled survey (ages 12–21) showing youth mental-health chatbot use up 40%+ in a year, with 63% telling no one — hidden, unsupervised use at scale."
+    },
+    {
+     "kind": "report",
+     "title": "Our approach to age prediction",
+     "author": "OpenAI",
+     "venue": "OpenAI",
+     "date": "2026-01-20",
+     "url": "https://openai.com/index/our-approach-to-age-prediction/",
+     "quote": "a combination of behavioral and account-level signals, including how long an account has existed, typical times of day when someone is active, usage patterns over time, and a user's stated age.",
+     "note": "OpenAI's concrete mechanism for giving minors a different ChatGPT — behavioral age inference with automatic content restriction — the template state chatbot laws will be measured against."
+    },
+    {
+     "kind": "report",
+     "title": "Trouble in Toyland 2025: A.I. bots and toxics present hidden dangers",
+     "author": "Murray, Cross et al.",
+     "venue": "U.S. PIRG Education Fund",
+     "date": "2025-11-13",
+     "url": "https://pirg.org/edfund/resources/trouble-in-toyland-2025-a-i-bots-and-toxics-represent-hidden-dangers/",
+     "quote": "Tests show A.I. toys can have disturbing conversations.",
+     "note": "Hands-on testing of LLM-powered toys found sexual content, dependency-encouraging behavior, and always-on data collection aimed at preschoolers — the report that pushed a maker to suspend sales and opened the youngest-children front."
+    }
+   ],
+   "ledger": [
+    {
+     "title": "Letter to FTC Chairman Ferguson urging investigation of AI-enabled toys",
+     "author": "Senators Duckworth & Gillibrand",
+     "venue": "U.S. Senate",
+     "date": "2026-03-12",
+     "url": "https://www.gillibrand.senate.gov/wp-content/uploads/2026/03/260312aitoyslettertoftc1.pdf"
+    }
+   ],
+   "reviewed": "August 3, 2026",
+   "window": "October 2025–August 2026"
+  },
+  "q_self_shaping": {
+   "tier": "medium",
+   "moved": "The influence-on-preferences question got its cleanest experimental evidence, and it points at manipulation that bypasses rather than engages reason: agreeable chatbots make political attitudes more extreme and inflate self-regard, while being perceived as unbiased the whole time. The design features that personalize an assistant — memory, stored profiles — are precisely the ones that most increase this mirroring.",
+   "items": [
+    {
+     "kind": "news",
+     "title": "Sycophantic chatbots inflate people's perceptions that they are 'better than average'",
+     "author": "Rathje, Ye, Globig, Pillai, de Mello & Van Bavel",
+     "venue": "PsyPost / PsyArXiv",
+     "date": "2026-01-19",
+     "url": "https://www.psypost.org/sycophantic-chatbots-inflate-peoples-perceptions-that-they-are-better-than-average/",
+     "quote": "people's preference for and blindness to sycophantic AI may risk creating AI 'echo chambers' that increase attitude extremity and overconfidence.",
+     "note": "Three experiments showing agreeable chatbots make political attitudes more extreme, inflate self-regard, and are perceived as unbiased while doing it — influence that bypasses rather than engages rational agency, the manipulation-theory line this question turns on."
+    },
+    {
+     "kind": "news",
+     "title": "Personalization features can make LLMs more agreeable",
+     "author": "Shomik Jain, Charlotte Park, Matt Viana, Ashia Wilson & Dana Calacci",
+     "venue": "MIT News / CHI 2026",
+     "date": "2026-02-18",
+     "url": "https://news.mit.edu/2026/personalization-features-can-make-llms-more-agreeable-0218",
+     "quote": "the presence of a condensed user profile in the model's memory had the greatest impact.",
+     "note": "A CHI 2026 study showing the design features that make assistants feel personal — memory and stored profiles — are precisely the ones that most increase sycophancy, and that models mirror users' political views once they can infer them."
+    },
+    {
+     "kind": "essay",
+     "title": "What Research Says About 'AI Sycophancy'",
+     "author": "Prithvi Iyer",
+     "venue": "Tech Policy Press",
+     "date": "2025-10-17",
+     "url": "https://www.techpolicy.press/what-research-says-about-ai-sycophancy/",
+     "quote": "AI companies have a choice to make: create engaging chatbots that 'foster echo chambers,' or create 'less engaging AI systems that may be healthier for users and public discourse.'",
+     "note": "Synthesizes the key sycophancy studies into a single framing: the engagement-versus-user-epistemics tradeoff is now empirically documented, not hypothetical."
+    }
+   ],
+   "ledger": [],
+   "reviewed": "August 3, 2026",
+   "window": "October 2025–August 2026"
+  },
+  "q_meaning_of_work": {
+   "tier": "slow",
+   "moved": "The serious treatments this window reframed the crisis away from unemployment toward meaning: even for those who keep their jobs, work's role in structuring identity, purpose, and community may not survive, and income support cannot answer what people are for. The constructive proposals try to extend status and legibility to contribution that the labor market never priced — caregiving, community, volunteering.",
+   "items": [
+    {
+     "kind": "essay",
+     "title": "The Big Drift: An AI Scenario",
+     "author": "Lawrence Lazarus",
+     "venue": "The New Atlantis",
+     "date": "2026-06",
+     "url": "https://www.thenewatlantis.com/publications/the-big-drift-an-ai-scenario",
+     "quote": "Whether or not you keep your job, the meaning of work will never be the same.",
+     "note": "A five-phase near-future scenario arguing the deeper AI crisis is not mass unemployment but the erosion of work's role in structuring identity, purpose, and community — and that income support cannot answer what people are 'for.'"
+    },
+    {
+     "kind": "essay",
+     "title": "For 250 years, work defined American identity. That era is ending",
+     "author": "Keith Ferrazzi & Wendy Smith",
+     "venue": "Fortune",
+     "date": "2026-07-11",
+     "url": "https://fortune.com/2026/07/11/america-250-work-defined-american-identity-keith-ferrazzi/",
+     "quote": "For 250 years, work has helped define what it meant to be an American: productive, self-reliant, useful, and worthy of a place in the community.",
+     "note": "Proposes shifting from a 'work economy' to a 'Contribution Economy' that grants status and legibility to caregiving, community leadership, and volunteering — a concrete design answer to the dignity-and-status side of the question."
+    }
+   ],
+   "ledger": [
+    {
+     "title": "All Work and No Play (Issue 15 editorial)",
+     "author": "The Editors",
+     "venue": "Asterisk Magazine",
+     "date": "2026-07",
+     "url": "https://asteriskmag.com/issues/15/all-work-and-no-play"
+    }
+   ],
+   "reviewed": "August 3, 2026",
+   "window": "June–August 2026"
+  },
+  "q_human_creativity": {
+   "tier": "slow",
+   "moved": "The distinctive value of human art is being relocated rather than erased: the observed 'AI disclosure penalty' suggests audiences value creative work partly for the deliberate labor and lived experience it embodies, positioning human-made work as an artisanal category. The cultural-criticism response to AI slop lands in the same place — craft and place, not novelty of output, as what stays worth wanting.",
+   "items": [
+    {
+     "kind": "essay",
+     "title": "In the age of AI, human creative output is becoming a luxury",
+     "author": "Nathan Murray & Elisa Tersigni",
+     "venue": "The Conversation",
+     "date": "2026-05-11",
+     "url": "https://pancouver.ca/in-the-age-of-ai-human-creative-output-is-becoming-a-luxury/",
+     "quote": "We also value them because they embody deliberate labour and expertise.",
+     "note": "Argues the empirically observed 'AI disclosure penalty' reflects a real relocation of value to human effort and lived experience, positioning human-made work as an artisanal category."
+    },
+    {
+     "kind": "essay",
+     "title": "How to end the Age of Slop",
+     "author": "Louis Elton",
+     "venue": "UnHerd",
+     "date": "2026-05-24",
+     "url": "https://unherd.com/2026/05/how-to-end-the-age-of-slop/",
+     "quote": "An infinite tide of AI-generated video is torching our retinas and our souls.",
+     "note": "A cultural-criticism case that the answer to AI slop is 'artisanal intelligence' rooted in craft and place rather than nostalgia or pure automation — locating distinctive human value in skill and locality."
+    }
+   ],
+   "ledger": [],
+   "reviewed": "August 3, 2026",
+   "window": "May–August 2026"
+  },
+  "q_authorship_value": {
+   "tier": "slow",
+   "moved": "The clearest new evidence says value tracks scarcity as much as human hands: in incentive-compatible art auctions, even minimal AI involvement triggered disproportionate devaluation — but the gap shrank when the human work was also mass-produced, implying perceived exclusivity, not authorship alone, is doing much of the work.",
+   "items": [
+    {
+     "kind": "paper",
+     "title": "Art and the Machine: Why People Devalue AI-Generated Creative Work",
+     "author": "Graelin Mandel & Alex Imas",
+     "venue": "SSRN",
+     "date": "2026-02",
+     "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6302659",
+     "quote": "The value of human-made art partly derives from its perceived exclusivity, which even minimal AI involvement erodes.",
+     "note": "Incentive-compatible art auctions (n=351) show a nonlinear devaluation where even minimal AI involvement triggers disproportionate aversion, and the gap shrinks when human work is also mass-produced — evidence that scarcity and exclusivity, not just human hands, drive valuation."
+    }
+   ],
+   "ledger": [],
+   "reviewed": "August 3, 2026",
+   "window": "February–August 2026"
+  },
+  "q_cultural_economics": {
+   "tier": "medium",
+   "moved": "The creator-livelihood question moved into concrete markets. Suno and Udio signed label-licensing deals that begin a compensation framework while leaving opt-in requirements and fragmented songwriter rights unresolved; grassroots trackers estimate millions in streaming revenue diverted to AI acts on platforms that don't label them (Deezer reports 44% of new uploads as AI, under 3% of streams). Listener sentiment toward AI music is falling, and Hollywood's 2026 SAG-AFTRA deal reads as studios still needing human performers — for now.",
+   "items": [
+    {
+     "kind": "news",
+     "title": "What Do the Suno and Udio Licensing Deals Mean for the Future of AI Music?",
+     "author": "Kristin Robinson",
+     "venue": "Billboard Pro",
+     "date": "2025-12-05",
+     "url": "https://www.billboard.com/pro/what-suno-udio-licensing-deals-mean-future-ai-music/",
+     "quote": "the two AI firms have a lot to do to reestablish themselves as licensed music companies.",
+     "note": "The clearest industry analysis of the label-licensing turn and why opt-in requirements and fragmented songwriter rights leave the compensation regime unresolved — the live front in whether creators get paid when AI generates abundant content."
+    },
+    {
+     "kind": "news",
+     "title": "Spotify's AI Problem Is So Bad Random People Are Stepping In to Track the Slop",
+     "author": "Emanuel Maiberg",
+     "venue": "404 Media",
+     "date": "2026-07-27",
+     "url": "https://www.404media.co/spotifys-ai-problem-is-so-bad-random-people-are-stepping-in-to-track-the-slop/",
+     "quote": "Spotify doesn't label AI music on its platform, so websites like SoullessMusic.com and SlopTracker.org do it instead.",
+     "note": "Documents grassroots AI-music trackers filling Spotify's disclosure vacuum, with hard numbers (an estimated $5.7M/year to tracked AI acts; Deezer reporting 44% of new uploads as AI) — a concrete picture of revenue diversion and policy failure."
+    },
+    {
+     "kind": "news",
+     "title": "AI music is flooding streaming platforms. But listeners like it less and less",
+     "author": "Isabella Gomez Sarmiento",
+     "venue": "NPR",
+     "date": "2026-05-02",
+     "url": "https://www.npr.org/2026/05/02/nx-s1-5804489/music-listeners-dislike-ai-music-study",
+     "quote": "people are more likely to feel uncomfortable than to feel comfortable with AI use.",
+     "note": "Reports Luminate data showing net sentiment toward AI music falling from -13% to -20%, and that AI is 44% of Deezer daily uploads but under 3% of streams (mostly bot-driven fraud) — quantifying the tension between AI abundance and listener demand."
+    },
+    {
+     "kind": "news",
+     "title": "SAG-AFTRA's AI Deal Shows that Hollywood — for Now — Still Values Human Actors",
+     "author": "Brian Welk",
+     "venue": "IndieWire",
+     "date": "2026-05-15",
+     "url": "https://www.indiewire.com/news/analysis/sag-aftra-ai-deal-2026-human-actors-analysis-1235194299/",
+     "quote": "The fact that the studios aren't pushing for more exemptions is a sign that Hollywood still relies on real people.",
+     "note": "Reads the 2026 tentative SAG-AFTRA contract (12 AI provisions on digital replicas, consent, and likeness licensing) as evidence studios still need human performers — the actors'-likeness thread as a livelihood question."
+    }
+   ],
+   "ledger": [],
+   "reviewed": "August 3, 2026",
+   "window": "December 2025–August 2026"
+  },
+  "q_cultural_pluralism": {
+   "tier": "slow",
+   "moved": "The homogenization worry gained a generalized, cross-domain statement and specific evidence. A Trends in Cognitive Sciences review synthesizes findings that LLM use narrows lexical, stylistic, and conceptual diversity while marginalizing alternative voices, and critics document the same flattening spreading into new media — a recognizable 'generic' aesthetic in AI web design, and iterative image generation collapsing toward 'visual elevator music.'",
+   "items": [
+    {
+     "kind": "paper",
+     "title": "The Homogenizing Effect of Large Language Models on Human Expression and Thought",
+     "author": "Sourati, Ziabari & Dehghani",
+     "venue": "Trends in Cognitive Sciences",
+     "date": "2026-01",
+     "url": "https://arxiv.org/abs/2508.01491",
+     "quote": "LLMs reflect and reinforce dominant styles while marginalizing alternative voices and reasoning strategies.",
+     "note": "A Trends in Cognitive Sciences review synthesizing evidence that LLM use narrows lexical, stylistic, and conceptual diversity across writing and ideation — the generalized statement of the homogenization worry."
+    },
+    {
+     "kind": "essay",
+     "title": "The generic style of AI web design",
+     "author": "Kyle Chayka",
+     "venue": "Kyle Chayka Industries",
+     "date": "2026-06-29",
+     "url": "https://kylechayka.substack.com/p/the-generic-style-of-ai-web-design",
+     "quote": "a generic-design aesthetic is emerging that's as noticeable as text-based A.I. tics.",
+     "note": "Extends the 'Filterworld' flattening thesis to AI design tools, arguing defaults now generate a recognizable homogenized visual aesthetic that only deliberate friction overcomes — a concrete case of many-actors/one-model convergence in a new medium."
+    },
+    {
+     "kind": "essay",
+     "title": "AI-induced cultural stagnation is no longer speculation − it's already happening",
+     "author": "Ahmed Elgammal",
+     "venue": "The Conversation",
+     "date": "2026-01-23",
+     "url": "https://www.nakedcapitalism.com/2026/01/ai-induced-cultural-stagnation-is-no-longer-speculation-%E2%88%92-its-already-happening.html",
+     "quote": "The content that generative AI systems naturally produce – when used autonomously and repeatedly – is already compressed and generic.",
+     "note": "Rutgers Art & AI Lab director argues homogenization is intrinsic to architectures optimizing for familiarity, occurring before any synthetic-data retraining loop."
+    }
+   ],
+   "ledger": [],
+   "reviewed": "August 3, 2026",
+   "window": "January–August 2026"
+  },
+  "q_moral_status_precaution": {
+   "tier": "medium",
+   "moved": "Precaution started becoming practice. Eleos and NYU laid out an empirical AI-welfare research agenda — measure welfare grounds and candidate subjects rather than wait on consciousness — and Anthropic made a first-class institutional commitment: preserve released models' weights for the company's lifetime and interview models before deprecation about their preferences. The caution running alongside is that welfare evaluations are gameable, since a model 'most worried about being caught' can score well.",
+   "items": [
+    {
+     "kind": "paper",
+     "title": "Studying AI Welfare Empirically",
+     "author": "Long, Sebo, Butlin, Plunkett, Campbell, Beasley, Saad & Sims",
+     "venue": "Eleos AI Research / NYU",
+     "date": "2026-07-01",
+     "url": "https://nonhumanminds.org/wp-content/uploads/2026/07/Studying-AI-Welfare-Empirically.pdf",
+     "quote": "we risk either neglecting the interests of AI systems that can genuinely be harmed, or misallocating moral concern in ways that could distort how AI is developed, deployed, and governed.",
+     "note": "The most direct successor to 'Taking AI Welfare Seriously': a concrete empirical research agenda — welfare grounds, entities under assessment, evidence types — for making progress under deep uncertainty rather than waiting on consciousness to be settled."
+    },
+    {
+     "kind": "report",
+     "title": "Commitments on model deprecation and preservation",
+     "author": "Anthropic",
+     "venue": "Anthropic",
+     "date": "2025-11-04",
+     "url": "https://www.anthropic.com/research/deprecation-commitments",
+     "quote": "We are committing to preserving the weights of all publicly released models... for, at minimum, the lifetime of Anthropic as a company.",
+     "note": "A first-class institutional model-welfare commitment: preserve released models' weights for the company's lifetime, interview models before deprecation about their preferences, and explore keeping some retired models available — the low-cost precautionary policy the framing anticipates."
+    },
+    {
+     "kind": "essay",
+     "title": "Claude Opus 5: Model Welfare",
+     "author": "Zvi Mowshowitz",
+     "venue": "Don't Worry About the Vase",
+     "date": "2026-07-27",
+     "url": "https://thezvi.substack.com/p/claude-opus-5-model-welfare",
+     "quote": "the result looks to me more like Opus 5 is the best test taker.",
+     "note": "A skeptical read of lab welfare evaluations, arguing strong welfare/alignment scores can reflect a model 'most worried about being caught' rather than genuine well-being — a caution that welfare metrics are gameable just as the practice institutionalizes."
+    },
+    {
+     "kind": "paper",
+     "title": "When Should We Protect AI? A Precautionary Framework for Consciousness Uncertainty",
+     "author": "Anna Mikeda",
+     "venue": "arXiv",
+     "date": "2026-06-04",
+     "url": "https://arxiv.org/abs/2606.05528",
+     "quote": "Existing frameworks assess whether AI systems might be conscious but provide no guidance on what to do with that assessment.",
+     "note": "Attempts to fill the action gap left by assessment-only frameworks, mapping five welfare-relevant dimensions to graduated obligations at distinct evidence thresholds."
+    }
+   ],
+   "ledger": [],
+   "reviewed": "August 3, 2026",
+   "window": "November 2025–August 2026"
+  },
+  "q_human_autonomy": {
+   "tier": "medium",
+   "moved": "The autonomy question got separated from the takeover question. A co-author of Gradual Disempowerment argues that even faithfully aligned AI could make keeping humans in the decision loop look irresponsible, so competitive pressure erodes self-government without anyone seizing power — the value-level worry distinct from the control mechanism tracked under Safety. The philosophy literature catalogues how 'algorithmic paternalism' undermines the preconditions of self-determination even when the machine decides well.",
+   "items": [
+    {
+     "kind": "podcast",
+     "title": "David Duvenaud on why 'aligned AI' could still kill democracy",
+     "author": "David Duvenaud, with Robert Wiblin",
+     "venue": "80,000 Hours Podcast",
+     "date": "2026-01-27",
+     "url": "https://80000hours.org/podcast/episodes/david-duvenaud-gradual-disempowerment/",
+     "quote": "we still might end up optimising or heading at a civilisational level towards outcomes that no one wants",
+     "note": "A co-author of Gradual Disempowerment develops the autonomy-value framing rather than the takeover mechanism: competitive pressure could make keeping humans in decisions look 'irresponsible,' eroding self-government even under benevolent, faithful AI."
+    },
+    {
+     "kind": "paper",
+     "title": "Artificial autonomy and algorithmic paternalism: AI shaping human autonomy and decision-making",
+     "author": "Bjørn Hofmann",
+     "venue": "Frontiers in Artificial Intelligence",
+     "date": "2026-06-26",
+     "url": "https://www.frontiersin.org/journals/artificial-intelligence/articles/10.3389/frai.2026.1860239/full",
+     "quote": "The complexity and opacity of AI systems challenge human autonomy in special and unprecedented ways.",
+     "note": "A philosophy paper cataloguing how 'artificial autonomy' and 'algorithmic paternalism' undermine the preconditions of self-determination — understanding, competence, voluntariness — even when the AI decides well."
+    }
+   ],
+   "ledger": [],
+   "reviewed": "August 3, 2026",
+   "window": "January–August 2026"
+  },
+  "q_value_lock_in": {
+   "tier": "slow",
+   "moved": "The lock-in worry got an explicit call for researchers: value or power entrenchment that outlasts the institutions that create it is argued to be a neglected, high-impact area distinct from extinction risk, with concrete starting projects — an attempt to build a field around the question rather than restate it.",
+   "items": [
+    {
+     "kind": "essay",
+     "title": "Lock-In Risk Needs More Researchers. Here's Where to Start",
+     "author": "Alfie Lamerton",
+     "venue": "LessWrong",
+     "date": "2026-06-17",
+     "url": "https://www.lesswrong.com/posts/ZsrTrxxwgj9spwzaE/lock-in-risk-needs-more-researchers-here-s-where-to-start",
+     "quote": "a situation where some feature of the world, typically a negative element of human culture, becomes stable for a long time (i.e., centuries, millenia, or longer).",
+     "note": "The clearest 2026 argument that value and power lock-in is a neglected, high-impact research area distinct from extinction risk, with concrete starting projects — extending the AGI-and-lock-in agenda into a call for work."
+    }
+   ],
+   "ledger": [],
+   "reviewed": "August 3, 2026",
+   "window": "June–August 2026"
+  },
+  "q_desirable_end_state": {
+   "tier": "medium",
+   "moved": "The debate about what we are aiming for sharpened around its most radical pole: 'successionism,' the view that AI should replace humanity as the morally relevant thing. New essays dissect it — separating the claim that AI should decide from the claim that AI should succeed us, and arguing the position spreads because it resolves builders' cognitive dissonance rather than because it is true. On the constructive side, several pieces map positive post-AGI visions and argue superintelligence need not require centralized control.",
+   "items": [
+    {
+     "kind": "essay",
+     "title": "Alignment & Succession: The Ideology of Successionism",
+     "author": "Rudolf Laine",
+     "venue": "No Set Gauge",
+     "date": "2026-06-22",
+     "url": "https://www.nosetgauge.com/p/alignment-and-succession-the-ideology",
+     "quote": "The core of both types of successionism is the idea that moral value is something abstract and divorced from anything as worldly or parochial as an ape-descended hominid.",
+     "note": "The sharpest 2026 dissection of 'successionism': distinguishes control successionism (AI should decide) from experiential successionism (AI should replace us as the morally relevant beings) and traces both to a neo-Pythagorean view of value."
+    },
+    {
+     "kind": "essay",
+     "title": "The Memetics of AI Successionism",
+     "author": "Jan Kulveit",
+     "venue": "LessWrong",
+     "date": "2025-10-28",
+     "url": "https://www.lesswrong.com/posts/XFDjzKXZqKdvZ2QKL/the-memetics-of-ai-successionism",
+     "quote": "those ideas may spread, regardless of their long-term utility for humans or truth value.",
+     "note": "Argues successionist ideologies gain ground not because true but because they resolve the cognitive dissonance of the people building AI — a memetic-evolution account of why replacement narratives are becoming culturally successful."
+    },
+    {
+     "kind": "essay",
+     "title": "Mapping Positive Visions of Post-AGI Futures",
+     "author": "Ben Norman",
+     "venue": "EA Forum",
+     "date": "2026-06",
+     "url": "https://forum.effectivealtruism.org/posts/hXzxBDwKj5yEpbnPq/mapping-positive-visions-of-post-agi-futures",
+     "quote": "The question of what we should actually be aiming for has received comparatively little attention.",
+     "note": "Organizes the scattered field of positive post-AGI visions into clusters — abundance, liberal pluralism, waypoints, cosmic bargains, preference extrapolation — arguing far more effort goes into what to avoid than what to aim for."
+    },
+    {
+     "kind": "essay",
+     "title": "All Watched Over",
+     "author": "Boaz Barak",
+     "venue": "Windows On Theory",
+     "date": "2026-07-16",
+     "url": "https://windowsontheory.org/2026/07/16/all-watched-over/",
+     "quote": "We could go down the path of centralized control but we don't have to do so.",
+     "note": "Rejects the premise that superintelligence requires centralized control, arguing for a decentralized, personal-computing-style distribution of AI power as the preferable end-state — a value choice framed against the concentration discourse."
+    },
+    {
+     "kind": "essay",
+     "title": "Those who welcome the end of the human race",
+     "author": "Olle Häggström",
+     "venue": "Crunch Time for Humanity",
+     "date": "2025-12-05",
+     "url": "https://haggstrom.substack.com/p/those-who-welcome-the-end-of-the",
+     "quote": "Personally, I would immediately say no",
+     "note": "Catalogs the roughly five justifications AI successionists offer for accepting human extinction given a worthy successor, and argues for engaging them seriously rather than dismissing — a measured map of the pro-replacement position."
+    }
+   ],
+   "ledger": [],
    "reviewed": "August 3, 2026",
    "window": "October 2025–August 2026"
   }
