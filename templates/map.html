@@ -212,7 +212,7 @@ function setOpen(q,on){
   q.querySelector('.bqhead').setAttribute('aria-expanded',on?'true':'false');
 }
 document.querySelectorAll('.bqhead').forEach(b=>b.addEventListener('click',()=>{
-  const q=b.parentElement;
+  const q=b.closest('.bq');
   if(openQ&&openQ!==q) setOpen(openQ,false);
   const now=!q.classList.contains('open');
   setOpen(q,now); openQ=now?q:null; syncBrowse();

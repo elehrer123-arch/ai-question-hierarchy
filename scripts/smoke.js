@@ -93,6 +93,37 @@ const ok = (cond, msg) => { if (!cond) fails.push(msg); };
   });
   ok(vol.tag === 'A' && /latest\/\?q=/.test(vol.href || ''), 'map: volume count is not a real link');
 
+  // map: a question expands and its question-page link navigates
+  await page.goto(url('index.html'));
+  await page.waitForTimeout(300);
+  await page.click('.bqhead');
+  await page.waitForTimeout(400);
+  const opened = await page.evaluate(() => document.querySelectorAll('.bq.open').length);
+  ok(opened === 1, `map: clicking a question did not expand it (${opened} open)`);
+  const qlink = await page.evaluate(() => {
+    const a = document.querySelector('.bq.open a.bopen[href^="questions/"]');
+    if (!a) return null;
+    const r = a.getBoundingClientRect();
+    return { href: a.getAttribute('href'), visible: r.width > 0 && r.height > 0 };
+  });
+  ok(qlink && qlink.visible, 'map: expanded question exposes no visible question-page link');
+  if (qlink) {
+    await page.click('.bq.open a.bopen[href^="questions/"]');
+    await page.waitForTimeout(500);
+    ok(/\/questions\/[^/]+\/?$/.test(page.url()),
+       `map: question-page link did not navigate (landed on ${page.url()})`);
+    await page.goBack();
+    await page.waitForTimeout(300);
+  }
+
+  // map: the recently-tracked rail navigates too
+  await page.goto(url('index.html'));
+  await page.waitForTimeout(300);
+  const railHref = await page.evaluate(() =>
+    document.querySelector('.recit')?.getAttribute('href') || null);
+  ok(railHref && railHref.startsWith('questions/'),
+     `map: recent rail link missing or not a question page (${railHref})`);
+
   // latest deep link + filters
   await page.goto(url('latest/index.html') + '?q=2.4.4&featured=1');
   await page.waitForTimeout(350);
